@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo, STARRY-S">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="STARRY-S' Blog" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>树莓派之我的世界服务器 | STARRY-S' Blog - Lifeline</title>
+  <link rel="stylesheet" href="/assets/css/APlayer.min.css" class="aplayer-style-marker">
+<script src="/assets/js/APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="en"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">STARRY-S' Blog</a></h1>
+        <h2 class="subtitle">Lifeline</h2>
+      </div>
+      <div class="logo">
+        <img src="/images/ARIA_logo.png" alt="logo">
+      </div>
+    </div>
+    
+<nav id="nav" class="nav">
+  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
+  <ul id="menu">
+    
+    <li><a href="/">Home</a></li>
+    
+    <li><a href="/archives/">Archives</a></li>
+    
+    <li><a href="/categories/">Categories</a></li>
+    
+    <li><a href="/tags/">Tags</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="post">
+  
+  <article class="post-article card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="http://blog.starry-s.xyz/2016/11/25/raspbettypi-mc-server/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="Starry Wang">
+       <meta itemprop="description" content="Magician">
+       <meta itemprop="image" content="/images/avatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="STARRY-S' Blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">树莓派之我的世界服务器</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-11-25T15:01:28+08:00">2016-11-25 15:01:28</time></span>
+        </span>
+        
+        
+        
+        <span class="post-meta-divider divider">|</span>
+        
+        <span class="post-categories">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/教程/" itemprop="url" rel="index"><span itemprop="name">教程</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/教程/Minecraft/" itemprop="url" rel="index"><span itemprop="name">Minecraft</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>树莓派功能强大，可以像电脑一样干很多事情。刚买树莓派3时就想弄一个我的世界服务器，但是那时不懂linux，服务器也就没建成。这一阵子打算把这个计划再捡起来，和同学一起联机的话树莓派还是能做到的。ARM系列的CPU性能肯定比X86_64电脑用的CPU弱许多，外加上树莓派1G的运行内存，让它跑大型服务器肯定是不可能的，所以只能弄一个几个人联机的小服务器了。</p>
+<a id="more"></a>
+<blockquote>
+<p>终于可以继续更新博客了！原计划是11月之前更新博客的。不巧电脑出了问题，重装了一遍Arch linux,后来有发生了一些事一直没能用电脑。由于开学到现在能放假供我写博客的时间少之又少，这篇原本在11月初就能发表的文章就这样被硬生生推迟到了11月末了。</p>
+</blockquote>
+
+        <div id="aplayer-OGyvqAQO" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>
+			  <script>
+				  var options = {"narrow":false,"autoplay":false,"showlrc":0,"mode":"circulation","mutex":true,"theme":"#0080ff","preload":"auto","listmaxheight":"512px","music":[{"title":"Nevada","author":"Vicetone / Cozi Zuehlsdorff","url":"https://images.starry-s.xyz/bgm/Vicetone%20Cozi%20Zuehlsdorff%20-%20Nevada%20%28Original%20Mix%29.mp3","pic":"https://images.starry-s.xyz/cover/nevada.jpg"}]};
+				  options.element = document.getElementById("aplayer-OGyvqAQO");
+				  var ap = new APlayer(options);
+			    window.aplayers || (window.aplayers = []);
+				  window.aplayers.push(ap);
+			  </script>
+<h1 id="材料以及工具"><a href="#材料以及工具" class="headerlink" title="材料以及工具"></a>材料以及工具</h1><ul>
+<li>树莓派一只 （包括所需要的C10的内存卡以及刷好的固件）</li>
+<li>一个支持DDNS的路由器（非必须）</li>
+</ul>
+<blockquote>
+<ul>
+<li>如果不想用树莓派建服务器的话用电脑也一样。</li>
+<li>本教程介绍的是电脑版的服务器。PE版的服务器请考虑<code>Pocketmine-MP</code>。</li>
+</ul>
+</blockquote>
+<h1 id="配置树莓派"><a href="#配置树莓派" class="headerlink" title="配置树莓派"></a>配置树莓派</h1><p><strong>如果你对外开放ssh端口的话一定要设置一个安全的密码</strong></p>
+<h2 id="调整GPU的内存："><a href="#调整GPU的内存：" class="headerlink" title="调整GPU的内存："></a>调整GPU的内存：</h2><p>毕竟用树莓派开服务器不需要占用太多的GPU，直接调到最低即可。</p>
+<p>Raspbian系统直接在<code>raspi-config</code>中将GPU内存分为16M。<br>ArchLinux ARM系统在<code>/boot/config.txt</code>中更改GPU显存为16即可。</p>
+<h1 id="安装JAVA"><a href="#安装JAVA" class="headerlink" title="安装JAVA"></a>安装JAVA</h1><p>前往 <strong><a href="https://jdk8.java.net/download.html" target="_blank" rel="noopener">JAVA下载页</a></strong> 下载树莓派（ARM架构，32位系统）所支持的JDK。</p>
+<figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ sudo  mkdir  ~/java/<br>$ sudo  tar  zxvf  你所下载的JDK.jar.gz   -C   ~/java/<br></code></pre></td></tr></table></figure>
+<p>在终端输入<code>sudo ~/java/jdk1.8.0/bin/java -version</code>显示java的版本号。<br>安装成功的话就可以显示你的JAVA版本号了。</p>
+<h1 id="部署服务器"><a href="#部署服务器" class="headerlink" title="部署服务器"></a>部署服务器</h1><p>本篇使用<a href="http://www.spigotmc.org" target="_blank" rel="noopener">SpigotMc</a>部署服务器。<br>当然除了Spigot之外还有Bukkit和Paper spigot可选。</p>
+<p>使用以下命令启动服务器。<br><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo ~/java/jdk1.8.0/bin/java -Xms512M -Xmx1024M -jar ./spigot.jar nogui<br></code></pre></td></tr></table></figure></p>
+<p>如果第一次运行出现错误，根据提示编辑生成的<code>eula.txt</code>，改为<code>eula=True</code>。</p>
+<p>重新启动服务器，就可以随即生成一个地图了。第一次生成地图时间较长，需要等几分钟，等待生成好后打开电脑的我的世界就能进入你的服务器了！</p>
+<blockquote>
+<p>我们国人很少玩正版我的世界，因此需要编辑服务器生成的配置文件：<code>online-mode=false</code>才能保证我们能完美的和小伙伴们联机而不是被正版验证所困惑着。<s>说了这么多原来我好像玩的是假的我的世界<br></s></p>
+</blockquote>
+<p>网上有很多服务器插件和Mod什么的，可以选择安装几个。本章中不做过多介绍，毕竟树莓派的性能摆在这呢。</p>
+<h1 id="screen-保持服务器一直运行而不被关掉。"><a href="#screen-保持服务器一直运行而不被关掉。" class="headerlink" title="screen 保持服务器一直运行而不被关掉。"></a>screen 保持服务器一直运行而不被关掉。</h1><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">screen sudo ~/java/jdk1.8.0/bin/java -Xms512M -Xmx1024M -jar<br>./spigot.jar nogui<br></code></pre></td></tr></table></figure>
+<p>在配置好你的服务器后就可以和小伙伴一起联机了。经过小伙伴测试几个人简单的联机速度并没有想象中那么慢，但是人多了可就不好说了。</p>
+<h1 id="使用动态DNS帮助你和外网的小伙伴一起联机MC～"><a href="#使用动态DNS帮助你和外网的小伙伴一起联机MC～" class="headerlink" title="使用动态DNS帮助你和外网的小伙伴一起联机MC～"></a>使用动态DNS帮助你和外网的小伙伴一起联机MC～</h1><p>本教程中我用的是花生壳动态域名解析服务</p>
+<p><strong>想使用动态域名解析服务就必须保证这样几个条件:</strong></p>
+<ol>
+<li>路由器拨号后运营商给你分配了一个公网ip而不是局域网（内网）ip。</li>
+<li>运营商公司至少给你开放了一个端口。</li>
+</ol>
+<p>通常情况下以上两个问题都是不容易遇到的，不过一旦点子不好的话，就只能靠别的方法把你内网的数据影射到外网了（例如买个棒子什么的）。<br>接下来就是注册花生壳账号然后弄一个免费域名了。<s>花生壳的那些收费的东西都太墨迹了，不建议使用花生壳要不干脆注册个3322账号吧</s></p>
+<h2 id="配置路由器DDNS"><a href="#配置路由器DDNS" class="headerlink" title="配置路由器DDNS"></a>配置路由器DDNS</h2><p>进入路由器的动态DNS配置界面：</p>
+<blockquote>
+<p>使用网络接口： WAN<br><br>服务提供商： 自定义或选择已有的提供商<br><br>更新的url：</p>
+<p>花生壳：http://[USERNAME]:[PASSWORD]@ddns.oray.com/ph/update?hostname=[DOMAIN]&amp;myip=[IP]<br>3322:<br>http://[USERNAME]:[PASSWORD]@members.3322.org/dyndns/update?system=dyndns&amp;hostname=[DOMAIN]&amp;myip=[IP]&amp;wildcard=OFF<br><br><br><br>主机名： 你申请的免费域名<br><br>用户名： 注册账号的用户名<br><br>密码： 账号的密码<br><br>ip地址来源： 网络<br><br>网络： WAN<br></p>
+</blockquote>
+<p><img src="https://images.starry-s.xyz/images/mcserver/LRM_EXPORT_20170113_005226_01_01.jpg" alt="DDNS"><br>ps：不同系统的路由器在设置DDNS方面有一些不同的地方。</p>
+<p>重启路由器后生效。可以ping一下你的域名看看能不能ping通了。</p>
+<h2 id="端口映射"><a href="#端口映射" class="headerlink" title="端口映射"></a>端口映射</h2><p>弄好动态域名解析服务后就需要设置好端口映射，电脑版MC端口为25565，手机版MC端口为19132，设置好端口映射后进入我的世界添加服务器输入域名就可以联机了！</p>
+<h1 id="教程结束。"><a href="#教程结束。" class="headerlink" title="教程结束。"></a>教程结束。</h1><p><br></p>
+<h1 id="Happy-MC"><a href="#Happy-MC" class="headerlink" title="Happy MC!"></a>Happy MC!</h1><p><br></p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/Minecraft/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>Minecraft</a>
+        
+        <a class="post-tag button" href="/tags/树莓派/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>树莓派</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+      <a href="/2016/09/28/xiaomi-mini-fan-2/" rel="next" title="小米路由器MINI之改装路由器散热"><i class="fas fa-angle-left"></i><span class="nav-title">小米路由器MINI之改装路由器散热</span></a>
+      
+    </div>
+    <div class="post-nav-prev post-nav-item">
+      
+      <a href="/2016/11/26/sorry-thankyou/" rel="prev" title="Sorry & Thankyou."><span class="nav-title">Sorry & Thankyou.</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </div>
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  
+  <div class="commentjs" id="comment-thread"></div>
+  <link rel="stylesheet" href="/css/commentjs.css">
+  <script defer type="text/javascript" src="/js/marked.min.js"></script>
+  <script defer type="text/javascript" src="/js/timeago.min.js"></script>
+  <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+  <script defer type="text/javascript" src="/js/commentjs.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    getComments({
+      "type": "github",
+      "user": "STARRY-S",
+      "repo": "blog.starry-s.xyz",
+      "client_id": "89aa45063821568e41d5",
+      "client_secret": "09dc1c78c73c01592888e401a908b51e17965e6a",
+      "no_comment": "This page has no comment, go to comment now!",
+      "go_to_comment": "Go to Comment",
+      "issue_title": "树莓派之我的世界服务器",
+      "btn_class": "button",
+      "comments_target": "#comment-thread"
+    });
+    marked.setOptions({
+      "highlight": function (code, lang) {
+        return hljs.highlightAuto(code).value;
+      }
+    });
+    function mark() {
+      var markdowns = document.getElementsByClassName("markdown");
+      for (var i = 0; i < markdowns.length; ++i){
+        if (markdowns[i].innerHTML) {
+          markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+        }
+      }
+    }
+    window.addEventListener("DOMContentLoaded", mark, false);
+    window.addEventListener("load", mark, false);
+  });
+  </script>
+  
+  
+</div>
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/sidebar_background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="Search" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.jpg" alt="Starry Wang">
+  
+  <h1 class="author-name">Starry Wang</h1>
+  <h2 class="author-description"> Magician</h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">Archives</div>
+      <div><a href="/archives/">19</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="categories-count">
+      <div class="site-count-title">Categories</div>
+      <div><a href="/categories/">20</a></div>
+    </div>
+    
+    
+    
+    <span class="site-count-divider divider">|</span>
+    
+    <div class="tags-count">
+      <div class="site-count-title">Tags</div>
+      <div><a href="/tags/">28</a></div>
+    </div>
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>Table of Contents</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#材料以及工具"><span class="toc-text">材料以及工具</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#配置树莓派"><span class="toc-text">配置树莓派</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#调整GPU的内存："><span class="toc-text">调整GPU的内存：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#安装JAVA"><span class="toc-text">安装JAVA</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#部署服务器"><span class="toc-text">部署服务器</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#screen-保持服务器一直运行而不被关掉。"><span class="toc-text">screen 保持服务器一直运行而不被关掉。</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#使用动态DNS帮助你和外网的小伙伴一起联机MC～"><span class="toc-text">使用动态DNS帮助你和外网的小伙伴一起联机MC～</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#配置路由器DDNS"><span class="toc-text">配置路由器DDNS</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#端口映射"><span class="toc-text">端口映射</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#教程结束。"><span class="toc-text">教程结束。</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#Happy-MC"><span class="toc-text">Happy MC!</span></a></li></ol></div>
+</div>
+
+
+
+    
+    
+    
+<hr>
+<div class="social-link sidebar-item">
+  <div><i class="far fa-address-card"></i>Social Links</p></div>
+  <ul>
+    
+    <li><i class="fas fa-envelope"></i><a href="mailto:hx916584160@gmail.com" target="_blank">E-Mail</a></li>
+    
+    <li><i class="fab fa-github"></i><a href="https://github.com/STARRY-S" target="_blank">GitHub</a></li>
+    
+    <li><i class="fab fa-telegram-plane"></i><a href="https://t.me/STARRY-S" target="_blank">Telegram</a></li>
+    
+  </ul>
+</div>
+
+
+    
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <div><i class="fas fa-link"></i>Blogroll</div>
+  <ul>
+    
+    <li><a href="https://alynx.xyz/" target="_blank">喵's Homepage</a></li>
+    
+    <li><a href="https://hackghost.com" target="_blank">Hack Ghost's Blog</a></li>
+    
+    <li><a href="https://lgiki.pw/" target="_blank">LGiki's Blog</a></li>
+    
+    <li><a href="http://imchenxy.tk/" target="_blank">ArtChen's Blog</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">Starry Wang</span><span class="year"><i class="far fa-copyright"></i>2016.8 - 2018</span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">BY-NC-SA 4.0</a></span>
+        </div>
+        
+        
+<div class="busuanzi">
+  <span id="busuanzi_container_site_pv"><i class="fas fa-eye"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="far fa-file-alt"></i><span id="busuanzi_value_page_pv"></span></span>
+</div>
+
+
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          Powered by <i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>&<i class="cloud"></i><a href="https://cloudflare.com" target="_blank">Cloudflare</a>
+          
+        </div>
+        <div class="powered-by">
+          Proudly Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> | Theme is <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>
