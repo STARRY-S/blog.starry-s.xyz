@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>STARRY-S' Blog</title>
+  <icon>https://blog.starry-s.xyz/images/avatar.png</icon>
+  <subtitle>Lifeline</subtitle>
+  <link href="https://blog.starry-s.xyz/atom.xml" rel="self" />
+  
+  <link href="https://blog.starry-s.xyz/" />
+  
+  <updated>2018-11-27T08:08:41.000Z</updated>
+  
+  <id>https://blog.starry-s.xyz/</id>
+  
+  <author>
+    <name>STARRY-S</name>
+    <email>hxstarry-s@163.com</email>
+  </author>
+  
+  <generator uri="https://github.com/AlynxZhou/hikaru/">Hikaru</generator>
+  
+  <entry>
+    <title>Hello world</title>
+    <link href="https://blog.starry-s.xyz/helloworld.html" />
+    <id>https://blog.starry-s.xyz/helloworld.html</id>
+    <published>2018-11-27T08:08:41.000Z</published>
+    <updated>2018-11-27T08:08:41.000Z</updated>
+    
+    <summary type="html">
+    
+    <![CDATA[Hello world!]]>
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
