@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>STARRY-S' Blog</title>
-  <icon>https://blog.starry-s.xyz/images/avatar.png</icon>
+  <icon>https://blog.starry-s.xyz/images/avatar.jpg</icon>
   <subtitle>Lifeline</subtitle>
   <link href="https://blog.starry-s.xyz/atom.xml" rel="self" />
   
