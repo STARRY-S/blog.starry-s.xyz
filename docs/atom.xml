@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>STARRY-S&#39; Blog</title>
+  <icon>https://blog.starry-s.xyz/images/avatar.png</icon>
+  <subtitle>Lifeline</subtitle>
+  <link href="https://blog.starry-s.xyz/atom.xml" rel="self" />
+  
+  <link href="https://blog.starry-s.xyz/" />
+  
+  <updated>2019-01-24T02:23:04.312Z</updated>
+  
+  <id>https://blog.starry-s.xyz/</id>
+  
+  <author>
+    <name>STARRY-S</name>
+    <email>hx916584160@gmail.com</email>
+  </author>
+  
+  <generator uri="https://github.com/AlynxZhou/hikaru/">Hikaru</generator>
+  
+  <entry>
+    <title>Hello 2019</title>
+    <link href="https://blog.starry-s.xyz/posts/Hello-2019/" />
+    <id>https://blog.starry-s.xyz/posts/Hello-2019/</id>
+    <published>2018-12-31T16:00:00.000Z</published>
+    <updated>2019-01-24T02:23:04.312Z</updated>
+    
+    <summary type="html">
+    
+    <![CDATA[<p><img src="/images/hello-2019/hello-2019.jpg" alt="Hello 2019!"></p><h1 id="Hello2019"><a class="headerlink" href="/posts/Hello-2019/#Hello2019" title="Hello2019"></a>Hello 2019</h1><p>&#x4E00;&#x7728;&#x773C;&#x5230;&#x4E86;2018&#x5E74;&#x5E74;&#x5C3E;&#xFF0C;&#x8FD9;&#x4E00;&#x5E74;&#x5F88;&#x666E;&#x901A;&#xFF0C;&#x5F88;&#x5E73;&#x6DE1;&#x3002;</p><p>&#x6700;&#x521D;&#x5199;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x65F6;&#x662F;&#x5728;&#x5BDD;&#x5BA4;&#x5077;&#x5077;&#x5199;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x663E;&#x5F97;&#x6BD4;&#x8F83;&#x51CC;&#x4E71;&#xFF0C;&#x4E8E;&#x662F;1&#x6708;22&#x53F7;&#x53C8;&#x505A;&#x4E00;&#x4E9B;&#x4FEE;&#x6539;&#x3002;</p>]]>
+    
+    </summary>
+    
+    <category term="碎碎念" scheme="https://blog.starry-s.xyz/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" />
+    
+    
+    <category term="琐事" scheme="https://blog.starry-s.xyz/tags/%E7%90%90%E4%BA%8B/" />
+    
+    <category term="碎碎念" scheme="https://blog.starry-s.xyz/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" />
+    
+  </entry>
+  
+  <entry>
+    <title>Lifeline</title>
+    <link href="https://blog.starry-s.xyz/posts/Lifeline/" />
+    <id>https://blog.starry-s.xyz/posts/Lifeline/</id>
+    <published>2018-10-01T14:25:49.000Z</published>
+    <updated>2019-01-22T15:16:29.195Z</updated>
+    
+    <summary type="html">
+    
+    <![CDATA[<p><img src="/images/Lifeline/trip.jpg" alt="Trip">&#x7136;&#x800C;&#x597D;&#x591A;&#x5BF9;&#x6211;&#x6765;&#x8BF4;&#x5F88;&#x65B0;&#x9C9C;&#x65B0;&#x5947;&#x7684;&#x4E8B;&#x60C5;&#x53D1;&#x751F;&#x4E86;&#x3002;</p>]]>
+    
+    </summary>
+    
+    <category term="琐事" scheme="https://blog.starry-s.xyz/categories/%E7%90%90%E4%BA%8B/" />
+    
+    <category term="碎碎念" scheme="https://blog.starry-s.xyz/categories/%E7%90%90%E4%BA%8B/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" />
+    
+    
+    <category term="琐事" scheme="https://blog.starry-s.xyz/tags/%E7%90%90%E4%BA%8B/" />
+    
+    <category term="碎碎念" scheme="https://blog.starry-s.xyz/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" />
+    
+  </entry>
+  
+  <entry>
+    <title>使用HMCL启动Minecraft游戏教程</title>
+    <link href="https://blog.starry-s.xyz/posts/hmcl-minecraft/" />
+    <id>https://blog.starry-s.xyz/posts/hmcl-minecraft/</id>
+    <published>2018-07-29T09:26:35.000Z</published>
+    <updated>2019-01-22T15:15:36.693Z</updated>
+    
+    <summary type="html">
+    
+    <![CDATA[<p>&#x7EC8;&#x4E8E;&#x5230;&#x4E86;&#x6691;&#x5047;&#x53EF;&#x4EE5;&#x5F00;&#x4E00;&#x4E2A;Minecraft&#x670D;&#x52A1;&#x5668;&#x548C;&#x5C0F;&#x4F19;&#x4F34;&#x8054;&#x673A;&#x7684;&#x65F6;&#x5019;&#x4E86;&#xFF01;&#x5728;&#x53D1;&#x73B0;&#x6211;&#x5BF9;&#x5403;&#x9E21;&#x90A3;&#x7C7B;&#x7684;&#x6E38;&#x620F;&#x9664;&#x4E86;&#x89C9;&#x5F97;&#x597D;&#x73A9;&#x4EE5;&#x5916;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x5929;&#x8D4B;( <del>&#x6CA1;&#x94B1;&#x4E70;&#x9F20;&#x6807;&#xFF1F;</del> )&#x540E;&#x6253;&#x7B97;&#x7EE7;&#x7EED;&#x73A9;&#x6211;&#x7684;&#x4E16;&#x754C;&#xFF0C;&#x6240;&#x4EE5;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x90A3;&#x4E9B;&#x60F3;&#x73A9;Minecraft&#xFF08;&#x975E;&#x7F51;&#x6613;&#x4EE3;&#x7406;&#x7248;&#xFF09;&#x4F46;&#x662F;&#x8FD8;&#x4E0D;&#x77E5;&#x9053;&#x600E;&#x4E48;&#x64CD;&#x4F5C;&#x7684;&#x90A3;&#x4E9B;&#x5C0F;&#x4F19;&#x4F34;&#x4EEC;&#xFF0C;&#x8FD9;&#x7BC7;&#x6559;&#x7A0B;&#x5C31;&#x8FD9;&#x4E48;&#x8BDE;&#x751F;&#x4E86;&#x3002;</p>]]>
+    
+    </summary>
+    
+    <category term="教程" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/" />
+    
+    <category term="Minecraft" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/Minecraft/" />
+    
+    
+    <category term="Minecraft" scheme="https://blog.starry-s.xyz/tags/Minecraft/" />
+    
+    <category term="教程" scheme="https://blog.starry-s.xyz/tags/%E6%95%99%E7%A8%8B/" />
+    
+  </entry>
+  
+  <entry>
+    <title>Tired</title>
+    <link href="https://blog.starry-s.xyz/posts/tired/" />
+    <id>https://blog.starry-s.xyz/posts/tired/</id>
+    <published>2018-07-22T09:22:30.000Z</published>
+    <updated>2019-01-24T07:19:57.475Z</updated>
+    
+    <summary type="html">
+    
+    <![CDATA[<p>A bad mod with a stubborn brain, I felt that I can&apos;t do anything at this time.</p>]]>
+    
+    </summary>
+    
+    <category term="琐事" scheme="https://blog.starry-s.xyz/categories/%E7%90%90%E4%BA%8B/" />
+    
+    <category term="碎碎念" scheme="https://blog.starry-s.xyz/categories/%E7%90%90%E4%BA%8B/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" />
+    
+    
+    <category term="琐事" scheme="https://blog.starry-s.xyz/tags/%E7%90%90%E4%BA%8B/" />
+    
+  </entry>
+  
+  <entry>
+    <title>Spring - 2</title>
+    <link href="https://blog.starry-s.xyz/posts/Spring-2/" />
+    <id>https://blog.starry-s.xyz/posts/Spring-2/</id>
+    <published>2018-04-05T10:05:11.000Z</published>
+    <updated>2019-01-24T07:40:37.186Z</updated>
+    
+    <summary type="html">
+    
+    <![CDATA[<p><img src="/images/spring-2/05.jpeg" alt="Spring" title="Flowers"></p><h1 id="&#x6625;&#x5929;&#x6765;&#x4E86;&#x3002;"><a class="headerlink" href="/posts/Spring-2/#%E6%98%A5%E5%A4%A9%E6%9D%A5%E4%BA%86%E3%80%82" title="&#x6625;&#x5929;&#x6765;&#x4E86;&#x3002;"></a>&#x6625;&#x5929;&#x6765;&#x4E86;&#x3002;</h1><p><strong>&#x524D;&#x65B9;&#x591A;&#x56FE;&#x9884;&#x8B66;&#xFF1A;</strong> &#x9AD8;&#x6E05;&#x65E0;&#x7801;</p><blockquote><p>&#x4E4B;&#x524D;&#x4E70;&#x7684;&#x4E8C;&#x624B;&#x76F8;&#x673A;&#x56E0;&#x8D28;&#x91CF;&#x95EE;&#x9898;&#x574F;&#x6389;&#x4E86;&#x54E6;&#xFF0C;&#x6240;&#x4EE5;&#x4ECA;&#x5E74;&#x7684;&#x8FD9;&#x7EC4;&#x7167;&#x7247;&#x5C31;&#x8F6E;&#x5230;&#x6211;&#x7528;&#x624B;&#x673A;&#x6765;&#x62CD;&#x5566;&#x3002;&#x6BD5;&#x7ADF;&#x662F;&#x624B;&#x673A;&#x62CD;&#x7684;&#x7167;&#x7247;&#xFF0C;DNG&#x683C;&#x5F0F;&#x7684;&#x7167;&#x7247;&#x603B;&#x662F;&#x53D1;&#x767D;&#xFF08;&#x5927;&#x6982;&#x662F;&#x6211;&#x5728;&#x5F3A;&#x5149;&#x4E0B;&#x62CD;&#x7167;&#x5BFC;&#x81F4;&#x7684;&#x5427;&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x540E;&#x671F;&#x65F6;&#x4E0D;&#x7531;&#x81EA;&#x4E3B;&#x7684;&#x628A;&#x7167;&#x7247;&#x8C03;&#x6210;&#x4E86;&#x201C;&#x8001;&#x62BD;&#x9171;&#x6CB9;&#x653E;&#x591A;&#x4E86;&#x201D;&#x7684;&#x9AD8;&#x5BF9;&#x6BD4;&#x5EA6;&#xFF0C;&#x4F4E;&#x4EAE;&#x5EA6;&#x8272;&#x8C03;&#x4E86;&#xFF5E;&#x3002;</p></blockquote>]]>
+    
+    </summary>
+    
+    <category term="摄影" scheme="https://blog.starry-s.xyz/categories/%E6%91%84%E5%BD%B1/" />
+    
+    <category term="Spring" scheme="https://blog.starry-s.xyz/categories/%E6%91%84%E5%BD%B1/Spring/" />
+    
+    <category term="高中" scheme="https://blog.starry-s.xyz/categories/%E6%91%84%E5%BD%B1/Spring/%E9%AB%98%E4%B8%AD/" />
+    
+    
+    <category term="摄影" scheme="https://blog.starry-s.xyz/tags/%E6%91%84%E5%BD%B1/" />
+    
+    <category term="Flowers" scheme="https://blog.starry-s.xyz/tags/Flowers/" />
+    
+  </entry>
+  
+  <entry>
+    <title>Hello 2018</title>
+    <link href="https://blog.starry-s.xyz/posts/Hello-2018/" />
+    <id>https://blog.starry-s.xyz/posts/Hello-2018/</id>
+    <published>2018-01-16T14:58:06.000Z</published>
+    <updated>2019-01-22T15:13:07.071Z</updated>
+    
+    <summary type="html">
+    
+    <![CDATA[<p><img src="/images/hello-2018/5cm_per_second.jpg" alt="&#x79D2;&#x901F;5&#x5398;&#x7C73;"></p><p>&#x8FDF;&#x5230;&#x4E86;16&#x5929;&#x7684;&#x5E74;&#x7EC8;&#x603B;&#x7ED3;&#x3002;</p><p>&#x4E0D;&#x77E5;&#x4E0D;&#x89C9;&#x5C31;&#x51AC;&#x5929;&#x4E86;&#x5462;&#x3002;</p><p>&#x4E0D;&#x77E5;&#x4E0D;&#x89C9;&#x5C31;&#x5723;&#x8BDE;&#x4E86;&#x5462;&#x3002;</p><p>&#x4E0D;&#x77E5;&#x4E0D;&#x89C9;&#x5C31;&#x5143;&#x65E6;&#x4E86;&#x5462;&#x3002;</p><p>&#x4E0D;&#x77E5;&#x4E0D;&#x89C9;&#x7684;&#x53D1;&#x73B0;&#xFF0C;&#x5E74;&#x672B;&#x4E00;&#x573A;&#x96EA;&#x4E5F;&#x6CA1;&#x4E0B;&#x5462;&#x3002;</p><p>&#x98D8;&#x51E0;&#x7C92;&#x96EA;&#x82B1;&#x4E0D;&#x80FD;&#x7B97;&#x4F5C;&#x4E0B;&#x96EA;&#x5427;&#xFF0C;&#x54EA;&#x6709;16&#x5E74;&#x51AC;&#x5929;&#x7684;&#x90A3;&#x573A;&#x5927;&#x96EA;&#x5927;&#x5462;&#x3002;</p><p>&#x5230;&#x4E86;&#x5E74;&#x672B;&#x5C31;&#x5F00;&#x59CB;&#x60F3;&#x600E;&#x4E48;&#x5199;2017&#x5E74;&#x7684;&#x603B;&#x7ED3;&#xFF0C;&#x4E0D;&#x77E5;&#x4E0D;&#x89C9;&#x5C31;&#x62D6;&#x5230;&#x4E86;2018&#x5E74;&#x4E86;&#x5462;&#x3002;</p><p>&#x601D;&#x8DEF;&#x53D8;&#x6362;&#x7684;&#x5F88;&#x5FEB;&#xFF0C;&#x5728;&#x8FD8;&#x6CA1;&#x60F3;&#x597D;&#x600E;&#x4E48;&#x5199;&#x51FA;&#x6765;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x628A;&#x5B83;&#x5FD8;&#x4E86;&#x3002;</p><p>&#x6211;&#x5C3D;&#x53EF;&#x80FD;&#x7684;&#x4E0D;&#x53D7;&#x8FD1;&#x671F;&#x7684;&#x4E00;&#x4E9B;&#x5FC3;&#x60C5;&#x65B9;&#x9762;&#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x5199;&#x8FD9;&#x4E9B;&#x603B;&#x7ED3;&#x5427;&#x3002;</p>]]>
+    
+    </summary>
+    
+    <category term="碎碎念" scheme="https://blog.starry-s.xyz/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" />
+    
+    
+    <category term="琐事" scheme="https://blog.starry-s.xyz/tags/%E7%90%90%E4%BA%8B/" />
+    
+    <category term="碎碎念" scheme="https://blog.starry-s.xyz/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" />
+    
+    <category term="音乐" scheme="https://blog.starry-s.xyz/tags/%E9%9F%B3%E4%B9%90/" />
+    
+  </entry>
+  
+  <entry>
+    <title>换系统 &amp;&amp;  整理文件</title>
+    <link href="https://blog.starry-s.xyz/posts/Changing-system/" />
+    <id>https://blog.starry-s.xyz/posts/Changing-system/</id>
+    <published>2017-10-29T15:30:23.000Z</published>
+    <updated>2019-01-22T15:11:57.430Z</updated>
+    
+    <summary type="html">
+    
+    <![CDATA[<p>&#x591C;&#x6DF1;&#x4E86;&#xFF0C;&#x597D;&#x4E45;&#x6CA1;&#x6709;&#x5728;&#x6DF1;&#x591C;&#x9762;&#x5BF9;&#x7740;&#x7535;&#x8111;&#x66F4;&#x65B0;&#x535A;&#x5BA2;&#x4E86;&#x3002;</p><p>&#x611F;&#x89C9;&#x4E0D;&#x592A;&#x9002;&#x5408;&#x7528;&#x201C;&#x597D;&#x4E45;&#x6CA1;&#x6709;&#x201D;&#x6765;&#x5F62;&#x5BB9;&#x6211;&#x66F4;&#x65B0;&#x535A;&#x5BA2;&#x7684;&#x9891;&#x7387;&#xFF0C;&#x6216;&#x8BB8;&#x6211;&#x5E94;&#x8BE5;&#x5B9A;&#x4E49;&#x4E00;&#x4E0B;&#x7A76;&#x7ADF;&#x51E0;&#x5929;/&#x51E0;&#x661F;&#x671F;/&#x51E0;&#x4E2A;&#x6708;&#x6CA1;&#x6709;&#x66F4;&#x65B0;&#x535A;&#x5BA2;&#x624D;&#x80FD;&#x53EB;&#x505A;&#x201C;&#x597D;&#x4E45;&#x6CA1;&#x6709;&#x66F4;&#x65B0;&#x535A;&#x5BA2;&#x201D;&#x3002;</p><p><img src="/images/Changing-system/all-falls-down.jpg" alt="All Falls Down" title="ALL FALLS DOWN"></p>]]>
+    
+    </summary>
+    
+    <category term="琐事" scheme="https://blog.starry-s.xyz/categories/%E7%90%90%E4%BA%8B/" />
+    
+    <category term="高中" scheme="https://blog.starry-s.xyz/categories/%E7%90%90%E4%BA%8B/%E9%AB%98%E4%B8%AD/" />
+    
+    
+    <category term="琐事" scheme="https://blog.starry-s.xyz/tags/%E7%90%90%E4%BA%8B/" />
+    
+    <category term="高中" scheme="https://blog.starry-s.xyz/tags/%E9%AB%98%E4%B8%AD/" />
+    
+  </entry>
+  
+  <entry>
+    <title>尽可能的写点什么</title>
+    <link href="https://blog.starry-s.xyz/posts/just-a-small-update/" />
+    <id>https://blog.starry-s.xyz/posts/just-a-small-update/</id>
+    <published>2017-06-27T14:47:30.000Z</published>
+    <updated>2019-01-24T07:25:00.438Z</updated>
+    
+    <summary type="html">
+    
+    <![CDATA[<p>&#x597D;&#x4E45;&#x6CA1;&#x6709;&#x66F4;&#x65B0;&#x535A;&#x5BA2;&#x4E86;&#x3002;&#x4E0B;&#x5B9A;&#x51B3;&#x5FC3;&#x6765;&#x5199;&#x70B9;&#x4E1C;&#x897F;&#x5230;&#x8FD9;&#x91CC;&#xFF0C;&#x6234;&#x4E0A;&#x8033;&#x673A;&#x6574;&#x7406;&#x597D;&#x601D;&#x8DEF;&#x5F00;&#x5199;&#x3002;</p><p>&#x4E4B;&#x524D;&#x8111;&#x5B50;&#x4E00;&#x62BD;&#x5199;&#x4E86;&#x70B9;&#x4E1C;&#x897F;&#x653E;&#x5728;&#x535A;&#x5BA2;&#x4E0A;&#x9762;&#xFF0C;&#x6700;&#x7EC8;&#x8FD8;&#x662F;&#x56E0;&#x4E3A;&#x81EA;&#x5DF1;&#x770B;&#x4E0D;&#x60EF;&#x81EA;&#x5DF1;&#x5199;&#x7684;&#x4E1C;&#x897F;&#x5220;&#x6389;&#x4E86;&#x3002;&#x603B;&#x7684;&#x6765;&#x8BF4;&#x5C31;&#x662F;&#x60F3;&#x8BF4;&#x7684;&#x592A;&#x591A;&#xFF0C;&#x4F46;&#x662F;&#x5199;&#x4E0D;&#x51FA;&#x6765;&#x3002;</p>]]>
+    
+    </summary>
+    
+    <category term="琐事" scheme="https://blog.starry-s.xyz/categories/%E7%90%90%E4%BA%8B/" />
+    
+    <category term="高中" scheme="https://blog.starry-s.xyz/categories/%E7%90%90%E4%BA%8B/%E9%AB%98%E4%B8%AD/" />
+    
+    
+    <category term="琐事" scheme="https://blog.starry-s.xyz/tags/%E7%90%90%E4%BA%8B/" />
+    
+    <category term="高中" scheme="https://blog.starry-s.xyz/tags/%E9%AB%98%E4%B8%AD/" />
+    
+  </entry>
+  
+  <entry>
+    <title>斐讯K2折腾之——安装LEDE/OpenWrt</title>
+    <link href="https://blog.starry-s.xyz/posts/psg1218-lede/" />
+    <id>https://blog.starry-s.xyz/posts/psg1218-lede/</id>
+    <published>2017-05-13T14:58:07.000Z</published>
+    <updated>2019-01-22T15:17:20.404Z</updated>
+    
+    <summary type="html">
+    
+    <![CDATA[<p><img src="/images/psg1218-lede/lede.jpg" alt="LEDE (OpenWrt)"></p>]]>
+    
+    </summary>
+    
+    <category term="教程" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/" />
+    
+    <category term="路由器" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/" />
+    
+    <category term="OpenWrt/LEDE" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/OpenWrt/LEDE/" />
+    
+    
+    <category term="斐讯k2" scheme="https://blog.starry-s.xyz/tags/%E6%96%90%E8%AE%AFk2/" />
+    
+    <category term="LEDE" scheme="https://blog.starry-s.xyz/tags/LEDE/" />
+    
+    <category term="OpenWrt" scheme="https://blog.starry-s.xyz/tags/OpenWrt/" />
+    
+    <category term="路由器教程" scheme="https://blog.starry-s.xyz/tags/%E8%B7%AF%E7%94%B1%E5%99%A8%E6%95%99%E7%A8%8B/" />
+    
+  </entry>
+  
+  <entry>
+    <title>整理文件 &amp;&amp; 记录一下最近发生的事情</title>
+    <link href="https://blog.starry-s.xyz/posts/Things/" />
+    <id>https://blog.starry-s.xyz/posts/Things/</id>
+    <published>2017-04-05T05:32:25.000Z</published>
+    <updated>2019-01-24T07:36:06.517Z</updated>
+    
+    <summary type="html">
+    
+    <![CDATA[<p><img src="https://blog.starry-s.xyz/images/Computer-and-Anotherthings/IMG_0011.jpg" alt=""></p><p>&#x53C8;&#x5230;&#x4E86;&#x4E07;&#x7269;&#x590D;&#x82CF;&#x7684;&#x5B63;&#x8282;&#x4E86;&#x3002;</p><p>&#x597D;&#x957F;&#x65F6;&#x95F4;&#x6CA1;&#x6709;&#x66F4;&#x65B0;&#x535A;&#x5BA2;&#x4E86;&#xFF0C;&#x751A;&#x81F3;&#x6211;&#x5DEE;&#x70B9;&#x5FD8;&#x4E86;&#x6211;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x7F51;&#x7AD9;&#x8FD9;&#x4EF6;&#x4E8B;&#x4E86;&#x3002;&#x6709;&#x5FC5;&#x8981;&#x5199;&#x70B9;&#x4EC0;&#x4E48;&#x4E1C;&#x897F;&#x7ED9;&#x81EA;&#x5DF1;&#x770B;&#x4E86;&#x3002;</p>]]>
+    
+    </summary>
+    
+    <category term="琐事" scheme="https://blog.starry-s.xyz/categories/%E7%90%90%E4%BA%8B/" />
+    
+    <category term="高中" scheme="https://blog.starry-s.xyz/categories/%E7%90%90%E4%BA%8B/%E9%AB%98%E4%B8%AD/" />
+    
+    
+    <category term="琐事" scheme="https://blog.starry-s.xyz/tags/%E7%90%90%E4%BA%8B/" />
+    
+    <category term="高中" scheme="https://blog.starry-s.xyz/tags/%E9%AB%98%E4%B8%AD/" />
+    
+  </entry>
+  
+  <entry>
+    <title>Hello 2017!</title>
+    <link href="https://blog.starry-s.xyz/posts/Hello-2017/" />
+    <id>https://blog.starry-s.xyz/posts/Hello-2017/</id>
+    <published>2017-01-01T06:59:17.000Z</published>
+    <updated>2019-01-22T15:12:11.603Z</updated>
+    
+    <summary type="html">
+    
+    <![CDATA[<p>&#x4E00;&#x8C08;&#x5230;&#x8DE8;&#x5E74;&#x6211;&#x5C31;&#x4E60;&#x60EF;&#x7528;&#x65F6;&#x5149;&#x98DE;&#x901D;&#x6765;&#x5F00;&#x5934;&#xFF0C;&#x4E00;&#x5E74;&#x5C31;&#x8FD9;&#x4E48;&#x8FC7;&#x53BB;&#x4E86;&#xFF0C;&#x6709;&#x65F6;&#x5019;&#x611F;&#x89C9;&#x65F6;&#x95F4;&#x8FC7;&#x7684;&#x5F88;&#x6162;&#x4F46;&#x662F;&#x56DE;&#x8FC7;&#x5934;&#x770B;&#x770B;&#x8FC7;&#x53BB;&#x53C8;&#x4E0D;&#x7981;&#x89C9;&#x5F97;&#x65F6;&#x95F4;&#x6D41;&#x901D;&#x7684;&#x597D;&#x5FEB;&#x3002;</p>]]>
+    
+    </summary>
+    
+    <category term="琐事" scheme="https://blog.starry-s.xyz/categories/%E7%90%90%E4%BA%8B/" />
+    
+    <category term="新年" scheme="https://blog.starry-s.xyz/categories/%E7%90%90%E4%BA%8B/%E6%96%B0%E5%B9%B4/" />
+    
+    
+    <category term="琐事" scheme="https://blog.starry-s.xyz/tags/%E7%90%90%E4%BA%8B/" />
+    
+    <category term="新的一年" scheme="https://blog.starry-s.xyz/tags/%E6%96%B0%E7%9A%84%E4%B8%80%E5%B9%B4/" />
+    
+  </entry>
+  
+  <entry>
+    <title>Sorry &amp; Thankyou.</title>
+    <link href="https://blog.starry-s.xyz/posts/sorry-thankyou/" />
+    <id>https://blog.starry-s.xyz/posts/sorry-thankyou/</id>
+    <published>2016-11-26T07:00:24.000Z</published>
+    <updated>2019-01-22T15:19:52.897Z</updated>
+    
+    <summary type="html">
+    
+    <![CDATA[<p>&#x60F3;&#x4E86;&#x5F88;&#x4E45;&#x4E0D;&#x77E5;&#x9053;&#x4EE5;&#x4EC0;&#x4E48;&#x6765;&#x4F5C;&#x4E3A;&#x672C;&#x7BC7;&#x6587;&#x7AE0;&#x7684;&#x5F00;&#x5934;&#xFF0C;&#x4E0D;&#x786E;&#x5B9A;&#x81EA;&#x5DF1;&#x771F;&#x7684;&#x60F3;&#x8BF4;&#x4E9B;&#x4EC0;&#x4E48;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x8FD8;&#x662F;&#x5E26;&#x7740;&#x786E;&#x5207;&#x76EE;&#x7684;&#x6765;&#x5199;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x7684;&#x3002;</p><p>&#x8FD9;&#x4E00;&#x4E2A;&#x6708;&#x53D1;&#x751F;&#x4E86;&#x4E00;&#x4E9B;&#x4E0D;&#x592A;&#x6109;&#x5FEB;&#x7684;&#x4E8B;&#xFF0C;&#x53EF;&#x80FD;&#x4E0D;&#x7B97;&#x5F88;&#x5927;&#x5427;&#x4F46;&#x662F;&#x5BF9;&#x6211;&#x6765;&#x8BF4;&#x8FD9;&#x4E2A;&#x5F71;&#x54CD;&#x771F;&#x7684;&#x5F88;&#x5927;&#x3002;&#x6211;&#x4E0D;&#x77E5;&#x9053;&#x5E94;&#x8BE5;&#x4ECE;&#x4F55;&#x8BF4;&#x8D77;&#xFF0C;&#x5148;&#x9759;&#x4E0B;&#x6765;&#x5E26;&#x4E0A;&#x8033;&#x673A;&#x6162;&#x6162;&#x7684;&#x60F3;&#x6162;&#x6162;&#x7684;&#x5199;&#x3002;</p><p><img src="/images/thanks/snow.jpg" alt="Snow"></p>]]>
+    
+    </summary>
+    
+    <category term="琐事" scheme="https://blog.starry-s.xyz/categories/%E7%90%90%E4%BA%8B/" />
+    
+    <category term="碎碎念" scheme="https://blog.starry-s.xyz/categories/%E7%90%90%E4%BA%8B/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" />
+    
+    
+    <category term="琐事" scheme="https://blog.starry-s.xyz/tags/%E7%90%90%E4%BA%8B/" />
+    
+    <category term="高中" scheme="https://blog.starry-s.xyz/tags/%E9%AB%98%E4%B8%AD/" />
+    
+  </entry>
+  
+  <entry>
+    <title>树莓派之我的世界服务器</title>
+    <link href="https://blog.starry-s.xyz/posts/raspberrypi-mc-server/" />
+    <id>https://blog.starry-s.xyz/posts/raspberrypi-mc-server/</id>
+    <published>2016-11-25T07:01:28.000Z</published>
+    <updated>2019-01-22T15:18:14.083Z</updated>
+    
+    <summary type="html">
+    
+    <![CDATA[<p>&#x6811;&#x8393;&#x6D3E;&#x529F;&#x80FD;&#x5F3A;&#x5927;&#xFF0C;&#x53EF;&#x4EE5;&#x50CF;&#x7535;&#x8111;&#x4E00;&#x6837;&#x5E72;&#x5F88;&#x591A;&#x4E8B;&#x60C5;&#x3002;&#x521A;&#x4E70;&#x6811;&#x8393;&#x6D3E;3B&#x65F6;&#x5C31;&#x60F3;&#x5F04;&#x4E00;&#x4E2A;&#x6211;&#x7684;&#x4E16;&#x754C;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4F46;&#x662F;&#x90A3;&#x65F6;&#x4E0D;&#x61C2;linux&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x4E5F;&#x5C31;&#x6CA1;&#x5EFA;&#x6210;&#x3002;&#x8FD9;&#x4E00;&#x9635;&#x5B50;&#x6253;&#x7B97;&#x628A;&#x8FD9;&#x4E2A;&#x8BA1;&#x5212;&#x518D;&#x6361;&#x8D77;&#x6765;&#xFF0C;&#x548C;&#x540C;&#x5B66;&#x4E00;&#x8D77;&#x8054;&#x673A;&#x7684;&#x8BDD;&#x6811;&#x8393;&#x6D3E;&#x8FD8;&#x662F;&#x80FD;&#x505A;&#x5230;&#x7684;&#x3002;ARM&#x7CFB;&#x5217;&#x7684;CPU&#x6027;&#x80FD;&#x80AF;&#x5B9A;&#x6BD4;X86_64&#x7535;&#x8111;&#x7684;CPU&#x5F31;&#x8BB8;&#x591A;&#xFF0C;&#x5916;&#x52A0;&#x4E0A;&#x6811;&#x8393;&#x6D3E;1G&#x7684;&#x8FD0;&#x884C;&#x5185;&#x5B58;&#xFF0C;&#x8BA9;&#x5B83;&#x8DD1;&#x5927;&#x578B;&#x670D;&#x52A1;&#x5668;&#x80AF;&#x5B9A;&#x662F;&#x4E0D;&#x53EF;&#x80FD;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x80FD;&#x5F04;&#x4E00;&#x4E2A;&#x51E0;&#x4E2A;&#x4EBA;&#x8054;&#x673A;&#x7684;&#x5C0F;&#x670D;&#x52A1;&#x5668;&#x4E86;&#x3002;</p>]]>
+    
+    </summary>
+    
+    <category term="教程" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/" />
+    
+    <category term="Minecraft" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/Minecraft/" />
+    
+    
+    <category term="Minecraft" scheme="https://blog.starry-s.xyz/tags/Minecraft/" />
+    
+    <category term="树莓派" scheme="https://blog.starry-s.xyz/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" />
+    
+  </entry>
+  
+  <entry>
+    <title>小米路由器MINI之改装路由器散热</title>
+    <link href="https://blog.starry-s.xyz/posts/xiaomi-mini-fan-2/" />
+    <id>https://blog.starry-s.xyz/posts/xiaomi-mini-fan-2/</id>
+    <published>2016-09-28T06:54:27.000Z</published>
+    <updated>2019-01-22T15:21:30.569Z</updated>
+    
+    <summary type="html">
+    
+    <![CDATA[<h1 id="&#x5C0F;&#x7C73;&#x8DEF;&#x7531;&#x5668;mini&#x6362;&#x5929;&#x7EBF;&#x4E0E;&#x6563;&#x70ED;&#x7247;&#x7684;&#x5B89;&#x88C5;"><a class="headerlink" href="/posts/xiaomi-mini-fan-2/#%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8mini%E6%8D%A2%E5%A4%A9%E7%BA%BF%E4%B8%8E%E6%95%A3%E7%83%AD%E7%89%87%E7%9A%84%E5%AE%89%E8%A3%85" title="&#x5C0F;&#x7C73;&#x8DEF;&#x7531;&#x5668;mini&#x6362;&#x5929;&#x7EBF;&#x4E0E;&#x6563;&#x70ED;&#x7247;&#x7684;&#x5B89;&#x88C5;"></a>&#x5C0F;&#x7C73;&#x8DEF;&#x7531;&#x5668;mini&#x6362;&#x5929;&#x7EBF;&#x4E0E;&#x6563;&#x70ED;&#x7247;&#x7684;&#x5B89;&#x88C5;</h1><p>&#x5C0F;&#x7C73;&#x8DEF;&#x7531;&#x5668;&#x7684;cpu&#x4E3A;MT7620A&#xFF0C;&#x63A7;&#x5236;5G&#x7684;&#x82AF;&#x7247;&#x4E3A;MT7612EN&#x3002;&#x8FD9;&#x4E24;&#x4E2A;&#x82AF;&#x7247;&#x7684;&#x53D1;&#x70ED;&#x91CF;&#x8FD8;&#x662F;&#x5F88;&#x5927;&#x7684;&#x3002;&#x5C0F;&#x7C73;&#x5728;&#x8DEF;&#x7531;&#x5668;&#x4E2D;&#x653E;&#x4E86;&#x4E00;&#x5927;&#x5757;&#x94C1;&#x7247;&#x5E76;&#x8D34;&#x4E0A;&#x5BFC;&#x70ED;&#x7845;&#x8102;&#xFF0C;&#x5C06;&#x70ED;&#x91CF;&#x5BFC;&#x5230;&#x94C1;&#x677F;&#x4E0A;&#x6563;&#x53D1;&#x6389;&#x3002;&#x4F46;&#x662F;&#x6BD5;&#x7ADF;&#x94C1;&#x677F;&#x88AB;&#x5C01;&#x5728;&#x4E86;&#x539A;&#x539A;&#x7684;&#x5851;&#x6599;&#x58F3;&#x5185;&#xFF0C;&#x6563;&#x70ED;&#x6548;&#x679C;&#x4E2D;&#x89C4;&#x4E2D;&#x77E9;&#x5427;&#x3002;&#x6240;&#x4EE5;&#x5F00;&#x59CB;&#x62C6;&#x673A;&#x52A8;&#x624B;&#x778E;&#x5F04;&#x3002;</p>]]>
+    
+    </summary>
+    
+    <category term="教程" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/" />
+    
+    <category term="路由器" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/" />
+    
+    <category term="路由器改装散热" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/%E8%B7%AF%E7%94%B1%E5%99%A8%E6%94%B9%E8%A3%85%E6%95%A3%E7%83%AD/" />
+    
+    
+    <category term="教程" scheme="https://blog.starry-s.xyz/tags/%E6%95%99%E7%A8%8B/" />
+    
+    <category term="改装" scheme="https://blog.starry-s.xyz/tags/%E6%94%B9%E8%A3%85/" />
+    
+  </entry>
+  
+  <entry>
+    <title>Xiaomi路由器mini折腾篇</title>
+    <link href="https://blog.starry-s.xyz/posts/xiaomi-mini-fan-1/" />
+    <id>https://blog.starry-s.xyz/posts/xiaomi-mini-fan-1/</id>
+    <published>2016-09-28T06:18:00.000Z</published>
+    <updated>2019-01-24T07:34:22.428Z</updated>
+    
+    <summary type="html">
+    
+    <![CDATA[<p><img src="https://blog.starry-s.xyz/images/xiaomi-mini-fan/xiaomi1.jpg" alt="Xiaomi-Wifi-Mini"></p><p>&#x524D;&#x4E0D;&#x4E45;&#x5BB6;&#x91CC;&#x65B0;&#x6DFB;&#x4E00;&#x53F0;&#x5C0F;&#x7C73;&#x8DEF;&#x7531;&#x5668;Mini,&#x672C;&#x7740;&#x66F4;&#x597D;&#x7684;&#x53D1;&#x6325;&#x8DEF;&#x7531;&#x5668;&#x7684;&#x6027;&#x80FD;&#x7684;&#x6001;&#x5EA6;&#x53BB;&#x6298;&#x817E;&#xFF0C;&#x4E8E;&#x662F;&#x5C31;&#x6709;&#x4E86;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x3002;</p>]]>
+    
+    </summary>
+    
+    <category term="教程" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/" />
+    
+    <category term="路由器" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/" />
+    
+    <category term="OpenWrt/LEDE" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/OpenWrt/LEDE/" />
+    
+    
+    <category term="教程" scheme="https://blog.starry-s.xyz/tags/%E6%95%99%E7%A8%8B/" />
+    
+    <category term="OpenWrt/LEDE" scheme="https://blog.starry-s.xyz/tags/OpenWrt/LEDE/" />
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo 你的博客</title>
+    <link href="https://blog.starry-s.xyz/posts/hexo-blog/" />
+    <id>https://blog.starry-s.xyz/posts/hexo-blog/</id>
+    <published>2016-09-15T06:21:00.000Z</published>
+    <updated>2019-01-24T07:37:25.803Z</updated>
+    
+    <summary type="html">
+    
+    <![CDATA[<h1 id="&#x524D;&#x8A00;&#xFF1A;"><a class="headerlink" href="/posts/hexo-blog/#%E5%89%8D%E8%A8%80%EF%BC%9A" title="&#x524D;&#x8A00;&#xFF1A;"></a>&#x524D;&#x8A00;&#xFF1A;</h1><p>&#x5728;&#x6211;&#x5EFA;&#x597D;&#x6211;&#x7684;&#x7F51;&#x7AD9;&#x540E;&#xFF0C;&#x5C31;&#x4E00;&#x76F4;&#x60F3;&#x628A;&#x6211;&#x642D;&#x5EFA;&#x535A;&#x5BA2;&#x7684;&#x8FC7;&#x7A0B;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#x3002;&#x642D;&#x5EFA;&#x535A;&#x5BA2;&#x7684;&#x8FC7;&#x7A0B;&#x86EE;&#x6709;&#x8DA3;&#x7684;,&#x4E0D;&#x540C;&#x7684;&#x5E73;&#x53F0;&#x642D;&#x5EFA;&#x65B9;&#x6CD5;&#x8FD8;&#x6709;&#x6240;&#x4E0D;&#x540C;&#x3002;</p><p>&#x8FD9;&#x671F;&#x95F4;&#x5BF9;&#x65B0;&#x624B;&#x6765;&#x8BF4;&#x4F1A;&#x9762;&#x5BF9;&#x5404;&#x79CD;&#x5404;&#x6837;&#x7684;&#x95EE;&#x9898;&#x3002;&#x672C;&#x7BC7;&#x6587;&#x7AE0;&#x8BB0;&#x5F55;&#x4E86;&#x6211;&#x5EFA;&#x9020;Hexo&#x535A;&#x5BA2;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x5F88;&#x591A;&#x7EC6;&#x8282;&#x65B9;&#x9762;&#x7684;&#x4E1C;&#x897F;&#x90FD;&#x80FD;&#x5728;Hexo&#x5B98;&#x7F51;&#x627E;&#x5230;&#x3002;</p><p><img src="https://blog.starry-s.xyz/images/making-blog/hexo1.jpg" alt="Hexo" title="Hexo"></p>]]>
+    
+    </summary>
+    
+    <category term="教程" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/" />
+    
+    <category term="Hexo" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/Hexo/" />
+    
+    
+    <category term="HEXO" scheme="https://blog.starry-s.xyz/tags/HEXO/" />
+    
+    <category term="静态博客" scheme="https://blog.starry-s.xyz/tags/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" />
+    
+    <category term="Github_Pages" scheme="https://blog.starry-s.xyz/tags/Github_Pages/" />
+    
+  </entry>
+  
+  <entry>
+    <title>Everything is based on &quot;Hello World&quot;</title>
+    <link href="https://blog.starry-s.xyz/posts/hello-world-again/" />
+    <id>https://blog.starry-s.xyz/posts/hello-world-again/</id>
+    <published>2016-08-22T06:22:54.000Z</published>
+    <updated>2019-01-22T15:13:24.477Z</updated>
+    
+    <summary type="html">
+    
+    <![CDATA[<p><img src="/images/hello-world/back1.jpg" alt=""></p>]]>
+    
+    </summary>
+    
+    <category term="Hello World" scheme="https://blog.starry-s.xyz/categories/Hello%20World/" />
+    
+    
+    <category term="Blog" scheme="https://blog.starry-s.xyz/tags/Blog/" />
+    
+    <category term="Hello World" scheme="https://blog.starry-s.xyz/tags/Hello%20World/" />
+    
+  </entry>
+  
+</feed>
