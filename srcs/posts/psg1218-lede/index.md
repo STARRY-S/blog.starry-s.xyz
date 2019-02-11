@@ -12,7 +12,7 @@ categories:
 - 路由器
 - OpenWrt/LEDE
 ---
-![LEDE (OpenWrt)](/images/psg1218-lede/lede.jpg)
+![LEDE (OpenWrt)](images/lede.jpg)
 <!--more-->
 
 [OpenWrt/LEDE](https://openwrt.org)是适合于嵌入式设备的一个Linux发行版。

@@ -9,6 +9,7 @@ categories:
 - 琐事
 - 高中
 ---
+![](images/image4.jpg)
 好久没有更新博客了。下定决心来写点东西到这里，戴上耳机整理好思路开写。
 
 之前脑子一抽写了点东西放在博客上面，最终还是因为自己看不惯自己写的东西删掉了。总的来说就是想说的太多，但是写不出来。
@@ -20,13 +21,13 @@ categories:
 
 至于手环。。。之后再也不看睡眠记录了，那玩意有毒，晚上再也不戴手环睡觉了。
 
-![Misaka Mikoto](https://blog.starry-s.xyz/images/just_a_small_update/Screenshot_20170522-193547.jpg)
+![Misaka Mikoto](images/image1.jpg)
 
 终于看完炮姐了，追番这么长时间终于把两部超炮看完了，好喜欢御坂美琴，当然也好喜欢黑子。很羡慕御坂美琴能有那样一个黏在身边的舍友，很羡慕美琴与她的朋友之间的友谊，那种团结的力量，真的很让没人羡慕。
 
 御坂妹妹太可爱了，18w日元一个有卖的话超想买一只!
 
-![Misaka Mikoto](https://blog.starry-s.xyz/images/just_a_small_update/Screenshot_20170530-151016.jpg)
+![Misaka Mikoto](images/image2.jpg)
 
 ---
 
@@ -48,11 +49,11 @@ categories:
 
 ---
 
-![Love](https://blog.starry-s.xyz/images/just_a_small_update/Screenshot_20170421-125920.jpg "love")
+![Love](images/image3.jpg)
 
 最新喜欢了好多好多歌曲，总想着能在更新博客的时候添加进去，渐渐的这些歌就攒了一大堆。那就挑几个好的sei在这里吧。
 
-<iframe src="//player.bilibili.com/player.html?aid=810872&cid=1176840&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=810872&cid=1176840&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="600" height="450"> </iframe>
 
 <br/>
 <br/>

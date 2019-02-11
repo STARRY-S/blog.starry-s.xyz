@@ -14,7 +14,7 @@ categories:
 
 这一个月发生了一些不太愉快的事，可能不算很大吧但是对我来说这个影响真的很大。我不知道应该从何说起，先静下来带上耳机慢慢的想慢慢的写。
 
-![Snow](/images/thanks/snow.jpg)
+![Snow](images/snow.jpg)
 
 <!--more-->
 
@@ -88,7 +88,7 @@ categories:
 
 感谢在生命中遇见了它，一切来的快去的也快。
 
-![Thanks](/images/thanks/thankyou.JPG "Thankyou")
+![Thankyou](images/thankyou.jpg)
 
 > 夜深了，又一次更新着这篇感情交错的文章，一切都过去好久了，然后发现有些事发生过了，就再也回不去了。
 

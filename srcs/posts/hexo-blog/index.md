@@ -15,7 +15,7 @@ categories:
 
 这期间对新手来说会面对各种各样的问题。本篇文章记录了我建造Hexo博客的过程，很多细节方面的东西都能在Hexo官网找到。
 
-![Hexo](https://blog.starry-s.xyz/images/making-blog/hexo1.jpg "Hexo")
+![Hexo](images/hexo1.jpg "Hexo")
 <!--more-->
 
 > 最后内容更新时间：2018年7月29日。
@@ -177,9 +177,9 @@ $ hexo d
 
 >在部署好的github仓库里面打开settings,在GitHub Pages里开启Pages服务。
 
-![GitHub Pages](https://blog.starry-s.xyz/images/making-blog/github3.jpg)
+![GitHub Pages](images/github3.jpg)
 
-![Github Pages](https://blog.starry-s.xyz/images/making-blog/github4.jpg)
+![Github Pages](images/github4.jpg)
 
 **
 注：务必选择正确的分支！本教程设置的github的分支为master
@@ -193,11 +193,11 @@ $ hexo d
 
 2.回到godaddy的我的域名，选择：管理DNS，更改域名服务器如图：
 
-![Godaddy DNS](https://blog.starry-s.xyz/images/making-blog/godaddy1.jpg)
+![Godaddy DNS](images/godaddy1.jpg)
 
 3.等几分钟后，回到CloudXNS，添加记录如图：
 
-![CloudXNS](https://blog.starry-s.xyz/images/making-blog/dns1.jpg)
+![CloudXNS](images/dns1.jpg)
 
 
 > **更改记录值时把指向国外的Github的记录值改为`"你的用户名".github.io'**

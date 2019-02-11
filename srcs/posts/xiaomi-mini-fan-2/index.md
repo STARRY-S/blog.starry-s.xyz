@@ -35,17 +35,17 @@ categories:
 
 用电烙铁在外壳上烫出一个比散热片尺寸大一点的的窟窿。把边缘磨平一些。
 
-![散热片](https://blog.starry-s.xyz/images/xiaomi-mini-fan/temp1.jpg)
+![散热片](images/temp1.jpg)
 
 把风扇焊到电源接口上，电源接口输出电压为DC12V，我在风扇的电路中串联了一个电阻防止风扇短路时烧坏电源变压器。裸露的电源线可以用热缩管包上。
 
-![焊接](https://blog.starry-s.xyz/images/xiaomi-mini-fan/temp2.jpg)
+![焊接](images/temp2.jpg)
 
 把主板扣在路由器上端外壳上，将散热硅脂垫贴在CPU和5G信号的芯片上。压上散热片，立即用热容胶固定。
 
 在散热片顶端粘上风扇。
 
-![temp](https://blog.starry-s.xyz/images/xiaomi-mini-fan/temp4.jpg)
+![temp](images/temp4.jpg)
 
 ## 散热改装完成。接下来改装它的天线。
 
@@ -53,11 +53,11 @@ categories:
 
 然后再用电烙铁在路由器顶部烫两个窟窿（刚好够SMA接口伸出去）。用热容胶固定.
 
-![tianxian](https://blog.starry-s.xyz/images/xiaomi-mini-fan/tianxian2.jpg)
+![tianxian](images/tianxian2.jpg)
 
-![tianxian](https://blog.starry-s.xyz/images/xiaomi-mini-fan/tianxian3.jpg)
+![tianxian](images/tianxian3.jpg)
 
-![tianxian](https://blog.starry-s.xyz/images/xiaomi-mini-fan/tianxian1.jpg)
+![tianxian](images/tianxian1.jpg)
 
 装上外壳后测试一下路由器还活着没。然后断电继续操作。
 

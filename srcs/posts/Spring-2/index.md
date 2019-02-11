@@ -1,3 +1,4 @@
+
 ---
 title: Spring - 2
 date: 2018-04-05 18:05:11
@@ -20,24 +21,23 @@ categories:
 <!--more-->
 
 
-![Spring 1](/images/spring-2/01.jpeg)
+![Spring 1](images/01.jpeg)
 
-![Spring 2](/images/spring-2/02.jpeg)
+![Spring 2](images/02.jpeg)
 
-![Spring 3](/images/spring-2/03.jpeg)
+![Spring 3](images/03.jpeg)
 
-![Spring 4](/images/spring-2/04.jpeg)
+![Spring 4](images/04.jpeg)
 
-![Spring 6](/images/spring-2/06.jpeg)
+![Spring 6](images/06.jpeg)
 
-![Spring 7](/images/spring-2/07.jpeg)
+![Spring 7](images/07.jpeg)
 
-![Spring 8](/images/spring-2/08.jpeg)
+![Spring 8](images/08.jpeg)
 
 ---
 # Spring - 2
 > 以上照片拍摄自2018.3.28
-图片均本人拍摄，如需转载请遵循CC BY-NC-SA 4.0。（不过就我这拍照水平是不会有人转的）
 
 <br/>
 这应该是高考前最后一次更新了

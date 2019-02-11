@@ -10,7 +10,7 @@ categories:
 - 碎碎念
 ---
 
-![秒速5厘米](/images/hello-2018/5cm_per_second.jpg)
+![秒速5厘米](images/5cm_per_second.jpg)
 
 迟到了16天的年终总结。
 
@@ -120,4 +120,4 @@ categories:
 
 下一次更新不知又要拖到什么时候，是不是还会写着这么无营养的东西。
 
-![秒速5厘米](/images/hello-2018/5cm_per_second_2.jpg "秒速五厘米")
+![秒速5厘米](images/5cm_per_second_2.jpg "秒速五厘米")

@@ -8,7 +8,7 @@ tags:
 categories:
 - 碎碎念
 ---
-![Hello 2019!](/images/hello-2019/hello-2019.jpg)
+
 # Hello 2019
 
 一眨眼到了2018年年尾，这一年很普通，很平淡。
@@ -46,7 +46,7 @@ categories:
 
 去Youtube上找了未删减版，下载下来防止它某天被删掉就**再也**找不到了。
 
-<iframe src="//player.bilibili.com/player.html?aid=10859786&cid=17963248&page=1" width=400 height=225 scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=10859786&cid=17963248&page=1" width="600" height="450" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 ---
 
@@ -63,7 +63,7 @@ categories:
 ---
 
 「我能习惯远距离 爱总是身不由己」
-<iframe src="//player.bilibili.com/player.html?aid=27306952&cid=47083743&page=1" width=400 height=225 scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe src="//player.bilibili.com/player.html?aid=27306952&cid=47083743&page=1" width=600 height=450 scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 ---
 
@@ -200,7 +200,7 @@ iPhone好还是安卓手机好？
 
 ---
 
-![](images/hello-2019/misakamikoto.png)
+![](images/misakamikoto.png)
 
 魔禁3刚出时一激动冲了好几个月的B站大会员。因为没看过魔禁1和魔禁2所以魔禁3什么都看不懂。于是只好先看完之前的魔禁再说。
 
@@ -265,7 +265,7 @@ iPhone好还是安卓手机好？
 
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=448053&auto=0&height=66"></iframe>
 
-![Saber](images/hello-2019/saber-3.jpg)
+![Saber](images/saber-3.jpg)
 
 自己是什么时候喜欢的日漫的呢？
 

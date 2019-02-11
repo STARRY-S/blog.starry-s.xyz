@@ -6,7 +6,7 @@ tags: about
 ---
 # STARRY-S' Blog.
 
-![Saber](/images/about/saber.jpg)
+![Saber](images/saber.jpg)
 
 ## About Me
 
@@ -59,12 +59,5 @@ tags: about
 
 <div class="alert-green">最后更新时间：2019年1月22日</div>
 
-Hope you like this site, which was built by a common student ^_^.
-
-<br/>
-<br/>
-<br/>
-
-# &hearts;
-
-<br/>
+Hope you like this site, which was built by a common student \^\_\^.
+<p style="font-size:300%; color:#FF0000;">&hearts;</p>

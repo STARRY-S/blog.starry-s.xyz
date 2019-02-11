@@ -8,7 +8,7 @@ tags:
 categories:
 - Hello World
 ---
-![](/images/hello-world/back1.jpg)
+![](images/image.jpg)
 
 <!--more-->
 

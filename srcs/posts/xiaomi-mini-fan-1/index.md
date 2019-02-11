@@ -10,7 +10,7 @@ categories:
 - 路由器
 - OpenWrt/LEDE
 ---
-![Xiaomi-Wifi-Mini](https://blog.starry-s.xyz/images/xiaomi-mini-fan/xiaomi1.jpg)
+![Xiaomi-Wifi-Mini](images/router.jpg)
 
 前不久家里新添一台小米路由器Mini,本着更好的发挥路由器的性能的态度去折腾，于是就有了这篇文章。
 
@@ -20,8 +20,6 @@ categories:
 > 最后更新时间: 2018年2月18日。
 
 # 此教程基于Openwrt/LEDE官网的资料写出
-
-![openwrt](https://blog.starry-s.xyz/images/xiaomi-mini-fan/openwrt.jpg)
 
 英语好的话可以去[openwrt官网](https://openwrt.org)的Wiki和Support devices中了解一下openwrt以及找小米路由器mini的刷机教程看一下，很有用的。
 
@@ -43,7 +41,7 @@ categories:
 
 # 准备工作：开启路由器SSH
 
-![Informations](https://blog.starry-s.xyz/images/xiaomi-mini-fan/flash.jpg)
+![](images/flash.jpg)
 
 小米路由器刷机是极其简洁快速的，小米处于安全考虑并未给路由器开启SSH，Openwrt官网上说想开启小米路由器mini的ssh是很难弄的。毕竟外国人看不懂汉语而且小米还没有准备英文版的网页（就是小米增添了许多纸张一样的反人类的设置）······
 
@@ -95,7 +93,7 @@ ssh到路由器输入命令：
 
 ## LEDE
 
-除了以上几种固件性能表现很好以外，最近出的LEDE也是很好的一款固件呢。可以参考我的[这篇博客](http://blog.starry-s.xyz/2017/05/13/psg1218-lede/)进行配置。[下载链接](https://downloads.lede-project.org/releases/17.01.4/targets/ramips/mt7620/) (17.01.4)。
+除了以上几种固件性能表现很好以外，最近出的LEDE也是很好的一款固件呢。可以参考我的[这篇博客](http://blog.starry-s.xyz/posts/psg1218-lede/)进行配置。[下载链接](https://downloads.lede-project.org/releases/17.01.4/targets/ramips/mt7620/) (17.01.4)。
 
 > ~~LEDE Unsupported: Wifi partially working, especially 802.11AC is not stable (yet)~~
 > ~~尚未解决的问题: Wifi偶尔抽风，尤其是802.11AC很不稳定。~~
@@ -118,10 +116,10 @@ OpenWrt已与LEDE合并，可以在OpenWrt官网下载旧版的OpenWrt固件或�
 
 # 除此之外还可以在硬件方面改(po)装(huai)路由器:
 
-[小米路由器mini之改装天线散热](http://blog.starry-s.xyz/2016/09/28/xiaomi-mini-fan-2/)
+[小米路由器mini之改装天线散热](http://blog.starry-s.xyz/posts/xiaomi-mini-fan-2/)
 
 ----
-配置路由器方面，请参照[斐讯K2折腾之——安装LEDE](http://blog.starry-s.xyz/2017/05/13/psg1218-lede/)这篇文章进行配置。
+配置路由器方面，请参照[斐讯K2折腾之——安装LEDE](http://blog.starry-s.xyz/posts/psg1218-lede/)这篇文章进行配置。
 
 <br/>
 
