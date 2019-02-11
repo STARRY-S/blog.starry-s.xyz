@@ -17,6 +17,7 @@ perPage: 10
 
 skipRender:
   - README.md
+  - CNAME
 
 nunjucks:
   autoescape: false
