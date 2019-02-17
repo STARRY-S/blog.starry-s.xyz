@@ -7,7 +7,7 @@
   
   <link href="https://blog.starry-s.xyz/" />
   
-  <updated>2019-02-11T11:27:21.333Z</updated>
+  <updated>2019-02-17T10:10:51.057Z</updated>
   
   <id>https://blog.starry-s.xyz/</id>
   
@@ -17,6 +17,26 @@
   </author>
   
   <generator uri="https://github.com/AlynxZhou/hikaru/">Hikaru</generator>
+  
+  <entry>
+    <title>Automata</title>
+    <link href="https://blog.starry-s.xyz/posts/Nier_Automata/" />
+    <id>https://blog.starry-s.xyz/posts/Nier_Automata/</id>
+    <published>2019-02-17T07:34:50.000Z</published>
+    <updated>2019-02-17T10:10:51.057Z</updated>
+    
+    <summary type="html">
+    
+    <![CDATA[<p><img src="/posts/Nier_Automata/images/20190216233002_1.jpg" alt=""><strong>&#x591A;&#x56FE;&amp;&#x5267;&#x900F;&#x8B66;&#x544A;</strong></p>]]>
+    
+    </summary>
+    
+    <category term="游戏" scheme="https://blog.starry-s.xyz/categories/%E6%B8%B8%E6%88%8F/" />
+    
+    
+    <category term="游戏" scheme="https://blog.starry-s.xyz/tags/%E6%B8%B8%E6%88%8F/" />
+    
+  </entry>
   
   <entry>
     <title>Hello 2019</title>
