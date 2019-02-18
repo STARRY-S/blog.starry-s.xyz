@@ -7,7 +7,7 @@
   
   <link href="https://blog.starry-s.xyz/" />
   
-  <updated>2019-02-17T10:15:24.620Z</updated>
+  <updated>2019-02-18T17:07:11.856Z</updated>
   
   <id>https://blog.starry-s.xyz/</id>
   
@@ -17,6 +17,38 @@
   </author>
   
   <generator uri="https://github.com/AlynxZhou/hikaru/">Hikaru</generator>
+  
+  <entry>
+    <title>小米路由器3G折腾之刷OpenWrt/Pandavan记录</title>
+    <link href="https://blog.starry-s.xyz/posts/Xiaomi_Miwifi_3G/" />
+    <id>https://blog.starry-s.xyz/posts/Xiaomi_Miwifi_3G/</id>
+    <published>2019-02-18T16:49:20.000Z</published>
+    <updated>2019-02-18T17:07:11.856Z</updated>
+    
+    <summary type="html">
+    
+    <![CDATA[<p>&#x751F;&#x547D;&#x4E0D;&#x606F;&#xFF0C;&#x6298;&#x817E;&#x4E0D;&#x6B62;&#x3002;</p><p>&#x5BB6;&#x91CC;&#x7684;&#x8DEF;&#x7531;&#x5668;&#x53C8;&#x574F;&#x4E86;&#xFF08;&#x5F3A;&#x884C;&#x72E1;&#x8FA9;</p>]]>
+    
+    </summary>
+    
+    <category term="教程" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/" />
+    
+    <category term="路由器" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/" />
+    
+    
+    <category term="教程" scheme="https://blog.starry-s.xyz/tags/%E6%95%99%E7%A8%8B/" />
+    
+    <category term="路由器教程" scheme="https://blog.starry-s.xyz/tags/%E8%B7%AF%E7%94%B1%E5%99%A8%E6%95%99%E7%A8%8B/" />
+    
+    <category term="OpenWrt/LEDE" scheme="https://blog.starry-s.xyz/tags/OpenWrt/LEDE/" />
+    
+    <category term="OpenWrt" scheme="https://blog.starry-s.xyz/tags/OpenWrt/" />
+    
+    <category term="Pandavan" scheme="https://blog.starry-s.xyz/tags/Pandavan/" />
+    
+    <category term="PandoraBox" scheme="https://blog.starry-s.xyz/tags/PandoraBox/" />
+    
+  </entry>
   
   <entry>
     <title>Automata</title>
@@ -183,7 +215,7 @@
     <link href="https://blog.starry-s.xyz/posts/psg1218-lede/" />
     <id>https://blog.starry-s.xyz/posts/psg1218-lede/</id>
     <published>2017-05-13T14:58:07.000Z</published>
-    <updated>2019-02-11T10:42:23.040Z</updated>
+    <updated>2019-02-18T16:58:05.376Z</updated>
     
     <summary type="html">
     
@@ -194,8 +226,6 @@
     <category term="教程" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/" />
     
     <category term="路由器" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/" />
-    
-    <category term="OpenWrt/LEDE" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/OpenWrt/LEDE/" />
     
     
     <category term="斐讯k2" scheme="https://blog.starry-s.xyz/tags/%E6%96%90%E8%AE%AFk2/" />
@@ -311,7 +341,7 @@
     <link href="https://blog.starry-s.xyz/posts/xiaomi-mini-fan-1/" />
     <id>https://blog.starry-s.xyz/posts/xiaomi-mini-fan-1/</id>
     <published>2016-09-28T06:18:00.000Z</published>
-    <updated>2019-02-11T10:55:52.400Z</updated>
+    <updated>2019-02-18T16:58:10.920Z</updated>
     
     <summary type="html">
     
@@ -323,12 +353,16 @@
     
     <category term="路由器" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/" />
     
-    <category term="OpenWrt/LEDE" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/OpenWrt/LEDE/" />
-    
     
     <category term="教程" scheme="https://blog.starry-s.xyz/tags/%E6%95%99%E7%A8%8B/" />
     
+    <category term="路由器教程" scheme="https://blog.starry-s.xyz/tags/%E8%B7%AF%E7%94%B1%E5%99%A8%E6%95%99%E7%A8%8B/" />
+    
     <category term="OpenWrt/LEDE" scheme="https://blog.starry-s.xyz/tags/OpenWrt/LEDE/" />
+    
+    <category term="OpenWrt" scheme="https://blog.starry-s.xyz/tags/OpenWrt/" />
+    
+    <category term="Pandavan" scheme="https://blog.starry-s.xyz/tags/Pandavan/" />
     
   </entry>
   
