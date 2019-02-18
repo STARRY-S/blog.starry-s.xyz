@@ -24,7 +24,7 @@ categories:
 
 <div class="alert-red">温馨提示：刷成砖了本人一概不负任何责任</div>
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=auto height=86 src="//music.163.com/outchain/player?type=2&id=31108216&auto=1&height=66"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=31108216&auto=0&height=66"></iframe>
 
 来一首美妙动人的音乐吧！
 
