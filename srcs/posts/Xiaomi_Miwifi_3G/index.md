@@ -121,7 +121,7 @@ OpenWrt官方下载地址: [https://downloads.openwrt.org/releases/18.06.2/targe
  -----------------------------------------------------
 ```
 
-[OpenWrt官网提供的教程](https://openwrt.org/toh/xiaomi/mir3g)是在没有在刷入Breed的情况下刷入OpenWrt固件的。
+[OpenWrt官网提供的教程](https://openwrt.org/toh/xiaomi/mir3g)是在没有刷入Breed的情况下刷入OpenWrt固件的。
 
 中国大陆用户可以事先看一下[6. 其他问题](#其他问题：)的第5条
 
