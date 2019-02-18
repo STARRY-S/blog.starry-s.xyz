@@ -198,7 +198,7 @@ mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-rootfs0.bin rootfs0
 
 4. 中国大陆用户有可能会用到[OpenWrt-disk](http://openwrt-dist.sourceforge.net)获取更多功能。
 
-5. 中国大陆用户没科学上网的话会遇到下载OpenWrt固件速度超级慢的情况，可将源更换为[清华大学开源软件镜像站](http://mirrors.tuna.tsinghua.edu.cn/lede/)下载，只需替换教程中的`downloads.openwrt.org`为'mirrors.tuna.tsinghua.edu.cn/lede'。
+5. 中国大陆用户没科学上网的话会遇到下载OpenWrt固件速度超级慢的情况，可将源更换为[清华大学开源软件镜像站](http://mirrors.tuna.tsinghua.edu.cn/lede/)下载，只需替换教程中的`downloads.openwrt.org`为`mirrors.tuna.tsinghua.edu.cn/lede`。
 
 6. 中国大陆使用OpenWrt可将opkg源改为国内：
 在LuCI -> System -> Software -> Configuration中将Distribution feeds里的`http://downloads.openwrt.org`替换为`http://mirrors.tuna.tsinghua.edu.cn/lede`后Submit即可。
