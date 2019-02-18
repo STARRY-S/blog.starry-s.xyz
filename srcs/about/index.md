@@ -28,7 +28,7 @@ tags: about
 ## 网站方面
 
 * 本站建于2016年8月21日。
-* 网站部署到了Digital Ocean, 使用Cloudflare进行安全防护。
+* 网站托管于GitHub Pages。
 * 本站不添加任何广告。
 * 文章内描述的“最后更新日期”指的是有较大的内容更改时的日期。
 * 网站由[Hikaru](https://github.com/AlynxZhou/hikaru/)部署，使用主题： [ARIA](https://github.com/AlynxZhou/hikaru-theme-aria)
@@ -49,7 +49,7 @@ tags: about
 * 2016.8.24  使用Coding Pages和Github Pages。
 * 2017.2     将Hexo改为了Typecho，体验下动态站。
 * 2017.8     停止使用动态站，继续使用Hexo。
-* 2017.8.18  域名改为‘starrys.xyz’
+* 2017.8.18  域名改为‘starry-s.xyz’
 * 2017.9.30  停止使用Coding Pages，因CloudXNS一时抽风开始使用Cloudflare。
 * 2018.5.19  更换主题为ARIA。
 * 2018.7.28  Github被微软收购后，将博客移到了VPS上。
@@ -57,7 +57,6 @@ tags: about
 
 ---
 
-<div class="alert-green">最后更新时间：2019年1月22日</div>
+<div class="alert-green">最后更新时间：2019年2月18日</div>
 
-Hope you like this site, which was built by a common student \^\_\^.
 <p style="font-size:300%; color:#FF0000;">&hearts;</p>

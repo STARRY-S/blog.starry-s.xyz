@@ -4,11 +4,13 @@ date: 2016-09-28 14:18:00
 layout: post
 tags:
 - 教程
+- 路由器教程
 - OpenWrt/LEDE
+- OpenWrt
+- Pandavan
 categories:
 - 教程
 - 路由器
-- OpenWrt/LEDE
 ---
 ![Xiaomi-Wifi-Mini](images/router.jpg)
 

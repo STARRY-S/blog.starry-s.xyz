@@ -10,7 +10,6 @@ tags:
 categories:
 - 教程
 - 路由器
-- OpenWrt/LEDE
 ---
 ![LEDE (OpenWrt)](images/lede.jpg)
 <!--more-->
