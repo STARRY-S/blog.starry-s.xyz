@@ -2,6 +2,7 @@
 title: Automata
 date: 2019-02-17 15:34:50
 layout: post
+comment: true
 categories:
 - 游戏
 tags:

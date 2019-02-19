@@ -2,6 +2,7 @@
 title: 小米路由器MINI之改装路由器散热
 date: 2016-09-28 14:54:27
 layout: post
+comment: true
 tags:
 - 教程
 - 改装

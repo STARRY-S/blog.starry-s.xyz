@@ -2,6 +2,7 @@
 title: About
 date: 2016-08-22 13:25:30
 layout: about
+comment: true
 tags: about
 ---
 # STARRY-S' Blog.

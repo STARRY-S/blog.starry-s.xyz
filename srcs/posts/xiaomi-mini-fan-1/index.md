@@ -2,6 +2,7 @@
 title: Xiaomi路由器mini折腾篇
 date: 2016-09-28 14:18:00
 layout: post
+comment: true
 tags:
 - 教程
 - 路由器教程

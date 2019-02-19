@@ -2,6 +2,7 @@
 title: 使用HMCL启动Minecraft游戏教程
 date: 2018-07-29 17:26:35
 layout: post
+comment: true
 tags:
 - Minecraft
 - 教程

@@ -2,6 +2,7 @@
 title: 斐讯K2折腾之——安装LEDE/OpenWrt
 date: 2017-05-13 22:58:07
 layout: post
+comment: true
 tags:
 - 斐讯k2
 - LEDE

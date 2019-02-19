@@ -2,6 +2,7 @@
 title: Sorry & Thankyou.
 date: 2016-11-26 15:00:24
 layout: post
+comment: true
 tags:
 - 琐事
 - 高中

@@ -2,6 +2,7 @@
 title: Hexo 你的博客
 date: 2016-09-15 14:21:00
 layout: post
+comment: true
 tags:
 - HEXO
 - 静态博客

@@ -1,6 +1,8 @@
 ---
 title: Spring
 date: 2017-05-5 22:28:00
+layout: post
+comment: true
 tags:
 - 摄影
 - Spring

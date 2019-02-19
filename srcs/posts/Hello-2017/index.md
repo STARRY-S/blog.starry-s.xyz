@@ -2,6 +2,7 @@
 title: Hello 2017!
 date: 2017-01-01 14:59:17
 layout: post
+comment: true
 tags:
 - 琐事
 - 新的一年

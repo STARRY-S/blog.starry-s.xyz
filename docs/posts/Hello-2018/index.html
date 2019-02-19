@@ -161,6 +161,8 @@
         </span>
         
         
+        
+        
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
@@ -237,7 +239,7 @@
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/posts/tired/" rel="next" title="Tired"><i class="fas fa-angle-left"></i><span class="nav-title">Tired</span></a>
+      <a href="/posts/Spring-2/" rel="next" title="Spring - 2"><i class="fas fa-angle-left"></i><span class="nav-title">Spring - 2</span></a>
       
     </div>
     <div class="page-nav-prev page-nav-item">
@@ -274,6 +276,48 @@
   
   
 
+<div class="comments" id="comments">
+  
+  <div class="commentjs" id="comment-thread"></div>
+  <link rel="stylesheet" href="/css/commentjs.css">
+  <script defer type="text/javascript" src="/js/marked.min.js"></script>
+  <script defer type="text/javascript" src="/js/timeago.min.js"></script>
+  <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+  <script defer type="text/javascript" src="/js/commentjs.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    getComments({
+      "type": "github",
+      "user": "STARRY-S",
+      "repo": "blog.starry-s.xyz",
+      "clientID": "d840b2424099ff5195ff",
+      "clientSecret": "cc22cbdcdee59b64ef1031c4d369821030b3634f",
+      "no_comment": "This page has no comment, go to comment now!",
+      "go_to_comment": "Go to Comment",
+      "issue_title": "Hello 2018",
+      "btn_class": "button",
+      "comments_target": "#comment-thread"
+    });
+    marked.setOptions({
+      "highlight": function (code, lang) {
+        return hljs.highlightAuto(code).value;
+      }
+    });
+    function mark() {
+      var markdowns = document.getElementsByClassName("markdown");
+      for (var i = 0; i < markdowns.length; ++i){
+        if (markdowns[i].innerHTML) {
+          markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+        }
+      }
+    }
+    window.addEventListener("DOMContentLoaded", mark, false);
+    window.addEventListener("load", mark, false);
+  });
+  </script>
+  
+</div>
+
 
 
   
@@ -306,21 +350,21 @@
     
     <div class="archives-count count-block">
       <div class="site-count-title">Archives</div>
-      <div><a href="/archives/">16</a></div>
+      <div><a href="/archives/">18</a></div>
     </div>
     
     
     
     <div class="categories-count count-block">
       <div class="site-count-title">Categories</div>
-      <div><a href="/categories/">12</a></div>
+      <div><a href="/categories/">15</a></div>
     </div>
     
     
     
     <div class="tags-count count-block">
       <div class="site-count-title">Tags</div>
-      <div><a href="/tags/">22</a></div>
+      <div><a href="/tags/">25</a></div>
     </div>
     
     
@@ -429,4 +473,4 @@
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.13.3 at 2019-02-19 Tue 13:48:03 CST. -->
+<!-- Page built by Hikaru v1.13.3 at 2019-02-19 Tue 15:20:00 CST. -->

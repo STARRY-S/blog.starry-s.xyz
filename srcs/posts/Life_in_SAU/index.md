@@ -2,6 +2,7 @@
 title: Lifeline
 date: 2018-10-01 22:25:49
 layout: post
+comment: true
 tags:
 - 琐事
 - 碎碎念

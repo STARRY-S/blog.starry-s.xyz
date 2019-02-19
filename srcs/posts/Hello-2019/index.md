@@ -2,6 +2,7 @@
 title: Hello 2019
 date: 2019-01-01 00:00:00
 layout: post
+comment: true
 tags:
 - 琐事
 - 碎碎念

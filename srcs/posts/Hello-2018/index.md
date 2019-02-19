@@ -2,6 +2,7 @@
 title: Hello 2018
 date: 2018-01-16 22:58:06
 layout: post
+comment: true
 tags:
 - 琐事
 - 碎碎念

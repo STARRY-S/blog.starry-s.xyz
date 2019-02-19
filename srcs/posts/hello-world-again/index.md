@@ -2,6 +2,7 @@
 title: Everything is based on "Hello World"
 date: 2016-08-22 14:22:54
 layout: post
+comment: true
 tags:
 - Blog
 - Hello World

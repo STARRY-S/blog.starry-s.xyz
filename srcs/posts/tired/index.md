@@ -2,6 +2,7 @@
 title: Tired
 date: 2018-07-22 17:22:30
 layout: post
+comment: true
 tags:
 - 琐事
 categories:

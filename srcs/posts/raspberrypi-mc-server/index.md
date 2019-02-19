@@ -2,6 +2,7 @@
 title: 树莓派之我的世界服务器
 date: 2016-11-25 15:01:28
 layout: post
+comment: true
 tags:
 - Minecraft
 - 树莓派
