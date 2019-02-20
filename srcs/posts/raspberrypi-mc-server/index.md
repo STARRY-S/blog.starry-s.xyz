@@ -45,8 +45,8 @@ $ sudo pacman -S jre8-openjdk
 前往 **[JAVA下载页](http://www.oracle.com/technetwork/cn/java/javase/downloads/jdk8-downloads-2133151-zhs.html)** 下载树莓派（ARM架构，32位系统）所支持的JDK。
 
 ```
-$ sudo mkdir ./java
-$ sudo tar -zxvf 你所下载的JDK.jar.gz -C ./java/
+$ mkdir ./java
+$ tar -zxvf 你所下载的JDK.jar.gz -C ./java/
 ```
 在终端输入`./java/jdk1.8.0/bin/java -version`显示java的版本号。
 
@@ -84,10 +84,6 @@ $ ./java/jdk1.8.0/bin/java -Xms512M -Xmx1024M -jar./paperclip.jar
 通常情况下以上两个问题都是~~不容易遇到的~~，不过一旦点子不好的话，就只能靠别的方法把你内网的数据影射到外网了（例如买个棒子什么的）。
 
 如果运营商给你分配了一个内网IP，请自行打电话与运营商联系。
-
-## 配置路由器DDNS
-
-进入路由器的动态DNS配置界面：
 
 不同的路由器配置方法不同，请自行摸索。
 

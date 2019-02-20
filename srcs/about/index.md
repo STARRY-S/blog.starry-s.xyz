@@ -36,14 +36,6 @@ tags: about
 * 域名注册于17年8月18日，不打算换域名。
 * 网站底部的访客数从2017年5月19日开始统计。
 
-## 友情链接:
-
-> [喵's Homepage](https://alynx.xyz/)
-> [A Deadline Dog](https://a.ddl.dog)
-> [LGiki's Blog](https://lgiki.cc)
-> [ArtChen's Blog](https://chenxy.moe)
-
----
 ## Timeline
 
 * 2016.8.21  注册了人生中的第一个域名'starry-s.com', 使用Github Pages搭建了此博客。
@@ -58,6 +50,6 @@ tags: about
 
 ---
 
-<div class="alert-green">最后更新时间：2019年2月18日</div>
+<div class="alert-green">最后更新时间：2019年2月20日</div>
 
 <p style="font-size:300%; color:#FF0000;">&hearts;</p>

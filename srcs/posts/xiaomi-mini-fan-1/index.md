@@ -20,13 +20,14 @@ categories:
 <!--more-->
 
 > 本篇于2017年3月5日重写。
-> 最后更新时间: 2018年2月18日。
+> 最后更新时间: 2019年2月20日。
+
 
 # 此教程基于Openwrt/LEDE官网的资料写出
 
 英语好的话可以去[openwrt官网](https://openwrt.org)的Wiki和Support devices中了解一下openwrt以及找小米路由器mini的刷机教程看一下，很有用的。
 
-就目前来讲[小米路由器mini的LEDE Wiki页面](https://lede-project.org/toh/hwdata/xiaomi/xiaomi_mini_v1)仍在建设当中。
+~~就目前来讲[小米路由器mini的LEDE Wiki页面](https://lede-project.org/toh/hwdata/xiaomi/xiaomi_mini_v1)仍在建设当中。~~
 
 > OpenWrt是适合于嵌入式设备的一个Linux发行版。
 相对原厂固件而言，OpenWrt不是一个单一、静态的固件，而是提供了一个可添加软件包的可写的文件系统。这使用户可以自由的选择应用程序和配置，而不必受设备提供商的限制，并且可以使用一些适合某方面应用的软件包来定制你的设备。对于开发者来说，OpenWrt是一个框架，开发者不必麻烦的构建整个固件就能得到想要的应用程序；对于用户来说，这意味着完全定制的能力，与以往不同的方式使用设备，OPKG包含超过3500个软件。
@@ -40,7 +41,7 @@ categories:
 > 内存： 16+128Mb
 > 接口： 100M x 3 + usb2.0 x 1
 
- ** 小米发布此款路由器时声称路由器使用的是千兆的网口，实际上是为百兆网口，并非所谓的千兆网口 **
+ **小米发布此款路由器时声称路由器使用的是千兆的网口，实际上是为百兆网口，并非所谓的千兆网口**
 
 # 准备工作：开启路由器SSH
 
@@ -63,6 +64,7 @@ categories:
 ``` bash
 # ssh root@192.168.31.1
 ```
+
 > Windows用户可使用putty与路由器进行ssh通信：
 > 打开putty，host name处输入路由器网关：192.168.31.1，端口号为22，点击open。
 
@@ -94,16 +96,14 @@ ssh到路由器输入命令：
 
 # 推荐几款比较好的固件：
 
-## LEDE
+~~LEDE:
 
 除了以上几种固件性能表现很好以外，最近出的LEDE也是很好的一款固件呢。可以参考我的[这篇博客](http://blog.starry-s.xyz/posts/psg1218-lede/)进行配置。[下载链接](https://downloads.lede-project.org/releases/17.01.4/targets/ramips/mt7620/) (17.01.4)。
 
-> ~~LEDE Unsupported: Wifi partially working, especially 802.11AC is not stable (yet)~~
-> ~~尚未解决的问题: Wifi偶尔抽风，尤其是802.11AC很不稳定。~~
+~~
+## PandoraBox
 
-## 潘多拉 PandoraBox
-
-可以根据需要选择[老版本固件](http://downloads.openwrt.org.cn/PandoraBox/Xiaomi-Mini-R1CM/)或者2017年最新编译出来的[固件](http://www.pandorabox.com.cn/pandorabox-16-10-stable/targets/ralink/mt7620/)，找到对应型号后下载。
+可以根据需要选择[老版本固件](http://downloads.openwrt.org.cn/PandoraBox/Xiaomi-Mini-R1CM/)~~或者2017年最新编译出来的[固件](http://www.pandorabox.com.cn/pandorabox-16-10-stable/targets/ralink/mt7620/)，找到对应型号后下载。~~
 
 Pandorabox默认密码为:admin
 

@@ -149,9 +149,9 @@ $ ssh -T git@github.com
 ### 部署github pages
 打开github个人主页，选择`Repositories`,点击New。新建一个仓库。名字自定（不要输入中文）。
 
-![github new repositories](https://blog.starry-s.xyz/images/making-blog/github1.jpg)
+![github new repositories](images/making-blog/github1.jpg)
 
-![github set repositories](https://blog.starry-s.xyz/images/making-blog/github1.jpg)
+![github set repositories](images/making-blog/github1.jpg)
 
 ### 新建好仓库后，编辑`_config.yml`将文件上传到github和coding pages上。
 
@@ -182,9 +182,7 @@ $ hexo d
 
 ![Github Pages](images/github4.jpg)
 
-**
-注：务必选择正确的分支！本教程设置的github的分支为master
-**
+** 注：务必选择正确的分支！本教程设置的github的分支为master **
 
 ## DNS分流
 
