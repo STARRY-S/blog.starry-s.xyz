@@ -23,7 +23,9 @@ categories:
 
 我尽可能的写的详细一点以便没有经验的小白也能看懂。
 
-<div class="alert-red">温馨提示：刷成砖了本人一概不负任何责任</div>
+<div class="alert-green">最后更新日期：2019.2.20</div>
+
+<div class="alert-red">温馨提示：刷成砖了本人一概不负责</div>
 
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=31108216&auto=0&height=66"></iframe>
 
@@ -92,15 +94,33 @@ mtd -r write /tmp/sdcard/breed.bin Bootloader
 
 # 刷机
 
+刷了Breed之后就不能用之前的刷入开发者固件的方式刷机了，因为Breed不同于官方的uboot。
+
 下载所需固件。
 
-PandoraBox下载地址：[https://downloads.pangubox.com/pandorabox/19.02/targets/ralink/mt7621/](https://downloads.pangubox.com/pandorabox/19.02/targets/ralink/mt7621/)
+PandoraBox下载地址：[https://downloads.pangubox.com/pandorabox/](https://downloads.pangubox.com/pandorabox/)
 
 Pandavan固件原帖: [https://www.right.com.cn/forum/thread-161324-1-1.html](https://www.right.com.cn/forum/thread-161324-1-1.html)
 
-OpenWrt官方下载地址: [https://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7621/](https://downloads.openwrt.org/releases/18.06.2/targets/ramips/mt7621/)
+OpenWrt官方下载地址: [https://downloads.openwrt.org/releases/](https://downloads.openwrt.org/releases/)
 
 ## Pandavan/PandoraBox
+
+```
+ _______________________________________________________________
+ |    ____                 _                 ____               |
+ |   |  _ \ __ _ _ __   __| | ___  _ __ __ _| __ )  _____  __   |
+ |   | |_) / _` | '_ \ / _` |/ _ \| '__/ _` |  _ \ / _ \ \/ /   |
+ |   |  __/ (_| | | | | (_| | (_) | | | (_| | |_) | (_) >  <    |
+ |   |_|   \__,_|_| |_|\__,_|\___/|_|  \__,_|____/ \___/_/\_\   |
+ |                                                              |
+ |                  PandoraBox SDK Platform                     |
+ |                  The Core of SmartRouter                     |
+ |            Copyright 2013-2019 PandoraBox-Team               |
+ |                                                              |
+ |______________________________________________________________|
+  Base on LEDE/OpenWrt 
+```
 
 直接下载固件并在Breed里刷写。
 
@@ -121,6 +141,8 @@ OpenWrt官方下载地址: [https://downloads.openwrt.org/releases/18.06.2/targe
  OpenWrt xx.xx.xx, xx
  -----------------------------------------------------
 ```
+
+我更喜欢OpenWrt！
 
 [OpenWrt官网提供的教程](https://openwrt.org/toh/xiaomi/mir3g)是在没有刷入Breed的情况下刷入OpenWrt固件的。
 
@@ -191,7 +213,7 @@ mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-rootfs0.bin rootfs0
 
 # 其他问题：
 
-1. 如果刷了Breed + Pandavan/PandoraBox后想换回OpenWrt的话，首先在Breed中刷回小米路由器开发版的官方固件，然后ssh进路由器里参照[4.2.2 如果你刷了Breed](#如果你刷了Breed:)步骤刷机。
+1. 如果刷了Breed + Pandavan/PandoraBox后想换回OpenWrt的话，首先在Breed中刷回小米路由器开发版的官方固件，然后ssh进路由器里参照[4.2.2 如果你刷了Breed](#如果你刷了Breed:)步骤刷机，ssh密码还是先前记下的密码。
 
 2. USB3.0会对路由器的2.4G频段信号造成干扰，不用时可以关掉。
 
@@ -199,7 +221,10 @@ mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-rootfs0.bin rootfs0
 
 4. 中国大陆用户有可能会用到[OpenWrt-disk](http://openwrt-dist.sourceforge.net)获取更多功能。
 
-5. 中国大陆用户没科学上网的话会遇到下载OpenWrt固件速度超级慢的情况，可将源更换为[清华大学开源软件镜像站](http://mirrors.tuna.tsinghua.edu.cn/lede/)下载，只需替换教程中的`downloads.openwrt.org`为`mirrors.tuna.tsinghua.edu.cn/lede`。
+5. 由于你懂的原因可能会遇到下载OpenWrt固件速度超级慢的情况，可将源更换为[清华大学开源软件镜像站](http://mirrors.tuna.tsinghua.edu.cn/lede/)下载，只需替换教程中的`downloads.openwrt.org`为`mirrors.tuna.tsinghua.edu.cn/lede`。
 
-6. 中国大陆使用OpenWrt可将opkg源改为国内：
+6. 为优化软件包安装速度，OpenWrt可将opkg源改为国内：
+
 在LuCI -> System -> Software -> Configuration中将Distribution feeds里的`http://downloads.openwrt.org`替换为`http://mirrors.tuna.tsinghua.edu.cn/lede`后Submit即可。
+
+7. OpenWrt可安装软件包`libustream-openssl` `libustream-mbedtls`解决`wget`无法访问https服务器问题。然后建议把opkg源能改为https的都改为https。
