@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>STARRY-S&#39; Blog</title>
-  <icon>https://blog.starry-s.xyz/images/avatar.png</icon>
-  <subtitle>Lifeline</subtitle>
+  <icon>https://blog.starry-s.xyz/images/avatar.jpg</icon>
+  <subtitle>I never quite realized...</subtitle>
   <link href="https://blog.starry-s.xyz/atom.xml" rel="self" />
   
   <link href="https://blog.starry-s.xyz/" />
