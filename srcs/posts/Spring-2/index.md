@@ -11,7 +11,7 @@ categories:
 - Spring
 - 高中
 ---
-![Spring](/images/spring-2/05.jpeg 'Flowers')
+![Spring](images/05.jpeg 'Flowers')
 # 春天来了。
 **前方多图预警：** 高清无码
 

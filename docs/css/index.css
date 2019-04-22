@@ -111,7 +111,7 @@
   position: relative;
   margin: 0;
   padding: 0 0.5em;
-  background: #370263;
+  background: #33363b;
   -webkit-box-shadow: 0 -0.5em 1em 0.5em rgba(0,0,0,0.19);
   box-shadow: 0 -0.5em 1em 0.5em rgba(0,0,0,0.19);
   border-top-left-radius: 0.3em;
@@ -150,14 +150,14 @@
 }
 .nav ul li a:hover {
   color: #fff;
-  background: #54078b;
+  background: #252525;
 }
 .nav ul li a:active {
   top: 0;
 }
 .nav ul li a.current {
   color: #fff;
-  background: #4d1879;
+  background: #222;
 }
 .nav .nav-toggle {
   text-align: center;
@@ -561,7 +561,7 @@ button.button:active {
   top: 0.1em;
 }
 img {
-  width: 90%;
+  max-width: 90%;
   text-align: center;
 }
 hr {
@@ -580,6 +580,7 @@ hr {
 }
 article table {
   margin: 1em auto;
+  width: 90%;
   border-spacing: 0;
   border-collapse: collapse;
 }
@@ -630,6 +631,17 @@ pre code {
   margin: 0;
   padding: 0;
 }
+pre code button.copy {
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  -ms-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+pre code button.copy.copied {
+  background: #ff2a2a;
+  border: 0.1em solid #f5c6cb;
+}
 figure.highlight {
   display: -webkit-box;
   display: -moz-box;
@@ -659,7 +671,7 @@ figure.highlight {
   overflow: auto;
   border-radius: 0.3em;
   padding: 0.5em;
-  margin: 1em 0;
+  margin: 0.5em 0;
   -webkit-font-feature-settings: "liga" 0; /* No variation */
   -moz-font-feature-settings: "liga=0"; /* Firefox 4.0 to 14.0 */
   -moz-font-feature-settings: "liga" 0; /* Firefox 15.0 onwards */
@@ -681,10 +693,11 @@ figure.highlight pre.gutter {
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   text-align: right;
-  padding-right: 0.5em;
-  border-right: 0.05em dotted #ccc;
+  padding: 0 0.5em;
+  border-right: 0.1em dotted #ccc;
 }
 figure.highlight pre.code {
+  position: relative;
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -o-box-flex: 1;
@@ -693,8 +706,7 @@ figure.highlight pre.code {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   text-align: left;
-  padding-left: 0.5em;
-  border-left: 0.05em dotted #ccc;
+  padding: 0 0.5em;
 }
 figure.highlight pre code {
   color: inherit;
