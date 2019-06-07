@@ -45,7 +45,7 @@ categories:
 
 后来又忍不住把这个电影多看了几遍。
 
-去Youtube上找了未删减版，下载下来防止它某天被删掉就**再也**找不到了。
+去Youtube上找了未删减版，下载下来防止它某天被删掉就 **再也** 找不到了。
 
 <iframe src="//player.bilibili.com/player.html?aid=10859786&cid=17963248&page=1" width="600" height="450" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
@@ -245,7 +245,7 @@ iPhone好还是安卓手机好？
 
 ## 2019 の 年初
 
-这一部分我还是不要单独写在一篇文章里了吧。 但是内容真的太多了。
+这一部分我还是不要单独写在一篇文章里了吧, 但是内容真的太多了。
 
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=auto height=auto src="//music.163.com/outchain/player?type=2&id=446627347&auto=0&height=66"></iframe>
 
@@ -284,12 +284,10 @@ iPhone好还是安卓手机好？
 
 ---
 
-把用了两年多的头像换掉了，这次不是漫无目的的找几个美图ps一下就当头像了。
+ ~~把用了两年多的头像换掉了，这次不是漫无目的的找几个美图ps一下就当头像了。~~
 
 ---
 
-2018年就这么过去了。
 
-每一年都会有许多改变的。
 
 ## Hello 2019!

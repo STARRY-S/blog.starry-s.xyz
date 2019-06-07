@@ -1,11 +1,11 @@
-title: STARRY-S' Blog
-subtitle: I never quite realized...
-description: How beautiful this world is.
+title: STARRY-S‘ Blog
+subtitle: 本とは空を飛べると知っていたから
+description: 羽ばたくときが怖くて風を忘れた
 author: STARRY-S
 email: hx916584160@gmail.com
-language: en
+language: zh_CN
 
-baseURL: https://blog.starry-s.xyz
+baseURL: https://blog.starry-s.xyz/
 rootDir: /
 srcDir: srcs
 docDir: docs
@@ -13,7 +13,11 @@ themeDir: aria
 categoryDir: categories
 tagDir: tags
 
-perPage: 10
+perPage:
+  index: 10
+  archives: 15
+  category: 15
+  tag: 15
 
 skipRender:
   - README.md

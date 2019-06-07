@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>STARRY-S&#39; Blog</title>
+  <title>STARRY-S‘ Blog</title>
   <icon>https://blog.starry-s.xyz/images/avatar.jpg</icon>
-  <subtitle>I never quite realized...</subtitle>
+  <subtitle>本とは空を飛べると知っていたから</subtitle>
   <link href="https://blog.starry-s.xyz/atom.xml" rel="self" />
   
   <link href="https://blog.starry-s.xyz/" />
   
-  <updated>2019-05-19T11:57:17.873Z</updated>
+  <updated>2019-06-07T19:03:33.413Z</updated>
   
   <id>https://blog.starry-s.xyz/</id>
   
@@ -19,6 +19,30 @@
   <generator uri="https://github.com/AlynxZhou/hikaru/">Hikaru</generator>
   
   <entry>
+    <title>高烤一周年</title>
+    <link href="https://blog.starry-s.xyz/posts/one-year-agter-gk/" />
+    <id>https://blog.starry-s.xyz/posts/one-year-agter-gk/</id>
+    <published>2019-06-07T18:15:23.000Z</published>
+    <updated>2019-06-07T19:03:33.413Z</updated>
+    
+    <summary type="html">
+    
+    <![CDATA[<p>竟然过去一年了。</p>]]>
+    
+    </summary>
+    
+    <category term="琐" scheme="https://blog.starry-s.xyz/categories/%E7%90%90/" />
+    
+    <category term="事" scheme="https://blog.starry-s.xyz/categories/%E7%90%90/%E4%BA%8B/" />
+    
+    
+    <category term="琐事" scheme="https://blog.starry-s.xyz/tags/%E7%90%90%E4%BA%8B/" />
+    
+    <category term="碎碎念" scheme="https://blog.starry-s.xyz/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" />
+    
+  </entry>
+  
+  <entry>
     <title>Spring - 3</title>
     <link href="https://blog.starry-s.xyz/posts/Spring-3/" />
     <id>https://blog.starry-s.xyz/posts/Spring-3/</id>
@@ -27,7 +51,7 @@
     
     <summary type="html">
     
-    <![CDATA[<p>&#x6625;&#x5929;&#x7EC8;&#x4E8E;&#x6765;&#x4E86;&#x3002;</p>]]>
+    <![CDATA[<p>春天终于来了。</p>]]>
     
     </summary>
     
@@ -46,14 +70,14 @@
   
   <entry>
     <title>一个人的旅行 —— 上海</title>
-    <link href="https://blog.starry-s.xyz/posts/trip-shanghai/" />
-    <id>https://blog.starry-s.xyz/posts/trip-shanghai/</id>
+    <link href="https://blog.starry-s.xyz/posts/Shanghai/" />
+    <id>https://blog.starry-s.xyz/posts/Shanghai/</id>
     <published>2019-04-09T05:24:44.000Z</published>
-    <updated>2019-05-19T12:12:55.067Z</updated>
+    <updated>2019-06-07T18:14:13.397Z</updated>
     
     <summary type="html">
     
-    <![CDATA[<p><img src="/posts/trip-shanghai/images/shanghai.jpg" alt></p><div class="alert-red">&#x591A;&#x56FE;&#x9884;&#x8B66;</div>]]>
+    <![CDATA[<p><img src="/posts/Shanghai/images/shanghai.jpg" alt></p><div class="alert-red">多图预警</div>]]>
     
     </summary>
     
@@ -79,7 +103,7 @@
     
     <summary type="html">
     
-    <![CDATA[<p>&#x751F;&#x547D;&#x4E0D;&#x606F;&#xFF0C;&#x6298;&#x817E;&#x4E0D;&#x6B62;&#x3002;</p><p>&#x5BB6;&#x91CC;&#x7684;&#x8DEF;&#x7531;&#x5668;&#x53C8;&#x574F;&#x4E86;&#xFF08;&#x5F3A;&#x884C;&#x72E1;&#x8FA9;</p>]]>
+    <![CDATA[<p>生命不息，折腾不止。</p><p>家里的路由器又坏了（强行狡辩</p>]]>
     
     </summary>
     
@@ -111,7 +135,7 @@
     
     <summary type="html">
     
-    <![CDATA[<p><img src="/posts/Nier_Automata/images/20190216233002_1.jpg" alt></p><div class="alert-red">&#x672C;&#x7BC7;&#x5185;&#x5BB9;&#x542B;&#x6709;&#x4E00;&#x5B9A;&#x5267;&#x900F;&#x6210;&#x5206;</div>]]>
+    <![CDATA[<p><img src="/posts/Nier_Automata/images/20190216233002_1.jpg" alt></p><div class="alert-red">本篇内容含有一定剧透成分</div>]]>
     
     </summary>
     
@@ -127,11 +151,11 @@
     <link href="https://blog.starry-s.xyz/posts/Hello-2019/" />
     <id>https://blog.starry-s.xyz/posts/Hello-2019/</id>
     <published>2018-12-31T16:00:00.000Z</published>
-    <updated>2019-02-19T07:18:26.743Z</updated>
+    <updated>2019-06-07T18:09:51.013Z</updated>
     
     <summary type="html">
     
-    <![CDATA[<h1 id="Hello2019"><a class="headerlink" href="/posts/Hello-2019/#Hello2019" title="Hello2019"></a>Hello 2019</h1><p>&#x4E00;&#x7728;&#x773C;&#x5230;&#x4E86;2018&#x5E74;&#x5E74;&#x5C3E;&#xFF0C;&#x8FD9;&#x4E00;&#x5E74;&#x5F88;&#x666E;&#x901A;&#xFF0C;&#x5F88;&#x5E73;&#x6DE1;&#x3002;</p><p>&#x6700;&#x521D;&#x5199;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x65F6;&#x662F;&#x5728;&#x5BDD;&#x5BA4;&#x5077;&#x5077;&#x5199;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x663E;&#x5F97;&#x6BD4;&#x8F83;&#x51CC;&#x4E71;&#xFF0C;&#x4E8E;&#x662F;1&#x6708;22&#x53F7;&#x53C8;&#x505A;&#x4E00;&#x4E9B;&#x4FEE;&#x6539;&#x3002;</p>]]>
+    <![CDATA[<h1 id="Hello2019"><a class="headerlink" href="/posts/Hello-2019/#Hello2019" title="Hello2019"></a>Hello 2019</h1><p>一眨眼到了2018年年尾，这一年很普通，很平淡。</p><p>最初写这篇文章时是在寝室偷偷写的，所以显得比较凌乱，于是1月22号又做一些修改。</p>]]>
     
     </summary>
     
@@ -149,11 +173,11 @@
     <link href="https://blog.starry-s.xyz/posts/Life_in_SAU/" />
     <id>https://blog.starry-s.xyz/posts/Life_in_SAU/</id>
     <published>2018-10-01T14:25:49.000Z</published>
-    <updated>2019-02-19T07:18:47.443Z</updated>
+    <updated>2019-06-07T18:11:43.027Z</updated>
     
     <summary type="html">
     
-    <![CDATA[<p><img src="/posts/Life_in_SAU/images/trip.jpg" alt="Trip">&#x7136;&#x800C;&#x597D;&#x591A;&#x5BF9;&#x6211;&#x6765;&#x8BF4;&#x5F88;&#x65B0;&#x9C9C;&#x65B0;&#x5947;&#x7684;&#x4E8B;&#x60C5;&#x53D1;&#x751F;&#x4E86;&#x3002;</p>]]>
+    <![CDATA[<p><img src="/posts/Life_in_SAU/images/trip.jpg" alt="Trip">然而好多对我来说很新鲜新奇的事情发生了。</p>]]>
     
     </summary>
     
@@ -177,7 +201,7 @@
     
     <summary type="html">
     
-    <![CDATA[<p>&#x7EC8;&#x4E8E;&#x5230;&#x4E86;&#x6691;&#x5047;&#x53EF;&#x4EE5;&#x5F00;&#x4E00;&#x4E2A;Minecraft&#x670D;&#x52A1;&#x5668;&#x548C;&#x5C0F;&#x4F19;&#x4F34;&#x8054;&#x673A;&#x7684;&#x65F6;&#x5019;&#x4E86;&#xFF01;&#x5728;&#x53D1;&#x73B0;&#x6211;&#x5BF9;&#x5403;&#x9E21;&#x90A3;&#x7C7B;&#x7684;&#x6E38;&#x620F;&#x9664;&#x4E86;&#x89C9;&#x5F97;&#x597D;&#x73A9;&#x4EE5;&#x5916;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x5929;&#x8D4B;( <del>&#x6CA1;&#x94B1;&#x4E70;&#x9F20;&#x6807;&#xFF1F;</del> )&#x540E;&#x6253;&#x7B97;&#x7EE7;&#x7EED;&#x73A9;&#x6211;&#x7684;&#x4E16;&#x754C;&#xFF0C;&#x6240;&#x4EE5;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x90A3;&#x4E9B;&#x60F3;&#x73A9;Minecraft&#xFF08;&#x975E;&#x7F51;&#x6613;&#x4EE3;&#x7406;&#x7248;&#xFF09;&#x4F46;&#x662F;&#x8FD8;&#x4E0D;&#x77E5;&#x9053;&#x600E;&#x4E48;&#x64CD;&#x4F5C;&#x7684;&#x90A3;&#x4E9B;&#x5C0F;&#x4F19;&#x4F34;&#x4EEC;&#xFF0C;&#x8FD9;&#x7BC7;&#x6559;&#x7A0B;&#x5C31;&#x8FD9;&#x4E48;&#x8BDE;&#x751F;&#x4E86;&#x3002;</p>]]>
+    <![CDATA[<p>终于到了暑假可以开一个Minecraft服务器和小伙伴联机的时候了！在发现我对吃鸡那类的游戏除了觉得好玩以外没有任何天赋( <del>没钱买鼠标？</del> )后打算继续玩我的世界，所以为了方便那些想玩Minecraft（非网易代理版）但是还不知道怎么操作的那些小伙伴们，这篇教程就这么诞生了。</p>]]>
     
     </summary>
     
@@ -201,7 +225,7 @@
     
     <summary type="html">
     
-    <![CDATA[<p>A bad mod with a stubborn brain, I felt that I can&apos;t do anything at this time.</p>]]>
+    <![CDATA[<p>A bad mod with a stubborn brain, I felt that I can&#39;t do anything at this time.</p>]]>
     
     </summary>
     
@@ -223,7 +247,7 @@
     
     <summary type="html">
     
-    <![CDATA[<p><img src="/posts/Spring-2/images/05.jpeg" alt="Spring" title="Flowers"></p><h1 id="&#x6625;&#x5929;&#x6765;&#x4E86;&#x3002;"><a class="headerlink" href="/posts/Spring-2/#%E6%98%A5%E5%A4%A9%E6%9D%A5%E4%BA%86%E3%80%82" title="&#x6625;&#x5929;&#x6765;&#x4E86;&#x3002;"></a>&#x6625;&#x5929;&#x6765;&#x4E86;&#x3002;</h1><p><strong>&#x524D;&#x65B9;&#x591A;&#x56FE;&#x9884;&#x8B66;&#xFF1A;</strong> &#x9AD8;&#x6E05;&#x65E0;&#x7801;</p><blockquote><p>&#x4E4B;&#x524D;&#x4E70;&#x7684;&#x4E8C;&#x624B;&#x76F8;&#x673A;&#x56E0;&#x8D28;&#x91CF;&#x95EE;&#x9898;&#x574F;&#x6389;&#x4E86;&#x54E6;&#xFF0C;&#x6240;&#x4EE5;&#x4ECA;&#x5E74;&#x7684;&#x8FD9;&#x7EC4;&#x7167;&#x7247;&#x5C31;&#x8F6E;&#x5230;&#x6211;&#x7528;&#x624B;&#x673A;&#x6765;&#x62CD;&#x5566;&#x3002;&#x6BD5;&#x7ADF;&#x662F;&#x624B;&#x673A;&#x62CD;&#x7684;&#x7167;&#x7247;&#xFF0C;DNG&#x683C;&#x5F0F;&#x7684;&#x7167;&#x7247;&#x603B;&#x662F;&#x53D1;&#x767D;&#xFF08;&#x5927;&#x6982;&#x662F;&#x6211;&#x5728;&#x5F3A;&#x5149;&#x4E0B;&#x62CD;&#x7167;&#x5BFC;&#x81F4;&#x7684;&#x5427;&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x540E;&#x671F;&#x65F6;&#x4E0D;&#x7531;&#x81EA;&#x4E3B;&#x7684;&#x628A;&#x7167;&#x7247;&#x8C03;&#x6210;&#x4E86;&#x201C;&#x8001;&#x62BD;&#x9171;&#x6CB9;&#x653E;&#x591A;&#x4E86;&#x201D;&#x7684;&#x9AD8;&#x5BF9;&#x6BD4;&#x5EA6;&#xFF0C;&#x4F4E;&#x4EAE;&#x5EA6;&#x8272;&#x8C03;&#x4E86;&#xFF5E;&#x3002;</p></blockquote>]]>
+    <![CDATA[<p><img src="/posts/Spring-2/images/05.jpeg" alt="Spring" title="Flowers"></p><h1 id="春天来了。"><a class="headerlink" href="/posts/Spring-2/#%E6%98%A5%E5%A4%A9%E6%9D%A5%E4%BA%86%E3%80%82" title="春天来了。"></a>春天来了。</h1><p><strong>前方多图预警：</strong> 高清无码</p><blockquote><p>之前买的二手相机因质量问题坏掉了哦，所以今年的这组照片就轮到我用手机来拍啦。毕竟是手机拍的照片，DNG格式的照片总是发白（大概是我在强光下拍照导致的吧），所以后期时不由自主的把照片调成了“老抽酱油放多了”的高对比度，低亮度色调了～。</p></blockquote>]]>
     
     </summary>
     
@@ -249,7 +273,7 @@
     
     <summary type="html">
     
-    <![CDATA[<p><img src="/posts/Hello-2018/images/5cm_per_second.jpg" alt="&#x79D2;&#x901F;5&#x5398;&#x7C73;"></p><p>&#x8FDF;&#x5230;&#x4E86;16&#x5929;&#x7684;&#x5E74;&#x7EC8;&#x603B;&#x7ED3;&#x3002;</p><p>&#x4E0D;&#x77E5;&#x4E0D;&#x89C9;&#x5C31;&#x51AC;&#x5929;&#x4E86;&#x5462;&#x3002;</p><p>&#x4E0D;&#x77E5;&#x4E0D;&#x89C9;&#x5C31;&#x5723;&#x8BDE;&#x4E86;&#x5462;&#x3002;</p><p>&#x4E0D;&#x77E5;&#x4E0D;&#x89C9;&#x5C31;&#x5143;&#x65E6;&#x4E86;&#x5462;&#x3002;</p><p>&#x4E0D;&#x77E5;&#x4E0D;&#x89C9;&#x7684;&#x53D1;&#x73B0;&#xFF0C;&#x5E74;&#x672B;&#x4E00;&#x573A;&#x96EA;&#x4E5F;&#x6CA1;&#x4E0B;&#x5462;&#x3002;</p><p>&#x98D8;&#x51E0;&#x7C92;&#x96EA;&#x82B1;&#x4E0D;&#x80FD;&#x7B97;&#x4F5C;&#x4E0B;&#x96EA;&#x5427;&#xFF0C;&#x54EA;&#x6709;16&#x5E74;&#x51AC;&#x5929;&#x7684;&#x90A3;&#x573A;&#x5927;&#x96EA;&#x5927;&#x5462;&#x3002;</p><p>&#x5230;&#x4E86;&#x5E74;&#x672B;&#x5C31;&#x5F00;&#x59CB;&#x60F3;&#x600E;&#x4E48;&#x5199;2017&#x5E74;&#x7684;&#x603B;&#x7ED3;&#xFF0C;&#x4E0D;&#x77E5;&#x4E0D;&#x89C9;&#x5C31;&#x62D6;&#x5230;&#x4E86;2018&#x5E74;&#x4E86;&#x5462;&#x3002;</p><p>&#x601D;&#x8DEF;&#x53D8;&#x6362;&#x7684;&#x5F88;&#x5FEB;&#xFF0C;&#x5728;&#x8FD8;&#x6CA1;&#x60F3;&#x597D;&#x600E;&#x4E48;&#x5199;&#x51FA;&#x6765;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x628A;&#x5B83;&#x5FD8;&#x4E86;&#x3002;</p><p>&#x6211;&#x5C3D;&#x53EF;&#x80FD;&#x7684;&#x4E0D;&#x53D7;&#x8FD1;&#x671F;&#x7684;&#x4E00;&#x4E9B;&#x5FC3;&#x60C5;&#x65B9;&#x9762;&#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x5199;&#x8FD9;&#x4E9B;&#x603B;&#x7ED3;&#x5427;&#x3002;</p>]]>
+    <![CDATA[<p><img src="/posts/Hello-2018/images/5cm_per_second.jpg" alt="秒速5厘米"></p><p>迟到了16天的年终总结。</p><p>不知不觉就冬天了呢。</p><p>不知不觉就圣诞了呢。</p><p>不知不觉就元旦了呢。</p><p>不知不觉的发现，年末一场雪也没下呢。</p><p>飘几粒雪花不能算作下雪吧，哪有16年冬天的那场大雪大呢。</p><p>到了年末就开始想怎么写2017年的总结，不知不觉就拖到了2018年了呢。</p><p>思路变换的很快，在还没想好怎么写出来的时候就把它忘了。</p><p>我尽可能的不受近期的一些心情方面的影响，写这些总结吧。</p>]]>
     
     </summary>
     
@@ -273,7 +297,7 @@
     
     <summary type="html">
     
-    <![CDATA[<p><img src="/posts/just-a-small-update/images/image4.jpg" alt>&#x597D;&#x4E45;&#x6CA1;&#x6709;&#x66F4;&#x65B0;&#x535A;&#x5BA2;&#x4E86;&#x3002;&#x4E0B;&#x5B9A;&#x51B3;&#x5FC3;&#x6765;&#x5199;&#x70B9;&#x4E1C;&#x897F;&#x5230;&#x8FD9;&#x91CC;&#xFF0C;&#x6234;&#x4E0A;&#x8033;&#x673A;&#x6574;&#x7406;&#x597D;&#x601D;&#x8DEF;&#x5F00;&#x5199;&#x3002;</p><p>&#x4E4B;&#x524D;&#x8111;&#x5B50;&#x4E00;&#x62BD;&#x5199;&#x4E86;&#x70B9;&#x4E1C;&#x897F;&#x653E;&#x5728;&#x535A;&#x5BA2;&#x4E0A;&#x9762;&#xFF0C;&#x6700;&#x7EC8;&#x8FD8;&#x662F;&#x56E0;&#x4E3A;&#x81EA;&#x5DF1;&#x770B;&#x4E0D;&#x60EF;&#x81EA;&#x5DF1;&#x5199;&#x7684;&#x4E1C;&#x897F;&#x5220;&#x6389;&#x4E86;&#x3002;&#x603B;&#x7684;&#x6765;&#x8BF4;&#x5C31;&#x662F;&#x60F3;&#x8BF4;&#x7684;&#x592A;&#x591A;&#xFF0C;&#x4F46;&#x662F;&#x5199;&#x4E0D;&#x51FA;&#x6765;&#x3002;</p>]]>
+    <![CDATA[<p><img src="/posts/just-a-small-update/images/image4.jpg" alt>好久没有更新博客了。下定决心来写点东西到这里，戴上耳机整理好思路开写。</p><p>之前脑子一抽写了点东西放在博客上面，最终还是因为自己看不惯自己写的东西删掉了。总的来说就是想说的太多，但是写不出来。</p>]]>
     
     </summary>
     
@@ -325,7 +349,7 @@
     
     <summary type="html">
     
-    <![CDATA[<h1 id="FlowersinSpring"><a class="headerlink" href="/posts/Spring/#FlowersinSpring" title="FlowersinSpring"></a>Flowers in Spring.</h1><p>&#x524D;&#x4E00;&#x9635;&#x5B50;&#x62CD;&#x7684;&#x4E00;&#x4E9B;&#x82B1;&#xFF0C;&#x7B80;&#x5355;&#x5730;&#x7528;&#x624B;&#x673A;&#x548C;&#x7535;&#x8111;&#x8C03;&#x4E86;&#x989C;&#x8272;&#xFF0C;&#x611F;&#x89C9;&#x86EE;&#x597D;&#x770B;&#x7684;&#x3002;&#x611F;&#x89C9;&#x6709;&#x7684;&#x7167;&#x7247;&#x53EF;&#x4EE5;&#x5F53;&#x4F5C;&#x58C1;&#x7EB8;&#x4E86;&#x3002; <strong>&#x591A;&#x56FE;&#x8B66;&#x544A;</strong></p>]]>
+    <![CDATA[<h1 id="FlowersinSpring"><a class="headerlink" href="/posts/Spring/#FlowersinSpring" title="FlowersinSpring"></a>Flowers in Spring.</h1><p>前一阵子拍的一些花，简单地用手机和电脑调了颜色，感觉蛮好看的。感觉有的照片可以当作壁纸了。 <strong>多图警告</strong></p>]]>
     
     </summary>
     
@@ -353,7 +377,7 @@
     
     <summary type="html">
     
-    <![CDATA[<p>&#x60F3;&#x4E86;&#x5F88;&#x4E45;&#x4E0D;&#x77E5;&#x9053;&#x4EE5;&#x4EC0;&#x4E48;&#x6765;&#x4F5C;&#x4E3A;&#x672C;&#x7BC7;&#x6587;&#x7AE0;&#x7684;&#x5F00;&#x5934;&#xFF0C;&#x4E0D;&#x786E;&#x5B9A;&#x81EA;&#x5DF1;&#x771F;&#x7684;&#x60F3;&#x8BF4;&#x4E9B;&#x4EC0;&#x4E48;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x8FD8;&#x662F;&#x5E26;&#x7740;&#x786E;&#x5207;&#x76EE;&#x7684;&#x6765;&#x5199;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x7684;&#x3002;</p><p>&#x8FD9;&#x4E00;&#x4E2A;&#x6708;&#x53D1;&#x751F;&#x4E86;&#x4E00;&#x4E9B;&#x4E0D;&#x592A;&#x6109;&#x5FEB;&#x7684;&#x4E8B;&#xFF0C;&#x53EF;&#x80FD;&#x4E0D;&#x7B97;&#x5F88;&#x5927;&#x5427;&#x4F46;&#x662F;&#x5BF9;&#x6211;&#x6765;&#x8BF4;&#x8FD9;&#x4E2A;&#x5F71;&#x54CD;&#x771F;&#x7684;&#x5F88;&#x5927;&#x3002;&#x6211;&#x4E0D;&#x77E5;&#x9053;&#x5E94;&#x8BE5;&#x4ECE;&#x4F55;&#x8BF4;&#x8D77;&#xFF0C;&#x5148;&#x9759;&#x4E0B;&#x6765;&#x5E26;&#x4E0A;&#x8033;&#x673A;&#x6162;&#x6162;&#x7684;&#x60F3;&#x6162;&#x6162;&#x7684;&#x5199;&#x3002;</p><p><img src="/posts/sorry-thankyou/images/snow.jpg" alt="Snow"></p>]]>
+    <![CDATA[<p>想了很久不知道以什么来作为本篇文章的开头，不确定自己真的想说些什么，但是我还是带着确切目的来写这篇文章的。</p><p>这一个月发生了一些不太愉快的事，可能不算很大吧但是对我来说这个影响真的很大。我不知道应该从何说起，先静下来带上耳机慢慢的想慢慢的写。</p><p><img src="/posts/sorry-thankyou/images/snow.jpg" alt="Snow"></p>]]>
     
     </summary>
     
@@ -377,7 +401,7 @@
     
     <summary type="html">
     
-    <![CDATA[<p>&#x6811;&#x8393;&#x6D3E;&#x529F;&#x80FD;&#x5F3A;&#x5927;&#xFF0C;&#x53EF;&#x4EE5;&#x50CF;&#x7535;&#x8111;&#x4E00;&#x6837;&#x5E72;&#x5F88;&#x591A;&#x4E8B;&#x60C5;&#x3002;&#x521A;&#x4E70;&#x6811;&#x8393;&#x6D3E;3B&#x65F6;&#x5C31;&#x60F3;&#x5F04;&#x4E00;&#x4E2A;&#x6211;&#x7684;&#x4E16;&#x754C;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4F46;&#x662F;&#x90A3;&#x65F6;&#x4E0D;&#x61C2;linux&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x4E5F;&#x5C31;&#x6CA1;&#x5EFA;&#x6210;&#x3002;&#x8FD9;&#x4E00;&#x9635;&#x5B50;&#x6253;&#x7B97;&#x628A;&#x8FD9;&#x4E2A;&#x8BA1;&#x5212;&#x518D;&#x6361;&#x8D77;&#x6765;&#xFF0C;&#x548C;&#x540C;&#x5B66;&#x4E00;&#x8D77;&#x8054;&#x673A;&#x7684;&#x8BDD;&#x6811;&#x8393;&#x6D3E;&#x8FD8;&#x662F;&#x80FD;&#x505A;&#x5230;&#x7684;&#x3002;ARM&#x7CFB;&#x5217;&#x7684;CPU&#x6027;&#x80FD;&#x80AF;&#x5B9A;&#x6BD4;X86_64&#x7535;&#x8111;&#x7684;CPU&#x5F31;&#x8BB8;&#x591A;&#xFF0C;&#x5916;&#x52A0;&#x4E0A;&#x6811;&#x8393;&#x6D3E;1G&#x7684;&#x8FD0;&#x884C;&#x5185;&#x5B58;&#xFF0C;&#x8BA9;&#x5B83;&#x8DD1;&#x5927;&#x578B;&#x670D;&#x52A1;&#x5668;&#x80AF;&#x5B9A;&#x662F;&#x4E0D;&#x53EF;&#x80FD;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x80FD;&#x5F04;&#x4E00;&#x4E2A;&#x51E0;&#x4E2A;&#x4EBA;&#x8054;&#x673A;&#x7684;&#x5C0F;&#x670D;&#x52A1;&#x5668;&#x4E86;&#x3002;</p>]]>
+    <![CDATA[<p>树莓派功能强大，可以像电脑一样干很多事情。刚买树莓派3B时就想弄一个我的世界服务器，但是那时不懂linux，服务器也就没建成。这一阵子打算把这个计划再捡起来，和同学一起联机的话树莓派还是能做到的。ARM系列的CPU性能肯定比X86_64电脑的CPU弱许多，外加上树莓派1G的运行内存，让它跑大型服务器肯定是不可能的，所以只能弄一个几个人联机的小服务器了。</p>]]>
     
     </summary>
     
@@ -401,7 +425,7 @@
     
     <summary type="html">
     
-    <![CDATA[<h1 id="&#x5C0F;&#x7C73;&#x8DEF;&#x7531;&#x5668;mini&#x6362;&#x5929;&#x7EBF;&#x4E0E;&#x6563;&#x70ED;&#x7247;&#x7684;&#x5B89;&#x88C5;"><a class="headerlink" href="/posts/xiaomi-mini-fan-2/#%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8mini%E6%8D%A2%E5%A4%A9%E7%BA%BF%E4%B8%8E%E6%95%A3%E7%83%AD%E7%89%87%E7%9A%84%E5%AE%89%E8%A3%85" title="&#x5C0F;&#x7C73;&#x8DEF;&#x7531;&#x5668;mini&#x6362;&#x5929;&#x7EBF;&#x4E0E;&#x6563;&#x70ED;&#x7247;&#x7684;&#x5B89;&#x88C5;"></a>&#x5C0F;&#x7C73;&#x8DEF;&#x7531;&#x5668;mini&#x6362;&#x5929;&#x7EBF;&#x4E0E;&#x6563;&#x70ED;&#x7247;&#x7684;&#x5B89;&#x88C5;</h1><p>&#x5C0F;&#x7C73;&#x8DEF;&#x7531;&#x5668;&#x7684;cpu&#x4E3A;MT7620A&#xFF0C;&#x63A7;&#x5236;5G&#x7684;&#x82AF;&#x7247;&#x4E3A;MT7612EN&#x3002;&#x8FD9;&#x4E24;&#x4E2A;&#x82AF;&#x7247;&#x7684;&#x53D1;&#x70ED;&#x91CF;&#x8FD8;&#x662F;&#x5F88;&#x5927;&#x7684;&#x3002;&#x5C0F;&#x7C73;&#x5728;&#x8DEF;&#x7531;&#x5668;&#x4E2D;&#x653E;&#x4E86;&#x4E00;&#x5927;&#x5757;&#x94C1;&#x7247;&#x5E76;&#x8D34;&#x4E0A;&#x5BFC;&#x70ED;&#x7845;&#x8102;&#xFF0C;&#x5C06;&#x70ED;&#x91CF;&#x5BFC;&#x5230;&#x94C1;&#x677F;&#x4E0A;&#x6563;&#x53D1;&#x6389;&#x3002;&#x4F46;&#x662F;&#x6BD5;&#x7ADF;&#x94C1;&#x677F;&#x88AB;&#x5C01;&#x5728;&#x4E86;&#x539A;&#x539A;&#x7684;&#x5851;&#x6599;&#x58F3;&#x5185;&#xFF0C;&#x6563;&#x70ED;&#x6548;&#x679C;&#x4E2D;&#x89C4;&#x4E2D;&#x77E9;&#x5427;&#x3002;&#x6240;&#x4EE5;&#x5F00;&#x59CB;&#x62C6;&#x673A;&#x52A8;&#x624B;&#x778E;&#x5F04;&#x3002;</p>]]>
+    <![CDATA[<h1 id="小米路由器mini换天线与散热片的安装"><a class="headerlink" href="/posts/xiaomi-mini-fan-2/#%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8mini%E6%8D%A2%E5%A4%A9%E7%BA%BF%E4%B8%8E%E6%95%A3%E7%83%AD%E7%89%87%E7%9A%84%E5%AE%89%E8%A3%85" title="小米路由器mini换天线与散热片的安装"></a>小米路由器mini换天线与散热片的安装</h1><p>小米路由器的cpu为MT7620A，控制5G的芯片为MT7612EN。这两个芯片的发热量还是很大的。小米在路由器中放了一大块铁片并贴上导热硅脂，将热量导到铁板上散发掉。但是毕竟铁板被封在了厚厚的塑料壳内，散热效果中规中矩吧。所以开始拆机动手瞎弄。</p>]]>
     
     </summary>
     
@@ -427,7 +451,7 @@
     
     <summary type="html">
     
-    <![CDATA[<p><img src="/posts/xiaomi-mini-fan-1/images/router.jpg" alt="Xiaomi-Wifi-Mini"></p><p>&#x524D;&#x4E0D;&#x4E45;&#x5BB6;&#x91CC;&#x65B0;&#x6DFB;&#x4E00;&#x53F0;&#x5C0F;&#x7C73;&#x8DEF;&#x7531;&#x5668;Mini,&#x672C;&#x7740;&#x66F4;&#x597D;&#x7684;&#x53D1;&#x6325;&#x8DEF;&#x7531;&#x5668;&#x7684;&#x6027;&#x80FD;&#x7684;&#x6001;&#x5EA6;&#x53BB;&#x6298;&#x817E;&#xFF0C;&#x4E8E;&#x662F;&#x5C31;&#x6709;&#x4E86;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x3002;</p>]]>
+    <![CDATA[<p><img src="/posts/xiaomi-mini-fan-1/images/router.jpg" alt="Xiaomi-Wifi-Mini"></p><p>前不久家里新添一台小米路由器Mini,本着更好的发挥路由器的性能的态度去折腾，于是就有了这篇文章。</p>]]>
     
     </summary>
     
@@ -457,7 +481,7 @@
     
     <summary type="html">
     
-    <![CDATA[<h1 id="&#x524D;&#x8A00;&#xFF1A;"><a class="headerlink" href="/posts/hexo-blog/#%E5%89%8D%E8%A8%80%EF%BC%9A" title="&#x524D;&#x8A00;&#xFF1A;"></a>&#x524D;&#x8A00;&#xFF1A;</h1><p>&#x5728;&#x6211;&#x5EFA;&#x597D;&#x6211;&#x7684;&#x7F51;&#x7AD9;&#x540E;&#xFF0C;&#x5C31;&#x4E00;&#x76F4;&#x60F3;&#x628A;&#x6211;&#x642D;&#x5EFA;&#x535A;&#x5BA2;&#x7684;&#x8FC7;&#x7A0B;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#x3002;&#x642D;&#x5EFA;&#x535A;&#x5BA2;&#x7684;&#x8FC7;&#x7A0B;&#x86EE;&#x6709;&#x8DA3;&#x7684;,&#x4E0D;&#x540C;&#x7684;&#x5E73;&#x53F0;&#x642D;&#x5EFA;&#x65B9;&#x6CD5;&#x8FD8;&#x6709;&#x6240;&#x4E0D;&#x540C;&#x3002;</p><p>&#x8FD9;&#x671F;&#x95F4;&#x5BF9;&#x65B0;&#x624B;&#x6765;&#x8BF4;&#x4F1A;&#x9762;&#x5BF9;&#x5404;&#x79CD;&#x5404;&#x6837;&#x7684;&#x95EE;&#x9898;&#x3002;&#x672C;&#x7BC7;&#x6587;&#x7AE0;&#x8BB0;&#x5F55;&#x4E86;&#x6211;&#x5EFA;&#x9020;Hexo&#x535A;&#x5BA2;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x5F88;&#x591A;&#x7EC6;&#x8282;&#x65B9;&#x9762;&#x7684;&#x4E1C;&#x897F;&#x90FD;&#x80FD;&#x5728;Hexo&#x5B98;&#x7F51;&#x627E;&#x5230;&#x3002;</p><p><img src="/posts/hexo-blog/images/hexo1.jpg" alt="Hexo" title="Hexo"></p>]]>
+    <![CDATA[<h1 id="前言："><a class="headerlink" href="/posts/hexo-blog/#%E5%89%8D%E8%A8%80%EF%BC%9A" title="前言："></a>前言：</h1><p>在我建好我的网站后，就一直想把我搭建博客的过程记录下来。搭建博客的过程蛮有趣的,不同的平台搭建方法还有所不同。</p><p>这期间对新手来说会面对各种各样的问题。本篇文章记录了我建造Hexo博客的过程，很多细节方面的东西都能在Hexo官网找到。</p><p><img src="/posts/hexo-blog/images/hexo1.jpg" alt="Hexo" title="Hexo"></p>]]>
     
     </summary>
     

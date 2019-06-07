@@ -37,7 +37,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
     
     
-    <link rel="alternate" href="/atom.xml" title="STARRY-S' Blog" type="application/atom+xml" />
+    <link rel="alternate" href="/atom.xml" title="STARRY-S‘ Blog" type="application/atom+xml" />
     
     
     <link rel="stylesheet" type="text/css" href="/css/normalize.css">
@@ -83,7 +83,7 @@
     <script type="text/javascript">
     $(document).ready(function () {
       $(".post pre code figure.highlight").each(function (i, e) {
-        $(e).before("<button class=\"copy button\">Copy</button>");
+        $(e).before("<button class=\"copy button\">复制</button>");
       });
       var cb = new ClipboardJS("button.copy", {
         "target": function (trigger) {
@@ -96,11 +96,11 @@
         e.clearSelection();
         var trigger = e.trigger;
         // Change button text as a user tip.
-        trigger.innerHTML = "Copied";
+        trigger.innerHTML = "已复制";
         $(trigger).addClass("copied");
         // Change button text back;
         setTimeout(function () {
-          trigger.innerHTML = "Copy";
+          trigger.innerHTML = "复制";
           $(trigger).removeClass("copied");
         }, 1500);
       });
@@ -117,16 +117,16 @@ $(document).ready(function () {
 </script>
 
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>Tags | STARRY-S' Blog - I never quite realized...</title>
+    <title>标签 | STARRY-S‘ Blog - 本とは空を飛べると知っていたから</title>
   </head>
-  <body itemscope itemtype="http://schema.org/WebPage" lang="en" data-spy="scroll" data-target=".list-group">
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
     
 <header id="header" class="header" style="background: #33363b;">
   <div class="container">
     <div class="header-container">
       <div class="header-title">
-        <h1 class="title"><a href="/">STARRY-S' Blog</a></h1>
-        <h2 class="subtitle">I never quite realized...</h2>
+        <h1 class="title"><a href="/">STARRY-S‘ Blog</a></h1>
+        <h2 class="subtitle">本とは空を飛べると知っていたから</h2>
       </div>
       
       <div class="logo">
@@ -135,18 +135,18 @@ $(document).ready(function () {
       
     </div>
     <nav id="nav" class="nav">
-      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="Toggle Navbar"></i></a>
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
       <ul id="menu" role="menubar" aria-hidden="false">
         
-        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">Home</span></a></li>
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
         
-        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">Archives</span></a></li>
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
         
-        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">Categories</span></a></li>
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">分类</span></a></li>
         
-        <li role="menuitem"><a href="/tags/" class="current"><i class="fas fa-tags"></i><span class="menu-text">Tags</span></a></li>
+        <li role="menuitem"><a href="/tags/" class="current"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
         
-        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">About</span></a></li>
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
         
       </ul>
     </nav>
@@ -162,12 +162,12 @@ $(document).ready(function () {
 <div id="tags" class="tags page">
   <article class="article post card">
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">Tags</h1>
+      <h1 class="post-title" itemprop="name headline">标签</h1>
     </header>
     <main class="post-main">
       <h2 class="page-counter">
         
-        You have 25 tags!
+        你已经创建了 25 个标签！
         
       </h2>
       <div class="tags-cloud">
@@ -229,26 +229,6 @@ $(document).ready(function () {
   
   
 
-<div class="reward" id="reward">
-  <p>奖励一下，喵！</p>
-  <button id="reward-button" class="button" disable="enable"><i class="fas fa-donate"></i>Reward</button>
-  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
-    
-    <div id="wechatpay">
-      <img id="wechatpay-qr" src="/images/wechat.jpg" alt="WechatPay"/>
-      <span>WechatPay</span>
-    </div>
-    
-    
-    <div id="alipay">
-      <img id="alipay-qr" src="/images/alipay.jpg" alt="AliPay"/>
-      <span>AliPay</span>
-    </div>
-    
-    
-  </div>
-</div>
-
 
 
   
@@ -268,7 +248,7 @@ $(document).ready(function () {
   
   <div class="search">
     <div class="form-group">
-      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="Search" class="form-control"/>
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
     </div>
   </div>
   <div class="search-result-box" id="search-result"></div>
@@ -279,28 +259,28 @@ $(document).ready(function () {
   <img class="author-avatar" src="/images/avatar.jpg" alt="STARRY-S">
   
   <h1 class="author-name">STARRY-S</h1>
-  <h2 class="author-description">How beautiful this world is.</h2>
+  <h2 class="author-description">羽ばたくときが怖くて風を忘れた</h2>
   <div class="site-count">
     
     
     
     
     <div class="archives-count count-block">
-      <div class="site-count-title">Archives</div>
-      <div><a href="/archives/">19</a></div>
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">20</a></div>
     </div>
     
     
     
     <div class="categories-count count-block">
-      <div class="site-count-title">Categories</div>
-      <div><a href="/categories/">15</a></div>
+      <div class="site-count-title">分类</div>
+      <div><a href="/categories/">17</a></div>
     </div>
     
     
     
     <div class="tags-count count-block">
-      <div class="site-count-title">Tags</div>
+      <div class="site-count-title">标签</div>
       <div><a href="/tags/">25</a></div>
     </div>
     
@@ -321,7 +301,7 @@ $(document).ready(function () {
     
     <hr>
     <div class="social-link sidebar-item">
-      <div><i class="far fa-address-card"></i>Social Links</p></div>
+      <div><i class="far fa-address-card"></i>社交链接</p></div>
       <ul>
         
         <li><i class="fas fa-envelope"></i><a href="mailto:hx916584160@gmail.com" target="_blank">E-Mail</a></li>
@@ -338,7 +318,7 @@ $(document).ready(function () {
     
     <hr>
     <div class="blogroll sidebar-item">
-      <div><i class="fas fa-user-friends"></i>Blogroll</div>
+      <div><i class="fas fa-user-friends"></i>友情链接</div>
       <ul>
         
         <li><i class="fas fa-link"></i><a href="https://alynx.xyz/" target="_blank">喵's HomePage</a></li>
@@ -362,7 +342,7 @@ $(document).ready(function () {
 <footer id="footer" class="footer" style="background: #33363b;">
   <div class="container">
     <div class="back-to-top">
-      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="Back to Top"></i></button>
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
     </div>
     <div class="footer-container">
       <div class="footer-left">
@@ -371,7 +351,7 @@ $(document).ready(function () {
         </div>
         
         <div class="busuanzi">
-          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="Site Visit Count" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="Site User Count" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="fas fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="Page Click Count" aria-hidden="false"></span></span>
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="fas fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
         </div>
         
       </div>
@@ -382,7 +362,7 @@ $(document).ready(function () {
           
         </div>
         <div class="powered-by">
-          Proudly Powered by <a href="https://github.com/AlynxZhou/hikaru/" target="_blank">Hikaru</a><i class="fab fa-node-js"></i>Theme is <a href="https://github.com/AlynxZhou/hikaru-theme-aria/" target="_blank">ARIA</a>
+          由 <a href="https://github.com/AlynxZhou/hikaru/" target="_blank">Hikaru</a> 强力驱动<i class="fab fa-node-js"></i>主题 <a href="https://github.com/AlynxZhou/hikaru-theme-aria/" target="_blank">ARIA</a>
         </div>
       </div>
     </div>
@@ -392,4 +372,4 @@ $(document).ready(function () {
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.13.3 at 2019-05-19 Sun 20:14:04 CST. -->
+<!-- Page built by Hikaru v1.14.8 at 2019-06-08 周六 03:03:38 CST. -->
