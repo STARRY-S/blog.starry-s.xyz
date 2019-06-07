@@ -1,0 +1,8 @@
+{
+  "name": "blog.starry-s.xyz",
+  "dependencies": {
+    "hikaru-generator-feed": "^1.0.2",
+    "hikaru-generator-search": "^1.0.1",
+    "hikaru-generator-sitemap": "^1.0.2"
+  }
+}
