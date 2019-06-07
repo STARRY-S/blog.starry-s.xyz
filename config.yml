@@ -1,0 +1,58 @@
+title: STARRY-S' Blog
+subtitle: I never quite realized...
+description: How beautiful this world is.
+author: STARRY-S
+email: hx916584160@gmail.com
+language: en
+
+baseURL: https://blog.starry-s.xyz
+rootDir: /
+srcDir: srcs
+docDir: docs
+themeDir: aria
+categoryDir: categories
+tagDir: tags
+
+perPage: 10
+
+skipRender:
+  - README.md
+  - CNAME
+
+nunjucks:
+  autoescape: false
+
+marked:
+  gfm: true
+
+stylus:
+  compress: false
+  sourcemaps:
+    comment: true
+    inline: true
+    sourceRoot: ''
+    basePath: .
+
+coffeescript:
+  header: false
+  bare: false
+
+highlight:
+  gutter: true
+  hljs: true
+
+search:
+  enable: true
+  path: search.json
+
+feed:
+  enable: true
+  path: atom.xml
+  limit: 20
+  hub:
+  content: false
+  contentLimit: 140
+
+sitemap:
+  enable: true
+  path: sitemap.xml

@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hikaru, STARRY-S">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="STARRY-S' Blog" type="application/atom+xml" />
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "/search.json";
+      if ("search.json".length === 0) {
+        searchPath = "/search.json";
+      }
+      searchFunc(searchPath, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      $(".post pre code figure.highlight").each(function (i, e) {
+        $(e).before("<button class=\"copy button\">Copy</button>");
+      });
+      var cb = new ClipboardJS("button.copy", {
+        "target": function (trigger) {
+            // Get target element by DOM API.
+            // nextElementSibling is figure,highlight, lastChild is pre.code.
+            return trigger.nextElementSibling.lastChild;
+        }
+      });
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "Copied";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "Copy";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>STARRY-S' Blog - I never quite realized...</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="en" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">STARRY-S' Blog</a></h1>
+        <h2 class="subtitle">I never quite realized...</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="Toggle Navbar"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/" class="current"><i class="fas fa-home"></i><span class="menu-text">Home</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">Archives</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">Categories</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">Tags</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">About</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="index" class="index page">
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.xyz/posts/Spring-3/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="STARRY-S">
+        <meta itemprop="description" content="How beautiful this world is.">
+        <meta itemprop="image" content="/images/avatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="STARRY-S' Blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/posts/Spring-3/" itemprop="url">Spring - 3</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date meta-block">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-03T15:20:43.000Z">2019-05-03 Fri 23:20:43 CST</time></span>
+        </span>
+        
+        
+        <span class="post-categories meta-block">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%91%84%E5%BD%B1/" itemprop="url" rel="index"><span itemprop="name">摄影</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%91%84%E5%BD%B1/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>&#x6625;&#x5929;&#x7EC8;&#x4E8E;&#x6765;&#x4E86;&#x3002;</p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        <a class="post-tag button" href="/tags/%E6%91%84%E5%BD%B1/" rel="tag"><i class="fas fa-tag"></i>摄影</a><a class="post-tag button" href="/tags/Flowers/" rel="tag"><i class="fas fa-tag"></i>Flowers</a><a class="post-tag button" href="/tags/Spring/" rel="tag"><i class="fas fa-tag"></i>Spring</a>
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.xyz/posts/trip-shanghai/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="STARRY-S">
+        <meta itemprop="description" content="How beautiful this world is.">
+        <meta itemprop="image" content="/images/avatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="STARRY-S' Blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/posts/trip-shanghai/" itemprop="url">一个人的旅行 —— 上海</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date meta-block">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-04-09T05:24:44.000Z">2019-04-09 Tue 13:24:44 CST</time></span>
+        </span>
+        
+        
+        <span class="post-categories meta-block">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%90%90%E4%BA%8B/" itemprop="url" rel="index"><span itemprop="name">琐事</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%90%90%E4%BA%8B/Trip/" itemprop="url" rel="index"><span itemprop="name">Trip</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p><img src="/posts/trip-shanghai/images/shanghai.jpg" alt></p>
+<div class="alert-red">&#x591A;&#x56FE;&#x9884;&#x8B66;</div>
+
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        <a class="post-tag button" href="/tags/%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%9A%84%E6%97%85%E8%A1%8C/" rel="tag"><i class="fas fa-tag"></i>一个人的旅行</a><a class="post-tag button" href="/tags/%E7%90%90%E4%BA%8B/" rel="tag"><i class="fas fa-tag"></i>琐事</a><a class="post-tag button" href="/tags/%E6%91%84%E5%BD%B1/" rel="tag"><i class="fas fa-tag"></i>摄影</a>
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.xyz/posts/Xiaomi_Miwifi_3G/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="STARRY-S">
+        <meta itemprop="description" content="How beautiful this world is.">
+        <meta itemprop="image" content="/images/avatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="STARRY-S' Blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/posts/Xiaomi_Miwifi_3G/" itemprop="url">小米路由器3G折腾之刷OpenWrt/Pandavan记录</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date meta-block">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-02-18T16:49:20.000Z">2019-02-19 Tue 00:49:20 CST</time></span>
+        </span>
+        
+        
+        <span class="post-categories meta-block">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">路由器</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>&#x751F;&#x547D;&#x4E0D;&#x606F;&#xFF0C;&#x6298;&#x817E;&#x4E0D;&#x6B62;&#x3002;</p>
+<p>&#x5BB6;&#x91CC;&#x7684;&#x8DEF;&#x7531;&#x5668;&#x53C8;&#x574F;&#x4E86;&#xFF08;&#x5F3A;&#x884C;&#x72E1;&#x8FA9;</p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        <a class="post-tag button" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"><i class="fas fa-tag"></i>教程</a><a class="post-tag button" href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8%E6%95%99%E7%A8%8B/" rel="tag"><i class="fas fa-tag"></i>路由器教程</a><a class="post-tag button" href="/tags/OpenWrt/LEDE/" rel="tag"><i class="fas fa-tag"></i>OpenWrt/LEDE</a><a class="post-tag button" href="/tags/OpenWrt/" rel="tag"><i class="fas fa-tag"></i>OpenWrt</a><a class="post-tag button" href="/tags/Pandavan/" rel="tag"><i class="fas fa-tag"></i>Pandavan</a><a class="post-tag button" href="/tags/PandoraBox/" rel="tag"><i class="fas fa-tag"></i>PandoraBox</a>
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.xyz/posts/Nier_Automata/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="STARRY-S">
+        <meta itemprop="description" content="How beautiful this world is.">
+        <meta itemprop="image" content="/images/avatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="STARRY-S' Blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/posts/Nier_Automata/" itemprop="url">Automata</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date meta-block">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-02-17T07:34:50.000Z">2019-02-17 Sun 15:34:50 CST</time></span>
+        </span>
+        
+        
+        <span class="post-categories meta-block">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%B8%B8%E6%88%8F/" itemprop="url" rel="index"><span itemprop="name">游戏</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p><img src="/posts/Nier_Automata/images/20190216233002_1.jpg" alt></p>
+<div class="alert-red">&#x672C;&#x7BC7;&#x5185;&#x5BB9;&#x542B;&#x6709;&#x4E00;&#x5B9A;&#x5267;&#x900F;&#x6210;&#x5206;</div>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        <a class="post-tag button" href="/tags/%E6%B8%B8%E6%88%8F/" rel="tag"><i class="fas fa-tag"></i>游戏</a>
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.xyz/posts/Hello-2019/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="STARRY-S">
+        <meta itemprop="description" content="How beautiful this world is.">
+        <meta itemprop="image" content="/images/avatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="STARRY-S' Blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/posts/Hello-2019/" itemprop="url">Hello 2019</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date meta-block">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-12-31T16:00:00.000Z">2019-01-01 Tue 00:00:00 CST</time></span>
+        </span>
+        
+        
+        <span class="post-categories meta-block">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" itemprop="url" rel="index"><span itemprop="name">碎碎念</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <h1 id="Hello2019"><a class="headerlink" href="/posts/Hello-2019/#Hello2019" title="Hello2019"></a>Hello 2019</h1>
+<p>&#x4E00;&#x7728;&#x773C;&#x5230;&#x4E86;2018&#x5E74;&#x5E74;&#x5C3E;&#xFF0C;&#x8FD9;&#x4E00;&#x5E74;&#x5F88;&#x666E;&#x901A;&#xFF0C;&#x5F88;&#x5E73;&#x6DE1;&#x3002;</p>
+<p>&#x6700;&#x521D;&#x5199;&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;&#x65F6;&#x662F;&#x5728;&#x5BDD;&#x5BA4;&#x5077;&#x5077;&#x5199;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x663E;&#x5F97;&#x6BD4;&#x8F83;&#x51CC;&#x4E71;&#xFF0C;&#x4E8E;&#x662F;1&#x6708;22&#x53F7;&#x53C8;&#x505A;&#x4E00;&#x4E9B;&#x4FEE;&#x6539;&#x3002;</p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        <a class="post-tag button" href="/tags/%E7%90%90%E4%BA%8B/" rel="tag"><i class="fas fa-tag"></i>琐事</a><a class="post-tag button" href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" rel="tag"><i class="fas fa-tag"></i>碎碎念</a>
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.xyz/posts/Life_in_SAU/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="STARRY-S">
+        <meta itemprop="description" content="How beautiful this world is.">
+        <meta itemprop="image" content="/images/avatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="STARRY-S' Blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/posts/Life_in_SAU/" itemprop="url">Lifeline</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date meta-block">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-10-01T14:25:49.000Z">2018-10-01 Mon 22:25:49 CST</time></span>
+        </span>
+        
+        
+        <span class="post-categories meta-block">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%90%90%E4%BA%8B/" itemprop="url" rel="index"><span itemprop="name">琐事</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%90%90%E4%BA%8B/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" itemprop="url" rel="index"><span itemprop="name">碎碎念</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p><img src="/posts/Life_in_SAU/images/trip.jpg" alt="Trip">
+&#x7136;&#x800C;&#x597D;&#x591A;&#x5BF9;&#x6211;&#x6765;&#x8BF4;&#x5F88;&#x65B0;&#x9C9C;&#x65B0;&#x5947;&#x7684;&#x4E8B;&#x60C5;&#x53D1;&#x751F;&#x4E86;&#x3002;</p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        <a class="post-tag button" href="/tags/%E7%90%90%E4%BA%8B/" rel="tag"><i class="fas fa-tag"></i>琐事</a><a class="post-tag button" href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" rel="tag"><i class="fas fa-tag"></i>碎碎念</a>
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.xyz/posts/hmcl-minecraft/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="STARRY-S">
+        <meta itemprop="description" content="How beautiful this world is.">
+        <meta itemprop="image" content="/images/avatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="STARRY-S' Blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/posts/hmcl-minecraft/" itemprop="url">使用HMCL启动Minecraft游戏教程</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date meta-block">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-07-29T09:26:35.000Z">2018-07-29 Sun 17:26:35 CST</time></span>
+        </span>
+        
+        
+        <span class="post-categories meta-block">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%95%99%E7%A8%8B/Minecraft/" itemprop="url" rel="index"><span itemprop="name">Minecraft</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>&#x7EC8;&#x4E8E;&#x5230;&#x4E86;&#x6691;&#x5047;&#x53EF;&#x4EE5;&#x5F00;&#x4E00;&#x4E2A;Minecraft&#x670D;&#x52A1;&#x5668;&#x548C;&#x5C0F;&#x4F19;&#x4F34;&#x8054;&#x673A;&#x7684;&#x65F6;&#x5019;&#x4E86;&#xFF01;&#x5728;&#x53D1;&#x73B0;&#x6211;&#x5BF9;&#x5403;&#x9E21;&#x90A3;&#x7C7B;&#x7684;&#x6E38;&#x620F;&#x9664;&#x4E86;&#x89C9;&#x5F97;&#x597D;&#x73A9;&#x4EE5;&#x5916;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x5929;&#x8D4B;( <del>&#x6CA1;&#x94B1;&#x4E70;&#x9F20;&#x6807;&#xFF1F;</del> )&#x540E;&#x6253;&#x7B97;&#x7EE7;&#x7EED;&#x73A9;&#x6211;&#x7684;&#x4E16;&#x754C;&#xFF0C;&#x6240;&#x4EE5;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x90A3;&#x4E9B;&#x60F3;&#x73A9;Minecraft&#xFF08;&#x975E;&#x7F51;&#x6613;&#x4EE3;&#x7406;&#x7248;&#xFF09;&#x4F46;&#x662F;&#x8FD8;&#x4E0D;&#x77E5;&#x9053;&#x600E;&#x4E48;&#x64CD;&#x4F5C;&#x7684;&#x90A3;&#x4E9B;&#x5C0F;&#x4F19;&#x4F34;&#x4EEC;&#xFF0C;&#x8FD9;&#x7BC7;&#x6559;&#x7A0B;&#x5C31;&#x8FD9;&#x4E48;&#x8BDE;&#x751F;&#x4E86;&#x3002;</p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        <a class="post-tag button" href="/tags/Minecraft/" rel="tag"><i class="fas fa-tag"></i>Minecraft</a><a class="post-tag button" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"><i class="fas fa-tag"></i>教程</a>
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.xyz/posts/tired/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="STARRY-S">
+        <meta itemprop="description" content="How beautiful this world is.">
+        <meta itemprop="image" content="/images/avatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="STARRY-S' Blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/posts/tired/" itemprop="url">Tired</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date meta-block">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-07-22T09:22:30.000Z">2018-07-22 Sun 17:22:30 CST</time></span>
+        </span>
+        
+        
+        <span class="post-categories meta-block">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%90%90%E4%BA%8B/" itemprop="url" rel="index"><span itemprop="name">琐事</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%90%90%E4%BA%8B/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" itemprop="url" rel="index"><span itemprop="name">碎碎念</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>A bad mod with a stubborn brain, I felt that I can&apos;t do anything at this time.</p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        <a class="post-tag button" href="/tags/%E7%90%90%E4%BA%8B/" rel="tag"><i class="fas fa-tag"></i>琐事</a>
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.xyz/posts/Spring-2/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="STARRY-S">
+        <meta itemprop="description" content="How beautiful this world is.">
+        <meta itemprop="image" content="/images/avatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="STARRY-S' Blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/posts/Spring-2/" itemprop="url">Spring - 2</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date meta-block">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-04-05T10:05:11.000Z">2018-04-05 Thu 18:05:11 CST</time></span>
+        </span>
+        
+        
+        <span class="post-categories meta-block">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%91%84%E5%BD%B1/" itemprop="url" rel="index"><span itemprop="name">摄影</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%91%84%E5%BD%B1/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%91%84%E5%BD%B1/Spring/%E9%AB%98%E4%B8%AD/" itemprop="url" rel="index"><span itemprop="name">高中</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p><img src="/posts/Spring-2/images/05.jpeg" alt="Spring" title="Flowers"></p>
+<h1 id="&#x6625;&#x5929;&#x6765;&#x4E86;&#x3002;"><a class="headerlink" href="/posts/Spring-2/#%E6%98%A5%E5%A4%A9%E6%9D%A5%E4%BA%86%E3%80%82" title="&#x6625;&#x5929;&#x6765;&#x4E86;&#x3002;"></a>&#x6625;&#x5929;&#x6765;&#x4E86;&#x3002;</h1>
+<p><strong>&#x524D;&#x65B9;&#x591A;&#x56FE;&#x9884;&#x8B66;&#xFF1A;</strong> &#x9AD8;&#x6E05;&#x65E0;&#x7801;</p>
+<blockquote>
+<p>&#x4E4B;&#x524D;&#x4E70;&#x7684;&#x4E8C;&#x624B;&#x76F8;&#x673A;&#x56E0;&#x8D28;&#x91CF;&#x95EE;&#x9898;&#x574F;&#x6389;&#x4E86;&#x54E6;&#xFF0C;&#x6240;&#x4EE5;&#x4ECA;&#x5E74;&#x7684;&#x8FD9;&#x7EC4;&#x7167;&#x7247;&#x5C31;&#x8F6E;&#x5230;&#x6211;&#x7528;&#x624B;&#x673A;&#x6765;&#x62CD;&#x5566;&#x3002;
+&#x6BD5;&#x7ADF;&#x662F;&#x624B;&#x673A;&#x62CD;&#x7684;&#x7167;&#x7247;&#xFF0C;DNG&#x683C;&#x5F0F;&#x7684;&#x7167;&#x7247;&#x603B;&#x662F;&#x53D1;&#x767D;&#xFF08;&#x5927;&#x6982;&#x662F;&#x6211;&#x5728;&#x5F3A;&#x5149;&#x4E0B;&#x62CD;&#x7167;&#x5BFC;&#x81F4;&#x7684;&#x5427;&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x540E;&#x671F;&#x65F6;&#x4E0D;&#x7531;&#x81EA;&#x4E3B;&#x7684;&#x628A;&#x7167;&#x7247;&#x8C03;&#x6210;&#x4E86;&#x201C;&#x8001;&#x62BD;&#x9171;&#x6CB9;&#x653E;&#x591A;&#x4E86;&#x201D;&#x7684;&#x9AD8;&#x5BF9;&#x6BD4;&#x5EA6;&#xFF0C;&#x4F4E;&#x4EAE;&#x5EA6;&#x8272;&#x8C03;&#x4E86;&#xFF5E;&#x3002;</p>
+</blockquote>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        <a class="post-tag button" href="/tags/%E6%91%84%E5%BD%B1/" rel="tag"><i class="fas fa-tag"></i>摄影</a><a class="post-tag button" href="/tags/Flowers/" rel="tag"><i class="fas fa-tag"></i>Flowers</a>
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.xyz/posts/Hello-2018/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="STARRY-S">
+        <meta itemprop="description" content="How beautiful this world is.">
+        <meta itemprop="image" content="/images/avatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="STARRY-S' Blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/posts/Hello-2018/" itemprop="url">Hello 2018</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date meta-block">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-01-16T14:58:06.000Z">2018-01-16 Tue 22:58:06 CST</time></span>
+        </span>
+        
+        
+        <span class="post-categories meta-block">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" itemprop="url" rel="index"><span itemprop="name">碎碎念</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p><img src="/posts/Hello-2018/images/5cm_per_second.jpg" alt="&#x79D2;&#x901F;5&#x5398;&#x7C73;"></p>
+<p>&#x8FDF;&#x5230;&#x4E86;16&#x5929;&#x7684;&#x5E74;&#x7EC8;&#x603B;&#x7ED3;&#x3002;</p>
+<p>&#x4E0D;&#x77E5;&#x4E0D;&#x89C9;&#x5C31;&#x51AC;&#x5929;&#x4E86;&#x5462;&#x3002;</p>
+<p>&#x4E0D;&#x77E5;&#x4E0D;&#x89C9;&#x5C31;&#x5723;&#x8BDE;&#x4E86;&#x5462;&#x3002;</p>
+<p>&#x4E0D;&#x77E5;&#x4E0D;&#x89C9;&#x5C31;&#x5143;&#x65E6;&#x4E86;&#x5462;&#x3002;</p>
+<p>&#x4E0D;&#x77E5;&#x4E0D;&#x89C9;&#x7684;&#x53D1;&#x73B0;&#xFF0C;&#x5E74;&#x672B;&#x4E00;&#x573A;&#x96EA;&#x4E5F;&#x6CA1;&#x4E0B;&#x5462;&#x3002;</p>
+<p>&#x98D8;&#x51E0;&#x7C92;&#x96EA;&#x82B1;&#x4E0D;&#x80FD;&#x7B97;&#x4F5C;&#x4E0B;&#x96EA;&#x5427;&#xFF0C;&#x54EA;&#x6709;16&#x5E74;&#x51AC;&#x5929;&#x7684;&#x90A3;&#x573A;&#x5927;&#x96EA;&#x5927;&#x5462;&#x3002;</p>
+<p>&#x5230;&#x4E86;&#x5E74;&#x672B;&#x5C31;&#x5F00;&#x59CB;&#x60F3;&#x600E;&#x4E48;&#x5199;2017&#x5E74;&#x7684;&#x603B;&#x7ED3;&#xFF0C;&#x4E0D;&#x77E5;&#x4E0D;&#x89C9;&#x5C31;&#x62D6;&#x5230;&#x4E86;2018&#x5E74;&#x4E86;&#x5462;&#x3002;</p>
+<p>&#x601D;&#x8DEF;&#x53D8;&#x6362;&#x7684;&#x5F88;&#x5FEB;&#xFF0C;&#x5728;&#x8FD8;&#x6CA1;&#x60F3;&#x597D;&#x600E;&#x4E48;&#x5199;&#x51FA;&#x6765;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x628A;&#x5B83;&#x5FD8;&#x4E86;&#x3002;</p>
+<p>&#x6211;&#x5C3D;&#x53EF;&#x80FD;&#x7684;&#x4E0D;&#x53D7;&#x8FD1;&#x671F;&#x7684;&#x4E00;&#x4E9B;&#x5FC3;&#x60C5;&#x65B9;&#x9762;&#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x5199;&#x8FD9;&#x4E9B;&#x603B;&#x7ED3;&#x5427;&#x3002;</p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        <a class="post-tag button" href="/tags/%E7%90%90%E4%BA%8B/" rel="tag"><i class="fas fa-tag"></i>琐事</a><a class="post-tag button" href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" rel="tag"><i class="fas fa-tag"></i>碎碎念</a><a class="post-tag button" href="/tags/%E9%9F%B3%E4%B9%90/" rel="tag"><i class="fas fa-tag"></i>音乐</a>
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <nav class="pagination">
+    
+    
+    
+    
+    <a class="page-number current" href="/">1</a>
+    
+    
+    <a class="page-number" href="/index-2.html">2</a>
+    
+    
+    
+    <a class="extend next" href="/index-2.html"><i class="fas fa-angle-right" aria-label="Next Page"></i></a>
+    
+  </nav>
+  
+  
+  
+
+<div class="reward" id="reward">
+  <p>奖励一下，喵！</p>
+  <button id="reward-button" class="button" disable="enable"><i class="fas fa-donate"></i>Reward</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechatpay">
+      <img id="wechatpay-qr" src="/images/wechat.jpg" alt="WechatPay"/>
+      <span>WechatPay</span>
+    </div>
+    
+    
+    <div id="alipay">
+      <img id="alipay-qr" src="/images/alipay.jpg" alt="AliPay"/>
+      <span>AliPay</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+
+  
+  
+  
+  
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="Search" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.jpg" alt="STARRY-S">
+  
+  <h1 class="author-name">STARRY-S</h1>
+  <h2 class="author-description">How beautiful this world is.</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">Archives</div>
+      <div><a href="/archives/">19</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">Categories</div>
+      <div><a href="/categories/">15</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">Tags</div>
+      <div><a href="/tags/">25</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>Social Links</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:hx916584160@gmail.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/STARRY-S" target="_blank">GitHub</a></li>
+        
+        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/u/6990977018" target="_blank">Weibo</a></li>
+        
+        <li><i class="fab fa-telegram"></i><a href="https://t.me/STARRYS" target="_blank">Telegram</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-user-friends"></i>Blogroll</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://alynx.xyz/" target="_blank">喵's HomePage</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://chenxy.moe/" target="_blank">Art_Chen's Blog</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://lgiki.cc" target="_blank">LGiki's Blog</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="Back to Top"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author"><i class="far fa-edit"></i>STARRY-S</span><span class="years"><i class="far fa-copyright"></i><span id="years-text">2016</span></span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">BY-NC-ND 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="Site Visit Count" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="Site User Count" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="fas fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="Page Click Count" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          Hosted by<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          Proudly Powered by <a href="https://github.com/AlynxZhou/hikaru/" target="_blank">Hikaru</a><i class="fab fa-node-js"></i>Theme is <a href="https://github.com/AlynxZhou/hikaru-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>
+<!-- Page built by Hikaru v1.13.3 at 2019-05-19 Sun 20:14:04 CST. -->

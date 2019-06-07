@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hikaru, STARRY-S">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="STARRY-S' Blog" type="application/atom+xml" />
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    <script defer src="/js/busuanzi.pure.mini.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "/search.json";
+      if ("search.json".length === 0) {
+        searchPath = "/search.json";
+      }
+      searchFunc(searchPath, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      $(".post pre code figure.highlight").each(function (i, e) {
+        $(e).before("<button class=\"copy button\">Copy</button>");
+      });
+      var cb = new ClipboardJS("button.copy", {
+        "target": function (trigger) {
+            // Get target element by DOM API.
+            // nextElementSibling is figure,highlight, lastChild is pre.code.
+            return trigger.nextElementSibling.lastChild;
+        }
+      });
+      cb.on("success", function (e) {
+        e.clearSelection();
+        var trigger = e.trigger;
+        // Change button text as a user tip.
+        trigger.innerHTML = "Copied";
+        $(trigger).addClass("copied");
+        // Change button text back;
+        setTimeout(function () {
+          trigger.innerHTML = "Copy";
+          $(trigger).removeClass("copied");
+        }, 1500);
+      });
+    });
+    </script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>Hexo 你的博客 | STARRY-S' Blog - I never quite realized...</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="en" data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">STARRY-S' Blog</a></h1>
+        <h2 class="subtitle">I never quite realized...</h2>
+      </div>
+      
+      <div class="logo">
+        <img src="/images/logo.png" alt="logo">
+      </div>
+      
+    </div>
+    <nav id="nav" class="nav">
+      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="Toggle Navbar"></i></a>
+      <ul id="menu" role="menubar" aria-hidden="false">
+        
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">Home</span></a></li>
+        
+        <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">Archives</span></a></li>
+        
+        <li role="menuitem"><a href="/categories/"><i class="fas fa-th-list"></i><span class="menu-text">Categories</span></a></li>
+        
+        <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">Tags</span></a></li>
+        
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">About</span></a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="page">
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.xyz/posts/hexo-blog/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="STARRY-S">
+        <meta itemprop="description" content="How beautiful this world is.">
+        <meta itemprop="image" content="/images/avatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="STARRY-S' Blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">Hexo 你的博客</h1>
+      <div class="post-meta">
+        
+        <span class="post-date meta-block">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-09-15T06:21:00.000Z">2016-09-15 Thu 14:21:00 CST</time></span>
+        </span>
+        
+        
+        <span class="post-categories meta-block">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%95%99%E7%A8%8B/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a></span>
+        </span>
+        
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="&#x524D;&#x8A00;&#xFF1A;"><a class="headerlink" href="/posts/hexo-blog/#%E5%89%8D%E8%A8%80%EF%BC%9A" title="&#x524D;&#x8A00;&#xFF1A;"></a>&#x524D;&#x8A00;&#xFF1A;</h1>
+<p>&#x5728;&#x6211;&#x5EFA;&#x597D;&#x6211;&#x7684;&#x7F51;&#x7AD9;&#x540E;&#xFF0C;&#x5C31;&#x4E00;&#x76F4;&#x60F3;&#x628A;&#x6211;&#x642D;&#x5EFA;&#x535A;&#x5BA2;&#x7684;&#x8FC7;&#x7A0B;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#x3002;&#x642D;&#x5EFA;&#x535A;&#x5BA2;&#x7684;&#x8FC7;&#x7A0B;&#x86EE;&#x6709;&#x8DA3;&#x7684;,&#x4E0D;&#x540C;&#x7684;&#x5E73;&#x53F0;&#x642D;&#x5EFA;&#x65B9;&#x6CD5;&#x8FD8;&#x6709;&#x6240;&#x4E0D;&#x540C;&#x3002;</p>
+<p>&#x8FD9;&#x671F;&#x95F4;&#x5BF9;&#x65B0;&#x624B;&#x6765;&#x8BF4;&#x4F1A;&#x9762;&#x5BF9;&#x5404;&#x79CD;&#x5404;&#x6837;&#x7684;&#x95EE;&#x9898;&#x3002;&#x672C;&#x7BC7;&#x6587;&#x7AE0;&#x8BB0;&#x5F55;&#x4E86;&#x6211;&#x5EFA;&#x9020;Hexo&#x535A;&#x5BA2;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x5F88;&#x591A;&#x7EC6;&#x8282;&#x65B9;&#x9762;&#x7684;&#x4E1C;&#x897F;&#x90FD;&#x80FD;&#x5728;Hexo&#x5B98;&#x7F51;&#x627E;&#x5230;&#x3002;</p>
+<p><img src="/posts/hexo-blog/images/hexo1.jpg" alt="Hexo" title="Hexo"></p>
+<a id="more"></a>
+
+<blockquote>
+<p>&#x6700;&#x540E;&#x5185;&#x5BB9;&#x66F4;&#x65B0;&#x65F6;&#x95F4;&#xFF1A;2018&#x5E74;7&#x6708;29&#x65E5;&#x3002;</p>
+</blockquote>
+<h1 id="&#x5B89;&#x88C5;Hexo"><a class="headerlink" href="/posts/hexo-blog/#%E5%AE%89%E8%A3%85Hexo" title="&#x5B89;&#x88C5;Hexo"></a>&#x5B89;&#x88C5;Hexo</h1>
+<p>&#x4F60;&#x9700;&#x8981;&#x4E00;&#x53F0;&#x4F60;&#x7ECF;&#x5E38;&#x4F7F;&#x7528;&#x7684;&#x7535;&#x8111;&#x6765;&#x5199;&#x535A;&#x5BA2;&#xFF0C;Hexo&#x53EF;&#x4EE5;&#x5728;Windows&#xFF0C;Linux&#x8FD8;&#x6709;MacOS&#x4F5C;&#x4E1A;&#x7CFB;&#x7EDF;&#x4E0A;&#x90E8;&#x7F72;&#x3002;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x8BF4;&#x5B83;&#x57FA;&#x672C;&#x4E0A;&#x6CA1;&#x6709;&#x7CFB;&#x7EDF;&#x65B9;&#x9762;&#x7684;&#x9650;&#x5236;,&#x6240;&#x4EE5;&#x5728;&#x4F60;&#x6CA1;&#x6709;&#x7535;&#x8111;&#x7684;&#x65F6;&#x5019;&#x8FD8;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x628A;Hexo&#x90E8;&#x7F72;&#x5230;&#x6811;&#x8393;&#x6D3E;&#x4E0A;&#x9762;&#xFF08;&#x5F53;&#x7136;&#x5BF9;&#x6811;&#x8393;&#x6D3E;&#x6765;&#x8BF4;&#x90E8;&#x7F72;&#x65F6;&#x5019;&#x4F1A;&#x6162;&#x4E00;&#x4E9B;&#xFF09;&#xFF0C;&#x79DF;&#x4E00;&#x4E2A;&#x4FBF;&#x5B9C;&#x70B9;&#x7684;&#x5916;&#x56FD;&#x7684;linux&#x7684;vps&#x4E5F;&#x53EF;&#x4EE5;&#x3002;&#x672C;&#x7AE0;&#x4E2D;&#x6211;&#x4F7F;&#x7528;&#x6211;&#x7684;linux&#x7535;&#x8111;&#x6765;&#x90E8;&#x7F72;hexo&#x535A;&#x5BA2;&#x3002;</p>
+<blockquote>
+<p>&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x4F1A;&#x4F7F;&#x7528;linux&#xFF0C;&#x4E0D;&#x59A8;&#x501F;&#x6B64;&#x673A;&#x4F1A;&#x5B66;&#x4E60;&#x4E00;&#x4E0B;linux&#x5427;&#xFF0C;&#x4F60;&#x4F1A;&#x53D1;&#x73B0;&#x5F88;&#x591A;&#x6709;&#x8DA3;&#x7684;&#x4E8B;&#x60C5;&#x7684;&#x3002;</p>
+</blockquote>
+<p> <strong><a href="https://hexo.io/" target="_blank">HEXO&#x5B98;&#x7F51;&#xFF1A;hexo.io</a></strong></p>
+<h2 id="&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5728;&#x7535;&#x8111;&#x4E0A;&#x5B89;&#x88C5;Git&#x548C;Nodejs"><a class="headerlink" href="/posts/hexo-blog/#%E9%A6%96%E5%85%88%EF%BC%8C%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81%E5%9C%A8%E7%94%B5%E8%84%91%E4%B8%8A%E5%AE%89%E8%A3%85Git%E5%92%8CNodejs" title="&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5728;&#x7535;&#x8111;&#x4E0A;&#x5B89;&#x88C5;Git&#x548C;Nodejs"></a>&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5728;&#x7535;&#x8111;&#x4E0A;&#x5B89;&#x88C5;Git&#x548C;Node.js</h2>
+<h3 id="&#x5B89;&#x88C5;Git"><a class="headerlink" href="/posts/hexo-blog/#%E5%AE%89%E8%A3%85Git" title="&#x5B89;&#x88C5;Git"></a>&#x5B89;&#x88C5;Git</h3>
+<pre><code><figure class="highlight hljs shell"><pre class="gutter"><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+</pre><pre class="code"><code><span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># Ubuntu,Debian</span></span>
+<span class="hljs-meta">$</span><span class="bash"> sudo apt-get install git-core</span>
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># CentOS</span></span>
+sudo yum install git-core
+<span class="hljs-meta">#</span><span class="bash"><span class="hljs-comment"># Arch linux</span></span>
+sudo pacman -S git-core</code></pre></figure></code></pre><h3 id="&#x5B89;&#x88C5;Nodejs"><a class="headerlink" href="/posts/hexo-blog/#%E5%AE%89%E8%A3%85Nodejs" title="&#x5B89;&#x88C5;Nodejs"></a>&#x5B89;&#x88C5;Node.js</h3>
+<p>&#x8BF7;&#x53C2;&#x8003;<a href="https://hexo.io/zh-cn/docs/#%E5%AE%89%E8%A3%85-Node-js" target="_blank">Hexo&#x5B98;&#x7F51;&#x7684;&#x6559;&#x7A0B;</a>&#x3002;</p>
+<h2 id="&#x5B89;&#x88C5;Hexo-1"><a class="headerlink" href="/posts/hexo-blog/#%E5%AE%89%E8%A3%85Hexo-1" title="&#x5B89;&#x88C5;Hexo"></a>&#x5B89;&#x88C5;Hexo</h2>
+<p>&#x91CD;&#x542F;&#x4F60;&#x7684;&#x7EC8;&#x7AEF;&#x540E;</p>
+<pre><code><figure class="highlight hljs avrasm"><pre class="gutter"><span class="line">1</span>
+</pre><pre class="code"><code>$ npm install hexo-<span class="hljs-keyword">cli</span> -g</code></pre></figure></code></pre><p>&#x5B89;&#x88C5;&#x7684;&#x65F6;&#x5E38;&#x4E0E;&#x7F51;&#x7EDC;&#x60C5;&#x51B5;&#x6709;&#x5173;&#x3002;&#x8010;&#x5FC3;&#x7B49;&#x5F85;&#x5373;&#x53EF;&#x3002;</p>
+<p>&#x5B89;&#x88C5;Hexo&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Hexo&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x535A;&#x5BA2;&#x4E86;&#xFF01;</p>
+<pre><code><figure class="highlight hljs shell"><pre class="gutter"><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+</pre><pre class="code"><code><span class="hljs-meta">$</span><span class="bash"> mkdir blog</span>
+<span class="hljs-meta">$</span><span class="bash"> hexo init blog</span>
+<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> blog</span>
+<span class="hljs-meta">$</span><span class="bash"> npm install</span></code></pre></figure></code></pre><p>&#x5176;&#x4E2D;<code>blog</code>&#x5C31;&#x662F;&#x4F60;&#x7684;&#x535A;&#x5BA2;&#x6587;&#x4EF6;&#x7684;&#x6587;&#x4EF6;&#x5939;&#x540D;&#x5B57;&#xFF0C;&#x6267;&#x884C;&#x4EE5;&#x4E0A;&#x547D;&#x4EE4;&#x90E8;&#x7F72;&#x6240;&#x9700;&#x6587;&#x4EF6;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x66F4;&#x6539;&#x4E00;&#x4E9B;&#x4F60;&#x559C;&#x6B22;&#x7684;&#x914D;&#x7F6E;&#x4F7F;&#x5176;&#x6210;&#x4E3A;&#x4F60;&#x7684;&#x72EC;&#x4E00;&#x65E0;&#x4E8C;&#x7684;&#x535A;&#x5BA2;&#x3002;</p>
+<h1 id="DIY&#x4F60;&#x7684;&#x535A;&#x5BA2;"><a class="headerlink" href="/posts/hexo-blog/#DIY%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2" title="DIY&#x4F60;&#x7684;&#x535A;&#x5BA2;"></a>DIY&#x4F60;&#x7684;&#x535A;&#x5BA2;</h1>
+<p>&#x535A;&#x5BA2;&#x6839;&#x76EE;&#x5F55;&#x4E3A;&#xFF1A;</p>
+<pre><code><figure class="highlight hljs sqf"><pre class="gutter"><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+<span class="line">5</span>
+<span class="line">6</span>
+<span class="line">7</span>
+<span class="line">8</span>
+</pre><pre class="code"><code>.
+&#x251C;&#x2500;&#x2500; <span class="hljs-variable">_config</span>.yml
+&#x251C;&#x2500;&#x2500; package.json
+&#x251C;&#x2500;&#x2500; scaffolds
+&#x251C;&#x2500;&#x2500; source
+|   &#x251C;&#x2500;&#x2500; <span class="hljs-variable">_drafts</span>
+|   &#x2514;&#x2500;&#x2500; <span class="hljs-variable">_posts</span>
+&#x2514;&#x2500;&#x2500; themes</code></pre></figure></code></pre><p>&#x8FD9;&#x65F6;&#x5019;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x7EC8;&#x7AEF;&#x6253;&#x5F00;&#x4F60;&#x7684;Hexo&#x6587;&#x4EF6;&#x5939;&#x8F93;&#x5165;<code>hexo s</code>&#x540E;&#x6253;&#x5F00;&#x6D4F;&#x89C8;&#x5668;&#x8BBF;&#x95EE;<code>http://localhost:4000/</code>&#x6765;&#x901A;&#x8FC7;&#x5185;&#x7F51;&#x8BBF;&#x95EE;&#x4F60;&#x7684;&#x535A;&#x5BA2;&#x3002;&#x4E0D;&#x8FC7;&#x8FD9;&#x53EA;&#x662F;&#x4F60;&#x7684;&#x535A;&#x5BA2;&#x7684;&#x96CF;&#x5F62;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x5411;&#x91CC;&#x9762;&#x52A0;&#x5165;&#x8BB8;&#x591A;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x5143;&#x7D20;&#x8FDB;&#x53BB;&#x3002;</p>
+<h2 id="_configyml"><a class="headerlink" href="/posts/hexo-blog/#_configyml" title="_configyml"></a>_config.yml</h2>
+<p>&#x7F51;&#x7AD9;&#x7684;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#xFF0C;&#x8BB8;&#x591A;&#x53C2;&#x6570;&#x90FD;&#x4FDD;&#x5B58;&#x5728;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x91CC;&#x9762;&#x3002;Hexo&#x5B98;&#x7F51;&#x6709;&#x8BE6;&#x7EC6;&#x7684;<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank">&#x914D;&#x7F6E;&#x6559;&#x7A0B;</a>,&#x8BF7;&#x53C2;&#x8003;Hexo&#x5B98;&#x7F51;&#x4E00;&#x6B65;&#x4E00;&#x6B65;&#x7684;&#x6309;&#x7167;&#x4F60;&#x81EA;&#x5DF1;&#x7684;&#x53E3;&#x5473;&#x914D;&#x7F6E;&#x3002;</p>
+<h2 id="themes"><a class="headerlink" href="/posts/hexo-blog/#themes" title="themes"></a>themes</h2>
+<p><code>themes</code>&#x6587;&#x4EF6;&#x5939;&#x5B58;&#x653E;&#x4E3B;&#x9898;&#x6587;&#x4EF6;&#xFF0C;Hexo&#x6839;&#x636E;&#x4E3B;&#x9898;&#x6587;&#x4EF6;&#x6765;&#x751F;&#x6210;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x3002;</p>
+<p><a href="https://hexo.io/themes/" target="_blank">Hexo&#x5B98;&#x7F51;</a>&#x4E0A;&#x6709;&#x4E00;&#x4E9B;&#x5F88;&#x4E0D;&#x9519;&#x7684;&#x4E3B;&#x9898;&#xFF0C;&#x9009;&#x4E00;&#x4E2A;&#x4F60;&#x559C;&#x6B22;&#x7684;&#x7528;<code>git clone</code>&#x4E0B;&#x6765;&#xFF01;</p>
+<h2 id="&#x5199;&#x6587;&#x7AE0;"><a class="headerlink" href="/posts/hexo-blog/#%E5%86%99%E6%96%87%E7%AB%A0" title="&#x5199;&#x6587;&#x7AE0;"></a>&#x5199;&#x6587;&#x7AE0;</h2>
+<p>&#x914D;&#x7F6E;&#x597D;&#x4E3B;&#x9898;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x6C34;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x6765;&#x544A;&#x8BC9;&#x4E16;&#x754C;&#x4F60;&#x6765;&#x5566;&#xFF01;&#xFF01;&#xFF01;</p>
+<p><code>hexo new [layout] &lt;tytle&gt;</code>&#x6765;&#x751F;&#x6210;&#x4E00;&#x7BC7;&#x65B0;&#x6587;&#x7AE0;&#xFF0C;&#x6587;&#x7AE0;&#x9ED8;&#x8BA4;&#x4FDD;&#x5B58;&#x5728;<code>source/_posts</code>&#x6587;&#x4EF6;&#x5939;&#x5185;&#x3002;</p>
+<p>hexo&#x652F;&#x6301;Markdown&#x8BED;&#x6CD5;&#x3002;&#x6240;&#x4EE5;&#x4F60;&#x6839;&#x672C;&#x4E0D;&#x9700;&#x8981;&#x5199;&#x590D;&#x6742;&#x7684;html&#x4EE3;&#x7801;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x5E76;&#x4E0D;&#x4EE3;&#x8868;Hexo&#x4E0D;&#x652F;&#x6301;html&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x57DF;&#x540D;&#x6765;&#x8BA9;&#x66F4;&#x591A;&#x7684;&#x4EBA;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x57DF;&#x540D;&#x8BBF;&#x95EE;&#x4F60;&#x7684;&#x7F51;&#x7AD9;&#x4E86;&#x3002;</p>
+<h2 id="&#x8D2D;&#x4E70;&#x57DF;&#x540D;"><a class="headerlink" href="/posts/hexo-blog/#%E8%B4%AD%E4%B9%B0%E5%9F%9F%E5%90%8D" title="&#x8D2D;&#x4E70;&#x57DF;&#x540D;"></a>&#x8D2D;&#x4E70;&#x57DF;&#x540D;</h2>
+<p>&#x6CA1;&#x9519;&#xFF01;&#x57DF;&#x540D;&#x662F;&#x9700;&#x8981;&#x6765;&#x4E70;(&#x79DF;&#x7528;)&#x7684;&#x3002;&#x8FD9;&#x91CC;&#x6211;&#x63A8;&#x8350;&#x5728;<a href="https://sg.godaddy.com/" target="_blank">godaddy</a><s>&#x72D7;&#x7239;</s>&#x4E0A;&#x9762;&#x4E70;&#x57DF;&#x540D;&#x3002;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;&#x7684;&#x8BDD;&#x4E0D;&#x5FC5;&#x4E70;&#x592A;&#x8D35;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x987A;&#x4FBF;&#x8BF4;&#x4E00;&#x53E5;&#xFF0C;godaddy&#x662F;&#x53EF;&#x4EE5;&#x7528;&#x4F18;&#x60E0;&#x7801;&#x7684;&#x3002;&#x4F18;&#x60E0;&#x7801;&#x7F51;&#x4E0A;&#x5C31;&#x80FD;&#x627E;&#x5230;&#xFF0C;&#x7136;&#x540E;&#x5C31;&#x80FD;&#x4EAB;&#x53D7;&#x51E0;&#x6298;&#x7684;&#x4F18;&#x60E0;&#x5566;&#x3002;&#x5982;&#x679C;&#x4F60;&#x5728;&#x56FD;&#x5185;&#x8D2D;&#x4E70;&#x4E86;&#x57DF;&#x540D;&#x7684;&#x8BDD;&#x4F60;&#x5C31;&#x5F97;&#x6309;&#x7167;&#x56FD;&#x5BB6;&#x7684;&#x6CD5;&#x5F8B;&#x89C4;&#x5B9A;&#x8FDB;&#x884C;&#x5907;&#x6848;&#x64CD;&#x4F5C;&#xFF0C;&#x65B0;&#x624B;&#x6765;&#x8BB2;&#x5EFA;&#x8BAE;&#x5728;&#x56FD;&#x5916;&#x4E70;&#x57DF;&#x540D;&#x3002;</p>
+<h2 id="&#x4F7F;&#x7528;github"><a class="headerlink" href="/posts/hexo-blog/#%E4%BD%BF%E7%94%A8github" title="&#x4F7F;&#x7528;github"></a>&#x4F7F;&#x7528;github</h2>
+<blockquote>
+<p>&#x4F7F;&#x7528;pages&#x670D;&#x52A1;&#x7684;&#x8BDD;&#x5C31;&#x9700;&#x8981;&#x5728;&#x4F60;&#x7684;&#x535A;&#x5BA2;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x7684;<code>source</code>&#x6587;&#x4EF6;&#x5939;&#x5185;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x7EAF;&#x6587;&#x672C;&#x6587;&#x4EF6;&#xFF1A;<code>CNAME</code>,&#x628A;&#x4F60;&#x7684;&#x535A;&#x5BA2;&#x7684;&#x7F51;&#x5740;&#x8F93;&#x5165;&#x8FDB;&#x53BB;&#x3002;</p>
+</blockquote>
+<p>github&#x6709;pages&#x670D;&#x52A1;&#xFF0C;&#x5F88;&#x591A;&#x4EBA;&#x90FD;&#x62FF;&#x5B83;&#x505A;&#x7F51;&#x7AD9;&#xFF0C;&#x53C8;&#x4E0D;&#x6536;&#x8D39;&#x800C;&#x4E14;&#x5F88;&#x7A33;&#x5B9A;&#x3002;</p>
+<p> <strong>&#x63A5;&#x4E0B;&#x6765;&#x8BF7;&#x53C2;&#x8003;<a href="https://pages.github.com/" target="_blank">github pages</a>&#x5B98;&#x7F51;&#x98DF;&#x7528;&#x4EE5;&#x4E0B;&#x6559;&#x7A0B;</strong></p>
+<blockquote>
+<p>&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x719F;&#x6089;git&#xFF0C;&#x8BF7;&#x5148;&#x6309;&#x7167;&#x5B98;&#x7F51;&#x6559;&#x7A0B;&#x719F;&#x6089;&#x4E00;&#x4E0B;&#x4ED6;&#x7684;&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x518D;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002;</p>
+</blockquote>
+<h3 id="&#x9996;&#x5148;&#x7ED1;&#x5B9A;sshkey&#x5230;&#x4F60;&#x7684;github&#x548C;coding&#x4E0A;"><a class="headerlink" href="/posts/hexo-blog/#%E9%A6%96%E5%85%88%E7%BB%91%E5%AE%9Asshkey%E5%88%B0%E4%BD%A0%E7%9A%84github%E5%92%8Ccoding%E4%B8%8A" title="&#x9996;&#x5148;&#x7ED1;&#x5B9A;sshkey&#x5230;&#x4F60;&#x7684;github&#x548C;coding&#x4E0A;"></a>&#x9996;&#x5148;&#x7ED1;&#x5B9A;sshkey&#x5230;&#x4F60;&#x7684;github&#x548C;coding&#x4E0A;</h3>
+<p>&#x4F7F;&#x7528;ssh&#x4E0A;&#x4F20;&#x6587;&#x4EF6;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x6BCF;&#x6B21;&#x90E8;&#x7F72;&#x535A;&#x5BA2;&#x65F6;&#x90FD;&#x8F93;&#x5165;&#x4E00;&#x904D;&#x7528;&#x6237;&#x540D;&#x548C;&#x5BC6;&#x7801;&#x4E86;&#x3002;</p>
+<blockquote>
+<p>&#x9996;&#x5148;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x90AE;&#x7BB1;&#x6CE8;&#x518C;github&#xFF0C;&#x4EE5;&#x65B9;&#x4FBF;&#x7ED1;&#x5B9A;sshkey</p>
+</blockquote>
+<pre><code class="bash"><figure class="highlight hljs bash"><pre class="gutter"><span class="line">1</span>
+</pre><pre class="code"><code>$ ssh-keygen -t rsa -C<span class="hljs-string">&quot;&#x4F60;&#x7533;&#x8BF7;Github&#x548C;coding&#x8D26;&#x53F7;&#x7684;&#x90AE;&#x7BB1;&quot;</span></code></pre></figure></code></pre>
+<p>&#x7CFB;&#x7EDF;&#x4F1A;&#x8981;&#x6C42;&#x4F60;&#x8F93;&#x5165;&#x5BC6;&#x7801;&#xFF0C;&#x8FD9;&#x4E2A;&#x5BC6;&#x7801;&#x5728;&#x6BCF;&#x6B21;&#x63D0;&#x4EA4;&#x9879;&#x76EE;&#x5230;github&#x65F6;&#x4F1A;&#x7528;&#x5230;&#x3002;</p>
+<ul>
+<li><p>&#x590D;&#x5236;&#x751F;&#x6210;&#x7684;sshkey</p>
+<p>&#x751F;&#x6210;&#x7684;sshkey&#x4FDD;&#x5B58;&#x5728;<code>~/.ssh/id_rsa.pub</code>&#x5185;&#x3002;&#x4F7F;&#x7528;<code>pbcopy &lt; ~/.ssh/id_rsa.pub</code>&#x590D;&#x5236;&#x5230;&#x526A;&#x5207;&#x7248;&#x3002;</p>
+</li>
+<li><p>&#x6DFB;&#x52A0;sshkey&#x5230;github&#x4E0A;</p>
+<p>&#x5728;Github&#x767B;&#x9646;&#x6309;&#x94AE;&#x5904;&#x627E;&#x5230;Settings,&#x70B9;&#x51FB;Add SSH key&#x6309;&#x94AE;&#x628A;&#x590D;&#x5236;&#x4E0B;&#x6765;&#x7684;&#x5BC6;&#x94A5;&#x7C98;&#x8D34;&#x5230;key&#x680F;&#x3002;</p>
+</li>
+<li><p>&#x6D4B;&#x8BD5;sshkey&#x80FD;&#x5426;&#x94FE;&#x63A5;&#x6210;&#x529F;</p>
+</li>
+</ul>
+<pre><code class="bash"><figure class="highlight hljs bash"><pre class="gutter"><span class="line">1</span>
+</pre><pre class="code"><code>$ ssh -T git@github.com</code></pre></figure></code></pre>
+<p>&#x5982;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x5C31;&#x518D;&#x8BD5;&#x7740;&#x91CD;&#x65B0;&#x6DFB;&#x52A0;&#x4E00;&#x904D;&#x3002;</p>
+<p>&#x53EA;&#x6709;&#x51FA;&#x73B0;&#x4E86;Hi&#xFF01;&#x7B49;&#x5B57;&#x6837;&#xFF0C;&#x624D;&#x80FD;&#x8BC1;&#x660E;&#x94FE;&#x63A5;&#x6210;&#x529F;&#xFF01;</p>
+<h2 id="&#x90E8;&#x7F72;pages"><a class="headerlink" href="/posts/hexo-blog/#%E9%83%A8%E7%BD%B2pages" title="&#x90E8;&#x7F72;pages"></a>&#x90E8;&#x7F72;pages</h2>
+<h3 id="&#x90E8;&#x7F72;githubpages"><a class="headerlink" href="/posts/hexo-blog/#%E9%83%A8%E7%BD%B2githubpages" title="&#x90E8;&#x7F72;githubpages"></a>&#x90E8;&#x7F72;github pages</h3>
+<p>&#x6253;&#x5F00;github&#x4E2A;&#x4EBA;&#x4E3B;&#x9875;&#xFF0C;&#x9009;&#x62E9;<code>Repositories</code>,&#x70B9;&#x51FB;New&#x3002;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x4ED3;&#x5E93;&#x3002;&#x540D;&#x5B57;&#x81EA;&#x5B9A;&#xFF08;&#x4E0D;&#x8981;&#x8F93;&#x5165;&#x4E2D;&#x6587;&#xFF09;&#x3002;</p>
+<p><img src="/posts/hexo-blog/images/making-blog/github1.jpg" alt="github new repositories"></p>
+<p><img src="/posts/hexo-blog/images/making-blog/github1.jpg" alt="github set repositories"></p>
+<h3 id="&#x65B0;&#x5EFA;&#x597D;&#x4ED3;&#x5E93;&#x540E;&#xFF0C;&#x7F16;&#x8F91;_configyml&#x5C06;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x5230;github&#x548C;codingpages&#x4E0A;&#x3002;"><a class="headerlink" href="/posts/hexo-blog/#%E6%96%B0%E5%BB%BA%E5%A5%BD%E4%BB%93%E5%BA%93%E5%90%8E%EF%BC%8C%E7%BC%96%E8%BE%91_configyml%E5%B0%86%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%88%B0github%E5%92%8Ccodingpages%E4%B8%8A%E3%80%82" title="&#x65B0;&#x5EFA;&#x597D;&#x4ED3;&#x5E93;&#x540E;&#xFF0C;&#x7F16;&#x8F91;_configyml&#x5C06;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x5230;github&#x548C;codingpages&#x4E0A;&#x3002;"></a>&#x65B0;&#x5EFA;&#x597D;&#x4ED3;&#x5E93;&#x540E;&#xFF0C;&#x7F16;&#x8F91;_config.yml&#x5C06;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x5230;github&#x548C;coding pages&#x4E0A;&#x3002;</h3>
+<p>&#x8BBE;&#x7F6E;&#x597D;_config.yml&#x7684;deploy&#x5C31;&#x80FD;&#x5728;&#x6BCF;&#x6B21;&#x6267;&#x884C;<code>hexo d</code>&#x65F6;&#x628A;&#x6587;&#x4EF6;&#x4E0A;&#x4F20;&#x5230;giuthub&#x548C;coding&#x4E0A;&#x9762;&#x4E86;&#x3002;</p>
+<blockquote>
+<p>&#x9996;&#x5148;&#x9700;&#x8981;&#x8F93;&#x5165;<code>npm install hexo-deployer-git --save</code>&#x5B89;&#x88C5;&#x4E00;&#x4E0B;hexo-deployer-git</p>
+</blockquote>
+<pre><code><figure class="highlight hljs less"><pre class="gutter"><span class="line">1</span>
+<span class="line">2</span>
+<span class="line">3</span>
+<span class="line">4</span>
+</pre><pre class="code"><code><span class="hljs-attribute">deploy</span>:
+- <span class="hljs-attribute">type</span>: git
+  <span class="hljs-attribute">repo</span>: <span class="hljs-string">&apos;git@github.com:your_username/your_repositories&apos;</span>
+  <span class="hljs-attribute">branch</span>: master</code></pre></figure></code></pre><p>&#x63A5;&#x4E0B;&#x6765;&#x6267;&#x884C;&#x751F;&#x6210;&#x9759;&#x6001;&#x6587;&#x4EF6;&#x5E76;&#x4E0A;&#x4F20;</p>
+<pre><code class="bash"><figure class="highlight hljs bash"><pre class="gutter"><span class="line">1</span>
+<span class="line">2</span>
+</pre><pre class="code"><code>$ hexo g
+$ hexo d</code></pre></figure></code></pre>
+<p>&#x4E4B;&#x540E;&#x6BCF;&#x6B21;&#x4E0A;&#x4F20;&#x751F;&#x6210;&#x7684;&#x6587;&#x4EF6;&#x90FD;&#x662F;&#x901A;&#x8FC7;<code>hexo d</code>&#x8FD9;&#x4E2A;&#x6307;&#x4EE4;&#x6765;&#x5B8C;&#x6210;&#x7684;&#x3002;</p>
+<h3 id="&#x5F00;&#x542F;Pages&#x670D;&#x52A1;"><a class="headerlink" href="/posts/hexo-blog/#%E5%BC%80%E5%90%AFPages%E6%9C%8D%E5%8A%A1" title="&#x5F00;&#x542F;Pages&#x670D;&#x52A1;"></a>&#x5F00;&#x542F;Pages&#x670D;&#x52A1;</h3>
+<blockquote>
+<p>&#x5728;&#x90E8;&#x7F72;&#x597D;&#x7684;github&#x4ED3;&#x5E93;&#x91CC;&#x9762;&#x6253;&#x5F00;settings,&#x5728;GitHub Pages&#x91CC;&#x5F00;&#x542F;Pages&#x670D;&#x52A1;&#x3002;</p>
+</blockquote>
+<p><img src="/posts/hexo-blog/images/github3.jpg" alt="GitHub Pages"></p>
+<p><img src="/posts/hexo-blog/images/github4.jpg" alt="Github Pages"></p>
+<p>** &#x6CE8;&#xFF1A;&#x52A1;&#x5FC5;&#x9009;&#x62E9;&#x6B63;&#x786E;&#x7684;&#x5206;&#x652F;&#xFF01;&#x672C;&#x6559;&#x7A0B;&#x8BBE;&#x7F6E;&#x7684;github&#x7684;&#x5206;&#x652F;&#x4E3A;master **</p>
+<h2 id="DNS&#x5206;&#x6D41;"><a class="headerlink" href="/posts/hexo-blog/#DNS%E5%88%86%E6%B5%81" title="DNS&#x5206;&#x6D41;"></a>DNS&#x5206;&#x6D41;</h2>
+<blockquote>
+<p>&#x4F7F;&#x7528;CloudXNS&#x89E3;&#x6790;&#x57DF;&#x540D;&#x3002;</p>
+</blockquote>
+<p>1.&#x5728;CloudXNS&#x4E2D;&#x6DFB;&#x52A0;&#x57DF;&#x540D;&#x3002;</p>
+<p>2.&#x56DE;&#x5230;godaddy&#x7684;&#x6211;&#x7684;&#x57DF;&#x540D;&#xFF0C;&#x9009;&#x62E9;&#xFF1A;&#x7BA1;&#x7406;DNS&#xFF0C;&#x66F4;&#x6539;&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;&#x5982;&#x56FE;&#xFF1A;</p>
+<p><img src="/posts/hexo-blog/images/godaddy1.jpg" alt="Godaddy DNS"></p>
+<p>3.&#x7B49;&#x51E0;&#x5206;&#x949F;&#x540E;&#xFF0C;&#x56DE;&#x5230;CloudXNS&#xFF0C;&#x6DFB;&#x52A0;&#x8BB0;&#x5F55;&#x5982;&#x56FE;&#xFF1A;</p>
+<p><img src="/posts/hexo-blog/images/dns1.jpg" alt="CloudXNS"></p>
+<blockquote>
+<p><strong>&#x66F4;&#x6539;&#x8BB0;&#x5F55;&#x503C;&#x65F6;&#x628A;&#x6307;&#x5411;&#x56FD;&#x5916;&#x7684;Github&#x7684;&#x8BB0;&#x5F55;&#x503C;&#x6539;&#x4E3A;`&quot;&#x4F60;&#x7684;&#x7528;&#x6237;&#x540D;&quot;.github.io&apos;</strong></p>
+</blockquote>
+<p>&#x5168;&#x90E8;&#x90E8;&#x7F72;&#x5B8C;&#x540E;&#xFF0C;&#x535A;&#x5BA2;&#x5C31;&#x5F7B;&#x5E95;&#x5EFA;&#x5B8C;&#x4E86;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x521A;&#x5EFA;&#x597D;&#x7684;&#x535A;&#x5BA2;&#x8FD8;&#x4E0D;&#x80FD;&#x5B8C;&#x7F8E;&#x8BBF;&#x95EE;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x56E0;&#x4E3A;&#x5168;&#x7403;DNS&#x89E3;&#x6790;&#x65F6;&#x95F4;&#x8F83;&#x957F;&#xFF0C;&#x9700;&#x8981;&#x7B49;&#x51E0;&#x4E2A;&#x5C0F;&#x65F6;&#x540E;&#x91CD;&#x8BD5;&#x3002;</p>
+<h1 id="CDN"><a class="headerlink" href="/posts/hexo-blog/#CDN" title="CDN"></a>CDN</h1>
+<p>&#x8FD9;&#x6B65;&#x53EF;&#x9009;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x66F4;&#x5FEB;&#x7684;&#x8BBF;&#x95EE;&#x4F60;&#x7684;&#x535A;&#x5BA2;&#x7684;&#x8BDD;&#x5F04;&#x4E2A;CDN&#x662F;&#x4E2A;&#x5F88;&#x597D;&#x7684;&#x9009;&#x62E9;&#xFF0C;&#x56FD;&#x5185;&#x7684;CDN&#x52A0;&#x901F;&#x670D;&#x52A1;&#x90FD;&#x9700;&#x8981;ICP&#x5907;&#x6848;&#xFF0C;&#x6CA1;&#x6709;&#x5907;&#x6848;&#x7684;&#x8BDD;&#x4E00;&#x4E9B;&#x56FD;&#x5916;&#x7684;&#x514D;&#x8D39;CDN&#x4E5F;&#x5F88;&#x597D;&#x7528;&#xFF0C;&#x4F46;&#x662F;&#x901F;&#x5EA6;&#x53EF;&#x80FD;&#x6CA1;&#x6709;&#x63D0;&#x5347;&#x53CD;&#x800C;&#x53D8;&#x6162;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x9009;&#x62E9;&#x3002;</p>
+<br>
+<br>
+
+<h1 id="Hexo&#x4F60;&#x7684;&#x535A;&#x5BA2;&#x2665;"><a class="headerlink" href="/posts/hexo-blog/#Hexo%E4%BD%A0%E7%9A%84%E5%8D%9A%E5%AE%A2%E2%99%A5" title="Hexo&#x4F60;&#x7684;&#x535A;&#x5BA2;&#x2665;"></a>Hexo &#x4F60;&#x7684;&#x535A;&#x5BA2; &#x2665;</h1>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        <a class="post-tag button" href="/tags/HEXO/" rel="tag"><i class="fas fa-tag"></i>HEXO</a><a class="post-tag button" href="/tags/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" rel="tag"><i class="fas fa-tag"></i>静态博客</a><a class="post-tag button" href="/tags/Github_Pages/" rel="tag"><i class="fas fa-tag"></i>Github_Pages</a>
+      </div>
+      
+    </footer>
+  </article>
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+      <a href="/posts/xiaomi-mini-fan-1/" rel="next" title="Xiaomi路由器mini折腾篇"><i class="fas fa-angle-left"></i><span class="nav-title">Xiaomi路由器mini折腾篇</span></a>
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/posts/hello-world-again/" rel="prev" title="Everything is based on "Hello World""><span class="nav-title">Everything is based on "Hello World"</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="reward" id="reward">
+  <p>奖励一下，喵！</p>
+  <button id="reward-button" class="button" disable="enable"><i class="fas fa-donate"></i>Reward</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechatpay">
+      <img id="wechatpay-qr" src="/images/wechat.jpg" alt="WechatPay"/>
+      <span>WechatPay</span>
+    </div>
+    
+    
+    <div id="alipay">
+      <img id="alipay-qr" src="/images/alipay.jpg" alt="AliPay"/>
+      <span>AliPay</span>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+
+  
+  
+  
+
+<div class="comments" id="comments">
+  
+  <div class="commentjs" id="comment-thread"></div>
+  <link rel="stylesheet" href="/css/commentjs.css">
+  <script defer type="text/javascript" src="/js/marked.min.js"></script>
+  <script defer type="text/javascript" src="/js/timeago.min.js"></script>
+  <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+  <script defer type="text/javascript" src="/js/commentjs.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function () {
+    getComments({
+      "type": "github",
+      "user": "STARRY-S",
+      "repo": "blog.starry-s.xyz",
+      "clientID": "d840b2424099ff5195ff",
+      "clientSecret": "cc22cbdcdee59b64ef1031c4d369821030b3634f",
+      "no_comment": "This page has no comment, go to comment now!",
+      "go_to_comment": "Go to Comment",
+      "issue_title": "Hexo 你的博客",
+      "btn_class": "button",
+      "comments_target": "#comment-thread"
+    });
+    marked.setOptions({
+      "highlight": function (code, lang) {
+        return hljs.highlightAuto(code).value;
+      }
+    });
+    function mark() {
+      var markdowns = document.getElementsByClassName("markdown");
+      for (var i = 0; i < markdowns.length; ++i){
+        if (markdowns[i].innerHTML) {
+          markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+        }
+      }
+    }
+    window.addEventListener("DOMContentLoaded", mark, false);
+    window.addEventListener("load", mark, false);
+  });
+  </script>
+  
+</div>
+
+
+
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="Search" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/avatar.jpg" alt="STARRY-S">
+  
+  <h1 class="author-name">STARRY-S</h1>
+  <h2 class="author-description">How beautiful this world is.</h2>
+  <div class="site-count">
+    
+    
+    
+    
+    <div class="archives-count count-block">
+      <div class="site-count-title">Archives</div>
+      <div><a href="/archives/">19</a></div>
+    </div>
+    
+    
+    
+    <div class="categories-count count-block">
+      <div class="site-count-title">Categories</div>
+      <div><a href="/categories/">15</a></div>
+    </div>
+    
+    
+    
+    <div class="tags-count count-block">
+      <div class="site-count-title">Tags</div>
+      <div><a href="/tags/">25</a></div>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item" id="toc-div">
+      <div><i class="fas fa-list-ol"></i>Table of Contents</div>
+      <div class="post-toc-content">
+        
+        
+        <ol class="list-group toc">
+        
+          <li>
+            <a class="list-group-item toc-link" href="#前言：">前言：</a>
+            
+          </li>
+        
+          <li>
+            <a class="list-group-item toc-link" href="#安装Hexo">安装Hexo</a>
+            
+            
+        <ol >
+        
+          <li>
+            <a class="list-group-item toc-link" href="#首先，我们需要在电脑上安装Git和Nodejs">首先，我们需要在电脑上安装Git和Node.js</a>
+            
+            
+        <ol >
+        
+          <li>
+            <a class="list-group-item toc-link" href="#安装Git">安装Git</a>
+            
+          </li>
+        
+          <li>
+            <a class="list-group-item toc-link" href="#安装Nodejs">安装Node.js</a>
+            
+          </li>
+        
+        </ol>
+        
+            
+          </li>
+        
+          <li>
+            <a class="list-group-item toc-link" href="#安装Hexo-1">安装Hexo</a>
+            
+          </li>
+        
+        </ol>
+        
+            
+          </li>
+        
+          <li>
+            <a class="list-group-item toc-link" href="#DIY你的博客">DIY你的博客</a>
+            
+            
+        <ol >
+        
+          <li>
+            <a class="list-group-item toc-link" href="#_configyml">_config.yml</a>
+            
+          </li>
+        
+          <li>
+            <a class="list-group-item toc-link" href="#themes">themes</a>
+            
+          </li>
+        
+          <li>
+            <a class="list-group-item toc-link" href="#写文章">写文章</a>
+            
+          </li>
+        
+          <li>
+            <a class="list-group-item toc-link" href="#购买域名">购买域名</a>
+            
+          </li>
+        
+          <li>
+            <a class="list-group-item toc-link" href="#使用github">使用github</a>
+            
+            
+        <ol >
+        
+          <li>
+            <a class="list-group-item toc-link" href="#首先绑定sshkey到你的github和coding上">首先绑定sshkey到你的github和coding上</a>
+            
+          </li>
+        
+        </ol>
+        
+            
+          </li>
+        
+          <li>
+            <a class="list-group-item toc-link" href="#部署pages">部署pages</a>
+            
+            
+        <ol >
+        
+          <li>
+            <a class="list-group-item toc-link" href="#部署githubpages">部署github pages</a>
+            
+          </li>
+        
+          <li>
+            <a class="list-group-item toc-link" href="#新建好仓库后，编辑_configyml将文件上传到github和codingpages上。">新建好仓库后，编辑_config.yml将文件上传到github和coding pages上。</a>
+            
+          </li>
+        
+          <li>
+            <a class="list-group-item toc-link" href="#开启Pages服务">开启Pages服务</a>
+            
+          </li>
+        
+        </ol>
+        
+            
+          </li>
+        
+          <li>
+            <a class="list-group-item toc-link" href="#DNS分流">DNS分流</a>
+            
+          </li>
+        
+        </ol>
+        
+            
+          </li>
+        
+          <li>
+            <a class="list-group-item toc-link" href="#CDN">CDN</a>
+            
+          </li>
+        
+          <li>
+            <a class="list-group-item toc-link" href="#Hexo你的博客♥">Hexo 你的博客 ♥</a>
+            
+          </li>
+        
+        </ol>
+        
+      </div>
+    </div>
+    
+    
+    
+    <hr>
+    <div class="social-link sidebar-item">
+      <div><i class="far fa-address-card"></i>Social Links</p></div>
+      <ul>
+        
+        <li><i class="fas fa-envelope"></i><a href="mailto:hx916584160@gmail.com" target="_blank">E-Mail</a></li>
+        
+        <li><i class="fab fa-github"></i><a href="https://github.com/STARRY-S" target="_blank">GitHub</a></li>
+        
+        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/u/6990977018" target="_blank">Weibo</a></li>
+        
+        <li><i class="fab fa-telegram"></i><a href="https://t.me/STARRYS" target="_blank">Telegram</a></li>
+        
+      </ul>
+    </div>
+    
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-user-friends"></i>Blogroll</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://alynx.xyz/" target="_blank">喵's HomePage</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://chenxy.moe/" target="_blank">Art_Chen's Blog</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://lgiki.cc" target="_blank">LGiki's Blog</a></li>
+        
+      </ul>
+    </div>
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="Back to Top"></i></button>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author"><i class="far fa-edit"></i>STARRY-S</span><span class="years"><i class="far fa-copyright"></i><span id="years-text">2016</span></span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">BY-NC-ND 4.0</a></span>
+        </div>
+        
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="Site Visit Count" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="Site User Count" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="fas fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="Page Click Count" aria-hidden="false"></span></span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          Hosted by<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          Proudly Powered by <a href="https://github.com/AlynxZhou/hikaru/" target="_blank">Hikaru</a><i class="fab fa-node-js"></i>Theme is <a href="https://github.com/AlynxZhou/hikaru-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>
+<!-- Page built by Hikaru v1.13.3 at 2019-05-19 Sun 20:14:04 CST. -->
