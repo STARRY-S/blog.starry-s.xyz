@@ -1,5 +1,5 @@
 ---
-title: 高烤一周年
+title: 一周年纪念之高考
 date: 2019-06-08 02:15:23
 comment: true
 layout: post
@@ -45,6 +45,8 @@ categories: 琐事
 
 ---
 
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=4930445&auto=0&height=66"></iframe>
+
 感觉自己之前是陷入了停滞不前的生活中了。
 
 自己无法做自己最感兴趣的事情，是很痛苦的一件事情吧。
@@ -84,6 +86,8 @@ categories: 琐事
 好奇怪的感觉，也好喜欢这种感觉。。
 
 ---
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=26323020&auto=1&height=66"></iframe>
 
 真的很不好意思，我只能做到这样。
 
