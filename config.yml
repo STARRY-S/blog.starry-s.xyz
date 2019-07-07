@@ -1,15 +1,18 @@
-title: STARRY-S‘ Blog
+title: STARRY-S' Blog
 subtitle: 本とは空を飛べると知っていたから
 description: 羽ばたくときが怖くて風を忘れた
 author: STARRY-S
 email: hx916584160@gmail.com
 language: zh_CN
 
-baseURL: https://blog.starry-s.xyz/
+baseURL: https://blog.starry-s.xyz
 rootDir: /
 srcDir: srcs
 docDir: docs
 themeDir: aria
+
+indexDir: /
+archiveDir: archives
 categoryDir: categories
 tagDir: tags
 
@@ -21,7 +24,6 @@ perPage:
 
 skipRender:
   - README.md
-  - CNAME
 
 nunjucks:
   autoescape: false

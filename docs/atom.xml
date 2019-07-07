@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>STARRY-S‘ Blog</title>
+  <title>STARRY-S&#39; Blog</title>
   <icon>https://blog.starry-s.xyz/images/avatar.jpg</icon>
   <subtitle>本とは空を飛べると知っていたから</subtitle>
   <link href="https://blog.starry-s.xyz/atom.xml" rel="self" />
   
   <link href="https://blog.starry-s.xyz/" />
   
-  <updated>2019-06-08T14:48:41.170Z</updated>
+  <updated>2019-07-07T13:51:30.831Z</updated>
   
   <id>https://blog.starry-s.xyz/</id>
   
@@ -23,7 +23,7 @@
     <link href="https://blog.starry-s.xyz/posts/one-year-agter-gk/" />
     <id>https://blog.starry-s.xyz/posts/one-year-agter-gk/</id>
     <published>2019-06-07T18:15:23.000Z</published>
-    <updated>2019-06-08T14:48:41.170Z</updated>
+    <updated>2019-07-07T13:51:30.831Z</updated>
     
     <summary type="html">
     
@@ -73,7 +73,7 @@
     <link href="https://blog.starry-s.xyz/posts/Shanghai/" />
     <id>https://blog.starry-s.xyz/posts/Shanghai/</id>
     <published>2019-04-09T05:24:44.000Z</published>
-    <updated>2019-06-07T19:19:40.063Z</updated>
+    <updated>2019-06-07T18:14:13.397Z</updated>
     
     <summary type="html">
     
