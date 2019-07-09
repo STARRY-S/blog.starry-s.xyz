@@ -17,7 +17,7 @@ categories:
 
 <!--more-->
 
-<div class="alert-green"最后更新日期：2019年6月8日 02:12:17"</div>
+<div class="alert-green">最后更新日期：2019年6月8日 02:12:17</div>
 
 ---
 
