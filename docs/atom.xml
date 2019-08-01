@@ -7,7 +7,7 @@
   
   <link href="https://blog.starry-s.xyz/" />
   
-  <updated>2019-07-07T14:32:38.993Z</updated>
+  <updated>2019-05-19T11:57:17.873Z</updated>
   
   <id>https://blog.starry-s.xyz/</id>
   
@@ -17,28 +17,6 @@
   </author>
   
   <generator uri="https://github.com/AlynxZhou/hikaru/">Hikaru</generator>
-  
-  <entry>
-    <title>一周年纪念之高考</title>
-    <link href="https://blog.starry-s.xyz/posts/one-year-agter-gk/" />
-    <id>https://blog.starry-s.xyz/posts/one-year-agter-gk/</id>
-    <published>2019-06-07T18:15:23.000Z</published>
-    <updated>2019-07-07T14:32:38.993Z</updated>
-    
-    <summary type="html">
-    
-    <![CDATA[<p>竟然过去一年了。</p>]]>
-    
-    </summary>
-    
-    <category term="琐事" scheme="https://blog.starry-s.xyz/categories/%E7%90%90%E4%BA%8B/" />
-    
-    
-    <category term="琐事" scheme="https://blog.starry-s.xyz/tags/%E7%90%90%E4%BA%8B/" />
-    
-    <category term="碎碎念" scheme="https://blog.starry-s.xyz/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" />
-    
-  </entry>
   
   <entry>
     <title>Spring - 3</title>
@@ -71,11 +49,11 @@
     <link href="https://blog.starry-s.xyz/posts/Shanghai/" />
     <id>https://blog.starry-s.xyz/posts/Shanghai/</id>
     <published>2019-04-09T05:24:44.000Z</published>
-    <updated>2019-07-09T14:52:49.124Z</updated>
+    <updated>2019-08-01T08:14:10.714Z</updated>
     
     <summary type="html">
     
-    <![CDATA[<p><img src="/posts/Shanghai/images/shanghai.jpg" alt></p><div class="alert-red">多图预警</div>]]>
+    <![CDATA[<div class="alert-red">多图预警</div><div class="alert-green">最后更新日期：2019年6月8日 02:12:17</div>]]>
     
     </summary>
     
@@ -85,6 +63,8 @@
     
     
     <category term="一个人的旅行" scheme="https://blog.starry-s.xyz/tags/%E4%B8%80%E4%B8%AA%E4%BA%BA%E7%9A%84%E6%97%85%E8%A1%8C/" />
+    
+    <category term="Trip" scheme="https://blog.starry-s.xyz/tags/Trip/" />
     
     <category term="琐事" scheme="https://blog.starry-s.xyz/tags/%E7%90%90%E4%BA%8B/" />
     

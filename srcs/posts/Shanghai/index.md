@@ -5,21 +5,22 @@ layout: post
 comment: true
 tags:
 - 一个人的旅行
+- Trip
 - 琐事
 - 摄影
 categories:
 - 琐事
 - Trip
 ---
-![](images/shanghai.jpg)
-
 <div class="alert-red">多图预警</div>
-
-<!--more-->
 
 <div class="alert-green">最后更新日期：2019年6月8日 02:12:17</div>
 
+<!--more-->
+
 ---
+
+![](images/shanghai.jpg)
 
 ![](images/IMG_4138-1.jpg)
 
