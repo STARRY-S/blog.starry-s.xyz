@@ -12,19 +12,8 @@ categories:
 - 琐事
 - Trip
 ---
-<div class="alert-red">多图预警</div>
-
-<div class="alert-green">最后更新日期：2019年6月8日 02:12:17</div>
-
-<!--more-->
-
----
 
 ![](images/shanghai.jpg)
-
-![](images/IMG_4138-1.jpg)
-
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=530 height=86 src="//music.163.com/outchain/player?type=2&id=1313107868&auto=1&height=66"></iframe>
 
 很久以前就有想去上海的念头了。
 
@@ -32,9 +21,19 @@ categories:
 
 准确点说不全是我一个人的旅行，只有去除掉和朋友一同坐了一趟飞机和磁悬浮（火车就不算了）后就剩下的就是一人的旅行了。
 
+<div class="alert-red">多图预警</div>
+
+<!--more-->
+
+---
+
+![](images/IMG_4138-1.jpg)
+
 上飞机前的晚上，没买卧铺票在火车硬座上熬了一晚上，多亏Fate Zero的陪伴。
 
 之所以来上海是因为我很想看一下这么一座拥有B站总部和巨多B站大佬的城市是什么样子的，某些东西可能在大多数人眼里很平淡普通吧，但是我觉得很好玩。所以去迪士尼玩、登上海之巅、到野生动物园近距离看大老虎（fǔ）吃肉这些只能被我称作是本次旅行的附赠品，我当然不是只奔着这些去上海的，但别人问你你花了那么多钱出去旅游了一趟什么也没玩的话肯定会骂我的对吧。毕竟门票不贵买了也不吃亏。
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=530 height=86 src="//music.163.com/outchain/player?type=2&id=1313107868&auto=1&height=66"></iframe>
 
 ---
 
