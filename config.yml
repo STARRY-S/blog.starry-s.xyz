@@ -24,8 +24,6 @@ perPage:
 
 skipRender:
   - README.md
-  - posts/Hello-2019/index.md
-  - posts/Hello-2019/images
 
 nunjucks:
   autoescape: false
