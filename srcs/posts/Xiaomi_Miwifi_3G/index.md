@@ -23,13 +23,11 @@ categories:
 
 我尽可能的写的详细一点以便没有经验的小白也能看懂。
 
-<div class="alert-green">最后更新日期：2019.2.20</div>
+<div class="alert-green">最后更新日期：2019.8.26</div>
 
 <div class="alert-red">温馨提示：刷成砖了本人一概不负责</div>
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=31108216&auto=0&height=66"></iframe>
-
-来一首美妙动人的音乐吧！
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=86 src="//music.163.com/outchain/player?type=2&id=31108216&auto=0&height=66"></iframe>
 
 # 准备工作
 
@@ -171,7 +169,7 @@ mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-rootfs0.bin rootfs0
 
 # 其他问题：
 
-1. 如果刷了Breed + Pandavan/PandoraBox后想换回OpenWrt的话，首先在Breed中刷回小米路由器开发版的官方固件，然后ssh进路由器里参照[4.2.2 如果你刷了Breed](#如果你刷了Breed:)步骤刷机，ssh密码还是先前记下的密码。
+1. 如果刷了Breed + Pandavan/PandoraBox后想换回OpenWrt的话，需要先在Breed中刷回小米路由器开发版的官方固件，刷官方固件需要选择内存布局为固件2，重启后需要先网线连到路由器完成初始设置，然后ssh进路由器里参照[4.2.2 如果你刷了Breed](#如果你刷了Breed:)步骤刷机，ssh密码没有改动。
 
 2. USB3.0会对路由器的2.4G频段信号造成干扰，不用时可以关掉。
 
