@@ -7,7 +7,7 @@ tags: about
 ---
 # STARRY-S' Blog.
 
-![杭州西湖](images/10.jpg)
+![](images/10.jpg)
 
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=493911&auto=0&height=66"></iframe>
 
@@ -54,9 +54,9 @@ tags: about
 
 * 有些页面出现的“最后更新日期”是指有较大内容的更新日期，像修个Bug改个排版换个BGM就不算“较大”更新。
 
-* 现用的域名注册于2017年8月18日，快过期了在纠结是换域名还是花高价续费。
+* 现用的域名注册于2017年8月18日，又续费了一年现在变得更贫穷了。
 
-* 页面底部的访客？当作一个可有可无的功能就行了毕竟经常换域名的话数据也是经常会清零的（实际上访客量一大半都是我自己点出来的）。
+* 页面底部的访客？当作一个可有可无的功能就行了毕竟访客量一大半数据都是我自己点出来的。
 
 ## Timeline
 

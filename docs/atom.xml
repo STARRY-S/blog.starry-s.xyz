@@ -7,7 +7,7 @@
   
   <link href="https://blog.starry-s.xyz/" />
   
-  <updated>2019-08-02T17:33:53.718Z</updated>
+  <updated>2019-08-25T16:15:32.040Z</updated>
   
   <id>https://blog.starry-s.xyz/</id>
   
@@ -17,6 +17,30 @@
   </author>
   
   <generator uri="https://github.com/AlynxZhou/hikaru/">Hikaru</generator>
+  
+  <entry>
+    <title>使用PaperMC搭建Minecraft服务器教程</title>
+    <link href="https://blog.starry-s.xyz/posts/mc-server/" />
+    <id>https://blog.starry-s.xyz/posts/mc-server/</id>
+    <published>2019-08-25T14:19:18.000Z</published>
+    <updated>2019-08-25T16:15:32.040Z</updated>
+    
+    <summary type="html">
+    
+    <![CDATA[<p>很久以前尝试过在树莓派上搭建一个Minecraft服务器，当时刚接触Linux踩了好多坑，前一阵子在腾讯的学生版服务器上搭了一个可以几个人玩的小服务器，在这里把我搭建服务器的大致过程记录下来。</p>]]>
+    
+    </summary>
+    
+    <category term="教程" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/" />
+    
+    <category term="Minecraft" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/Minecraft/" />
+    
+    
+    <category term="Minecraft" scheme="https://blog.starry-s.xyz/tags/Minecraft/" />
+    
+    <category term="教程" scheme="https://blog.starry-s.xyz/tags/%E6%95%99%E7%A8%8B/" />
+    
+  </entry>
   
   <entry>
     <title>【日常】更新一下近期日常： 2019.6-2019.8</title>
