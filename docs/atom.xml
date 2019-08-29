@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>STARRY-S&#39; Blog</title>
   <icon>https://blog.starry-s.xyz/images/avatar.jpg</icon>
-  <subtitle>本とは空を飛べると知っていたから</subtitle>
+  
   <link href="https://blog.starry-s.xyz/atom.xml" rel="self" />
   
   <link href="https://blog.starry-s.xyz/" />
@@ -13,7 +13,7 @@
   
   <author>
     <name>STARRY-S</name>
-    <email>hx916584160@gmail.com</email>
+    <email>hxstarrys@163.com</email>
   </author>
   
   <generator uri="https://github.com/AlynxZhou/hikaru/">Hikaru</generator>
@@ -47,11 +47,11 @@
     <link href="https://blog.starry-s.xyz/posts/Shanghai-2/" />
     <id>https://blog.starry-s.xyz/posts/Shanghai-2/</id>
     <published>2019-08-02T15:49:39.000Z</published>
-    <updated>2019-08-02T17:33:53.718Z</updated>
+    <updated>2019-08-29T14:18:58.595Z</updated>
     
     <summary type="html">
     
-    <![CDATA[<p>好久没有更新博客了，大一下半年一直在忙各种考试，有幸（大雾）参加了一下辽宁三十多年都没举办过的高数省统考。除此之外还有一堆乱七八糟的事情要忙，更新博客的事就只好一点点往后拖了，于是拖更到了8月，后决定不继续拖更但实在没什么拿得出手的技术类文章可写，正好最近还遇到许多有趣的事情，就整理成日常写在这里吧。</p>]]>
+    <![CDATA[<p>好久没有更新博客了，大一下半年一直在忙各种考试，除此之外还有一堆乱七八糟的事情要忙，更新博客的事就只好一点点往后拖了，于是拖更到了8月，后决定不继续拖更但实在没什么拿得出手的技术类文章可写，正好最近还遇到许多有趣的事情，就整理成日常写在这里吧。</p>]]>
     
     </summary>
     
