@@ -3,7 +3,7 @@ subtitle:
 description: 啊 蓝真天，白真云
 author: STARRY-S
 email: hx916584160@gmail.com
-language: zh_CN
+language: zh-Hans
 
 baseURL: https://blog.starry-s.xyz
 rootDir: /
@@ -50,6 +50,7 @@ highlight:
 search:
   enable: true
   path: search.json
+  page: search.html
 
 feed:
   enable: true

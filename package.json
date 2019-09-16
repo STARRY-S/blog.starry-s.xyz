@@ -2,7 +2,7 @@
   "name": "starryweb",
   "dependencies": {
     "hikaru-generator-feed": "^2.0.0",
-    "hikaru-generator-search": "^2.0.0",
+    "hikaru-generator-search": "^2.0.2",
     "hikaru-generator-sitemap": "^2.0.0"
   }
 }

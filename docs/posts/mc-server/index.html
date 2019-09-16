@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10">
     
     <meta name="theme-color" content="#33363b">
     <meta name="msapplication-TileColor" content="#33363b">
     
     
     
-    <meta name="keywords" content="Life, ARIA, Hikaru, STARRY-S">
+    <meta name="keywords" content="Life, ARIA, Hikaru">
+    
+    
+    <meta name="description" content="啊 蓝真天，白真云">
     
     
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
@@ -52,6 +55,7 @@
     <link rel="stylesheet" type="text/css" href="/css/custom.css">
     <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
     <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <!-- You should not set `defer` to jQuery because other scripts dependents it! -->
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script defer type="text/javascript" src="/js/util.js"></script>
     <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
@@ -67,18 +71,6 @@
     <script defer src="/js/busuanzi.pure.mini.js"></script>
     
     
-    <script defer type="text/javascript" src="/js/search.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function () {
-      var searchPath = "/search.json";
-      if ("search.json".length === 0) {
-        searchPath = "/search.json";
-      }
-      searchFunc(searchPath, "search-input", "search-result");
-    });
-    </script>
-    
-    
     <script defer type="text/javascript" src="/js/index.js"></script>
     <script type="text/javascript">
     $(document).ready(function () {
@@ -87,19 +79,19 @@
         $(e).before([
           "<div class=\"code-titlebar\">",
             "<div class=\"titlebar-left\">",
-              "<a class=\"copy\"><i class=\"far fa-copy\"></i></a>",
+              "<a class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></a>",
             "</div>",
             "<div class=\"titlebar-center\">",
               lang.length ? lang.toUpperCase() : "代码",
             "</div>",
             "<div class=\"titlebar-right\">",
-              "<button class=\"button-dot dot-minimize\"></button>",
-              "<button class=\"button-dot dot-maximize\"></button>",
-              "<button class=\"button-dot dot-close\"></button>",
+              "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+              "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+              "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
             "</div>",
           "</div>"
         ].join(""));
-        // $(e).before("<button class=\"copy button\">clipboard.copy</button>");
+        // $(e).before("<button class=\"copy button\">复制</button>");
       });
       var cb = new ClipboardJS("a.copy", {
         "target": function (trigger) {
@@ -127,7 +119,7 @@
     <script defer type="text/javascript" src="/js/custom.js"></script>
     <title>使用PaperMC搭建Minecraft服务器教程 | STARRY-S' Blog</title>
   </head>
-  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
+  <body itemscope itemtype="http://schema.org/WebPage" data-spy="scroll" data-target=".list-group">
     
 <header id="header" class="header" style="background: #33363b;">
   <div class="container">
@@ -138,7 +130,7 @@
       </div>
       
       <div class="logo">
-        <img src="/images/logo.png" alt="logo">
+        <img src="/images/logo.webp" alt="logo">
       </div>
       
     </div>
@@ -173,7 +165,7 @@
       <link itemprop="mainEntityOfPage" href="https://blog.starry-s.xyz/posts/mc-server/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="STARRY-S">
-        <meta itemprop="description" content="啊~蓝真天，白真云">
+        <meta itemprop="description" content="啊 蓝真天，白真云">
         <meta itemprop="image" content="/images/avatar.jpg">
       </span>
       <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -185,7 +177,7 @@
       <div class="post-meta">
         
         <span class="post-date meta-block">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-08-25T14:19:18.000Z">2019-08-25 周日 22:19:18 CST</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2019-08-25T14:19:18.000Z">2019-08-25 Sun 22:19:18 CST</time></span>
         </span>
         
         
@@ -219,29 +211,29 @@ $ sudo apt-<span class="hljs-keyword">get</span> install openjdk<span class="hlj
 
 <span class="hljs-meta"># Archlinux</span>
 $ sudo pacman -S jdk8-openjdk</code></pre></figure></code></pre><p>可以通过<code>java -version</code>查看版本号的指令来确定Java是否安装成功。</p>
-<p>除了通过包管理器安装Java外还可以在<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">官网</a>下载安装包解压在常用的目录中使用Java（不推荐）</p>
+<p>除了通过包管理器安装Java外还可以在<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noreferrer noopener">官网</a>下载安装包解压在常用的目录中使用Java（不推荐）</p>
 <pre><code><figure class="highlight hljs jboss-cli"><pre class="gutter"><span class="line">1</span>
 <span class="line">2</span>
 </pre><pre class="code"><code>$ <span class="hljs-keyword">cd</span> java
 $ tar -zxvf <span class="hljs-string">./jdk-8</span>*<span class="hljs-string">.tar.gz</span></code></pre></figure></code></pre><h1 id="下载Paper"><a class="headerlink" href="/posts/mc-server/#%E4%B8%8B%E8%BD%BDPaper" title="下载Paper"></a>下载Paper</h1>
 <p>本篇使用Paper搭建服务器因为Paper对性能优化较好。</p>
-<p>在<a href="https://papermc.io/downloads" target="_blank">Paper的官网</a>上下载最新版本的jar文件。</p>
+<p>在<a href="https://papermc.io/downloads" target="_blank" rel="noreferrer noopener">Paper的官网</a>上下载最新版本的jar文件。</p>
 <p>使用指令<code>java -jar paper-*.jar</code>就可以运行Paper了。</p>
-<p>首次运行Paper会下载很多文件，身处天朝可能需要等上很长时间才能下载完，然后因为是第一次运行服务器没有同意<a href="https://account.mojang.com/documents/minecraft_eula" target="_blank">MoJang的EULA</a>而报错，使用文本编辑器更改<code>eula.txt</code>中的<code>eula=true</code>后再运行服务器即可。</p>
+<p>首次运行Paper会下载很多文件，身处天朝可能需要等上很长时间才能下载完，然后因为是第一次运行服务器没有同意<a href="https://account.mojang.com/documents/minecraft_eula" target="_blank" rel="noreferrer noopener">MoJang的EULA</a>而报错，使用文本编辑器更改<code>eula.txt</code>中的<code>eula=true</code>后再运行服务器即可。</p>
 <p>如果没有正版帐号的话是无法登录进服务器内的，需要编辑<code>server.properties</code>中的<code>onlinemode=false</code>关掉正版验证后重启服务器才能登录。</p>
-<p>可以添加flags例如<code>java -Xmx1024M -Xms1024M -jar paper-*.jar</code>指定消耗内存的大小来运行服务器，更多有关Flags放说明可参考<a href="https://aikar.co/2018/07/02/tuning-the-jvm-g1gc-garbage-collector-flags-for-minecraft/" target="_blank">此处</a>。</p>
+<p>可以添加flags例如<code>java -Xmx1024M -Xms1024M -jar paper-*.jar</code>指定消耗内存的大小来运行服务器，更多有关Flags放说明可参考<a href="https://aikar.co/2018/07/02/tuning-the-jvm-g1gc-garbage-collector-flags-for-minecraft/" target="_blank" rel="noreferrer noopener">此处</a>。</p>
 <p>需要注意的是内存的最大值即<code>-Xmx</code>不能超过你的服务器主机的剩余内存否则服务器很有可能在人多的时候内存不足而崩掉，可通过<code>free -m</code>查看云主机所剩余的内存。</p>
-<p>接下来就是参照<a href="https://paper.readthedocs.io/en/stable/server/configuration.html" target="_blank">Paper的官方文档</a>修改一些配置文件。</p>
+<p>接下来就是参照<a href="https://paper.readthedocs.io/en/stable/server/configuration.html" target="_blank" rel="noreferrer noopener">Paper的官方文档</a>修改一些配置文件。</p>
 <h1 id="安装常用插件"><a class="headerlink" href="/posts/mc-server/#%E5%AE%89%E8%A3%85%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6" title="安装常用插件"></a>安装常用插件</h1>
 <p>我目前只给服务器装了俩插件，主要因为学生云主机的性能并不高没搞太耗费性能的插件。</p>
 <p>在网络上下载好插件的jar文件后将其放入服务器的<code>plugins/</code>文件夹，重启服务器即可。</p>
 <p>可以在网上找一些防止高频红石，防止作弊，用户登录这类的插件，在此不全部列举（因为我没用过）。</p>
 <h2 id="WorldEdit"><a class="headerlink" href="/posts/mc-server/#WorldEdit" title="WorldEdit"></a>WorldEdit</h2>
-<p>创世神插件算得上是建筑党必备的插件了，可在<a href="https://dev.bukkit.org/projects/worldedit" target="_blank">Bukkit</a>上下载。</p>
-<p>比较不错且详细的<a href="http://mineplugin.org/WorldEdit" target="_blank">中文教程在此</a>，服务器上的话只要安装上插件获得op权限的帐号就能用，一把斧子就能指点江山。</p>
+<p>创世神插件算得上是建筑党必备的插件了，可在<a href="https://dev.bukkit.org/projects/worldedit" target="_blank" rel="noreferrer noopener">Bukkit</a>上下载。</p>
+<p>比较不错且详细的<a href="http://mineplugin.org/WorldEdit" target="_blank" rel="noreferrer noopener">中文教程在此</a>，服务器上的话只要安装上插件获得op权限的帐号就能用，一把斧子就能指点江山。</p>
 <h2 id="AuthMeReloaded"><a class="headerlink" href="/posts/mc-server/#AuthMeReloaded" title="AuthMeReloaded"></a>AuthMe Reloaded</h2>
 <p>因为服务器关掉了正版验证意味着所有人随便起一个用户名就能登录进服务器而且十分不安全，所以装了AuthMe。</p>
-<p>AuthMe Reloaded的下载网址：<a href="https://dev.bukkit.org/projects/authme-reloaded" target="_blank">https://dev.bukkit.org/projects/authme-reloaded</a></p>
+<p>AuthMe Reloaded的下载网址：<a href="https://dev.bukkit.org/projects/authme-reloaded" target="_blank" rel="noreferrer noopener">https://dev.bukkit.org/projects/authme-reloaded</a></p>
 <p>因为AuthMe的配置文件太多不详细列举了，Github和Bukkit上都有文档教程，youtube上还有视频教程，常用的指令就是<code>/register</code>、<code>/login</code>，可修改一下配置文件改一下语言以及邮箱smtp配置这类的，mysql配置不用更改就能用而且我也不会改，smtp安全起见并不推荐用gmail邮箱，要是拥有域名的话搞个企业邮箱也是个不错的选择。</p>
 <h1 id="常见问题"><a class="headerlink" href="/posts/mc-server/#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98" title="常见问题"></a>常见问题</h1>
 <ol>
@@ -279,7 +271,7 @@ $ tar -zxvf <span class="hljs-string">./jdk-8</span>*<span class="hljs-string">.
   
 
 <div class="reward" id="reward">
-  <p>温馨提示：使用支付宝打赏0.01元即可完成每天领取蚂蚁农场饲料的任务哦！</p>
+  <p>想喝咖啡！</p>
   <button id="reward-button" class="button" disable="enable"><i class="fas fa-donate"></i>打赏</button>
   <div id="qr" class="qr" style="display: none;" aria-hidden="true">
     
@@ -355,14 +347,13 @@ $ tar -zxvf <span class="hljs-string">./jdk-8</span>*<span class="hljs-string">.
           
           
           
-<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.webp);">
   
-  <div class="search">
-    <div class="form-group">
-      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
-    </div>
+  <div class="search" role="search">
+    <form action="/search.html" method="get">
+      <button type="submit" class="search-submit" aria-label="搜索"><i class="fas fa-search"></i></button><input type="search" id="search-input" class="search-input" name="q" results="0" placeholder="搜索" aria-label="搜索">
+    </form>
   </div>
-  <div class="search-result-box" id="search-result"></div>
   
   
 <div class="info sidebar-item" id="info">
@@ -370,7 +361,7 @@ $ tar -zxvf <span class="hljs-string">./jdk-8</span>*<span class="hljs-string">.
   <img class="author-avatar" src="/images/avatar.jpg" alt="STARRY-S">
   
   <h1 class="author-name">STARRY-S</h1>
-  <h2 class="author-description">啊~蓝真天，白真云</h2>
+  <h2 class="author-description">啊 蓝真天，白真云</h2>
   <div class="site-count">
     
     
@@ -471,11 +462,11 @@ $ tar -zxvf <span class="hljs-string">./jdk-8</span>*<span class="hljs-string">.
       <div><i class="far fa-address-card"></i>社交链接</p></div>
       <ul>
         
-        <li><i class="fas fa-envelope"></i><a href="mailto:hx916584160@gmail.com" target="_blank">E-Mail</a></li>
+        <li><i class="fas fa-envelope"></i><a href="mailto:hx916584160@gmail.com" target="_blank" rel="noreferrer noopener">E-Mail</a></li>
         
-        <li><i class="fab fa-github"></i><a href="https://github.com/STARRY-S" target="_blank">GitHub</a></li>
+        <li><i class="fab fa-github"></i><a href="https://github.com/STARRY-S" target="_blank" rel="noreferrer noopener">GitHub</a></li>
         
-        <li><i class="fab fa-telegram"></i><a href="https://t.me/STARRYS" target="_blank">Telegram</a></li>
+        <li><i class="fab fa-telegram"></i><a href="https://t.me/STARRYS" target="_blank" rel="noreferrer noopener">Telegram</a></li>
         
       </ul>
     </div>
@@ -486,11 +477,11 @@ $ tar -zxvf <span class="hljs-string">./jdk-8</span>*<span class="hljs-string">.
       <div><i class="fas fa-user-friends"></i>友情链接</div>
       <ul>
         
-        <li><i class="fas fa-link"></i><a href="https://alynx.moe/" target="_blank">喵's HomePage</a></li>
+        <li><i class="fas fa-link"></i><a href="https://alynx.moe/" target="_blank" rel="noreferrer noopener">喵's HomePage</a></li>
         
-        <li><i class="fas fa-link"></i><a href="https://chenxy.moe/" target="_blank">Art_Chen's Blog</a></li>
+        <li><i class="fas fa-link"></i><a href="https://chenxy.moe/" target="_blank" rel="noreferrer noopener">Art_Chen's Blog</a></li>
         
-        <li><i class="fas fa-link"></i><a href="https://lgiki.cc" target="_blank">LGiki's Blog</a></li>
+        <li><i class="fas fa-link"></i><a href="https://lgiki.cc" target="_blank" rel="noreferrer noopener">LGiki's Blog</a></li>
         
       </ul>
     </div>
@@ -507,12 +498,12 @@ $ tar -zxvf <span class="hljs-string">./jdk-8</span>*<span class="hljs-string">.
 <footer id="footer" class="footer" style="background: #33363b;">
   <div class="container">
     <div class="back-to-top">
-      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+      <button id="back-to-top" aria-label="回到顶部"><i class="fas fa-angle-double-up"></i></button>
     </div>
     <div class="footer-container">
       <div class="footer-left">
         <div class="copyright">
-          <span class="author"><i class="far fa-edit"></i>STARRY-S</span><span class="years"><i class="far fa-copyright"></i><span id="years-text">2016</span></span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">BY-NC-ND 4.0</a></span>
+          <span class="author"><i class="far fa-edit"></i>STARRY-S</span><span class="years"><i class="far fa-copyright"></i><span id="years-text">2016</span></span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noreferrer noopener">BY-NC-ND 4.0</a></span>
         </div>
         
         <div class="busuanzi">
@@ -523,11 +514,11 @@ $ tar -zxvf <span class="hljs-string">./jdk-8</span>*<span class="hljs-string">.
       <div class="footer-right">
         <div class="custom-info">
           
-          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank" rel="noreferrer noopener">GitHub Pages</a>
           
         </div>
         <div class="powered-by">
-          由 <a href="https://github.com/AlynxZhou/hikaru/" target="_blank">Hikaru</a> 强力驱动<i class="fab fa-node-js"></i>主题 <a href="https://github.com/AlynxZhou/hikaru-theme-aria/" target="_blank">ARIA</a>
+          由 <a href="https://github.com/AlynxZhou/hikaru/" target="_blank" rel="noreferrer noopener">Hikaru</a> 强力驱动<i class="fab fa-node-js"></i>主题 <a href="https://github.com/AlynxZhou/hikaru-theme-aria/" target="_blank" rel="noreferrer noopener">ARIA</a>
         </div>
       </div>
     </div>
@@ -537,4 +528,4 @@ $ tar -zxvf <span class="hljs-string">./jdk-8</span>*<span class="hljs-string">.
 
   </body>
 </html>
-<!-- Page built by Hikaru v2.0.4 at 2019-08-29 周四 23:10:05 CST. -->
+<!-- Page built by Hikaru v2.1.6 at 2019-09-16 Mon 08:40:21 CST. -->

@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10">
     
     <meta name="theme-color" content="#33363b">
     <meta name="msapplication-TileColor" content="#33363b">
     
     
     
-    <meta name="keywords" content="Life, ARIA, Hikaru, STARRY-S">
+    <meta name="keywords" content="Life, ARIA, Hikaru">
+    
+    
+    <meta name="description" content="啊 蓝真天，白真云">
     
     
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
@@ -52,6 +55,7 @@
     <link rel="stylesheet" type="text/css" href="/css/custom.css">
     <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
     <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <!-- You should not set `defer` to jQuery because other scripts dependents it! -->
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script defer type="text/javascript" src="/js/util.js"></script>
     <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
@@ -67,18 +71,6 @@
     <script defer src="/js/busuanzi.pure.mini.js"></script>
     
     
-    <script defer type="text/javascript" src="/js/search.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function () {
-      var searchPath = "/search.json";
-      if ("search.json".length === 0) {
-        searchPath = "/search.json";
-      }
-      searchFunc(searchPath, "search-input", "search-result");
-    });
-    </script>
-    
-    
     <script defer type="text/javascript" src="/js/index.js"></script>
     <script type="text/javascript">
     $(document).ready(function () {
@@ -87,19 +79,19 @@
         $(e).before([
           "<div class=\"code-titlebar\">",
             "<div class=\"titlebar-left\">",
-              "<a class=\"copy\"><i class=\"far fa-copy\"></i></a>",
+              "<a class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></a>",
             "</div>",
             "<div class=\"titlebar-center\">",
               lang.length ? lang.toUpperCase() : "代码",
             "</div>",
             "<div class=\"titlebar-right\">",
-              "<button class=\"button-dot dot-minimize\"></button>",
-              "<button class=\"button-dot dot-maximize\"></button>",
-              "<button class=\"button-dot dot-close\"></button>",
+              "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+              "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+              "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
             "</div>",
           "</div>"
         ].join(""));
-        // $(e).before("<button class=\"copy button\">clipboard.copy</button>");
+        // $(e).before("<button class=\"copy button\">复制</button>");
       });
       var cb = new ClipboardJS("a.copy", {
         "target": function (trigger) {
@@ -127,7 +119,7 @@
     <script defer type="text/javascript" src="/js/custom.js"></script>
     <title>斐讯K2折腾之——安装LEDE/OpenWrt | STARRY-S' Blog</title>
   </head>
-  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN" data-spy="scroll" data-target=".list-group">
+  <body itemscope itemtype="http://schema.org/WebPage" data-spy="scroll" data-target=".list-group">
     
 <header id="header" class="header" style="background: #33363b;">
   <div class="container">
@@ -138,7 +130,7 @@
       </div>
       
       <div class="logo">
-        <img src="/images/logo.png" alt="logo">
+        <img src="/images/logo.webp" alt="logo">
       </div>
       
     </div>
@@ -173,7 +165,7 @@
       <link itemprop="mainEntityOfPage" href="https://blog.starry-s.xyz/posts/psg1218-lede/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="STARRY-S">
-        <meta itemprop="description" content="啊~蓝真天，白真云">
+        <meta itemprop="description" content="啊 蓝真天，白真云">
         <meta itemprop="image" content="/images/avatar.jpg">
       </span>
       <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -185,7 +177,7 @@
       <div class="post-meta">
         
         <span class="post-date meta-block">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2017-05-13T14:58:07.000Z">2017-05-13 周六 22:58:07 CST</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2017-05-13T14:58:07.000Z">2017-05-13 Sat 22:58:07 CST</time></span>
         </span>
         
         
@@ -203,7 +195,7 @@
       <p><img src="/posts/psg1218-lede/images/lede.jpg" alt="LEDE (OpenWrt)"></p>
 <a id="more"></a>
 
-<p><a href="https://openwrt.org" target="_blank">OpenWrt/LEDE</a>是适合于嵌入式设备的一个Linux发行版。</p>
+<p><a href="https://openwrt.org" target="_blank" rel="noreferrer noopener">OpenWrt/LEDE</a>是适合于嵌入式设备的一个Linux发行版。</p>
 <p>相对原厂固件而言，OpenWrt不是一个单一、静态的固件，而是提供了一个可添加软件包的可写的文件系统。这使用户可以自由的选择应用程序和配置，而不必受设备提供商的限制，并且可以使用一些适合某方面应用的软件包来定制你的设备。对于开发者来说，OpenWrt是一个框架，开发者不必麻烦的构建整个固件就能得到想要的应用程序；对于用户来说，这意味着完全自由定制的能力，与以往不同的方式使用设备。</p>
 <blockquote>
 <p>LEDE与OpenWrt官方宣布合并，<code>lede-project.org</code>域名将重定向到相应的<code>openwrt.org</code>域名上。</p>
@@ -212,12 +204,12 @@
 <div class="alert-green">最后更新：2018年8月22日。</div>
 
 <h1 id="刷机前的准备"><a class="headerlink" href="/posts/psg1218-lede/#%E5%88%B7%E6%9C%BA%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87" title="刷机前的准备"></a>刷机前的准备</h1>
-<p>首先网上找几个比较靠谱的刷机教程照着做就可以了，我是按照<a href="https://blog.phpgao.com/phicomm_k2.html" target="_blank">这个教程</a>刷写固件的。需要注意的是我的路由器硬件版本为A2，现在已买不到了。其他版本的刷机方法有所不同，需要注意以免变砖。</p>
+<p>首先网上找几个比较靠谱的刷机教程照着做就可以了，我是按照<a href="https://blog.phpgao.com/phicomm_k2.html" target="_blank" rel="noreferrer noopener">这个教程</a>刷写固件的。需要注意的是我的路由器硬件版本为A2，现在已买不到了。其他版本的刷机方法有所不同，需要注意以免变砖。</p>
 <p>总体上大多数的路由器刷机都可以总结为以下几个步骤：</p>
 <ol>
 <li>先安装Bootloader<blockquote>
-<p><a href="http://www.right.com.cn/forum/thread-161906-1-1.html" target="_blank">Bootloader 的原帖</a>
-<a href="http://www.right.com.cn/forum/thread-191833-1-1.html" target="_blank">斐讯K2 V22.X.X.X 新版固件 刷机教程 (开telnet,安装SSH,adbyby,刷breed,华硕Padavan）</a></p>
+<p><a href="http://www.right.com.cn/forum/thread-161906-1-1.html" target="_blank" rel="noreferrer noopener">Bootloader 的原帖</a>
+<a href="http://www.right.com.cn/forum/thread-191833-1-1.html" target="_blank" rel="noreferrer noopener">斐讯K2 V22.X.X.X 新版固件 刷机教程 (开telnet,安装SSH,adbyby,刷breed,华硕Padavan）</a></p>
 </blockquote>
 </li>
 </ol>
@@ -226,13 +218,13 @@
 <li>刷入系统。</li>
 </ol>
 <h1 id="安装LEDE系统。"><a class="headerlink" href="/posts/psg1218-lede/#%E5%AE%89%E8%A3%85LEDE%E7%B3%BB%E7%BB%9F%E3%80%82" title="安装LEDE系统。"></a>安装LEDE系统。</h1>
-<p><a href="https://openwrt.org" target="_blank">OpenWrt/LEDE官网</a>上有详细的介绍，Document页面很多的内容已翻译为中文，英文的部分可以拿着<a href="https://translate.google.cn" target="_blank">谷歌翻译</a>慢慢读（谷歌翻译坠吼用了）。</p>
+<p><a href="https://openwrt.org" target="_blank" rel="noreferrer noopener">OpenWrt/LEDE官网</a>上有详细的介绍，Document页面很多的内容已翻译为中文，英文的部分可以拿着<a href="https://translate.google.cn" target="_blank" rel="noreferrer noopener">谷歌翻译</a>慢慢读（谷歌翻译坠吼用了）。</p>
 <ul>
-<li><a href="https://openwrt.org/zh/docs/start" target="_blank">Openwrt Documentation</a></li>
+<li><a href="https://openwrt.org/zh/docs/start" target="_blank" rel="noreferrer noopener">Openwrt Documentation</a></li>
 </ul>
 <h2 id="下载固件："><a class="headerlink" href="/posts/psg1218-lede/#%E4%B8%8B%E8%BD%BD%E5%9B%BA%E4%BB%B6%EF%BC%9A" title="下载固件："></a>下载固件：</h2>
-<p>Openwrt官网上面有介绍最新的稳定版下载链接，各版本的<a href="https://downloads.openwrt.org/releases/" target="_blank">下载地址在此</a>，选择 <strong>你想下载的版本 -&gt; ramips -&gt; mt7620</strong> 找到psg1218开头的固件就是斐讯k2所需要的固件啦。</p>
-<p>注：大陆网络环境较为特殊下载固件出奇的慢，可以使用国内的一些镜像站下载固件，速度很友好。<a href="https://mirrors.tuna.tsinghua.edu.cn/lede/" target="_blank">清华大学开源软件镜像站</a>是个不错的选择。</p>
+<p>Openwrt官网上面有介绍最新的稳定版下载链接，各版本的<a href="https://downloads.openwrt.org/releases/" target="_blank" rel="noreferrer noopener">下载地址在此</a>，选择 <strong>你想下载的版本 -&gt; ramips -&gt; mt7620</strong> 找到psg1218开头的固件就是斐讯k2所需要的固件啦。</p>
+<p>注：大陆网络环境较为特殊下载固件出奇的慢，可以使用国内的一些镜像站下载固件，速度很友好。<a href="https://mirrors.tuna.tsinghua.edu.cn/lede/" target="_blank" rel="noreferrer noopener">清华大学开源软件镜像站</a>是个不错的选择。</p>
 <h2 id="在Breed中刷机（推荐）"><a class="headerlink" href="/posts/psg1218-lede/#%E5%9C%A8Breed%E4%B8%AD%E5%88%B7%E6%9C%BA%EF%BC%88%E6%8E%A8%E8%8D%90%EF%BC%89" title="在Breed中刷机（推荐）"></a>在Breed中刷机（推荐）</h2>
 <p>路由器拔掉电源，长按reset复位键接通电源10秒后松开复位键，用网线将路由器与电脑连接，打开浏览器网址输入<code>192.168.1.1</code>就可以进入Breed后台刷机了。</p>
 <blockquote>
@@ -280,15 +272,15 @@
 <p>如果你需要用到端口转发和UPNP，例如和小伙伴<a href="http://blog.starry-s.xyz/2016/11/25/raspbettypi-mc-server/">联机我的世界</a>或玩其他联机游戏什么的，需要用到<code>miniupnpd</code>,<code>luci-app-upnp</code>这两个软件。</p>
 <p>使用动态DNS需要用到<code>ddns-scripts</code>,<code>luci-app-ddns</code>这两个软件。</p>
 <p>以上这几个软件可以完美的和小伙伴联机我的世界了～</p>
-<p>以及大陆用户可能会用到的<a href="http://openwrt-dist.sourceforge.net/" target="_blank">openwrt-dist</a>。</p>
+<p>以及大陆用户可能会用到的<a href="http://openwrt-dist.sourceforge.net/" target="_blank" rel="noreferrer noopener">openwrt-dist</a>。</p>
 <p>目前Openwrt dist源的访问已变得不是很友好。</p>
-<p>不建议直接使用<code>opkg install luci-app-shadowsocks-libev</code>和<code>opkg install shadowsocks-libev</code>来获取更多功能，因为软件源里安装的软件版本较低，可以看一下<a href="http://openwrt-dist.sourceforge.net/" target="_blank">Openwrt dist</a>，或者考虑自己编译软件。</p>
+<p>不建议直接使用<code>opkg install luci-app-shadowsocks-libev</code>和<code>opkg install shadowsocks-libev</code>来获取更多功能，因为软件源里安装的软件版本较低，可以看一下<a href="http://openwrt-dist.sourceforge.net/" target="_blank" rel="noreferrer noopener">Openwrt dist</a>，或者考虑自己编译软件。</p>
 <p>Openwrt Wiki正在完善，很多配置介绍都在wiki里，可以多看看。</p>
 <h1 id="推荐一些资料"><a class="headerlink" href="/posts/psg1218-lede/#%E6%8E%A8%E8%8D%90%E4%B8%80%E4%BA%9B%E8%B5%84%E6%96%99" title="推荐一些资料"></a>推荐一些资料</h1>
 <ul>
 <li><a href="http://blog.starry-s.xyz/2016/09/28/xiaomi-mini-fan-1/">小米路由器MINI折腾篇</a></li>
-<li><a href="https://blog.phpgao.com/xiaomi_router.html" target="_blank">老高的技术博客</a></li>
-<li><a href="https://lede-project.org/zh/docs/start" target="_blank">LEDE_Documents</a></li>
+<li><a href="https://blog.phpgao.com/xiaomi_router.html" target="_blank" rel="noreferrer noopener">老高的技术博客</a></li>
+<li><a href="https://lede-project.org/zh/docs/start" target="_blank" rel="noreferrer noopener">LEDE_Documents</a></li>
 </ul>
 
     </main>
@@ -318,7 +310,7 @@
   
 
 <div class="reward" id="reward">
-  <p>温馨提示：使用支付宝打赏0.01元即可完成每天领取蚂蚁农场饲料的任务哦！</p>
+  <p>想喝咖啡！</p>
   <button id="reward-button" class="button" disable="enable"><i class="fas fa-donate"></i>打赏</button>
   <div id="qr" class="qr" style="display: none;" aria-hidden="true">
     
@@ -394,14 +386,13 @@
           
           
           
-<aside class="sidebar" id="sidebar" style="background: url(/images/background.png);">
+<aside class="sidebar" id="sidebar" style="background: url(/images/background.webp);">
   
-  <div class="search">
-    <div class="form-group">
-      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
-    </div>
+  <div class="search" role="search">
+    <form action="/search.html" method="get">
+      <button type="submit" class="search-submit" aria-label="搜索"><i class="fas fa-search"></i></button><input type="search" id="search-input" class="search-input" name="q" results="0" placeholder="搜索" aria-label="搜索">
+    </form>
   </div>
-  <div class="search-result-box" id="search-result"></div>
   
   
 <div class="info sidebar-item" id="info">
@@ -409,7 +400,7 @@
   <img class="author-avatar" src="/images/avatar.jpg" alt="STARRY-S">
   
   <h1 class="author-name">STARRY-S</h1>
-  <h2 class="author-description">啊~蓝真天，白真云</h2>
+  <h2 class="author-description">啊 蓝真天，白真云</h2>
   <div class="site-count">
     
     
@@ -520,11 +511,11 @@
       <div><i class="far fa-address-card"></i>社交链接</p></div>
       <ul>
         
-        <li><i class="fas fa-envelope"></i><a href="mailto:hx916584160@gmail.com" target="_blank">E-Mail</a></li>
+        <li><i class="fas fa-envelope"></i><a href="mailto:hx916584160@gmail.com" target="_blank" rel="noreferrer noopener">E-Mail</a></li>
         
-        <li><i class="fab fa-github"></i><a href="https://github.com/STARRY-S" target="_blank">GitHub</a></li>
+        <li><i class="fab fa-github"></i><a href="https://github.com/STARRY-S" target="_blank" rel="noreferrer noopener">GitHub</a></li>
         
-        <li><i class="fab fa-telegram"></i><a href="https://t.me/STARRYS" target="_blank">Telegram</a></li>
+        <li><i class="fab fa-telegram"></i><a href="https://t.me/STARRYS" target="_blank" rel="noreferrer noopener">Telegram</a></li>
         
       </ul>
     </div>
@@ -535,11 +526,11 @@
       <div><i class="fas fa-user-friends"></i>友情链接</div>
       <ul>
         
-        <li><i class="fas fa-link"></i><a href="https://alynx.moe/" target="_blank">喵's HomePage</a></li>
+        <li><i class="fas fa-link"></i><a href="https://alynx.moe/" target="_blank" rel="noreferrer noopener">喵's HomePage</a></li>
         
-        <li><i class="fas fa-link"></i><a href="https://chenxy.moe/" target="_blank">Art_Chen's Blog</a></li>
+        <li><i class="fas fa-link"></i><a href="https://chenxy.moe/" target="_blank" rel="noreferrer noopener">Art_Chen's Blog</a></li>
         
-        <li><i class="fas fa-link"></i><a href="https://lgiki.cc" target="_blank">LGiki's Blog</a></li>
+        <li><i class="fas fa-link"></i><a href="https://lgiki.cc" target="_blank" rel="noreferrer noopener">LGiki's Blog</a></li>
         
       </ul>
     </div>
@@ -556,12 +547,12 @@
 <footer id="footer" class="footer" style="background: #33363b;">
   <div class="container">
     <div class="back-to-top">
-      <button id="back-to-top"><i class="fas fa-angle-double-up" aria-label="回到顶部"></i></button>
+      <button id="back-to-top" aria-label="回到顶部"><i class="fas fa-angle-double-up"></i></button>
     </div>
     <div class="footer-container">
       <div class="footer-left">
         <div class="copyright">
-          <span class="author"><i class="far fa-edit"></i>STARRY-S</span><span class="years"><i class="far fa-copyright"></i><span id="years-text">2016</span></span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">BY-NC-ND 4.0</a></span>
+          <span class="author"><i class="far fa-edit"></i>STARRY-S</span><span class="years"><i class="far fa-copyright"></i><span id="years-text">2016</span></span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noreferrer noopener">BY-NC-ND 4.0</a></span>
         </div>
         
         <div class="busuanzi">
@@ -572,11 +563,11 @@
       <div class="footer-right">
         <div class="custom-info">
           
-          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank" rel="noreferrer noopener">GitHub Pages</a>
           
         </div>
         <div class="powered-by">
-          由 <a href="https://github.com/AlynxZhou/hikaru/" target="_blank">Hikaru</a> 强力驱动<i class="fab fa-node-js"></i>主题 <a href="https://github.com/AlynxZhou/hikaru-theme-aria/" target="_blank">ARIA</a>
+          由 <a href="https://github.com/AlynxZhou/hikaru/" target="_blank" rel="noreferrer noopener">Hikaru</a> 强力驱动<i class="fab fa-node-js"></i>主题 <a href="https://github.com/AlynxZhou/hikaru-theme-aria/" target="_blank" rel="noreferrer noopener">ARIA</a>
         </div>
       </div>
     </div>
@@ -586,4 +577,4 @@
 
   </body>
 </html>
-<!-- Page built by Hikaru v2.0.4 at 2019-08-29 周四 23:10:05 CST. -->
+<!-- Page built by Hikaru v2.1.6 at 2019-09-16 Mon 08:40:21 CST. -->
