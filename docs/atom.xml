@@ -7,7 +7,7 @@
   
   <link href="https://blog.starry-s.xyz/" />
   
-  <updated>2019-08-25T16:15:32.040Z</updated>
+  <updated>2019-09-28T14:16:04.288Z</updated>
   
   <id>https://blog.starry-s.xyz/</id>
   
@@ -17,6 +17,32 @@
   </author>
   
   <generator uri="https://github.com/AlynxZhou/hikaru/">Hikaru</generator>
+  
+  <entry>
+    <title>将网易云音乐歌单导出为M3U8播放列表文件</title>
+    <link href="https://blog.starry-s.xyz/posts/neteaste_music_list/" />
+    <id>https://blog.starry-s.xyz/posts/neteaste_music_list/</id>
+    <published>2019-09-28T09:19:05.000Z</published>
+    <updated>2019-09-28T14:16:04.288Z</updated>
+    
+    <summary type="html">
+    
+    <![CDATA[<p>用网易云音乐快四五年，累计播放量两千多。从去年开始就有不想再用网易云音乐的打算，上半年买了一台索尼NW-A55（本来是有一台山灵M0的，但是它太小了被我随手丢洗衣机做了一套全机清洁后就坏掉了）。</p><p>但是听歌习惯真的好难改，也舍不得就这么抛弃掉自己用网易这么多年攒下的二十多个播放列表，把帐号注销后才意识到少了歌单就好像生活中少了很重要的一部分一样，然后急匆匆的联系客服能不能恢复注销的帐号。换一种听歌风格突然从一个自己用得很顺手的音乐软件换到别的软件还是很不适应的。发现大多数人并非是因为对网易云有感情才一直用网易，而是对自己的歌单恋恋不舍才坚持用网易的。曾经看到一篇热评说自己死了歌单也要传给下一代不能丢，有人说音乐就像一个神奇的“盒子”当你打开它你曾经很多记忆也会浮现出来，而歌单将这些“盒子”按时间顺序规整起来，一个人的时候打开看一看。像我这种曾经听歌每天三四个小时的人，歌单对于我的意义更重要一些了吧。</p>]]>
+    
+    </summary>
+    
+    <category term="日常" scheme="https://blog.starry-s.xyz/categories/%E6%97%A5%E5%B8%B8/" />
+    
+    <category term="python" scheme="https://blog.starry-s.xyz/categories/%E6%97%A5%E5%B8%B8/python/" />
+    
+    
+    <category term="网易云音乐" scheme="https://blog.starry-s.xyz/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" />
+    
+    <category term="python" scheme="https://blog.starry-s.xyz/tags/python/" />
+    
+    <category term="walkman" scheme="https://blog.starry-s.xyz/tags/walkman/" />
+    
+  </entry>
   
   <entry>
     <title>使用PaperMC搭建Minecraft服务器教程</title>
