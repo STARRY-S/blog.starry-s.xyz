@@ -117,7 +117,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>Everything is based on "Hello World" | STARRY-S' Blog</title>
+    <title>斐讯K2折腾之——安装OpenWrt/LEDE | STARRY-S' Blog</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" data-spy="scroll" data-target=".list-group">
     
@@ -162,7 +162,7 @@
 <div id="post" class="page">
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.xyz/posts/hello-world-again/">
+      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.xyz/posts/psg1218-openwrt/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="STARRY-S">
         <meta itemprop="description" content="啊 蓝真天，白真云">
@@ -173,17 +173,17 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">Everything is based on "Hello World"</h1>
+      <h1 class="post-title" itemprop="name headline">斐讯K2折腾之——安装OpenWrt/LEDE</h1>
       <div class="post-meta">
         
         <span class="post-date meta-block">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-08-22T06:22:54.000Z">2016-08-22 Mon 14:22:54 CST</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2017-05-13T14:58:07.000Z">2017-05-13 Sat 22:58:07 CST</time></span>
         </span>
         
         
         <span class="post-categories meta-block">
           
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Hello%20World/" itemprop="url" rel="index"><span itemprop="name">Hello World</span></a></span>
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">路由器</span></a></span>
         </span>
         
         
@@ -192,46 +192,101 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <p><img src="/posts/hello-world-again/images/image.jpg" alt></p>
+      <p><img src="/posts/psg1218-openwrt/images/lede.jpg" alt="LEDE (OpenWrt)"></p>
 <a id="more"></a>
 
+<p><a href="https://openwrt.org" target="_blank" rel="noreferrer noopener">OpenWrt/LEDE</a>是适合于嵌入式设备的一个Linux发行版。</p>
+<blockquote>
+<p>LEDE与OpenWrt官方宣布合并，<code>lede-project.org</code>域名将重定向到相应的<code>openwrt.org</code>域名上。</p>
+</blockquote>
+<p>几个月前入的斐讯K2，解决了家里Wifi信号覆盖范围小以及莫名卡顿等问题。入手当天就拆开看了一眼然后就直接刷固件了。前一阵子突然搜到了LEDE，于是又走上了折腾的道路，顺便赶在这几天<del>漆钟烤柿过后</del>把博客码出来。</p>
+<div class="alert-green">最后更新：2018年8月22日。</div>
 
-<h1 id="终于有一个自己的博客了！"><a class="header-link" href="/posts/hello-world-again/#%E7%BB%88%E4%BA%8E%E6%9C%89%E4%B8%80%E4%B8%AA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%E4%BA%86%EF%BC%81" title="终于有一个自己的博客了！"></a>终于有一个自己的博客了！</h1>
-<p>欢迎大家来我的博客～</p>
-<h3 id="惯例～来一段万物基于“HelloWorldamp;quot;～"><a class="header-link" href="/posts/hello-world-again/#%E6%83%AF%E4%BE%8B%EF%BD%9E%E6%9D%A5%E4%B8%80%E6%AE%B5%E4%B8%87%E7%89%A9%E5%9F%BA%E4%BA%8E%E2%80%9CHelloWorldamp;quot;%EF%BD%9E" title="惯例～来一段万物基于“HelloWorldamp;quot;～"></a>惯例～来一段万物基于“Hello World&quot;～</h3>
-<pre><code class="c"><figure class="highlight hljs cpp"><pre class="gutter"><span class="line">1</span>
+<h1 id="刷机前的准备"><a class="header-link" href="/posts/psg1218-openwrt/#%E5%88%B7%E6%9C%BA%E5%89%8D%E7%9A%84%E5%87%86%E5%A4%87" title="刷机前的准备"></a>刷机前的准备</h1>
+<p>首先网上找几个比较靠谱的刷机教程照着做就可以了，我是按照<a href="https://blog.phpgao.com/phicomm_k2.html" target="_blank" rel="noreferrer noopener">这个教程</a>刷写固件的。需要注意的是我的路由器硬件版本为A2，现在已买不到了。其他版本的刷机方法有所不同，需要注意以免变砖。</p>
+<p>总体上大多数的路由器刷机都可以总结为以下几个步骤：</p>
+<ol>
+<li>先安装Bootloader<blockquote>
+<p><a href="http://www.right.com.cn/forum/thread-161906-1-1.html" target="_blank" rel="noreferrer noopener">Bootloader 的原帖</a>
+<a href="http://www.right.com.cn/forum/thread-191833-1-1.html" target="_blank" rel="noreferrer noopener">斐讯K2 V22.X.X.X 新版固件 刷机教程 (开telnet,安装SSH,adbyby,刷breed,华硕Padavan）</a></p>
+</blockquote>
+</li>
+</ol>
+<p>刷好Bootloader后就可以放心的去刷别的系统喽~</p>
+<ol start="2">
+<li>刷入系统。</li>
+</ol>
+<h1 id="安装LEDE系统。"><a class="header-link" href="/posts/psg1218-openwrt/#%E5%AE%89%E8%A3%85LEDE%E7%B3%BB%E7%BB%9F%E3%80%82" title="安装LEDE系统。"></a>安装LEDE系统。</h1>
+<p><a href="https://openwrt.org" target="_blank" rel="noreferrer noopener">OpenWrt/LEDE官网</a>上有详细的介绍，Document页面很多的内容已翻译为中文，英文的部分可以拿着<a href="https://translate.google.cn" target="_blank" rel="noreferrer noopener">谷歌翻译</a>慢慢读（谷歌翻译坠吼用了）。</p>
+<ul>
+<li><a href="https://openwrt.org/zh/docs/start" target="_blank" rel="noreferrer noopener">Openwrt Documentation</a></li>
+</ul>
+<h2 id="下载固件："><a class="header-link" href="/posts/psg1218-openwrt/#%E4%B8%8B%E8%BD%BD%E5%9B%BA%E4%BB%B6%EF%BC%9A" title="下载固件："></a>下载固件：</h2>
+<p>Openwrt官网上面有介绍最新的稳定版下载链接，各版本的<a href="https://downloads.openwrt.org/releases/" target="_blank" rel="noreferrer noopener">下载地址在此</a>，选择 <strong>你想下载的版本 -&gt; ramips -&gt; mt7620</strong> 找到psg1218开头的固件就是斐讯k2所需要的固件啦。</p>
+<p>注：大陆网络环境较为特殊下载固件出奇的慢，可以使用国内的一些镜像站下载固件，速度很友好。<a href="https://mirrors.tuna.tsinghua.edu.cn/lede/" target="_blank" rel="noreferrer noopener">清华大学开源软件镜像站</a>是个不错的选择。</p>
+<h2 id="在Breed中刷机（推荐）"><a class="header-link" href="/posts/psg1218-openwrt/#%E5%9C%A8Breed%E4%B8%AD%E5%88%B7%E6%9C%BA%EF%BC%88%E6%8E%A8%E8%8D%90%EF%BC%89" title="在Breed中刷机（推荐）"></a>在Breed中刷机（推荐）</h2>
+<p>路由器拔掉电源，长按reset复位键接通电源10秒后松开复位键，用网线将路由器与电脑连接，打开浏览器网址输入<code>192.168.1.1</code>就可以进入Breed后台刷机了。</p>
+<blockquote>
+<p>进不去的话检查一下电脑的网络设置，通常使用dhcp就能分配得到ip地址，或者手动设置ipv4，将ip改为<code>192.168.1.2</code>，网关为<code>192.168.1.1</code>,子网掩码<code>255.255.255.0</code>，清除一下浏览器历史记录缓存什么的，再重新链接试试。
+再或者就是你有必要检查一下你的路由器是否真的进入breed后台了没。</p>
+</blockquote>
+<h2 id="在Luci里升级"><a class="header-link" href="/posts/psg1218-openwrt/#%E5%9C%A8Luci%E9%87%8C%E5%8D%87%E7%BA%A7" title="在Luci里升级"></a>在Luci里升级</h2>
+<p>其实有很多种方法来刷LEDE，如果你的路由器已经刷了PandoraBox这类的基于Openwrt的系统的话，可以直接通过Luci界面里的 <strong>@系统 &gt; 备份/升级 刷写新的固件</strong>
+选择你下载好的<code>.bin</code>固件直接更新系统（记得取消勾选<code>保留配置</code>选项）。</p>
+<h2 id="SSH到路由器中刷机"><a class="header-link" href="/posts/psg1218-openwrt/#SSH%E5%88%B0%E8%B7%AF%E7%94%B1%E5%99%A8%E4%B8%AD%E5%88%B7%E6%9C%BA" title="SSH到路由器中刷机"></a>SSH到路由器中刷机</h2>
+<p>除了Luci界面里刷机外可以直接将文件通过SCP上传到路由器里然后SSH到你的路由器就可以刷些系统了。Linux用户直接终端输入：</p>
+<pre><code><figure class="highlight hljs angelscript"><pre class="gutter"><span class="line">1</span>
+</pre><pre class="code"><code># scp /你下载的刷机包的目录/XXX.bin <span class="hljs-symbol">root@</span><span class="hljs-number">192.168</span><span class="hljs-number">.1</span><span class="hljs-number">.1</span>:/tmp/</code></pre></figure></code></pre><p>接下来SSH到路由器：</p>
+<pre><code><figure class="highlight hljs vala"><pre class="gutter"><span class="line">1</span>
+<span class="line">2</span>
+</pre><pre class="code"><code><span class="hljs-meta"># jffs2reset -y</span>
+<span class="hljs-meta"># sysupgrade -n /tmp/psg1218-*.bin</span></code></pre></figure></code></pre><p>当然了你除了用scp之外还可以直接用wget下载刷机包免去scp传输这一步，总之怎么做随你。
+警告：刷机过程中不要断电！</p>
+<h1 id="配置路由器"><a class="header-link" href="/posts/psg1218-openwrt/#%E9%85%8D%E7%BD%AE%E8%B7%AF%E7%94%B1%E5%99%A8" title="配置路由器"></a>配置路由器</h1>
+<p>LEDE和OpenWrt一样自带Luci界面，打开浏览器输入<code>192.168.1.1</code>不用输入密码选择登录就可以直接登入后台了。路由器语言默认是英文的。</p>
+<p>首先务必更改一下root密码后再操作。</p>
+<p>如果想安装软件的话建议把软件源改为国内，清华源是一个不错的选择，在<strong>Luci @ System &gt; Software &gt; Configuration</strong>中找到<strong>Distribution feeds</strong>这一栏，将其中的<code>http://downloads.lede-project.org</code>全部替换为<code>https://mirrors.tuna.tsinghua.edu.cn/lede</code>，点击右下角的Submit即可将软件源改为国内。</p>
+<p>如果想将语言改为简体中文就需要安装<code>luci-i18n-base-zh-cn</code>，装软件就需要联网，因此需要你凭借强大的猜的能力（毕竟是英语渣一枚，学霸可以无视我）摸索着找到网络连接进行一番设置后再ssh到路由器上装软件。</p>
+<p>通常是在 <strong>Luci @ Network &gt; Interfaces &gt; WAN</strong> 中选择 <strong>Edit</strong> 配置你的网络，默认为<code>DHCP client</code>。</p>
+<pre><code><figure class="highlight hljs vala"><pre class="gutter"><span class="line">1</span>
 <span class="line">2</span>
 <span class="line">3</span>
 <span class="line">4</span>
 <span class="line">5</span>
 <span class="line">6</span>
 <span class="line">7</span>
-</pre><pre class="code"><code><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span>
-</span>{
-    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Hello World"</span>);
-    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-}
-</code></pre></figure></code></pre>
-<p>用Linux久了就觉得，Linux系统真的特别的好用，尤其是逐渐的熟悉linux的过程。同样的我要给Raspberry pi一个大大的好评，科技的发展真的好迅速啊，这些复杂的东西都开始变得越来越简洁了。</p>
-<p>其实我在暑假前就特别的想建一个博客，踩了很多很多的坑后才勉强造出了这么个网站。接触Linux才几个月，真心非常感谢教我linux的好伙伴，灰常感谢大猫教我Linux。对我来说这个网站没了他我还真是弄不出。<a href="http://alynx.xyz" target="_blank" rel="noreferrer noopener">Here</a>是他的博客，他是个超级厉害的大神！</p>
-<p>想了想，我毕竟还是个小白，我也写不出那些大神的那么有技术的文章，没法像那些大神那样完善自己的博客。但是我还是特别心急的做了这个网站，因为我还是希望有一个自己的博客，可以写自己的文章，发（shui)自己的经验。把好多好多东西全写到这个网站上。
-<br></p>
-<br>
-<br>
-<br>
-------     不定期更新；
+<span class="line">8</span>
+</pre><pre class="code"><code>$ ssh root@<span class="hljs-number">192.168</span><span class="hljs-number">.1</span><span class="hljs-number">.1</span>
 
-<h3 id="STARRY-Samp;39;Blog已经建成了，小伙伴们别忘了收藏～"><a class="header-link" href="/posts/hello-world-again/#STARRY-Samp;39;Blog%E5%B7%B2%E7%BB%8F%E5%BB%BA%E6%88%90%E4%BA%86%EF%BC%8C%E5%B0%8F%E4%BC%99%E4%BC%B4%E4%BB%AC%E5%88%AB%E5%BF%98%E4%BA%86%E6%94%B6%E8%97%8F%EF%BD%9E" title="STARRY-Samp;39;Blog已经建成了，小伙伴们别忘了收藏～"></a>STARRY-S&#39; Blog 已经建成了，小伙伴们别忘了收藏～</h3>
-<br>
+<span class="hljs-comment">// 更新一下资源列表</span>
+<span class="hljs-meta"># opkg update</span>
 
-<br>
+<span class="hljs-comment">// 安装软件（简体中文为zh-cn，繁体中文为zh-tw）</span>
+<span class="hljs-meta"># opkg install luci-i18n-base-zh-cn</span>
+<span class="hljs-meta"># opkg install luci-i18n-base-zh-tw</span></code></pre></figure></code></pre><p>opkg是一个轻便的包管理器，<code>opkg install</code>相当于Linux里常用的<code>apt-get install</code>,<code>pacman -S</code>,<code>emerge</code>这些指令。</p>
+<p>安装好中文软件包后去 <strong>Luci @ System &gt; System &gt; Language and style</strong> 中更改语言就可以更改语言了。</p>
+<p>接下来在 <strong>系统 &gt; 系统 &gt; 基本设置</strong> 中改一下时区:<code>Asha/Hong kong</code>，同步一下浏览器时间。
+之后再按照你个人喜好配置你的路由器啦。</p>
+<h1 id="Lede的其他配置"><a class="header-link" href="/posts/psg1218-openwrt/#Lede%E7%9A%84%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE" title="Lede的其他配置"></a>Lede的其他配置</h1>
+<p>如果你需要用到端口转发和UPNP，例如和小伙伴<a href="http://blog.starry-s.xyz/2016/11/25/raspbettypi-mc-server/">联机我的世界</a>或玩其他联机游戏什么的，需要用到<code>miniupnpd</code>,<code>luci-app-upnp</code>这两个软件。</p>
+<p>使用动态DNS需要用到<code>ddns-scripts</code>,<code>luci-app-ddns</code>这两个软件。</p>
+<p>以上这几个软件可以完美的和小伙伴联机我的世界了～</p>
+<p>以及大陆用户可能会用到的<a href="http://openwrt-dist.sourceforge.net/" target="_blank" rel="noreferrer noopener">openwrt-dist</a>。</p>
+<p>目前Openwrt dist源的访问已变得不是很友好。</p>
+<p>不建议直接使用<code>opkg install luci-app-shadowsocks-libev</code>和<code>opkg install shadowsocks-libev</code>来获取更多功能，因为软件源里安装的软件版本较低，可以看一下<a href="http://openwrt-dist.sourceforge.net/" target="_blank" rel="noreferrer noopener">Openwrt dist</a>，或者考虑自己编译软件。</p>
+<p>Openwrt Wiki正在完善，很多配置介绍都在wiki里，可以多看看。</p>
+<h1 id="推荐一些资料"><a class="header-link" href="/posts/psg1218-openwrt/#%E6%8E%A8%E8%8D%90%E4%B8%80%E4%BA%9B%E8%B5%84%E6%96%99" title="推荐一些资料"></a>推荐一些资料</h1>
+<ul>
+<li><a href="http://blog.starry-s.xyz/2016/09/28/xiaomi-mini-fan-1/">小米路由器MINI折腾篇</a></li>
+<li><a href="https://blog.phpgao.com/xiaomi_router.html" target="_blank" rel="noreferrer noopener">老高的技术博客</a></li>
+<li><a href="https://lede-project.org/zh/docs/start" target="_blank" rel="noreferrer noopener">LEDE_Documents</a></li>
+</ul>
 
     </main>
     <footer class="post-footer">
       
       <div class="post-tags">
-        <a class="post-tag button" href="/tags/Blog/" rel="tag"><i class="fas fa-tag"></i>Blog</a><a class="post-tag button" href="/tags/Hello%20World/" rel="tag"><i class="fas fa-tag"></i>Hello World</a>
+        <a class="post-tag button" href="/tags/%E6%96%90%E8%AE%AFk2/" rel="tag"><i class="fas fa-tag"></i>斐讯k2</a><a class="post-tag button" href="/tags/LEDE/" rel="tag"><i class="fas fa-tag"></i>LEDE</a><a class="post-tag button" href="/tags/OpenWrt/" rel="tag"><i class="fas fa-tag"></i>OpenWrt</a><a class="post-tag button" href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8%E6%95%99%E7%A8%8B/" rel="tag"><i class="fas fa-tag"></i>路由器教程</a>
       </div>
       
     </footer>
@@ -240,10 +295,12 @@
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/posts/xiaomi-mini-fan-1/" rel="next" title="Xiaomi路由器mini折腾篇"><i class="fas fa-angle-left"></i><span class="nav-title">Xiaomi路由器mini折腾篇</span></a>
+      <a href="/posts/Hello-2018/" rel="next" title="Hello 2018"><i class="fas fa-angle-left"></i><span class="nav-title">Hello 2018</span></a>
       
     </div>
     <div class="page-nav-prev page-nav-item">
+      
+      <a href="/posts/Spring/" rel="prev" title="Spring"><span class="nav-title">Spring</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -295,7 +352,7 @@
         "clientSecret": "cc22cbdcdee59b64ef1031c4d369821030b3634f",
         "no_comment": "这个页面还没有评论，现在就去评论吧！",
         "go_to_comment": "去评论",
-        "issue_title": "Everything is based on "Hello World"",
+        "issue_title": "斐讯K2折腾之——安装OpenWrt/LEDE",
         "btn_class": "button",
         "comments_target": "#comment-thread"
       });
@@ -391,23 +448,53 @@
         <ol class="list-group toc">
         
           <li>
-            <a class="list-group-item toc-link" href="#终于有一个自己的博客了！">终于有一个自己的博客了！</a>
+            <a class="list-group-item toc-link" href="#刷机前的准备">刷机前的准备</a>
+            
+          </li>
+        
+          <li>
+            <a class="list-group-item toc-link" href="#安装LEDE系统。">安装LEDE系统。</a>
             
             
         <ol >
         
           <li>
-            <a class="list-group-item toc-link" href="#惯例～来一段万物基于“HelloWorldamp;quot;～">惯例～来一段万物基于“Hello World&quot;～</a>
+            <a class="list-group-item toc-link" href="#下载固件：">下载固件：</a>
             
           </li>
         
           <li>
-            <a class="list-group-item toc-link" href="#STARRY-Samp;39;Blog已经建成了，小伙伴们别忘了收藏～">STARRY-S&#39; Blog 已经建成了，小伙伴们别忘了收藏～</a>
+            <a class="list-group-item toc-link" href="#在Breed中刷机（推荐）">在Breed中刷机（推荐）</a>
+            
+          </li>
+        
+          <li>
+            <a class="list-group-item toc-link" href="#在Luci里升级">在Luci里升级</a>
+            
+          </li>
+        
+          <li>
+            <a class="list-group-item toc-link" href="#SSH到路由器中刷机">SSH到路由器中刷机</a>
             
           </li>
         
         </ol>
         
+            
+          </li>
+        
+          <li>
+            <a class="list-group-item toc-link" href="#配置路由器">配置路由器</a>
+            
+          </li>
+        
+          <li>
+            <a class="list-group-item toc-link" href="#Lede的其他配置">Lede的其他配置</a>
+            
+          </li>
+        
+          <li>
+            <a class="list-group-item toc-link" href="#推荐一些资料">推荐一些资料</a>
             
           </li>
         
@@ -489,4 +576,4 @@
 
   </body>
 </html>
-<!-- Page built by Hikaru v2.3.2 at 2019-10-19 Sat 18:06:14 CST. -->
+<!-- Page built by Hikaru v2.3.2 at 2019-10-20 Sun 14:56:44 CST. -->

@@ -1,6 +1,6 @@
 /*
- * A local search script for [hikaru-generator-search](https://github.com/AlynxZhou/hikaru-generator-search/)
- * CopyLeft (C) 2015-2018
+ * A local search script for [hikaru-generator-search](https://github.com/AlynxZhou/hikaru-generator-search/).
+ * CopyLeft (C) 2015-2019
  * Joseph Pan <http://github.com/wzpan>
  * Shuhao Mao <http://github.com/maoshuhao>
  * Edited by MOxFIVE <http://github.com/MOxFIVE>
@@ -19,221 +19,269 @@ var MAX_DISPLAY_SLICES = 10;
 // Calculate how many keywords a page contains.
 function findKeywords(keywords, prop) {
   for (var i = 0; i < keywords.length; ++i) {
-    if (keywords[i].length <= 0) {
+    var keyword = keywords[i].toLowerCase();
+    if (keyword.length <= 0) {
       continue;
     }
-    var indexContent = prop["dataContent"].toLowerCase().indexOf(keywords[i].toLowerCase());
+    var indexContent = prop["dataContent"].toLowerCase().indexOf(keyword);
     // Find all keyword indices.
     while (indexContent >= 0) {
-      prop["matchedContentKeywords"].push({
-        "keyword": prop["dataContent"].substring(indexContent, indexContent + keywords[i].length),
+      // Save original content because keyword is case insensitive.
+      prop["contentKeywords"].push({
+        "keyword": prop["dataContent"].substring(
+          indexContent, indexContent + keyword.length
+        ),
         "index": indexContent
       });
-      indexContent = prop["dataContent"].toLowerCase().indexOf(keywords[i].toLowerCase(), indexContent + keywords[i].length);
+      indexContent = prop["dataContent"].toLowerCase().indexOf(
+        keyword, indexContent + keyword.length
+      );
     }
-    var indexTitle = prop["dataTitle"].toLowerCase().indexOf(keywords[i].toLowerCase());
+    var indexTitle = prop["dataTitle"].toLowerCase().indexOf(keyword);
     while (indexTitle >= 0) {
-      prop["matchedTitleKeywords"].push({
-        "keyword": prop["dataTitle"].substring(indexTitle, indexTitle + keywords[i].length),
+      prop["titleKeywords"].push({
+        "keyword": prop["dataTitle"].substring(
+          indexTitle, indexTitle + keyword.length
+        ),
         "index": indexTitle
       });
-      indexTitle = prop["dataTitle"].toLowerCase().indexOf(keywords[i].toLowerCase(), indexTitle + keywords[i].length);
+      indexTitle = prop["dataTitle"].toLowerCase().indexOf(
+        keyword, indexTitle + keyword.length
+      );
     }
   }
 }
 
-function buildSortedMatchedDataProps(data, keywords) {
-  var matchedDataProps = [];
+function buildSortedSlices(prop) {
+  var slices = [];
+  // Sorting slice array is hard so sort index array instead.
+  prop["contentKeywords"].sort(function (a, b) {
+    return a["index"] - b["index"]
+  });
+  // Get content slice position.
+  for (
+    var i = 0;
+    i < prop["contentKeywords"].length && i < MAX_DISPLAY_SLICES;
+    ++i
+  ) {
+    var start = prop["contentKeywords"][i]["index"] - SUBSTRING_OFFSET;
+    var end = prop["contentKeywords"][i]["index"] +
+              prop["contentKeywords"][i]["keyword"].length +
+              SUBSTRING_OFFSET;
+    start = Math.max(start, 0);
+    if (start === 0) {
+      end = SUBSTRING_OFFSET +
+            prop["contentKeywords"][i]["keyword"].length +
+            SUBSTRING_OFFSET;
+    }
+    end = Math.min(end, prop["dataContent"].length);
+    slices.push({"start": start, "end": end});
+  }
+  return slices;
+}
+
+function mergeSlices(slices) {
+  var mergedSlices = [];
+  if (slices.length === 0) {
+    return mergedSlices;
+  }
+  mergedSlices.push(slices[0])
+  for (var i = 1; i < slices.length; ++i) {
+    // If two slice have common part, merge them.
+    if (mergedSlices[mergedSlices.length - 1]["end"] >= slices[i]["start"]) {
+      if (slices[i]["end"] > mergedSlices[mergedSlices.length - 1]["end"]) {
+        mergedSlices[mergedSlices.length - 1]["end"] = slices[i]["end"];
+      }
+    } else {
+      mergedSlices.push(slices[i]);
+    }
+  }
+  return mergedSlices;
+}
+
+function buildHighlightedTitle(prop) {
+  var matchedTitle = prop["dataTitle"];
+  var regexKeywords = [];
+  for (var i = 0; i < prop["titleKeywords"].length; ++i) {
+    if (prop["titleKeywords"][i]["keyword"].length > 0) {
+      regexKeywords.push(prop["titleKeywords"][i]["keyword"])
+    }
+  }
+  // Replace all in one time to prevent it from matching <strong> tag.
+  var regex = new RegExp(regexKeywords.join("|"), "gi");
+  // `$&` is the matched part of RegExp.
+  matchedTitle = matchedTitle.replace(
+    regex, "<strong class=\"search-keyword\">$&</strong>"
+  );
+  return matchedTitle;
+}
+
+function buildHighlightedContent(prop, mergedSlices) {
+  var matchedContents = [];
+  for (var i = 0; i < mergedSlices.length; ++i) {
+    matchedContents.push(prop["dataContent"].substring(
+      mergedSlices[i]["start"], mergedSlices[i]["end"]
+    ));
+  }
+  var regexKeywords = [];
+  for (var i = 0; i < prop["contentKeywords"].length; ++i) {
+    if (prop["contentKeywords"][i]["keyword"].length > 0) {
+      regexKeywords.push(prop["contentKeywords"][i]["keyword"]);
+    }
+  }
+  var regex = new RegExp(regexKeywords.join("|"), "gi");
+  for (var i = 0; i < matchedContents.length; i++) {
+    matchedContents[i] = matchedContents[i].replace(
+      regex, "<strong class=\"search-keyword\">$&</strong>"
+    );
+  }
+  return matchedContents.join("…");
+}
+
+function buildDataProps(data, keywords) {
+  var dataProps = [];
   for (var i = 0; i < data.length; ++i) {
+    // We don't search HTML tags so strip it.
     var prop = {
-      "matchedContentKeywords": [],
-      "matchedTitleKeywords": [],
-      "dataTitle": data[i]["title"].trim(),
-      "dataContent": data[i]["content"].trim().replace(/<[^>]+>/g, ""),
-      "dataURL": data[i]["url"]
+      "contentKeywords": [],
+      "titleKeywords": [],
+      "dataTitle": (data[i]["title"] || "").trim(),
+      "highlightedTitle": null,
+      "dataContent": (data[i]["content"] || "").trim().replace(
+        /<\/?[^>]+>/gi, ""
+      ),
+      "highlightedContent": null,
+      "dataURL": data[i]["url"] || ""
     };
     // Only match articles with valid titles and contents.
     if (prop["dataTitle"].length + prop["dataContent"].length > 0) {
       findKeywords(keywords, prop);
     }
-    if (prop["matchedContentKeywords"].length + prop["matchedTitleKeywords"].length > 0) {
-      matchedDataProps.push(prop);
+    if (prop["contentKeywords"].length + prop["titleKeywords"].length > 0) {
+      prop["highlightedTitle"] = buildHighlightedTitle(prop);
+      var mergedSlices = mergeSlices(buildSortedSlices(prop));
+      prop["highlightedContent"] = buildHighlightedContent(prop, mergedSlices);
+      dataProps.push(prop);
     }
   }
-  // The more keywords a page contains, the higher this page ranks.
-  matchedDataProps.sort(function (a, b) {
-    return -((a["matchedContentKeywords"].length + a["matchedTitleKeywords"].length) - (b["matchedContentKeywords"].length + b["matchedTitleKeywords"].length));
+  return dataProps;
+}
+
+// The more keywords a page contains, the higher this page ranks.
+function sortDataProps(dataProps) {
+  dataProps.sort(function (a, b) {
+    return -(
+      (a["contentKeywords"].length + a["titleKeywords"].length) -
+      (b["contentKeywords"].length + b["titleKeywords"].length)
+    );
   });
-  return matchedDataProps;
 }
 
-function buildSortedSliceArray(prop) {
-  var sliceArray = [];
-  // Sorting slice array is hard so sort index array instead.
-  prop["matchedContentKeywords"].sort(function (a, b) {
-    return a["index"] - b["index"]
-  });
-  // Get content slice position.
-  for (var i = 0; i < prop["matchedContentKeywords"].length && i < MAX_DISPLAY_SLICES; ++i) {
-    var start = prop["matchedContentKeywords"][i]["index"] - SUBSTRING_OFFSET;
-    var end = prop["matchedContentKeywords"][i]["index"] + prop["matchedContentKeywords"][i]["keyword"].length + SUBSTRING_OFFSET;
-    if (start < 0) {
-      start = 0;
+// Keywords are all strings so this function works.
+function fastUniqKeywords(array) {
+  var seen = {};
+  var result = [];
+  var j = 0;
+  for (var i = 0; i < array.length; i++) {
+    if (seen[array[i]] !== true) {
+      seen[array[i]] = true;
+      result[j++] = array[i];
     }
-    if (start === 0) {
-      end = SUBSTRING_OFFSET + prop["matchedContentKeywords"][i]["keyword"].length + SUBSTRING_OFFSET;
-    }
-    if (end > prop["dataContent"].length) {
-      end = prop["dataContent"].length;
-    }
-    sliceArray.push({ "start": start, "end": end });
   }
-  return sliceArray;
+  return result;
 }
 
-function mergeSliceArray(sliceArray) {
-  var mergedSliceArray = [];
-  if (sliceArray.length === 0) {
-    return mergedSliceArray;
-  }
-  mergedSliceArray.push(sliceArray[0])
-  for (var i = 1; i < sliceArray.length; ++i) {
-    // If two slice have common part, merge them.
-    if (mergedSliceArray[mergedSliceArray.length - 1]["end"] >= sliceArray[i]["start"]) {
-      if (sliceArray[i]["end"] > mergedSliceArray[mergedSliceArray.length - 1]["end"]) {
-        mergedSliceArray[mergedSliceArray.length - 1]["end"] = sliceArray[i]["end"];
-      }
-    } else {
-      mergedSliceArray.push(sliceArray[i]);
-    }
-  }
-  return mergedSliceArray;
-}
-
-function buildHighlightedTitle(prop) {
-  var matchedTitle = prop["dataTitle"];
-  var reArray = [];
-  for (var i = 0; i < prop["matchedTitleKeywords"].length; ++i) {
-    if (prop["matchedTitleKeywords"][i]["keyword"].length > 0) {
-      reArray.push(prop["matchedTitleKeywords"][i]["keyword"])
-    }
-  }
-  // Replace all in one time to prevent it from matching <strong> tag.
-  var re = new RegExp(reArray.join("|"), "gi");
-  // `$&` is the matched part of RegExp.
-  matchedTitle = matchedTitle.replace(re, "<strong class=\"search-keyword\">$&</strong>");
-  return matchedTitle;
-}
-
-function buildHighlightedContent(prop, mergedSliceArray) {
-  var matchedContentArray = [];
-  for (var i = 0; i < mergedSliceArray.length; ++i) {
-    matchedContentArray.push(prop["dataContent"].substring(mergedSliceArray[i]["start"], mergedSliceArray[i]["end"]));
-  }
-  var reArray = [];
-  for (var i = 0; i < prop["matchedContentKeywords"].length; ++i) {
-    if (prop["matchedContentKeywords"][i]["keyword"].length > 0) {
-      reArray.push(prop["matchedContentKeywords"][i]["keyword"]);
-    }
-  }
-  var re = new RegExp(reArray.join("|"), "gi");
-  for (var i = 0; i < matchedContentArray.length; i++) {
-    matchedContentArray[i] = matchedContentArray[i].replace(re, "<strong class=\"search-keyword\">$&</strong>");
-  }
-  return matchedContentArray.join("...");
-}
-
-function searchResult(queryString, data) {
+function parseKeywords(queryString) {
   var urlParams = new URLSearchParams(window.location.search);
   if (!urlParams.has("q")) {
-    return "";
+    return [];
   }
   var query = urlParams.get('q').trim();
   if (query.length <= 0) {
-    return "";
+    return [];
   }
-  var keywords = query.split(/[\s-\+]+/);
-  var li = [];
-  if (keywords.length > MAX_KEYWORDS) {
-    keywords = keywords.slice(0, MAX_KEYWORDS);
-    li.push("<span>Keywords more than ");
-    li.push(MAX_KEYWORDS);
-    li.push(" are sliced.</span>");
-  }
-  var matchedDataProps = buildSortedMatchedDataProps(data, keywords);
-  if (matchedDataProps.length === 0) {
-    return "";
-  }
-  li.push("<ul class=\"search-result-list\">");
-  for (var i = 0; i < matchedDataProps.length; ++i) {
-    // Show search results
-    li.push("<li><a href=\"")
-    li.push(matchedDataProps[i]["dataURL"]);
-    li.push("\" class=\"search-result-title\">");
-    li.push(buildHighlightedTitle(matchedDataProps[i]));
-    li.push("</a>");
-    li.push("<p class=\"search-result-content\">...");
-    var sliceArray = buildSortedSliceArray(matchedDataProps[i])
-    var mergedSliceArray = mergeSliceArray(sliceArray);
-    // Highlight keyword.
-    li.push(buildHighlightedContent(matchedDataProps[i], mergedSliceArray));
-    li.push("...</p>");
-  }
-  li.push("</ul>");
-  return li.join("");
+  return fastUniqKeywords(query.split(/[\s-\+]+/));
 }
 
-function ajax(url, callback) {
-  var xhr = null;
-  if (window.XMLHttpRequest) {
-    xhr = new XMLHttpRequest();
-  } else if (window.ActiveXObject) {
-    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+function renderDataProps(dataProps) {
+  var res = [];
+  for (var i = 0; i < dataProps.length; ++i) {
+    res.push("<li><a href=\"")
+    res.push(dataProps[i]["dataURL"]);
+    res.push("\" class=\"search-result-title\">");
+    res.push(dataProps[i]["highlightedTitle"]);
+    res.push("</a>");
+    res.push("<p class=\"search-result-content\">…");
+    res.push(dataProps[i]["highlightedContent"]);
+    res.push("…</p>");
   }
-  if (xhr == null) {
-    console.error("Your broswer does not support XMLHttpRequest!");
+  return res;
+}
+
+function fetchJSON(path, callback) {
+  if (window.fetch != null) {
+    fetch(path).then(function (response) {
+      return response.json();
+    }).then(callback);
+  } else {
+    var xhr = null;
+    if (window.XMLHttpRequest) {
+      xhr = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+      xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    if (xhr == null) {
+      console.error("Your broswer does not support XMLHttpRequest!");
+      return;
+    }
+    xhr.onreadystatechange = function () {
+      // 4 is ready.
+      if (xhr.readyState !== 4) {
+        return;
+      }
+      if (xhr.status !== 200) {
+        console.error("XMLHttpRequest failed!");
+        return;
+      }
+      callback(JSON.parse(xhr.response));
+    };
+    xhr.open("GET", path, true);
+    xhr.send(null);
+  }
+}
+
+var loadSearch = function (paths, queryString, containerID) {
+  var resultContainer = document.getElementById(containerID);
+  resultContainer.style.display = "block";
+  var header = [];
+  var dataProps = [];
+  var footer = [];
+  var keywords = parseKeywords(queryString);
+  if (keywords.length === 0) {
+    resultContainer.innerHTML = "";
     return;
   }
-  xhr.onreadystatechange = function () {
-    // 4 is ready.
-    if (xhr.readyState !== 4) {
-      return;
-    }
-    if (xhr.status !== 200) {
-      console.error("XMLHttpRequest failed!");
-      return;
-    }
-    callback(xhr);
-  };
-  xhr.open("GET", url, true);
-  xhr.send(null);
-}
-
-var loadSearch = function (path, queryString, containerId) {
-  ajax(path, function (xhr) {
-    var data = [];
-    if (xhr.responseXML) {
-      var xmlDoc = xhr.responseXML;
-      var entries = xmlDoc.getElementsByTagName("entry");
-      for (var i = 0; i < entries.length; i++) {
-        data.push({
-          "title": entries[i].getElementsByTagName("title")[0].innerHTML || "",
-          "content": entries[i].getElementsByTagName("content")[0].innerHTML || "",
-          "url": entries[i].getElementsByTagName("url")[0].innerHTML || ""
-        });
+  if (keywords.length > MAX_KEYWORDS) {
+    keywords = keywords.slice(0, MAX_KEYWORDS);
+    header.push("<span>Keywords more than ");
+    header.push(MAX_KEYWORDS);
+    header.push(" are sliced.</span>");
+  }
+  header.push("<ul class=\"search-result-list\">");
+  footer.push("</ul>");
+  paths.forEach(function (path) {
+    fetchJSON(path, function (json) {
+      var data = null;
+      if (json instanceof Array) {
+        data = json;
+      } else {
+        data = json["data"];
       }
-    } else {
-      var xhrJSON = JSON.parse(xhr.response);
-      for (var i = 0; i < xhrJSON.length; i++) {
-        data.push({
-          "title": xhrJSON[i]["title"] || "",
-          "content": xhrJSON[i]["content"] || "", // Hexo Generator Search does not fill a key when a page is blank.
-          "url": xhrJSON[i]["url"] || ""
-        });
-      }
-    }
-    var resultContainer = document.getElementById(containerId);
-    resultContainer.style.display = "block";
-    resultContainer.innerHTML = searchResult(queryString, data);
+      dataProps = dataProps.concat(buildDataProps(data, keywords));
+      sortDataProps(dataProps);
+      resultContainer.innerHTML = header.concat(
+        renderDataProps(dataProps)
+      ).concat(footer).join("");
+    });
   });
 }

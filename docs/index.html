@@ -73,47 +73,47 @@
     
     <script defer type="text/javascript" src="/js/index.js"></script>
     <script type="text/javascript">
-    $(document).ready(function () {
-      $(".post pre code figure.highlight").each(function (i, e) {
-        var lang = e.parentNode.className;
-        $(e).before([
-          "<div class=\"code-titlebar\">",
-            "<div class=\"titlebar-left\">",
-              "<a class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></a>",
-            "</div>",
-            "<div class=\"titlebar-center\">",
-              lang.length ? lang.toUpperCase() : "代码",
-            "</div>",
-            "<div class=\"titlebar-right\">",
-              "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
-              "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
-              "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
-            "</div>",
-          "</div>"
-        ].join(""));
-        // $(e).before("<button class=\"copy button\">复制</button>");
+      $(document).ready(function () {
+        $(".post pre code figure.highlight").each(function (i, e) {
+          var lang = e.parentNode.className;
+          $(e).before([
+            "<div class=\"code-titlebar\">",
+              "<div class=\"titlebar-left\">",
+                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+              "</div>",
+              "<div class=\"titlebar-center\">",
+                lang.length ? lang.toUpperCase() : "代码",
+              "</div>",
+              "<div class=\"titlebar-right\">",
+                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+              "</div>",
+            "</div>"
+          ].join(""));
+          // $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        var cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // trigger.parentNode.parentNode is code-titlebar.
+              // nextElementSibling is figure.highlight, lastChild is pre.code.
+              return trigger.parentNode.parentNode.nextElementSibling.lastChild;
+          }
+        });
+        cb.on("success", function (e) {
+          e.clearSelection();
+          var trigger = e.trigger;
+          // Change button text as a user tip.
+          trigger.innerHTML = "<i class=\"far fa-check-square\"></i>";
+          $(trigger).addClass("copied");
+          // Change button text back;
+          setTimeout(function () {
+            trigger.innerHTML = "<i class=\"far fa-copy\"></i>";
+            $(trigger).removeClass("copied");
+          }, 1500);
+        });
       });
-      var cb = new ClipboardJS("a.copy", {
-        "target": function (trigger) {
-            // Get target element by DOM API.
-            // trigger.parentNode.parentNode is code-titlebar.
-            // nextElementSibling is figure.highlight, lastChild is pre.code.
-            return trigger.parentNode.parentNode.nextElementSibling.lastChild;
-        }
-      });
-      cb.on("success", function (e) {
-        e.clearSelection();
-        var trigger = e.trigger;
-        // Change button text as a user tip.
-        trigger.innerHTML = "<i class=\"far fa-check-square\"></i>";
-        $(trigger).addClass("copied");
-        // Change button text back;
-        setTimeout(function () {
-          trigger.innerHTML = "<i class=\"far fa-copy\"></i>";
-          $(trigger).removeClass("copied");
-        }, 1500);
-      });
-    });
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
@@ -462,7 +462,7 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.xyz/posts/psg1218-lede/">
+      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.xyz/posts/psg1218-openwrt/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="STARRY-S">
         <meta itemprop="description" content="啊 蓝真天，白真云">
@@ -474,7 +474,7 @@
     </div>
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/posts/psg1218-lede/" itemprop="url">斐讯K2折腾之——安装LEDE/OpenWrt</a>
+        <a class="post-title-link post-title-link-external" href="/posts/psg1218-openwrt/" itemprop="url">斐讯K2折腾之——安装OpenWrt/LEDE</a>
       </h1>
       <div class="post-meta">
         
@@ -495,7 +495,7 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       
-      <p><img src="/posts/psg1218-lede/images/lede.jpg" alt="LEDE (OpenWrt)"></p>
+      <p><img src="/posts/psg1218-openwrt/images/lede.jpg" alt="LEDE (OpenWrt)"></p>
 
       
     </main>
@@ -543,8 +543,8 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       
-      <h1 id="FlowersinSpring"><a class="headerlink" href="/posts/Spring/#FlowersinSpring" title="FlowersinSpring"></a>Flowers in Spring.</h1>
-<p>前一阵子拍的一些花，简单地用手机和电脑调了颜色，感觉蛮好看的。感觉有的照片可以当作壁纸了。 <strong>多图警告</strong></p>
+      <h1 id="FlowersinSpring"><a class="header-link" href="/posts/Spring/#FlowersinSpring" title="FlowersinSpring"></a>Flowers in Spring.</h1>
+<p>前一阵子拍的一些花，简单地用手机和电脑调了颜色，感觉蛮好看的。 <strong>多图警告</strong></p>
 
       
     </main>
@@ -592,7 +592,7 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       
-      <h1 id="小米路由器mini换天线与散热片的安装"><a class="headerlink" href="/posts/xiaomi-mini-fan-2/#%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8mini%E6%8D%A2%E5%A4%A9%E7%BA%BF%E4%B8%8E%E6%95%A3%E7%83%AD%E7%89%87%E7%9A%84%E5%AE%89%E8%A3%85" title="小米路由器mini换天线与散热片的安装"></a>小米路由器mini换天线与散热片的安装</h1>
+      <h1 id="小米路由器mini换天线与散热片的安装"><a class="header-link" href="/posts/xiaomi-mini-fan-2/#%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8mini%E6%8D%A2%E5%A4%A9%E7%BA%BF%E4%B8%8E%E6%95%A3%E7%83%AD%E7%89%87%E7%9A%84%E5%AE%89%E8%A3%85" title="小米路由器mini换天线与散热片的安装"></a>小米路由器mini换天线与散热片的安装</h1>
 <p>小米路由器的cpu为MT7620A，控制5G的芯片为MT7612EN。这两个芯片的发热量还是很大的。小米在路由器中放了一大块铁片并贴上导热硅脂，将热量导到铁板上散发掉。但是毕竟铁板被封在了厚厚的塑料壳内，散热效果中规中矩吧。所以开始拆机动手瞎弄。</p>
 
       
@@ -816,4 +816,4 @@
 
   </body>
 </html>
-<!-- Page built by Hikaru v2.1.6 at 2019-09-28 Sat 14:18:09 UTC. -->
+<!-- Page built by Hikaru v2.3.2 at 2019-10-20 Sun 06:56:44 UTC. -->

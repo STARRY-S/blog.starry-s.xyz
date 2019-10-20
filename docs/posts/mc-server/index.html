@@ -73,47 +73,47 @@
     
     <script defer type="text/javascript" src="/js/index.js"></script>
     <script type="text/javascript">
-    $(document).ready(function () {
-      $(".post pre code figure.highlight").each(function (i, e) {
-        var lang = e.parentNode.className;
-        $(e).before([
-          "<div class=\"code-titlebar\">",
-            "<div class=\"titlebar-left\">",
-              "<a class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></a>",
-            "</div>",
-            "<div class=\"titlebar-center\">",
-              lang.length ? lang.toUpperCase() : "代码",
-            "</div>",
-            "<div class=\"titlebar-right\">",
-              "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
-              "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
-              "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
-            "</div>",
-          "</div>"
-        ].join(""));
-        // $(e).before("<button class=\"copy button\">复制</button>");
+      $(document).ready(function () {
+        $(".post pre code figure.highlight").each(function (i, e) {
+          var lang = e.parentNode.className;
+          $(e).before([
+            "<div class=\"code-titlebar\">",
+              "<div class=\"titlebar-left\">",
+                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+              "</div>",
+              "<div class=\"titlebar-center\">",
+                lang.length ? lang.toUpperCase() : "代码",
+              "</div>",
+              "<div class=\"titlebar-right\">",
+                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+              "</div>",
+            "</div>"
+          ].join(""));
+          // $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        var cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // trigger.parentNode.parentNode is code-titlebar.
+              // nextElementSibling is figure.highlight, lastChild is pre.code.
+              return trigger.parentNode.parentNode.nextElementSibling.lastChild;
+          }
+        });
+        cb.on("success", function (e) {
+          e.clearSelection();
+          var trigger = e.trigger;
+          // Change button text as a user tip.
+          trigger.innerHTML = "<i class=\"far fa-check-square\"></i>";
+          $(trigger).addClass("copied");
+          // Change button text back;
+          setTimeout(function () {
+            trigger.innerHTML = "<i class=\"far fa-copy\"></i>";
+            $(trigger).removeClass("copied");
+          }, 1500);
+        });
       });
-      var cb = new ClipboardJS("a.copy", {
-        "target": function (trigger) {
-            // Get target element by DOM API.
-            // trigger.parentNode.parentNode is code-titlebar.
-            // nextElementSibling is figure.highlight, lastChild is pre.code.
-            return trigger.parentNode.parentNode.nextElementSibling.lastChild;
-        }
-      });
-      cb.on("success", function (e) {
-        e.clearSelection();
-        var trigger = e.trigger;
-        // Change button text as a user tip.
-        trigger.innerHTML = "<i class=\"far fa-check-square\"></i>";
-        $(trigger).addClass("copied");
-        // Change button text back;
-        setTimeout(function () {
-          trigger.innerHTML = "<i class=\"far fa-copy\"></i>";
-          $(trigger).removeClass("copied");
-        }, 1500);
-      });
-    });
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
@@ -199,7 +199,7 @@
 <p>顺便声明一下本篇教程所指的「Minecraft」非网易代理版「我的世界」。</p>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="//music.163.com/outchain/player?type=2&id=4888328&auto=0&height=66"></iframe>
 
-<h1 id="安装Java"><a class="headerlink" href="/posts/mc-server/#%E5%AE%89%E8%A3%85Java" title="安装Java"></a>安装Java</h1>
+<h1 id="安装Java"><a class="header-link" href="/posts/mc-server/#%E5%AE%89%E8%A3%85Java" title="安装Java"></a>安装Java</h1>
 <p>因为大多数插件都对Java8有良好的支持，所以推荐安装Java8。</p>
 <pre><code><figure class="highlight hljs vala"><pre class="gutter"><span class="line">1</span>
 <span class="line">2</span>
@@ -211,31 +211,31 @@ $ sudo apt-<span class="hljs-keyword">get</span> install openjdk<span class="hlj
 
 <span class="hljs-meta"># Archlinux</span>
 $ sudo pacman -S jdk8-openjdk</code></pre></figure></code></pre><p>可以通过<code>java -version</code>查看版本号的指令来确定Java是否安装成功。</p>
-<p>除了通过包管理器安装Java外还可以在<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noreferrer noopener">官网</a>下载安装包解压在常用的目录中使用Java（不推荐）</p>
+<p>除了通过包管理器安装Java外还可以在<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noreferrer noopener">Oracle官网</a>下载安装包解压在常用的目录中使用Java（不推荐）</p>
 <pre><code><figure class="highlight hljs jboss-cli"><pre class="gutter"><span class="line">1</span>
 <span class="line">2</span>
 </pre><pre class="code"><code>$ <span class="hljs-keyword">cd</span> java
-$ tar -zxvf <span class="hljs-string">./jdk-8</span>*<span class="hljs-string">.tar.gz</span></code></pre></figure></code></pre><h1 id="下载Paper"><a class="headerlink" href="/posts/mc-server/#%E4%B8%8B%E8%BD%BDPaper" title="下载Paper"></a>下载Paper</h1>
+$ tar -zxvf <span class="hljs-string">./jdk-8</span>*<span class="hljs-string">.tar.gz</span></code></pre></figure></code></pre><h1 id="下载Paper"><a class="header-link" href="/posts/mc-server/#%E4%B8%8B%E8%BD%BDPaper" title="下载Paper"></a>下载Paper</h1>
 <p>本篇使用Paper搭建服务器因为Paper对性能优化较好。</p>
 <p>在<a href="https://papermc.io/downloads" target="_blank" rel="noreferrer noopener">Paper的官网</a>上下载最新版本的jar文件。</p>
-<p>使用指令<code>java -jar paper-*.jar</code>就可以运行Paper了。</p>
+<p>使用指令<code>java -jar paper-*.jar</code>就可以运行Paper。</p>
 <p>首次运行Paper会下载很多文件，身处天朝可能需要等上很长时间才能下载完，然后因为是第一次运行服务器没有同意<a href="https://account.mojang.com/documents/minecraft_eula" target="_blank" rel="noreferrer noopener">MoJang的EULA</a>而报错，使用文本编辑器更改<code>eula.txt</code>中的<code>eula=true</code>后再运行服务器即可。</p>
 <p>如果没有正版帐号的话是无法登录进服务器内的，需要编辑<code>server.properties</code>中的<code>onlinemode=false</code>关掉正版验证后重启服务器才能登录。</p>
 <p>可以添加flags例如<code>java -Xmx1024M -Xms1024M -jar paper-*.jar</code>指定消耗内存的大小来运行服务器，更多有关Flags放说明可参考<a href="https://aikar.co/2018/07/02/tuning-the-jvm-g1gc-garbage-collector-flags-for-minecraft/" target="_blank" rel="noreferrer noopener">此处</a>。</p>
 <p>需要注意的是内存的最大值即<code>-Xmx</code>不能超过你的服务器主机的剩余内存否则服务器很有可能在人多的时候内存不足而崩掉，可通过<code>free -m</code>查看云主机所剩余的内存。</p>
 <p>接下来就是参照<a href="https://paper.readthedocs.io/en/stable/server/configuration.html" target="_blank" rel="noreferrer noopener">Paper的官方文档</a>修改一些配置文件。</p>
-<h1 id="安装常用插件"><a class="headerlink" href="/posts/mc-server/#%E5%AE%89%E8%A3%85%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6" title="安装常用插件"></a>安装常用插件</h1>
+<h1 id="安装常用插件"><a class="header-link" href="/posts/mc-server/#%E5%AE%89%E8%A3%85%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6" title="安装常用插件"></a>安装常用插件</h1>
 <p>我目前只给服务器装了俩插件，主要因为学生云主机的性能并不高没搞太耗费性能的插件。</p>
 <p>在网络上下载好插件的jar文件后将其放入服务器的<code>plugins/</code>文件夹，重启服务器即可。</p>
 <p>可以在网上找一些防止高频红石，防止作弊，用户登录这类的插件，在此不全部列举（因为我没用过）。</p>
-<h2 id="WorldEdit"><a class="headerlink" href="/posts/mc-server/#WorldEdit" title="WorldEdit"></a>WorldEdit</h2>
+<h2 id="WorldEdit"><a class="header-link" href="/posts/mc-server/#WorldEdit" title="WorldEdit"></a>WorldEdit</h2>
 <p>创世神插件算得上是建筑党必备的插件了，可在<a href="https://dev.bukkit.org/projects/worldedit" target="_blank" rel="noreferrer noopener">Bukkit</a>上下载。</p>
 <p>比较不错且详细的<a href="http://mineplugin.org/WorldEdit" target="_blank" rel="noreferrer noopener">中文教程在此</a>，服务器上的话只要安装上插件获得op权限的帐号就能用，一把斧子就能指点江山。</p>
-<h2 id="AuthMeReloaded"><a class="headerlink" href="/posts/mc-server/#AuthMeReloaded" title="AuthMeReloaded"></a>AuthMe Reloaded</h2>
+<h2 id="AuthMeReloaded"><a class="header-link" href="/posts/mc-server/#AuthMeReloaded" title="AuthMeReloaded"></a>AuthMe Reloaded</h2>
 <p>因为服务器关掉了正版验证意味着所有人随便起一个用户名就能登录进服务器而且十分不安全，所以装了AuthMe。</p>
 <p>AuthMe Reloaded的下载网址：<a href="https://dev.bukkit.org/projects/authme-reloaded" target="_blank" rel="noreferrer noopener">https://dev.bukkit.org/projects/authme-reloaded</a></p>
 <p>因为AuthMe的配置文件太多不详细列举了，Github和Bukkit上都有文档教程，youtube上还有视频教程，常用的指令就是<code>/register</code>、<code>/login</code>，可修改一下配置文件改一下语言以及邮箱smtp配置这类的，mysql配置不用更改就能用而且我也不会改，smtp安全起见并不推荐用gmail邮箱，要是拥有域名的话搞个企业邮箱也是个不错的选择。</p>
-<h1 id="常见问题"><a class="headerlink" href="/posts/mc-server/#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98" title="常见问题"></a>常见问题</h1>
+<h1 id="常见问题"><a class="header-link" href="/posts/mc-server/#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98" title="常见问题"></a>常见问题</h1>
 <ol>
 <li>AuthMe安装后会覆盖掉服务器记录的原有的用户权限，需要重新设置op帐号和gamemode这类权限。</li>
 <li>更新服务器版本只需要下载新的Paper的jar文件并覆盖掉老的文件即可，注意当Minecraft的版本涉及更新例如从1.12到1.13这样的更新时务必做好备份工作并注意原有的插件可能在新版本不适用的问题。</li>
@@ -243,7 +243,7 @@ $ tar -zxvf <span class="hljs-string">./jdk-8</span>*<span class="hljs-string">.
 <li>服务器长时间后台运行可使用GNU Screen程序。</li>
 <li>比较简单粗暴的备份服务器的方式就是用<code>tar</code>打个压缩包存起来，除此之外还可以装一些自动备份的插件。</li>
 </ol>
-<h1 id="Done"><a class="headerlink" href="/posts/mc-server/#Done" title="Done"></a>Done</h1>
+<h1 id="Done"><a class="header-link" href="/posts/mc-server/#Done" title="Done"></a>Done</h1>
 <p>服务器搭建好了之后，不妨康康「<a href="/posts/hmcl-minecraft/">使用HMCL启动Minecraft游戏教程</a>」这篇文章安装游戏客户端食用。</p>
 
     </main>
@@ -307,35 +307,35 @@ $ tar -zxvf <span class="hljs-string">./jdk-8</span>*<span class="hljs-string">.
   <script defer type="text/javascript" src="/js/highlight.min.js"></script>
   <script defer type="text/javascript" src="/js/commentjs.js"></script>
   <script type="text/javascript">
-  $(document).ready(function () {
-    getComments({
-      "type": "github",
-      "user": "STARRY-S",
-      "repo": "blog.starry-s.xyz",
-      "clientID": "d840b2424099ff5195ff",
-      "clientSecret": "cc22cbdcdee59b64ef1031c4d369821030b3634f",
-      "no_comment": "这个页面还没有评论，现在就去评论吧！",
-      "go_to_comment": "去评论",
-      "issue_title": "使用PaperMC搭建Minecraft服务器教程",
-      "btn_class": "button",
-      "comments_target": "#comment-thread"
-    });
-    marked.setOptions({
-      "highlight": function (code, lang) {
-        return hljs.highlightAuto(code).value;
-      }
-    });
-    function mark() {
-      var markdowns = document.getElementsByClassName("markdown");
-      for (var i = 0; i < markdowns.length; ++i){
-        if (markdowns[i].innerHTML) {
-          markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+    $(document).ready(function () {
+      getComments({
+        "type": "github",
+        "user": "STARRY-S",
+        "repo": "blog.starry-s.xyz",
+        "clientID": "d840b2424099ff5195ff",
+        "clientSecret": "cc22cbdcdee59b64ef1031c4d369821030b3634f",
+        "no_comment": "这个页面还没有评论，现在就去评论吧！",
+        "go_to_comment": "去评论",
+        "issue_title": "使用PaperMC搭建Minecraft服务器教程",
+        "btn_class": "button",
+        "comments_target": "#comment-thread"
+      });
+      marked.setOptions({
+        "highlight": function (code, lang) {
+          return hljs.highlightAuto(code).value;
+        }
+      });
+      function mark() {
+        var markdowns = document.getElementsByClassName("markdown");
+        for (var i = 0; i < markdowns.length; ++i){
+          if (markdowns[i].innerHTML) {
+            markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+          }
         }
       }
-    }
-    window.addEventListener("DOMContentLoaded", mark, false);
-    window.addEventListener("load", mark, false);
-  });
+      window.addEventListener("DOMContentLoaded", mark, false);
+      window.addEventListener("load", mark, false);
+    });
   </script>
   
 </div>
@@ -530,4 +530,4 @@ $ tar -zxvf <span class="hljs-string">./jdk-8</span>*<span class="hljs-string">.
 
   </body>
 </html>
-<!-- Page built by Hikaru v2.1.6 at 2019-09-28 Sat 22:18:09 CST. -->
+<!-- Page built by Hikaru v2.3.2 at 2019-10-20 Sun 14:56:44 CST. -->

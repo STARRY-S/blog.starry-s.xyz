@@ -73,47 +73,47 @@
     
     <script defer type="text/javascript" src="/js/index.js"></script>
     <script type="text/javascript">
-    $(document).ready(function () {
-      $(".post pre code figure.highlight").each(function (i, e) {
-        var lang = e.parentNode.className;
-        $(e).before([
-          "<div class=\"code-titlebar\">",
-            "<div class=\"titlebar-left\">",
-              "<a class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></a>",
-            "</div>",
-            "<div class=\"titlebar-center\">",
-              lang.length ? lang.toUpperCase() : "代码",
-            "</div>",
-            "<div class=\"titlebar-right\">",
-              "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
-              "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
-              "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
-            "</div>",
-          "</div>"
-        ].join(""));
-        // $(e).before("<button class=\"copy button\">复制</button>");
+      $(document).ready(function () {
+        $(".post pre code figure.highlight").each(function (i, e) {
+          var lang = e.parentNode.className;
+          $(e).before([
+            "<div class=\"code-titlebar\">",
+              "<div class=\"titlebar-left\">",
+                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+              "</div>",
+              "<div class=\"titlebar-center\">",
+                lang.length ? lang.toUpperCase() : "代码",
+              "</div>",
+              "<div class=\"titlebar-right\">",
+                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+              "</div>",
+            "</div>"
+          ].join(""));
+          // $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        var cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // trigger.parentNode.parentNode is code-titlebar.
+              // nextElementSibling is figure.highlight, lastChild is pre.code.
+              return trigger.parentNode.parentNode.nextElementSibling.lastChild;
+          }
+        });
+        cb.on("success", function (e) {
+          e.clearSelection();
+          var trigger = e.trigger;
+          // Change button text as a user tip.
+          trigger.innerHTML = "<i class=\"far fa-check-square\"></i>";
+          $(trigger).addClass("copied");
+          // Change button text back;
+          setTimeout(function () {
+            trigger.innerHTML = "<i class=\"far fa-copy\"></i>";
+            $(trigger).removeClass("copied");
+          }, 1500);
+        });
       });
-      var cb = new ClipboardJS("a.copy", {
-        "target": function (trigger) {
-            // Get target element by DOM API.
-            // trigger.parentNode.parentNode is code-titlebar.
-            // nextElementSibling is figure.highlight, lastChild is pre.code.
-            return trigger.parentNode.parentNode.nextElementSibling.lastChild;
-        }
-      });
-      cb.on("success", function (e) {
-        e.clearSelection();
-        var trigger = e.trigger;
-        // Change button text as a user tip.
-        trigger.innerHTML = "<i class=\"far fa-check-square\"></i>";
-        $(trigger).addClass("copied");
-        // Change button text back;
-        setTimeout(function () {
-          trigger.innerHTML = "<i class=\"far fa-copy\"></i>";
-          $(trigger).removeClass("copied");
-        }, 1500);
-      });
-    });
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
@@ -204,7 +204,7 @@
 
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="86" src="//music.163.com/outchain/player?type=2&id=31108216&auto=0&height=66"></iframe>
 
-<h1 id="准备工作"><a class="headerlink" href="/posts/Xiaomi_Miwifi_3G/#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C" title="准备工作"></a>准备工作</h1>
+<h1 id="准备工作"><a class="header-link" href="/posts/Xiaomi_Miwifi_3G/#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C" title="准备工作"></a>准备工作</h1>
 <p>你至少需要以下工具：</p>
 <ul>
 <li>路由器本体（废话</li>
@@ -213,7 +213,7 @@
 <li>可以通过ssh连接到路由器的软件（例如：<a href="https://putty.org" target="_blank" rel="noreferrer noopener">putty</a>）</li>
 <li><a href="http://www1.miwifi.com/miwifi_download.html" target="_blank" rel="noreferrer noopener">小米路由器客户端</a>，用来绑定你的小米账号</li>
 </ul>
-<h1 id="开启路由器SSH权限"><a class="headerlink" href="/posts/Xiaomi_Miwifi_3G/#%E5%BC%80%E5%90%AF%E8%B7%AF%E7%94%B1%E5%99%A8SSH%E6%9D%83%E9%99%90" title="开启路由器SSH权限"></a>开启路由器SSH权限</h1>
+<h1 id="开启路由器SSH权限"><a class="header-link" href="/posts/Xiaomi_Miwifi_3G/#%E5%BC%80%E5%90%AF%E8%B7%AF%E7%94%B1%E5%99%A8SSH%E6%9D%83%E9%99%90" title="开启路由器SSH权限"></a>开启路由器SSH权限</h1>
 <ol>
 <li>在<a href="http://www1.miwifi.com/miwifi_download.html" target="_blank" rel="noreferrer noopener">MiWiFi下载页面</a>下载所需要的路由器开发者固件,命名为<code>miwifi.bin</code>。（ROM -&gt; ROM for R3G开发版）</li>
 <li>路由器断电，将下载好的开发者固件放入U盘插入路由器USB接口，捅住reset扭接上电源后待指示灯为黄色闪烁时松开，数分钟后路由器会自动重启，此过程不要乱动路由器。</li>
@@ -225,7 +225,7 @@
 <p>ssh到路由器:
 Windows系统用putty，ip为<code>191.168.31.1</code>,用户名：<code>root</code>，密码为下载激活ssh工具时记下的密码。
 Linux系统直接上Terminal:<code>ssh root@191.168.31.1</code></p>
-<h1 id="刷入Bootloader（推荐可选）"><a class="headerlink" href="/posts/Xiaomi_Miwifi_3G/#%E5%88%B7%E5%85%A5Bootloader%EF%BC%88%E6%8E%A8%E8%8D%90%E5%8F%AF%E9%80%89%EF%BC%89" title="刷入Bootloader（推荐可选）"></a>刷入Bootloader（推荐/可选）</h1>
+<h1 id="刷入Bootloader（推荐可选）"><a class="header-link" href="/posts/Xiaomi_Miwifi_3G/#%E5%88%B7%E5%85%A5Bootloader%EF%BC%88%E6%8E%A8%E8%8D%90%E5%8F%AF%E9%80%89%EF%BC%89" title="刷入Bootloader（推荐可选）"></a>刷入Bootloader（推荐/可选）</h1>
 <p>之所以该步骤可选是因为Breed不支持直接刷入Openwrt固件，具体原因见<a href="https://www.right.com.cn/forum/forum.php?mod=viewthread&amp;tid=267455" target="_blank" rel="noreferrer noopener">本贴</a>, 想刷Openwrt的同学可以直接跳至<a href="/posts/Xiaomi_Miwifi_3G/#%25E5%25A6%2582%25E6%259E%259C%25E4%25BD%25A0%25E6%25B2%25A1%25E6%259C%2589%25E5%2588%25B7Breed:">4.2 刷入Openwrt</a>片段。</p>
 <p>但是为了避免路由器刷成砖的情况发生也可以在刷入Breed后再刷OpenWrt，具体选择权归你。</p>
 <p>Bootloader原作者为hackpascal，<a href="https://breed.hackpascal.net/" target="_blank" rel="noreferrer noopener">下载地址</a>
@@ -243,20 +243,20 @@ mtd -r write breed.bin Bootloader</code></pre></figure></code></pre><p>另一种
 </pre><pre class="code"><code>mkdir <span class="hljs-regexp">/tmp/</span>sdcard
 mount <span class="hljs-regexp">/dev/</span>sda1 <span class="hljs-regexp">/tmp/</span>sdcard
 mtd -r <span class="hljs-keyword">write</span> <span class="hljs-regexp">/tmp/</span>sdcard<span class="hljs-regexp">/breed.bin Bootloader</span></code></pre></figure></code></pre><p>路由器刷写成功后会自动重启，在刷Breed的过程中不要乱动路由器，坏了就难修了。</p>
-<h1 id="刷机"><a class="headerlink" href="/posts/Xiaomi_Miwifi_3G/#%E5%88%B7%E6%9C%BA" title="刷机"></a>刷机</h1>
+<h1 id="刷机"><a class="header-link" href="/posts/Xiaomi_Miwifi_3G/#%E5%88%B7%E6%9C%BA" title="刷机"></a>刷机</h1>
 <p>刷了Breed之后就不能用之前的刷入开发者固件的方式刷机了，因为Breed不同于官方的uboot。</p>
 <p>下载所需固件。</p>
 <p>PandoraBox下载地址：<a href="https://downloads.pangubox.com/pandorabox/" target="_blank" rel="noreferrer noopener">https://downloads.pangubox.com/pandorabox/</a></p>
 <p>Pandavan固件原帖: <a href="https://www.right.com.cn/forum/thread-161324-1-1.html" target="_blank" rel="noreferrer noopener">https://www.right.com.cn/forum/thread-161324-1-1.html</a></p>
 <p>OpenWrt官方下载地址: <a href="https://downloads.openwrt.org/releases/" target="_blank" rel="noreferrer noopener">https://downloads.openwrt.org/releases/</a></p>
-<h2 id="PandavanPandoraBox"><a class="headerlink" href="/posts/Xiaomi_Miwifi_3G/#PandavanPandoraBox" title="PandavanPandoraBox"></a>Pandavan/PandoraBox</h2>
+<h2 id="PandavanPandoraBox"><a class="header-link" href="/posts/Xiaomi_Miwifi_3G/#PandavanPandoraBox" title="PandavanPandoraBox"></a>Pandavan/PandoraBox</h2>
 <p>直接下载固件并在Breed里刷写。</p>
 <p>路由器断电，捅住reset按钮后通电，待指示灯变为蓝色闪烁后用网线连接路由器到电脑，浏览器打开网址<code>192.168.1.1</code>，进入Breed界面。</p>
 <p>在固件更新栏里上传你想要刷的固件即可。</p>
-<h2 id="OpenWrt"><a class="headerlink" href="/posts/Xiaomi_Miwifi_3G/#OpenWrt" title="OpenWrt"></a>OpenWrt</h2>
+<h2 id="OpenWrt"><a class="header-link" href="/posts/Xiaomi_Miwifi_3G/#OpenWrt" title="OpenWrt"></a>OpenWrt</h2>
 <p><a href="https://openwrt.org/toh/xiaomi/mir3g" target="_blank" rel="noreferrer noopener">OpenWrt官网提供的教程</a>是在没有刷入Breed的情况下刷入OpenWrt固件的。</p>
 <p>中国大陆用户可以事先看一下<a href="/posts/Xiaomi_Miwifi_3G/#%25E5%2585%25B6%25E4%25BB%2596%25E9%2597%25AE%25E9%25A2%2598%25EF%25BC%259A">6. 其他问题</a>的第5条</p>
-<h3 id="如果你没有刷Breed:"><a class="headerlink" href="/posts/Xiaomi_Miwifi_3G/#%E5%A6%82%E6%9E%9C%E4%BD%A0%E6%B2%A1%E6%9C%89%E5%88%B7Breed:" title="如果你没有刷Breed:"></a>如果你没有刷Breed:</h3>
+<h3 id="如果你没有刷Breed:"><a class="header-link" href="/posts/Xiaomi_Miwifi_3G/#%E5%A6%82%E6%9E%9C%E4%BD%A0%E6%B2%A1%E6%9C%89%E5%88%B7Breed:" title="如果你没有刷Breed:"></a>如果你没有刷Breed:</h3>
 <p>ssh到路由器,使用<code>wget</code>下载固件并刷机。</p>
 <pre><code><figure class="highlight hljs angelscript"><pre class="gutter"><span class="line">1</span>
 <span class="line">2</span>
@@ -305,7 +305,7 @@ nvram commit
 
 reboot</code></pre></figure></code></pre><p>使用Linux的同学也可以用<code>scp</code>上传下载好的固件到路由器上刷机，Windows系统的同学也可以用WinSCP这个软件上传固件，在此不赘述。</p>
 <p>至于为啥OpenWrt官方的刷入方式复杂了许多我也说不太清楚，懂的同学可以在下方评论区补充。</p>
-<h3 id="如果你刷了Breed:"><a class="headerlink" href="/posts/Xiaomi_Miwifi_3G/#%E5%A6%82%E6%9E%9C%E4%BD%A0%E5%88%B7%E4%BA%86Breed:" title="如果你刷了Breed:"></a>如果你刷了Breed:</h3>
+<h3 id="如果你刷了Breed:"><a class="header-link" href="/posts/Xiaomi_Miwifi_3G/#%E5%A6%82%E6%9E%9C%E4%BD%A0%E5%88%B7%E4%BA%86Breed:" title="如果你刷了Breed:"></a>如果你刷了Breed:</h3>
 <p>肯定很多人会担心路由器变转想刷Breed的（例如我），因为路由器有两个内核，所以需要在Breed里设置一下让路由器启动kernel1。</p>
 <p>按照hackpascal的说法是：</p>
 <blockquote>
@@ -320,10 +320,10 @@ reboot</code></pre></figure></code></pre><p>使用Linux的同学也可以用<cod
 <span class="hljs-selector-tag">mtd</span> <span class="hljs-selector-tag">write</span> <span class="hljs-selector-tag">openwrt-18</span><span class="hljs-selector-class">.06</span><span class="hljs-selector-class">.2-ramips-mt7621-mir3g-squashfs-rootfs0</span><span class="hljs-selector-class">.bin</span> <span class="hljs-selector-tag">rootfs0</span></code></pre></figure></code></pre><p>执行完以上两个命令后重启路由器不会开机的，先别着急。</p>
 <p>路由器断电，捅住reset按钮后通电，待指示灯变为蓝色闪烁后用网线连接路由器到电脑，浏览器打开网址<code>192.168.1.1</code>，进入Breed界面。</p>
 <p>在环境变量编辑里添加<code>xiaomi.r3g.bootfw</code>字段，值为<code>2</code>,保存后重启即可完美进入Openwrt。</p>
-<h1 id="Done"><a class="headerlink" href="/posts/Xiaomi_Miwifi_3G/#Done" title="Done"></a>Done</h1>
+<h1 id="Done"><a class="header-link" href="/posts/Xiaomi_Miwifi_3G/#Done" title="Done"></a>Done</h1>
 <p>教程结束。</p>
 <p>欢迎在评论区留言。</p>
-<h1 id="其他问题："><a class="headerlink" href="/posts/Xiaomi_Miwifi_3G/#%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98%EF%BC%9A" title="其他问题："></a>其他问题：</h1>
+<h1 id="其他问题："><a class="header-link" href="/posts/Xiaomi_Miwifi_3G/#%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98%EF%BC%9A" title="其他问题："></a>其他问题：</h1>
 <ol>
 <li><p>如果刷了Breed + Pandavan/PandoraBox后想换回OpenWrt的话，需要先在Breed中刷回小米路由器开发版的官方固件，刷官方固件需要选择内存布局为固件2，重启后需要先网线连到路由器完成初始设置，然后ssh进路由器里参照<a href="/posts/Xiaomi_Miwifi_3G/#%25E5%25A6%2582%25E6%259E%259C%25E4%25BD%25A0%25E5%2588%25B7%25E4%25BA%2586Breed:">4.2.2 如果你刷了Breed</a>步骤刷机，ssh密码没有改动。</p>
 </li>
@@ -404,35 +404,35 @@ reboot</code></pre></figure></code></pre><p>使用Linux的同学也可以用<cod
   <script defer type="text/javascript" src="/js/highlight.min.js"></script>
   <script defer type="text/javascript" src="/js/commentjs.js"></script>
   <script type="text/javascript">
-  $(document).ready(function () {
-    getComments({
-      "type": "github",
-      "user": "STARRY-S",
-      "repo": "blog.starry-s.xyz",
-      "clientID": "d840b2424099ff5195ff",
-      "clientSecret": "cc22cbdcdee59b64ef1031c4d369821030b3634f",
-      "no_comment": "这个页面还没有评论，现在就去评论吧！",
-      "go_to_comment": "去评论",
-      "issue_title": "小米路由器3G折腾之刷OpenWrt/Pandavan记录",
-      "btn_class": "button",
-      "comments_target": "#comment-thread"
-    });
-    marked.setOptions({
-      "highlight": function (code, lang) {
-        return hljs.highlightAuto(code).value;
-      }
-    });
-    function mark() {
-      var markdowns = document.getElementsByClassName("markdown");
-      for (var i = 0; i < markdowns.length; ++i){
-        if (markdowns[i].innerHTML) {
-          markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+    $(document).ready(function () {
+      getComments({
+        "type": "github",
+        "user": "STARRY-S",
+        "repo": "blog.starry-s.xyz",
+        "clientID": "d840b2424099ff5195ff",
+        "clientSecret": "cc22cbdcdee59b64ef1031c4d369821030b3634f",
+        "no_comment": "这个页面还没有评论，现在就去评论吧！",
+        "go_to_comment": "去评论",
+        "issue_title": "小米路由器3G折腾之刷OpenWrt/Pandavan记录",
+        "btn_class": "button",
+        "comments_target": "#comment-thread"
+      });
+      marked.setOptions({
+        "highlight": function (code, lang) {
+          return hljs.highlightAuto(code).value;
+        }
+      });
+      function mark() {
+        var markdowns = document.getElementsByClassName("markdown");
+        for (var i = 0; i < markdowns.length; ++i){
+          if (markdowns[i].innerHTML) {
+            markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+          }
         }
       }
-    }
-    window.addEventListener("DOMContentLoaded", mark, false);
-    window.addEventListener("load", mark, false);
-  });
+      window.addEventListener("DOMContentLoaded", mark, false);
+      window.addEventListener("load", mark, false);
+    });
   </script>
   
 </div>
@@ -648,4 +648,4 @@ reboot</code></pre></figure></code></pre><p>使用Linux的同学也可以用<cod
 
   </body>
 </html>
-<!-- Page built by Hikaru v2.1.6 at 2019-09-28 Sat 22:18:09 CST. -->
+<!-- Page built by Hikaru v2.3.2 at 2019-10-20 Sun 14:56:44 CST. -->

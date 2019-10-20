@@ -73,47 +73,47 @@
     
     <script defer type="text/javascript" src="/js/index.js"></script>
     <script type="text/javascript">
-    $(document).ready(function () {
-      $(".post pre code figure.highlight").each(function (i, e) {
-        var lang = e.parentNode.className;
-        $(e).before([
-          "<div class=\"code-titlebar\">",
-            "<div class=\"titlebar-left\">",
-              "<a class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></a>",
-            "</div>",
-            "<div class=\"titlebar-center\">",
-              lang.length ? lang.toUpperCase() : "代码",
-            "</div>",
-            "<div class=\"titlebar-right\">",
-              "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
-              "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
-              "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
-            "</div>",
-          "</div>"
-        ].join(""));
-        // $(e).before("<button class=\"copy button\">复制</button>");
+      $(document).ready(function () {
+        $(".post pre code figure.highlight").each(function (i, e) {
+          var lang = e.parentNode.className;
+          $(e).before([
+            "<div class=\"code-titlebar\">",
+              "<div class=\"titlebar-left\">",
+                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+              "</div>",
+              "<div class=\"titlebar-center\">",
+                lang.length ? lang.toUpperCase() : "代码",
+              "</div>",
+              "<div class=\"titlebar-right\">",
+                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+              "</div>",
+            "</div>"
+          ].join(""));
+          // $(e).before("<button class=\"copy button\">复制</button>");
+        });
+        var cb = new ClipboardJS("button.copy", {
+          "target": function (trigger) {
+              // Get target element by DOM API.
+              // trigger.parentNode.parentNode is code-titlebar.
+              // nextElementSibling is figure.highlight, lastChild is pre.code.
+              return trigger.parentNode.parentNode.nextElementSibling.lastChild;
+          }
+        });
+        cb.on("success", function (e) {
+          e.clearSelection();
+          var trigger = e.trigger;
+          // Change button text as a user tip.
+          trigger.innerHTML = "<i class=\"far fa-check-square\"></i>";
+          $(trigger).addClass("copied");
+          // Change button text back;
+          setTimeout(function () {
+            trigger.innerHTML = "<i class=\"far fa-copy\"></i>";
+            $(trigger).removeClass("copied");
+          }, 1500);
+        });
       });
-      var cb = new ClipboardJS("a.copy", {
-        "target": function (trigger) {
-            // Get target element by DOM API.
-            // trigger.parentNode.parentNode is code-titlebar.
-            // nextElementSibling is figure.highlight, lastChild is pre.code.
-            return trigger.parentNode.parentNode.nextElementSibling.lastChild;
-        }
-      });
-      cb.on("success", function (e) {
-        e.clearSelection();
-        var trigger = e.trigger;
-        // Change button text as a user tip.
-        trigger.innerHTML = "<i class=\"far fa-check-square\"></i>";
-        $(trigger).addClass("copied");
-        // Change button text back;
-        setTimeout(function () {
-          trigger.innerHTML = "<i class=\"far fa-copy\"></i>";
-          $(trigger).removeClass("copied");
-        }, 1500);
-      });
-    });
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
@@ -202,15 +202,16 @@
 </blockquote>
 <p>本教程仅提供所述内容的下载连接，游戏的版权归Mojang所有。</p>
 <p>顺便说一下网易强奸版并不支持MacOS哈哈哈哈。。。。</p>
-<h1 id="第一部分："><a class="headerlink" href="/posts/hmcl-minecraft/#%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%9A" title="第一部分："></a>第一部分：</h1>
-<h3 id="如果你尚未在官网购买正版的Minecraft，你可以使用HMCL（HelloMinecraftLauncher启动器下载并运行MC。"><a class="headerlink" href="/posts/hmcl-minecraft/#%E5%A6%82%E6%9E%9C%E4%BD%A0%E5%B0%9A%E6%9C%AA%E5%9C%A8%E5%AE%98%E7%BD%91%E8%B4%AD%E4%B9%B0%E6%AD%A3%E7%89%88%E7%9A%84Minecraft%EF%BC%8C%E4%BD%A0%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8HMCL%EF%BC%88HelloMinecraftLauncher%E5%90%AF%E5%8A%A8%E5%99%A8%E4%B8%8B%E8%BD%BD%E5%B9%B6%E8%BF%90%E8%A1%8CMC%E3%80%82" title="如果你尚未在官网购买正版的Minecraft，你可以使用HMCL（HelloMinecraftLauncher启动器下载并运行MC。"></a>如果你尚未在官网购买正版的Minecraft，你可以使用HMCL（Hello Minecraft Launcher )启动器下载并运行MC。</h3>
-<p>1.
-你需要确保你的电脑已安装java8。下载java：<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noreferrer noopener">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></p>
-<ol start="2">
-<li>接下来你需要下载HMCL启动器。</li>
+<h1 id="第一部分："><a class="header-link" href="/posts/hmcl-minecraft/#%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%9A" title="第一部分："></a>第一部分：</h1>
+<p> <strong>如果你尚未在官网购买正版的Minecraft，你可以使用HMCL（<a href="https://github.com/huanghongxun/HMCL" target="_blank" rel="noreferrer noopener">Hello Minecraft Launcher</a> )启动器下载并运行MC。</strong></p>
+<ol>
+<li><p>你需要确保你的电脑已安装java8。下载java：<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noreferrer noopener">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></p>
+</li>
+<li><p>接下来你需要下载HMCL启动器。</p>
+</li>
 </ol>
-<p>我建议去<a href="https://ci.huangyuhui.net/job/HMCL/" target="_blank" rel="noreferrer noopener">HMCL的官方服务器</a> 下载所需的<code>exe</code>文件，最好不要从贴吧/论坛下载来路不明/非最新版本的HMCL启动器。</p>
-<p>选择最新版本的后缀为<code>.exe</code>的文件下载即可。或者你可以下载后缀为<code>.jar</code>的文件（用于Linux，MacOS）</p>
+<p>建议去<a href="https://ci.huangyuhui.net/job/HMCL/" target="_blank" rel="noreferrer noopener">HMCL的官方服务器</a> 下载所需的<code>exe</code>文件，最好不要从贴吧/论坛下载来路不明/非最新版本的HMCL启动器。</p>
+<p>选择最新版本的后缀为<code>exe</code>的文件下载即可。或者你可以下载后缀为<code>jar</code>的文件（用于Linux，MacOS）</p>
 <ol start="3">
 <li>新建一个文件夹（放在你喜欢的位置例如桌面），将下载的<code>exe/jar</code>文件复制到这里。</li>
 </ol>
@@ -227,9 +228,8 @@
 <li>设置一个你喜欢的名字并一直使用它，选择离线模式</li>
 </ol>
 <p>在HMCL里点击右下角的加号下载游戏文件,建议将游戏下载到你启动器所在的文件夹内。</p>
-<h3 id="如果你已购买正版Minecraft，在确保java安装好后直接去官网下载启动器再到启动器中下载游戏即可，可能会因网络原因速度慢，这是正常现象。"><a class="headerlink" href="/posts/hmcl-minecraft/#%E5%A6%82%E6%9E%9C%E4%BD%A0%E5%B7%B2%E8%B4%AD%E4%B9%B0%E6%AD%A3%E7%89%88Minecraft%EF%BC%8C%E5%9C%A8%E7%A1%AE%E4%BF%9Djava%E5%AE%89%E8%A3%85%E5%A5%BD%E5%90%8E%E7%9B%B4%E6%8E%A5%E5%8E%BB%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BD%E5%90%AF%E5%8A%A8%E5%99%A8%E5%86%8D%E5%88%B0%E5%90%AF%E5%8A%A8%E5%99%A8%E4%B8%AD%E4%B8%8B%E8%BD%BD%E6%B8%B8%E6%88%8F%E5%8D%B3%E5%8F%AF%EF%BC%8C%E5%8F%AF%E8%83%BD%E4%BC%9A%E5%9B%A0%E7%BD%91%E7%BB%9C%E5%8E%9F%E5%9B%A0%E9%80%9F%E5%BA%A6%E6%85%A2%EF%BC%8C%E8%BF%99%E6%98%AF%E6%AD%A3%E5%B8%B8%E7%8E%B0%E8%B1%A1%E3%80%82" title="如果你已购买正版Minecraft，在确保java安装好后直接去官网下载启动器再到启动器中下载游戏即可，可能会因网络原因速度慢，这是正常现象。"></a>如果你已购买正版Minecraft，在确保java安装好后直接去官网下载启动器再到启动器中下载游戏即可，可能会因网络原因速度慢，这是正常现象。</h3>
-<p><strong>请支持正版，RMB165，可使用支付宝。</strong></p>
-<h1 id="第二部分："><a class="headerlink" href="/posts/hmcl-minecraft/#%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%9A" title="第二部分："></a>第二部分：</h1>
+<p> <strong>如果你已购买正版Minecraft，在确保java安装好后直接去官网下载启动器再到启动器中下载游戏即可，可能会因网络原因速度慢，这是正常现象。<br> <br>请支持正版，RMB165</strong></p>
+<h1 id="第二部分："><a class="header-link" href="/posts/hmcl-minecraft/#%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%9A" title="第二部分："></a>第二部分：</h1>
 <ol>
 <li>笔记本双显卡用户请确保你正确的安装了显卡驱动（新买的笔记本不知道什么是显卡驱动就默认已经安装好了），NVIDA显卡用户在桌面右键选择NVIDIA控制面板（没有这个选项可能是你的显卡驱动没安装好），选择 <strong>3D设置-&gt;管理3D设置</strong> ，选择添加，找到你安装的JAVA目录下的java.exe，将其设置为高性能处理器。然后保存设置并退出。（ps现在市面上新出的笔记本用集成显卡玩这个游戏也已经很流畅了）</li>
 </ol>
@@ -242,14 +242,14 @@
 <li><p>Linux用户如果想用独显玩Minecraft而日常使用时切换回省电的集显，请参考 <a href="https://sh.alynx.xyz/posts/2017/02/16/Steam-with-Bumblebee/" target="_blank" rel="noreferrer noopener">Linux下使Steam调用Bumblebee使用独显</a>,当然不同的Linux Distribution方法会有不同，请linux用户自行摸索。</p>
 </li>
 </ol>
-<h1 id="相关内容："><a class="headerlink" href="/posts/hmcl-minecraft/#%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9%EF%BC%9A" title="相关内容："></a>相关内容：</h1>
+<h1 id="相关内容："><a class="header-link" href="/posts/hmcl-minecraft/#%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9%EF%BC%9A" title="相关内容："></a>相关内容：</h1>
 <ul>
 <li><a href="https://minecraft-zh.gamepedia.com/index.php?title=%E6%95%99%E7%A8%8B/%E6%88%90%E5%8A%9F%E5%9C%B0%E5%90%AF%E5%8A%A8%E6%B8%B8%E6%88%8F&amp;variant=zh-cn" target="_blank" rel="noreferrer noopener">教程/成功地启动游戏-Minecraft Wiki</a></li>
 <li><a href="https://minecraft.net/zh-hans/" target="_blank" rel="noreferrer noopener">官方网站|Minecraft</a></li>
 <li><a href="https://blog.starry-s.xyz/2016/11/25/raspbettypi-mc-server/">树莓派之我的世界服务器</a></li>
 </ul>
 <p>如果你感兴趣想一起联机我的世界的话欢迎联系我大家一起玩游戏。</p>
-<h1 id="——STARRY-S"><a class="headerlink" href="/posts/hmcl-minecraft/#%E2%80%94%E2%80%94STARRY-S" title="——STARRY-S"></a>—— STARRY-S</h1>
+<h1 id="——STARRY-S"><a class="header-link" href="/posts/hmcl-minecraft/#%E2%80%94%E2%80%94STARRY-S" title="——STARRY-S"></a>—— STARRY-S</h1>
 
     </main>
     <footer class="post-footer">
@@ -312,35 +312,35 @@
   <script defer type="text/javascript" src="/js/highlight.min.js"></script>
   <script defer type="text/javascript" src="/js/commentjs.js"></script>
   <script type="text/javascript">
-  $(document).ready(function () {
-    getComments({
-      "type": "github",
-      "user": "STARRY-S",
-      "repo": "blog.starry-s.xyz",
-      "clientID": "d840b2424099ff5195ff",
-      "clientSecret": "cc22cbdcdee59b64ef1031c4d369821030b3634f",
-      "no_comment": "这个页面还没有评论，现在就去评论吧！",
-      "go_to_comment": "去评论",
-      "issue_title": "使用HMCL启动Minecraft游戏教程",
-      "btn_class": "button",
-      "comments_target": "#comment-thread"
-    });
-    marked.setOptions({
-      "highlight": function (code, lang) {
-        return hljs.highlightAuto(code).value;
-      }
-    });
-    function mark() {
-      var markdowns = document.getElementsByClassName("markdown");
-      for (var i = 0; i < markdowns.length; ++i){
-        if (markdowns[i].innerHTML) {
-          markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+    $(document).ready(function () {
+      getComments({
+        "type": "github",
+        "user": "STARRY-S",
+        "repo": "blog.starry-s.xyz",
+        "clientID": "d840b2424099ff5195ff",
+        "clientSecret": "cc22cbdcdee59b64ef1031c4d369821030b3634f",
+        "no_comment": "这个页面还没有评论，现在就去评论吧！",
+        "go_to_comment": "去评论",
+        "issue_title": "使用HMCL启动Minecraft游戏教程",
+        "btn_class": "button",
+        "comments_target": "#comment-thread"
+      });
+      marked.setOptions({
+        "highlight": function (code, lang) {
+          return hljs.highlightAuto(code).value;
+        }
+      });
+      function mark() {
+        var markdowns = document.getElementsByClassName("markdown");
+        for (var i = 0; i < markdowns.length; ++i){
+          if (markdowns[i].innerHTML) {
+            markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
+          }
         }
       }
-    }
-    window.addEventListener("DOMContentLoaded", mark, false);
-    window.addEventListener("load", mark, false);
-  });
+      window.addEventListener("DOMContentLoaded", mark, false);
+      window.addEventListener("load", mark, false);
+    });
   </script>
   
 </div>
@@ -418,22 +418,6 @@
         
           <li>
             <a class="list-group-item toc-link" href="#第一部分：">第一部分：</a>
-            
-            
-        <ol >
-        
-          <li>
-            <a class="list-group-item toc-link" href="#如果你尚未在官网购买正版的Minecraft，你可以使用HMCL（HelloMinecraftLauncher启动器下载并运行MC。">如果你尚未在官网购买正版的Minecraft，你可以使用HMCL（Hello Minecraft Launcher )启动器下载并运行MC。</a>
-            
-          </li>
-        
-          <li>
-            <a class="list-group-item toc-link" href="#如果你已购买正版Minecraft，在确保java安装好后直接去官网下载启动器再到启动器中下载游戏即可，可能会因网络原因速度慢，这是正常现象。">如果你已购买正版Minecraft，在确保java安装好后直接去官网下载启动器再到启动器中下载游戏即可，可能会因网络原因速度慢，这是正常现象。</a>
-            
-          </li>
-        
-        </ol>
-        
             
           </li>
         
@@ -530,4 +514,4 @@
 
   </body>
 </html>
-<!-- Page built by Hikaru v2.1.6 at 2019-09-28 Sat 22:18:09 CST. -->
+<!-- Page built by Hikaru v2.3.2 at 2019-10-20 Sun 14:56:44 CST. -->

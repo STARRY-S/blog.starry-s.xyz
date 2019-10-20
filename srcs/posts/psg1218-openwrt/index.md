@@ -1,5 +1,5 @@
 ---
-title: 斐讯K2折腾之——安装LEDE/OpenWrt
+title: 斐讯K2折腾之——安装OpenWrt/LEDE
 date: 2017-05-13 22:58:07
 layout: post
 comment: true
@@ -16,8 +16,6 @@ categories:
 <!--more-->
 
 [OpenWrt/LEDE](https://openwrt.org)是适合于嵌入式设备的一个Linux发行版。
-
-相对原厂固件而言，OpenWrt不是一个单一、静态的固件，而是提供了一个可添加软件包的可写的文件系统。这使用户可以自由的选择应用程序和配置，而不必受设备提供商的限制，并且可以使用一些适合某方面应用的软件包来定制你的设备。对于开发者来说，OpenWrt是一个框架，开发者不必麻烦的构建整个固件就能得到想要的应用程序；对于用户来说，这意味着完全自由定制的能力，与以往不同的方式使用设备。
 
 > LEDE与OpenWrt官方宣布合并，`lede-project.org`域名将重定向到相应的`openwrt.org`域名上。
 

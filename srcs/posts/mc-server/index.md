@@ -35,7 +35,7 @@ $ sudo pacman -S jdk8-openjdk
 
 可以通过`java -version`查看版本号的指令来确定Java是否安装成功。
 
-除了通过包管理器安装Java外还可以在[官网](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)下载安装包解压在常用的目录中使用Java（不推荐）
+除了通过包管理器安装Java外还可以在[Oracle官网](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)下载安装包解压在常用的目录中使用Java（不推荐）
 ```
 $ cd java
 $ tar -zxvf ./jdk-8*.tar.gz
@@ -46,7 +46,7 @@ $ tar -zxvf ./jdk-8*.tar.gz
 
 在[Paper的官网](https://papermc.io/downloads)上下载最新版本的jar文件。
 
-使用指令`java -jar paper-*.jar`就可以运行Paper了。
+使用指令`java -jar paper-*.jar`就可以运行Paper。
 
 首次运行Paper会下载很多文件，身处天朝可能需要等上很长时间才能下载完，然后因为是第一次运行服务器没有同意[MoJang的EULA](https://account.mojang.com/documents/minecraft_eula)而报错，使用文本编辑器更改`eula.txt`中的`eula=true`后再运行服务器即可。
 

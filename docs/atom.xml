@@ -49,7 +49,7 @@
     <link href="https://blog.starry-s.xyz/posts/mc-server/" />
     <id>https://blog.starry-s.xyz/posts/mc-server/</id>
     <published>2019-08-25T14:19:18.000Z</published>
-    <updated>2019-08-25T16:15:32.040Z</updated>
+    <updated>2019-10-20T06:50:54.001Z</updated>
     
     <summary type="html">
     
@@ -131,7 +131,7 @@
     <link href="https://blog.starry-s.xyz/posts/hmcl-minecraft/" />
     <id>https://blog.starry-s.xyz/posts/hmcl-minecraft/</id>
     <published>2018-07-29T09:26:35.000Z</published>
-    <updated>2019-02-19T07:18:40.800Z</updated>
+    <updated>2019-10-20T06:49:05.346Z</updated>
     
     <summary type="html">
     
@@ -175,15 +175,15 @@
   </entry>
   
   <entry>
-    <title>斐讯K2折腾之——安装LEDE/OpenWrt</title>
-    <link href="https://blog.starry-s.xyz/posts/psg1218-lede/" />
-    <id>https://blog.starry-s.xyz/posts/psg1218-lede/</id>
+    <title>斐讯K2折腾之——安装OpenWrt/LEDE</title>
+    <link href="https://blog.starry-s.xyz/posts/psg1218-openwrt/" />
+    <id>https://blog.starry-s.xyz/posts/psg1218-openwrt/</id>
     <published>2017-05-13T14:58:07.000Z</published>
-    <updated>2019-02-19T07:18:54.240Z</updated>
+    <updated>2019-10-20T06:51:50.759Z</updated>
     
     <summary type="html">
     
-    <![CDATA[<p><img src="/posts/psg1218-lede/images/lede.jpg" alt="LEDE (OpenWrt)"></p>]]>
+    <![CDATA[<p><img src="/posts/psg1218-openwrt/images/lede.jpg" alt="LEDE (OpenWrt)"></p>]]>
     
     </summary>
     
@@ -207,11 +207,11 @@
     <link href="https://blog.starry-s.xyz/posts/Spring/" />
     <id>https://blog.starry-s.xyz/posts/Spring/</id>
     <published>2017-05-05T14:28:00.000Z</published>
-    <updated>2019-02-19T07:19:03.263Z</updated>
+    <updated>2019-10-20T06:53:45.994Z</updated>
     
     <summary type="html">
     
-    <![CDATA[<h1 id="FlowersinSpring"><a class="headerlink" href="/posts/Spring/#FlowersinSpring" title="FlowersinSpring"></a>Flowers in Spring.</h1><p>前一阵子拍的一些花，简单地用手机和电脑调了颜色，感觉蛮好看的。感觉有的照片可以当作壁纸了。 <strong>多图警告</strong></p>]]>
+    <![CDATA[<h1 id="FlowersinSpring"><a class="header-link" href="/posts/Spring/#FlowersinSpring" title="FlowersinSpring"></a>Flowers in Spring.</h1><p>前一阵子拍的一些花，简单地用手机和电脑调了颜色，感觉蛮好看的。 <strong>多图警告</strong></p>]]>
     
     </summary>
     
@@ -235,11 +235,11 @@
     <link href="https://blog.starry-s.xyz/posts/xiaomi-mini-fan-2/" />
     <id>https://blog.starry-s.xyz/posts/xiaomi-mini-fan-2/</id>
     <published>2016-09-28T06:54:27.000Z</published>
-    <updated>2019-02-19T07:19:29.763Z</updated>
+    <updated>2019-10-20T06:56:19.853Z</updated>
     
     <summary type="html">
     
-    <![CDATA[<h1 id="小米路由器mini换天线与散热片的安装"><a class="headerlink" href="/posts/xiaomi-mini-fan-2/#%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8mini%E6%8D%A2%E5%A4%A9%E7%BA%BF%E4%B8%8E%E6%95%A3%E7%83%AD%E7%89%87%E7%9A%84%E5%AE%89%E8%A3%85" title="小米路由器mini换天线与散热片的安装"></a>小米路由器mini换天线与散热片的安装</h1><p>小米路由器的cpu为MT7620A，控制5G的芯片为MT7612EN。这两个芯片的发热量还是很大的。小米在路由器中放了一大块铁片并贴上导热硅脂，将热量导到铁板上散发掉。但是毕竟铁板被封在了厚厚的塑料壳内，散热效果中规中矩吧。所以开始拆机动手瞎弄。</p>]]>
+    <![CDATA[<h1 id="小米路由器mini换天线与散热片的安装"><a class="header-link" href="/posts/xiaomi-mini-fan-2/#%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1%E5%99%A8mini%E6%8D%A2%E5%A4%A9%E7%BA%BF%E4%B8%8E%E6%95%A3%E7%83%AD%E7%89%87%E7%9A%84%E5%AE%89%E8%A3%85" title="小米路由器mini换天线与散热片的安装"></a>小米路由器mini换天线与散热片的安装</h1><p>小米路由器的cpu为MT7620A，控制5G的芯片为MT7612EN。这两个芯片的发热量还是很大的。小米在路由器中放了一大块铁片并贴上导热硅脂，将热量导到铁板上散发掉。但是毕竟铁板被封在了厚厚的塑料壳内，散热效果中规中矩吧。所以开始拆机动手瞎弄。</p>]]>
     
     </summary>
     
@@ -288,14 +288,14 @@
   
   <entry>
     <title>Everything is based on &quot;Hello World&quot;</title>
-    <link href="https://blog.starry-s.xyz/posts/hello-world-again/" />
-    <id>https://blog.starry-s.xyz/posts/hello-world-again/</id>
+    <link href="https://blog.starry-s.xyz/posts/hello-world/" />
+    <id>https://blog.starry-s.xyz/posts/hello-world/</id>
     <published>2016-08-22T06:22:54.000Z</published>
-    <updated>2019-02-19T07:18:31.200Z</updated>
+    <updated>2019-10-20T06:44:50.680Z</updated>
     
     <summary type="html">
     
-    <![CDATA[<p><img src="/posts/hello-world-again/images/image.jpg" alt></p>]]>
+    <![CDATA[<p><img src="/posts/hello-world/images/image.jpg" alt></p>]]>
     
     </summary>
     

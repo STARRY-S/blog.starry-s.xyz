@@ -23,15 +23,16 @@ categories:
 顺便说一下网易强奸版并不支持MacOS哈哈哈哈。。。。
 
 # 第一部分：
-### 如果你尚未在官网购买正版的Minecraft，你可以使用HMCL（[Hello Minecraft Launcher](https://github.com/huanghongxun/HMCL) )启动器下载并运行MC。
-1.
-你需要确保你的电脑已安装java8。下载java：http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
+ **如果你尚未在官网购买正版的Minecraft，你可以使用HMCL（[Hello Minecraft Launcher](https://github.com/huanghongxun/HMCL) )启动器下载并运行MC。**
+
+1. 你需要确保你的电脑已安装java8。下载java：http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 
 2. 接下来你需要下载HMCL启动器。
 
-我建议去[HMCL的官方服务器](https://ci.huangyuhui.net/job/HMCL/) 下载所需的`exe`文件，最好不要从贴吧/论坛下载来路不明/非最新版本的HMCL启动器。
+建议去[HMCL的官方服务器](https://ci.huangyuhui.net/job/HMCL/) 下载所需的`exe`文件，最好不要从贴吧/论坛下载来路不明/非最新版本的HMCL启动器。
 
-选择最新版本的后缀为`.exe`的文件下载即可。或者你可以下载后缀为`.jar`的文件（用于Linux，MacOS）
+选择最新版本的后缀为`exe`的文件下载即可。或者你可以下载后缀为`jar`的文件（用于Linux，MacOS）
 
 3. 新建一个文件夹（放在你喜欢的位置例如桌面），将下载的`exe/jar`文件复制到这里。
 
@@ -53,11 +54,10 @@ $ chmod 744 ./start.sh
 
 在HMCL里点击右下角的加号下载游戏文件,建议将游戏下载到你启动器所在的文件夹内。
 
-### 如果你已购买正版Minecraft，在确保java安装好后直接去官网下载启动器再到启动器中下载游戏即可，可能会因网络原因速度慢，这是正常现象。
-
-**请支持正版，RMB165，可使用支付宝。**
+ **如果你已购买正版Minecraft，在确保java安装好后直接去官网下载启动器再到启动器中下载游戏即可，可能会因网络原因速度慢，这是正常现象。<br/> <br/>请支持正版，RMB165**
 
 # 第二部分：
+
 1. 笔记本双显卡用户请确保你正确的安装了显卡驱动（新买的笔记本不知道什么是显卡驱动就默认已经安装好了），NVIDA显卡用户在桌面右键选择NVIDIA控制面板（没有这个选项可能是你的显卡驱动没安装好），选择 **3D设置->管理3D设置** ，选择添加，找到你安装的JAVA目录下的java.exe，将其设置为高性能处理器。然后保存设置并退出。（ps现在市面上新出的笔记本用集成显卡玩这个游戏也已经很流畅了）
 
 在游戏中按F3，若右侧有NVIDIA字样就说明你已成功的使用独显运行游戏了，在左侧可以观察帧数。
