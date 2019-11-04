@@ -1,8 +1,9 @@
 ---
 title: 使用HMCL启动Minecraft游戏教程
-date: 2018-07-29 17:26:35
+createdDate: 2018-07-29 17:26:35
 layout: post
 comment: true
+zone: Asia/Shanghai
 tags:
 - Minecraft
 - 教程
@@ -21,6 +22,8 @@ categories:
 本教程仅提供所述内容的下载连接，游戏的版权归Mojang所有。
 
 顺便说一下网易强奸版并不支持MacOS哈哈哈哈。。。。
+
+----
 
 # 第一部分：
 
@@ -56,6 +59,8 @@ $ chmod 744 ./start.sh
 
  **如果你已购买正版Minecraft，在确保java安装好后直接去官网下载启动器再到启动器中下载游戏即可，可能会因网络原因速度慢，这是正常现象。<br/> <br/>请支持正版，RMB165**
 
+----
+
 # 第二部分：
 
 1. 笔记本双显卡用户请确保你正确的安装了显卡驱动（新买的笔记本不知道什么是显卡驱动就默认已经安装好了），NVIDA显卡用户在桌面右键选择NVIDIA控制面板（没有这个选项可能是你的显卡驱动没安装好），选择 **3D设置->管理3D设置** ，选择添加，找到你安装的JAVA目录下的java.exe，将其设置为高性能处理器。然后保存设置并退出。（ps现在市面上新出的笔记本用集成显卡玩这个游戏也已经很流畅了）
@@ -67,6 +72,8 @@ $ chmod 744 ./start.sh
 3. 64位系统的用户不要安装32位的java，不仅影响性能而且对可使用的内存大小也有限制。
 
 4. Linux用户如果想用独显玩Minecraft而日常使用时切换回省电的集显，请参考 [Linux下使Steam调用Bumblebee使用独显](https://sh.alynx.xyz/posts/2017/02/16/Steam-with-Bumblebee/),当然不同的Linux Distribution方法会有不同，请linux用户自行摸索。
+
+----
 
 # 相关内容：
 

@@ -1,8 +1,9 @@
 ---
 title: 使用PaperMC搭建Minecraft服务器教程
-date: 2019-08-25 22:19:18
+createdDate: 2019-08-25 22:19:18
 layout: post
 comment: true
+zone: Asia/Shanghai
 tags:
 - Minecraft
 - 教程
@@ -13,6 +14,7 @@ categories:
 很久以前尝试过在树莓派上搭建一个Minecraft服务器，当时刚接触Linux踩了好多坑，前一阵子在腾讯的学生版服务器上搭了一个可以几个人玩的小服务器，在这里把我搭建服务器的大致过程记录下来。
 
 <!--more-->
+
 实际上只要有一台能运行Java的电脑，搭建Minecraft服务器的方式都没有多大的变化，所以无论你是Windows主机还是Linux云服务器，性能够好都可以作为服务器使用的。
 
 本篇文章为Linux上搭建服务器的教程所以需要有一定Linux基础的人才能读懂，如果是一位没用过Linux萌新的话不妨借此机会接触一下Linux呢，说不定会打开什么新世界大门（

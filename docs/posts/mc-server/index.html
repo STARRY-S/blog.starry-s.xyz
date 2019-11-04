@@ -13,7 +13,7 @@
     <meta name="keywords" content="Life, ARIA, Hikaru">
     
     
-    <meta name="description" content="啊 蓝真天，白真云">
+    <meta name="description" content="啊！那蓝真天，白真云">
     
     
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
@@ -40,7 +40,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
     
     
-    <link rel="alternate" href="/atom.xml" title="STARRY-S' Blog" type="application/atom+xml" />
+    <link rel="alternate" href="/atom.xml" title="STARRYS' Blog" type="application/atom+xml" />
     
     
     <link rel="stylesheet" type="text/css" href="/css/normalize.css">
@@ -117,7 +117,7 @@
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>使用PaperMC搭建Minecraft服务器教程 | STARRY-S' Blog</title>
+    <title>使用PaperMC搭建Minecraft服务器教程 | STARRYS' Blog - Hello World</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" data-spy="scroll" data-target=".list-group">
     
@@ -125,8 +125,8 @@
   <div class="container">
     <div class="header-container">
       <div class="header-title">
-        <h1 class="title"><a href="/">STARRY-S' Blog</a></h1>
-        <h2 class="subtitle"></h2>
+        <h1 class="title"><a href="/">STARRYS' Blog</a></h1>
+        <h2 class="subtitle">Hello World</h2>
       </div>
       
       <div class="logo">
@@ -162,14 +162,14 @@
 <div id="post" class="page">
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.xyz/posts/mc-server/">
+      <link itemprop="mainEntityOfPage" href="https://starry-s.xyz/posts/mc-server/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="STARRY-S">
-        <meta itemprop="description" content="啊 蓝真天，白真云">
-        <meta itemprop="image" content="/images/avatar.jpg">
+        <meta itemprop="description" content="啊！那蓝真天，白真云">
+        <meta itemprop="image" content="/images/avatar.webp">
       </span>
       <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="STARRY-S' Blog">
+        <meta itemprop="name" content="STARRYS' Blog">
       </span>
     </div>
     <header class="post-header">
@@ -193,7 +193,8 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       <p>很久以前尝试过在树莓派上搭建一个Minecraft服务器，当时刚接触Linux踩了好多坑，前一阵子在腾讯的学生版服务器上搭了一个可以几个人玩的小服务器，在这里把我搭建服务器的大致过程记录下来。</p>
-<a id="more"></a>
+<a id='more'></a>
+
 <p>实际上只要有一台能运行Java的电脑，搭建Minecraft服务器的方式都没有多大的变化，所以无论你是Windows主机还是Linux云服务器，性能够好都可以作为服务器使用的。</p>
 <p>本篇文章为Linux上搭建服务器的教程所以需要有一定Linux基础的人才能读懂，如果是一位没用过Linux萌新的话不妨借此机会接触一下Linux呢，说不定会打开什么新世界大门（</p>
 <p>顺便声明一下本篇教程所指的「Minecraft」非网易代理版「我的世界」。</p>
@@ -201,20 +202,13 @@
 
 <h1 id="安装Java"><a class="header-link" href="/posts/mc-server/#%E5%AE%89%E8%A3%85Java" title="安装Java"></a>安装Java</h1>
 <p>因为大多数插件都对Java8有良好的支持，所以推荐安装Java8。</p>
-<pre><code><figure class="highlight hljs vala"><pre class="gutter"><span class="line">1</span>
-<span class="line">2</span>
-<span class="line">3</span>
-<span class="line">4</span>
-<span class="line">5</span>
-</pre><pre class="code"><code><span class="hljs-meta"># Debian/Ubuntu</span>
+<pre><code><figure class="highlight hljs vala"><pre class="gutter"><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span></pre><pre class="code"><code><span class="hljs-meta"># Debian/Ubuntu</span>
 $ sudo apt-<span class="hljs-keyword">get</span> install openjdk<span class="hljs-number">-8</span>-jdk
 
 <span class="hljs-meta"># Archlinux</span>
 $ sudo pacman -S jdk8-openjdk</code></pre></figure></code></pre><p>可以通过<code>java -version</code>查看版本号的指令来确定Java是否安装成功。</p>
 <p>除了通过包管理器安装Java外还可以在<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noreferrer noopener">Oracle官网</a>下载安装包解压在常用的目录中使用Java（不推荐）</p>
-<pre><code><figure class="highlight hljs jboss-cli"><pre class="gutter"><span class="line">1</span>
-<span class="line">2</span>
-</pre><pre class="code"><code>$ <span class="hljs-keyword">cd</span> java
+<pre><code><figure class="highlight hljs jboss-cli"><pre class="gutter"><span class="line">1</span><br><span class="line">2</span></pre><pre class="code"><code>$ <span class="hljs-keyword">cd</span> java
 $ tar -zxvf <span class="hljs-string">./jdk-8</span>*<span class="hljs-string">.tar.gz</span></code></pre></figure></code></pre><h1 id="下载Paper"><a class="header-link" href="/posts/mc-server/#%E4%B8%8B%E8%BD%BDPaper" title="下载Paper"></a>下载Paper</h1>
 <p>本篇使用Paper搭建服务器因为Paper对性能优化较好。</p>
 <p>在<a href="https://papermc.io/downloads" target="_blank" rel="noreferrer noopener">Paper的官网</a>上下载最新版本的jar文件。</p>
@@ -352,54 +346,51 @@ $ tar -zxvf <span class="hljs-string">./jdk-8</span>*<span class="hljs-string">.
 <aside class="sidebar" id="sidebar" style="background: url(/images/background.webp);">
   
   <div class="search" role="search">
-    <form action="/search.html" method="get">
+    <form action="/search/" method="get">
       <button type="submit" class="search-submit" aria-label="搜索"><i class="fas fa-search"></i></button><input type="search" id="search-input" class="search-input" name="q" results="0" placeholder="搜索" aria-label="搜索">
     </form>
   </div>
   
-  
-<div class="info sidebar-item" id="info">
-  
-  <img class="author-avatar" src="/images/avatar.jpg" alt="STARRY-S">
-  
-  <h1 class="author-name">STARRY-S</h1>
-  <h2 class="author-description">啊 蓝真天，白真云</h2>
-  <div class="site-count">
+  <div class="info sidebar-item" id="info">
     
+    <img class="author-avatar" src="/images/avatar.webp" alt="STARRY-S">
     
-    
-    
-    <div class="archives-count count-block">
-      <div class="site-count-title">归档</div>
-      <div><a href="/archives/">11</a></div>
+    <h1 class="author-name">STARRY-S</h1>
+    <h2 class="author-description">啊！那蓝真天，白真云</h2>
+    <div class="site-count">
+      
+      
+      
+      
+      <div class="archives-count count-block">
+        <div class="site-count-title">归档</div>
+        <div><a href="/archives/">11</a></div>
+      </div>
+      
+      
+      
+      <div class="categories-count count-block">
+        <div class="site-count-title">分类</div>
+        <div><a href="/categories/">11</a></div>
+      </div>
+      
+      
+      
+      <div class="tags-count count-block">
+        <div class="site-count-title">标签</div>
+        <div><a href="/tags/">23</a></div>
+      </div>
+      
+      
+      
+      
     </div>
     
-    
-    
-    <div class="categories-count count-block">
-      <div class="site-count-title">分类</div>
-      <div><a href="/categories/">11</a></div>
+    <div class="rss">
+      <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
     </div>
-    
-    
-    
-    <div class="tags-count count-block">
-      <div class="site-count-title">标签</div>
-      <div><a href="/tags/">23</a></div>
-    </div>
-    
-    
-    
     
   </div>
-  
-  <div class="rss">
-    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
-  </div>
-  
-</div>
-
-
   <div class="sidebar-sticky">
     
     
@@ -520,7 +511,7 @@ $ tar -zxvf <span class="hljs-string">./jdk-8</span>*<span class="hljs-string">.
           
         </div>
         <div class="powered-by">
-          由 <a href="https://github.com/AlynxZhou/hikaru/" target="_blank" rel="noreferrer noopener">Hikaru</a> 强力驱动<i class="fab fa-node-js"></i>主题 <a href="https://github.com/AlynxZhou/hikaru-theme-aria/" target="_blank" rel="noreferrer noopener">ARIA</a>
+          由 <a href="https://hikaru.alynx.moe/" target="_blank" rel="noreferrer noopener">Hikaru</a> 强力驱动<i class="fab fa-node-js"></i>主题 <a href="https://github.com/AlynxZhou/hikaru-theme-aria/" target="_blank" rel="noreferrer noopener">ARIA</a>
         </div>
       </div>
     </div>
@@ -530,4 +521,4 @@ $ tar -zxvf <span class="hljs-string">./jdk-8</span>*<span class="hljs-string">.
 
   </body>
 </html>
-<!-- Page built by Hikaru v2.3.2 at 2019-10-20 Sun 14:56:44 CST. -->
+<!-- Page built by Hikaru v1.2.3 at 2019-11-04 Mon 16:42:45 CST. -->

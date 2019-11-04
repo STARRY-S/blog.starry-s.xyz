@@ -1,7 +1,8 @@
 ---
 title: Everything is based on "Hello World"
-date: 2016-08-22 14:22:54
+createdDate: 2016-08-22 14:22:54
 layout: post
+zone: Asia/Shanghai
 comment: true
 tags:
 - Blog
@@ -18,8 +19,8 @@ categories:
 
 欢迎大家来我的博客～
 
-
 ## 惯例～来一段万物基于“Hello World”～
+
 ``` c
 #include<stdio.h>
 int main(void)
@@ -35,6 +36,5 @@ int main(void)
 其实我在暑假前就特别的想建一个博客，踩了很多很多的坑后才勉强造出了这么个网站。接触Linux才几个月，真心非常感谢教我linux的好伙伴，灰常感谢[大猫](https://alynx.moe)教我Linux。对我来说这个网站没了他我还真是弄不出来，他是个超级厉害的大神！
 
 想了想，我毕竟还是个小白，我也写不出那些大神的那么有技术的文章，没法像那些大神那样完善自己的博客。但是我还是特别心急的做了这个网站，因为我还是希望有一个自己的博客，可以写自己的文章，发（shui)自己的经验。把好多好多东西全写到这个网站上。
-
 
 ## STARRY-S' Blog

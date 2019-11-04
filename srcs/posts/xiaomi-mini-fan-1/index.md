@@ -1,8 +1,9 @@
 ---
 title: Xiaomi路由器mini折腾篇
-date: 2016-09-28 14:18:00
+createdDate: 2016-09-28 14:18:00
 layout: post
 comment: true
+zone: Asia/Shanghai
 tags:
 - 教程
 - 路由器教程
@@ -21,7 +22,6 @@ categories:
 
 > 本篇于2017年3月5日重写。
 > 最后更新时间: 2019年2月20日。
-
 
 # 此教程基于Openwrt/LEDE官网的资料写出
 
@@ -96,11 +96,10 @@ ssh到路由器输入命令：
 
 # 推荐几款比较好的固件：
 
-~~LEDE:
+LEDE:
 
-除了以上几种固件性能表现很好以外，最近出的LEDE也是很好的一款固件呢。可以参考我的[这篇博客](http://blog.starry-s.xyz/posts/psg1218-lede/)进行配置。[下载链接](https://downloads.lede-project.org/releases/17.01.4/targets/ramips/mt7620/) (17.01.4)。
+除了以上几种固件性能表现很好以外，最近出的LEDE也是很好的一款固件呢。可以参考我的[这篇博客](http://blog.starry-s.xyz/posts/psg1218-lede/)进行配置。[下载链接](https://downloads.lede-project.org/releases/17.01.4/targets/ramips/mt7620/) (17.01.4)
 
-~~
 ## PandoraBox
 
 可以根据需要选择[老版本固件](http://downloads.openwrt.org.cn/PandoraBox/Xiaomi-Mini-R1CM/)~~或者2017年最新编译出来的[固件](http://www.pandorabox.com.cn/pandorabox-16-10-stable/targets/ralink/mt7620/)，找到对应型号后下载。~~
@@ -115,7 +114,7 @@ Pandorabox默认密码为:admin
 
 OpenWrt已与LEDE合并，可以在OpenWrt官网下载旧版的OpenWrt固件或者下载新版的Lede固件。
 
----
+----
 
 # 除此之外还可以在硬件方面改(po)装(huai)路由器:
 
@@ -124,7 +123,6 @@ OpenWrt已与LEDE合并，可以在OpenWrt官网下载旧版的OpenWrt固件或�
 ----
 配置路由器方面，请参照[斐讯K2折腾之——安装LEDE](http://blog.starry-s.xyz/posts/psg1218-lede/)这篇文章进行配置。
 
-<br/>
 
 推荐一些资料：
 
@@ -133,8 +131,5 @@ OpenWrt已与LEDE合并，可以在OpenWrt官网下载旧版的OpenWrt固件或�
 * [OpenWrt-dist](http://openwrt-dist.sourceforge.net/)
 * [Xiaomi WIFI Mini | OpenWrtWiki](http://wiki.openwrt.org/toh/xiaomi/mini)
 
-<br/>
-<br/>
-<br/>
 
 # Xiaomi Wifi Mini

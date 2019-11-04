@@ -1,8 +1,9 @@
 ---
 title: 斐讯K2折腾之——安装OpenWrt/LEDE
-date: 2017-05-13 22:58:07
+createdDate: 2017-05-13 22:58:07
 layout: post
 comment: true
+zone: Asia/Shanghai
 tags:
 - 斐讯k2
 - LEDE
@@ -13,6 +14,7 @@ categories:
 - 路由器
 ---
 ![LEDE (OpenWrt)](images/lede.jpg)
+
 <!--more-->
 
 [OpenWrt/LEDE](https://openwrt.org)是适合于嵌入式设备的一个Linux发行版。

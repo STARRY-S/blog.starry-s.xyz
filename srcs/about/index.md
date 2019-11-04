@@ -1,15 +1,16 @@
 ---
 title: About
-date: 2016-08-22 13:25:30
+createdDate: 2016-08-22 13:25:30
 layout: about
 comment: true
+zone: Asia/Shanghai
 tags: about
 ---
 # STARRY-S' Blog.
 
-![](images/10.jpg)
+![](images/westlake.jpg)
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=493911&auto=0&height=66"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=86 src="//music.163.com/outchain/player?type=2&id=493911&auto=0&height=66"></iframe>
 
 ## About Me
 
@@ -25,7 +26,7 @@ tags: about
 
 * 常用软件B站，常用网易云，喜欢把网易的歌单导到我的索尼NW-A55中听歌。
 
-* 喜欢玩游戏，崩坏3萌新，最近在打守望屁股，希望有大佬带，FGO玩不懂一直摸鱼中，喜欢Minecraft、尼尔机械纪元。
+* 喜欢玩游戏，崩坏3萌新，最近在打守望屁股，希望有大佬带，FGO玩不懂就不玩了，喜欢Minecraft、尼尔机械纪元。
 
 * 出生在18线小城市的我想多去大城市看一看。喜欢一个人旅行。
 
@@ -35,9 +36,9 @@ tags: about
 
 * 不知道我这种毛病是不是神经衰弱但是我真的很需要睡觉。
 
-* 才发现自己M属性，尽管自己有些不接受。
+* 才发现自己M属性。
 
-* 对啊我是个变态，一点也不纯洁呢，~~大家都是成年人了,就...~~
+* 对啊我是个变态，一点也不纯洁，~~大家都是成年人了,就(~~
 
 * 我很不想惹别人不开心，不想制造麻烦，能躲起来就躲起来吧，和别人不一样又不是我的错。
 
@@ -45,12 +46,13 @@ tags: about
 
 * Hello World
 
+----
 
 ## 网站方面
 
 * 本站始于2016年8月21日，原本想写些技术向文章但逐渐的成为了一个我用来水日常的空间。
 
-* 网站现托管于GitHub Pages，使用Alynx大大的[Hikaru](https://github.com/AlynxZhou/hikaru/)工具生成页面，主题也是她创作的[ARIA](https://github.com/AlynxZhou/hikaru-theme-aria)。
+* 网站现托管于GitHub Pages，使用Alynx的[Hikaru](https://github.com/AlynxZhou/hikaru/)工具生成页面，主题是[ARIA](https://github.com/AlynxZhou/hikaru-theme-aria)。
 
 * 除了不得不要加的网易云音乐链接，作为一个自己最喜欢的网站，不打算添加任何广告。
 
@@ -59,6 +61,8 @@ tags: about
 * 现用域名注册于2017年8月18日，又续费了一年现在变得更贫穷了。
 
 * 页面底部的访客？当作一个可有可无的功能就行了毕竟访客量好多数据都是我自己点出来的。
+
+----
 
 ## Timeline
 
@@ -78,10 +82,9 @@ tags: about
 
 * 2018.11.28 开始使用[Hikaru](https://github.com/AlynxZhou/hikaru/),停止使用Hexo。
 
----
+----
 
-![Saber](images/11.jpg)
+![Saber](images/saber.jpg)
 
-<div class="alert-green">最后更新时间：2019年8月1日15:38:09</div>
 
 <p style="font-size:300%; color:#FF0000;">&hearts;</p>

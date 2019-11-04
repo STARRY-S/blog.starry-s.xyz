@@ -1,29 +1,35 @@
-title: STARRY-S' Blog
-subtitle:
-description: 啊 蓝真天，白真云
+title: STARRYS' Blog
+subtitle: Hello World
+description: 啊！那蓝真天，白真云
 author: STARRY-S
 email: hx916584160@gmail.com
 language: zh-Hans
 
-baseURL: https://blog.starry-s.xyz
+# Those makes up your site's full URL.
+baseURL: https://starry-s.xyz
 rootDir: /
+
+# Those paths exists on your disk.
 srcDir: srcs
 docDir: docs
-themeDir: aria
+themeDir: themes/aria
 
-indexDir: /
+# Those paths are under `docDir`.
+indexDir: .
 archiveDir: archives
 categoryDir: categories
 tagDir: tags
+
+# Those paths are under `srcDir`.
+skipRender:
+  - README.md
+  - CNAME
 
 perPage:
   index: 10
   archives: 15
   category: 15
   tag: 15
-
-skipRender:
-  - README.md
 
 nunjucks:
   autoescape: false
@@ -49,8 +55,11 @@ highlight:
 
 search:
   enable: true
-  path: search.json
-  page: search.html
+  path:
+    - search/1.json
+    # - search/1.json
+    # - search/1.json
+  page: search/index.html
 
 feed:
   enable: true

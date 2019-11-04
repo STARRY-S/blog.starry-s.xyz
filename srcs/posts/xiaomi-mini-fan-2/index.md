@@ -1,8 +1,9 @@
 ---
 title: 小米路由器MINI之改装路由器散热
-date: 2016-09-28 14:54:27
+createdDate: 2016-09-28 14:54:27
 layout: post
 comment: true
+zone: Asia/Shanghai
 tags:
 - 教程
 - 改装
@@ -19,7 +20,7 @@ categories:
 
 >最后更新：2017年2月26日
 
----
+----
 
 > 准备工具：
 > 散热片，ipex转SMA线，5G天线两根。

@@ -1,8 +1,9 @@
 ---
 title: Hello 2018
-date: 2018-01-16 22:58:06
+createdDate: 2018-01-16 22:58:06
 layout: post
 comment: true
+zone: Asia/Shanghai
 tags:
 - 琐事
 - 碎碎念
@@ -12,6 +13,8 @@ categories:
 ---
 
 ![秒速5厘米](images/5cm_per_second.jpg)
+
+<!--more-->
 
 迟到了16天的年终总结。
 
@@ -31,21 +34,20 @@ categories:
 
 我尽可能的不受近期的一些心情方面的影响，写这些总结吧。
 
-<!--more-->
----
+----
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=80% height=86 src="//music.163.com/outchain/player?type=2&id=412911872&auto=1&height=66"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=80% height=86 src="//music.163.com/outchain/player?type=2&id=408277643&auto=1&height=66"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=80% height=86 src="//music.163.com/outchain/player?type=2&id=460628799&auto=1&height=66"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=80% height=86 src="//music.163.com/outchain/player?type=2&id=408277644&auto=1&height=66"></iframe>
 
 突然喜欢上了Hinkik的音乐，
 
 收藏了好多歌曲，本打算在更新博客时一首首加进去的，拖到现在只好堆在年终总结上了。
 
----
+----
 
 # 碎碎念。
-
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=412911872&auto=1&height=66"></iframe>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=408277643&auto=1&height=66"></iframe>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=460628799&auto=1&height=66"></iframe>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=408277644&auto=1&height=66"></iframe>
 
 与其抱怨自己有多么累不如换个思路想想，应该是自己活该受罪吧。
 
@@ -65,7 +67,7 @@ categories:
 
 不是说好了把以前的东西忘掉么？怎么总不由自主的去回忆呢？
 
----
+----
 
 原来抽出一部分精力假装去迎合那些人，假装的接受他们喜欢的东西，这么的耗费精力。
 
@@ -89,9 +91,9 @@ categories:
 
 不是说好了「歇够了就要用心的去做自己喜欢的事情」么？
 
----
+----
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=529659114&auto=1&height=66"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=80% height=86 src="//music.163.com/outchain/player?type=2&id=529659114&auto=1&height=66"></iframe>
 
 不要再抑郁了，不要再精神分裂了，不要再人格分裂了。
 
@@ -99,8 +101,7 @@ categories:
 
 放心，病症不严重
 
----
-
+----
 
 明知道结局会很糟糕，但是还是要继续向前走，还是要被别人嘲讽。
 
@@ -110,6 +111,7 @@ categories:
 
 把坑填满需要时间，还需要解决很多冲突。
 
+----
 
 以后不管发生什么一定要像个傻子一样高兴下去。
 
@@ -120,5 +122,7 @@ categories:
 有时不得不把自己的缺点全都暴露出来，让别人嘲讽自己吧。
 
 下一次更新不知又要拖到什么时候，是不是还会写着这么无营养的东西。
+
+----
 
 ![秒速5厘米](images/5cm_per_second_2.jpg "秒速五厘米")

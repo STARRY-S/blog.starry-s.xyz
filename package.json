@@ -1,8 +1,8 @@
 {
-  "name": "starryweb",
+  "name": "blog.starry-s.xyz-old",
   "dependencies": {
-    "hikaru-generator-feed": "^2.0.0",
-    "hikaru-generator-search": "^2.1.0",
-    "hikaru-generator-sitemap": "^2.0.0"
+    "hikaru-generator-feed": "latest",
+    "hikaru-generator-search": "latest",
+    "hikaru-generator-sitemap": "latest"
   }
 }

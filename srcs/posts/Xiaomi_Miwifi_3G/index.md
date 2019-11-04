@@ -1,8 +1,9 @@
 ---
 title: 小米路由器3G折腾之刷OpenWrt/Pandavan记录
-date: 2019-02-19 00:49:20
+createdDate: 2019-02-19 00:49:20
 layout: post
 comment: true
+zone: Asia/Shanghai
 tags:
 - 教程
 - 路由器教程
