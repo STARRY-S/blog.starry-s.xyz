@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>STARRYS' Blog</title>
-  <icon>https://starry-s.xyz/images/avatar.webp</icon>
+  <icon>https://starry-s.xyz/images/avatar.jpg</icon>
   <subtitle>Hello World</subtitle>
   <link href="https://starry-s.xyz/atom.xml" rel="self" />
   
