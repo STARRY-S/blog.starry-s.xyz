@@ -1,6 +1,6 @@
 #!/bin/bash
 hikaru clean
-hikaru build
+hikaru build --debug
 git add .
 git commit -m "Update."
 git push origin master

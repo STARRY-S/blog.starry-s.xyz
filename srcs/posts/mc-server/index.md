@@ -23,6 +23,8 @@ categories:
 
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=86 src="//music.163.com/outchain/player?type=2&id=4888328&auto=0&height=66"></iframe>
 
+----
+
 # 安装Java
 
 因为大多数插件都对Java8有良好的支持，所以推荐安装Java8。
