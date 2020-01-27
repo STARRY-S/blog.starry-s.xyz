@@ -1,13 +1,7 @@
 /*
  * A local search script for [hikaru-generator-search](https://github.com/AlynxZhou/hikaru-generator-search/).
- * CopyLeft (C) 2015-2019
- * Joseph Pan <http://github.com/wzpan>
- * Shuhao Mao <http://github.com/maoshuhao>
- * Edited by MOxFIVE <http://github.com/MOxFIVE>
- * Rewrited by AlynxZhou <https://alynx.xyz/>
- *   Cleaned: Use native JavaScript instead of jQuery. Split functions.
- *   Fixed: Mark all keywords found in content and title.
- *   Optimized: Sort result by the number of keyword found.
+ * CopyLeft (C) 2020
+ * AlynxZhou <alynx.zhou@gmail.com> (https://alynx.moe/)
  */
 
 "use strict";
@@ -15,6 +9,44 @@
 var SUBSTRING_OFFSET = 150;
 var MAX_KEYWORDS = 30;
 var MAX_DISPLAY_SLICES = 10;
+
+function fetchJSON(path, callback) {
+  if (window.fetch != null) {
+    fetch(path).then(function (response) {
+      if (response.status !== 200) {
+        callback(new Error(response.status), null);
+        return;
+      }
+      response.json().then(function (json) {
+        callback(null, json);
+      });
+    });
+  } else {
+    var xhr = null;
+    if (window.XMLHttpRequest) {
+      xhr = new XMLHttpRequest();
+    } else if (window.ActiveXObject) {
+      xhr = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    if (xhr == null) {
+      console.error("Your broswer does not support XMLHttpRequest!");
+      return;
+    }
+    xhr.onreadystatechange = function () {
+      // 4 is ready.
+      if (xhr.readyState !== 4) {
+        return;
+      }
+      if (xhr.status !== 200) {
+        callback(new Error(xhr.status), null);
+        return;
+      }
+      callback(null, JSON.parse(xhr.response));
+    };
+    xhr.open("GET", path, true);
+    xhr.send(null);
+  }
+}
 
 // Calculate how many keywords a page contains.
 function findKeywords(keywords, prop) {
@@ -218,47 +250,24 @@ function renderDataProps(dataProps) {
   return res;
 }
 
-function fetchJSON(path, callback) {
-  if (window.fetch != null) {
-    fetch(path).then(function (response) {
-      return response.json();
-    }).then(callback);
-  } else {
-    var xhr = null;
-    if (window.XMLHttpRequest) {
-      xhr = new XMLHttpRequest();
-    } else if (window.ActiveXObject) {
-      xhr = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    if (xhr == null) {
-      console.error("Your broswer does not support XMLHttpRequest!");
-      return;
-    }
-    xhr.onreadystatechange = function () {
-      // 4 is ready.
-      if (xhr.readyState !== 4) {
-        return;
-      }
-      if (xhr.status !== 200) {
-        console.error("XMLHttpRequest failed!");
-        return;
-      }
-      callback(JSON.parse(xhr.response));
-    };
-    xhr.open("GET", path, true);
-    xhr.send(null);
+var loadSearch = function (opts) {
+  if (opts == null) {
+    return;
   }
-}
-
-var loadSearch = function (paths, queryString, containerID) {
-  var resultContainer = document.getElementById(containerID);
-  resultContainer.style.display = "block";
+  if (opts["paths"] == null ||
+      opts["queryString"] == null ||
+      opts["containerID"] == null) {
+    return;
+  }
+  opts["noResultText"] = opts["noResultText"] || ""
+  var container = document.getElementById(opts["containerID"]);
+  container.style.display = "block";
   var header = [];
   var dataProps = [];
   var footer = [];
-  var keywords = parseKeywords(queryString);
+  var keywords = parseKeywords(opts["queryString"]);
   if (keywords.length === 0) {
-    resultContainer.innerHTML = "";
+    container.innerHTML = opts["noResultText"];
     return;
   }
   if (keywords.length > MAX_KEYWORDS) {
@@ -269,19 +278,30 @@ var loadSearch = function (paths, queryString, containerID) {
   }
   header.push("<ul class=\"search-result-list\">");
   footer.push("</ul>");
-  paths.forEach(function (path) {
-    fetchJSON(path, function (json) {
+  var hasErr = null;
+  opts["paths"].forEach(function (path) {
+    fetchJSON(path, function (err, json) {
+      if (err != null) {
+        hasErr = err;
+        if (opts["failText"] != null) {
+          container.innerHTML = opts["failText"] + container.innerHTML;
+        }
+        return;
+      }
       var data = null;
-      if (json instanceof Array) {
+      if (Array.isArray(json)) {
         data = json;
       } else {
         data = json["data"];
       }
       dataProps = dataProps.concat(buildDataProps(data, keywords));
       sortDataProps(dataProps);
-      resultContainer.innerHTML = header.concat(
-        renderDataProps(dataProps)
-      ).concat(footer).join("");
+      container.innerHTML = dataProps.length === 0
+        ? opts["noResultText"]
+        : header.concat(renderDataProps(dataProps)).concat(footer).join("");
+      if (hasErr != null && opts["failText"] != null) {
+        container.innerHTML = opts["failText"] + container.innerHTML;
+      }
     });
   });
-}
+};

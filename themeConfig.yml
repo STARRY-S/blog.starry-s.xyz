@@ -33,6 +33,7 @@ keywords:
   - Life
   - ARIA
   - Hikaru
+  - STARRY-S
 
 # https://creativecommons.org/licenses/
 # by | by-sa | by-nd | by-nc | by-nc-sa | by-nc-nd
@@ -91,14 +92,11 @@ mathjax:
   global:
   cdn:
 
-# Note: `fontawesome` is fontawesome-all. `scrollspy` and `util` are from bootstrap. `busuanzi` is `busuanzi.pure.mini.js`.
+# Note: `fontawesome` is fontawesome-all. `busuanzi` is `busuanzi.pure.mini.js`.
 # If you don't know what you are doing, don't change it.
 libCDN:
   enable: false
-  jQuery:
   fontAwesome:
-  scrollSpy:
-  util:
   lightGallery:
     js:
     css:
@@ -113,12 +111,8 @@ libCDN:
   solarized-dark:
   solarized-light:
   normalize:
-  search:
   marked:
-  timeAgo:
-  commentjs:
-    js:
-    css:
+  spinkit:
   avMin:
   valine:
   clipboard:
@@ -133,33 +127,32 @@ social:
       link: https://github.com/STARRY-S
       icon: <i class="fab fa-github"></i>
     - name: Telegram
-      link: https://t.me/STARRYS
+      link: https://t.me/STARRY-S
       icon: <i class="fab fa-telegram"></i>
+    - name: Bilibili
+      link: https://space.bilibili.com/19189337
+      icon: <i class="fas fa-globe"></i>
 
 blogroll:
-  enable: true
+  enable: false
   links:
-    - name: 喵's HomePage
-      link: https://alynx.moe/
+    - name: GitHub
+      link: https://github.com/
       icon: <i class="fas fa-link"></i>
-    - name: Art_Chen's Blog
-      link: https://chenxy.moe/
+    - name: MDN
+      link: https://developer.mozilla.org/
       icon: <i class="fas fa-link"></i>
-    - name: LGiki's Blog
-      link: https://lgiki.cc
+    - name: Nunjucks
+      link: https://mozilla.github.io/nunjucks/
       icon: <i class="fas fa-link"></i>
 
-# `comment.commentjs.type`: Choose between `github` and `oschina`.
 comment:
   enable: true
-  disqusShortName:
-  commentjs:
+  issue:
     enable: true
-    type: github
     user: STARRY-S
     repo: blog.starry-s.xyz
-    clientID: d840b2424099ff5195ff
-    clientSecret: cc22cbdcdee59b64ef1031c4d369821030b3634f
+  disqusShortName:
   valine:
     enable: false
     appID:
@@ -175,8 +168,8 @@ comment:
     avatarForce: false
 
 reward:
-  enable: true
-  message: 想喝咖啡！
+  enable: false
+  message: 坚持原创技术分享，您的支持是我前进的动力！
   weChatPayQRCode: images/wechat.jpg
   aliPayQRCode: images/alipay.jpg
   # bitCoinQRCode: images/BitCoin.png

@@ -1,13 +1,13 @@
-.footer {
+footer.footer {
   background: #33363b;
   color: #eee;
-  margin-top: 1.5em;
+  margin-top: 1.5rem;
 }
-.footer .footer-container {
+footer.footer div.footer-container {
   width: auto;
   word-wrap: break-word;
-  line-height: 2em;
-  padding: 1em;
+  line-height: 2;
+  padding: 1rem;
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flex;
@@ -20,12 +20,12 @@
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: justify;
-  -moz-box-pack: justify;
-  -o-box-pack: justify;
-  -ms-flex-pack: justify;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
+  -webkit-box-pack: stretch;
+  -moz-box-pack: stretch;
+  -o-box-pack: stretch;
+  -ms-flex-pack: stretch;
+  -webkit-justify-content: stretch;
+  justify-content: stretch;
   -webkit-box-align: end;
   -moz-box-align: end;
   -o-box-align: end;
@@ -39,33 +39,33 @@
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
 }
-.footer .footer-container .footer-left {
+footer.footer div.footer-container div.footer-left {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -o-box-flex: 1;
   box-flex: 1;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
   text-align: left;
   width: 50%;
 }
-.footer .footer-container .footer-right {
+footer.footer div.footer-container div.footer-right {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -o-box-flex: 1;
   box-flex: 1;
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
   text-align: right;
   width: 50%;
 }
-.footer .footer-container .footer-right .custom-info {
+footer.footer div.footer-container div.footer-right div.custom-info {
   width: 100%;
   word-wrap: break-word;
 }
-.footer a {
+footer.footer a {
   position: relative;
   color: #ddd;
   text-decoration: none;
@@ -76,36 +76,40 @@
   -ms-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
-.footer a:hover {
+footer.footer a:hover {
   color: #fff;
   border-bottom: 0.05em solid #fff;
 }
-.footer a:active {
+footer.footer a:active {
   top: 0.1em;
 }
-.footer .back-to-top {
+footer.footer div.back-to-top {
   display: block;
   text-align: center;
 }
-.footer .back-to-top button {
+footer.footer div.back-to-top button {
   border: none;
   outline: 0;
   background: #ccc;
   color: #666;
-  overflow: hidden;
   display: inline-block;
   margin: 0 auto;
-  padding: 0 0.7em;
+  padding: 0 0.75em;
   cursor: pointer;
   border-bottom-left-radius: 0.3em;
   border-bottom-right-radius: 0.3em;
-  font-size: 2em;
+  font-size: 2rem;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  -ms-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
-.footer .back-to-top button:hover {
+footer.footer div.back-to-top button:hover {
   color: #36e;
 }
-@media (max-width: 40em) {
-  .footer .footer-container {
+@media (max-width: 40rem) {
+  footer.footer div.footer-container {
     -webkit-box-direction: reverse;
     -moz-box-direction: reverse;
     -o-box-direction: reverse;
@@ -122,11 +126,11 @@
     -webkit-align-items: stretch;
     align-items: stretch;
   }
-  .footer .footer-container .footer-left {
+  footer.footer div.footer-container div.footer-left {
     text-align: center;
     width: auto;
   }
-  .footer .footer-container .footer-right {
+  footer.footer div.footer-container div.footer-right {
     text-align: center;
     width: auto;
   }

@@ -1,12 +1,12 @@
-title: STARRYS' Blog
-subtitle: Hello World
-description: 啊！那蓝真天，白真云
+title: STARRY-S' Blog
+subtitle: In a never-ending spiral of life and death.
+description: "Stories always have happy endings, but real life isn't like that."
 author: STARRY-S
 email: hx916584160@gmail.com
 language: zh-Hans
 
 # Those makes up your site's full URL.
-baseURL: https://starry-s.xyz
+baseURL: https://blog.starry-s.xyz
 rootDir: /
 
 # Those paths exists on your disk.

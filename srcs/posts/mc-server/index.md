@@ -21,7 +21,16 @@ categories:
 
 顺便声明一下本篇教程所指的「Minecraft」非网易代理版「我的世界」。
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=86 src="//music.163.com/outchain/player?type=2&id=4888328&auto=0&height=66"></iframe>
+<!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=86 src="//music.163.com/outchain/player?type=2&id=4888328&auto=0&height=66"></iframe> -->
+
+<!--aplayer
+{
+    "name": "炉心融解",
+    "artist": "Iroha/kuma/鏡音リン",
+    "url": "https://music.starry-s.xyz/music/0252_530f_0559_58140863e1de649de504237f43d6124f.m4a",
+    "cover": "https://music.starry-s.xyz/music/cover/6036318836780705.jpg"
+}
+-->
 
 ----
 

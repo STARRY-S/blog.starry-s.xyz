@@ -36,10 +36,40 @@ categories:
 
 ----
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=80% height=86 src="//music.163.com/outchain/player?type=2&id=412911872&auto=1&height=66"></iframe>
+<!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=80% height=86 src="//music.163.com/outchain/player?type=2&id=412911872&auto=1&height=66"></iframe>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=80% height=86 src="//music.163.com/outchain/player?type=2&id=408277643&auto=1&height=66"></iframe>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=80% height=86 src="//music.163.com/outchain/player?type=2&id=460628799&auto=1&height=66"></iframe>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=80% height=86 src="//music.163.com/outchain/player?type=2&id=408277644&auto=1&height=66"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=80% height=86 src="//music.163.com/outchain/player?type=2&id=408277644&auto=1&height=66"></iframe> -->
+
+<!--aplayer
+{
+    "audio":
+    [{
+        "name":"Time Leaper",
+        "artist":"Hinkik",
+        "url":"https://music.starry-s.xyz/music/035a_0209_525d_4038e191565c0dbc0976e77f8bb8b44b.m4a",
+        "cover":"https://music.starry-s.xyz/music/cover/1411772939003063.jpg"
+    },
+    {
+        "name":"Exploers",
+        "artist":"Hinkik",
+        "url":"https://music.starry-s.xyz/music/515d_515e_535b_f75d6ab477f42d07f20cd10148e4efb7.m4a",
+        "cover":"https://music.starry-s.xyz/music/cover/1408474398849345.jpg"
+    },
+    {
+        "name":"Realms",
+        "artist":"Hinkik / A Himitsu",
+        "url":"https://music.starry-s.xyz/music/0553_060c_0352_298bf68cd11f8d32a4e048799d413b25.m4a",
+        "cover":"https://music.starry-s.xyz/music/cover/18577348464681568.jpg"
+    },
+    {
+        "name":"Outbreaker",
+        "artist":"Hinkik",
+        "url":"https://music.starry-s.xyz/music/075f_0208_0f0b_0536a8fc735bc11108d88aa3e17a1e65.m4a",
+        "cover":"https://music.starry-s.xyz/music/cover/1393081237044547.jpg"
+    }]
+}
+-->
 
 突然喜欢上了Hinkik的音乐，
 
@@ -93,7 +123,17 @@ categories:
 
 ----
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=80% height=86 src="//music.163.com/outchain/player?type=2&id=529659114&auto=1&height=66"></iframe>
+<!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=80% height=86 src="//music.163.com/outchain/player?type=2&id=529659114&auto=1&height=66"></iframe> -->
+
+<!--aplayer
+{
+    "name": "命に嫌われている",
+    "artist": "まふまふ",
+    "url": "https://music.starry-s.xyz/music/530c_075d_0253_df63773c8b0702d99110597e4a515e4e.m4a",
+    "cover": "https://music.starry-s.xyz/music/cover/109951163055105607.jpg"
+}
+-->
+
 
 不要再抑郁了，不要再精神分裂了，不要再人格分裂了。
 

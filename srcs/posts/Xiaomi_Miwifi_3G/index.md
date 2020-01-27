@@ -29,7 +29,16 @@ categories:
 
 <div class="alert-red">温馨提示：刷成砖了本人一概不负责</div>
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=86 src="//music.163.com/outchain/player?type=2&id=31108216&auto=0&height=66"></iframe>
+<!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=86 src="//music.163.com/outchain/player?type=2&id=31108216&auto=0&height=66"></iframe> -->
+
+<!--aplayer
+{
+    "name": "Unlimited Blade Works",
+    "artist": "深澤秀行",
+    "url": "https://music.starry-s.xyz/music/555f_0f53_000b_b5b5911c7c893f5c98827a507032125b.m4a",
+    "cover": "https://music.starry-s.xyz/music/cover/7859309115883404.jpg"
+}
+-->
 
 # 准备工作
 

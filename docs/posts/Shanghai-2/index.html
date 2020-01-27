@@ -10,10 +10,10 @@
     
     
     
-    <meta name="keywords" content="Life, ARIA, Hikaru">
+    <meta name="keywords" content="Life, ARIA, Hikaru, STARRY-S">
     
     
-    <meta name="description" content="啊！那蓝真天，白真云">
+    <meta name="description" content="Stories always have happy endings, but real life isn't like that.">
     
     
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
@@ -40,7 +40,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
     
     
-    <link rel="alternate" href="/atom.xml" title="STARRYS' Blog" type="application/atom+xml" />
+    <link rel="alternate" href="/atom.xml" title="STARRY-S' Blog" type="application/atom+xml" />
     
     
     <link rel="stylesheet" type="text/css" href="/css/normalize.css">
@@ -55,44 +55,45 @@
     <link rel="stylesheet" type="text/css" href="/css/custom.css">
     <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
     <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
-    <!-- You should not set `defer` to jQuery because other scripts dependents it! -->
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
-    <script defer type="text/javascript" src="/js/util.js"></script>
-    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/spinkit.css">
+    
+    <script type="text/javascript" src="/js/index.js"></script>
     <script defer type="text/javascript" src="/js/scrollspy.js"></script>
-    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
     <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
     <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
     <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
     <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
     <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
     <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
     
     <script defer src="/js/busuanzi.pure.mini.js"></script>
     
     
-    <script defer type="text/javascript" src="/js/index.js"></script>
     <script type="text/javascript">
-      $(document).ready(function () {
-        $(".post pre code figure.highlight").each(function (i, e) {
-          var lang = e.parentNode.className;
-          $(e).before([
-            "<div class=\"code-titlebar\">",
-              "<div class=\"titlebar-left\">",
-                "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
-              "</div>",
-              "<div class=\"titlebar-center\">",
-                lang.length ? lang.toUpperCase() : "代码",
-              "</div>",
-              "<div class=\"titlebar-right\">",
-                "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
-                "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
-                "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
-              "</div>",
-            "</div>"
-          ].join(""));
-          // $(e).before("<button class=\"copy button\">复制</button>");
-        });
+      documentReady(function () {
+        elementsEach(
+          document.querySelectorAll(".post pre code figure.highlight"),
+          function (e, i) {
+            var lang = e.parentNode.className;
+            e.insertAdjacentElement("beforebegin", createElementFromString([
+              "<div class=\"code-titlebar\">",
+                "<div class=\"titlebar-left\">",
+                  "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
+                "</div>",
+                "<div class=\"titlebar-center\">",
+                  lang.length ? lang.toUpperCase() : "代码",
+                "</div>",
+                "<div class=\"titlebar-right\">",
+                  "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
+                  "<button class=\"button-dot dot-maximize\" aria-label=\"Decoration\"></button>",
+                  "<button class=\"button-dot dot-close\" aria-label=\"Decoration\"></button>",
+                "</div>",
+              "</div>"
+            ].join("")));
+          }
+        );
         var cb = new ClipboardJS("button.copy", {
           "target": function (trigger) {
               // Get target element by DOM API.
@@ -106,27 +107,27 @@
           var trigger = e.trigger;
           // Change button text as a user tip.
           trigger.innerHTML = "<i class=\"far fa-check-square\"></i>";
-          $(trigger).addClass("copied");
+          trigger.classList.add("copied");
           // Change button text back;
           setTimeout(function () {
             trigger.innerHTML = "<i class=\"far fa-copy\"></i>";
-            $(trigger).removeClass("copied");
+            trigger.classList.remove("copied");
           }, 1500);
         });
       });
     </script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>【日常】更新一下近期日常： 2019.6-2019.8 | STARRYS' Blog - Hello World</title>
+    <title>【日常】更新一下近期日常： 2019.6-2019.8 - STARRY-S' Blog</title>
   </head>
-  <body itemscope itemtype="http://schema.org/WebPage" data-spy="scroll" data-target=".list-group">
+  <body itemscope itemtype="http://schema.org/WebPage">
     
 <header id="header" class="header" style="background: #33363b;">
   <div class="container">
     <div class="header-container">
       <div class="header-title">
-        <h1 class="title"><a href="/">STARRYS' Blog</a></h1>
-        <h2 class="subtitle">Hello World</h2>
+        <h1 class="title"><a href="/">STARRY-S' Blog</a></h1>
+        <h2 class="subtitle">In a never-ending spiral of life and death.</h2>
       </div>
       
       <div class="logo">
@@ -135,7 +136,9 @@
       
     </div>
     <nav id="nav" class="nav">
-      <a id="nav-toggle" class="nav-toggle" aria-hidden="true"><i class="fas fa-bars" aria-label="切换导航栏"></i></a>
+      <button class="nav-toggle" id="nav-toggle" aria-hidden="true">
+        <i class="fas fa-bars" aria-label="切换导航栏"></i>
+      </button>
       <ul id="menu" role="menubar" aria-hidden="false">
         
         <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
@@ -162,14 +165,14 @@
 <div id="post" class="page">
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://starry-s.xyz/posts/Shanghai-2/">
+      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.xyz/posts/Shanghai-2/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="STARRY-S">
-        <meta itemprop="description" content="啊！那蓝真天，白真云">
+        <meta itemprop="description" content="Stories always have happy endings, but real life isn't like that.">
         <meta itemprop="image" content="/images/avatar.jpg">
       </span>
       <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="STARRYS' Blog">
+        <meta itemprop="name" content="STARRY-S' Blog">
       </span>
     </div>
     <header class="post-header">
@@ -188,18 +191,48 @@
         
         
         
+        <span class="post-comment-count meta-block">
+          <i class="far fa-comments"></i><span><a href="/posts/Shanghai-2/#comment-results" itemprop="discussionUrl"><span class="post-comment-count comment-count" data-comment-identifier="【日常】更新一下近期日常： 2019.6-2019.8" itemprop="commentCount">阅读评论</span></a></span>
+        </span>
+        
         
       </div>
     </header>
-    <main class="post-main" itemprop="articleBody">
-      <p>好久没有更新博客了，大一下半年一直在忙各种考试，除此之外还有一堆乱七八糟的事情要忙，更新博客的事就只好一点点往后拖了，于是拖更到了8月，后决定不继续拖更但实在没什么拿得出手的技术类文章可写，正好最近还遇到许多有趣的事情，就整理成日常写在这里吧。</p>
+    <main class="post-main" id="scrollspy-container" itemprop="articleBody">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+<script src= "https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+<p>好久没有更新博客了，大一下半年一直在忙各种考试，除此之外还有一堆乱七八糟的事情要忙，更新博客的事就只好一点点往后拖了，于是拖更到了8月，后决定不继续拖更但实在没什么拿得出手的技术类文章可写，正好最近还遇到许多有趣的事情，就整理成日常写在这里吧。</p>
 <a id='more'></a>
 <hr>
 <p><img src="/posts/Shanghai-2/images/dianche-1.jpg" alt="有轨电车——沈阳南站站"></p>
 <blockquote>
 <p>现在是00:00， 很适合吹空调听音乐写博客，毕竟白天睡了一天了。</p>
 </blockquote>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=493911&auto=0&height=66"></iframe>
+ 
+                    <div id="aplayer0"></div>
+                    <script>
+                    const ap0 = new APlayer ({
+                        container: document.getElementById("aplayer0"),
+                        theme: "#33363b",
+                        fixed: false,
+                        listFolded: false,
+                        listMaxHeight: false,
+                        lrcType: false,
+                        mini: false,
+                        volume: 0.7,
+                        order: "list",
+                        loop: "all",
+                        autoplay: false,
+                        audio: [{
+                            name: "夏恋",
+                            artist: "Otokaze",
+                            url: "https://music.starry-s.xyz/music/Otokaze - 夏恋.m4a",
+                            cover: "https://music.starry-s.xyz/music/cover/4450823069239492.jpg",
+                            lrc: "",
+                            theme: ""
+                        }]
+                    });
+                    </script> 
 
 <p>首先是6月末去了沈阳META·TRON（梅塔·特隆）电音节，听说这是东北第一次举办的电音节，从AlanWalker入坑的电音，但Meta没请Alan，不过得知有百大DJ前十的DonDiablo（大！菠！萝！）遂非常激动觉得机会难得于是毫不犹豫的就把票买了。</p>
 <p>本来临近期末了除了高数和英语和程序这几科没结课就没有别的课了，但实际上因为要准备高数省统考某组织多加了几节高数课搞得每天都要上两三大节的高数，在得知考试提前到6月29号后某部门下通知要求周末不许离校必须参加全天的自习和新增的高数课和高数模拟考试（草——汉语），于是我差点成为了一个花700多块钱打水漂的带傻子。</p>
@@ -250,75 +283,52 @@
   
   
   
-
-<div class="reward" id="reward">
-  <p>想喝咖啡！</p>
-  <button id="reward-button" class="button" disable="enable"><i class="fas fa-donate"></i>打赏</button>
-  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
-    
-    <div id="wechatpay">
-      <img id="wechatpay-qr" src="/images/wechat.jpg" alt="微信支付"/>
-      <span>微信支付</span>
-    </div>
-    
-    
-    <div id="alipay">
-      <img id="alipay-qr" src="/images/alipay.jpg" alt="支付宝"/>
-      <span>支付宝</span>
-    </div>
-    
-    
-  </div>
-</div>
-
-
-
   
+<div class="comment" id="comment">
   
-  
-
-<div class="comments" id="comments">
-  
-  <div class="commentjs" id="comment-thread"></div>
-  <link rel="stylesheet" href="/css/commentjs.css">
-  <script defer type="text/javascript" src="/js/marked.min.js"></script>
-  <script defer type="text/javascript" src="/js/timeago.min.js"></script>
-  <script defer type="text/javascript" src="/js/highlight.min.js"></script>
-  <script defer type="text/javascript" src="/js/commentjs.js"></script>
+  <script defer type="text/javascript" src="/js/comment.js"></script>
   <script type="text/javascript">
-    $(document).ready(function () {
-      getComments({
-        "type": "github",
+    documentReady(function () {
+      loadCommentCount({
         "user": "STARRY-S",
         "repo": "blog.starry-s.xyz",
-        "clientID": "d840b2424099ff5195ff",
-        "clientSecret": "cc22cbdcdee59b64ef1031c4d369821030b3634f",
-        "no_comment": "这个页面还没有评论，现在就去评论吧！",
-        "go_to_comment": "去评论",
-        "issue_title": "【日常】更新一下近期日常： 2019.6-2019.8",
-        "btn_class": "button",
-        "comments_target": "#comment-thread"
+        "containerClass": "comment-count"
       });
+    });
+  </script>
+  
+  <div class="comment-results" id="comment-results">
+    <div class="sk-wave" id="sk-wave">
+      <div class="sk-rect sk-rect1"></div>
+      <div class="sk-rect sk-rect2"></div>
+      <div class="sk-rect sk-rect3"></div>
+      <div class="sk-rect sk-rect4"></div>
+      <div class="sk-rect sk-rect5"></div>
+    </div>
+  </div>
+  <script defer type="text/javascript" src="/js/marked.min.js"></script>
+  <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+  <script type="text/javascript">
+    documentReady(function () {
       marked.setOptions({
         "highlight": function (code, lang) {
           return hljs.highlightAuto(code).value;
         }
       });
-      function mark() {
-        var markdowns = document.getElementsByClassName("markdown");
-        for (var i = 0; i < markdowns.length; ++i){
-          if (markdowns[i].innerHTML) {
-            markdowns[i].innerHTML = marked(markdowns[i].innerHTML);
-          }
-        }
-      }
-      window.addEventListener("DOMContentLoaded", mark, false);
-      window.addEventListener("load", mark, false);
+      loadComment({
+        "user": "STARRY-S",
+        "repo": "blog.starry-s.xyz",
+        "sendButtonText": "去评论",
+        "noCommentText": "这个页面还没有评论，现在就去评论吧！",
+        "failText": "你可能达到了 API 请求频率上限，请等待一段时间再刷新。",
+        "title": "【日常】更新一下近期日常： 2019.6-2019.8",
+        "containerID": "comment-results"
+      });
     });
   </script>
   
+  
 </div>
-
 
 
   
@@ -341,7 +351,7 @@
     <img class="author-avatar" src="/images/avatar.jpg" alt="STARRY-S">
     
     <h1 class="author-name">STARRY-S</h1>
-    <h2 class="author-description">啊！那蓝真天，白真云</h2>
+    <h2 class="author-description">Stories always have happy endings, but real life isn't like that.</h2>
     <div class="site-count">
       
       
@@ -383,32 +393,20 @@
     
     <hr>
     <div class="social-link sidebar-item">
-      <div><i class="far fa-address-card"></i>社交链接</p></div>
+      <div><i class="far fa-address-card"></i>社交链接</div>
       <ul>
         
         <li><i class="fas fa-envelope"></i><a href="mailto:hx916584160@gmail.com" target="_blank" rel="noreferrer noopener">E-Mail</a></li>
         
         <li><i class="fab fa-github"></i><a href="https://github.com/STARRY-S" target="_blank" rel="noreferrer noopener">GitHub</a></li>
         
-        <li><i class="fab fa-telegram"></i><a href="https://t.me/STARRYS" target="_blank" rel="noreferrer noopener">Telegram</a></li>
+        <li><i class="fab fa-telegram"></i><a href="https://t.me/STARRY-S" target="_blank" rel="noreferrer noopener">Telegram</a></li>
+        
+        <li><i class="fas fa-globe"></i><a href="https://space.bilibili.com/19189337" target="_blank" rel="noreferrer noopener">Bilibili</a></li>
         
       </ul>
     </div>
     
-    
-    <hr>
-    <div class="blogroll sidebar-item">
-      <div><i class="fas fa-user-friends"></i>友情链接</div>
-      <ul>
-        
-        <li><i class="fas fa-link"></i><a href="https://alynx.moe/" target="_blank" rel="noreferrer noopener">喵's HomePage</a></li>
-        
-        <li><i class="fas fa-link"></i><a href="https://chenxy.moe/" target="_blank" rel="noreferrer noopener">Art_Chen's Blog</a></li>
-        
-        <li><i class="fas fa-link"></i><a href="https://lgiki.cc" target="_blank" rel="noreferrer noopener">LGiki's Blog</a></li>
-        
-      </ul>
-    </div>
     
   </div>
 </aside>
@@ -452,4 +450,4 @@
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.2.5 at 2019-12-01 Sun 16:19:54 CST. -->
+<!-- Page built by Hikaru v1.2.6 at 2020-01-28 Tue 00:16:29 CST. -->

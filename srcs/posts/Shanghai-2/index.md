@@ -20,7 +20,14 @@ categories:
 
 > 现在是00:00， 很适合吹空调听音乐写博客，毕竟白天睡了一天了。
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=493911&auto=0&height=66"></iframe>
+<!--aplayer
+{
+    "name": "夏恋",
+    "artist": "Otokaze",
+    "url": "https://music.starry-s.xyz/music/Otokaze - 夏恋.m4a",
+    "cover": "https://music.starry-s.xyz/music/cover/4450823069239492.jpg"
+}
+-->
 
 首先是6月末去了沈阳META·TRON（梅塔·特隆）电音节，听说这是东北第一次举办的电音节，从AlanWalker入坑的电音，但Meta没请Alan，不过得知有百大DJ前十的DonDiablo（大！菠！萝！）遂非常激动觉得机会难得于是毫不犹豫的就把票买了。
 

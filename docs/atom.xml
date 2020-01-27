@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>STARRYS' Blog</title>
-  <icon>https://starry-s.xyz/images/avatar.jpg</icon>
-  <subtitle>Hello World</subtitle>
-  <link href="https://starry-s.xyz/atom.xml" rel="self" />
+  <title>STARRY-S' Blog</title>
+  <icon>https://blog.starry-s.xyz/images/avatar.jpg</icon>
+  <subtitle>In a never-ending spiral of life and death.</subtitle>
+  <link href="https://blog.starry-s.xyz/atom.xml" rel="self" />
   
-  <link href="https://starry-s.xyz/" />
+  <link href="https://blog.starry-s.xyz/" />
   
-  <updated>2019-11-04T08:32:15.532Z</updated>
+  <updated>2020-01-27T16:14:08.917Z</updated>
   
-  <id>https://starry-s.xyz/</id>
+  <id>https://blog.starry-s.xyz/</id>
   
   <author>
     <name>STARRY-S</name>
@@ -20,10 +20,10 @@
   
   <entry>
     <title>将网易云音乐歌单导出为M3U8播放列表文件</title>
-    <link href="https://starry-s.xyz/posts/neteaste_music_list/" />
-    <id>https://starry-s.xyz/posts/neteaste_music_list/</id>
+    <link href="https://blog.starry-s.xyz/posts/neteaste_music_list/" />
+    <id>https://blog.starry-s.xyz/posts/neteaste_music_list/</id>
     <published>2019-09-28T09:19:05.000Z</published>
-    <updated>2019-11-04T08:32:15.532Z</updated>
+    <updated>2020-01-27T16:14:08.917Z</updated>
     
     <summary type="html">
     
@@ -31,25 +31,25 @@
     
     </summary>
     
-    <category term="日常" scheme="https://starry-s.xyz/categories/%E6%97%A5%E5%B8%B8/" />
+    <category term="日常" scheme="https://blog.starry-s.xyz/categories/%E6%97%A5%E5%B8%B8/" />
     
-    <category term="python" scheme="https://starry-s.xyz/categories/%E6%97%A5%E5%B8%B8/python/" />
+    <category term="python" scheme="https://blog.starry-s.xyz/categories/%E6%97%A5%E5%B8%B8/python/" />
     
     
-    <category term="网易云音乐" scheme="https://starry-s.xyz/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" />
+    <category term="网易云音乐" scheme="https://blog.starry-s.xyz/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/" />
     
-    <category term="python" scheme="https://starry-s.xyz/tags/python/" />
+    <category term="python" scheme="https://blog.starry-s.xyz/tags/python/" />
     
-    <category term="walkman" scheme="https://starry-s.xyz/tags/walkman/" />
+    <category term="walkman" scheme="https://blog.starry-s.xyz/tags/walkman/" />
     
   </entry>
   
   <entry>
     <title>使用PaperMC搭建Minecraft服务器教程</title>
-    <link href="https://starry-s.xyz/posts/mc-server/" />
-    <id>https://starry-s.xyz/posts/mc-server/</id>
+    <link href="https://blog.starry-s.xyz/posts/mc-server/" />
+    <id>https://blog.starry-s.xyz/posts/mc-server/</id>
     <published>2019-08-25T14:19:18.000Z</published>
-    <updated>2019-11-04T08:45:59.197Z</updated>
+    <updated>2020-01-27T16:14:08.913Z</updated>
     
     <summary type="html">
     
@@ -57,23 +57,23 @@
     
     </summary>
     
-    <category term="教程" scheme="https://starry-s.xyz/categories/%E6%95%99%E7%A8%8B/" />
+    <category term="教程" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/" />
     
-    <category term="Minecraft" scheme="https://starry-s.xyz/categories/%E6%95%99%E7%A8%8B/Minecraft/" />
+    <category term="Minecraft" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/Minecraft/" />
     
     
-    <category term="Minecraft" scheme="https://starry-s.xyz/tags/Minecraft/" />
+    <category term="Minecraft" scheme="https://blog.starry-s.xyz/tags/Minecraft/" />
     
-    <category term="教程" scheme="https://starry-s.xyz/tags/%E6%95%99%E7%A8%8B/" />
+    <category term="教程" scheme="https://blog.starry-s.xyz/tags/%E6%95%99%E7%A8%8B/" />
     
   </entry>
   
   <entry>
     <title>【日常】更新一下近期日常： 2019.6-2019.8</title>
-    <link href="https://starry-s.xyz/posts/Shanghai-2/" />
-    <id>https://starry-s.xyz/posts/Shanghai-2/</id>
+    <link href="https://blog.starry-s.xyz/posts/Shanghai-2/" />
+    <id>https://blog.starry-s.xyz/posts/Shanghai-2/</id>
     <published>2019-08-02T15:49:39.000Z</published>
-    <updated>2019-11-04T08:33:36.628Z</updated>
+    <updated>2020-01-27T16:14:08.907Z</updated>
     
     <summary type="html">
     
@@ -81,25 +81,25 @@
     
     </summary>
     
-    <category term="日常" scheme="https://starry-s.xyz/categories/%E6%97%A5%E5%B8%B8/" />
+    <category term="日常" scheme="https://blog.starry-s.xyz/categories/%E6%97%A5%E5%B8%B8/" />
     
     
-    <category term="日常" scheme="https://starry-s.xyz/tags/%E6%97%A5%E5%B8%B8/" />
+    <category term="日常" scheme="https://blog.starry-s.xyz/tags/%E6%97%A5%E5%B8%B8/" />
     
-    <category term="Trip" scheme="https://starry-s.xyz/tags/Trip/" />
+    <category term="Trip" scheme="https://blog.starry-s.xyz/tags/Trip/" />
     
-    <category term="琐事" scheme="https://starry-s.xyz/tags/%E7%90%90%E4%BA%8B/" />
+    <category term="琐事" scheme="https://blog.starry-s.xyz/tags/%E7%90%90%E4%BA%8B/" />
     
-    <category term="摄影" scheme="https://starry-s.xyz/tags/%E6%91%84%E5%BD%B1/" />
+    <category term="摄影" scheme="https://blog.starry-s.xyz/tags/%E6%91%84%E5%BD%B1/" />
     
   </entry>
   
   <entry>
     <title>小米路由器3G折腾之刷OpenWrt/Pandavan记录</title>
-    <link href="https://starry-s.xyz/posts/Xiaomi_Miwifi_3G/" />
-    <id>https://starry-s.xyz/posts/Xiaomi_Miwifi_3G/</id>
+    <link href="https://blog.starry-s.xyz/posts/Xiaomi_Miwifi_3G/" />
+    <id>https://blog.starry-s.xyz/posts/Xiaomi_Miwifi_3G/</id>
     <published>2019-02-18T16:49:20.000Z</published>
-    <updated>2019-11-04T08:45:58.627Z</updated>
+    <updated>2020-01-27T16:14:08.913Z</updated>
     
     <summary type="html">
     
@@ -107,31 +107,31 @@
     
     </summary>
     
-    <category term="教程" scheme="https://starry-s.xyz/categories/%E6%95%99%E7%A8%8B/" />
+    <category term="教程" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/" />
     
-    <category term="路由器" scheme="https://starry-s.xyz/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/" />
+    <category term="路由器" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/" />
     
     
-    <category term="教程" scheme="https://starry-s.xyz/tags/%E6%95%99%E7%A8%8B/" />
+    <category term="教程" scheme="https://blog.starry-s.xyz/tags/%E6%95%99%E7%A8%8B/" />
     
-    <category term="路由器教程" scheme="https://starry-s.xyz/tags/%E8%B7%AF%E7%94%B1%E5%99%A8%E6%95%99%E7%A8%8B/" />
+    <category term="路由器教程" scheme="https://blog.starry-s.xyz/tags/%E8%B7%AF%E7%94%B1%E5%99%A8%E6%95%99%E7%A8%8B/" />
     
-    <category term="OpenWrt/LEDE" scheme="https://starry-s.xyz/tags/OpenWrt/LEDE/" />
+    <category term="OpenWrt/LEDE" scheme="https://blog.starry-s.xyz/tags/OpenWrt/LEDE/" />
     
-    <category term="OpenWrt" scheme="https://starry-s.xyz/tags/OpenWrt/" />
+    <category term="OpenWrt" scheme="https://blog.starry-s.xyz/tags/OpenWrt/" />
     
-    <category term="Pandavan" scheme="https://starry-s.xyz/tags/Pandavan/" />
+    <category term="Pandavan" scheme="https://blog.starry-s.xyz/tags/Pandavan/" />
     
-    <category term="PandoraBox" scheme="https://starry-s.xyz/tags/PandoraBox/" />
+    <category term="PandoraBox" scheme="https://blog.starry-s.xyz/tags/PandoraBox/" />
     
   </entry>
   
   <entry>
     <title>使用HMCL启动Minecraft游戏教程</title>
-    <link href="https://starry-s.xyz/posts/hmcl-minecraft/" />
-    <id>https://starry-s.xyz/posts/hmcl-minecraft/</id>
+    <link href="https://blog.starry-s.xyz/posts/hmcl-minecraft/" />
+    <id>https://blog.starry-s.xyz/posts/hmcl-minecraft/</id>
     <published>2018-07-29T09:26:35.000Z</published>
-    <updated>2019-11-04T08:41:51.355Z</updated>
+    <updated>2020-01-27T16:14:08.913Z</updated>
     
     <summary type="html">
     
@@ -139,23 +139,23 @@
     
     </summary>
     
-    <category term="教程" scheme="https://starry-s.xyz/categories/%E6%95%99%E7%A8%8B/" />
+    <category term="教程" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/" />
     
-    <category term="Minecraft" scheme="https://starry-s.xyz/categories/%E6%95%99%E7%A8%8B/Minecraft/" />
+    <category term="Minecraft" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/Minecraft/" />
     
     
-    <category term="Minecraft" scheme="https://starry-s.xyz/tags/Minecraft/" />
+    <category term="Minecraft" scheme="https://blog.starry-s.xyz/tags/Minecraft/" />
     
-    <category term="教程" scheme="https://starry-s.xyz/tags/%E6%95%99%E7%A8%8B/" />
+    <category term="教程" scheme="https://blog.starry-s.xyz/tags/%E6%95%99%E7%A8%8B/" />
     
   </entry>
   
   <entry>
     <title>Hello 2018</title>
-    <link href="https://starry-s.xyz/posts/Hello-2018/" />
-    <id>https://starry-s.xyz/posts/Hello-2018/</id>
+    <link href="https://blog.starry-s.xyz/posts/Hello-2018/" />
+    <id>https://blog.starry-s.xyz/posts/Hello-2018/</id>
     <published>2018-01-16T14:58:06.000Z</published>
-    <updated>2019-11-04T08:29:34.117Z</updated>
+    <updated>2020-01-27T16:14:08.897Z</updated>
     
     <summary type="html">
     
@@ -163,23 +163,23 @@
     
     </summary>
     
-    <category term="碎碎念" scheme="https://starry-s.xyz/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" />
+    <category term="碎碎念" scheme="https://blog.starry-s.xyz/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" />
     
     
-    <category term="琐事" scheme="https://starry-s.xyz/tags/%E7%90%90%E4%BA%8B/" />
+    <category term="琐事" scheme="https://blog.starry-s.xyz/tags/%E7%90%90%E4%BA%8B/" />
     
-    <category term="碎碎念" scheme="https://starry-s.xyz/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" />
+    <category term="碎碎念" scheme="https://blog.starry-s.xyz/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" />
     
-    <category term="音乐" scheme="https://starry-s.xyz/tags/%E9%9F%B3%E4%B9%90/" />
+    <category term="音乐" scheme="https://blog.starry-s.xyz/tags/%E9%9F%B3%E4%B9%90/" />
     
   </entry>
   
   <entry>
     <title>斐讯K2折腾之——安装OpenWrt/LEDE</title>
-    <link href="https://starry-s.xyz/posts/psg1218-openwrt/" />
-    <id>https://starry-s.xyz/posts/psg1218-openwrt/</id>
+    <link href="https://blog.starry-s.xyz/posts/psg1218-openwrt/" />
+    <id>https://blog.starry-s.xyz/posts/psg1218-openwrt/</id>
     <published>2017-05-13T14:58:07.000Z</published>
-    <updated>2019-11-04T08:32:24.736Z</updated>
+    <updated>2020-01-27T16:14:08.917Z</updated>
     
     <summary type="html">
     
@@ -187,27 +187,27 @@
     
     </summary>
     
-    <category term="教程" scheme="https://starry-s.xyz/categories/%E6%95%99%E7%A8%8B/" />
+    <category term="教程" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/" />
     
-    <category term="路由器" scheme="https://starry-s.xyz/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/" />
+    <category term="路由器" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/" />
     
     
-    <category term="斐讯k2" scheme="https://starry-s.xyz/tags/%E6%96%90%E8%AE%AFk2/" />
+    <category term="斐讯k2" scheme="https://blog.starry-s.xyz/tags/%E6%96%90%E8%AE%AFk2/" />
     
-    <category term="LEDE" scheme="https://starry-s.xyz/tags/LEDE/" />
+    <category term="LEDE" scheme="https://blog.starry-s.xyz/tags/LEDE/" />
     
-    <category term="OpenWrt" scheme="https://starry-s.xyz/tags/OpenWrt/" />
+    <category term="OpenWrt" scheme="https://blog.starry-s.xyz/tags/OpenWrt/" />
     
-    <category term="路由器教程" scheme="https://starry-s.xyz/tags/%E8%B7%AF%E7%94%B1%E5%99%A8%E6%95%99%E7%A8%8B/" />
+    <category term="路由器教程" scheme="https://blog.starry-s.xyz/tags/%E8%B7%AF%E7%94%B1%E5%99%A8%E6%95%99%E7%A8%8B/" />
     
   </entry>
   
   <entry>
     <title>Spring</title>
-    <link href="https://starry-s.xyz/posts/Spring/" />
-    <id>https://starry-s.xyz/posts/Spring/</id>
+    <link href="https://blog.starry-s.xyz/posts/Spring/" />
+    <id>https://blog.starry-s.xyz/posts/Spring/</id>
     <published>2017-05-05T14:28:00.000Z</published>
-    <updated>2019-11-04T14:25:26.928Z</updated>
+    <updated>2020-01-27T16:14:08.913Z</updated>
     
     <summary type="html">
     
@@ -215,27 +215,27 @@
     
     </summary>
     
-    <category term="摄影" scheme="https://starry-s.xyz/categories/%E6%91%84%E5%BD%B1/" />
+    <category term="摄影" scheme="https://blog.starry-s.xyz/categories/%E6%91%84%E5%BD%B1/" />
     
-    <category term="Spring" scheme="https://starry-s.xyz/categories/%E6%91%84%E5%BD%B1/Spring/" />
+    <category term="Spring" scheme="https://blog.starry-s.xyz/categories/%E6%91%84%E5%BD%B1/Spring/" />
     
-    <category term="高中" scheme="https://starry-s.xyz/categories/%E6%91%84%E5%BD%B1/Spring/%E9%AB%98%E4%B8%AD/" />
+    <category term="高中" scheme="https://blog.starry-s.xyz/categories/%E6%91%84%E5%BD%B1/Spring/%E9%AB%98%E4%B8%AD/" />
     
     
-    <category term="摄影" scheme="https://starry-s.xyz/tags/%E6%91%84%E5%BD%B1/" />
+    <category term="摄影" scheme="https://blog.starry-s.xyz/tags/%E6%91%84%E5%BD%B1/" />
     
-    <category term="Spring" scheme="https://starry-s.xyz/tags/Spring/" />
+    <category term="Spring" scheme="https://blog.starry-s.xyz/tags/Spring/" />
     
-    <category term="Flowers" scheme="https://starry-s.xyz/tags/Flowers/" />
+    <category term="Flowers" scheme="https://blog.starry-s.xyz/tags/Flowers/" />
     
   </entry>
   
   <entry>
     <title>小米路由器MINI之改装路由器散热</title>
-    <link href="https://starry-s.xyz/posts/xiaomi-mini-fan-2/" />
-    <id>https://starry-s.xyz/posts/xiaomi-mini-fan-2/</id>
+    <link href="https://blog.starry-s.xyz/posts/xiaomi-mini-fan-2/" />
+    <id>https://blog.starry-s.xyz/posts/xiaomi-mini-fan-2/</id>
     <published>2016-09-28T06:54:27.000Z</published>
-    <updated>2019-11-04T08:36:37.959Z</updated>
+    <updated>2020-01-27T16:14:08.920Z</updated>
     
     <summary type="html">
     
@@ -243,25 +243,25 @@
     
     </summary>
     
-    <category term="教程" scheme="https://starry-s.xyz/categories/%E6%95%99%E7%A8%8B/" />
+    <category term="教程" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/" />
     
-    <category term="路由器" scheme="https://starry-s.xyz/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/" />
+    <category term="路由器" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/" />
     
-    <category term="路由器改装散热" scheme="https://starry-s.xyz/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/%E8%B7%AF%E7%94%B1%E5%99%A8%E6%94%B9%E8%A3%85%E6%95%A3%E7%83%AD/" />
+    <category term="路由器改装散热" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/%E8%B7%AF%E7%94%B1%E5%99%A8%E6%94%B9%E8%A3%85%E6%95%A3%E7%83%AD/" />
     
     
-    <category term="教程" scheme="https://starry-s.xyz/tags/%E6%95%99%E7%A8%8B/" />
+    <category term="教程" scheme="https://blog.starry-s.xyz/tags/%E6%95%99%E7%A8%8B/" />
     
-    <category term="改装" scheme="https://starry-s.xyz/tags/%E6%94%B9%E8%A3%85/" />
+    <category term="改装" scheme="https://blog.starry-s.xyz/tags/%E6%94%B9%E8%A3%85/" />
     
   </entry>
   
   <entry>
     <title>Xiaomi路由器mini折腾篇</title>
-    <link href="https://starry-s.xyz/posts/xiaomi-mini-fan-1/" />
-    <id>https://starry-s.xyz/posts/xiaomi-mini-fan-1/</id>
+    <link href="https://blog.starry-s.xyz/posts/xiaomi-mini-fan-1/" />
+    <id>https://blog.starry-s.xyz/posts/xiaomi-mini-fan-1/</id>
     <published>2016-09-28T06:18:00.000Z</published>
-    <updated>2019-11-04T08:36:15.369Z</updated>
+    <updated>2020-01-27T16:14:08.917Z</updated>
     
     <summary type="html">
     
@@ -269,29 +269,29 @@
     
     </summary>
     
-    <category term="教程" scheme="https://starry-s.xyz/categories/%E6%95%99%E7%A8%8B/" />
+    <category term="教程" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/" />
     
-    <category term="路由器" scheme="https://starry-s.xyz/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/" />
+    <category term="路由器" scheme="https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/" />
     
     
-    <category term="教程" scheme="https://starry-s.xyz/tags/%E6%95%99%E7%A8%8B/" />
+    <category term="教程" scheme="https://blog.starry-s.xyz/tags/%E6%95%99%E7%A8%8B/" />
     
-    <category term="路由器教程" scheme="https://starry-s.xyz/tags/%E8%B7%AF%E7%94%B1%E5%99%A8%E6%95%99%E7%A8%8B/" />
+    <category term="路由器教程" scheme="https://blog.starry-s.xyz/tags/%E8%B7%AF%E7%94%B1%E5%99%A8%E6%95%99%E7%A8%8B/" />
     
-    <category term="OpenWrt/LEDE" scheme="https://starry-s.xyz/tags/OpenWrt/LEDE/" />
+    <category term="OpenWrt/LEDE" scheme="https://blog.starry-s.xyz/tags/OpenWrt/LEDE/" />
     
-    <category term="OpenWrt" scheme="https://starry-s.xyz/tags/OpenWrt/" />
+    <category term="OpenWrt" scheme="https://blog.starry-s.xyz/tags/OpenWrt/" />
     
-    <category term="Pandavan" scheme="https://starry-s.xyz/tags/Pandavan/" />
+    <category term="Pandavan" scheme="https://blog.starry-s.xyz/tags/Pandavan/" />
     
   </entry>
   
   <entry>
     <title>Everything is based on "Hello World"</title>
-    <link href="https://starry-s.xyz/posts/hello-world/" />
-    <id>https://starry-s.xyz/posts/hello-world/</id>
+    <link href="https://blog.starry-s.xyz/posts/hello-world/" />
+    <id>https://blog.starry-s.xyz/posts/hello-world/</id>
     <published>2016-08-22T06:22:54.000Z</published>
-    <updated>2019-11-04T08:29:56.951Z</updated>
+    <updated>2020-01-27T16:14:08.913Z</updated>
     
     <summary type="html">
     
@@ -299,12 +299,12 @@
     
     </summary>
     
-    <category term="Hello World" scheme="https://starry-s.xyz/categories/Hello%20World/" />
+    <category term="Hello World" scheme="https://blog.starry-s.xyz/categories/Hello%20World/" />
     
     
-    <category term="Blog" scheme="https://starry-s.xyz/tags/Blog/" />
+    <category term="Blog" scheme="https://blog.starry-s.xyz/tags/Blog/" />
     
-    <category term="Hello World" scheme="https://starry-s.xyz/tags/Hello%20World/" />
+    <category term="Hello World" scheme="https://blog.starry-s.xyz/tags/Hello%20World/" />
     
   </entry>
   
