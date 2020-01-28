@@ -17,6 +17,16 @@ categories:
 
 <!--more-->
 
+<!--aplayer
+{
+    "name": "Higher",
+    "artist": "Tobu",
+    "theme": "#0080ff",
+    "url": "https://music.starry-s.xyz/music/510e_050c_025a_fd784ea9642fd342cc0850037428d687.m4a",
+    "cover": "https://music.starry-s.xyz/music/cover/109951164239508401.jpg"
+}
+-->
+
 [OpenWrt/LEDE](https://openwrt.org)是适合于嵌入式设备的一个Linux发行版。
 
 > LEDE与OpenWrt官方宣布合并，`lede-project.org`域名将重定向到相应的`openwrt.org`域名上。

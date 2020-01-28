@@ -27,6 +27,7 @@ categories:
 {
     "name": "炉心融解",
     "artist": "Iroha/kuma/鏡音リン",
+    "theme": "#36BDE3",
     "url": "https://music.starry-s.xyz/music/0252_530f_0559_58140863e1de649de504237f43d6124f.m4a",
     "cover": "https://music.starry-s.xyz/music/cover/6036318836780705.jpg"
 }
@@ -97,7 +98,7 @@ AuthMe Reloaded的下载网址：[https://dev.bukkit.org/projects/authme-reloade
 
 1. AuthMe安装后会覆盖掉服务器记录的原有的用户权限，需要重新设置op帐号和gamemode这类权限。
 2. 更新服务器版本只需要下载新的Paper的jar文件并覆盖掉老的文件即可，注意当Minecraft的版本涉及更新例如从1.12到1.13这样的更新时务必做好备份工作并注意原有的插件可能在新版本不适用的问题。
-3. 在低配置主机上运行服务器时log中容易遇到有关「服务器已经xxx毫秒没有响应」这类的“报错”，这不是一个bug，只是提醒你的服务器有点卡了，世纪并无大碍，可以无视。
+3. 在低配置主机上运行服务器时log中容易遇到有关「服务器已经xxx毫秒没有响应」这类的“报错”，这不是一个bug，只是提醒你的服务器有点卡了，实际并无大碍，可以无视。
 4. 服务器长时间后台运行可使用GNU Screen程序。
 5. 比较简单粗暴的备份服务器的方式就是用`tar`打个压缩包存起来，除此之外还可以装一些自动备份的插件。
 

@@ -20,6 +20,19 @@ categories:
 
 <!--more-->
 
+
+
+<!--aplayer
+{
+    "name": "Nevada",
+    "artist": "Vicetone / Cozi Zuehlsdorff",
+    "theme": "#551966",
+    "url": "https://music.starry-s.xyz/music/055a_0758_0e53_203c6b3fbf0298ce61a699395a377d14.m4a",
+    "cover": "https://music.starry-s.xyz/music/cover/109951163311434257.jpg"
+}
+-->
+
+
 > 本篇于2017年3月5日重写。
 > 最后更新时间: 2019年2月20日。
 

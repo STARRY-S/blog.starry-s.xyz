@@ -14,6 +14,7 @@ tags: about
 {
     "name": "夏恋",
     "artist": "Otokaze",
+    "theme": "#F6890E",
     "url": "https://music.starry-s.xyz/music/Otokaze - 夏恋.m4a",
     "cover": "https://music.starry-s.xyz/music/cover/4450823069239492.jpg"
 }

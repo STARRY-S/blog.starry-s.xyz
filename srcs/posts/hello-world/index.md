@@ -14,6 +14,14 @@ categories:
 
 <!--more-->
 
+<!--aplayer
+{
+    "name": "時雨",
+    "artist": "川嶋あい",
+    "url": "https://music.starry-s.xyz/music/0052_555b_065c_78319c28adb1fb04ae5416f97ba6e190.m4a",
+    "cover": "https://music.starry-s.xyz/music/cover/18977570695604112.jpg"
+}
+-->
 
 # 终于有一个自己的博客了！
 

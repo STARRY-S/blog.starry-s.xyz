@@ -35,6 +35,7 @@ categories:
 {
     "name": "Unlimited Blade Works",
     "artist": "深澤秀行",
+    "theme": "#923BB1",
     "url": "https://music.starry-s.xyz/music/555f_0f53_000b_b5b5911c7c893f5c98827a507032125b.m4a",
     "cover": "https://music.starry-s.xyz/music/cover/7859309115883404.jpg"
 }

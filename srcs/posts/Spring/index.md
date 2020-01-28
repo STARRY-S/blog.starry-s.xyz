@@ -19,6 +19,16 @@ categories:
 
 <!--more-->
 
+<!--aplayer
+{
+    "name": "Ignight(instrumental)",
+    "artist": "Alan Walker/K-391",
+    "theme": "#1A775B",
+    "url": "https://music.starry-s.xyz/music/030b_560f_030c_4adf3a052cae2a91bf564fc95628f19e.m4a",
+    "cover": "https://music.starry-s.xyz/music/cover/18901704393154233.jpg"
+}
+-->
+
 ----
 
 ## 拍摄自ipod touch6：
