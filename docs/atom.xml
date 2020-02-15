@@ -7,7 +7,7 @@
   
   <link href="https://blog.starry-s.xyz/" />
   
-  <updated>2020-01-28T16:54:21.488Z</updated>
+  <updated>2020-02-15T20:04:44.997Z</updated>
   
   <id>https://blog.starry-s.xyz/</id>
   
@@ -17,6 +17,30 @@
   </author>
   
   <generator uri="https://github.com/AlynxZhou/hikaru/">Hikaru</generator>
+  
+  <entry>
+    <title>Hello 2020</title>
+    <link href="https://blog.starry-s.xyz/posts/Hello-2020/" />
+    <id>https://blog.starry-s.xyz/posts/Hello-2020/</id>
+    <published>2020-02-15T20:04:44.997Z</published>
+    <updated>2020-02-15T20:04:44.997Z</updated>
+    
+    <summary type="html">
+    
+    <![CDATA[<p>一直想更新博客，但是过了好久都没有更新，都2月份了，起这个标题真的合适吗？</p>]]>
+    
+    </summary>
+    
+    <category term="碎碎念" scheme="https://blog.starry-s.xyz/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" />
+    
+    
+    <category term="琐事" scheme="https://blog.starry-s.xyz/tags/%E7%90%90%E4%BA%8B/" />
+    
+    <category term="碎碎念" scheme="https://blog.starry-s.xyz/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" />
+    
+    <category term="音乐" scheme="https://blog.starry-s.xyz/tags/%E9%9F%B3%E4%B9%90/" />
+    
+  </entry>
   
   <entry>
     <title>将网易云音乐歌单导出为M3U8播放列表文件</title>
