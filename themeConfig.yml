@@ -33,7 +33,6 @@ keywords:
   - Life
   - ARIA
   - Hikaru
-  - STARRY-S
 
 # https://creativecommons.org/licenses/
 # by | by-sa | by-nd | by-nc | by-nc-sa | by-nc-nd
@@ -136,14 +135,11 @@ social:
 blogroll:
   enable: false
   links:
-    - name: GitHub
-      link: https://github.com/
+    - name: 喵's StackHarbor
+      link: https://alynx.one/
       icon: <i class="fas fa-link"></i>
-    - name: MDN
-      link: https://developer.mozilla.org/
-      icon: <i class="fas fa-link"></i>
-    - name: Nunjucks
-      link: https://mozilla.github.io/nunjucks/
+    - name: LGiki
+      link: https://lgiki.cc
       icon: <i class="fas fa-link"></i>
 
 comment:
@@ -170,6 +166,6 @@ comment:
 reward:
   enable: false
   message: 坚持原创技术分享，您的支持是我前进的动力！
-  weChatPayQRCode: images/wechat.jpg
-  aliPayQRCode: images/alipay.jpg
+  # weChatPayQRCode: images/WeChatPay.png
+  # aliPayQRCode: images/AliPay.png
   # bitCoinQRCode: images/BitCoin.png
