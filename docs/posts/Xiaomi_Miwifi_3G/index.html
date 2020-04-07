@@ -200,17 +200,11 @@
     <main class="post-main" id="scrollspy-container" itemprop="articleBody">
       <link href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
 <script src= "https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
-<p>生命不息，折腾不止。</p>
-<p>家里的路由器又坏了（强行狡辩</p>
+<p>家里的路由器又坏了（狡辩</p>
 <a id='more'></a>
 
 <p>之前有写过斐讯k2和小米路由器mini的教程，但是现在回看之前写完的教程要么通篇没有逻辑要么缺东少西。于是就有了这篇文章。</p>
-<p>我尽可能的写的详细一点以便没有经验的小白也能看懂。</p>
 <div class="alert-green">最后更新日期：2019.8.26</div>
-
-<div class="alert-red">温馨提示：刷成砖了本人一概不负责</div>
-
-<!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=86 src="//music.163.com/outchain/player?type=2&id=31108216&auto=0&height=66"></iframe> -->
 
  
                     <div id="aplayer0"></div>
@@ -241,15 +235,15 @@
 <h1 id="准备工作"><a class="header-link" href="/posts/Xiaomi_Miwifi_3G/#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C" title="准备工作"></a>准备工作</h1>
 <p>你至少需要以下工具：</p>
 <ul>
-<li>路由器本体（废话</li>
-<li>一个已格式化为FAT/FAT32格式的U盘用来刷开发者固件和ssh激活工具</li>
+<li>路由器本体（</li>
+<li>一个格式化为FAT/FAT32格式的U盘用来刷开发者固件和ssh激活工具</li>
 <li>一根可以捅‘Reset’钮的针（取卡针或牙签等</li>
-<li>可以通过ssh连接到路由器的软件（例如：<a href="https://putty.org" target="_blank" rel="noreferrer noopener">putty</a>）</li>
-<li><a href="http://www1.miwifi.com/miwifi_download.html" target="_blank" rel="noreferrer noopener">小米路由器客户端</a>，用来绑定你的小米账号</li>
+<li>Windows用户需要一个ssh连接软件（例如：<a href="https://putty.org" target="_blank" rel="noreferrer noopener">putty</a>）</li>
+<li><a href="http://www1.miwifi.com/miwifi_download.html" target="_blank" rel="noreferrer noopener">小米路由器客户端</a>，用来绑定小米账号</li>
 </ul>
 <h1 id="开启路由器SSH权限"><a class="header-link" href="/posts/Xiaomi_Miwifi_3G/#%E5%BC%80%E5%90%AF%E8%B7%AF%E7%94%B1%E5%99%A8SSH%E6%9D%83%E9%99%90" title="开启路由器SSH权限"></a>开启路由器SSH权限</h1>
 <ol>
-<li>在<a href="http://www1.miwifi.com/miwifi_download.html" target="_blank" rel="noreferrer noopener">MiWiFi下载页面</a>下载所需要的路由器开发者固件,命名为<code>miwifi.bin</code>。（ROM -&gt; ROM for R3G开发版）</li>
+<li>在<a href="http://www1.miwifi.com/miwifi_download.html" target="_blank" rel="noreferrer noopener">MiWiFi下载页面</a>（ROM -&gt; ROM for R3G开发版）下载所需要的路由器开发者固件,命名为<code>miwifi.bin</code>。</li>
 <li>路由器断电，将下载好的开发者固件放入U盘插入路由器USB接口，捅住reset扭接上电源后待指示灯为黄色闪烁时松开，数分钟后路由器会自动重启，此过程不要乱动路由器。</li>
 <li>小米路由器客户端登陆小米账号绑定路由器设备，此过程需要路由器联网。</li>
 <li><a href="http://www1.miwifi.com/miwifi_open.html" target="_blank" rel="noreferrer noopener">MiWiFi开放平台</a>登陆小米账号下载ssh激活工具命名为<code>miwifi_ssh.bin</code>并记下root密码。</li>
@@ -350,7 +344,7 @@ reboot</code></pre></figure></code></pre><p>使用Linux的同学也可以用<cod
     <footer class="post-footer">
       
       <div class="post-tags">
-        <a class="post-tag button" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"><i class="fas fa-tag"></i>教程</a><a class="post-tag button" href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8%E6%95%99%E7%A8%8B/" rel="tag"><i class="fas fa-tag"></i>路由器教程</a><a class="post-tag button" href="/tags/OpenWrt/LEDE/" rel="tag"><i class="fas fa-tag"></i>OpenWrt/LEDE</a><a class="post-tag button" href="/tags/OpenWrt/" rel="tag"><i class="fas fa-tag"></i>OpenWrt</a><a class="post-tag button" href="/tags/Pandavan/" rel="tag"><i class="fas fa-tag"></i>Pandavan</a><a class="post-tag button" href="/tags/PandoraBox/" rel="tag"><i class="fas fa-tag"></i>PandoraBox</a>
+        <a class="post-tag button" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"><i class="fas fa-tag"></i>教程</a><a class="post-tag button" href="/tags/OpenWrt/" rel="tag"><i class="fas fa-tag"></i>OpenWrt</a><a class="post-tag button" href="/tags/Pandavan/" rel="tag"><i class="fas fa-tag"></i>Pandavan</a>
       </div>
       
     </footer>
@@ -461,7 +455,7 @@ reboot</code></pre></figure></code></pre><p>使用Linux的同学也可以用<cod
       
       <div class="tags-count count-block">
         <div class="site-count-title">标签</div>
-        <div><a href="/tags/">23</a></div>
+        <div><a href="/tags/">22</a></div>
       </div>
       
       
@@ -563,11 +557,21 @@ reboot</code></pre></figure></code></pre><p>使用Linux的同学也可以用<cod
         
         <li><i class="fab fa-telegram"></i><a href="https://t.me/STARRY-S" target="_blank" rel="noreferrer noopener">Telegram</a></li>
         
-        <li><i class="fas fa-globe"></i><a href="https://space.bilibili.com/19189337" target="_blank" rel="noreferrer noopener">Bilibili</a></li>
-        
       </ul>
     </div>
     
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-user-friends"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://alynx.one/" target="_blank" rel="noreferrer noopener">喵's Homepage</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://lgiki.net" target="_blank" rel="noreferrer noopener">LGiki's Blog</a></li>
+        
+      </ul>
+    </div>
     
   </div>
 </aside>
@@ -611,4 +615,4 @@ reboot</code></pre></figure></code></pre><p>使用Linux的同学也可以用<cod
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.2.7 at 2020-04-07 Tue 01:10:26 CST. -->
+<!-- Page built by Hikaru v1.2.9 at 2020-04-07 Tue 11:40:34 CST. -->

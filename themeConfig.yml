@@ -128,18 +128,15 @@ social:
     - name: Telegram
       link: https://t.me/STARRY-S
       icon: <i class="fab fa-telegram"></i>
-    - name: Bilibili
-      link: https://space.bilibili.com/19189337
-      icon: <i class="fas fa-globe"></i>
 
 blogroll:
-  enable: false
+  enable: true
   links:
-    - name: 喵's StackHarbor
+    - name: 喵's Homepage
       link: https://alynx.one/
       icon: <i class="fas fa-link"></i>
-    - name: LGiki
-      link: https://lgiki.cc
+    - name: LGiki's Blog
+      link: https://lgiki.net
       icon: <i class="fas fa-link"></i>
 
 comment:

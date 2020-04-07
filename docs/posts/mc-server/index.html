@@ -263,17 +263,16 @@ $ tar -zxvf <span class="hljs-string">./jdk-8</span>*<span class="hljs-string">.
 <h2 id="AuthMeReloaded"><a class="header-link" href="/posts/mc-server/#AuthMeReloaded" title="AuthMeReloaded"></a>AuthMe Reloaded</h2>
 <p>因为服务器关掉了正版验证意味着所有人随便起一个用户名就能登录进服务器而且十分不安全，所以装了AuthMe。</p>
 <p>AuthMe Reloaded的下载网址：<a href="https://dev.bukkit.org/projects/authme-reloaded" target="_blank" rel="noreferrer noopener">https://dev.bukkit.org/projects/authme-reloaded</a></p>
-<p>因为AuthMe的配置文件太多不详细列举了，Github和Bukkit上都有文档教程，youtube上还有视频教程，常用的指令就是<code>/register</code>、<code>/login</code>，可修改一下配置文件改一下语言以及邮箱smtp配置这类的，mysql配置不用更改就能用而且我也不会改，smtp安全起见并不推荐用gmail邮箱，要是拥有域名的话搞个企业邮箱也是个不错的选择。</p>
+<p>因为AuthMe的配置文件太多不详细列举了，Github和Bukkit上都有文档教程，youtube上还有视频教程，常用的指令就是<code>/register</code>、<code>/login</code>，可修改一下配置文件改一下语言以及邮箱smtp配置这类的，mysql配置不用更改就能用而且我也不会改，smtp安全起见并不推荐用gmail邮箱，要是拥有域名的话搞个企业邮箱貌似也行。</p>
 <h1 id="常见问题"><a class="header-link" href="/posts/mc-server/#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98" title="常见问题"></a>常见问题</h1>
 <ol>
-<li>AuthMe安装后会覆盖掉服务器记录的原有的用户权限，需要重新设置op帐号和gamemode这类权限。</li>
-<li>更新服务器版本只需要下载新的Paper的jar文件并覆盖掉老的文件即可，注意当Minecraft的版本涉及更新例如从1.12到1.13这样的更新时务必做好备份工作并注意原有的插件可能在新版本不适用的问题。</li>
-<li>在低配置主机上运行服务器时log中容易遇到有关「服务器已经xxx毫秒没有响应」这类的“报错”，这不是一个bug，只是提醒你的服务器有点卡了，实际并无大碍，可以无视。</li>
-<li>服务器长时间后台运行可使用GNU Screen程序。</li>
-<li>比较简单粗暴的备份服务器的方式就是用<code>tar</code>打个压缩包存起来，除此之外还可以装一些自动备份的插件。</li>
+<li>我在安装好AuthMe插件后遇到了用户权限被覆盖掉的情况，需要重新设置op帐号和gamemode。</li>
+<li>更新服务器版本只需要下载新的Paper的jar文件并覆盖掉老的文件即可，注意当Minecraft的版本涉及更新例如从1.12到1.13这样的跨版本更新时务必做好备份工作因为这种更新一般无法恢复并注意原有的插件可能在新的版本不适用。</li>
+<li>在低配置主机上运行服务器时log中容易遇到「服务器已经xxx毫秒没有响应」这类的“报错”，Google了一下这个报错只是提醒你的服务器有点卡了，可以无视。</li>
+<li>简单的备份服务器的方式是用<code>tar</code>打个压缩包存起来，或者可以装一些自动备份的插件。</li>
 </ol>
-<h1 id="Done"><a class="header-link" href="/posts/mc-server/#Done" title="Done"></a>Done</h1>
-<p>服务器搭建好了之后，不妨康康「<a href="/posts/hmcl-minecraft/">使用HMCL启动Minecraft游戏教程</a>」这篇文章安装游戏客户端食用。</p>
+<h1 id="Others"><a class="header-link" href="/posts/mc-server/#Others" title="Others"></a>Others</h1>
+<p><a href="/posts/hmcl-minecraft/">使用HMCL启动Minecraft游戏教程</a></p>
 
     </main>
     <footer class="post-footer">
@@ -390,7 +389,7 @@ $ tar -zxvf <span class="hljs-string">./jdk-8</span>*<span class="hljs-string">.
       
       <div class="tags-count count-block">
         <div class="site-count-title">标签</div>
-        <div><a href="/tags/">23</a></div>
+        <div><a href="/tags/">22</a></div>
       </div>
       
       
@@ -450,7 +449,7 @@ $ tar -zxvf <span class="hljs-string">./jdk-8</span>*<span class="hljs-string">.
         </li>
       
         <li>
-          <a class="list-group-item toc-link" href="#Done">Done</a>
+          <a class="list-group-item toc-link" href="#Others">Others</a>
           
         </li>
       
@@ -471,11 +470,21 @@ $ tar -zxvf <span class="hljs-string">./jdk-8</span>*<span class="hljs-string">.
         
         <li><i class="fab fa-telegram"></i><a href="https://t.me/STARRY-S" target="_blank" rel="noreferrer noopener">Telegram</a></li>
         
-        <li><i class="fas fa-globe"></i><a href="https://space.bilibili.com/19189337" target="_blank" rel="noreferrer noopener">Bilibili</a></li>
-        
       </ul>
     </div>
     
+    
+    <hr>
+    <div class="blogroll sidebar-item">
+      <div><i class="fas fa-user-friends"></i>友情链接</div>
+      <ul>
+        
+        <li><i class="fas fa-link"></i><a href="https://alynx.one/" target="_blank" rel="noreferrer noopener">喵's Homepage</a></li>
+        
+        <li><i class="fas fa-link"></i><a href="https://lgiki.net" target="_blank" rel="noreferrer noopener">LGiki's Blog</a></li>
+        
+      </ul>
+    </div>
     
   </div>
 </aside>
@@ -519,4 +528,4 @@ $ tar -zxvf <span class="hljs-string">./jdk-8</span>*<span class="hljs-string">.
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.2.7 at 2020-04-07 Tue 01:10:26 CST. -->
+<!-- Page built by Hikaru v1.2.9 at 2020-04-07 Tue 11:40:34 CST. -->

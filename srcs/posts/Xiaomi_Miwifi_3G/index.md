@@ -6,30 +6,20 @@ comment: true
 zone: Asia/Shanghai
 tags:
 - 教程
-- 路由器教程
-- OpenWrt/LEDE
 - OpenWrt
 - Pandavan
-- PandoraBox
 categories:
 - 教程
 - 路由器
 ---
-生命不息，折腾不止。
 
-家里的路由器又坏了（强行狡辩
+家里的路由器又坏了（狡辩
 
 <!--more-->
 
 之前有写过斐讯k2和小米路由器mini的教程，但是现在回看之前写完的教程要么通篇没有逻辑要么缺东少西。于是就有了这篇文章。
 
-我尽可能的写的详细一点以便没有经验的小白也能看懂。
-
 <div class="alert-green">最后更新日期：2019.8.26</div>
-
-<div class="alert-red">温馨提示：刷成砖了本人一概不负责</div>
-
-<!-- <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=86 src="//music.163.com/outchain/player?type=2&id=31108216&auto=0&height=66"></iframe> -->
 
 <!--aplayer
 {
@@ -45,15 +35,15 @@ categories:
 
 你至少需要以下工具：
 
-* 路由器本体（废话
-* 一个已格式化为FAT/FAT32格式的U盘用来刷开发者固件和ssh激活工具
+* 路由器本体（
+* 一个格式化为FAT/FAT32格式的U盘用来刷开发者固件和ssh激活工具
 * 一根可以捅‘Reset’钮的针（取卡针或牙签等
-* 可以通过ssh连接到路由器的软件（例如：[putty](https://putty.org)）
-* [小米路由器客户端](http://www1.miwifi.com/miwifi_download.html)，用来绑定你的小米账号
+* Windows用户需要一个ssh连接软件（例如：[putty](https://putty.org)）
+* [小米路由器客户端](http://www1.miwifi.com/miwifi_download.html)，用来绑定小米账号
 
 # 开启路由器SSH权限
 
-1. 在[MiWiFi下载页面](http://www1.miwifi.com/miwifi_download.html)下载所需要的路由器开发者固件,命名为`miwifi.bin`。（ROM -> ROM for R3G开发版）
+1. 在[MiWiFi下载页面](http://www1.miwifi.com/miwifi_download.html)（ROM -> ROM for R3G开发版）下载所需要的路由器开发者固件,命名为`miwifi.bin`。
 2. 路由器断电，将下载好的开发者固件放入U盘插入路由器USB接口，捅住reset扭接上电源后待指示灯为黄色闪烁时松开，数分钟后路由器会自动重启，此过程不要乱动路由器。
 3. 小米路由器客户端登陆小米账号绑定路由器设备，此过程需要路由器联网。
 4. [MiWiFi开放平台](http://www1.miwifi.com/miwifi_open.html)登陆小米账号下载ssh激活工具命名为`miwifi_ssh.bin`并记下root密码。
