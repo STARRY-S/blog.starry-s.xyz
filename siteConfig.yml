@@ -1,6 +1,6 @@
 title: STARRY-S' Blog
 subtitle:
-description: 
+description:
 author: STARRY-S
 email: hx916584160@gmail.com
 language: zh-Hans
@@ -60,6 +60,12 @@ search:
     # - search/1.json
     # - search/1.json
   page: search/index.html
+
+aplayer:
+  enable: true
+  cdn:
+    style: "https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"
+    script: "https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"
 
 feed:
   enable: true
