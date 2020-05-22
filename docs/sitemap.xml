@@ -2,106 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.starry-s.xyz/posts/Hello-2020/</loc>
-    
-    <lastmod>2020-04-07T03:15:08.808Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.starry-s.xyz/posts/neteaste_music_list/</loc>
-    
-    <lastmod>2020-01-28T16:54:21.488Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.starry-s.xyz/posts/mc-server/</loc>
-    
-    <lastmod>2020-04-07T03:20:12.885Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.starry-s.xyz/posts/Shanghai-2/</loc>
-    
-    <lastmod>2020-04-07T03:29:01.490Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.starry-s.xyz/posts/Xiaomi_Miwifi_3G/</loc>
-    
-    <lastmod>2020-04-07T03:32:53.019Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.starry-s.xyz/posts/hmcl-minecraft/</loc>
-    
-    <lastmod>2020-04-07T03:33:43.058Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.starry-s.xyz/posts/Hello-2018/</loc>
-    
-    <lastmod>2020-01-27T15:18:16.404Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.starry-s.xyz/posts/psg1218-openwrt/</loc>
-    
-    <lastmod>2020-01-28T17:04:36.834Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.starry-s.xyz/posts/Spring/</loc>
-    
-    <lastmod>2020-01-28T17:12:36.450Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.starry-s.xyz/posts/xiaomi-mini-fan-2/</loc>
-    
-    <lastmod>2020-01-27T14:17:37.963Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.starry-s.xyz/posts/xiaomi-mini-fan-1/</loc>
-    
-    <lastmod>2020-01-28T17:18:57.225Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.starry-s.xyz/posts/hello-world/</loc>
     
-    <lastmod>2020-01-28T17:28:28.759Z</lastmod>
+    <lastmod>2020-05-22T18:57:59.606Z</lastmod>
     
   </url>
   
   
    <url>
-     <loc>https://blog.starry-s.xyz/about/</loc>
+     <loc>https://blog.starry-s.xyz/404.html</loc>
      
-     <lastmod>2020-04-06T17:04:53.268Z</lastmod>
+     <lastmod>2020-05-22T18:23:48.843Z</lastmod>
      
    </url>
    
    <url>
-     <loc>https://blog.starry-s.xyz/categories/</loc>
+     <loc>https://blog.starry-s.xyz/about/</loc>
+     
+     <lastmod>2020-05-22T18:54:32.306Z</lastmod>
+     
+   </url>
+   
+   <url>
+     <loc>https://blog.starry-s.xyz/archives/</loc>
      
      <lastmod>2020-01-27T14:17:37.940Z</lastmod>
      
    </url>
    
    <url>
-     <loc>https://blog.starry-s.xyz/archives/</loc>
+     <loc>https://blog.starry-s.xyz/categories/</loc>
      
      <lastmod>2020-01-27T14:17:37.940Z</lastmod>
      
@@ -128,11 +58,6 @@
     </url>
     
     <url>
-      <loc>https://blog.starry-s.xyz/index-2.html</loc>
-      
-    </url>
-    
-    <url>
       <loc>https://blog.starry-s.xyz/archives/</loc>
       
     </url>
@@ -143,167 +68,12 @@
     </url>
     
     <url>
-      <loc>https://blog.starry-s.xyz/categories/%E6%91%84%E5%BD%B1/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/categories/%E6%91%84%E5%BD%B1/Spring/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/categories/%E6%91%84%E5%BD%B1/Spring/%E9%AB%98%E4%B8%AD/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/Minecraft/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/%E8%B7%AF%E7%94%B1%E5%99%A8%E6%94%B9%E8%A3%85%E6%95%A3%E7%83%AD/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/categories/%E6%97%A5%E5%B8%B8/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/categories/%E6%97%A5%E5%B8%B8/python/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
-      
-    </url>
-    
-    <url>
       <loc>https://blog.starry-s.xyz/categories/</loc>
       
     </url>
     
     <url>
-      <loc>https://blog.starry-s.xyz/tags/Blog/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/tags/Flowers/</loc>
-      
-    </url>
-    
-    <url>
       <loc>https://blog.starry-s.xyz/tags/Hello%20World/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/tags/LEDE/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/tags/Minecraft/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/tags/OpenWrt/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/tags/OpenWrt/LEDE/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/tags/Pandavan/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/tags/python/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/tags/Spring/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/tags/Trip/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/tags/walkman/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/tags/%E6%91%84%E5%BD%B1/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/tags/%E6%94%B9%E8%A3%85/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/tags/%E6%95%99%E7%A8%8B/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/tags/%E6%96%90%E8%AE%AFk2/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/tags/%E6%97%A5%E5%B8%B8/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/tags/%E7%90%90%E4%BA%8B/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/tags/%E8%B7%AF%E7%94%B1%E5%99%A8%E6%95%99%E7%A8%8B/</loc>
-      
-    </url>
-    
-    <url>
-      <loc>https://blog.starry-s.xyz/tags/%E9%9F%B3%E4%B9%90/</loc>
       
     </url>
     
