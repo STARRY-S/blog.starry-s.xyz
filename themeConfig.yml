@@ -140,7 +140,7 @@ blogroll:
       icon: <i class="fas fa-link"></i>
 
 comment:
-  enable: true
+  enable: false
   issue:
     enable: true
     user: STARRY-S

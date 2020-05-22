@@ -7,6 +7,7 @@ tags:
 - Hello World
 categories:
 - Hello World
+comment: false
 ---
 !["Hello World"](images/image.jpg "Hello World")
 

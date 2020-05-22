@@ -4,6 +4,7 @@ createdDate: 2016-08-22 13:25:30
 layout: about
 zone: Asia/Shanghai
 tags: about
+comment: false
 ---
 
 !["West Lake"](images/westlake.jpg "West Lake")
