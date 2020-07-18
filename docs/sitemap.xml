@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.starry-s.xyz/posts/hello-world/</loc>
+    <loc>https://blog.starry-s.me/posts/hello-world/</loc>
     
     <lastmod>2020-07-18T04:24:45.536Z</lastmod>
     
@@ -10,42 +10,42 @@
   
   
    <url>
-     <loc>https://blog.starry-s.xyz/404.html</loc>
+     <loc>https://blog.starry-s.me/404.html</loc>
      
      <lastmod>2020-05-22T18:23:48.843Z</lastmod>
      
    </url>
    
    <url>
-     <loc>https://blog.starry-s.xyz/about/</loc>
+     <loc>https://blog.starry-s.me/about/</loc>
      
      <lastmod>2020-07-18T04:25:18.827Z</lastmod>
      
    </url>
    
    <url>
-     <loc>https://blog.starry-s.xyz/archives/</loc>
+     <loc>https://blog.starry-s.me/archives/</loc>
      
      <lastmod>2020-01-27T14:17:37.940Z</lastmod>
      
    </url>
    
    <url>
-     <loc>https://blog.starry-s.xyz/categories/</loc>
+     <loc>https://blog.starry-s.me/categories/</loc>
      
      <lastmod>2020-01-27T14:17:37.940Z</lastmod>
      
    </url>
    
    <url>
-     <loc>https://blog.starry-s.xyz/</loc>
+     <loc>https://blog.starry-s.me/</loc>
      
      <lastmod>2020-01-27T14:17:37.970Z</lastmod>
      
    </url>
    
    <url>
-     <loc>https://blog.starry-s.xyz/tags/</loc>
+     <loc>https://blog.starry-s.me/tags/</loc>
      
      <lastmod>2020-01-27T14:17:37.970Z</lastmod>
      
@@ -53,52 +53,52 @@
    
    
     <url>
-      <loc>https://blog.starry-s.xyz/</loc>
+      <loc>https://blog.starry-s.me/</loc>
       
     </url>
     
     <url>
-      <loc>https://blog.starry-s.xyz/archives/</loc>
+      <loc>https://blog.starry-s.me/archives/</loc>
       
     </url>
     
     <url>
-      <loc>https://blog.starry-s.xyz/categories/Hello%20World/</loc>
+      <loc>https://blog.starry-s.me/categories/Hello%20World/</loc>
       
     </url>
     
     <url>
-      <loc>https://blog.starry-s.xyz/categories/</loc>
+      <loc>https://blog.starry-s.me/categories/</loc>
       
     </url>
     
     <url>
-      <loc>https://blog.starry-s.xyz/tags/Hello%20World/</loc>
+      <loc>https://blog.starry-s.me/tags/Hello%20World/</loc>
       
     </url>
     
     <url>
-      <loc>https://blog.starry-s.xyz/tags/</loc>
+      <loc>https://blog.starry-s.me/tags/</loc>
       
     </url>
     
     <url>
-      <loc>https://blog.starry-s.xyz/atom.xml</loc>
+      <loc>https://blog.starry-s.me/atom.xml</loc>
       
     </url>
     
     <url>
-      <loc>https://blog.starry-s.xyz/search/</loc>
+      <loc>https://blog.starry-s.me/search/</loc>
       
     </url>
     
     <url>
-      <loc>https://blog.starry-s.xyz/search/1.json</loc>
+      <loc>https://blog.starry-s.me/search/1.json</loc>
       
     </url>
     
     <url>
-      <loc>https://blog.starry-s.xyz/sitemap.xml</loc>
+      <loc>https://blog.starry-s.me/sitemap.xml</loc>
       
     </url>
     

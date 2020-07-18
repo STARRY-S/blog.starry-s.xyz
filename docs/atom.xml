@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>STARRY-S' Blog</title>
-  <icon>https://blog.starry-s.xyz/images/avatar.jpg</icon>
+  <icon>https://blog.starry-s.me/images/avatar.jpg</icon>
   
-  <link href="https://blog.starry-s.xyz/atom.xml" rel="self" />
+  <link href="https://blog.starry-s.me/atom.xml" rel="self" />
   
-  <link href="https://blog.starry-s.xyz/" />
+  <link href="https://blog.starry-s.me/" />
   
   <updated>2020-07-18T04:24:45.536Z</updated>
   
-  <id>https://blog.starry-s.xyz/</id>
+  <id>https://blog.starry-s.me/</id>
   
   <author>
     <name>STARRY-S</name>
@@ -20,8 +20,8 @@
   
   <entry>
     <title>Everything is based on "Hello World".</title>
-    <link href="https://blog.starry-s.xyz/posts/hello-world/" />
-    <id>https://blog.starry-s.xyz/posts/hello-world/</id>
+    <link href="https://blog.starry-s.me/posts/hello-world/" />
+    <id>https://blog.starry-s.me/posts/hello-world/</id>
     <published>2016-08-22T06:22:54.000Z</published>
     <updated>2020-07-18T04:24:45.536Z</updated>
     
@@ -31,10 +31,10 @@
     
     </summary>
     
-    <category term="Hello World" scheme="https://blog.starry-s.xyz/categories/Hello%20World/" />
+    <category term="Hello World" scheme="https://blog.starry-s.me/categories/Hello%20World/" />
     
     
-    <category term="Hello World" scheme="https://blog.starry-s.xyz/tags/Hello%20World/" />
+    <category term="Hello World" scheme="https://blog.starry-s.me/tags/Hello%20World/" />
     
   </entry>
   

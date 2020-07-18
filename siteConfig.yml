@@ -6,7 +6,7 @@ email: hx916584160@gmail.com
 language: zh-Hans
 
 # Those makes up your site's full URL.
-baseURL: https://blog.starry-s.xyz
+baseURL: https://blog.starry-s.me
 rootDir: /
 
 # Those paths exists on your disk.
