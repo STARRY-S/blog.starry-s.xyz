@@ -10,13 +10,6 @@
   
   
    <url>
-     <loc>https://blog.starry-s.me/404.html</loc>
-     
-     <lastmod>2020-05-22T18:23:48.843Z</lastmod>
-     
-   </url>
-   
-   <url>
      <loc>https://blog.starry-s.me/about/</loc>
      
      <lastmod>2020-07-18T04:25:18.827Z</lastmod>
@@ -34,6 +27,13 @@
      <loc>https://blog.starry-s.me/categories/</loc>
      
      <lastmod>2020-01-27T14:17:37.940Z</lastmod>
+     
+   </url>
+   
+   <url>
+     <loc>https://blog.starry-s.me/404.html</loc>
+     
+     <lastmod>2020-05-22T18:23:48.843Z</lastmod>
      
    </url>
    
