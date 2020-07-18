@@ -7,7 +7,7 @@
   
   <link href="https://blog.starry-s.xyz/" />
   
-  <updated>2020-05-22T19:03:10.098Z</updated>
+  <updated>2020-07-18T04:24:45.536Z</updated>
   
   <id>https://blog.starry-s.xyz/</id>
   
@@ -23,11 +23,11 @@
     <link href="https://blog.starry-s.xyz/posts/hello-world/" />
     <id>https://blog.starry-s.xyz/posts/hello-world/</id>
     <published>2016-08-22T06:22:54.000Z</published>
-    <updated>2020-05-22T19:03:10.098Z</updated>
+    <updated>2020-07-18T04:24:45.536Z</updated>
     
     <summary type="html">
     
-    <![CDATA[<link href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css" rel="stylesheet"><script src= "https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script><p><img src="/posts/hello-world/images/image.jpg" alt="&quot;Hello World&quot;" title="Hello World"></p>                     <div id="aplayer0"></div>                    <script>                    const ap0 = new APlayer ({                        container: document.getElementById("aplayer0"),                        theme: "#33363b",                        fixed: false,                        listFolded: false,                        listMaxHeight: false,                        lrcType: false,                        mini: false,                        volume: 0.7,                        order: "list",                        loop: "all",                        autoplay: false,                        audio: [{                            name: "遊園施設",                            artist: "帆足圭吾",                            url: "https://music.starry-s.xyz/music/540b_075e_0453_cae9f8037d04c81f84993977b01792ec.m4a",                            cover: "https://music.starry-s.xyz/music/cover/18710389371705314.jpg",                            lrc: "",                            theme: "#67B577"                        }]                    });                    </script> ]]>
+    <![CDATA[<link href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css" rel="stylesheet"><script src= "https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script><p><img src="/posts/hello-world/images/image.jpg" alt="&quot;Hello World&quot;" title="Hello World"></p>                     <div id="aplayer0"></div>                    <script>                    const ap0 = new APlayer ({                        container: document.getElementById("aplayer0"),                        theme: "#33363b",                        fixed: false,                        listFolded: false,                        listMaxHeight: false,                        lrcType: false,                        mini: false,                        volume: 0.7,                        order: "list",                        loop: "all",                        autoplay: false,                        audio: [{                            name: "遊園施設",                            artist: "帆足圭吾",                            url: "https://music.starry-s.me/music/540b_075e_0453_cae9f8037d04c81f84993977b01792ec.m4a",                            cover: "https://music.starry-s.me/music/cover/18710389371705314.jpg",                            lrc: "",                            theme: "#67B577"                        }]                    });                    </script> ]]>
     
     </summary>
     
