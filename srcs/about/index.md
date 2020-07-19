@@ -4,7 +4,7 @@ createdDate: 2016-08-22 13:25:30
 layout: about
 zone: Asia/Shanghai
 tags: about
-comment: false
+comment: true
 ---
 
 !["West Lake"](images/westlake.jpg "West Lake")
@@ -19,8 +19,6 @@ comment: false
     "cover": "https://music.starry-s.me/music/cover/109951163092751719.jpg"
 }
 -->
-
-没有弃坑，但短时间内应该不会再更新博客了。
 
 # About.
 

@@ -7,7 +7,7 @@
   
   <link href="https://blog.starry-s.me/" />
   
-  <updated>2020-07-18T04:24:45.536Z</updated>
+  <updated>2020-07-19T13:04:50.372Z</updated>
   
   <id>https://blog.starry-s.me/</id>
   
@@ -19,11 +19,33 @@
   <generator uri="https://github.com/AlynxZhou/hikaru/">Hikaru</generator>
   
   <entry>
+    <title>惠普光影精灵4在Arch Linux下使用Optimus Manager配置双显卡</title>
+    <link href="https://blog.starry-s.me/posts/archlinux-pavilion-gaming-laptop/" />
+    <id>https://blog.starry-s.me/posts/archlinux-pavilion-gaming-laptop/</id>
+    <published>2020-07-19T07:29:57.000Z</published>
+    <updated>2020-07-19T13:04:50.372Z</updated>
+    
+    <summary type="html">
+    
+    <![CDATA[<p>自从高中毕业至今这台笔记本用了将近两年，已经记不清当初为什么买了这台笔记本，刚买来电脑第一次装Arch Linux时遇到了一些坑，不过大多数的问题Google折腾一会或随着后续的软件更新基本上就都解决了，唯独配置双显卡这个问题在用了两年后才算是找到了比较满意的解决方法（大概是），尽管现在这电脑已经停产了，就算有人买了这台电脑也不一定会拿他装Arch Linux，不过我还是打算把这个问题的解决过程记录一下，以备我后续重装系统时有个参考，<del>谁叫我当初脑子抽风买了这个电脑了呢</del>。</p>]]>
+    
+    </summary>
+    
+    <category term="Linux" scheme="https://blog.starry-s.me/categories/Linux/" />
+    
+    
+    <category term="Arch Linux" scheme="https://blog.starry-s.me/tags/Arch%20Linux/" />
+    
+    <category term="NVIDIA Optimus" scheme="https://blog.starry-s.me/tags/NVIDIA%20Optimus/" />
+    
+  </entry>
+  
+  <entry>
     <title>Everything is based on "Hello World".</title>
     <link href="https://blog.starry-s.me/posts/hello-world/" />
     <id>https://blog.starry-s.me/posts/hello-world/</id>
     <published>2016-08-22T06:22:54.000Z</published>
-    <updated>2020-07-18T04:24:45.536Z</updated>
+    <updated>2020-07-19T13:04:51.445Z</updated>
     
     <summary type="html">
     

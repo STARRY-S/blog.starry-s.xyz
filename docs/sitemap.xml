@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.starry-s.me/posts/archlinux-pavilion-gaming-laptop/</loc>
+    
+    <lastmod>2020-07-19T13:04:50.372Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.starry-s.me/posts/hello-world/</loc>
     
-    <lastmod>2020-07-18T04:24:45.536Z</lastmod>
+    <lastmod>2020-07-19T13:04:51.445Z</lastmod>
     
   </url>
   
@@ -19,7 +26,7 @@
    <url>
      <loc>https://blog.starry-s.me/about/</loc>
      
-     <lastmod>2020-07-18T04:25:18.827Z</lastmod>
+     <lastmod>2020-07-19T13:07:07.351Z</lastmod>
      
    </url>
    
@@ -68,12 +75,27 @@
     </url>
     
     <url>
+      <loc>https://blog.starry-s.me/categories/Linux/</loc>
+      
+    </url>
+    
+    <url>
       <loc>https://blog.starry-s.me/categories/</loc>
       
     </url>
     
     <url>
+      <loc>https://blog.starry-s.me/tags/Arch%20Linux/</loc>
+      
+    </url>
+    
+    <url>
       <loc>https://blog.starry-s.me/tags/Hello%20World/</loc>
+      
+    </url>
+    
+    <url>
+      <loc>https://blog.starry-s.me/tags/NVIDIA%20Optimus/</loc>
       
     </url>
     

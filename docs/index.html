@@ -69,6 +69,8 @@
     <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
     <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
     
+    <script defer type="text/javascript" src="/js/busuanzi.pure.mini.js"></script>
+    
     
     <script type="text/javascript">
       documentReady(function () {
@@ -165,6 +167,58 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/posts/archlinux-pavilion-gaming-laptop/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="STARRY-S">
+        <meta itemprop="description" content="New beginning, <br/>new thinking.">
+        <meta itemprop="image" content="/images/avatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="STARRY-S' Blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/posts/archlinux-pavilion-gaming-laptop/" itemprop="url">惠普光影精灵4在Arch Linux下使用Optimus Manager配置双显卡</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date meta-block">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-07-19T07:29:57.000Z">2020-07-19 Sun 15:29:57 CST</time></span>
+        </span>
+        
+        
+        <span class="post-categories meta-block">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+        </span>
+        
+        
+        
+        <span class="post-comment-count meta-block">
+          <i class="far fa-comments"></i><span><a href="/posts/archlinux-pavilion-gaming-laptop/#comment-results" itemprop="discussionUrl"><span class="post-comment-count comment-count" data-comment-identifier="惠普光影精灵4在Arch Linux下使用Optimus Manager配置双显卡" itemprop="commentCount">阅读评论</span></a></span>
+        </span>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" id="scrollspy-container" itemprop="articleBody">
+      
+      <p>自从高中毕业至今这台笔记本用了将近两年，已经记不清当初为什么买了这台笔记本，刚买来电脑第一次装Arch Linux时遇到了一些坑，不过大多数的问题Google折腾一会或随着后续的软件更新基本上就都解决了，唯独配置双显卡这个问题在用了两年后才算是找到了比较满意的解决方法（大概是），尽管现在这电脑已经停产了，就算有人买了这台电脑也不一定会拿他装Arch Linux，不过我还是打算把这个问题的解决过程记录一下，以备我后续重装系统时有个参考，<del>谁叫我当初脑子抽风买了这个电脑了呢</del>。</p>
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        <a class="post-tag button" href="/tags/Arch%20Linux/" rel="tag"><i class="fas fa-tag"></i>Arch Linux</a><a class="post-tag button" href="/tags/NVIDIA%20Optimus/" rel="tag"><i class="fas fa-tag"></i>NVIDIA Optimus</a>
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
       <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/posts/hello-world/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="STARRY-S">
@@ -189,6 +243,12 @@
         <span class="post-categories meta-block">
           
           <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Hello%20World/" itemprop="url" rel="index"><span itemprop="name">Hello World</span></a></span>
+        </span>
+        
+        
+        
+        <span class="post-comment-count meta-block">
+          <i class="far fa-comments"></i><span><a href="/posts/hello-world/#comment-results" itemprop="discussionUrl"><span class="post-comment-count comment-count" data-comment-identifier="Everything is based on "Hello World"." itemprop="commentCount">阅读评论</span></a></span>
         </span>
         
         
@@ -255,6 +315,31 @@
 
   
   
+
+
+
+  
+  
+  
+  
+<div class="comment" id="comment">
+  
+  <script defer type="text/javascript" src="/js/comment.js"></script>
+  <script type="text/javascript">
+    documentReady(function () {
+      loadCommentCount({
+        "user": "STARRY-S",
+        "repo": "Blog",
+        "containerClass": "comment-count"
+      });
+    });
+  </script>
+  
+  
+</div>
+
+
+  
 </div>
 
           </div>
@@ -282,21 +367,21 @@
       
       <div class="archives-count count-block">
         <div class="site-count-title">归档</div>
-        <div><a href="/archives/">1</a></div>
+        <div><a href="/archives/">2</a></div>
       </div>
       
       
       
       <div class="categories-count count-block">
         <div class="site-count-title">分类</div>
-        <div><a href="/categories/">1</a></div>
+        <div><a href="/categories/">2</a></div>
       </div>
       
       
       
       <div class="tags-count count-block">
         <div class="site-count-title">标签</div>
-        <div><a href="/tags/">1</a></div>
+        <div><a href="/tags/">3</a></div>
       </div>
       
       
@@ -359,6 +444,10 @@
           <span class="author"><i class="far fa-edit"></i>STARRY-S</span><span class="years"><i class="far fa-copyright"></i><span id="years-text">2016</span></span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noreferrer noopener">BY-NC-ND 4.0</a></span>
         </div>
         
+        <div class="busuanzi">
+          <span id="busuanzi_container_site_pv"><i class="fas fa-eye" aria-label="站点点击量" aria-hidden="false"></i><span id="busuanzi_value_site_pv"></span></span><span id="busuanzi_container_site_uv"><i class="fas fa-user" aria-label="站点用户数" aria-hidden="false"></i><span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv"><i class="fas fa-file-alt"></i><span id="busuanzi_value_page_pv" aria-label="页面点击量" aria-hidden="false"></span></span>
+        </div>
+        
       </div>
       <div class="footer-right">
         <div class="custom-info">
@@ -377,4 +466,4 @@
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.2.9 at 2020-07-18 Sat 16:44:36 CST. -->
+<!-- Page built by Hikaru v1.2.9 at 2020-07-19 Sun 21:07:51 CST. -->

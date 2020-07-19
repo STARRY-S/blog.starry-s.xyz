@@ -75,7 +75,7 @@ sidebar: right
 # Animation in Home, Archive, Category and Tag.
 animate: false
 
-busuanzi: false
+busuanzi: true
 
 # If you want ARIA generate excerpt, set it to the length you want. If you don't, leave it blank.
 # Recomend to place `<!--more-->` to where you want to stop excerpt in content instead of use this option.
@@ -140,11 +140,11 @@ blogroll:
       icon: <i class="fas fa-link"></i>
 
 comment:
-  enable: false
+  enable: true
   issue:
     enable: true
     user: STARRY-S
-    repo: blog.starry-s.xyz
+    repo: Blog
   disqusShortName:
   valine:
     enable: false
@@ -161,8 +161,8 @@ comment:
     avatarForce: false
 
 reward:
-  enable: false
-  message: 坚持原创技术分享，您的支持是我前进的动力！
-  # weChatPayQRCode: images/WeChatPay.png
-  # aliPayQRCode: images/AliPay.png
+  enable: true
+  message: Support me.
+  weChatPayQRCode: images/wechatpay.jpg
+  aliPayQRCode: images/alipay.jpg
   # bitCoinQRCode: images/BitCoin.png
