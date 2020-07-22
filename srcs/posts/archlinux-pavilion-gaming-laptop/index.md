@@ -203,7 +203,9 @@ options=overclocking
 其他用法参见[Usage](https://github.com/Askannz/optimus-manager#usage)。
 
 注意：
+
  - 切换显卡的过程中会自动注销登录，所以记得**保存并关掉电脑正在运行的程序**。
+
  - 你可以在配置文件中修改`auto_logout=false`禁止自动注销以手动注销切换显卡。
 
 
