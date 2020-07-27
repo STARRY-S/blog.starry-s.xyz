@@ -30,13 +30,17 @@ favicon:
 
 # Must be an array.
 keywords:
+  - Arch Linux
+  - Linux
   - Life
+  - Music
   - ARIA
   - Hikaru
+  - STARRY-S
 
 # https://creativecommons.org/licenses/
 # by | by-sa | by-nd | by-nc | by-nc-sa | by-nc-nd
-creativeCommons: by-nc-nd
+creativeCommons: ny-nc-nd
 
 # Available: atom-one-dark | atom-one-light | solarized-dark | solarized-light
 highlight: atom-one-dark
@@ -80,7 +84,7 @@ busuanzi: true
 # If you want ARIA generate excerpt, set it to the length you want. If you don't, leave it blank.
 # Recomend to place `<!--more-->` to where you want to stop excerpt in content instead of use this option.
 # Example: `autoExcerpt: 200`, use first 200 chars in post content as excerpt.
-autoExcerpt:
+autoExcerpt: 150
 
 # If you want to use MathJax, first fill a CDN link like `cdn: https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-MML-AM_CHTML`, then set `enable: true`.
 # And set front-matter `mathjax: true` to the page you want to use it.
@@ -127,7 +131,10 @@ social:
       icon: <i class="fab fa-github"></i>
     - name: Telegram
       link: https://t.me/STARRY-S
-      icon: <i class="fab fa-telegram"></i>
+      icon: <i class="fab fa-weibo"></i>
+    - name: Bilibili
+      link: https://space.bilibili.com/19189337
+      icon: <i class="fas fa-video"></i>
 
 blogroll:
   enable: true
@@ -136,8 +143,11 @@ blogroll:
       link: https://alynx.one/
       icon: <i class="fas fa-link"></i>
     - name: LGiki's Blog
-      link: https://lgiki.net
+      link: https://lgiki.net/
       icon: <i class="fas fa-link"></i>
+    # - name: Nunjucks
+    #   link: https://mozilla.github.io/nunjucks/
+    #   icon: <i class="fas fa-link"></i>
 
 comment:
   enable: true
@@ -162,7 +172,7 @@ comment:
 
 reward:
   enable: true
-  message: Support me.
+  message: Support Me！
   weChatPayQRCode: images/wechatpay.jpg
   aliPayQRCode: images/alipay.jpg
   # bitCoinQRCode: images/BitCoin.png

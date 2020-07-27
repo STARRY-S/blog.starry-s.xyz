@@ -23,7 +23,6 @@ tagDir: tags
 # Those paths are under `srcDir`.
 skipRender:
   - README.md
-  - CNAME
 
 perPage:
   index: 10
@@ -57,8 +56,8 @@ search:
   enable: true
   path:
     - search/1.json
-    # - search/1.json
-    # - search/1.json
+    - search/2.json
+    - search/3.json
   page: search/index.html
 
 aplayer:
@@ -72,7 +71,7 @@ feed:
   path: atom.xml
   limit: 20
   hub:
-  content: false
+  content: true
   contentLimit: 140
 
 sitemap:
