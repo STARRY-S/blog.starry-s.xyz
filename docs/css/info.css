@@ -4,8 +4,8 @@ div.info {
 div.info img.author-avatar {
   width: 90%;
   display: block;
-  margin: 1rem auto;
-  border: 0.3rem solid #fff;
+  margin: 1em auto;
+  border: 0.3em solid #fff;
   border-radius: 50%;
   transition: box-shadow 0.3s ease-in-out, transform 1s ease-in-out;
 }
@@ -15,30 +15,34 @@ div.info img.author-avatar:hover {
 }
 div.info h1.author-name {
   color: #26272b;
+  color: var(--color-author-name-font);
   font-size: 1.8rem;
   font-weight: normal;
-  margin: 0.5rem 0;
+  margin: 0.5em 0;
 }
 div.info h2.author-description {
   color: #444;
+  color: var(--color-author-description-font);
   font-size: 1.2rem;
   font-weight: normal;
-  margin: 0.5rem 0;
+  margin: 0.5em 0;
 }
 div.info div.site-count {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   align-items: stretch;
   flex-wrap: nowrap;
   width: 100%;
-  margin: 1rem 0;
+  margin: 1em 0;
   text-align: center;
 }
 div.info div.site-count div.count-block {
   flex: 1 1 auto;
-  border-left: 0.05rem #666 solid;
-  border-right: 0.05rem #666 solid;
+  border-left: 0.05em #666 solid;
+  border-left: 0.05em var(--color-quote-font) solid;
+  border-right: 0.05em #666 solid;
+  border-right: 0.05em var(--color-quote-font) solid;
 }
 div.info div.site-count div.count-block:first-child {
   border-left: none;
@@ -51,12 +55,11 @@ div.info div.site-count div.site-count-title {
   font-size: 1.2rem;
 }
 div.info div.rss {
-  margin: 1rem 0;
+  margin: 1em 0;
   padding: 0;
 }
 div.info div.rss a.rss-link {
   display: block;
-  text-align: center;
   font-size: 1.5rem;
   color: #fff;
   background: #9f1313;

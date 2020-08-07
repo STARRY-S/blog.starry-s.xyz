@@ -1,8 +1,9 @@
 div.reward {
-  margin: 1rem auto;
+  margin: 1em auto;
   width: 90%;
   text-align: center;
-  color: #444;
+  color: #666;
+  color: var(--color-reward-font);
 }
 div.reward div.qr {
   text-align: center;
@@ -12,7 +13,7 @@ div.reward div.qr div {
   display: inline-block;
 }
 div.reward div.qr div img {
-  width: 10rem;
+  width: 10em;
   margin: 0 auto;
   display: block;
 }
@@ -40,6 +41,7 @@ article.post header.post-header h1.post-title a.post-title-link {
   text-decoration: none;
   border-bottom: none;
   color: #26272b;
+  color: var(--color-font);
 }
 article.post header.post-header h1.post-title a.post-title-link::after {
   content: " ";
@@ -48,10 +50,11 @@ article.post header.post-header h1.post-title a.post-title-link::after {
   height: 0.1em;
   bottom: 0;
   left: 0;
+  transition: transform 0.3s ease-in-out;
   background: #26272b;
+  background: var(--color-font);
   visibility: hidden;
   transform: scaleX(0);
-  transition: 0.3s ease-in-out;
 }
 article.post header.post-header h1.post-title a.post-title-link:hover::after {
   visibility: visible;
@@ -66,11 +69,11 @@ article.post header.post-header div.post-meta span.meta-block {
 }
 article.post main.post-main a.header-link,
 article.post main.post-main a.headerlink {
-  border: none;
+  border-bottom: none;
 }
 article.post main.post-main a.header-link:hover,
 article.post main.post-main a.headerlink:hover {
-  border: none;
+  border-bottom: none;
 }
 article.post main.post-main a.header-link:active,
 article.post main.post-main a.headerlink:active {

@@ -1,14 +1,20 @@
 div.comment div.comment-results {
-  padding: 1rem;
+  padding: 1em;
+}
+div.comment div.comment-results div.sk-wave div.sk-rect {
+  background: #666;
+  background: var(--color-comment-sk-wave-background);
 }
 div.comment div.comment-results div.comment-fail {
   text-align: center;
-  color: #444;
+  color: #666;
+  color: var(--color-comment-font);
 }
 div.comment div.comment-results header.comments-header {
   padding: 0.5em;
   text-align: center;
-  color: #444;
+  color: #666;
+  color: var(--color-comment-font);
 }
 div.comment div.comment-results main.comments-main div.comment {
   display: flex;
@@ -16,7 +22,7 @@ div.comment div.comment-results main.comments-main div.comment {
   flex-wrap: nowrap;
   justify-content: stretch;
   align-items: start;
-  margin: 0.5rem 0;
+  margin: 0.5em 0;
 }
 div.comment div.comment-results main.comments-main div.comment div.comment-avatar-container {
   flex: 1 1 auto;
@@ -24,7 +30,7 @@ div.comment div.comment-results main.comments-main div.comment div.comment-avata
 }
 div.comment div.comment-results main.comments-main div.comment div.comment-avatar-container img.comment-avatar {
   width: 70%;
-  border: 0.1rem solid #fff;
+  border: 0.1em solid #fff;
   border-radius: 50%;
   transition: box-shadow 0.3s ease-in-out, transform 1s ease-in-out;
 }
@@ -35,7 +41,6 @@ div.comment div.comment-results main.comments-main div.comment div.comment-avata
 div.comment div.comment-results main.comments-main div.comment div.comment-body-container {
   flex: 9 9 auto;
   width: 90%;
-  transition: 0.3s ease-in-out;
   overflow: hidden;
   border-radius: 0.3em;
 }
@@ -50,7 +55,7 @@ div.comment div.comment-results main.comments-main div.comment div.comment-body-
   color: #ddd;
   text-decoration: none;
   border-bottom: 0.05em dotted #ddd;
-  transition: 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
 }
 div.comment div.comment-results main.comments-main div.comment div.comment-body-container div.comment-info a:hover {
   color: #fff;
@@ -81,6 +86,7 @@ div.comment div.comment-results main.comments-main div.comment div.comment-body-
 div.comment div.comment-results main.comments-main div.comment div.comment-body-container div.comment-content {
   padding: 0.5em 1em;
   background: #fff;
+  background: var(--color-comment-content-background);
 }
 div.comment div.comment-results main.comments-main div.comment div.comment-body-container div.comment-content pre {
   overflow: auto;
@@ -97,7 +103,9 @@ div.comment div.comment-results main.comments-main div.comment div.comment-body-
 div.comment div.comment-results footer.comments-footer {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: center;
+  align-items: center;
 }
 div.comment div.comment-results footer.comments-footer a.comment-send {
   padding: 0.3em 1em;

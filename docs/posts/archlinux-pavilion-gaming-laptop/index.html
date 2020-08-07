@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html data-theme="light" lang="zh-Hans">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -66,14 +66,60 @@
     <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
     <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
     <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-video.min.js"></script>
     <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
-    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/fa-solid.min.js"></script>
+    <script defer type="text/javascript" src="/js/fa-brands.min.js"></script>
+    <script defer type="text/javascript" src="/js/fa-regular.min.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome.min.js"></script>
     
     <script defer type="text/javascript" src="/js/busuanzi.pure.mini.js"></script>
     
     
     <script type="text/javascript">
+      // Set theme before page rendering.
+      // Check user's choice from localStorage.
+      var theme = localStorage.getItem("theme");
+      var preferenceQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      // theme might be null here.
+      if (theme !== "dark" && theme !== "light") {
+        // Init from user's system settings if no choice.
+        theme = preferenceQuery.matches ? "dark" : "light";
+      }
+      // Yes, it looks I can modify documentElement before ready!
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
       documentReady(function () {
+        var themeToggle = document.getElementById("theme-toggle");
+        var setThemeToggle = function (themeToggle, theme) {
+          themeToggle.innerHTML = theme === "dark"
+            ? "<i class=\"far fa-moon\" aria-label=\"accessibility.themeDark\"></i>"
+            : "<i class=\"far fa-sun\" aria-label=\"accessibility.themeLight\"></i>";
+        };
+        // Update theme toggle content.
+        setThemeToggle(themeToggle, theme);
+        // User changed system settings, update.
+        preferenceQuery.addListener(function (event) {
+          theme = event.matches ? "dark" : "light";
+          setThemeToggle(themeToggle, theme);
+          document.documentElement.setAttribute("data-theme", theme);
+          localStorage.setItem("theme", theme);
+        });
+        // Other page of site changed storage, update.
+        window.addEventListener("storage", function (event) {
+          if (event.key === "theme" && event.newValue !== event.oldValue) {
+            theme = event.newValue;
+            setThemeToggle(themeToggle, theme);
+            document.documentElement.setAttribute("data-theme", theme);
+          }
+        });
+        // User changed website settings, update.
+        themeToggle.addEventListener("click", function (event) {
+          theme = theme === "dark" ? "light" : "dark";
+          setThemeToggle(themeToggle, theme);
+          document.documentElement.setAttribute("data-theme", theme);
+          localStorage.setItem("theme", theme);
+        });
         elementsEach(
           document.querySelectorAll(".post pre code figure.highlight"),
           function (e, i) {
@@ -124,17 +170,6 @@
   <body itemscope itemtype="http://schema.org/WebPage">
     
 <header id="header" class="header" style="background: #33363b;">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124615792-3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-124615792-3');
-  </script>
-
-  
   <div class="container">
     <div class="header-container">
       <div class="header-title">
@@ -164,6 +199,9 @@
         <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
         
       </ul>
+      <button class="theme-toggle" id="theme-toggle">
+        
+      </button>
     </nav>
   </div>
 </header>
@@ -174,7 +212,7 @@
         <div class="main-container">
           <div class="content">
             
-<div id="post" class="page">
+<div id="page" class="page">
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/posts/archlinux-pavilion-gaming-laptop/">
@@ -192,8 +230,9 @@
       <div class="post-meta">
         
         <span class="post-date meta-block">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-07-19T07:29:57.000Z">2020-07-19 Sun 15:29:57 CST</time></span>
+          <i class="far fa-calendar-check"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-07-19T07:29:57.000Z">2020-07-19 Sun 15:29:57 CST</time></span>
         </span>
+        
         
         
         <span class="post-categories meta-block">
@@ -282,7 +321,7 @@
 <span class="hljs-comment"># - bbswitch : power off the card using the bbswitch module (requires the bbswitch dependency).</span>
 <span class="hljs-comment"># - acpi_call : try various ACPI method calls to power the card on and off (requires the acpi_call dependency)</span>
 <span class="hljs-comment"># - custom: use custom scripts at /etc/optimus-manager/nvidia-enable.sh and /etc/optimus-manager/nvidia-disable.sh</span>
-<span class="hljs-comment"># - none : do not use an external module for power management. For some laptop models it&#x27;s preferable to</span>
+<span class="hljs-comment"># - none : do not use an external module for power management. For some laptop models it's preferable to</span>
 <span class="hljs-comment">#          use this option in combination with pci_power_control (see below).</span>
 <span class="hljs-attribute">switching</span>=none
 
@@ -300,8 +339,8 @@
 <span class="hljs-comment"># May fix some switching issues. Possible values :</span>
 <span class="hljs-comment">#</span>
 <span class="hljs-comment"># - no : does not perform any reset</span>
-<span class="hljs-comment"># - function_level : perform a light &quot;function-level&quot; reset</span>
-<span class="hljs-comment"># - hot_reset : perform a &quot;hot reset&quot; of the PCI bridge. ATTENTION : this method messes with the hardware</span>
+<span class="hljs-comment"># - function_level : perform a light "function-level" reset</span>
+<span class="hljs-comment"># - hot_reset : perform a "hot reset" of the PCI bridge. ATTENTION : this method messes with the hardware</span>
 <span class="hljs-comment">#         directly, please read the online documentation of optimus-manager before using it.</span>
 <span class="hljs-comment">#         Also, it will perform a PCI remove even if pci_remove=no.</span>
 <span class="hljs-comment">#</span>
@@ -315,7 +354,7 @@
 <span class="hljs-attribute">auto_logout</span>=<span class="hljs-literal">yes</span>
 
 <span class="hljs-comment"># GPU mode to use at computer startup. Possible values: nvidia, intel, hybrid, auto</span>
-<span class="hljs-comment"># &quot;auto&quot; is a special mode that auto-detects if the computer is running on battery</span>
+<span class="hljs-comment"># "auto" is a special mode that auto-detects if the computer is running on battery</span>
 <span class="hljs-comment"># and selects a proper GPU mode. See the other options below.</span>
 <span class="hljs-attribute">startup_mode</span>=auto
 <span class="hljs-comment"># GPU mode to select when startup_mode=auto and the computer is running on battery.</span>
@@ -329,7 +368,7 @@
 [intel]
 
 <span class="hljs-comment"># Driver to use for the Intel GPU. Possible values : modesetting, intel</span>
-<span class="hljs-comment"># To use the intel driver, you need to install the package &quot;xf86-video-intel&quot;.</span>
+<span class="hljs-comment"># To use the intel driver, you need to install the package "xf86-video-intel".</span>
 <span class="hljs-attribute">driver</span>=modesetting
 
 <span class="hljs-comment"># Acceleration method (corresponds to AccelMethod in the Xorg configuration).</span>
@@ -367,8 +406,8 @@ tearfree=
 <span class="hljs-comment"># Leave blank for the default (the above command will not be run).</span>
 <span class="hljs-attribute">DPI</span>=96
 
-<span class="hljs-comment"># If you&#x27;re running an updated version of xorg-server (let&#x27;s say to get PRIME Render offload enabled),</span>
-<span class="hljs-comment"># the nvidia driver may not load because of an ABI version mismatch. Setting this flag to &quot;yes&quot;</span>
+<span class="hljs-comment"># If you're running an updated version of xorg-server (let's say to get PRIME Render offload enabled),</span>
+<span class="hljs-comment"># the nvidia driver may not load because of an ABI version mismatch. Setting this flag to "yes"</span>
 <span class="hljs-comment"># will allow the loading of the nvidia driver.</span>
 <span class="hljs-attribute">ignore_abi</span>=<span class="hljs-literal">no</span>
 
@@ -395,7 +434,7 @@ tearfree=
 </ul>
 <h1 id="Others"><a class="header-link" href="/posts/archlinux-pavilion-gaming-laptop/#Others" title="Others"></a>Others</h1>
 <ul>
-<li><p>之所以不推荐使用<code>bbswitch</code>是因为容易遇到<strong>ACPI锁死</strong>的问题，<a href="https://wiki.archlinux.org/index.php/NVIDIA_Optimus#Lockup_issue_(lspci_hangs)" target="_blank" rel="noreferrer noopener">参考Wiki</a>，需要添加<a href="https://wiki.archlinux.org/index.php/Kernel_parameters" target="_blank" rel="noreferrer noopener">内核参数</a><code>acpi_osi=! acpi_osi=&quot;Windows 2009&quot;</code>或<code>acpi_osi=&quot;!Windows 2015&quot;</code>启动，如果你遇到了锁死可以通过开机时在<a href="https://wiki.archlinux.org/index.php/Arch_boot_process#Boot_loader" target="_blank" rel="noreferrer noopener">启动加载器界面</a>编辑添加内核参数来正常进入系统，如果你用的是efistub或者没办法编辑内核参数的话就只能用live CD救你的电脑了。</p>
+<li><p>之所以不推荐使用<code>bbswitch</code>是因为容易遇到<strong>ACPI锁死</strong>的问题，<a href="https://wiki.archlinux.org/index.php/NVIDIA_Optimus#Lockup_issue_(lspci_hangs)" target="_blank" rel="noreferrer noopener">参考Wiki</a>，需要添加<a href="https://wiki.archlinux.org/index.php/Kernel_parameters" target="_blank" rel="noreferrer noopener">内核参数</a><code>acpi_osi=! acpi_osi="Windows 2009"</code>或<code>acpi_osi="!Windows 2015"</code>启动，如果你遇到了锁死可以通过开机时在<a href="https://wiki.archlinux.org/index.php/Arch_boot_process#Boot_loader" target="_blank" rel="noreferrer noopener">启动加载器界面</a>编辑添加内核参数来正常进入系统，如果你用的是efistub或者没办法编辑内核参数的话就只能用live CD救你的电脑了。</p>
 </li>
 <li><p>如果用不了<code>lspci</code>，电脑没法正常关机的话，是nouveau的问题，可添加内核参数<code>modprobe.blacklist=nouveau</code>禁用。</p>
 </li>
@@ -406,8 +445,8 @@ tearfree=
 </ul>
 <hr>
 <div align="center">
-    <image src="images/1.png">
-</image></div>
+    <img src="/posts/archlinux-pavilion-gaming-laptop/images/1.png">
+</div>
 
     </main>
     <footer class="post-footer">
@@ -514,7 +553,7 @@ tearfree=
           
           
           
-<aside class="sidebar" id="sidebar" style="background: url(/images/background.webp);">
+<aside class="sidebar" id="sidebar">
   
   <div class="search" role="search">
     <form action="/search/" method="get">
@@ -685,4 +724,4 @@ tearfree=
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.2.12 at 2020-07-27 Mon 22:49:35 CST. -->
+<!-- Page built by Hikaru v1.4.4 at 2020-08-07 Fri 19:16:20 CST. -->

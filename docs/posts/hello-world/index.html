@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html data-theme="light" lang="zh-Hans">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -66,14 +66,60 @@
     <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
     <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
     <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-video.min.js"></script>
     <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
-    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/fa-solid.min.js"></script>
+    <script defer type="text/javascript" src="/js/fa-brands.min.js"></script>
+    <script defer type="text/javascript" src="/js/fa-regular.min.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome.min.js"></script>
     
     <script defer type="text/javascript" src="/js/busuanzi.pure.mini.js"></script>
     
     
     <script type="text/javascript">
+      // Set theme before page rendering.
+      // Check user's choice from localStorage.
+      var theme = localStorage.getItem("theme");
+      var preferenceQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      // theme might be null here.
+      if (theme !== "dark" && theme !== "light") {
+        // Init from user's system settings if no choice.
+        theme = preferenceQuery.matches ? "dark" : "light";
+      }
+      // Yes, it looks I can modify documentElement before ready!
+      document.documentElement.setAttribute("data-theme", theme);
+      localStorage.setItem("theme", theme);
       documentReady(function () {
+        var themeToggle = document.getElementById("theme-toggle");
+        var setThemeToggle = function (themeToggle, theme) {
+          themeToggle.innerHTML = theme === "dark"
+            ? "<i class=\"far fa-moon\" aria-label=\"accessibility.themeDark\"></i>"
+            : "<i class=\"far fa-sun\" aria-label=\"accessibility.themeLight\"></i>";
+        };
+        // Update theme toggle content.
+        setThemeToggle(themeToggle, theme);
+        // User changed system settings, update.
+        preferenceQuery.addListener(function (event) {
+          theme = event.matches ? "dark" : "light";
+          setThemeToggle(themeToggle, theme);
+          document.documentElement.setAttribute("data-theme", theme);
+          localStorage.setItem("theme", theme);
+        });
+        // Other page of site changed storage, update.
+        window.addEventListener("storage", function (event) {
+          if (event.key === "theme" && event.newValue !== event.oldValue) {
+            theme = event.newValue;
+            setThemeToggle(themeToggle, theme);
+            document.documentElement.setAttribute("data-theme", theme);
+          }
+        });
+        // User changed website settings, update.
+        themeToggle.addEventListener("click", function (event) {
+          theme = theme === "dark" ? "light" : "dark";
+          setThemeToggle(themeToggle, theme);
+          document.documentElement.setAttribute("data-theme", theme);
+          localStorage.setItem("theme", theme);
+        });
         elementsEach(
           document.querySelectorAll(".post pre code figure.highlight"),
           function (e, i) {
@@ -124,17 +170,6 @@
   <body itemscope itemtype="http://schema.org/WebPage">
     
 <header id="header" class="header" style="background: #33363b;">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124615792-3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-124615792-3');
-  </script>
-
-  
   <div class="container">
     <div class="header-container">
       <div class="header-title">
@@ -164,6 +199,9 @@
         <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
         
       </ul>
+      <button class="theme-toggle" id="theme-toggle">
+        
+      </button>
     </nav>
   </div>
 </header>
@@ -174,7 +212,7 @@
         <div class="main-container">
           <div class="content">
             
-<div id="post" class="page">
+<div id="page" class="page">
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/posts/hello-world/">
@@ -192,8 +230,9 @@
       <div class="post-meta">
         
         <span class="post-date meta-block">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-08-22T06:22:54.000Z">2016-08-22 Mon 14:22:54 CST</time></span>
+          <i class="far fa-calendar-check"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-08-22T06:22:54.000Z">2016-08-22 Mon 14:22:54 CST</time></span>
         </span>
+        
         
         
         <span class="post-categories meta-block">
@@ -246,11 +285,11 @@
 <pre><code class="C"><figure class="highlight hljs c"><pre class="gutter"><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span></pre><pre class="code"><code><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
 <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> *argv[])</span>
 </span>{
-    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;Hello World!\n&quot;</span>);
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Hello World!\n"</span>);
     <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
 }
 </code></pre></figure></code></pre>
-<h2 id="STARRY-Samp;39;Blog"><a class="header-link" href="/posts/hello-world/#STARRY-Samp;39;Blog" title="STARRY-Samp;39;Blog"></a>STARRY-S&#39; Blog</h2>
+<h2 id="STARRY-S039;Blog"><a class="header-link" href="/posts/hello-world/#STARRY-S039;Blog" title="STARRY-S039;Blog"></a>STARRY-S' Blog</h2>
 
     </main>
     <footer class="post-footer">
@@ -357,7 +396,7 @@
           
           
           
-<aside class="sidebar" id="sidebar" style="background: url(/images/background.webp);">
+<aside class="sidebar" id="sidebar">
   
   <div class="search" role="search">
     <form action="/search/" method="get">
@@ -417,7 +456,7 @@
       
         <li>
           
-          <a class="list-group-item toc-link" href="#STARRY-Samp;39;Blog">STARRY-S&#39; Blog</a>
+          <a class="list-group-item toc-link" href="#STARRY-S039;Blog">STARRY-S' Blog</a>
           
         </li>
       
@@ -498,4 +537,4 @@
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.2.12 at 2020-07-27 Mon 22:49:35 CST. -->
+<!-- Page built by Hikaru v1.4.4 at 2020-08-07 Fri 19:16:20 CST. -->

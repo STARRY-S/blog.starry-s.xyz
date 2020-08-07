@@ -1,8 +1,9 @@
 div.reward {
-  margin: 1rem auto;
+  margin: 1em auto;
   width: 90%;
   text-align: center;
-  color: #444;
+  color: #666;
+  color: var(--color-reward-font);
 }
 div.reward div.qr {
   text-align: center;
@@ -12,7 +13,7 @@ div.reward div.qr div {
   display: inline-block;
 }
 div.reward div.qr div img {
-  width: 10rem;
+  width: 10em;
   margin: 0 auto;
   display: block;
 }
