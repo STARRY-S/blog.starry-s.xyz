@@ -10,10 +10,10 @@
     
     
     
-    <meta name="keywords" content="Arch Linux, Linux, Life, Music, ARIA, Hikaru, STARRY-S">
+    <meta name="keywords" content="Life, ARIA, Hikaru, STARRY-S, Arch Linux, Linux, Music">
     
     
-    <meta name="description" content="New beginning, <br/>new thinking.">
+    <meta name="description" content="自从高中毕业至今这台笔记本用了将近两年，已经记不清当初为什么买了这台笔记本，刚买来电脑第一次装Arch Linux时遇到了一些坑，不过大多数的问题Google折腾一会或随着后续的软件更新基本上就都解决了，唯独配置双显卡这个问题在用了两年后才算是找到了比较满意的解决方法（大概是），尽管现在这电脑已经停产了，就算有人买了这台电脑也不一定会拿他装Arch Linux，不过我还是打算把这个问题的解决过程记录一下（本篇讲的方法应该是适用于大多数N卡+i卡的笔记本电脑的，只是有些细节不一样），以备我后续重装系统时有个参考。">
     
     <link rel="canonical" href="https://blog.starry-s.me/posts/archlinux-pavilion-gaming-laptop/">
     
@@ -49,17 +49,17 @@
     
     <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
     
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
     
 <link rel="stylesheet" type="text/css" href="/css/page.css">
 <link rel="stylesheet" type="text/css" href="/css/post.css">
 
-    <link rel="stylesheet" type="text/css" href="/css/custom.css">
-    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
-    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/spinkit.css">
     
     <script type="text/javascript" src="/js/index.js"></script>
     <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/custom.js"></script>
     <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
     <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
     <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
@@ -67,11 +67,11 @@
     <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
     <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
     <script defer type="text/javascript" src="/js/lg-video.min.js"></script>
-    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
-    <script defer type="text/javascript" src="/js/fa-solid.min.js"></script>
-    <script defer type="text/javascript" src="/js/fa-brands.min.js"></script>
-    <script defer type="text/javascript" src="/js/fa-regular.min.js"></script>
-    <script defer type="text/javascript" src="/js/fontawesome.min.js"></script>
+    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/js/solid.min.js"></script>
+    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/js/brands.min.js"></script>
+    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/js/regular.min.js"></script>
+    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/js/fontawesome.min.js"></script>
     
     <script defer type="text/javascript" src="/js/busuanzi.pure.mini.js"></script>
     
@@ -121,16 +121,16 @@
           localStorage.setItem("theme", theme);
         });
         elementsEach(
-          document.querySelectorAll(".post pre code figure.highlight"),
+          document.querySelectorAll(".post figure.code-block"),
           function (e, i) {
-            var lang = e.parentNode.className;
+            var lang = e.getAttribute("data-lang");
             e.insertAdjacentElement("beforebegin", createElementFromString([
               "<div class=\"code-titlebar\">",
                 "<div class=\"titlebar-left\">",
                   "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
                 "</div>",
                 "<div class=\"titlebar-center\">",
-                  lang.length ? lang.toUpperCase() : "代码",
+                  lang != null && lang.length ? lang.toUpperCase() : "代码",
                 "</div>",
                 "<div class=\"titlebar-right\">",
                   "<button class=\"button-dot dot-minimize\" aria-label=\"Decoration\"></button>",
@@ -164,8 +164,18 @@
       });
     </script>
     
-    <script defer type="text/javascript" src="/js/custom.js"></script>
     <title>惠普光影精灵4在Arch Linux下使用Optimus Manager配置双显卡 - STARRY-S' Blog</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124615792-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-124615792-3');
+    </script>
+
   </head>
   <body itemscope itemtype="http://schema.org/WebPage">
     
@@ -173,8 +183,8 @@
   <div class="container">
     <div class="header-container">
       <div class="header-title">
-        <h1 class="title"><a href="/">STARRY-S' Blog</a></h1>
-        <h2 class="subtitle"></h2>
+        <div class="title"><a href="/">STARRY-S' Blog</a></div>
+        <div class="subtitle">Morning.</div>
       </div>
       
       <div class="logo">
@@ -226,25 +236,25 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">惠普光影精灵4在Arch Linux下使用Optimus Manager配置双显卡</h1>
+      <div class="post-title" itemprop="name headline">惠普光影精灵4在Arch Linux下使用Optimus Manager配置双显卡</div>
       <div class="post-meta">
         
-        <span class="post-date meta-block">
+        <div class="post-date meta-block">
           <i class="far fa-calendar-check"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2020-07-19T07:29:57.000Z">2020-07-19 Sun 15:29:57 CST</time></span>
-        </span>
+        </div>
         
         
         
-        <span class="post-categories meta-block">
+        <div class="post-categories meta-block">
           
           <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
-        </span>
+        </div>
         
         
         
-        <span class="post-comment-count meta-block">
+        <div class="post-comment-count meta-block">
           <i class="far fa-comments"></i><span><a href="/posts/archlinux-pavilion-gaming-laptop/#comment-results" itemprop="discussionUrl"><span class="post-comment-count comment-count" data-comment-identifier="惠普光影精灵4在Arch Linux下使用Optimus Manager配置双显卡" itemprop="commentCount">阅读评论</span></a></span>
-        </span>
+        </div>
         
         
       </div>
@@ -253,7 +263,7 @@
       <link href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
 <script src= "https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
 <p>自从高中毕业至今这台笔记本用了将近两年，已经记不清当初为什么买了这台笔记本，刚买来电脑第一次装Arch Linux时遇到了一些坑，不过大多数的问题Google折腾一会或随着后续的软件更新基本上就都解决了，唯独配置双显卡这个问题在用了两年后才算是找到了比较满意的解决方法（大概是），<del>尽管现在这电脑已经停产了，就算有人买了这台电脑也不一定会拿他装Arch Linux，不过我还是打算把这个问题的解决过程记录一下</del>（本篇讲的方法应该是适用于大多数N卡+i卡的笔记本电脑的，只是有些细节不一样），以备我后续重装系统时有个参考。</p>
-<a id='more'></a>
+<a id="more"></a>
 
 <hr>
  
@@ -297,22 +307,248 @@
 <p>照着<a href="https://wiki.archlinux.org/index.php/NVIDIA_Optimus" target="_blank" rel="noreferrer noopener">Wiki</a>和Optimus Manager的<a href="https://github.com/Askannz/optimus-manager#optimus-manager" target="_blank" rel="noreferrer noopener">README</a>。首先安装好显卡驱动相关的软件，如果有Bumblebee的话使用<code>systemctl disable bumblebeed</code>停用。</p>
 <p>首先清除（记得备份）<code>/etc/X11/xorg.conf.d/</code>下的配置文件，并删掉（记得备份）<code>/etc/X11/xorg.conf</code>（如果有的话），因为Optimus Manager会自动生成配置文件存放到<code>/etc/X11/xorg.conf.d/</code>里面，所以建议安装前把显示配置相关的文件都清除掉。</p>
 <p>使用Arch Linux CN源或者通过AUR Helper安装<code>optimus-manager</code>。</p>
-<pre><code><figure class="highlight hljs elixir"><pre class="gutter"><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span></pre><pre class="code"><code><span class="hljs-comment"># Arch Linux CN</span>
+<figure data-raw="# Arch Linux CN
+$ sudo pacman -S optimus-manager
+# AUR
+$ yay -S optimus-manager" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span></pre><pre class="code"><code class="language-elixir"><span class="hljs-comment"># Arch Linux CN</span>
 <span class="hljs-variable">$ </span>sudo pacman -S optimus-manager
 <span class="hljs-comment"># AUR</span>
-<span class="hljs-variable">$ </span>yay -S optimus-manager</code></pre></figure></code></pre>
+<span class="hljs-variable">$ </span>yay -S optimus-manager</code></pre></figure>
 <p>因为我用的Gnome，参照<a href="https://github.com/Askannz/optimus-manager#important--gnome-and-gdm-users" target="_blank" rel="noreferrer noopener">README中说的</a>卸载掉<code>gdm</code>并安装<code>gdm-prime</code><sup>AUR</sup>。（国内下载源代码的速度极慢建议挂梯子，或者挂梯子克隆<a href="https://gitlab.gnome.org/GNOME/gdm" target="_blank" rel="noreferrer noopener">GDM的代码</a>到<code>~/.cache/yay/gdm-prime/gdm</code>下。）</p>
 <p>修改<code>/etc/gdm/custom.conf</code>，移除<code>WaylandEnable=false</code>一行前面的<code>#</code>禁用Wayland而使用X。</p>
 <h2 id="修改配置文件"><a class="header-link" href="/posts/archlinux-pavilion-gaming-laptop/#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6" title="修改配置文件"></a>修改配置文件</h2>
-<pre><code><figure class="highlight hljs awk"><pre class="gutter"><span class="line">1</span></pre><pre class="code"><code>$ sudo cp <span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/optimus-manager.conf /</span>etc<span class="hljs-regexp">/optimus-manager/</span>optimus-manager.conf</code></pre></figure></code></pre>
+<figure data-raw="$ sudo cp /usr/share/optimus-manager.conf /etc/optimus-manager/optimus-manager.conf" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span></pre><pre class="code"><code class="language-awk">$ sudo cp <span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/optimus-manager.conf /</span>etc<span class="hljs-regexp">/optimus-manager/</span>optimus-manager.conf</code></pre></figure>
 <p>不要编辑<code>/usr/share/</code>下的文件，编辑<code>/etc/optimus-manager/optimus-manager.conf</code>，将切换方式设为<code>switching=none</code>，不推荐使用bbswitch（见<a href="/posts/archlinux-pavilion-gaming-laptop/#Others">后续第一条</a>），设置<code>pci_power_control=yes</code>让PCI Power Management切换显卡。</p>
 <p>之后根据需求来修改开机自动选择显卡：</p>
-<pre><code class="conf"><figure class="highlight hljs ini"><pre class="gutter"><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span></pre><pre class="code"><code><span class="hljs-attr">startup_mode</span>=auto
+<figure data-raw="startup_mode=auto
+startup_auto_battery_mode=intel
+startup_auto_extpower_mode=nvidia" data-info="language-conf" data-lang="conf" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span></pre><pre class="code"><code class="language-ini"><span class="hljs-attr">startup_mode</span>=auto
 <span class="hljs-attr">startup_auto_battery_mode</span>=intel
-<span class="hljs-attr">startup_auto_extpower_mode</span>=nvidia</code></pre></figure></code></pre>
+<span class="hljs-attr">startup_auto_extpower_mode</span>=nvidia</code></pre></figure>
 <p>这里我设置的是用电池时使用集成显卡，用电源时使用独显。</p>
 <p>最后贴一下全部的配置文件，除了上述的几处修改以外其他均为默认值，仅供参考。</p>
-<pre><code class="conf"><figure class="highlight hljs routeros"><pre class="gutter"><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span></pre><pre class="code"><code>[optimus]
+<figure data-raw="[optimus]
+
+# This parameter defines the method used to power switch the Nvidia card. See the documentation
+# for a complete description of what each value does. Possible values :
+#
+# - nouveau : load the nouveau module on the Nvidia card.
+# - bbswitch : power off the card using the bbswitch module (requires the bbswitch dependency).
+# - acpi_call : try various ACPI method calls to power the card on and off (requires the acpi_call dependency)
+# - custom: use custom scripts at /etc/optimus-manager/nvidia-enable.sh and /etc/optimus-manager/nvidia-disable.sh
+# - none : do not use an external module for power management. For some laptop models it's preferable to
+#          use this option in combination with pci_power_control (see below).
+switching=none
+
+# Enable PCI power management in Intel mode.
+# This option is incompatible with acpi_call and bbswitch, so it will be ignored in those cases.
+pci_power_control=yes
+
+# Remove the Nvidia card from the PCI bus.
+# May prevent crashes caused by power switching.
+# Ignored if switching=nouveau or switching=bbswitch.
+pci_remove=yes
+
+# Reset the Nvidia card at the PCI level before reloading the nvidia module.
+# Ensures the card is in a fresh state before reloading the nvidia module.
+# May fix some switching issues. Possible values :
+#
+# - no : does not perform any reset
+# - function_level : perform a light &quot;function-level&quot; reset
+# - hot_reset : perform a &quot;hot reset&quot; of the PCI bridge. ATTENTION : this method messes with the hardware
+#         directly, please read the online documentation of optimus-manager before using it.
+#         Also, it will perform a PCI remove even if pci_remove=no.
+#
+pci_reset=no
+
+# Automatically log out the current desktop session when switching GPUs.
+# This feature is currently supported for the following DE/WM :
+# KDE Plasma, GNOME, XFCE, LXDE, Deepin, i3, Openbox, AwesomeWM, bspwm
+# If this option is disabled or you use a different desktop environment,
+# GPU switching only becomes effective at the next graphical session login.
+auto_logout=yes
+
+# GPU mode to use at computer startup. Possible values: nvidia, intel, hybrid, auto
+# &quot;auto&quot; is a special mode that auto-detects if the computer is running on battery
+# and selects a proper GPU mode. See the other options below.
+startup_mode=auto
+# GPU mode to select when startup_mode=auto and the computer is running on battery.
+# Possible values: nvidia, intel, hybrid
+startup_auto_battery_mode=intel
+# GPU mode to select when startup_mode=auto and the computer is running on external power.
+# Possible values: nvidia, intel, hybrid
+startup_auto_extpower_mode=nvidia
+
+
+[intel]
+
+# Driver to use for the Intel GPU. Possible values : modesetting, intel
+# To use the intel driver, you need to install the package &quot;xf86-video-intel&quot;.
+driver=modesetting
+
+# Acceleration method (corresponds to AccelMethod in the Xorg configuration).
+# Only applies to the intel driver.
+# Possible values : sna, xna, uxa
+# Leave blank for the default (no option specified)
+accel=
+
+# Enable TearFree option in the Xorg configuration.
+# Only applies to the intel driver.
+# Possible values : yes, no
+# Leave blank for the default (no option specified)
+tearfree=
+
+# DRI version. Possible values : 2, 3
+DRI=3
+
+# Whether or not to enable modesetting for the nouveau driver.
+# Does not affect modesetting for the Intel GPU driver !
+# This option only matters if you use nouveau as the switching backend.
+modeset=yes
+
+[nvidia]
+
+# Whether or not to enable modesetting. Required for PRIME Synchronization (which prevents tearing).
+modeset=yes
+
+# Whether or not to enable the NVreg_UsePageAttributeTable option in the Nvidia driver.
+# Recommended, can cause poor CPU performance otherwise.
+PAT=yes
+
+# DPI value. This will be set using the Xsetup script passed to your login manager.
+# It will run the command
+# xrandr --dpi <DPI>
+# Leave blank for the default (the above command will not be run).
+DPI=96
+
+# If you're running an updated version of xorg-server (let's say to get PRIME Render offload enabled),
+# the nvidia driver may not load because of an ABI version mismatch. Setting this flag to &quot;yes&quot;
+# will allow the loading of the nvidia driver.
+ignore_abi=no
+
+# Set to yes if you want to use optimus-manager with external Nvidia GPUs (experimental)
+allow_external_gpus=no
+
+# Comma-separated list of Nvidia-specific options to apply.
+# Available options :
+# - overclocking : enable CoolBits in the Xorg configuration, which unlocks clocking options
+#   in the Nvidia control panel. Note: does not work in hybrid mode.
+# - triple_buffer : enable triple buffering.
+options=overclocking
+" data-info="language-conf" data-lang="conf" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+<span class="line-number">30</span>
+<span class="line-number">31</span>
+<span class="line-number">32</span>
+<span class="line-number">33</span>
+<span class="line-number">34</span>
+<span class="line-number">35</span>
+<span class="line-number">36</span>
+<span class="line-number">37</span>
+<span class="line-number">38</span>
+<span class="line-number">39</span>
+<span class="line-number">40</span>
+<span class="line-number">41</span>
+<span class="line-number">42</span>
+<span class="line-number">43</span>
+<span class="line-number">44</span>
+<span class="line-number">45</span>
+<span class="line-number">46</span>
+<span class="line-number">47</span>
+<span class="line-number">48</span>
+<span class="line-number">49</span>
+<span class="line-number">50</span>
+<span class="line-number">51</span>
+<span class="line-number">52</span>
+<span class="line-number">53</span>
+<span class="line-number">54</span>
+<span class="line-number">55</span>
+<span class="line-number">56</span>
+<span class="line-number">57</span>
+<span class="line-number">58</span>
+<span class="line-number">59</span>
+<span class="line-number">60</span>
+<span class="line-number">61</span>
+<span class="line-number">62</span>
+<span class="line-number">63</span>
+<span class="line-number">64</span>
+<span class="line-number">65</span>
+<span class="line-number">66</span>
+<span class="line-number">67</span>
+<span class="line-number">68</span>
+<span class="line-number">69</span>
+<span class="line-number">70</span>
+<span class="line-number">71</span>
+<span class="line-number">72</span>
+<span class="line-number">73</span>
+<span class="line-number">74</span>
+<span class="line-number">75</span>
+<span class="line-number">76</span>
+<span class="line-number">77</span>
+<span class="line-number">78</span>
+<span class="line-number">79</span>
+<span class="line-number">80</span>
+<span class="line-number">81</span>
+<span class="line-number">82</span>
+<span class="line-number">83</span>
+<span class="line-number">84</span>
+<span class="line-number">85</span>
+<span class="line-number">86</span>
+<span class="line-number">87</span>
+<span class="line-number">88</span>
+<span class="line-number">89</span>
+<span class="line-number">90</span>
+<span class="line-number">91</span>
+<span class="line-number">92</span>
+<span class="line-number">93</span>
+<span class="line-number">94</span>
+<span class="line-number">95</span>
+<span class="line-number">96</span>
+<span class="line-number">97</span>
+<span class="line-number">98</span>
+<span class="line-number">99</span>
+<span class="line-number">100</span>
+<span class="line-number">101</span>
+<span class="line-number">102</span>
+<span class="line-number">103</span>
+<span class="line-number">104</span>
+<span class="line-number">105</span>
+<span class="line-number">106</span>
+<span class="line-number">107</span>
+<span class="line-number">108</span>
+<span class="line-number">109</span></pre><pre class="code"><code class="language-routeros">[optimus]
 
 <span class="hljs-comment"># This parameter defines the method used to power switch the Nvidia card. See the documentation</span>
 <span class="hljs-comment"># for a complete description of what each value does. Possible values :</span>
@@ -420,7 +656,7 @@ tearfree=
 <span class="hljs-comment">#   in the Nvidia control panel. <span class="hljs-doctag">Note:</span> does not work in hybrid mode.</span>
 <span class="hljs-comment"># - triple_buffer : enable triple buffering.</span>
 <span class="hljs-attribute">options</span>=overclocking
-</code></pre></figure></code></pre>
+</code></pre></figure>
 <h1 id="食用方法"><a class="header-link" href="/posts/archlinux-pavilion-gaming-laptop/#%E9%A3%9F%E7%94%A8%E6%96%B9%E6%B3%95" title="食用方法"></a>食用方法</h1>
 <p><code>optimus-manager --switch nvidia</code>切换到独显（nvidia）；</p>
 <p><code>optimus-manager --switch intel</code>切换到集显（intel）</p>
@@ -476,7 +712,7 @@ tearfree=
   <div class="reward-info" id="reward-info">
     <span>Support Me！</span>
   </div>
-  <button id="reward-button" class="button" disable="enable"><i class="fas fa-donate"></i>打赏</button>
+  <button id="reward-button" class="button reward-button" disable="enable"><i class="fas fa-donate"></i>打赏</button>
   <div id="qr" class="qr" style="display: none;" aria-hidden="true">
     
     <div id="wechatpay">
@@ -521,11 +757,11 @@ tearfree=
       <div class="sk-rect sk-rect5"></div>
     </div>
   </div>
-  <script defer type="text/javascript" src="/js/marked.min.js"></script>
-  <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+  <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/marked/1.1.1/marked.min.js"></script>
+  <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
   <script type="text/javascript">
     documentReady(function () {
-      marked.setOptions({
+      window.marked.setOptions({
         "highlight": function (code, lang) {
           return hljs.highlightAuto(code).value;
         }
@@ -533,10 +769,13 @@ tearfree=
       loadComment({
         "user": "STARRY-S",
         "repo": "Blog",
+        "perPage": "10",
         "sendButtonText": "去评论",
         "noCommentText": "这个页面还没有评论，现在就去评论吧！",
         "failText": "你可能达到了 API 请求频率上限，请等待一段时间再刷新。",
         "title": "惠普光影精灵4在Arch Linux下使用Optimus Manager配置双显卡",
+        "queryString": window.location.search,
+        "basePath": "/posts/archlinux-pavilion-gaming-laptop/",
         "containerID": "comment-results"
       });
     });
@@ -565,8 +804,8 @@ tearfree=
     
     <img class="author-avatar" src="/images/avatar.jpg" alt="STARRY-S">
     
-    <h1 class="author-name">STARRY-S</h1>
-    <h2 class="author-description">New beginning, <br/>new thinking.</h2>
+    <div class="author-name">STARRY-S</div>
+    <div class="author-description">New beginning, <br/>new thinking.</div>
     <div class="site-count">
       
       
@@ -658,13 +897,13 @@ tearfree=
       <div><i class="far fa-address-card"></i>社交链接</div>
       <ul>
         
-        <li><i class="fas fa-envelope"></i><a href="mailto:hx916584160@gmail.com" target="_blank" rel="noreferrer noopener">E-Mail</a></li>
+        <li><i class="fas fa-envelope"></i><a href="mailto:hx916584160@gmail.com" target="_blank" rel="external nofollow noreferrer noopener">E-Mail</a></li>
         
-        <li><i class="fab fa-github"></i><a href="https://github.com/STARRY-S" target="_blank" rel="noreferrer noopener">GitHub</a></li>
+        <li><i class="fab fa-github"></i><a href="https://github.com/STARRY-S" target="_blank" rel="external nofollow noreferrer noopener">GitHub</a></li>
         
-        <li><i class="fab fa-weibo"></i><a href="https://t.me/STARRY-S" target="_blank" rel="noreferrer noopener">Telegram</a></li>
+        <li><i class="fab fa-weibo"></i><a href="https://t.me/STARRY-S" target="_blank" rel="external nofollow noreferrer noopener">Telegram</a></li>
         
-        <li><i class="fas fa-video"></i><a href="https://space.bilibili.com/19189337" target="_blank" rel="noreferrer noopener">Bilibili</a></li>
+        <li><i class="fas fa-tv"></i><a href="https://space.bilibili.com/19189337" target="_blank" rel="external nofollow noreferrer noopener">Bilibili</a></li>
         
       </ul>
     </div>
@@ -675,9 +914,9 @@ tearfree=
       <div><i class="fas fa-user-friends"></i>友情链接</div>
       <ul>
         
-        <li><i class="fas fa-link"></i><a href="https://alynx.one/" target="_blank" rel="noreferrer noopener">喵's Homepage</a></li>
+        <li><i class="fas fa-link"></i><a href="https://alynx.one/" target="_blank" rel="external nofollow noreferrer noopener">喵's Homepage</a></li>
         
-        <li><i class="fas fa-link"></i><a href="https://lgiki.net/" target="_blank" rel="noreferrer noopener">LGiki's Blog</a></li>
+        <li><i class="fas fa-link"></i><a href="https://lgiki.net/" target="_blank" rel="external nofollow noreferrer noopener">LGiki's Blog</a></li>
         
       </ul>
     </div>
@@ -694,12 +933,12 @@ tearfree=
 <footer id="footer" class="footer" style="background: #33363b;">
   <div class="container">
     <div class="back-to-top">
-      <button id="back-to-top" aria-label="回到顶部"><i class="fas fa-angle-double-up"></i></button>
+      <button id="back-to-top" class="back-to-top" aria-label="回到顶部"><i class="fas fa-angle-double-up"></i></button>
     </div>
     <div class="footer-container">
       <div class="footer-left">
         <div class="copyright">
-          <span class="author"><i class="far fa-edit"></i>STARRY-S</span><span class="years"><i class="far fa-copyright"></i><span id="years-text">2016</span></span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/ny-nc-nd/4.0/" target="_blank" rel="noreferrer noopener">NY-NC-ND 4.0</a></span>
+          <span class="author"><i class="far fa-edit"></i>STARRY-S</span><span class="years"><i class="far fa-copyright"></i><span id="years-text">2016</span></span><span class="creative-commons"><i class="fab fa-creative-commons"></i><a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external nofollow noreferrer noopener">BY-NC-ND 4.0</a></span>
         </div>
         
         <div class="busuanzi">
@@ -714,7 +953,7 @@ tearfree=
           
         </div>
         <div class="powered-by">
-          由 <a href="https://hikaru.alynx.one/" target="_blank" rel="noreferrer noopener">Hikaru</a> 强力驱动<i class="fab fa-node-js"></i>主题 <a href="https://github.com/AlynxZhou/hikaru-theme-aria/" target="_blank" rel="noreferrer noopener">ARIA</a>
+          由 <a href="https://hikaru.alynx.one/" target="_blank" rel="external nofollow noreferrer noopener">Hikaru</a> 强力驱动<i class="fab fa-node-js"></i>主题 <a href="https://github.com/AlynxZhou/hikaru-theme-aria/" target="_blank" rel="external nofollow noreferrer noopener">ARIA</a>
         </div>
       </div>
     </div>
@@ -724,4 +963,4 @@ tearfree=
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.4.4 at 2020-08-07 Fri 19:16:20 CST. -->
+<!-- Page built by Hikaru v1.5.7 at 2020-08-13 Thu 10:10:51 CST. -->
