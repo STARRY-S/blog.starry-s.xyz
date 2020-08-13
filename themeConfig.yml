@@ -30,17 +30,17 @@ favicon:
 
 # Must be an array.
 keywords:
-  - Arch Linux
-  - Linux
   - Life
-  - Music
   - ARIA
   - Hikaru
   - STARRY-S
+  - Arch Linux
+  - Linux
+  - Music
 
 # https://creativecommons.org/licenses/
 # by | by-sa | by-nd | by-nc | by-nc-sa | by-nc-nd
-creativeCommons: ny-nc-nd
+creativeCommons: by-nc-nd
 
 # Available: atom-one-dark | atom-one-light | solarized-dark | solarized-light
 highlight: atom-one-dark
@@ -95,11 +95,15 @@ mathjax:
   global:
   cdn:
 
-# Note: `fontawesome` is fontawesome-all. `busuanzi` is `busuanzi.pure.mini.js`.
+# Note: `fontAwesome.loader` is `fontawesome.min.js`. `busuanzi` is `busuanzi.pure.mini.js`.
 # If you don't know what you are doing, don't change it.
 libCDN:
-  enable: false
+  enable: true
   fontAwesome:
+    loader: //cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/js/fontawesome.min.js
+    solid: //cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/js/solid.min.js
+    brands: //cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/js/brands.min.js
+    regular: //cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/js/regular.min.js
   lightGallery:
     js:
     css:
@@ -108,17 +112,20 @@ libCDN:
   lgPager:
   lgThumbnail:
   lgZoom:
+  lgVideo:
   busuanzi:
+  normalize:
+  marked: //cdn.bootcdn.net/ajax/libs/marked/1.1.1/marked.min.js
+  highlight: //cdn.bootcdn.net/ajax/libs/highlight.js/10.1.2/highlight.min.js
+  avMin:
+  valine:
+  clipboard: //cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.6/clipboard.min.js
+  # Don't use camelCase for hljs theme CSS files,
+  # because they need to keep the same as highlight values.
   atom-one-dark:
   atom-one-light:
   solarized-dark:
   solarized-light:
-  normalize:
-  marked:
-  spinkit:
-  avMin:
-  valine:
-  clipboard:
 
 social:
   enable: true
@@ -134,7 +141,7 @@ social:
       icon: <i class="fab fa-weibo"></i>
     - name: Bilibili
       link: https://space.bilibili.com/19189337
-      icon: <i class="fas fa-video"></i>
+      icon: <i class="fas fa-tv"></i>
 
 blogroll:
   enable: true
@@ -145,9 +152,6 @@ blogroll:
     - name: LGiki's Blog
       link: https://lgiki.net/
       icon: <i class="fas fa-link"></i>
-    # - name: Nunjucks
-    #   link: https://mozilla.github.io/nunjucks/
-    #   icon: <i class="fas fa-link"></i>
 
 comment:
   enable: true
@@ -155,6 +159,7 @@ comment:
     enable: true
     user: STARRY-S
     repo: Blog
+    perPage: 10
   disqusShortName:
   valine:
     enable: false
