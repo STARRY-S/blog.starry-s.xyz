@@ -301,10 +301,10 @@
 <p>经过多次重装系统的折磨后，发现只装Bumblebee不装bbswitch不<code>systemctl enable bumblebeed.service</code>时，能正常开机，然后之前遇到的两个问题也莫名其妙就好了，即系统重启关机不会卡死，<code>lspci</code>也正常了（迷）</p>
 <p>之后，在不装bbswitch的情况下，<code>systemctl enable bumblebeed</code>再用<code>optirun</code>和<code>primusrun</code>这种方式用独显运行程序都没有问题。</p>
 <p>当时以为电脑不装bumblebee的话就没法正常关机，于是就一直用着bumblebee切换双显卡，玩游戏性能比Windows下差一点（貌似是显卡驱动的锅？），别的都没啥问题。</p>
-<p>今年年初买了一块拓展屏想搞双显示器，本来显示器应该插上HDMI直接就能用的，但是因为这电脑的HDMI走的独显输出，Bumblebee不能直接用，wiki上教的创建个intel的虚拟输出啥的方法有试过但是没成功过（不知道是配置文件写错了还是啥问题），于是又Google了一下后disable并卸了Bumblebee改用<a href="https://wiki.archlinux.org/index.php/NVIDIA_Optimus#Use_NVIDIA_graphics_only" target="_blank" rel="noreferrer noopener">NVIDIA Optimus 只使用独显</a>的方式，这样双显示器倒是能用了，但是如果笔记本只用电池没连着拓展屏的时候还跑着独显这也太费电了。</p>
-<p>所以最后找到了能切换显卡的<a href="https://github.com/Askannz/optimus-manager" target="_blank" rel="noreferrer noopener">Optimus Manager</a>。</p>
+<p>今年年初买了一块拓展屏想搞双显示器，本来显示器应该插上HDMI直接就能用的，但是因为这电脑的HDMI走的独显输出，Bumblebee不能直接用，wiki上教的创建个intel的虚拟输出啥的方法有试过但是没成功过（不知道是配置文件写错了还是啥问题），于是又Google了一下后disable并卸了Bumblebee改用<a href="https://wiki.archlinux.org/index.php/NVIDIA_Optimus#Use_NVIDIA_graphics_only" target="_blank" rel="external nofollow noreferrer noopener">NVIDIA Optimus 只使用独显</a>的方式，这样双显示器倒是能用了，但是如果笔记本只用电池没连着拓展屏的时候还跑着独显这也太费电了。</p>
+<p>所以最后找到了能切换显卡的<a href="https://github.com/Askannz/optimus-manager" target="_blank" rel="external nofollow noreferrer noopener">Optimus Manager</a>。</p>
 <h1 id="安装过程"><a class="header-link" href="/posts/archlinux-pavilion-gaming-laptop/#%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B" title="安装过程"></a>安装过程</h1>
-<p>照着<a href="https://wiki.archlinux.org/index.php/NVIDIA_Optimus" target="_blank" rel="noreferrer noopener">Wiki</a>和Optimus Manager的<a href="https://github.com/Askannz/optimus-manager#optimus-manager" target="_blank" rel="noreferrer noopener">README</a>。首先安装好显卡驱动相关的软件，如果有Bumblebee的话使用<code>systemctl disable bumblebeed</code>停用。</p>
+<p>照着<a href="https://wiki.archlinux.org/index.php/NVIDIA_Optimus" target="_blank" rel="external nofollow noreferrer noopener">Wiki</a>和Optimus Manager的<a href="https://github.com/Askannz/optimus-manager#optimus-manager" target="_blank" rel="external nofollow noreferrer noopener">README</a>。首先安装好显卡驱动相关的软件，如果有Bumblebee的话使用<code>systemctl disable bumblebeed</code>停用。</p>
 <p>首先清除（记得备份）<code>/etc/X11/xorg.conf.d/</code>下的配置文件，并删掉（记得备份）<code>/etc/X11/xorg.conf</code>（如果有的话），因为Optimus Manager会自动生成配置文件存放到<code>/etc/X11/xorg.conf.d/</code>里面，所以建议安装前把显示配置相关的文件都清除掉。</p>
 <p>使用Arch Linux CN源或者通过AUR Helper安装<code>optimus-manager</code>。</p>
 <figure data-raw="# Arch Linux CN
@@ -317,7 +317,7 @@ $ yay -S optimus-manager" class="code-block highlight hljs"><pre class="gutter">
 <span class="hljs-variable">$ </span>sudo pacman -S optimus-manager
 <span class="hljs-comment"># AUR</span>
 <span class="hljs-variable">$ </span>yay -S optimus-manager</code></pre></figure>
-<p>因为我用的Gnome，参照<a href="https://github.com/Askannz/optimus-manager#important--gnome-and-gdm-users" target="_blank" rel="noreferrer noopener">README中说的</a>卸载掉<code>gdm</code>并安装<code>gdm-prime</code><sup>AUR</sup>。（国内下载源代码的速度极慢建议挂梯子，或者挂梯子克隆<a href="https://gitlab.gnome.org/GNOME/gdm" target="_blank" rel="noreferrer noopener">GDM的代码</a>到<code>~/.cache/yay/gdm-prime/gdm</code>下。）</p>
+<p>因为我用的Gnome，参照<a href="https://github.com/Askannz/optimus-manager#important--gnome-and-gdm-users" target="_blank" rel="external nofollow noreferrer noopener">README中说的</a>卸载掉<code>gdm</code>并安装<code>gdm-prime</code><sup>AUR</sup>。（国内下载源代码的速度极慢建议挂梯子，或者挂梯子克隆<a href="https://gitlab.gnome.org/GNOME/gdm" target="_blank" rel="external nofollow noreferrer noopener">GDM的代码</a>到<code>~/.cache/yay/gdm-prime/gdm</code>下。）</p>
 <p>修改<code>/etc/gdm/custom.conf</code>，移除<code>WaylandEnable=false</code>一行前面的<code>#</code>禁用Wayland而使用X。</p>
 <h2 id="修改配置文件"><a class="header-link" href="/posts/archlinux-pavilion-gaming-laptop/#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6" title="修改配置文件"></a>修改配置文件</h2>
 <figure data-raw="$ sudo cp /usr/share/optimus-manager.conf /etc/optimus-manager/optimus-manager.conf" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span></pre><pre class="code"><code class="language-awk">$ sudo cp <span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/optimus-manager.conf /</span>etc<span class="hljs-regexp">/optimus-manager/</span>optimus-manager.conf</code></pre></figure>
@@ -660,7 +660,7 @@ tearfree=
 <h1 id="食用方法"><a class="header-link" href="/posts/archlinux-pavilion-gaming-laptop/#%E9%A3%9F%E7%94%A8%E6%96%B9%E6%B3%95" title="食用方法"></a>食用方法</h1>
 <p><code>optimus-manager --switch nvidia</code>切换到独显（nvidia）；</p>
 <p><code>optimus-manager --switch intel</code>切换到集显（intel）</p>
-<p>其他用法参见<a href="https://github.com/Askannz/optimus-manager#usage" target="_blank" rel="noreferrer noopener">Usage</a>。</p>
+<p>其他用法参见<a href="https://github.com/Askannz/optimus-manager#usage" target="_blank" rel="external nofollow noreferrer noopener">Usage</a>。</p>
 <p>注意：</p>
 <ul>
 <li><p>切换显卡的过程中会自动注销登录，所以记得<strong>保存并关掉电脑正在运行的程序</strong>。</p>
@@ -670,7 +670,7 @@ tearfree=
 </ul>
 <h1 id="Others"><a class="header-link" href="/posts/archlinux-pavilion-gaming-laptop/#Others" title="Others"></a>Others</h1>
 <ul>
-<li><p>之所以不推荐使用<code>bbswitch</code>是因为容易遇到<strong>ACPI锁死</strong>的问题，<a href="https://wiki.archlinux.org/index.php/NVIDIA_Optimus#Lockup_issue_(lspci_hangs)" target="_blank" rel="noreferrer noopener">参考Wiki</a>，需要添加<a href="https://wiki.archlinux.org/index.php/Kernel_parameters" target="_blank" rel="noreferrer noopener">内核参数</a><code>acpi_osi=! acpi_osi="Windows 2009"</code>或<code>acpi_osi="!Windows 2015"</code>启动，如果你遇到了锁死可以通过开机时在<a href="https://wiki.archlinux.org/index.php/Arch_boot_process#Boot_loader" target="_blank" rel="noreferrer noopener">启动加载器界面</a>编辑添加内核参数来正常进入系统，如果你用的是efistub或者没办法编辑内核参数的话就只能用live CD救你的电脑了。</p>
+<li><p>之所以不推荐使用<code>bbswitch</code>是因为容易遇到<strong>ACPI锁死</strong>的问题，<a href="https://wiki.archlinux.org/index.php/NVIDIA_Optimus#Lockup_issue_(lspci_hangs)" target="_blank" rel="external nofollow noreferrer noopener">参考Wiki</a>，需要添加<a href="https://wiki.archlinux.org/index.php/Kernel_parameters" target="_blank" rel="external nofollow noreferrer noopener">内核参数</a><code>acpi_osi=! acpi_osi="Windows 2009"</code>或<code>acpi_osi="!Windows 2015"</code>启动，如果你遇到了锁死可以通过开机时在<a href="https://wiki.archlinux.org/index.php/Arch_boot_process#Boot_loader" target="_blank" rel="external nofollow noreferrer noopener">启动加载器界面</a>编辑添加内核参数来正常进入系统，如果你用的是efistub或者没办法编辑内核参数的话就只能用live CD救你的电脑了。</p>
 </li>
 <li><p>如果用不了<code>lspci</code>，电脑没法正常关机的话，是nouveau的问题，可添加内核参数<code>modprobe.blacklist=nouveau</code>禁用。</p>
 </li>
@@ -963,4 +963,4 @@ tearfree=
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.5.7 at 2020-08-13 Thu 10:16:10 CST. -->
+<!-- Page built by Hikaru v1.5.9 at 2020-08-16 Sun 01:29:52 CST. -->
