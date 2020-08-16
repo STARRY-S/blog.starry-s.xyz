@@ -1,9 +1,9 @@
 {
   "name": "blog.starry-s.xyz",
   "dependencies": {
-    "hikaru-generator-aplayer": "latest",
-    "hikaru-generator-feed": "latest",
-    "hikaru-generator-search": "latest",
-    "hikaru-generator-sitemap": "latest"
+    "hikaru-generator-aplayer": "^1.2.0",
+    "hikaru-generator-feed": "^2.2.6",
+    "hikaru-generator-search": "^2.3.3",
+    "hikaru-generator-sitemap": "^2.2.6"
   }
 }

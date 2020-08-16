@@ -1,7 +1,7 @@
 ---
 title: About
 createdDate: 2016-08-22 13:25:30
-updatedDate: 2020-08-16 01:16:32
+updatedDate: 2020-08-17 02:58:24
 layout: about
 zone: Asia/Shanghai
 tags: about
@@ -14,7 +14,7 @@ comment: true
 
  * 学生党
 
- * 对称呼没要求，不过分就可以啦
+ * 对称呼没啥要求，不过分叫着顺口就可以啦
 
  * 喜欢的游戏: Minecraft Java Edition, NieR:Automata; 除此之外偶尔会玩守望先锋, PUBG, FGO手游等游戏。
 
@@ -24,7 +24,7 @@ comment: true
 
  * 月厨，空境剧场版看过无数遍，原著看过一次后打算有时间再看一遍，不过只了解一些而已，FGO玩不懂算是个假月厨吧。
 
- * 听歌种类略杂，但是不听华语. 喜欢的歌以ACG为主, 首选Kalafina, 尽管不是东方厨但是东方的歌确实好听, 除此之外偶尔听听电音和轻音乐。
+ * 听歌种类略杂，但是不听华语. 喜欢的歌以ACG为主, 首选Kalafina和梶浦由記的曲子, 尽管不是东方厨但是东方的歌确实好听, 除此之外偶尔听听电音和轻音乐。
 
  * 越来越不喜欢某云播放器了，日推不合口味，一个听歌软件没用的功能一大堆搞得花里胡哨的，不少歌曲还下架了（当然这只是我个人感受，并没有抹黑的意思
 
@@ -44,13 +44,15 @@ comment: true
 
 建于2016年8月21日，曾用过域名`starry-s.com`和`starry-s.cn`。
 
-现用域名为`starry-s.me`，除此之外还有域名`starry-s.xyz`（可能要到期了），以后没问题的话就不打算换域名了因为`.me`域名好记而且我挺喜欢的，也不是很贵。
+现用域名为`starry-s.me`，除此之外还有域名`starry-s.xyz`（要到期了），以后没问题的话就不打算换域名了因为`.me`域名好记而且我挺喜欢的，也不是很贵。
 
 因为之前更新过太多日常/碎碎念之类的水文，所以把旧篇幅都删掉了，实在想看可以翻GitHub上的comments（不过我还真没翻过），以后尽量以技术类文章为主，如果实在写不出来/没什么可写的话我会选择停更一段时间。
 
 本站由[Hikaru](https://hikaru.alynx.one/)生成，主题为[ARIA](https://github.com/AlynxZhou/hikaru-theme-aria)，托管于GitHub Pages（见页面右下角），很喜欢这个生成器以及ARIA这款主题。
 
 [音乐播放器](https://github.com/STARRY-S/hikaru-generator-aplayer)是我自己为Hikaru适配的[Aplayer](https://github.com/MoePlayer/APlayer)插件，原理实现很简单，有意见/建议可以去提issue或pull request。
+
+刚更新了播放器插件，勉强适配了一下新出的[暗色模式](https://sh.alynx.one/posts/Dark-Mode-in-Theme/)，如果只调整播放器背景颜色的话在播放列表模式或者含有歌词显示时会很难看，一开始想自定义css文件的后来觉得太麻烦得增加很多代码所以目前只是适配了没有播放列表、没有歌词的这种情况，播放器背景颜色会随着主题颜色改变而改变，其他情况的解决方法还没想好，不过说实话**黑色模式还挺好看的**。因为实在没啥技术含量所以就不单独开一篇文章讲这么水的事情了。
 
 ----
 
