@@ -1,7 +1,7 @@
 ---
 title: About
 createdDate: 2016-08-22 13:25:30
-updatedDate: 2020-08-17 02:58:24
+updatedDate: 2020-08-24 13:42:28
 layout: about
 zone: Asia/Shanghai
 tags: about
@@ -44,7 +44,7 @@ comment: true
 
 建于2016年8月21日，曾用过域名`starry-s.com`和`starry-s.cn`。
 
-现用域名为`starry-s.me`，除此之外还有域名`starry-s.xyz`（要到期了），以后没问题的话就不打算换域名了因为`.me`域名好记而且我挺喜欢的，也不是很贵。
+现用域名为`starry-s.me`，除此之外还有域名`starry-s.xyz`（又续了一年），以后没问题的话就不打算换域名了因为`.me`域名好记而且我挺喜欢的，也不是很贵。
 
 因为之前更新过太多日常/碎碎念之类的水文，所以把旧篇幅都删掉了，实在想看可以翻GitHub上的comments（不过我还真没翻过），以后尽量以技术类文章为主，如果实在写不出来/没什么可写的话我会选择停更一段时间。
 

@@ -109,6 +109,8 @@ button.theme-toggle {
   text-align: center;
   border: none;
   outline: 0;
+  padding: 0;
+  margin: 0;
   background: #33363b;
   font-size: 2rem;
   cursor: pointer;
@@ -119,7 +121,6 @@ button.nav-toggle:hover,
 button.theme-toggle:hover {
   color: #fff;
   background: #252525;
-  border: none;
 }
 button.nav-toggle {
   display: none;
@@ -377,7 +378,7 @@ div.center {
 }
 ol,
 ul {
-  padding-left: 1em;
+  padding-left: 2em;
 }
 a {
   position: relative;
@@ -447,7 +448,7 @@ button.button {
 a.button:hover,
 button.button:hover {
   box-shadow: 0 0 1em 0.5em rgba(0,0,0,0.19);
-  border-bottom: none;
+  border: 0.1em solid #ddd;
 }
 a.button:active,
 button.button:active {
@@ -582,7 +583,7 @@ figure.code-block {
   margin: 0;
 }
 figure.code-block:not(.hljs) {
-  color: #999;
+  color: #ccc;
   background: #26272b;
 }
 figure.code-block pre {
@@ -592,7 +593,7 @@ figure.code-block pre.gutter {
   flex: 0 0 auto;
   text-align: right;
   padding: 0.5em;
-  border-right: 0.1em dotted #999;
+  border-right: 0.1em dotted #ccc;
 }
 figure.code-block pre.code {
   flex: 1 1 auto;
@@ -609,6 +610,10 @@ figure.code-block pre.code code {
   background: transparent;
   word-wrap: normal;
   border-radius: 0;
+}
+figure.code-block pre.code code.hljs {
+  display: inline;
+  overflow: visible;
 }
 blockquote {
   margin: 1em 0;

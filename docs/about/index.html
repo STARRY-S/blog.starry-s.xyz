@@ -76,22 +76,40 @@
     <script defer type="text/javascript" src="/js/busuanzi.pure.mini.js"></script>
     
     
+    
+    
+    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+    <script type="text/javascript">
+      documentReady(() => {
+        elementsEach(
+          document.querySelectorAll("figure.code-block pre.code code"),
+          (e, i) => {
+            // We want to use hljs' background and color for the whole block.
+            e.parentNode.parentNode.classList.add("hljs");
+            hljs.highlightBlock(e);
+          }
+        );
+      });
+    </script>
+    
+    
     <script type="text/javascript">
       // Set theme before page rendering.
       // Check user's choice from localStorage.
-      var theme = localStorage.getItem("theme");
-      var preferenceQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      let theme = localStorage.getItem("theme");
+      const preferenceQuery = window.matchMedia("(prefers-color-scheme: dark)");
       // theme might be null here.
       if (theme !== "dark" && theme !== "light") {
         // Init from user's system settings if no choice.
         theme = preferenceQuery.matches ? "dark" : "light";
       }
       // Yes, it looks I can modify documentElement before ready!
+      // Don't use requestAnimationFrame here, it will cause flickering.
       document.documentElement.setAttribute("data-theme", theme);
       localStorage.setItem("theme", theme);
-      documentReady(function () {
-        var themeToggle = document.getElementById("theme-toggle");
-        var setThemeToggle = function (themeToggle, theme) {
+      documentReady(() => {
+        const themeToggle = document.getElementById("theme-toggle");
+        const setThemeToggle = (themeToggle, theme) => {
           themeToggle.innerHTML = theme === "dark"
             ? "<i class=\"far fa-moon\" aria-label=\"accessibility.themeDark\"></i>"
             : "<i class=\"far fa-sun\" aria-label=\"accessibility.themeLight\"></i>";
@@ -99,32 +117,38 @@
         // Update theme toggle content.
         setThemeToggle(themeToggle, theme);
         // User changed system settings, update.
-        preferenceQuery.addListener(function (event) {
+        preferenceQuery.addListener((event) => {
           theme = event.matches ? "dark" : "light";
           setThemeToggle(themeToggle, theme);
-          document.documentElement.setAttribute("data-theme", theme);
+          window.requestAnimationFrame(() => {
+            document.documentElement.setAttribute("data-theme", theme);
+          });
           localStorage.setItem("theme", theme);
         });
         // Other page of site changed storage, update.
-        window.addEventListener("storage", function (event) {
+        window.addEventListener("storage", (event) => {
           if (event.key === "theme" && event.newValue !== event.oldValue) {
             theme = event.newValue;
             setThemeToggle(themeToggle, theme);
-            document.documentElement.setAttribute("data-theme", theme);
+            window.requestAnimationFrame(() => {
+              document.documentElement.setAttribute("data-theme", theme);
+            });
           }
         });
         // User changed website settings, update.
-        themeToggle.addEventListener("click", function (event) {
+        themeToggle.addEventListener("click", (event) => {
           theme = theme === "dark" ? "light" : "dark";
           setThemeToggle(themeToggle, theme);
-          document.documentElement.setAttribute("data-theme", theme);
+          window.requestAnimationFrame(() => {
+            document.documentElement.setAttribute("data-theme", theme);
+          });
           localStorage.setItem("theme", theme);
         });
         elementsEach(
           document.querySelectorAll(".post figure.code-block"),
-          function (e, i) {
-            var lang = e.getAttribute("data-lang");
-            e.insertAdjacentElement("beforebegin", createElementFromString([
+          (e, i) => {
+            const lang = e.getAttribute("data-lang");
+            elementBefore(e, createElementFromString([
               "<div class=\"code-titlebar\">",
                 "<div class=\"titlebar-left\">",
                   "<button class=\"copy\" aria-label=\"复制\"><i class=\"far fa-copy\"></i></button>",
@@ -141,22 +165,22 @@
             ].join("")));
           }
         );
-        var cb = new ClipboardJS("button.copy", {
-          "target": function (trigger) {
+        const cb = new ClipboardJS("button.copy", {
+          "target": (trigger) => {
               // Get target element by DOM API.
               // trigger.parentNode.parentNode is code-titlebar.
               // nextElementSibling is figure.highlight, lastChild is pre.code.
               return trigger.parentNode.parentNode.nextElementSibling.lastChild;
           }
         });
-        cb.on("success", function (e) {
+        cb.on("success", (e) => {
           e.clearSelection();
-          var trigger = e.trigger;
+          const trigger = e.trigger;
           // Change button text as a user tip.
           trigger.innerHTML = "<i class=\"far fa-check-square\"></i>";
           trigger.classList.add("copied");
           // Change button text back;
-          setTimeout(function () {
+          window.setTimeout(() => {
             trigger.innerHTML = "<i class=\"far fa-copy\"></i>";
             trigger.classList.remove("copied");
           }, 1500);
@@ -164,8 +188,6 @@
       });
     </script>
     
-    <title>About - STARRY-S' Blog</title>
-
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124615792-3"></script>
     <script>
@@ -175,7 +197,7 @@
 
       gtag('config', 'UA-124615792-3');
     </script>
-
+    <title>About - STARRY-S' Blog</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage">
     
@@ -245,7 +267,7 @@
         
         
         <div class="post-date meta-block">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateUpdated" datetime="2020-08-16T18:58:24.000Z">2020-08-17 Mon 02:58:24 CST</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateUpdated" datetime="2020-08-24T05:42:28.000Z">2020-08-24 Mon 13:42:28 CST</time></span>
         </div>
         
         
@@ -294,7 +316,7 @@
 </ul>
 <h1 id="STARRY-S039;Blog"><a class="header-link" href="/about/#STARRY-S039;Blog" title="STARRY-S039;Blog"></a>STARRY-S' Blog</h1>
 <p>建于2016年8月21日，曾用过域名<code>starry-s.com</code>和<code>starry-s.cn</code>。</p>
-<p>现用域名为<code>starry-s.me</code>，除此之外还有域名<code>starry-s.xyz</code>（要到期了），以后没问题的话就不打算换域名了因为<code>.me</code>域名好记而且我挺喜欢的，也不是很贵。</p>
+<p>现用域名为<code>starry-s.me</code>，除此之外还有域名<code>starry-s.xyz</code>（又续了一年），以后没问题的话就不打算换域名了因为<code>.me</code>域名好记而且我挺喜欢的，也不是很贵。</p>
 <p>因为之前更新过太多日常/碎碎念之类的水文，所以把旧篇幅都删掉了，实在想看可以翻GitHub上的comments（不过我还真没翻过），以后尽量以技术类文章为主，如果实在写不出来/没什么可写的话我会选择停更一段时间。</p>
 <p>本站由<a href="https://hikaru.alynx.one/" target="_blank" rel="external nofollow noreferrer noopener">Hikaru</a>生成，主题为<a href="https://github.com/AlynxZhou/hikaru-theme-aria" target="_blank" rel="external nofollow noreferrer noopener">ARIA</a>，托管于GitHub Pages（见页面右下角），很喜欢这个生成器以及ARIA这款主题。</p>
 <p><a href="https://github.com/STARRY-S/hikaru-generator-aplayer" target="_blank" rel="external nofollow noreferrer noopener">音乐播放器</a>是我自己为Hikaru适配的<a href="https://github.com/MoePlayer/APlayer" target="_blank" rel="external nofollow noreferrer noopener">Aplayer</a>插件，原理实现很简单，有意见/建议可以去提issue或pull request。</p>
@@ -338,7 +360,7 @@ const ap0 = new APlayer ({
 
 <div class="reward" id="reward">
   <div class="reward-info" id="reward-info">
-    <span>Support Me！</span>
+    <span>Support Me!</span>
   </div>
   <button id="reward-button" class="button reward-button" disable="enable"><i class="fas fa-donate"></i>打赏</button>
   <div id="qr" class="qr" style="display: none;" aria-hidden="true">
@@ -367,7 +389,7 @@ const ap0 = new APlayer ({
   
   <script defer type="text/javascript" src="/js/comment.js"></script>
   <script type="text/javascript">
-    documentReady(function () {
+    documentReady(() => {
       loadCommentCount({
         "user": "STARRY-S",
         "repo": "Blog",
@@ -385,15 +407,8 @@ const ap0 = new APlayer ({
       <div class="sk-rect sk-rect5"></div>
     </div>
   </div>
-  <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/marked/1.1.1/marked.min.js"></script>
-  <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
   <script type="text/javascript">
-    documentReady(function () {
-      window.marked.setOptions({
-        "highlight": function (code, lang) {
-          return hljs.highlightAuto(code).value;
-        }
-      });
+    documentReady(() => {
       loadComment({
         "user": "STARRY-S",
         "repo": "Blog",
@@ -405,6 +420,17 @@ const ap0 = new APlayer ({
         "queryString": window.location.search,
         "basePath": "/about/",
         "containerID": "comment-results"
+      }).then(() => {
+        elementsEach(
+          document.querySelectorAll("div.comment-content img"),
+          (e, i) => {
+            // If an image works as link,
+            // stop adding link styles to it.
+            if (e.parentNode.tagName === "A") {
+              e.parentNode.classList.add("img-link");
+            }
+          }
+        );
       });
     });
   </script>
@@ -505,9 +531,11 @@ const ap0 = new APlayer ({
         
         <li><i class="fab fa-github"></i><a href="https://github.com/STARRY-S" target="_blank" rel="external nofollow noreferrer noopener">GitHub</a></li>
         
-        <li><i class="fab fa-weibo"></i><a href="https://t.me/STARRY-S" target="_blank" rel="external nofollow noreferrer noopener">Telegram</a></li>
+        <li><i class="fab fa-telegram-plane"></i><a href="https://t.me/STARRY-S" target="_blank" rel="external nofollow noreferrer noopener">Telegram</a></li>
         
         <li><i class="fas fa-tv"></i><a href="https://space.bilibili.com/19189337" target="_blank" rel="external nofollow noreferrer noopener">Bilibili</a></li>
+        
+        <li><i class="fab fa-weibo"></i><a href="https://weibo.com/u/6990977018" target="_blank" rel="external nofollow noreferrer noopener">Weibo</a></li>
         
       </ul>
     </div>
@@ -567,4 +595,4 @@ const ap0 = new APlayer ({
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.5.9 at 2020-08-17 Mon 03:11:48 CST. -->
+<!-- Page built by Hikaru v1.5.15 at 2020-08-24 Mon 14:28:02 CST. -->

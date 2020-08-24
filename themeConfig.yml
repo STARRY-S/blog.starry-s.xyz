@@ -115,10 +115,7 @@ libCDN:
   lgVideo:
   busuanzi:
   normalize:
-  marked: //cdn.bootcdn.net/ajax/libs/marked/1.1.1/marked.min.js
   highlight: //cdn.bootcdn.net/ajax/libs/highlight.js/10.1.2/highlight.min.js
-  avMin:
-  valine:
   clipboard: //cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.6/clipboard.min.js
   # Don't use camelCase for hljs theme CSS files,
   # because they need to keep the same as highlight values.
@@ -138,10 +135,13 @@ social:
       icon: <i class="fab fa-github"></i>
     - name: Telegram
       link: https://t.me/STARRY-S
-      icon: <i class="fab fa-weibo"></i>
+      icon: <i class="fab fa-telegram-plane"></i>
     - name: Bilibili
       link: https://space.bilibili.com/19189337
       icon: <i class="fas fa-tv"></i>
+    - name: Weibo
+      link: https://weibo.com/u/6990977018
+      icon: <i class="fab fa-weibo"></i>
 
 blogroll:
   enable: true
@@ -161,23 +161,10 @@ comment:
     repo: Blog
     perPage: 10
   disqusShortName:
-  valine:
-    enable: false
-    appID:
-    appKey:
-    verify: false
-    notify: false
-    avatar: mm
-    meta: "[\"nick\", \"mail\", \"link\"]"
-    pageSize: 10
-    lang: zh-cn
-    visitor: false
-    highlight: true
-    avatarForce: false
 
 reward:
   enable: true
-  message: Support Me！
+  message: Support Me!
   weChatPayQRCode: images/wechatpay.jpg
   aliPayQRCode: images/alipay.jpg
   # bitCoinQRCode: images/BitCoin.png

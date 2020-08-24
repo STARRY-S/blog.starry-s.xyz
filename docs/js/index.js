@@ -1,43 +1,61 @@
 "use strict";
-var documentReady = function (callback) {
+
+/* eslint-disable-next-line no-unused-vars */
+const documentReady = (callback) => {
   if (callback == null) {
     return;
   }
-  document.readyState !== "loading"
-    ? callback()
-    : document.addEventListener("DOMContentLoaded", callback);
+  if (
+    document.readyState === "complete" || document.readyState === "interactive"
+  ) {
+    window.setTimeout(callback, 0);
+  } else {
+    document.addEventListener("DOMContentLoaded", callback);
+  }
 };
 
-var createElementFromString = function (string) {
-  var e = document.createElement("div");
+/* eslint-disable-next-line no-unused-vars */
+const createElementFromString = (string) => {
+  const e = document.createElement("div");
   e.innerHTML = string;
   return e.firstElementChild;
 };
 
-var elementsEach = function (elements, callback) {
+/* eslint-disable-next-line no-unused-vars */
+const elementsEach = (elements, callback) => {
   if (elements == null || callback == null) {
     return;
   }
   return Array.prototype.forEach.call(elements, callback);
 };
 
-var elementBefore = function (element, before) {
+/* eslint-disable-next-line no-unused-vars */
+const elementBefore = (element, before) => {
+  if (element == null || before == null) {
+    return;
+  }
+  element.insertAdjacentElement("beforebegin", before);
+};
+
+/* eslint-disable-next-line no-unused-vars */
+const elementAfter = (element, before) => {
   if (element == null || before == null) {
     return;
   }
   element.insertAdjacentElement("afterend", before);
 };
 
-var scrollToTop = function (opts) {
-  opts = opts || {}
+/* eslint-disable-next-line no-unused-vars */
+const scrollToTop = (opts) => {
+  opts = opts || {};
   opts["duration"] = opts["duration"] || 400;
   opts["offset"] = opts["offset"] || 0;
-  var oldOffset = document.documentElement.scrollTop ||
+  const oldOffset = document.documentElement.scrollTop ||
     document.body.scrollTop;
-  var startMs = window.performance.now();
-  function frame(currentMs) {
+  const startMs = window.performance.now();
+  const frame = (currentMs) => {
     // Time based frame step.
-    var currentOffset = (
+    const currentOffset = (
       1 - (currentMs - startMs) / opts["duration"]
     ) * (oldOffset - opts["offset"]);
     if (currentOffset <= opts["offset"]) {
@@ -50,11 +68,12 @@ var scrollToTop = function (opts) {
       // Call next animation!
       window.requestAnimationFrame(frame);
     }
-  }
+  };
   window.requestAnimationFrame(frame);
 };
 
-var slideUp = function (target, duration) {
+/* eslint-disable-next-line no-unused-vars */
+const slideUp = (target, duration) => {
   if (target == null) {
     return;
   }
@@ -63,14 +82,16 @@ var slideUp = function (target, duration) {
   target.style.transitionDuration = duration + "ms";
   target.style.boxSizing = "border-box";
   target.style.height = target.offsetHeight + "px";
+  // Don't know why but next line cannot be removed.
+  /* eslint-disable-next-line no-unused-expressions */
   target.offsetHeight;
-  target.style.overflow = "hidden";
   target.style.height = 0;
   target.style.paddingTop = 0;
   target.style.paddingBottom = 0;
   target.style.marginTop = 0;
   target.style.marginBottom = 0;
-  window.setTimeout(function () {
+  target.style.overflow = "hidden";
+  window.setTimeout(() => {
     target.style.display = "none";
     target.style.removeProperty("height");
     target.style.removeProperty("padding-top");
@@ -83,25 +104,28 @@ var slideUp = function (target, duration) {
   }, duration);
 };
 
-var slideDown = function (target, duration) {
+/* eslint-disable-next-line no-unused-vars */
+const slideDown = (target, duration) => {
   if (target == null) {
     return;
   }
   duration = duration || 400;
   target.style.removeProperty("display");
-  var display = window.getComputedStyle(target).display;
+  let display = window.getComputedStyle(target).display;
   if (display === "none") {
     display = "block";
   }
   target.style.display = display;
-  var height = target.offsetHeight;
-  target.style.overflow = "hidden";
+  const height = target.offsetHeight;
   target.style.height = 0;
   target.style.paddingTop = 0;
   target.style.paddingBottom = 0;
   target.style.marginTop = 0;
   target.style.marginBottom = 0;
+  // Don't know why but next line cannot be removed.
+  /* eslint-disable-next-line no-unused-expressions */
   target.offsetHeight;
+  target.style.overflow = "hidden";
   target.style.boxSizing = "border-box";
   target.style.transitionProperty = "height, margin, padding";
   target.style.transitionDuration = duration + "ms";
@@ -110,7 +134,7 @@ var slideDown = function (target, duration) {
   target.style.removeProperty("padding-bottom");
   target.style.removeProperty("margin-top");
   target.style.removeProperty("margin-bottom");
-  window.setTimeout(function () {
+  window.setTimeout(() => {
     target.style.removeProperty("height");
     target.style.removeProperty("overflow");
     target.style.removeProperty("transition-duration");
@@ -118,7 +142,8 @@ var slideDown = function (target, duration) {
   }, duration);
 };
 
-var slideToggle = function (target, duration) {
+/* eslint-disable-next-line no-unused-vars */
+const slideToggle = (target, duration) => {
   if (target == null) {
     return;
   }
@@ -128,22 +153,19 @@ var slideToggle = function (target, duration) {
     : slideUp(target, duration);
 };
 
-documentReady(function () {
+documentReady(() => {
   // If some init functions are used for library which is always enabled,
   // and does not depend on templating,
   // init function should be written here.
 
-  document.getElementById("back-to-top").addEventListener(
-    "click",
-    function (event) {
-      scrollToTop();
-    }
-  );
+  document.getElementById("back-to-top").addEventListener("click", (event) => {
+    scrollToTop();
+  });
 
-  var rewardButton = document.getElementById("reward-button");
-  var qr = document.getElementById("qr");
+  const rewardButton = document.getElementById("reward-button");
+  const qr = document.getElementById("qr");
   if (rewardButton != null) {
-    rewardButton.addEventListener("click", function () {
+    rewardButton.addEventListener("click", () => {
       qr.getAttribute("aria-hidden") === "true"
         ? qr.setAttribute("aria-hidden", "false")
         : qr.setAttribute("aria-hidden", "true");
@@ -151,37 +173,37 @@ documentReady(function () {
     });
   }
 
-  var menu = document.getElementById("menu");
-  var navToggle = document.getElementById("nav-toggle");
-  navToggle.addEventListener("click", function () {
+  const menu = document.getElementById("menu");
+  const navToggle = document.getElementById("nav-toggle");
+  navToggle.addEventListener("click", () => {
     menu.getAttribute("aria-hidden") === "true"
       ? menu.setAttribute("aria-hidden", "false")
       : menu.setAttribute("aria-hidden", "true");
     slideToggle(menu);
   });
 
-  var yearsText = document.getElementById("years-text");
-  var current = new Date().getFullYear().toString();
-  var since = yearsText.innerHTML;
+  const yearsText = document.getElementById("years-text");
+  const current = new Date().getFullYear().toString();
+  const since = yearsText.textContent;
   if (since.length === 0) {
-    yearsText.innerHTML = current;
+    yearsText.textContent = current;
   } else if (since !== current) {
-    yearsText.innerHTML = [since, " - ", current].join("");
+    yearsText.textContent = `${since} - ${current}`;
   }
 
   // (40em - 0.6em) * 16px
   // 40 is total size and 0.4 is scroll bar size.
   // Don't forget calculate scroll bar size.
-  var minWidth = Math.round((40 - 0.4) * 16);
+  const minWidth = Math.round((40 - 0.4) * 16);
+  let windowWidth = window.innerWidth;
   // Auto hide main nav menus in small screen.
-  if (window.innerWidth <= minWidth) {
+  if (windowWidth <= minWidth) {
     menu.style.display = "none";
     menu.setAttribute("aria-hidden", "true");
     navToggle.setAttribute("aria-hidden", "false");
   }
-  var windowWidth = window.innerWidth;
   // Show menu again when window becomes bigger.
-  window.addEventListener("resize", function (event) {
+  window.addEventListener("resize", (event) => {
     if (window.innerWidth > minWidth) {
       menu.style.display = "";
       menu.setAttribute("aria-hidden", "false");
@@ -199,22 +221,18 @@ documentReady(function () {
     }
   });
 
-  elementsEach(document.querySelectorAll("article.post img"), function (e, i) {
+  elementsEach(document.querySelectorAll("article.post img"), (e, i) => {
     // If an image works as link, don't attach light gallary to it.
     if (e.parentNode.tagName !== "A") {
       if (e.title) {
-        elementBefore(e, createElementFromString(
-          [
-            "<div class=\"center\"><span class=\"caption\">",
-            e.title,
-            "</span></div>"
-          ].join("")
+        elementAfter(e, createElementFromString(
+          `<div class="center"><span class="caption">${e.title}</span></div>`
         ));
       }
-      var a = document.createElement("a");
+      const a = document.createElement("a");
       a.href = e.src;
       a.className = "gallery-item";
-      elementBefore(e, a);
+      elementAfter(e, a);
       a.appendChild(e);
     } else {
       e.parentNode.classList.add("img-link");
@@ -222,11 +240,13 @@ documentReady(function () {
   });
 
   if (typeof lightGallery !== "undefined") {
-    elementsEach(document.querySelectorAll("article.post"), function (e, i) {
+    elementsEach(document.querySelectorAll("article.post"), (e, i) => {
+      /* eslint-disable-next-line no-undef */
       lightGallery(e, {"selector": ".gallery-item"});
     });
   }
 
+  /* eslint-disable-next-line no-undef */
   loadScrollSpy({
     "containerID": "scrollspy-container",
     "targetID": "scrollspy-target",
