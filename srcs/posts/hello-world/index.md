@@ -35,5 +35,4 @@ int main(int argc, char *argv[])
 
 ```
 
-
 ## STARRY-S' Blog
