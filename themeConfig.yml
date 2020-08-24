@@ -160,7 +160,7 @@ comment:
     user: STARRY-S
     repo: Blog
     perPage: 10
-  disqusShortName:
+  disqusShortName: blog-starry-s
 
 reward:
   enable: true

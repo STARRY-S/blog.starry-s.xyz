@@ -47,7 +47,7 @@ stylus:
 highlight:
   enable: true
   gutter: true
-  hljs: true
+  hljs: false
 
 search:
   enable: true
