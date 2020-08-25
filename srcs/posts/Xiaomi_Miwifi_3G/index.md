@@ -134,7 +134,7 @@ reboot
 
 # Others
 
-1. 如果刷了Breed + Pandavan/PandoraBox后想换回OpenWrt的话，首先在Breed中刷回小米路由器开发版的官方固件，然后SSH到路由器按照上述的使用Breed的刷机方再刷机。
+1. 如果刷了Breed + Pandavan/PandoraBox后想换回OpenWrt的话，首先在Breed中刷回小米路由器开发版的官方固件，然后SSH到路由器按照上述的使用Breed的刷机方法再刷机。
 
 2. USB3.0会对路由器的2.4G频段信号造成干扰。
 
