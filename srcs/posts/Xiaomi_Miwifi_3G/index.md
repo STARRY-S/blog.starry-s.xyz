@@ -71,7 +71,7 @@ Breed原作者为hackpascal，[此处为下载地址](https://breed.hackpascal.n
 
 第一种方法是ssh到路由器后通过`wget`下载breed文件再刷入（需要确保路由器联网），下载地址为https所以需要加上`--no-check-certificate`参数。
 
-``` plant
+```
 cd /tmp
 wget --no-check-certificate https://breed.hackpascal.net/breed-mt7621-xiaomi-r3g.bin -O breed.bin
 mtd -r write breed.bin Bootloader
@@ -79,7 +79,7 @@ mtd -r write breed.bin Bootloader
 
 另一种方法是将breed通过U盘拷贝到路由器再刷入。
 
-``` plant
+```
 mkdir /tmp/sdcard
 mount /dev/sda1 /tmp/sdcard
 mtd -r write /tmp/sdcard/breed.bin Bootloader
@@ -106,14 +106,14 @@ mtd -r write /tmp/sdcard/breed.bin Bootloader
 简单来说就是：路由器有两个内核，需要在Breed里设置环境变量让路由器启动kernel1。
 
 1. 刷入Openwrt固件到Kernel1
-  ``` plant
+  ```
   mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-kernel1.bin kernel1
   mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-rootfs0.bin rootfs0
   ```
 
 2. 路由器断电，捅住reset按钮后通电，待指示灯变为蓝色闪烁后用网线连接路由器到电脑，浏览器打开网址`192.168.1.1`，进入Breed界面。
 
-3. 在环境变量编辑里添加`xiaomi.r3g.bootfw`字段，值为`2`,保存后重启即可完美进入Openwrt。
+3. 在环境变量编辑里添加`xiaomi.r3g.bootfw`字段，值为`2`,保存后重启即可进入Openwrt。
 
 ## 没有刷入Breed的刷机方法
 
@@ -121,7 +121,7 @@ mtd -r write /tmp/sdcard/breed.bin Bootloader
 
 ssh到路由器，导入固件后刷机。
 
-``` plant
+```
 mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-kernel1.bin kernel1
 mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-rootfs0.bin rootfs0
 nvram set flag_try_sys1_failed=1
@@ -134,7 +134,7 @@ reboot
 
 # Others
 
-1. 如果刷了Breed + Pandavan/PandoraBox后想换回OpenWrt的话，首先在Breed中刷回小米路由器开发版的官方固件，然后ssh进路由器里参照[使用Breed的刷机方法](#使用Breed的刷机方法)步骤刷机。
+1. 如果刷了Breed + Pandavan/PandoraBox后想换回OpenWrt的话，首先在Breed中刷回小米路由器开发版的官方固件，然后SSH到路由器按照上述的使用Breed的刷机方再刷机。
 
 2. USB3.0会对路由器的2.4G频段信号造成干扰。
 

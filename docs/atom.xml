@@ -574,7 +574,7 @@ const ap0 = new APlayer ({
 &lt;p&gt;第一种方法是ssh到路由器后通过&lt;code&gt;wget&lt;/code&gt;下载breed文件再刷入（需要确保路由器联网），下载地址为https所以需要加上&lt;code&gt;--no-check-certificate&lt;/code&gt;参数。&lt;/p&gt;
 &lt;figure data-raw=&quot;cd /tmp
 wget --no-check-certificate https://breed.hackpascal.net/breed-mt7621-xiaomi-r3g.bin -O breed.bin
-mtd -r write breed.bin Bootloader&quot; data-info=&quot;language-plant&quot; data-lang=&quot;plant&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;gutter&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
+mtd -r write breed.bin Bootloader&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;gutter&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;2&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;3&lt;/span&gt;&lt;/pre&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-jboss-cli&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;/tmp&lt;/span&gt;
 wget &lt;span class=&quot;hljs-params&quot;&gt;--no-check-certificate&lt;/span&gt; https:&lt;span class=&quot;hljs-string&quot;&gt;//breed.hackpascal.net/breed-mt7621-xiaomi-r3g.bin&lt;/span&gt; -O breed.bin
@@ -582,7 +582,7 @@ mtd -r write breed.bin Bootloader&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;另一种方法是将breed通过U盘拷贝到路由器再刷入。&lt;/p&gt;
 &lt;figure data-raw=&quot;mkdir /tmp/sdcard
 mount /dev/sda1 /tmp/sdcard
-mtd -r write /tmp/sdcard/breed.bin Bootloader&quot; data-info=&quot;language-plant&quot; data-lang=&quot;plant&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;gutter&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
+mtd -r write /tmp/sdcard/breed.bin Bootloader&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;gutter&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;2&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;3&lt;/span&gt;&lt;/pre&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-gradle&quot;&gt;mkdir &lt;span class=&quot;hljs-regexp&quot;&gt;/tmp/&lt;/span&gt;sdcard
 mount &lt;span class=&quot;hljs-regexp&quot;&gt;/dev/&lt;/span&gt;sda1 &lt;span class=&quot;hljs-regexp&quot;&gt;/tmp/&lt;/span&gt;sdcard
@@ -607,13 +607,13 @@ mtd -r &lt;span class=&quot;hljs-keyword&quot;&gt;write&lt;/span&gt; &lt;span cl
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;刷入Openwrt固件到Kernel1&lt;/p&gt;
 &lt;figure data-raw=&quot;mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-kernel1.bin kernel1
-mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-rootfs0.bin rootfs0&quot; data-info=&quot;language-plant&quot; data-lang=&quot;plant&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;gutter&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
+mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-rootfs0.bin rootfs0&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;gutter&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;2&lt;/span&gt;&lt;/pre&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-apache&quot;&gt;&lt;span class=&quot;hljs-attribute&quot;&gt;mtd&lt;/span&gt; write openwrt-&lt;span class=&quot;hljs-number&quot;&gt;18&lt;/span&gt;.&lt;span class=&quot;hljs-number&quot;&gt;06&lt;/span&gt;.&lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;-ramips-mt&lt;span class=&quot;hljs-number&quot;&gt;7621&lt;/span&gt;-mir&lt;span class=&quot;hljs-number&quot;&gt;3&lt;/span&gt;g-squashfs-kernel&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;.bin kernel&lt;span class=&quot;hljs-number&quot;&gt;1&lt;/span&gt;
 &lt;span class=&quot;hljs-attribute&quot;&gt;mtd&lt;/span&gt; write openwrt-&lt;span class=&quot;hljs-number&quot;&gt;18&lt;/span&gt;.&lt;span class=&quot;hljs-number&quot;&gt;06&lt;/span&gt;.&lt;span class=&quot;hljs-number&quot;&gt;2&lt;/span&gt;-ramips-mt&lt;span class=&quot;hljs-number&quot;&gt;7621&lt;/span&gt;-mir&lt;span class=&quot;hljs-number&quot;&gt;3&lt;/span&gt;g-squashfs-rootfs&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;.bin rootfs&lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;路由器断电，捅住reset按钮后通电，待指示灯变为蓝色闪烁后用网线连接路由器到电脑，浏览器打开网址&lt;code&gt;192.168.1.1&lt;/code&gt;，进入Breed界面。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;在环境变量编辑里添加&lt;code&gt;xiaomi.r3g.bootfw&lt;/code&gt;字段，值为&lt;code&gt;2&lt;/code&gt;,保存后重启即可完美进入Openwrt。&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;在环境变量编辑里添加&lt;code&gt;xiaomi.r3g.bootfw&lt;/code&gt;字段，值为&lt;code&gt;2&lt;/code&gt;,保存后重启即可进入Openwrt。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&quot;没有刷入Breed的刷机方法&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/Xiaomi_Miwifi_3G/#%E6%B2%A1%E6%9C%89%E5%88%B7%E5%85%A5Breed%E7%9A%84%E5%88%B7%E6%9C%BA%E6%96%B9%E6%B3%95&quot; title=&quot;没有刷入Breed的刷机方法&quot;&gt;&lt;/a&gt;没有刷入Breed的刷机方法&lt;/h2&gt;
@@ -626,7 +626,7 @@ mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-rootfs0.bin rootfs0
 nvram set flag_try_sys1_failed=1
 nvram commit
 
-reboot&quot; data-info=&quot;language-plant&quot; data-lang=&quot;plant&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;gutter&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
+reboot&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;gutter&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;2&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;3&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;4&lt;/span&gt;
@@ -640,7 +640,7 @@ reboot&quot; data-info=&quot;language-plant&quot; data-lang=&quot;plant&quot; cl
 &lt;hr&gt;
 &lt;h1 id=&quot;Others&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/Xiaomi_Miwifi_3G/#Others&quot; title=&quot;Others&quot;&gt;&lt;/a&gt;Others&lt;/h1&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;如果刷了Breed + Pandavan/PandoraBox后想换回OpenWrt的话，首先在Breed中刷回小米路由器开发版的官方固件，然后ssh进路由器里参照&lt;a href=&quot;/posts/Xiaomi_Miwifi_3G/#%25E4%25BD%25BF%25E7%2594%25A8Breed%25E7%259A%2584%25E5%2588%25B7%25E6%259C%25BA%25E6%2596%25B9%25E6%25B3%2595&quot;&gt;使用Breed的刷机方法&lt;/a&gt;步骤刷机。&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;如果刷了Breed + Pandavan/PandoraBox后想换回OpenWrt的话，首先在Breed中刷回小米路由器开发版的官方固件，然后SSH到路由器按照上述的使用Breed的刷机方再刷机。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;USB3.0会对路由器的2.4G频段信号造成干扰。&lt;/p&gt;
 &lt;/li&gt;
