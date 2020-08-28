@@ -198,9 +198,11 @@ options=overclocking
 
 # 食用方法
 
-`optimus-manager --switch nvidia`切换到独显（nvidia）；
+`optimus-manager --switch nvidia`切换到独显（nvidia）
 
 `optimus-manager --switch intel`切换到集显（intel）
+
+安装`mesa-demos`后，使用`glxinfo | grep "OpenGL renderer"`查看当前正使用的显卡
 
 其他用法参见[Usage](https://github.com/Askannz/optimus-manager#usage)。
 
@@ -222,6 +224,4 @@ options=overclocking
 
 -----
 
-<div align=center>
-    <image src="images/1.png"/>
-</div>
+![](images/1.png)
