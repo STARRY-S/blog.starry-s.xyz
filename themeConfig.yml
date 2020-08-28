@@ -129,7 +129,9 @@ social:
       icon: <i class="fab fa-telegram-plane"></i>
     - name: Bilibili
       link: https://space.bilibili.com/19189337
-      icon: <i class="fas fa-tv"></i>
+      # icon: <i class="fas fa-tv"></i>
+      # icon: <i class="fas fa-globe"></i>
+      icon: <i class="fas fa-film"></i>
     - name: Weibo
       link: https://weibo.com/u/6990977018
       icon: <i class="fab fa-weibo"></i>
