@@ -9,12 +9,14 @@
     <meta name="msapplication-TileColor" content="#33363b">
     
     
-    
-    <meta name="keywords" content="Life, ARIA, Hikaru, STARRY-S, Arch Linux, Linux, Music">
-    
+    <meta name="author" content="STARRY-S">
     
     <meta name="description" content="Morning.">
     
+    
+    <meta name="keywords" content="Life, ARIA, Hikaru, STARRY-S, Arch Linux, Linux, Music">
+    
+    <meta name="generator" content="Hikaru v1.6.0">
     <link rel="canonical" href="https://blog.starry-s.me/about/">
     
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
@@ -59,18 +61,18 @@
     <script type="text/javascript" src="/js/index.js"></script>
     <script defer type="text/javascript" src="/js/scrollspy.js"></script>
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
-    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/js/solid.min.js"></script>
-    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/js/brands.min.js"></script>
-    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/js/regular.min.js"></script>
-    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/js/fontawesome.min.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/fa-solid.min.js"></script>
+    <script defer type="text/javascript" src="/js/fa-brands.min.js"></script>
+    <script defer type="text/javascript" src="/js/fa-regular.min.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome.min.js"></script>
     
     <script defer type="text/javascript" src="/js/busuanzi.pure.mini.js"></script>
     
     
     
     
-    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+    <script defer type="text/javascript" src="/js/highlight.min.js"></script>
     <script type="text/javascript">
       documentReady(() => {
         elementsEach(
@@ -136,6 +138,33 @@
           });
           localStorage.setItem("theme", theme);
         });
+        // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
+        // A modern way to show date in user's format.
+        // But it shows date only by default, no time.
+        const formatter = new Intl.DateTimeFormat("zh-Hans", {
+          "year": "numeric",
+          "month": "2-digit",
+          "day": "2-digit",
+          "weekday": "short",
+          "hour": "2-digit",
+          "minute": "2-digit",
+          "second": "2-digit",
+          "timeZoneName": "short",
+          "hour12": false
+        });
+        elementsEach(
+          document.querySelectorAll("time.post-full-date"),
+          (e, i) => {
+            const date = new Date(e.getAttribute("datetime"));
+            // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/formatToParts
+            const parts = formatter.formatToParts(date);
+            const obj = {};
+            for (let {type, value} of parts) {
+              obj[type] = value
+            }
+            e.innerHTML = `${obj["year"]}-${obj["month"]}-${obj["day"]} ${obj["weekday"]} ${obj["hour"]}:${obj["minute"]}:${obj["second"]} ${obj["timeZoneName"]}`
+          }
+        );
         elementsEach(
           document.querySelectorAll(".post figure.code-block"),
           (e, i) => {
@@ -198,7 +227,9 @@
     <div class="header-container">
       <div class="header-title">
         <div class="title"><a href="/">STARRY-S' Blog</a></div>
+        
         <div class="subtitle">Morning.</div>
+        
       </div>
       
       <div class="logo">
@@ -254,12 +285,12 @@
       <div class="post-meta">
         
         <div class="post-date meta-block">
-          <i class="far fa-calendar-check"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-08-22T05:25:30.000Z">2016-08-22 Mon 13:25:30 CST</time></span>
+          <i class="far fa-calendar-check"></i><span><time class="post-full-date" title="post-date" itemprop="dateCreated datePublished" datetime="2016-08-22T05:25:30.000Z">8/22/2016, 1:25:30 PM</time></span>
         </div>
         
         
         <div class="post-date meta-block">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateUpdated" datetime="2020-08-24T05:42:28.000Z">2020-08-24 Mon 13:42:28 CST</time></span>
+          <i class="far fa-calendar-plus"></i><span><time class="post-full-date" title="post-date" itemprop="dateUpdated" datetime="2020-08-24T05:42:28.000Z">8/24/2020, 1:42:28 PM</time></span>
         </div>
         
         
@@ -272,47 +303,47 @@
       </div>
     </header>
     <main class="post-main" id="scrollspy-container">
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
-<script src= "https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+      <link href="/css/APlayer.min.css" rel="stylesheet">
+<script src= "/js/APlayer.min.js"></script>
 <p><img src="/about/images/westlake.jpg" alt="&quot;West Lake&quot;" title="West Lake"></p>
 <h1 id="AboutMe"><a class="header-link" href="/about/#AboutMe" title="AboutMe"></a>About Me</h1>
 <ul>
 <li><p>学生党</p>
 </li>
-<li><p>对称呼没啥要求，不过分叫着顺口就可以啦</p>
+<li><p>对称呼没啥要求, 不过分叫着顺口就可以啦</p>
 </li>
 <li><p>喜欢的游戏: Minecraft Java Edition, NieR:Automata; 除此之外偶尔会玩守望先锋, PUBG, FGO手游等游戏。</p>
 </li>
 <li><p>喜欢的动漫/电影: 空之境界剧场版（<strong>墙裂推荐空境原著</strong>）, FSN &amp; FZ全系列, 某科学的超电磁炮, 声之形, 秒速5厘米, 还有利兹与青鸟。</p>
 </li>
-<li><p>还看过格莱普尼尔, 黑执事, 几集新世纪福音战士和宝石之国和魔法禁书目录，我们从未知道那天所见的花的名字等动漫。</p>
+<li><p>还看过格莱普尼尔, 黑执事, 几集新世纪福音战士和宝石之国和魔法禁书目录, 我们从未知道那天所见的花的名字等动漫。</p>
 </li>
-<li><p>月厨，空境剧场版看过无数遍，原著看过一次后打算有时间再看一遍，不过只了解一些而已，FGO玩不懂算是个假月厨吧。</p>
+<li><p>月厨, 空境剧场版看过无数遍, 原著看过一次后打算有时间再看一遍, 不过只了解一些而已, FGO玩不懂算是个假月厨吧。</p>
 </li>
-<li><p>听歌种类略杂，但是不听华语. 喜欢的歌以ACG为主, 首选Kalafina和梶浦由記的曲子, 尽管不是东方厨但是东方的歌确实好听, 除此之外偶尔听听电音和轻音乐。</p>
+<li><p>听歌种类略杂, 但是不听华语. 喜欢的歌以ACG为主, 首选Kalafina和梶浦由記的曲子, 尽管不是东方厨但是东方的歌确实好听, 除此之外偶尔听听电音和轻音乐。</p>
 </li>
-<li><p>越来越不喜欢某云播放器了，日推不合口味，一个听歌软件没用的功能一大堆搞得花里胡哨的，不少歌曲还下架了（当然这只是我个人感受，并没有抹黑的意思</p>
+<li><p>越来越不喜欢某云播放器了, 日推不合口味, 一个听歌软件没用的功能一大堆搞得花里胡哨的, 不少歌曲还下架了（当然这只是我个人感受, 并没有抹黑的意思</p>
 </li>
-<li><p>偶尔在B站水视频，基本上都是游戏主题的，不追求播放量和粉丝数，有人喜欢就很开心了。</p>
+<li><p>偶尔在B站水视频, 基本上都是游戏主题的, 不追求播放量和粉丝数, 有人喜欢就很开心了。</p>
 </li>
-<li><p>性格这个我也说不清，貌似有些社恐和拖延症，拥有众多手段自我设障，不过都太复杂了我也讲不清楚（也不想弄清楚了，不爱说话是真的</p>
+<li><p>性格这个我也说不清, 貌似有些社恐和拖延症, 拥有众多手段自我设障, 不过都太复杂了我也讲不清楚（也不想弄清楚了, 不爱说话是真的</p>
 </li>
-<li><p>菜，很菜，非常菜，还懒，不想努力，胖，宅，新手，不萌，丑，接近于废物一个。</p>
+<li><p>菜, 很菜, 非常菜, 还懒, 不想努力, 胖, 宅, 新手, 不萌, 丑, 接近于废物一个。</p>
 </li>
 <li><p>睡觉 睡觉 睡觉 睡觉 睡觉 睡觉 ZZZZZZZ~</p>
 </li>
 <li><p>可能会随着心情波动而大批量的修改博客上的内容（已经在尽力的控制自己了</p>
 </li>
-<li><p>尽量不要和我提“<strong>看了我的博客</strong>”这个话题，因为我的博客是给自己看的不是给别人看的，所以我有时会尽可能的结束这个话题。</p>
+<li><p>尽量不要和我提“<strong>看了我的博客</strong>”这个话题, 因为我的博客是给自己看的不是给别人看的, 所以我有时会尽可能的结束这个话题。</p>
 </li>
 </ul>
 <h1 id="STARRY-S039;Blog"><a class="header-link" href="/about/#STARRY-S039;Blog" title="STARRY-S039;Blog"></a>STARRY-S' Blog</h1>
-<p>建于2016年8月21日，曾用过域名<code>starry-s.com</code>和<code>starry-s.cn</code>。</p>
-<p>现用域名为<code>starry-s.me</code>，除此之外还有域名<code>starry-s.xyz</code>（又续了一年），以后没问题的话就不打算换域名了因为<code>.me</code>域名好记而且我挺喜欢的，也不是很贵。</p>
-<p>因为之前更新过太多日常/碎碎念之类的水文，所以把旧篇幅都删掉了，实在想看可以翻GitHub上的comments（不过我还真没翻过），以后尽量以技术类文章为主，如果实在写不出来/没什么可写的话我会选择停更一段时间。</p>
-<p>本站由<a href="https://hikaru.alynx.one/" target="_blank" rel="external nofollow noreferrer noopener">Hikaru</a>生成，主题为<a href="https://github.com/AlynxZhou/hikaru-theme-aria" target="_blank" rel="external nofollow noreferrer noopener">ARIA</a>，托管于GitHub Pages（见页面右下角），很喜欢这个生成器以及ARIA这款主题。</p>
-<p><a href="https://github.com/STARRY-S/hikaru-generator-aplayer" target="_blank" rel="external nofollow noreferrer noopener">音乐播放器</a>是我自己为Hikaru适配的<a href="https://github.com/MoePlayer/APlayer" target="_blank" rel="external nofollow noreferrer noopener">APlayer</a>插件，原理实现很简单，有意见/建议可以去提issue或pull request。</p>
-<p>刚更新了播放器插件，勉强适配了一下新出的<a href="https://sh.alynx.one/posts/Dark-Mode-in-Theme/" target="_blank" rel="external nofollow noreferrer noopener">暗色模式</a>，如果只调整播放器背景颜色的话在播放列表模式或者含有歌词显示时会很难看，一开始想自定义css文件的后来觉得太麻烦得增加很多代码所以目前只是适配了没有播放列表、没有歌词的这种情况，播放器背景颜色会随着主题颜色改变而改变，其他情况的解决方法还没想好，不过说实话<strong>黑色模式还挺好看的</strong>。因为实在没啥技术含量所以就不单独开一篇文章讲这么水的事情了。</p>
+<p>建于2016年8月21日, 曾用过域名<code>starry-s.com</code>和<code>starry-s.cn</code>。</p>
+<p>现用域名为<code>starry-s.me</code>, 除此之外还有域名<code>starry-s.xyz</code>（又续了一年）, 以后没问题的话就不打算换域名了因为<code>.me</code>域名好记而且我挺喜欢的, 也不是很贵。</p>
+<p>因为之前更新过太多日常/碎碎念之类的水文, 所以把旧篇幅都删掉了, 实在想看可以翻GitHub上的comments（不过我还真没翻过）, 以后尽量以技术类文章为主, 如果实在写不出来/没什么可写的话我会选择停更一段时间。</p>
+<p>本站由<a href="https://hikaru.alynx.one/" target="_blank" rel="external nofollow noreferrer noopener">Hikaru</a>生成, 主题为<a href="https://github.com/AlynxZhou/hikaru-theme-aria" target="_blank" rel="external nofollow noreferrer noopener">ARIA</a>, 托管于GitHub Pages（见页面右下角）, 很喜欢这个生成器以及ARIA这款主题。</p>
+<p><a href="https://github.com/STARRY-S/hikaru-generator-aplayer" target="_blank" rel="external nofollow noreferrer noopener">音乐播放器</a>是我自己为Hikaru适配的<a href="https://github.com/MoePlayer/APlayer" target="_blank" rel="external nofollow noreferrer noopener">APlayer</a>插件, 原理实现很简单, 有意见/建议可以去提issue或pull request。</p>
+<p>刚更新了播放器插件, 勉强适配了一下新出的<a href="https://sh.alynx.one/posts/Dark-Mode-in-Theme/" target="_blank" rel="external nofollow noreferrer noopener">暗色模式</a>, 如果只调整播放器背景颜色的话在播放列表模式或者含有歌词显示时会很难看, 一开始想自定义css文件的后来觉得太麻烦得增加很多代码所以目前只是适配了没有播放列表、没有歌词的这种情况, 播放器背景颜色会随着主题颜色改变而改变, 其他情况的解决方法还没想好, 不过说实话<strong>黑色模式还挺好看的</strong>。因为实在没啥技术含量所以就不单独开一篇文章讲这么水的事情了。</p>
 <hr>
  <!--APlayer-->
 <div id="aplayer0" style="background: var(--color-main-background)"></div>
@@ -341,7 +372,7 @@ const ap0 = new APlayer ({
 </script> 
 
 <blockquote>
-<p>写于2020年8月16日凌晨，随时更新。</p>
+<p>写于2020年8月16日凌晨, 随时更新。</p>
 </blockquote>
 
     </main>
@@ -413,6 +444,33 @@ const ap0 = new APlayer ({
         "basePath": "/about/",
         "containerID": "comment-results"
       }).then(() => {
+        // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
+        // A modern way to show date in user's format.
+        // But it shows date only by default, no time.
+        const formatter = new Intl.DateTimeFormat("zh-Hans", {
+          "year": "numeric",
+          "month": "2-digit",
+          "day": "2-digit",
+          "weekday": "short",
+          "hour": "2-digit",
+          "minute": "2-digit",
+          "second": "2-digit",
+          "timeZoneName": "short",
+          "hour12": false
+        });
+        elementsEach(
+          document.querySelectorAll("time.comment-full-date"),
+          (e, i) => {
+            const date = new Date(e.getAttribute("datetime"));
+            // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/formatToParts
+            const parts = formatter.formatToParts(date);
+            const obj = {};
+            for (let {type, value} of parts) {
+              obj[type] = value
+            }
+            e.innerHTML = `${obj["year"]}-${obj["month"]}-${obj["day"]} ${obj["weekday"]} ${obj["hour"]}:${obj["minute"]}:${obj["second"]} ${obj["timeZoneName"]}`
+          }
+        );
         elementsEach(
           document.querySelectorAll("div.comment-content img"),
           (e, i) => {
@@ -451,7 +509,9 @@ const ap0 = new APlayer ({
     <img class="author-avatar" src="/images/avatar.jpg" alt="STARRY-S">
     
     <div class="author-name">STARRY-S</div>
+    
     <div class="author-description">Morning.</div>
+    
     <div class="site-count">
       
       
@@ -587,4 +647,4 @@ const ap0 = new APlayer ({
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.5.16 at 2020-08-28 Fri 19:00:46 CST. -->
+<!-- Page built by Hikaru v1.6.0 at 2020-10-03T10:15:12.889Z. -->

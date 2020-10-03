@@ -9,12 +9,14 @@
     <meta name="msapplication-TileColor" content="#33363b">
     
     
-    
-    <meta name="keywords" content="Life, ARIA, Hikaru, STARRY-S, Arch Linux, Linux, Music">
-    
+    <meta name="author" content="STARRY-S">
     
     <meta name="description" content="Morning.">
     
+    
+    <meta name="keywords" content="Life, ARIA, Hikaru, STARRY-S, Arch Linux, Linux, Music">
+    
+    <meta name="generator" content="Hikaru v1.6.0">
     <link rel="canonical" href="https://blog.starry-s.me/404.html">
     
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
@@ -59,11 +61,11 @@
     <script type="text/javascript" src="/js/index.js"></script>
     <script defer type="text/javascript" src="/js/scrollspy.js"></script>
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
-    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/js/solid.min.js"></script>
-    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/js/brands.min.js"></script>
-    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/js/regular.min.js"></script>
-    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/js/fontawesome.min.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/fa-solid.min.js"></script>
+    <script defer type="text/javascript" src="/js/fa-brands.min.js"></script>
+    <script defer type="text/javascript" src="/js/fa-regular.min.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome.min.js"></script>
     
     <script defer type="text/javascript" src="/js/busuanzi.pure.mini.js"></script>
     
@@ -122,6 +124,33 @@
           });
           localStorage.setItem("theme", theme);
         });
+        // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
+        // A modern way to show date in user's format.
+        // But it shows date only by default, no time.
+        const formatter = new Intl.DateTimeFormat("zh-Hans", {
+          "year": "numeric",
+          "month": "2-digit",
+          "day": "2-digit",
+          "weekday": "short",
+          "hour": "2-digit",
+          "minute": "2-digit",
+          "second": "2-digit",
+          "timeZoneName": "short",
+          "hour12": false
+        });
+        elementsEach(
+          document.querySelectorAll("time.post-full-date"),
+          (e, i) => {
+            const date = new Date(e.getAttribute("datetime"));
+            // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/formatToParts
+            const parts = formatter.formatToParts(date);
+            const obj = {};
+            for (let {type, value} of parts) {
+              obj[type] = value
+            }
+            e.innerHTML = `${obj["year"]}-${obj["month"]}-${obj["day"]} ${obj["weekday"]} ${obj["hour"]}:${obj["minute"]}:${obj["second"]} ${obj["timeZoneName"]}`
+          }
+        );
         elementsEach(
           document.querySelectorAll(".post figure.code-block"),
           (e, i) => {
@@ -184,7 +213,9 @@
     <div class="header-container">
       <div class="header-title">
         <div class="title"><a href="/">STARRY-S' Blog</a></div>
+        
         <div class="subtitle">Morning.</div>
+        
       </div>
       
       <div class="logo">
@@ -240,7 +271,7 @@
       <div class="post-meta">
         
         <div class="post-date meta-block">
-          <i class="far fa-calendar-check"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-08-23T02:00:00.000Z">2016-08-23 Tue 10:00:00 CST</time></span>
+          <i class="far fa-calendar-check"></i><span><time class="post-full-date" title="post-date" itemprop="dateCreated datePublished" datetime="2016-08-23T02:00:00.000Z">8/23/2016, 10:00:00 AM</time></span>
         </div>
         
         
@@ -326,7 +357,9 @@
     <img class="author-avatar" src="/images/avatar.jpg" alt="STARRY-S">
     
     <div class="author-name">STARRY-S</div>
+    
     <div class="author-description">Morning.</div>
+    
     <div class="site-count">
       
       
@@ -439,4 +472,4 @@
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.5.16 at 2020-08-28 Fri 19:00:46 CST. -->
+<!-- Page built by Hikaru v1.6.0 at 2020-10-03T10:15:12.864Z. -->

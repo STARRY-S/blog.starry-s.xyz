@@ -60,8 +60,10 @@ search:
 aplayer:
   enable: true
   cdn:
-    style: "https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"
-    script: "https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"
+    # style: "https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css"
+    # script: "https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"
+    style: "/css/APlayer.min.css"
+    script: "/js/APlayer.min.js"
 
 feed:
   enable: true

@@ -9,12 +9,14 @@
     <meta name="msapplication-TileColor" content="#33363b">
     
     
-    
-    <meta name="keywords" content="Life, ARIA, Hikaru, STARRY-S, Arch Linux, Linux, Music">
-    
+    <meta name="author" content="STARRY-S">
     
     <meta name="description" content="const ap0 = new APlayer ({ container: document.getElementById("aplayer0"), theme: "#33363b", fixed: false, listFolded: false, listMaxHeight: false, lrcType: false, mini: false, volume: 0.7, order: "list", loop: "all", autoplay: false, audio: [{ name: "遊園施設", artist: "帆足圭吾", url: "https://music.starry-s.me/music/540b_075e_0453_cae9f8037d04c81f84993977b01792ec.m4a", cover: "https://music.starry-s.me/music/cover/18710389371705314.jpg", lrc: "", theme: "#67B577" }] });">
     
+    
+    <meta name="keywords" content="Life, ARIA, Hikaru, STARRY-S, Arch Linux, Linux, Music">
+    
+    <meta name="generator" content="Hikaru v1.6.0">
     <link rel="canonical" href="https://blog.starry-s.me/posts/hello-world/">
     
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
@@ -59,18 +61,18 @@
     <script type="text/javascript" src="/js/index.js"></script>
     <script defer type="text/javascript" src="/js/scrollspy.js"></script>
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
-    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/js/solid.min.js"></script>
-    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/js/brands.min.js"></script>
-    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/js/regular.min.js"></script>
-    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/js/fontawesome.min.js"></script>
+    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="/js/fa-solid.min.js"></script>
+    <script defer type="text/javascript" src="/js/fa-brands.min.js"></script>
+    <script defer type="text/javascript" src="/js/fa-regular.min.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome.min.js"></script>
     
     <script defer type="text/javascript" src="/js/busuanzi.pure.mini.js"></script>
     
     
     
     
-    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+    <script defer type="text/javascript" src="/js/highlight.min.js"></script>
     <script type="text/javascript">
       documentReady(() => {
         elementsEach(
@@ -136,6 +138,33 @@
           });
           localStorage.setItem("theme", theme);
         });
+        // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
+        // A modern way to show date in user's format.
+        // But it shows date only by default, no time.
+        const formatter = new Intl.DateTimeFormat("zh-Hans", {
+          "year": "numeric",
+          "month": "2-digit",
+          "day": "2-digit",
+          "weekday": "short",
+          "hour": "2-digit",
+          "minute": "2-digit",
+          "second": "2-digit",
+          "timeZoneName": "short",
+          "hour12": false
+        });
+        elementsEach(
+          document.querySelectorAll("time.post-full-date"),
+          (e, i) => {
+            const date = new Date(e.getAttribute("datetime"));
+            // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/formatToParts
+            const parts = formatter.formatToParts(date);
+            const obj = {};
+            for (let {type, value} of parts) {
+              obj[type] = value
+            }
+            e.innerHTML = `${obj["year"]}-${obj["month"]}-${obj["day"]} ${obj["weekday"]} ${obj["hour"]}:${obj["minute"]}:${obj["second"]} ${obj["timeZoneName"]}`
+          }
+        );
         elementsEach(
           document.querySelectorAll(".post figure.code-block"),
           (e, i) => {
@@ -198,7 +227,9 @@
     <div class="header-container">
       <div class="header-title">
         <div class="title"><a href="/">STARRY-S' Blog</a></div>
+        
         <div class="subtitle">Morning.</div>
+        
       </div>
       
       <div class="logo">
@@ -254,7 +285,7 @@
       <div class="post-meta">
         
         <div class="post-date meta-block">
-          <i class="far fa-calendar-check"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2016-08-22T06:22:54.000Z">2016-08-22 Mon 14:22:54 CST</time></span>
+          <i class="far fa-calendar-check"></i><span><time class="post-full-date" title="post-date" itemprop="dateCreated datePublished" datetime="2016-08-22T06:22:54.000Z">8/22/2016, 2:22:54 PM</time></span>
         </div>
         
         
@@ -274,8 +305,8 @@
       </div>
     </header>
     <main class="post-main" id="scrollspy-container" itemprop="articleBody">
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
-<script src= "https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+      <link href="/css/APlayer.min.css" rel="stylesheet">
+<script src= "/js/APlayer.min.js"></script>
 <p><img src="/posts/hello-world/images/image.jpg" alt="&quot;Hello World&quot;" title="Hello World"></p>
  <!--APlayer-->
 <div id="aplayer0" style="background: var(--color-main-background)"></div>
@@ -414,6 +445,33 @@ int main(int argc, char *argv[])
         "basePath": "/posts/hello-world/",
         "containerID": "comment-results"
       }).then(() => {
+        // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
+        // A modern way to show date in user's format.
+        // But it shows date only by default, no time.
+        const formatter = new Intl.DateTimeFormat("zh-Hans", {
+          "year": "numeric",
+          "month": "2-digit",
+          "day": "2-digit",
+          "weekday": "short",
+          "hour": "2-digit",
+          "minute": "2-digit",
+          "second": "2-digit",
+          "timeZoneName": "short",
+          "hour12": false
+        });
+        elementsEach(
+          document.querySelectorAll("time.comment-full-date"),
+          (e, i) => {
+            const date = new Date(e.getAttribute("datetime"));
+            // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/formatToParts
+            const parts = formatter.formatToParts(date);
+            const obj = {};
+            for (let {type, value} of parts) {
+              obj[type] = value
+            }
+            e.innerHTML = `${obj["year"]}-${obj["month"]}-${obj["day"]} ${obj["weekday"]} ${obj["hour"]}:${obj["minute"]}:${obj["second"]} ${obj["timeZoneName"]}`
+          }
+        );
         elementsEach(
           document.querySelectorAll("div.comment-content img"),
           (e, i) => {
@@ -452,7 +510,9 @@ int main(int argc, char *argv[])
     <img class="author-avatar" src="/images/avatar.jpg" alt="STARRY-S">
     
     <div class="author-name">STARRY-S</div>
+    
     <div class="author-description">Morning.</div>
+    
     <div class="site-count">
       
       
@@ -582,4 +642,4 @@ int main(int argc, char *argv[])
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.5.16 at 2020-08-28 Fri 19:00:45 CST. -->
+<!-- Page built by Hikaru v1.6.0 at 2020-10-03T10:15:12.863Z. -->
