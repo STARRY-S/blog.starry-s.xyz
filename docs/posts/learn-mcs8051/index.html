@@ -11,13 +11,13 @@
     
     <meta name="author" content="STARRY-S">
     
-    <meta name="description" content="本篇恢复自旧博客, 由于创作时间过于久远, 作者已无法保证其准确性, 内容仅供参考。 生命不息, 折腾不止...">
+    <meta name="description" content="赶在期中考试前把单片机的课后习题整理出来... (实在是没什么可拿来更新博客的了, 就干脆写点复习资料吧...)">
     
     
     <meta name="keywords" content="Life, ARIA, Hikaru, STARRY-S, Arch Linux, Linux, Music">
     
     <meta name="generator" content="Hikaru v1.6.1">
-    <link rel="canonical" href="https://blog.starry-s.me/posts/Xiaomi_Miwifi_3G/">
+    <link rel="canonical" href="https://blog.starry-s.me/posts/learn-mcs8051/">
     
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
     
@@ -218,7 +218,7 @@
 
       gtag('config', 'UA-124615792-3');
     </script>
-    <title>小米路由器3G折腾之刷OpenWrt记录 - STARRY-S' Blog</title>
+    <title>单片机习题整理 - STARRY-S' Blog</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage">
     
@@ -270,7 +270,7 @@
 <div id="page" class="page">
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/posts/Xiaomi_Miwifi_3G/">
+      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/posts/learn-mcs8051/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="STARRY-S">
         <meta itemprop="description" content="Morning.">
@@ -281,197 +281,209 @@
       </span>
     </div>
     <header class="post-header">
-      <div class="post-title" itemprop="name headline">小米路由器3G折腾之刷OpenWrt记录</div>
+      <div class="post-title" itemprop="name headline">单片机习题整理</div>
       <div class="post-meta">
         
         <div class="post-date meta-block">
-          <i class="far fa-calendar-check"></i><span><time class="post-full-date" title="post-date" itemprop="dateCreated datePublished" datetime="2019-02-18T16:49:20.000Z">2/19/2019, 12:49:20 AM</time></span>
+          <i class="far fa-calendar-check"></i><span><time class="post-full-date" title="post-date" itemprop="dateCreated datePublished" datetime="2020-11-03T08:30:02.000Z">11/3/2020, 4:30:02 PM</time></span>
         </div>
         
-        
-        <div class="post-date meta-block">
-          <i class="far fa-calendar-plus"></i><span><time class="post-full-date" title="post-date" itemprop="dateUpdated" datetime="2020-08-25T05:25:59.000Z">8/25/2020, 1:25:59 PM</time></span>
-        </div>
         
         
         <div class="post-categories meta-block">
           
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">路由器</span></a></span>
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">单片机</span></a></span>
         </div>
         
         
         
         <div class="post-comment-count meta-block">
-          <i class="far fa-comments"></i><span><a href="/posts/Xiaomi_Miwifi_3G/#comment-results" itemprop="discussionUrl"><span class="post-comment-count comment-count" data-comment-identifier="小米路由器3G折腾之刷OpenWrt记录" itemprop="commentCount">阅读评论</span></a></span>
+          <i class="far fa-comments"></i><span><a href="/posts/learn-mcs8051/#comment-results" itemprop="discussionUrl"><span class="post-comment-count comment-count" data-comment-identifier="单片机习题整理" itemprop="commentCount">阅读评论</span></a></span>
         </div>
         
         
       </div>
     </header>
     <main class="post-main" id="scrollspy-container" itemprop="articleBody">
-      <link href="/css/APlayer.min.css" rel="stylesheet">
-<script src= "/js/APlayer.min.js"></script>
-<div class="alert-red">本篇恢复自旧博客, 由于创作时间过于久远, 作者已无法保证其准确性, 内容仅供参考。</div>
-
-<p>生命不息, 折腾不止...</p>
+      <p>赶在期中考试前把单片机的课后习题整理出来...</p>
+<p>(实在是没什么可拿来更新博客的了, 就干脆写点复习资料吧...)</p>
 <a id="more"></a>
 
 <hr>
- <!--APlayer-->
-<div id="aplayer0" style="background: var(--color-main-background)"></div>
-<script>
-const ap0 = new APlayer ({
-    container: document.getElementById("aplayer0"),
-    theme: "#33363b",
-    fixed: false,
-    listFolded: false,
-    listMaxHeight: false,
-    lrcType: false,
-    mini: false,
-    volume: 0.7,
-    order: "list",
-    loop: "all",
-    autoplay: false,
-    audio: [{
-        name: "Mallow Flower",
-        artist: "Otokaze",
-        url: "https://music.starry-s.me/music/969d_ef88_965d_f8693c4f0a65db94a9cc0ebb9be2bd06.mp3",
-        cover: "https://music.starry-s.me/music/cover/781752767371058.jpg",
-        lrc: "",
-        theme: "#EFCE82"
-    }]
-});
-</script>  
+<div class="alert-blue">
+本篇内容为作者整理资料所得, 仅供学习使用。如需转载请务必遵守<a style="color:#666" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" target="_blank" rel="external nofollow noreferrer noopener">CC BY-NC-ND 4.0</a>协议。<br>
+请勿将本篇内容当作权威的教学辅导资料来使用, 因无法保证100%准确, 仅供参考。<br>
+如果发现了本篇存在的错误, 欢迎在页面下方提issue指正。<br>
+</div>
 
-<h1 id="准备工作"><a class="header-link" href="/posts/Xiaomi_Miwifi_3G/#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C" title="准备工作"></a>准备工作</h1>
-<p>你至少需要以下工具：</p>
-<ul>
-<li>路由器本体</li>
-<li>网线</li>
-<li>一个已格式化为FAT/FAT32格式的U盘, 用来刷开发者固件和ssh激活工具</li>
-<li>一根怼<code>Reset</code>钮的针</li>
-<li>Windows用户需要一个SSH软件（例如：<a href="https://putty.org" target="_blank" rel="external nofollow noreferrer noopener">putty</a>）</li>
-<li><a href="http://www1.miwifi.com/miwifi_download.html" target="_blank" rel="external nofollow noreferrer noopener">小米路由器客户端</a>, 用来绑定你的小米账号</li>
-</ul>
-<h1 id="SSH到路由器"><a class="header-link" href="/posts/Xiaomi_Miwifi_3G/#SSH%E5%88%B0%E8%B7%AF%E7%94%B1%E5%99%A8" title="SSH到路由器"></a>SSH到路由器</h1>
-<blockquote>
-<p>路由器重启后指示灯会变为蓝色, 若变为红色则为刷机失败。</p>
-</blockquote>
-<p>安装开发者固件并开启SSH权限：</p>
 <ol>
-<li><p>在<a href="http://www1.miwifi.com/miwifi_download.html" target="_blank" rel="external nofollow noreferrer noopener">MiWiFi下载页面</a>下载所需要的路由器开发者固件（ROM -&gt; ROM for R3G开发版）,命名为<code>miwifi.bin</code>。</p>
+<li><p>8051复位后从地址<code>0000H</code>开始执行程序, SP的值为<code>07H</code>。</p>
+<p>PC: 两字节(16位)寄存器, 也称程序计数器。</p>
+<p>SP: 堆栈指针, 指示出堆栈顶部在<strong>内部RAM块</strong>中的位置。</p>
+<p>单片机的堆栈设在了内部RAM区, 单片机复位后, SP中的内容为<code>07H</code>(指向第0组工作寄存器的R7), 堆栈实际上从08H开始。</p>
+<p>若SP被初始化为<code>39H</code>, 则堆栈实际上是从<code>3AH</code>开始的。</p>
+<p>执行<code>RET</code>指令后, SP值减2 (因为PC为2字节寄存器), 将调用指令的下一条指令的首地址送入PC中。</p>
 </li>
-<li><p>路由器断电, 将下载好的开发者固件放入U盘插入路由器USB接口, 捅住reset扭接上电源后待指示灯为黄色闪烁时松开, 数分钟后路由器会自动重启, 此过程不要乱动路由器。</p>
+<li><p>PSW中的RS1 RS0=<code>10B</code>时, R2的RAM地址为<code>12H</code>。</p>
+<p>PSW： 程序状态字寄存器, 从<code>PSW.7</code>至<code>PSW.0</code>分别为<code>Cy</code>(进位标志位), <code>Ac</code>(辅助进位标志位), <code>F0</code>(标志位), <code>RS1</code>和<code>RS0</code>(寄存器区选择控制位), <code>OV</code>(溢出位), 保留位, <code>P</code>(奇偶标志位, 奇数为1, 偶数为0)。</p>
+<p>RS1 RS0 = <code>10B</code>时, 使用第二组工作寄存器区, 第0组工作寄存器区R0-R7的地址为<code>00H-07H</code>, 第1组为<code>08H-0FH</code>, 第2组为<code>10H-17H</code>, 第3组为<code>18H-1FH</code>(每组长度为8个字节, 每个寄存器占1个字节)。</p>
+<p>因此, 当A为<code>01110010B</code>时, PSW中P为0(偶数个1)。</p>
+<p>假设PSW为18H, 即<code>00011000B</code>, 此时使用第3组工作寄存器, R0地址为18H, R7地址为1FH。</p>
+<p>复位后, 默认选择的寄存器区是0区。</p>
 </li>
-<li><p>小米路由器客户端登陆小米账号绑定路由器设备, 此过程需要路由器联网。</p>
+<li><p>8051片外数据存储器的寻址空间为<code>0000H~0FFFFH</code></p>
 </li>
-<li><p><a href="http://www1.miwifi.com/miwifi_open.html" target="_blank" rel="external nofollow noreferrer noopener">MiWiFi开放平台</a>登陆小米账号下载ssh激活工具命名为<code>miwifi_ssh.bin</code>, 记下root密码。</p>
+<li><p>位地址<code>07H</code>位于字节地址<code>20H</code>, 位地址<code>7FH</code>位于字节地址<code>2FH</code>。</p>
+<p>片内RAM中<code>20H~2FH</code>这16个单元即可进行共128位的位寻址, 也可进行字节寻址。</p>
+<p>字节地址及其位地址见下表所示：</p>
+<table>
+<thead>
+<tr>
+<th align="center">字节地址</th>
+<th align="center">D7</th>
+<th align="center">D6</th>
+<th align="center">D5</th>
+<th align="center">D4</th>
+<th align="center">D3</th>
+<th align="center">D2</th>
+<th align="center">D1</th>
+<th align="center">D0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">2FH</td>
+<td align="center">7FH</td>
+<td align="center">7EH</td>
+<td align="center">7DH</td>
+<td align="center">7CH</td>
+<td align="center">7BH</td>
+<td align="center">7AH</td>
+<td align="center">79H</td>
+<td align="center">78H</td>
+</tr>
+<tr>
+<td align="center">2EH</td>
+<td align="center">77H</td>
+<td align="center">76H</td>
+<td align="center">75H</td>
+<td align="center">74H</td>
+<td align="center">73H</td>
+<td align="center">72H</td>
+<td align="center">71H</td>
+<td align="center">70H</td>
+</tr>
+<tr>
+<td align="center">2DH</td>
+<td align="center">6FH</td>
+<td align="center">6EH</td>
+<td align="center">6DH</td>
+<td align="center">6CH</td>
+<td align="center">6BH</td>
+<td align="center">6AH</td>
+<td align="center">69H</td>
+<td align="center">68H</td>
+</tr>
+<tr>
+<td align="center">...</td>
+<td align="center">...</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">20H</td>
+<td align="center">07H</td>
+<td align="center">06H</td>
+<td align="center">05H</td>
+<td align="center">04H</td>
+<td align="center">03H</td>
+<td align="center">02H</td>
+<td align="center">01H</td>
+<td align="center">00H</td>
+</tr>
+</tbody></table>
+<p>因此<code>00H~07H</code>位于字节地址<code>20H</code>, <code>78H-7FH</code>位于字节地址<code>2FH</code>。</p>
 </li>
-<li><p>操作方式同第二步骤, 刷入ssh激活工具。</p>
+<li><p>访问外部存储器时, P0口用来传输低8位地址和数据, P2口用来传送高8位地址。</p>
+</li>
+<li><p>访问外部存储器时, ALE的输出用于锁存低8位地址。</p>
+</li>
+<li><p>一个机器周期为12个震荡周期</p>
+</li>
+<li><p>为保证读入数据正确, 在读一个端口引脚之前应先向相应的端口锁存器写1。</p>
+<p>如果在读一个端口引脚之前向对应的输出锁存器写了0, 将总是读到0。</p>
+<p>8051访问片存储器时, 利用ALE信号锁存来自P0的低8位地址信号。</p>
+</li>
+<li><p>只能用直接寻址方式访问特殊功能寄存器。</p>
+<p>如果为8052单片机, 在访问高128字节的RAM时, 只能用间接寻址方式寻址。</p>
+<p>访问片外数据存储器64Kbyte时, 使用DPTR做间接寻址寄存器。</p>
+<p>使用<code>MOVX @DPTR</code>类指令访问外部扩展存储器时, P2口输出高8位地址, P0口传送低8位地址和数据。</p>
+<p>8051中, <code>PC</code>和<code>DPTR</code>都用于提供地址时, <code>PC</code>是<strong>用户程序不可访问的</strong>,  <code>DPTR</code>可以分为两个8位寄存器<code>DPH</code>和<code>DPL</code>使用。</p>
+</li>
+<li><p>累加器A的值为<code>30H</code>, 指令<code>MOVC A, @A+PC</code>位于地址<code>3000H</code>。执行该指令时, 程序存储器地址<code>3031H</code>的内容被传送至累加器A。</p>
+<p>指令<code>MOVC A, @A+PC</code>长度为1字节, 位于地址<code>3000H</code>, 因此PC值为<code>3001H</code>, 故<code>A+PC</code>为<code>3031H</code>。</p>
+</li>
+<li><p>设SP的值为<code>5FH</code>, 指令<code>LCALL DELAY</code>所在地址为<code>2030H</code>, 子程序DELAY所在地址为<code>20A0H</code>, 则该指令完成的操作是将地址<code>2033H</code>压入堆栈保存, 将地址<code>20A0H</code>送入PC, SP的值应在该指令执行结束后变成<code>61H</code>。</p>
+<p>单片机执行子程序或中断服务程序时, 需要保护现场, 即将PC当前的值压栈保存, 当子程序或中断服务程序运行结束后再进行出栈。(所以如果子程序修改了栈的内容, 在子程序运行结束后程序有可能会运行错误）。</p>
+<p><strong>PC是16字节寄存器</strong>, 所以SP需要加2, 以此分别保存PC的高、低8位的数据。</p>
+<p><code>LCALL addr16</code>这条指令占3字节, 其中addr16占两字节, 因此程序可跳转64KB范围内的地址。</p>
+<p>(<code>ACALL</code>指令只能跳转当前所在的<strong>2K范围内</strong>的地址, 如果不涉及到片外数据存储器的话, 通常只用<code>SJMP</code>和<code>AJMP</code>)</p>
 </li>
 </ol>
-<p>SSH到路由器:</p>
-<ul>
-<li><p>Windows系统用putty, ip为<code>191.168.31.1</code>, 用户名：<code>root</code>, 密码为下载激活ssh工具时记下的密码。</p>
-</li>
-<li><p>Unix/Linux系统终端执行：<code>ssh root@191.168.31.1</code></p>
-</li>
-</ul>
-<h1 id="刷入Bootloader（推荐可选）"><a class="header-link" href="/posts/Xiaomi_Miwifi_3G/#%E5%88%B7%E5%85%A5Bootloader%EF%BC%88%E6%8E%A8%E8%8D%90%E5%8F%AF%E9%80%89%EF%BC%89" title="刷入Bootloader（推荐可选）"></a>刷入Bootloader（推荐/可选）</h1>
 <blockquote>
-<p>该步骤可选是因为Breed不支持直接刷入Openwrt固件, 可参考<a href="https://www.right.com.cn/forum/forum.php?mod=viewthread&amp;tid=267455" target="_blank" rel="external nofollow noreferrer noopener">这篇帖子</a>, 不过为了防止变砖, 还是推荐刷Breed。</p>
+<p>在网上搜到的答案「将<code>3500H</code>送入PC」是错误的, 实际是将<code>20A0H</code>送入PC, 因为DELAY所在的地址为<code>20A0H</code>, 和<code>3500H</code>一点关系都没有。</p>
 </blockquote>
-<p>Breed原作者为hackpascal, <a href="https://breed.hackpascal.net/" target="_blank" rel="external nofollow noreferrer noopener">此处为下载地址</a>, 文件名为<code>breed-mt7621-xiaomi-r3g.bin</code></p>
-<p>第一种方法是ssh到路由器后通过<code>wget</code>下载breed文件再刷入（需要确保路由器联网）, 下载地址为https所以需要加上<code>--no-check-certificate</code>参数。</p>
-<figure data-raw="cd /tmp
-wget --no-check-certificate https://breed.hackpascal.net/breed-mt7621-xiaomi-r3g.bin -O breed.bin
-mtd -r write breed.bin Bootloader" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span></pre><pre class="code"><code class="language-jboss-cli"><span class="hljs-keyword">cd</span> <span class="hljs-string">/tmp</span>
-wget <span class="hljs-params">--no-check-certificate</span> https:<span class="hljs-string">//breed.hackpascal.net/breed-mt7621-xiaomi-r3g.bin</span> -O breed.bin
-mtd -r write breed.bin Bootloader</code></pre></figure>
-<p>另一种方法是将breed通过U盘拷贝到路由器再刷入。</p>
-<figure data-raw="mkdir /tmp/sdcard
-mount /dev/sda1 /tmp/sdcard
-mtd -r write /tmp/sdcard/breed.bin Bootloader" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span></pre><pre class="code"><code class="language-gradle">mkdir <span class="hljs-regexp">/tmp/</span>sdcard
-mount <span class="hljs-regexp">/dev/</span>sda1 <span class="hljs-regexp">/tmp/</span>sdcard
-mtd -r <span class="hljs-keyword">write</span> <span class="hljs-regexp">/tmp/</span>sdcard/breed.bin Bootloader</code></pre></figure>
-<p>路由器刷写完毕后会自动重启, <strong>在写入Breed的过程中不要动路由器</strong>。</p>
-<h1 id="刷机"><a class="header-link" href="/posts/Xiaomi_Miwifi_3G/#%E5%88%B7%E6%9C%BA" title="刷机"></a>刷机</h1>
-<p>下载所需固件：</p>
-<ul>
-<li><p>tuna镜像站的OpenWrt下载地址：<a href="https://mirrors.tuna.tsinghua.edu.cn/lede/releases/" target="_blank" rel="external nofollow noreferrer noopener">https://mirrors.tuna.tsinghua.edu.cn/lede/releases/</a></p>
+<ol start="12">
+<li><p><code>MOVC</code>访问<strong>程序(ROM)**存储器, <code>MOVX</code>指令访问</strong>外部数据**存储器。</p>
+<p><code>MOVC</code>为查表指令, 只有<code>MOCV @A+PC</code>和<code>MOVC @A+DPTR</code>这两条, 均为单子节指令。</p>
+<p><code>MOVX</code>用于累加器A与外部数据存储器进行传送。</p>
+<p>可以是<code>MOVX A, @DPTR</code>, <code>MOVX A, @Ri</code>, <code>MOVX @DPTR, A</code>, <code>MOVX @Ri, A</code>。</p>
+<p>当采用Ri作间接寻址时, 只能寻找片外256个单元的数据存储器, 此时8位地址和数据均由P0口传送。</p>
 </li>
-<li><p>官方下载地址: <a href="https://downloads.openwrt.org/releases/" target="_blank" rel="external nofollow noreferrer noopener">https://downloads.openwrt.org/releases/</a></p>
+<li><p>假设指令<code>DJNZ R7, rel</code>位于<code>005FH</code>, 如果在执行该指令前寄存器R7值为<code>00H</code>, 偏移量rel为<code>02H</code>, 则该指令执行后下一条要执行的指令所在的地址是<code>0063H</code>。</p>
+<p><code>DJNZ R7, rel</code>位于<code>005FH</code>, 该指令长度为<strong>2字节</strong> (书上写的3字节是错的), 所以在执行这条指令开始时PC值在原来的基础上 + 2 变为<code>0061H</code>。又因为rel为<code>02H</code>, 所以执行这条指令后, PC值变为<code>0063H</code>。</p>
 </li>
-</ul>
-<h2 id="使用Breed的刷机方法"><a class="header-link" href="/posts/Xiaomi_Miwifi_3G/#%E4%BD%BF%E7%94%A8Breed%E7%9A%84%E5%88%B7%E6%9C%BA%E6%96%B9%E6%B3%95" title="使用Breed的刷机方法"></a>使用Breed的刷机方法</h2>
-<p>按照hackpascal的说法是：</p>
-<blockquote>
-<p>如果kernel0存在kernel1不存在, 那么启动kernel0
-如果kernel1存在kernel0不存在, 那么启动kernel1
-如果kernel0和kernel1都存在, 那么检查环境变量 xiaomi.r3g.bootfw 的值, 如果存在且值为 2, 那么启动kernel1, 否则启动kernel0</p>
-</blockquote>
-<p>简单来说就是：路由器有两个内核, 需要在Breed里设置环境变量让路由器启动kernel1。</p>
-<ol>
-<li><p>刷入Openwrt固件到Kernel1</p>
-<figure data-raw="mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-kernel1.bin kernel1
-mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-rootfs0.bin rootfs0" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
-<span class="line-number">2</span></pre><pre class="code"><code class="language-apache"><span class="hljs-attribute">mtd</span> write openwrt-<span class="hljs-number">18</span>.<span class="hljs-number">06</span>.<span class="hljs-number">2</span>-ramips-mt<span class="hljs-number">7621</span>-mir<span class="hljs-number">3</span>g-squashfs-kernel<span class="hljs-number">1</span>.bin kernel<span class="hljs-number">1</span>
-<span class="hljs-attribute">mtd</span> write openwrt-<span class="hljs-number">18</span>.<span class="hljs-number">06</span>.<span class="hljs-number">2</span>-ramips-mt<span class="hljs-number">7621</span>-mir<span class="hljs-number">3</span>g-squashfs-rootfs<span class="hljs-number">0</span>.bin rootfs<span class="hljs-number">0</span></code></pre></figure>
-</li>
-<li><p>路由器断电, 捅住reset按钮后通电, 待指示灯变为蓝色闪烁后用网线连接路由器到电脑, 浏览器打开网址<code>192.168.1.1</code>, 进入Breed界面。</p>
-</li>
-<li><p>在环境变量编辑里添加<code>xiaomi.r3g.bootfw</code>字段, 值为<code>2</code>,保存后重启即可进入Openwrt。</p>
-</li>
-</ol>
-<h2 id="没有刷入Breed的刷机方法"><a class="header-link" href="/posts/Xiaomi_Miwifi_3G/#%E6%B2%A1%E6%9C%89%E5%88%B7%E5%85%A5Breed%E7%9A%84%E5%88%B7%E6%9C%BA%E6%96%B9%E6%B3%95" title="没有刷入Breed的刷机方法"></a>没有刷入Breed的刷机方法</h2>
-<blockquote>
-<p><a href="https://openwrt.org/toh/xiaomi/mir3g" target="_blank" rel="external nofollow noreferrer noopener">OpenWrt官网提供的教程</a>是在没有刷入Breed的情况下刷入OpenWrt固件的。</p>
-</blockquote>
-<p>ssh到路由器, 导入固件后刷机。</p>
-<figure data-raw="mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-kernel1.bin kernel1
-mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-rootfs0.bin rootfs0
-nvram set flag_try_sys1_failed=1
-nvram commit
-
-reboot" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
+<li><p>分析下面子程序的功能, 假设8051单片机的震荡频率为6MHz。</p>
+<figure data-raw="DL: MOV R7, #0AH
+L0: MOV R6, #250
+L1: NOP
+    NOP
+    DJNZ R6, L1
+    DJNZ R7, L0
+    RET" data-info="language-asm" data-lang="asm" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
 <span class="line-number">4</span>
 <span class="line-number">5</span>
-<span class="line-number">6</span></pre><pre class="code"><code class="language-apache"><span class="hljs-attribute">mtd</span> write openwrt-<span class="hljs-number">18</span>.<span class="hljs-number">06</span>.<span class="hljs-number">2</span>-ramips-mt<span class="hljs-number">7621</span>-mir<span class="hljs-number">3</span>g-squashfs-kernel<span class="hljs-number">1</span>.bin kernel<span class="hljs-number">1</span>
-<span class="hljs-attribute">mtd</span> write openwrt-<span class="hljs-number">18</span>.<span class="hljs-number">06</span>.<span class="hljs-number">2</span>-ramips-mt<span class="hljs-number">7621</span>-mir<span class="hljs-number">3</span>g-squashfs-rootfs<span class="hljs-number">0</span>.bin rootfs<span class="hljs-number">0</span>
-<span class="hljs-attribute">nvram</span> set flag_try_sys<span class="hljs-number">1</span>_failed=<span class="hljs-number">1</span>
-<span class="hljs-attribute">nvram</span> commit
-
-<span class="hljs-attribute">reboot</span></code></pre></figure>
-<hr>
-<h1 id="Others"><a class="header-link" href="/posts/Xiaomi_Miwifi_3G/#Others" title="Others"></a>Others</h1>
-<ol>
-<li><p>如果刷了Breed + Pandavan/PandoraBox后想换回OpenWrt的话, 首先在Breed中刷回小米路由器开发版的官方固件, 然后SSH到路由器按照上述的使用Breed的刷机方法再刷机。</p>
-</li>
-<li><p>USB3.0会对路由器的2.4G频段信号造成干扰。</p>
-</li>
-<li><p>OpenWrt默认语言为英文, 可安装<code>luci-i18n-base-zh-cn</code>,<code>luci-i18n-base-zh-tw</code>安装简体/繁体中文。</p>
-</li>
-<li><p><a href="http://openwrt-dist.sourceforge.net" target="_blank" rel="external nofollow noreferrer noopener">OpenWrt-disk</a>可拓展更多功能。</p>
-</li>
-<li><p>为优化软件包安装速度, 可将opkg源改为国内：</p>
-<p>LuCI -&gt; System -&gt; Software -&gt; Configuration 中将 Distribution feeds 的<code>http://downloads.openwrt.org</code>替换为<code>http://mirrors.tuna.tsinghua.edu.cn/lede</code>。</p>
-</li>
-<li><p>OpenWrt可安装软件包<code>libustream-openssl</code> <code>libustream-mbedtls</code>解决<code>wget</code>无法访问https服务器问题。</p>
-<p>然后建议把opkg源能改为https的都改为https。</p>
+<span class="line-number">6</span>
+<span class="line-number">7</span></pre><pre class="code"><code class="language-avrasm"><span class="hljs-symbol">DL:</span> <span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R7</span>, <span class="hljs-meta">#0AH</span>
+<span class="hljs-symbol">L0:</span> <span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R6</span>, <span class="hljs-meta">#250</span>
+<span class="hljs-symbol">L1:</span> <span class="hljs-keyword">NOP</span>
+    <span class="hljs-keyword">NOP</span>
+    DJNZ <span class="hljs-built_in">R6</span>, L1
+    DJNZ <span class="hljs-built_in">R7</span>, L0
+    <span class="hljs-keyword">RET</span></code></pre></figure>
+<p>R7为10, R6为250, 因此两个<code>NOP</code>加上一个<code>DJNZ</code>一共循环了250次, 该250次的循环一共执行了10次。</p>
+<p><code>NOP</code>为1周期指令, <code>DJNZ</code>2周期指令, 两个<code>NOP</code>加一个<code>DJNZ</code>共4周期。</p>
+<p>6MHz下一个机器周期为12 / (6 * 10^6)= 2微秒, 12MHz下一个机器周期为1微秒。</p>
+<p>故程序该子程序延时了4 * 250 * 10 * 12 / (6 * 10^6) = 20(ms)。</p>
+<p>(实际上有10次<code>MOV R6, #250</code>和10次<code>DJNZ R7, L0</code>造成的30个机器周期的约0.6ms的误差)</p>
 </li>
 </ol>
+<hr>
+<blockquote>
+<p>To be continued...</p>
+</blockquote>
 
     </main>
     <footer class="post-footer">
       
       <div class="post-tags">
-        <a class="post-tag button" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"><i class="fas fa-tag"></i>教程</a><a class="post-tag button" href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" rel="tag"><i class="fas fa-tag"></i>路由器</a><a class="post-tag button" href="/tags/OpenWrt/" rel="tag"><i class="fas fa-tag"></i>OpenWrt</a>
+        <a class="post-tag button" href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" rel="tag"><i class="fas fa-tag"></i>单片机</a><a class="post-tag button" href="/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" rel="tag"><i class="fas fa-tag"></i>学习资料</a>
       </div>
       
     </footer>
@@ -480,12 +492,10 @@ reboot" class="code-block highlight hljs"><pre class="gutter"><span class="line-
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/posts/archlinux-pavilion-gaming-laptop/" rel="next" title="惠普光影精灵4在Arch Linux下使用Optimus Manager配置双显卡"><i class="fas fa-angle-left"></i><span class="nav-title">惠普光影精灵4在Arch Linux下使用Optimus Manager配置双显卡</span></a>
-      
     </div>
     <div class="page-nav-prev page-nav-item">
       
-      <a href="/posts/hello-world/" rel="prev" title="Everything is based on “Hello World”."><span class="nav-title">Everything is based on “Hello World”.</span><i class="fas fa-angle-right"></i></a>
+      <a href="/posts/archlinux-pavilion-gaming-laptop/" rel="prev" title="惠普光影精灵4在Arch Linux下使用Optimus Manager配置双显卡"><span class="nav-title">惠普光影精灵4在Arch Linux下使用Optimus Manager配置双显卡</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -551,9 +561,9 @@ reboot" class="code-block highlight hljs"><pre class="gutter"><span class="line-
         "sendButtonText": "去评论",
         "noCommentText": "这个页面还没有评论，现在就去评论吧！",
         "failText": "你可能达到了 API 请求频率上限，请等待一段时间再刷新。",
-        "title": "小米路由器3G折腾之刷OpenWrt记录",
+        "title": "单片机习题整理",
         "queryString": window.location.search,
-        "basePath": "/posts/Xiaomi_Miwifi_3G/",
+        "basePath": "/posts/learn-mcs8051/",
         "containerID": "comment-results"
       }).then(() => {
         // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
@@ -661,65 +671,6 @@ reboot" class="code-block highlight hljs"><pre class="gutter"><span class="line-
   <div class="sidebar-sticky">
     
     
-    <hr>
-    <div class="post-toc sidebar-item">
-      <div><i class="fas fa-list-ol"></i>文章目录</div>
-      
-      
-      <ol class="toc" id="scrollspy-target">
-      
-        <li>
-          
-          <a class="list-group-item toc-link" href="#准备工作">准备工作</a>
-          
-        </li>
-      
-        <li>
-          
-          <a class="list-group-item toc-link" href="#SSH到路由器">SSH到路由器</a>
-          
-        </li>
-      
-        <li>
-          
-          <a class="list-group-item toc-link" href="#刷入Bootloader（推荐可选）">刷入Bootloader（推荐/可选）</a>
-          
-        </li>
-      
-        <li>
-          
-          <a class="list-group-item toc-link" href="#刷机">刷机</a>
-          
-          
-      <ol >
-      
-        <li>
-          
-          <a class="list-group-item toc-link" href="#使用Breed的刷机方法">使用Breed的刷机方法</a>
-          
-        </li>
-      
-        <li>
-          
-          <a class="list-group-item toc-link" href="#没有刷入Breed的刷机方法">没有刷入Breed的刷机方法</a>
-          
-        </li>
-      
-      </ol>
-      
-          
-        </li>
-      
-        <li>
-          
-          <a class="list-group-item toc-link" href="#Others">Others</a>
-          
-        </li>
-      
-      </ol>
-      
-    </div>
-    
     
     
     <hr>
@@ -795,4 +746,4 @@ reboot" class="code-block highlight hljs"><pre class="gutter"><span class="line-
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.6.1 at 2020-11-03T12:17:16.191Z. -->
+<!-- Page built by Hikaru v1.6.1 at 2020-11-03T12:17:16.138Z. -->

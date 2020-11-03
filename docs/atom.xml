@@ -7,7 +7,7 @@
   
   <link rel="alternate" type="text/html" href="https://blog.starry-s.me/" />
   
-  <updated>2020-07-19T07:29:57.000Z</updated>
+  <updated>2020-11-03T08:30:02.000Z</updated>
   
   <id>https://blog.starry-s.me/</id>
   
@@ -23,6 +23,213 @@
   
   
   <entry>
+    <title>单片机习题整理</title>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/learn-mcs8051/" />
+    <id>https://blog.starry-s.me/posts/learn-mcs8051/</id>
+    
+    <published>2020-11-03T08:30:02.000Z</published>
+    
+    
+    <updated>2020-11-03T08:30:02.000Z</updated>
+    
+    
+    <summary type="html">
+      &lt;p&gt;赶在期中考试前把单片机的课后习题整理出来...&lt;/p&gt;
+&lt;p&gt;(实在是没什么可拿来更新博客的了, 就干脆写点复习资料吧...)&lt;/p&gt;
+
+    </summary>
+    
+    
+    <content type="html">
+      &lt;p&gt;赶在期中考试前把单片机的课后习题整理出来...&lt;/p&gt;
+&lt;p&gt;(实在是没什么可拿来更新博客的了, 就干脆写点复习资料吧...)&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+&lt;hr&gt;
+&lt;div class=&quot;alert-blue&quot;&gt;
+本篇内容为作者整理资料所得, 仅供学习使用。如需转载请务必遵守&lt;a style=&quot;color:#666&quot; href=&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;CC BY-NC-ND 4.0&lt;/a&gt;协议。&lt;br&gt;
+请勿将本篇内容当作权威的教学辅导资料来使用, 因无法保证100%准确, 仅供参考。&lt;br&gt;
+如果发现了本篇存在的错误, 欢迎在页面下方提issue指正。&lt;br&gt;
+&lt;/div&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;8051复位后从地址&lt;code&gt;0000H&lt;/code&gt;开始执行程序, SP的值为&lt;code&gt;07H&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;PC: 两字节(16位)寄存器, 也称程序计数器。&lt;/p&gt;
+&lt;p&gt;SP: 堆栈指针, 指示出堆栈顶部在&lt;strong&gt;内部RAM块&lt;/strong&gt;中的位置。&lt;/p&gt;
+&lt;p&gt;单片机的堆栈设在了内部RAM区, 单片机复位后, SP中的内容为&lt;code&gt;07H&lt;/code&gt;(指向第0组工作寄存器的R7), 堆栈实际上从08H开始。&lt;/p&gt;
+&lt;p&gt;若SP被初始化为&lt;code&gt;39H&lt;/code&gt;, 则堆栈实际上是从&lt;code&gt;3AH&lt;/code&gt;开始的。&lt;/p&gt;
+&lt;p&gt;执行&lt;code&gt;RET&lt;/code&gt;指令后, SP值减2 (因为PC为2字节寄存器), 将调用指令的下一条指令的首地址送入PC中。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;PSW中的RS1 RS0=&lt;code&gt;10B&lt;/code&gt;时, R2的RAM地址为&lt;code&gt;12H&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;PSW： 程序状态字寄存器, 从&lt;code&gt;PSW.7&lt;/code&gt;至&lt;code&gt;PSW.0&lt;/code&gt;分别为&lt;code&gt;Cy&lt;/code&gt;(进位标志位), &lt;code&gt;Ac&lt;/code&gt;(辅助进位标志位), &lt;code&gt;F0&lt;/code&gt;(标志位), &lt;code&gt;RS1&lt;/code&gt;和&lt;code&gt;RS0&lt;/code&gt;(寄存器区选择控制位), &lt;code&gt;OV&lt;/code&gt;(溢出位), 保留位, &lt;code&gt;P&lt;/code&gt;(奇偶标志位, 奇数为1, 偶数为0)。&lt;/p&gt;
+&lt;p&gt;RS1 RS0 = &lt;code&gt;10B&lt;/code&gt;时, 使用第二组工作寄存器区, 第0组工作寄存器区R0-R7的地址为&lt;code&gt;00H-07H&lt;/code&gt;, 第1组为&lt;code&gt;08H-0FH&lt;/code&gt;, 第2组为&lt;code&gt;10H-17H&lt;/code&gt;, 第3组为&lt;code&gt;18H-1FH&lt;/code&gt;(每组长度为8个字节, 每个寄存器占1个字节)。&lt;/p&gt;
+&lt;p&gt;因此, 当A为&lt;code&gt;01110010B&lt;/code&gt;时, PSW中P为0(偶数个1)。&lt;/p&gt;
+&lt;p&gt;假设PSW为18H, 即&lt;code&gt;00011000B&lt;/code&gt;, 此时使用第3组工作寄存器, R0地址为18H, R7地址为1FH。&lt;/p&gt;
+&lt;p&gt;复位后, 默认选择的寄存器区是0区。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;8051片外数据存储器的寻址空间为&lt;code&gt;0000H~0FFFFH&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;位地址&lt;code&gt;07H&lt;/code&gt;位于字节地址&lt;code&gt;20H&lt;/code&gt;, 位地址&lt;code&gt;7FH&lt;/code&gt;位于字节地址&lt;code&gt;2FH&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;片内RAM中&lt;code&gt;20H~2FH&lt;/code&gt;这16个单元即可进行共128位的位寻址, 也可进行字节寻址。&lt;/p&gt;
+&lt;p&gt;字节地址及其位地址见下表所示：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;字节地址&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;D7&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;D6&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;D5&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;D4&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;D3&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;D2&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;D1&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;D0&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;2FH&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;7FH&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;7EH&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;7DH&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;7CH&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;7BH&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;7AH&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;79H&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;78H&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;2EH&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;77H&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;76H&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;75H&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;74H&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;73H&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;72H&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;71H&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;70H&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;2DH&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;6FH&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;6EH&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;6DH&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;6CH&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;6BH&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;6AH&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;69H&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;68H&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;...&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;...&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;20H&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;07H&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;06H&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;05H&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;04H&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;03H&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;02H&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;01H&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;00H&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;因此&lt;code&gt;00H~07H&lt;/code&gt;位于字节地址&lt;code&gt;20H&lt;/code&gt;, &lt;code&gt;78H-7FH&lt;/code&gt;位于字节地址&lt;code&gt;2FH&lt;/code&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;访问外部存储器时, P0口用来传输低8位地址和数据, P2口用来传送高8位地址。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;访问外部存储器时, ALE的输出用于锁存低8位地址。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;一个机器周期为12个震荡周期&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;为保证读入数据正确, 在读一个端口引脚之前应先向相应的端口锁存器写1。&lt;/p&gt;
+&lt;p&gt;如果在读一个端口引脚之前向对应的输出锁存器写了0, 将总是读到0。&lt;/p&gt;
+&lt;p&gt;8051访问片存储器时, 利用ALE信号锁存来自P0的低8位地址信号。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;只能用直接寻址方式访问特殊功能寄存器。&lt;/p&gt;
+&lt;p&gt;如果为8052单片机, 在访问高128字节的RAM时, 只能用间接寻址方式寻址。&lt;/p&gt;
+&lt;p&gt;访问片外数据存储器64Kbyte时, 使用DPTR做间接寻址寄存器。&lt;/p&gt;
+&lt;p&gt;使用&lt;code&gt;MOVX @DPTR&lt;/code&gt;类指令访问外部扩展存储器时, P2口输出高8位地址, P0口传送低8位地址和数据。&lt;/p&gt;
+&lt;p&gt;8051中, &lt;code&gt;PC&lt;/code&gt;和&lt;code&gt;DPTR&lt;/code&gt;都用于提供地址时, &lt;code&gt;PC&lt;/code&gt;是&lt;strong&gt;用户程序不可访问的&lt;/strong&gt;,  &lt;code&gt;DPTR&lt;/code&gt;可以分为两个8位寄存器&lt;code&gt;DPH&lt;/code&gt;和&lt;code&gt;DPL&lt;/code&gt;使用。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;累加器A的值为&lt;code&gt;30H&lt;/code&gt;, 指令&lt;code&gt;MOVC A, @A+PC&lt;/code&gt;位于地址&lt;code&gt;3000H&lt;/code&gt;。执行该指令时, 程序存储器地址&lt;code&gt;3031H&lt;/code&gt;的内容被传送至累加器A。&lt;/p&gt;
+&lt;p&gt;指令&lt;code&gt;MOVC A, @A+PC&lt;/code&gt;长度为1字节, 位于地址&lt;code&gt;3000H&lt;/code&gt;, 因此PC值为&lt;code&gt;3001H&lt;/code&gt;, 故&lt;code&gt;A+PC&lt;/code&gt;为&lt;code&gt;3031H&lt;/code&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;设SP的值为&lt;code&gt;5FH&lt;/code&gt;, 指令&lt;code&gt;LCALL DELAY&lt;/code&gt;所在地址为&lt;code&gt;2030H&lt;/code&gt;, 子程序DELAY所在地址为&lt;code&gt;20A0H&lt;/code&gt;, 则该指令完成的操作是将地址&lt;code&gt;2033H&lt;/code&gt;压入堆栈保存, 将地址&lt;code&gt;20A0H&lt;/code&gt;送入PC, SP的值应在该指令执行结束后变成&lt;code&gt;61H&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;单片机执行子程序或中断服务程序时, 需要保护现场, 即将PC当前的值压栈保存, 当子程序或中断服务程序运行结束后再进行出栈。(所以如果子程序修改了栈的内容, 在子程序运行结束后程序有可能会运行错误）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PC是16字节寄存器&lt;/strong&gt;, 所以SP需要加2, 以此分别保存PC的高、低8位的数据。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;LCALL addr16&lt;/code&gt;这条指令占3字节, 其中addr16占两字节, 因此程序可跳转64KB范围内的地址。&lt;/p&gt;
+&lt;p&gt;(&lt;code&gt;ACALL&lt;/code&gt;指令只能跳转当前所在的&lt;strong&gt;2K范围内&lt;/strong&gt;的地址, 如果不涉及到片外数据存储器的话, 通常只用&lt;code&gt;SJMP&lt;/code&gt;和&lt;code&gt;AJMP&lt;/code&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在网上搜到的答案「将&lt;code&gt;3500H&lt;/code&gt;送入PC」是错误的, 实际是将&lt;code&gt;20A0H&lt;/code&gt;送入PC, 因为DELAY所在的地址为&lt;code&gt;20A0H&lt;/code&gt;, 和&lt;code&gt;3500H&lt;/code&gt;一点关系都没有。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&quot;12&quot;&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;MOVC&lt;/code&gt;访问&lt;strong&gt;程序(ROM)**存储器, &lt;code&gt;MOVX&lt;/code&gt;指令访问&lt;/strong&gt;外部数据**存储器。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;MOVC&lt;/code&gt;为查表指令, 只有&lt;code&gt;MOCV @A+PC&lt;/code&gt;和&lt;code&gt;MOVC @A+DPTR&lt;/code&gt;这两条, 均为单子节指令。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;MOVX&lt;/code&gt;用于累加器A与外部数据存储器进行传送。&lt;/p&gt;
+&lt;p&gt;可以是&lt;code&gt;MOVX A, @DPTR&lt;/code&gt;, &lt;code&gt;MOVX A, @Ri&lt;/code&gt;, &lt;code&gt;MOVX @DPTR, A&lt;/code&gt;, &lt;code&gt;MOVX @Ri, A&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;当采用Ri作间接寻址时, 只能寻找片外256个单元的数据存储器, 此时8位地址和数据均由P0口传送。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;假设指令&lt;code&gt;DJNZ R7, rel&lt;/code&gt;位于&lt;code&gt;005FH&lt;/code&gt;, 如果在执行该指令前寄存器R7值为&lt;code&gt;00H&lt;/code&gt;, 偏移量rel为&lt;code&gt;02H&lt;/code&gt;, 则该指令执行后下一条要执行的指令所在的地址是&lt;code&gt;0063H&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;DJNZ R7, rel&lt;/code&gt;位于&lt;code&gt;005FH&lt;/code&gt;, 该指令长度为&lt;strong&gt;2字节&lt;/strong&gt; (书上写的3字节是错的), 所以在执行这条指令开始时PC值在原来的基础上 + 2 变为&lt;code&gt;0061H&lt;/code&gt;。又因为rel为&lt;code&gt;02H&lt;/code&gt;, 所以执行这条指令后, PC值变为&lt;code&gt;0063H&lt;/code&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;分析下面子程序的功能, 假设8051单片机的震荡频率为6MHz。&lt;/p&gt;
+&lt;figure data-raw=&quot;DL: MOV R7, #0AH
+L0: MOV R6, #250
+L1: NOP
+    NOP
+    DJNZ R6, L1
+    DJNZ R7, L0
+    RET&quot; data-info=&quot;language-asm&quot; data-lang=&quot;asm&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;gutter&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;3&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;5&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;6&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;7&lt;/span&gt;&lt;/pre&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-avrasm&quot;&gt;&lt;span class=&quot;hljs-symbol&quot;&gt;DL:&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R7&lt;/span&gt;, &lt;span class=&quot;hljs-meta&quot;&gt;#0AH&lt;/span&gt;
+&lt;span class=&quot;hljs-symbol&quot;&gt;L0:&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R6&lt;/span&gt;, &lt;span class=&quot;hljs-meta&quot;&gt;#250&lt;/span&gt;
+&lt;span class=&quot;hljs-symbol&quot;&gt;L1:&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;NOP&lt;/span&gt;
+    &lt;span class=&quot;hljs-keyword&quot;&gt;NOP&lt;/span&gt;
+    DJNZ &lt;span class=&quot;hljs-built_in&quot;&gt;R6&lt;/span&gt;, L1
+    DJNZ &lt;span class=&quot;hljs-built_in&quot;&gt;R7&lt;/span&gt;, L0
+    &lt;span class=&quot;hljs-keyword&quot;&gt;RET&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;R7为10, R6为250, 因此两个&lt;code&gt;NOP&lt;/code&gt;加上一个&lt;code&gt;DJNZ&lt;/code&gt;一共循环了250次, 该250次的循环一共执行了10次。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;NOP&lt;/code&gt;为1周期指令, &lt;code&gt;DJNZ&lt;/code&gt;2周期指令, 两个&lt;code&gt;NOP&lt;/code&gt;加一个&lt;code&gt;DJNZ&lt;/code&gt;共4周期。&lt;/p&gt;
+&lt;p&gt;6MHz下一个机器周期为12 / (6 * 10^6)= 2微秒, 12MHz下一个机器周期为1微秒。&lt;/p&gt;
+&lt;p&gt;故程序该子程序延时了4 * 250 * 10 * 12 / (6 * 10^6) = 20(ms)。&lt;/p&gt;
+&lt;p&gt;(实际上有10次&lt;code&gt;MOV R6, #250&lt;/code&gt;和10次&lt;code&gt;DJNZ R7, L0&lt;/code&gt;造成的30个机器周期的约0.6ms的误差)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To be continued...&lt;/p&gt;
+&lt;/blockquote&gt;
+
+    </content>
+    
+    
+    <category term="单片机" label="单片机" scheme="https://blog.starry-s.me/categories/%E5%8D%95%E7%89%87%E6%9C%BA/" />
+    
+    
+    <category term="单片机" label="单片机" scheme="https://blog.starry-s.me/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" />
+    
+    <category term="学习资料" label="学习资料" scheme="https://blog.starry-s.me/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" />
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>惠普光影精灵4在Arch Linux下使用Optimus Manager配置双显卡</title>
     <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/archlinux-pavilion-gaming-laptop/" />
     <id>https://blog.starry-s.me/posts/archlinux-pavilion-gaming-laptop/</id>
@@ -30,7 +237,7 @@
     <published>2020-07-19T07:29:57.000Z</published>
     
     
-    <updated>2020-07-19T07:29:57.000Z</updated>
+    <updated>2020-11-03T08:39:34.000Z</updated>
     
     
     <summary type="html">
@@ -459,7 +666,7 @@ tearfree=
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;在切换显卡自动注销后, gdm界面不会自动加载出来而是一直黑屏, 这时需要手动切换到tty2再切回tty1才能加载出来, 貌似是gdm-prime的问题。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;(本条与配置显卡无关) 因为电脑用的intel网卡, 如果遇到蓝牙耳机无法连接的情况, 安装&lt;code&gt;pulseaudio&lt;/code&gt;和&lt;code&gt;pulseaudio-modues-bt&lt;/code&gt;等耳机需要的蓝牙组件, 照着Wiki&lt;a href=&quot;https://wiki.archlinux.org/index.php/Wireless_network_configuration#Bluetooth_coexistence&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;Bluetooth coexistence&lt;/a&gt;解决此问题。&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;(本条与配置显卡无关) 因为电脑用的intel网卡, 如果遇到蓝牙耳机无法连接的情况, 安装&lt;code&gt;pulseaudio&lt;/code&gt;和&lt;code&gt;pulseaudio-modues-bt&lt;/code&gt;等耳机需要的蓝牙组件, 照着Wiki上的&lt;a href=&quot;https://wiki.archlinux.org/index.php/Wireless_network_configuration#Bluetooth_coexistence&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;禁用Bluetooth coexistence&lt;/a&gt;解决此问题。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;

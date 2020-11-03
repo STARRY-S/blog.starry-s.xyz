@@ -1,6 +1,7 @@
 ---
 title: 惠普光影精灵4在Arch Linux下使用Optimus Manager配置双显卡
 createdDate: 2020-07-19 15:29:57
+updatedDate: 2020-11-03 16:39:34
 layout: post
 zone: Asia/Shanghai
 tags:
@@ -222,7 +223,7 @@ options=overclocking
 
  - 在切换显卡自动注销后, gdm界面不会自动加载出来而是一直黑屏, 这时需要手动切换到tty2再切回tty1才能加载出来, 貌似是gdm-prime的问题。
 
- - (本条与配置显卡无关) 因为电脑用的intel网卡, 如果遇到蓝牙耳机无法连接的情况, 安装`pulseaudio`和`pulseaudio-modues-bt`等耳机需要的蓝牙组件, 照着Wiki[Bluetooth coexistence](https://wiki.archlinux.org/index.php/Wireless_network_configuration#Bluetooth_coexistence)解决此问题。
+ - (本条与配置显卡无关) 因为电脑用的intel网卡, 如果遇到蓝牙耳机无法连接的情况, 安装`pulseaudio`和`pulseaudio-modues-bt`等耳机需要的蓝牙组件, 照着Wiki上的[禁用Bluetooth coexistence](https://wiki.archlinux.org/index.php/Wireless_network_configuration#Bluetooth_coexistence)解决此问题。
 
 -----
 <div style="text-align:center">
