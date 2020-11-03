@@ -222,6 +222,9 @@ options=overclocking
 
  - 在切换显卡自动注销后, gdm界面不会自动加载出来而是一直黑屏, 这时需要手动切换到tty2再切回tty1才能加载出来, 貌似是gdm-prime的问题。
 
------
+ - (本条与配置显卡无关) 因为电脑用的intel网卡, 如果遇到蓝牙耳机无法连接的情况, 安装`pulseaudio`和`pulseaudio-modues-bt`等耳机需要的蓝牙组件, 照着Wiki[Bluetooth coexistence](https://wiki.archlinux.org/index.php/Wireless_network_configuration#Bluetooth_coexistence)解决此问题。
 
-![](images/1.png)
+-----
+<div style="text-align:center">
+    <image src="images/1.png"/>
+</div>

@@ -459,10 +459,13 @@ tearfree=
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;在切换显卡自动注销后, gdm界面不会自动加载出来而是一直黑屏, 这时需要手动切换到tty2再切回tty1才能加载出来, 貌似是gdm-prime的问题。&lt;/p&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;p&gt;(本条与配置显卡无关) 因为电脑用的intel网卡, 如果遇到蓝牙耳机无法连接的情况, 安装&lt;code&gt;pulseaudio&lt;/code&gt;和&lt;code&gt;pulseaudio-modues-bt&lt;/code&gt;等耳机需要的蓝牙组件, 照着Wiki&lt;a href=&quot;https://wiki.archlinux.org/index.php/Wireless_network_configuration#Bluetooth_coexistence&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;Bluetooth coexistence&lt;/a&gt;解决此问题。&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;img src=&quot;/posts/archlinux-pavilion-gaming-laptop/images/1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-
+&lt;div style=&quot;text-align:center&quot;&gt;
+    &lt;img src=&quot;/posts/archlinux-pavilion-gaming-laptop/images/1.png&quot;&gt;
+&lt;/div&gt;
     </content>
     
     
