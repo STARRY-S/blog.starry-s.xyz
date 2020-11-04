@@ -416,7 +416,7 @@
 </li>
 <li><p>为保证读入数据正确, 在读一个端口引脚之前应先向相应的端口锁存器写1。</p>
 <p>如果在读一个端口引脚之前向对应的输出锁存器写了0, 将总是读到0。</p>
-<p>8051访问片存储器时, 利用ALE信号锁存来自P0的低8位地址信号。</p>
+<p>8051访问片外存储器时, 利用ALE信号锁存来自P0的低8位地址信号。</p>
 </li>
 <li><p>只能用直接寻址方式访问特殊功能寄存器。</p>
 <p>如果为8052单片机, 在访问高128字节的RAM时, 只能用间接寻址方式寻址。</p>
@@ -438,8 +438,8 @@
 <p>在网上搜到的答案「将<code>3500H</code>送入PC」是错误的, 实际是将<code>20A0H</code>送入PC, 因为DELAY所在的地址为<code>20A0H</code>, 和<code>3500H</code>一点关系都没有。</p>
 </blockquote>
 <ol start="12">
-<li><p><code>MOVC</code>访问<strong>程序(ROM)**存储器, <code>MOVX</code>指令访问</strong>外部数据**存储器。</p>
-<p><code>MOVC</code>为查表指令, 只有<code>MOCV @A+PC</code>和<code>MOVC @A+DPTR</code>这两条, 均为单子节指令。</p>
+<li><p><code>MOVC</code>访问 <strong>程序(ROM)</strong> 存储器, <code>MOVX</code>指令访问 <strong>外部数据</strong> 存储器。</p>
+<p><code>MOVC</code>为查表指令, 只有<code>MOCV @A+PC</code>和<code>MOVC @A+DPTR</code>这两条, 均为单字节指令。</p>
 <p><code>MOVX</code>用于累加器A与外部数据存储器进行传送。</p>
 <p>可以是<code>MOVX A, @DPTR</code>, <code>MOVX A, @Ri</code>, <code>MOVX @DPTR, A</code>, <code>MOVX @Ri, A</code>。</p>
 <p>当采用Ri作间接寻址时, 只能寻找片外256个单元的数据存储器, 此时8位地址和数据均由P0口传送。</p>
@@ -746,4 +746,4 @@ L1: NOP
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.6.1 at 2020-11-03T12:19:47.564Z. -->
+<!-- Page built by Hikaru v1.6.1 at 2020-11-04T07:22:19.523Z. -->

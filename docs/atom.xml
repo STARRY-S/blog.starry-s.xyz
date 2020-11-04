@@ -152,7 +152,7 @@
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;为保证读入数据正确, 在读一个端口引脚之前应先向相应的端口锁存器写1。&lt;/p&gt;
 &lt;p&gt;如果在读一个端口引脚之前向对应的输出锁存器写了0, 将总是读到0。&lt;/p&gt;
-&lt;p&gt;8051访问片存储器时, 利用ALE信号锁存来自P0的低8位地址信号。&lt;/p&gt;
+&lt;p&gt;8051访问片外存储器时, 利用ALE信号锁存来自P0的低8位地址信号。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;只能用直接寻址方式访问特殊功能寄存器。&lt;/p&gt;
 &lt;p&gt;如果为8052单片机, 在访问高128字节的RAM时, 只能用间接寻址方式寻址。&lt;/p&gt;
@@ -174,8 +174,8 @@
 &lt;p&gt;在网上搜到的答案「将&lt;code&gt;3500H&lt;/code&gt;送入PC」是错误的, 实际是将&lt;code&gt;20A0H&lt;/code&gt;送入PC, 因为DELAY所在的地址为&lt;code&gt;20A0H&lt;/code&gt;, 和&lt;code&gt;3500H&lt;/code&gt;一点关系都没有。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ol start=&quot;12&quot;&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;MOVC&lt;/code&gt;访问&lt;strong&gt;程序(ROM)**存储器, &lt;code&gt;MOVX&lt;/code&gt;指令访问&lt;/strong&gt;外部数据**存储器。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;MOVC&lt;/code&gt;为查表指令, 只有&lt;code&gt;MOCV @A+PC&lt;/code&gt;和&lt;code&gt;MOVC @A+DPTR&lt;/code&gt;这两条, 均为单子节指令。&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;MOVC&lt;/code&gt;访问 &lt;strong&gt;程序(ROM)&lt;/strong&gt; 存储器, &lt;code&gt;MOVX&lt;/code&gt;指令访问 &lt;strong&gt;外部数据&lt;/strong&gt; 存储器。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;MOVC&lt;/code&gt;为查表指令, 只有&lt;code&gt;MOCV @A+PC&lt;/code&gt;和&lt;code&gt;MOVC @A+DPTR&lt;/code&gt;这两条, 均为单字节指令。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;MOVX&lt;/code&gt;用于累加器A与外部数据存储器进行传送。&lt;/p&gt;
 &lt;p&gt;可以是&lt;code&gt;MOVX A, @DPTR&lt;/code&gt;, &lt;code&gt;MOVX A, @Ri&lt;/code&gt;, &lt;code&gt;MOVX @DPTR, A&lt;/code&gt;, &lt;code&gt;MOVX @Ri, A&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;当采用Ri作间接寻址时, 只能寻找片外256个单元的数据存储器, 此时8位地址和数据均由P0口传送。&lt;/p&gt;
