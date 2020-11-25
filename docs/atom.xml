@@ -275,7 +275,8 @@ L1: NOP
 &lt;li&gt;&lt;p&gt;编写一个子程序, 将内部RAM 40H~4FH的内容复制到50H~5FH。&lt;/p&gt;
 &lt;figure data-raw=&quot;COPY: MOV R0, #40H
       MOV R1, #50H
-      MOV R2, #10H; 一共复制16次
+      MOV R2, #10H
+      ; 40H~4FH一共复制了16次
 LOOP:
       MOV A, @R0
       MOV @R1, A
@@ -291,9 +292,11 @@ LOOP:
 &lt;span class=&quot;line-number&quot;&gt;7&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;8&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;9&lt;/span&gt;
-&lt;span class=&quot;line-number&quot;&gt;10&lt;/span&gt;&lt;/pre&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-avrasm&quot;&gt;&lt;span class=&quot;hljs-symbol&quot;&gt;COPY:&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R0&lt;/span&gt;, &lt;span class=&quot;hljs-meta&quot;&gt;#40H&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;11&lt;/span&gt;&lt;/pre&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-avrasm&quot;&gt;&lt;span class=&quot;hljs-symbol&quot;&gt;COPY:&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R0&lt;/span&gt;, &lt;span class=&quot;hljs-meta&quot;&gt;#40H&lt;/span&gt;
       &lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R1&lt;/span&gt;, &lt;span class=&quot;hljs-meta&quot;&gt;#50H&lt;/span&gt;
-      &lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R2&lt;/span&gt;, &lt;span class=&quot;hljs-meta&quot;&gt;#10H; 一共复制16次&lt;/span&gt;
+      &lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R2&lt;/span&gt;, &lt;span class=&quot;hljs-meta&quot;&gt;#10H&lt;/span&gt;
+      &lt;span class=&quot;hljs-comment&quot;&gt;; 40H~4FH一共复制了16次&lt;/span&gt;
 &lt;span class=&quot;hljs-symbol&quot;&gt;LOOP:&lt;/span&gt;
       &lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; A, @&lt;span class=&quot;hljs-built_in&quot;&gt;R0&lt;/span&gt;
       &lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; @&lt;span class=&quot;hljs-built_in&quot;&gt;R1&lt;/span&gt;, A

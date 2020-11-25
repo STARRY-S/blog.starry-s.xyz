@@ -539,7 +539,8 @@ L1: NOP
 <li><p>编写一个子程序, 将内部RAM 40H~4FH的内容复制到50H~5FH。</p>
 <figure data-raw="COPY: MOV R0, #40H
       MOV R1, #50H
-      MOV R2, #10H; 一共复制16次
+      MOV R2, #10H
+      ; 40H~4FH一共复制了16次
 LOOP:
       MOV A, @R0
       MOV @R1, A
@@ -555,9 +556,11 @@ LOOP:
 <span class="line-number">7</span>
 <span class="line-number">8</span>
 <span class="line-number">9</span>
-<span class="line-number">10</span></pre><pre class="code"><code class="language-avrasm"><span class="hljs-symbol">COPY:</span> <span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R0</span>, <span class="hljs-meta">#40H</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span></pre><pre class="code"><code class="language-avrasm"><span class="hljs-symbol">COPY:</span> <span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R0</span>, <span class="hljs-meta">#40H</span>
       <span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R1</span>, <span class="hljs-meta">#50H</span>
-      <span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R2</span>, <span class="hljs-meta">#10H; 一共复制16次</span>
+      <span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R2</span>, <span class="hljs-meta">#10H</span>
+      <span class="hljs-comment">; 40H~4FH一共复制了16次</span>
 <span class="hljs-symbol">LOOP:</span>
       <span class="hljs-keyword">MOV</span> A, @<span class="hljs-built_in">R0</span>
       <span class="hljs-keyword">MOV</span> @<span class="hljs-built_in">R1</span>, A
@@ -1149,4 +1152,4 @@ DATA:</span>
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.6.1 at 2020-11-25T07:16:43.327Z. -->
+<!-- Page built by Hikaru v1.6.1 at 2020-11-25T07:23:56.721Z. -->

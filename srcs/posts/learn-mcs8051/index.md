@@ -169,7 +169,8 @@ comment: true
    ``` ASM
    COPY: MOV R0, #40H
          MOV R1, #50H
-         MOV R2, #10H; 一共复制16次
+         MOV R2, #10H
+         ; 40H~4FH一共复制了16次
    LOOP:
          MOV A, @R0
          MOV @R1, A
