@@ -30,7 +30,7 @@ comment: true
 {
     "name": "春はゆく",
     "artist": "Aimer",
-    "theme": "#A26208",
+    "theme": "#25AFF5",
     "url": "https://music.starry-s.me/music/obj_wonDkMOGw6XDiTHCmMOi_1630142819_fc9d_8785_4c2c_8abd7ec40b9695cbf53de173e782f195.m4a",
     "cover": "https://music.starry-s.me/music/cover/109951164785068521.jpg"
 }

@@ -76,7 +76,7 @@ const ap0 = new APlayer ({
         url: &quot;https://music.starry-s.me/music/obj_wonDkMOGw6XDiTHCmMOi_1630142819_fc9d_8785_4c2c_8abd7ec40b9695cbf53de173e782f195.m4a&quot;,
         cover: &quot;https://music.starry-s.me/music/cover/109951164785068521.jpg&quot;,
         lrc: &quot;&quot;,
-        theme: &quot;#A26208&quot;
+        theme: &quot;#25AFF5&quot;
     }]
 });
 &lt;/script&gt;  
