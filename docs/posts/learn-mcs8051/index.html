@@ -11,7 +11,7 @@
     
     <meta name="author" content="STARRY-S">
     
-    <meta name="description" content="赶在期中考试前把单片机的课后习题整理出来... (实在是没什么可拿来更新博客的了, 就干脆写点复习资料吧...)">
+    <meta name="description" content="赶在期中考试（骑磨烤柿）前把单片机的课后习题整理出来... (实在是没什么可拿来更新博客的了, 就干脆写点复习资料吧...)">
     
     
     <meta name="keywords" content="Life, ARIA, Hikaru, STARRY-S, Arch Linux, Linux, Music">
@@ -218,7 +218,7 @@
 
       gtag('config', 'UA-124615792-3');
     </script>
-    <title>单片机习题整理 - STARRY-S' Blog</title>
+    <title>8051单片机习题整理 - STARRY-S' Blog</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage">
     
@@ -281,7 +281,7 @@
       </span>
     </div>
     <header class="post-header">
-      <div class="post-title" itemprop="name headline">单片机习题整理</div>
+      <div class="post-title" itemprop="name headline">8051单片机习题整理</div>
       <div class="post-meta">
         
         <div class="post-date meta-block">
@@ -298,14 +298,16 @@
         
         
         <div class="post-comment-count meta-block">
-          <i class="far fa-comments"></i><span><a href="/posts/learn-mcs8051/#comment-results" itemprop="discussionUrl"><span class="post-comment-count comment-count" data-comment-identifier="单片机习题整理" itemprop="commentCount">阅读评论</span></a></span>
+          <i class="far fa-comments"></i><span><a href="/posts/learn-mcs8051/#comment-results" itemprop="discussionUrl"><span class="post-comment-count comment-count" data-comment-identifier="8051单片机习题整理" itemprop="commentCount">阅读评论</span></a></span>
         </div>
         
         
       </div>
     </header>
     <main class="post-main" id="scrollspy-container" itemprop="articleBody">
-      <p>赶在期中考试前把单片机的课后习题整理出来...</p>
+      <link href="/css/APlayer.min.css" rel="stylesheet">
+<script src= "/js/APlayer.min.js"></script>
+<p>赶在<del>期中考试</del>（骑磨烤柿）前把单片机的课后习题整理出来...</p>
 <p>(实在是没什么可拿来更新博客的了, 就干脆写点复习资料吧...)</p>
 <a id="more"></a>
 
@@ -316,6 +318,34 @@
 如果发现了本篇存在的错误, 欢迎在页面下方提issue指正。<br>
 </div>
 
+
+ <!--APlayer-->
+<div id="aplayer0" style="background: var(--color-main-background)"></div>
+<script>
+const ap0 = new APlayer ({
+    container: document.getElementById("aplayer0"),
+    theme: "#33363b",
+    fixed: false,
+    listFolded: false,
+    listMaxHeight: false,
+    lrcType: false,
+    mini: false,
+    volume: 0.7,
+    order: "list",
+    loop: "all",
+    autoplay: false,
+    audio: [{
+        name: "春はゆく",
+        artist: "Aimer",
+        url: "https://music.starry-s.me/music/obj_wonDkMOGw6XDiTHCmMOi_1630142819_fc9d_8785_4c2c_8abd7ec40b9695cbf53de173e782f195.m4a",
+        cover: "https://music.starry-s.me/music/cover/109951164785068521.jpg",
+        lrc: "",
+        theme: "#A26208"
+    }]
+});
+</script>  
+
+<h1 id="硬件结构amp;指令系统"><a class="header-link" href="/posts/learn-mcs8051/#%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84amp;%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F" title="硬件结构amp;指令系统"></a>硬件结构&amp;指令系统</h1>
 <ol>
 <li><p>8051复位后从地址<code>0000H</code>开始执行程序, SP的值为<code>07H</code>。</p>
 <p>PC: 两字节(16位)寄存器, 也称程序计数器。</p>
@@ -326,6 +356,32 @@
 </li>
 <li><p>PSW中的RS1 RS0=<code>10B</code>时, R2的RAM地址为<code>12H</code>。</p>
 <p>PSW： 程序状态字寄存器, 从<code>PSW.7</code>至<code>PSW.0</code>分别为<code>Cy</code>(进位标志位), <code>Ac</code>(辅助进位标志位), <code>F0</code>(标志位), <code>RS1</code>和<code>RS0</code>(寄存器区选择控制位), <code>OV</code>(溢出位), 保留位, <code>P</code>(奇偶标志位, 奇数为1, 偶数为0)。</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">D7</th>
+<th align="center">D6</th>
+<th align="center">D5</th>
+<th align="center">D4</th>
+<th align="center">D3</th>
+<th align="center">D2</th>
+<th align="center">D1</th>
+<th align="center">D0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">PSW</td>
+<td align="center">Cy</td>
+<td align="center">Ac</td>
+<td align="center">F0</td>
+<td align="center">RS1</td>
+<td align="center">RS0</td>
+<td align="center">OV</td>
+<td align="center"></td>
+<td align="center">P</td>
+</tr>
+</tbody></table>
 <p>RS1 RS0 = <code>10B</code>时, 使用第二组工作寄存器区, 第0组工作寄存器区R0-R7的地址为<code>00H-07H</code>, 第1组为<code>08H-0FH</code>, 第2组为<code>10H-17H</code>, 第3组为<code>18H-1FH</code>(每组长度为8个字节, 每个寄存器占1个字节)。</p>
 <p>因此, 当A为<code>01110010B</code>时, PSW中P为0(偶数个1)。</p>
 <p>假设PSW为18H, 即<code>00011000B</code>, 此时使用第3组工作寄存器, R0地址为18H, R7地址为1FH。</p>
@@ -422,7 +478,7 @@
 <p>如果为8052单片机, 在访问高128字节的RAM时, 只能用间接寻址方式寻址。</p>
 <p>访问片外数据存储器64Kbyte时, 使用DPTR做间接寻址寄存器。</p>
 <p>使用<code>MOVX @DPTR</code>类指令访问外部扩展存储器时, P2口输出高8位地址, P0口传送低8位地址和数据。</p>
-<p>8051中, <code>PC</code>和<code>DPTR</code>都用于提供地址时, <code>PC</code>是<strong>用户程序不可访问的</strong>,  <code>DPTR</code>可以分为两个8位寄存器<code>DPH</code>和<code>DPL</code>使用。</p>
+<p>8051中, <code>PC</code>和<code>DPTR</code>都用于提供地址时, <code>PC</code>是<strong>用户程序不可访问的</strong>, <code>DPTR</code>可以分为两个8位寄存器<code>DPH</code>和<code>DPL</code>使用。</p>
 </li>
 <li><p>累加器A的值为<code>30H</code>, 指令<code>MOVC A, @A+PC</code>位于地址<code>3000H</code>。执行该指令时, 程序存储器地址<code>3031H</code>的内容被传送至累加器A。</p>
 <p>指令<code>MOVC A, @A+PC</code>长度为1字节, 位于地址<code>3000H</code>, 因此PC值为<code>3001H</code>, 故<code>A+PC</code>为<code>3031H</code>。</p>
@@ -468,7 +524,7 @@ L1: NOP
     DJNZ <span class="hljs-built_in">R7</span>, L0
     <span class="hljs-keyword">RET</span></code></pre></figure>
 <p>R7为10, R6为250, 因此两个<code>NOP</code>加上一个<code>DJNZ</code>一共循环了250次, 该250次的循环一共执行了10次。</p>
-<p><code>NOP</code>为1周期指令, <code>DJNZ</code>2周期指令, 两个<code>NOP</code>加一个<code>DJNZ</code>共4周期。</p>
+<p><code>NOP</code>为1周期指令, <code>DJNZ</code>为2周期指令, 两个<code>NOP</code>加一个<code>DJNZ</code>共4周期。</p>
 <p>6MHz下一个机器周期为12 / (6 * 10^6)= 2微秒, 12MHz下一个机器周期为1微秒。</p>
 <p>故程序该子程序延时了4 * 250 * 10 * 12 / (6 * 10^6) = 20(ms)。</p>
 <p>(实际上有10次<code>MOV R6, #250</code>和10次<code>DJNZ R7, L0</code>造成的30个机器周期的约0.6ms的误差)</p>
@@ -476,9 +532,321 @@ L1: NOP
 </ol>
 <hr>
 <blockquote>
+<p>以下部分写于2020年11月25日</p>
+</blockquote>
+<h1 id="汇编语言程序"><a class="header-link" href="/posts/learn-mcs8051/#%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F" title="汇编语言程序"></a>汇编语言程序</h1>
+<ol>
+<li><p>编写一个子程序, 将内部RAM 40H~4FH的内容复制到50H~5FH。</p>
+<figure data-raw="COPY: MOV R0, #40H
+      MOV R1, #50H
+      MOV R2, #10H; 一共复制16次
+LOOP:
+      MOV A, @R0
+      MOV @R1, A
+      INC R0
+      INC R1
+      DJNZ R2, LOOP
+      RET" data-info="language-ASM" data-lang="ASM" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span></pre><pre class="code"><code class="language-avrasm"><span class="hljs-symbol">COPY:</span> <span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R0</span>, <span class="hljs-meta">#40H</span>
+      <span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R1</span>, <span class="hljs-meta">#50H</span>
+      <span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R2</span>, <span class="hljs-meta">#10H; 一共复制16次</span>
+<span class="hljs-symbol">LOOP:</span>
+      <span class="hljs-keyword">MOV</span> A, @<span class="hljs-built_in">R0</span>
+      <span class="hljs-keyword">MOV</span> @<span class="hljs-built_in">R1</span>, A
+      <span class="hljs-keyword">INC</span> <span class="hljs-built_in">R0</span>
+      <span class="hljs-keyword">INC</span> <span class="hljs-built_in">R1</span>
+      DJNZ <span class="hljs-built_in">R2</span>, LOOP
+      <span class="hljs-keyword">RET</span></code></pre></figure>
+<p>因为没有<code>MOV @RX, @RX</code>这条指令, 所以用A做数据的中转站。</p>
+</li>
+<li><p>将任何无符号8位二进制数转换为BCD码的子程序, 入口参数为内部RAM单元20H, 出口参数为内部RAM单元30H和31H, 30H存放百位数, 31H存放十位数和个位数。</p>
+<figure data-raw="
+CV:
+MOV R0, #20H
+MOV A, @R0
+MOV B, #100
+DIV AB; A除以100, 得到的百位数存在A中
+MOV 30H, A
+MOV A, B
+
+MOV B, #10
+DIV AB
+
+SWAP A
+ADD A, B; 也可以用ORL
+MOV 31H, A
+RET
+" data-info="language-ASM" data-lang="ASM" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span></pre><pre class="code"><code class="language-avrasm">
+<span class="hljs-symbol">CV:</span>
+<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R0</span>, <span class="hljs-meta">#20H</span>
+<span class="hljs-keyword">MOV</span> A, @<span class="hljs-built_in">R0</span>
+<span class="hljs-keyword">MOV</span> B, <span class="hljs-meta">#100</span>
+DIV AB<span class="hljs-comment">; A除以100, 得到的百位数存在A中</span>
+<span class="hljs-keyword">MOV</span> <span class="hljs-number">30</span>H, A
+<span class="hljs-keyword">MOV</span> A, B
+
+<span class="hljs-keyword">MOV</span> B, <span class="hljs-meta">#10</span>
+DIV AB
+
+<span class="hljs-keyword">SWAP</span> A
+<span class="hljs-keyword">ADD</span> A, B<span class="hljs-comment">; 也可以用ORL</span>
+<span class="hljs-keyword">MOV</span> <span class="hljs-number">31</span>H, A
+<span class="hljs-keyword">RET</span>
+</code></pre></figure>
+<p><code>DIV AB</code>和<code>MUL AB</code>之间没有逗号。</p>
+</li>
+<li><p>内部RAM 30H单元存放两位十进制数（压缩BCD码）, 编写将该十进制数转换为对应ASCII码的子程序, 转换结果存放到内部RAM 40H（十位数）和41H（个位数）单元。</p>
+<blockquote>
+<p>ASCII码： <code>30H</code>为<code>0</code>, <code>41H</code>为<code>A</code>, <code>61H</code>为<code>a</code></p>
+</blockquote>
+<figure data-raw="
+CV:
+MOV A, 30H
+ANL A, #0FH
+MOV DPTR, #DATA; 或者直接用ADD A, #30H即可
+MOVC A, @A+DPTR
+MOV 41H, A
+
+MOV A, 30H
+SWAP A
+ANL A, #0FH
+MOVC A, @A+DPTR
+MOV 40H, A
+
+RET
+
+DATA:
+DB 30H, 31H, 32H, 33H, 34H, 35H, 36H, 37H, 38H, 39H
+" data-info="language-ASM" data-lang="ASM" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span></pre><pre class="code"><code class="language-x86asm"><span class="hljs-symbol">
+CV:</span>
+<span class="hljs-keyword">MOV</span> A, <span class="hljs-number">30H</span>
+ANL A, #<span class="hljs-number">0FH</span>
+<span class="hljs-keyword">MOV</span> DPTR, #DATA<span class="hljs-comment">; 或者直接用ADD A, #30H即可</span>
+MOVC A, @A+DPTR
+<span class="hljs-keyword">MOV</span> <span class="hljs-number">41H</span>, A
+
+<span class="hljs-keyword">MOV</span> A, <span class="hljs-number">30H</span>
+SWAP A
+ANL A, #<span class="hljs-number">0FH</span>
+MOVC A, @A+DPTR
+<span class="hljs-keyword">MOV</span> <span class="hljs-number">40H</span>, A
+
+<span class="hljs-keyword">RET</span>
+<span class="hljs-symbol">
+DATA:</span>
+<span class="hljs-built_in">DB</span> <span class="hljs-number">30H</span>, <span class="hljs-number">31H</span>, <span class="hljs-number">32H</span>, <span class="hljs-number">33H</span>, <span class="hljs-number">34H</span>, <span class="hljs-number">35H</span>, <span class="hljs-number">36H</span>, <span class="hljs-number">37H</span>, <span class="hljs-number">38H</span>, <span class="hljs-number">39H</span>
+</code></pre></figure>
+</li>
+</ol>
+<hr>
+<h1 id="中断系统"><a class="header-link" href="/posts/learn-mcs8051/#%E4%B8%AD%E6%96%AD%E7%B3%BB%E7%BB%9F" title="中断系统"></a>中断系统</h1>
+<ol>
+<li><p>8051的外部中断有低电平触发和下降沿触发两种触发方式。外部中断1的中断向量地址是<code>0013H</code>。</p>
+<p>在响应中断时, 单片机自动生成一条长调用指令LCALL addr16, 其地址为中断入口地址。</p>
+<table>
+<thead>
+<tr>
+<th align="center">中断源</th>
+<th align="center">入口地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">INT0</td>
+<td align="center">0003H</td>
+</tr>
+<tr>
+<td align="center">T0</td>
+<td align="center">000BH</td>
+</tr>
+<tr>
+<td align="center">INT1</td>
+<td align="center">0013H</td>
+</tr>
+<tr>
+<td align="center">T1</td>
+<td align="center">001BH</td>
+</tr>
+<tr>
+<td align="center">串行口</td>
+<td align="center">0023H</td>
+</tr>
+</tbody></table>
+<p>通常在中断入口地址处放一条无条件转移指令<code>*JMP</code>。</p>
+</li>
+<li><p>执行指令<code>MOV IP, #0BH</code>（#00001011B）后, 中断优先级最高者为<code>PX0</code>, 最低为<code>PS</code>。</p>
+<p>IP: 中断优先级寄存器, 其前3为无意义, 后5位（IP.4至IP.0）为：<code>PS</code>, <code>PT1</code>, <code>PX1</code>, <code>PT0</code>, <code>PX0</code>, 分别对应串行口、定时器T1、外部中断1、定时器0、外部中断0。</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">D7</th>
+<th align="center">D6</th>
+<th align="center">D5</th>
+<th align="center">D4</th>
+<th align="center">D3</th>
+<th align="center">D2</th>
+<th align="center">D1</th>
+<th align="center">D0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">IP</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">PS</td>
+<td align="center">PT1</td>
+<td align="center">PX1</td>
+<td align="center">PT0</td>
+<td align="center">PX0</td>
+</tr>
+</tbody></table>
+<p>单片机复位以后, IP的内容为0, 各个中断源均为低优先级中断。</p>
+<p>在同时收到几个同一优先级的中断请求时, 中断响应取决于内部查询顺序, 其顺序由高到低为：<code>INT0</code>、<code>T0</code>、<code>INT1</code>、<code>T1</code>、<code>串行口</code>。</p>
+<p>当中断源均为同一优先级时, 当它们同时申请中断时CPU首先响应外部中断0</p>
+</li>
+<li><p>8051的晶振频率为12MHz, 则最短的外部中断响应时间为3us, 最长的外部中断响应时间为12us。</p>
+</li>
+<li><p>中断标记位于单片机寄存器的<code>TCON</code>和<code>SCON</code>中。</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">D7</th>
+<th align="center">D6</th>
+<th align="center">D5</th>
+<th align="center">D4</th>
+<th align="center">D3</th>
+<th align="center">D2</th>
+<th align="center">D1</th>
+<th align="center">D0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">TCON</td>
+<td align="center">TF1</td>
+<td align="center">TR1</td>
+<td align="center">TF0</td>
+<td align="center">TR0</td>
+<td align="center">IE1</td>
+<td align="center">IT1</td>
+<td align="center">IE0</td>
+<td align="center">IT0</td>
+</tr>
+<tr>
+<td align="center">SCON</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">TI</td>
+<td align="center">RI</td>
+</tr>
+</tbody></table>
+<p><code>TCON</code>中<code>TF1</code>和<code>TF0</code>为定时器/计数器中断标志位, <code>TR1</code>和<code>TR0</code>为定时/计数启动位, <code>IE1</code>和<code>IE0</code>为外部中断标志位, <code>IT1</code>和<code>IT0</code>为选择外部中断为边沿触发(1)还是电平触发(0)方式。</p>
+<p><code>SCON</code>中的<code>TI</code>和<code>RI</code>（是大写字母I不是数字1）分别为串行口中断发送中断请求标志位(发送成功后置1)和接受中断请求标志位（接受成功后置1）。串口中断无法硬件清零, 只能软件清零。</p>
+</li>
+<li><p>要使8051能够响应定时器T1的中断和串行口中断, 不响应其他中断, 则中断允许寄存器<code>IE</code>的内容为<code>98H</code>（<code>10011000B</code>）。</p>
+<p>中断允许寄存器IE：</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">D7</th>
+<th align="center">D6</th>
+<th align="center">D5</th>
+<th align="center">D4</th>
+<th align="center">D3</th>
+<th align="center">D2</th>
+<th align="center">D1</th>
+<th align="center">D0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">IE</td>
+<td align="center">EA</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">ES</td>
+<td align="center">ET1</td>
+<td align="center">EX1</td>
+<td align="center">ET0</td>
+<td align="center">EX0</td>
+</tr>
+</tbody></table>
+<p><code>EA</code>为总控制位, 当<code>EA</code>为1时, CPU才可以响应中断请求。</p>
+<p><code>ES</code>为串行口中断允许位, <code>ET1</code>和<code>ET0</code>为定时器中断允许位, <code>EX1</code>和<code>EX0</code>为外部中断允许位。</p>
+</li>
+</ol>
+<hr>
+<h1 id="定时器和计数器"><a class="header-link" href="/posts/learn-mcs8051/#%E5%AE%9A%E6%97%B6%E5%99%A8%E5%92%8C%E8%AE%A1%E6%95%B0%E5%99%A8" title="定时器和计数器"></a>定时器和计数器</h1>
+<ol>
+<li><p>使T0工作方式1的溢出周期最长的初值是<code>0000H</code>。</p>
+<p>定时器/计数器工作在方式0为13位计数器, 由TLX的低5位和THX的高8位组成13位计数器, 最大值为2^13-1(<code>8191</code>), 晶振频率12MHz下计时周期最长为8.192ms。工作在方式1时由均为8位的TLX和THX组成16位计数器, 最大值为<code>65535</code>, 晶振频率为12M下最长为65.536ms。</p>
+<p>当定时器/计数器工作在方式2时, 可以循环定时/计数。当计数溢出后, 自动将8位的THX装入8位的TLX中, 可省去重装初值的时间, 最大值为<code>255</code>, 晶振频率12M下计时周期最长为0.256ms。</p>
+</li>
+<li><p><code>T1</code>配置为方式3时, 停止计数, 方式3只适用于定时器0。</p>
+<p>定时器<code>T0</code>的方式3将其分为两个8位定时器, 其中<code>TH0</code>只能做定时器使用。</p>
+</li>
+<li><p>设8051单片机的晶振频率为12MHz, 定时器作计数器使用时, 其计数输入信号的最高频率为500KHz。</p>
+<p>当定时器用作计数器时, 当检测到引脚上的负跳变时计数器的值增一。检测下降沿需要2个机器周期, 即24个震荡周期, 所以输入信号最高频率为 12M / 24 = 500KHz。</p>
+</li>
+<li><p>用定时器方式2扩展一个下降沿触发的外部中断, 计数初值应为<code>FFH</code>。</p>
+</li>
+</ol>
+<hr>
+<blockquote>
 <p>To be continued...</p>
 </blockquote>
+<!--
+# 串行口、I/O口
 
+# 外部存储器拓展
+-->
     </main>
     <footer class="post-footer">
       
@@ -561,7 +929,7 @@ L1: NOP
         "sendButtonText": "去评论",
         "noCommentText": "这个页面还没有评论，现在就去评论吧！",
         "failText": "你可能达到了 API 请求频率上限，请等待一段时间再刷新。",
-        "title": "单片机习题整理",
+        "title": "8051单片机习题整理",
         "queryString": window.location.search,
         "basePath": "/posts/learn-mcs8051/",
         "containerID": "comment-results"
@@ -671,6 +1039,41 @@ L1: NOP
   <div class="sidebar-sticky">
     
     
+    <hr>
+    <div class="post-toc sidebar-item">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      
+      
+      <ol class="toc" id="scrollspy-target">
+      
+        <li>
+          
+          <a class="list-group-item toc-link" href="#硬件结构amp;指令系统">硬件结构&指令系统</a>
+          
+        </li>
+      
+        <li>
+          
+          <a class="list-group-item toc-link" href="#汇编语言程序">汇编语言程序</a>
+          
+        </li>
+      
+        <li>
+          
+          <a class="list-group-item toc-link" href="#中断系统">中断系统</a>
+          
+        </li>
+      
+        <li>
+          
+          <a class="list-group-item toc-link" href="#定时器和计数器">定时器和计数器</a>
+          
+        </li>
+      
+      </ol>
+      
+    </div>
+    
     
     
     <hr>
@@ -746,4 +1149,4 @@ L1: NOP
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.6.1 at 2020-11-04T07:22:19.523Z. -->
+<!-- Page built by Hikaru v1.6.1 at 2020-11-25T07:15:13.125Z. -->
