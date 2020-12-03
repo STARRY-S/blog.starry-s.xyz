@@ -140,7 +140,7 @@ reboot
 
 3. OpenWrt默认语言为英文, 可安装`luci-i18n-base-zh-cn`,`luci-i18n-base-zh-tw`安装简体/繁体中文。
 
-4. [OpenWrt-disk](http://openwrt-dist.sourceforge.net)可拓展更多功能。
+4. [OpenWrt-dist](http://openwrt-dist.sourceforge.net)可拓展更多功能。
 
 5. 为优化软件包安装速度, 可将opkg源改为国内：
 

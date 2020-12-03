@@ -34,7 +34,7 @@
     
     
     <summary type="html">
-      &lt;p&gt;赶在&lt;del&gt;期中考试&lt;/del&gt;（骑磨烤柿）前把单片机的课后习题整理出来...&lt;/p&gt;
+      &lt;p&gt;赶在&lt;del&gt;期中考试&lt;/del&gt;(骑磨烤柿)前把单片机的课后习题整理出来...&lt;/p&gt;
 &lt;p&gt;(实在是没什么可拿来更新博客的了, 就干脆写点复习资料吧...)&lt;/p&gt;
 
     </summary>
@@ -43,7 +43,7 @@
     <content type="html">
       &lt;link href=&quot;/css/APlayer.min.css&quot; rel=&quot;stylesheet&quot;&gt;
 &lt;script src= &quot;/js/APlayer.min.js&quot;&gt;&lt;/script&gt;
-&lt;p&gt;赶在&lt;del&gt;期中考试&lt;/del&gt;（骑磨烤柿）前把单片机的课后习题整理出来...&lt;/p&gt;
+&lt;p&gt;赶在&lt;del&gt;期中考试&lt;/del&gt;(骑磨烤柿)前把单片机的课后习题整理出来...&lt;/p&gt;
 &lt;p&gt;(实在是没什么可拿来更新博客的了, 就干脆写点复习资料吧...)&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 
@@ -86,7 +86,7 @@ const ap0 = new APlayer ({
 &lt;li&gt;&lt;p&gt;8051复位后从地址&lt;code&gt;0000H&lt;/code&gt;开始执行程序, SP的值为&lt;code&gt;07H&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;PC: 两字节(16位)寄存器, 也称程序计数器。&lt;/p&gt;
 &lt;p&gt;SP: 堆栈指针, 指示出堆栈顶部在&lt;strong&gt;内部RAM块&lt;/strong&gt;中的位置。&lt;/p&gt;
-&lt;p&gt;单片机的堆栈设在了内部RAM区, 单片机复位后, SP中的内容为&lt;code&gt;07H&lt;/code&gt;(指向第0组工作寄存器的R7), 堆栈实际上从08H开始。&lt;/p&gt;
+&lt;p&gt;单片机的堆栈设在了内部RAM区, 单片机复位后, SP中的内容为&lt;code&gt;07H&lt;/code&gt;(指向第0组工作寄存器的R7), 堆栈实际上从&lt;code&gt;08H&lt;/code&gt;开始。&lt;/p&gt;
 &lt;p&gt;若SP被初始化为&lt;code&gt;39H&lt;/code&gt;, 则堆栈实际上是从&lt;code&gt;3AH&lt;/code&gt;开始的。&lt;/p&gt;
 &lt;p&gt;执行&lt;code&gt;RET&lt;/code&gt;指令后, SP值减2 (因为PC为2字节寄存器), 将调用指令的下一条指令的首地址送入PC中。&lt;/p&gt;
 &lt;/li&gt;
@@ -220,16 +220,14 @@ const ap0 = new APlayer ({
 &lt;p&gt;指令&lt;code&gt;MOVC A, @A+PC&lt;/code&gt;长度为1字节, 位于地址&lt;code&gt;3000H&lt;/code&gt;, 因此PC值为&lt;code&gt;3001H&lt;/code&gt;, 故&lt;code&gt;A+PC&lt;/code&gt;为&lt;code&gt;3031H&lt;/code&gt;。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;设SP的值为&lt;code&gt;5FH&lt;/code&gt;, 指令&lt;code&gt;LCALL DELAY&lt;/code&gt;所在地址为&lt;code&gt;2030H&lt;/code&gt;, 子程序DELAY所在地址为&lt;code&gt;20A0H&lt;/code&gt;, 则该指令完成的操作是将地址&lt;code&gt;2033H&lt;/code&gt;压入堆栈保存, 将地址&lt;code&gt;20A0H&lt;/code&gt;送入PC, SP的值应在该指令执行结束后变成&lt;code&gt;61H&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;单片机执行子程序或中断服务程序时, 需要保护现场, 即将PC当前的值压栈保存, 当子程序或中断服务程序运行结束后再进行出栈。(所以如果子程序修改了栈的内容, 在子程序运行结束后程序有可能会运行错误）。&lt;/p&gt;
+&lt;p&gt;单片机执行子程序或中断服务程序时, 需要保护现场, 即将PC当前的值压栈保存, 当子程序或中断服务程序运行结束后再进行出栈。(所以如果子程序修改了栈的内容, 在子程序运行结束后程序有可能会运行错误)。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;PC是16字节寄存器&lt;/strong&gt;, 所以SP需要加2, 以此分别保存PC的高、低8位的数据。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;LCALL addr16&lt;/code&gt;这条指令占3字节, 其中addr16占两字节, 因此程序可跳转64KB范围内的地址。&lt;/p&gt;
 &lt;p&gt;(&lt;code&gt;ACALL&lt;/code&gt;指令只能跳转当前所在的&lt;strong&gt;2K范围内&lt;/strong&gt;的地址, 如果不涉及到片外数据存储器的话, 通常只用&lt;code&gt;SJMP&lt;/code&gt;和&lt;code&gt;AJMP&lt;/code&gt;)&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
 &lt;blockquote&gt;
 &lt;p&gt;在网上搜到的答案「将&lt;code&gt;3500H&lt;/code&gt;送入PC」是错误的, 实际是将&lt;code&gt;20A0H&lt;/code&gt;送入PC, 因为DELAY所在的地址为&lt;code&gt;20A0H&lt;/code&gt;, 和&lt;code&gt;3500H&lt;/code&gt;一点关系都没有。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;ol start=&quot;12&quot;&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;code&gt;MOVC&lt;/code&gt;访问 &lt;strong&gt;程序(ROM)&lt;/strong&gt; 存储器, &lt;code&gt;MOVX&lt;/code&gt;指令访问 &lt;strong&gt;外部数据&lt;/strong&gt; 存储器。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;MOVC&lt;/code&gt;为查表指令, 只有&lt;code&gt;MOCV @A+PC&lt;/code&gt;和&lt;code&gt;MOVC @A+DPTR&lt;/code&gt;这两条, 均为单字节指令。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;MOVX&lt;/code&gt;用于累加器A与外部数据存储器进行传送。&lt;/p&gt;
@@ -307,8 +305,7 @@ LOOP:
 &lt;p&gt;因为没有&lt;code&gt;MOV @RX, @RX&lt;/code&gt;这条指令, 所以用A做数据的中转站。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;将任何无符号8位二进制数转换为BCD码的子程序, 入口参数为内部RAM单元20H, 出口参数为内部RAM单元30H和31H, 30H存放百位数, 31H存放十位数和个位数。&lt;/p&gt;
-&lt;figure data-raw=&quot;
-CV:
+&lt;figure data-raw=&quot;CV:
 MOV R0, #20H
 MOV A, @R0
 MOV B, #100
@@ -322,8 +319,7 @@ DIV AB
 SWAP A
 ADD A, B; 也可以用ORL
 MOV 31H, A
-RET
-&quot; data-info=&quot;language-ASM&quot; data-lang=&quot;ASM&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;gutter&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
+RET&quot; data-info=&quot;language-ASM&quot; data-lang=&quot;ASM&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;gutter&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;2&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;3&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;4&lt;/span&gt;
@@ -337,10 +333,7 @@ RET
 &lt;span class=&quot;line-number&quot;&gt;12&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;13&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;14&lt;/span&gt;
-&lt;span class=&quot;line-number&quot;&gt;15&lt;/span&gt;
-&lt;span class=&quot;line-number&quot;&gt;16&lt;/span&gt;
-&lt;span class=&quot;line-number&quot;&gt;17&lt;/span&gt;&lt;/pre&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-avrasm&quot;&gt;
-&lt;span class=&quot;hljs-symbol&quot;&gt;CV:&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;15&lt;/span&gt;&lt;/pre&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-avrasm&quot;&gt;&lt;span class=&quot;hljs-symbol&quot;&gt;CV:&lt;/span&gt;
 &lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R0&lt;/span&gt;, &lt;span class=&quot;hljs-meta&quot;&gt;#20H&lt;/span&gt;
 &lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; A, @&lt;span class=&quot;hljs-built_in&quot;&gt;R0&lt;/span&gt;
 &lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; B, &lt;span class=&quot;hljs-meta&quot;&gt;#100&lt;/span&gt;
@@ -354,16 +347,14 @@ DIV AB
 &lt;span class=&quot;hljs-keyword&quot;&gt;SWAP&lt;/span&gt; A
 &lt;span class=&quot;hljs-keyword&quot;&gt;ADD&lt;/span&gt; A, B&lt;span class=&quot;hljs-comment&quot;&gt;; 也可以用ORL&lt;/span&gt;
 &lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;31&lt;/span&gt;H, A
-&lt;span class=&quot;hljs-keyword&quot;&gt;RET&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;code&gt;DIV AB&lt;/code&gt;和&lt;code&gt;MUL AB&lt;/code&gt;之间没有逗号。&lt;/p&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;RET&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;DIV AB&lt;/code&gt;和&lt;code&gt;MUL AB&lt;/code&gt;的A和B之间没有逗号。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;内部RAM 30H单元存放两位十进制数（压缩BCD码）, 编写将该十进制数转换为对应ASCII码的子程序, 转换结果存放到内部RAM 40H（十位数）和41H（个位数）单元。&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;内部RAM 30H单元存放两位十进制数( 压缩BCD码), 编写将该十进制数转换为对应ASCII码的子程序, 转换结果存放到内部RAM 40H( 十位数)和41H( 个位数)单元。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;ASCII码： &lt;code&gt;30H&lt;/code&gt;为&lt;code&gt;0&lt;/code&gt;, &lt;code&gt;41H&lt;/code&gt;为&lt;code&gt;A&lt;/code&gt;, &lt;code&gt;61H&lt;/code&gt;为&lt;code&gt;a&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;figure data-raw=&quot;
-CV:
+&lt;figure data-raw=&quot;CV:
 MOV A, 30H
 ANL A, #0FH
 MOV DPTR, #DATA; 或者直接用ADD A, #30H即可
@@ -379,8 +370,7 @@ MOV 40H, A
 RET
 
 DATA:
-DB 30H, 31H, 32H, 33H, 34H, 35H, 36H, 37H, 38H, 39H
-&quot; data-info=&quot;language-ASM&quot; data-lang=&quot;ASM&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;gutter&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
+DB 30H, 31H, 32H, 33H, 34H, 35H, 36H, 37H, 38H, 39H&quot; data-info=&quot;language-ASM&quot; data-lang=&quot;ASM&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;gutter&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;2&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;3&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;4&lt;/span&gt;
@@ -396,10 +386,7 @@ DB 30H, 31H, 32H, 33H, 34H, 35H, 36H, 37H, 38H, 39H
 &lt;span class=&quot;line-number&quot;&gt;14&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;15&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;16&lt;/span&gt;
-&lt;span class=&quot;line-number&quot;&gt;17&lt;/span&gt;
-&lt;span class=&quot;line-number&quot;&gt;18&lt;/span&gt;
-&lt;span class=&quot;line-number&quot;&gt;19&lt;/span&gt;&lt;/pre&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-x86asm&quot;&gt;&lt;span class=&quot;hljs-symbol&quot;&gt;
-CV:&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;17&lt;/span&gt;&lt;/pre&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-x86asm&quot;&gt;&lt;span class=&quot;hljs-symbol&quot;&gt;CV:&lt;/span&gt;
 &lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; A, &lt;span class=&quot;hljs-number&quot;&gt;30H&lt;/span&gt;
 ANL A, #&lt;span class=&quot;hljs-number&quot;&gt;0FH&lt;/span&gt;
 &lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; DPTR, #DATA&lt;span class=&quot;hljs-comment&quot;&gt;; 或者直接用ADD A, #30H即可&lt;/span&gt;
@@ -415,11 +402,115 @@ MOVC A, @A+DPTR
 &lt;span class=&quot;hljs-keyword&quot;&gt;RET&lt;/span&gt;
 &lt;span class=&quot;hljs-symbol&quot;&gt;
 DATA:&lt;/span&gt;
-&lt;span class=&quot;hljs-built_in&quot;&gt;DB&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;30H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;31H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;32H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;33H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;34H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;35H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;36H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;37H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;38H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;39H&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;hljs-built_in&quot;&gt;DB&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;30H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;31H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;32H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;33H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;34H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;35H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;36H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;37H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;38H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;39H&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;&lt;p&gt;8个8位数相加, 求平均值, 入口地址为&lt;code&gt;30H&lt;/code&gt;~&lt;code&gt;37H&lt;/code&gt;, 结果存到&lt;code&gt;40H&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;把8位数相加存在溢出, 所以把相加结果以16进制存到R2、R3中, 再除以8( 右移3次), 即可求得不四舍五入的平均值。&lt;/p&gt;
+&lt;figure data-raw=&quot;MOV R0, #30H
+MOV R1, #08H
+MOV R2, #00H
+MOV R3, #00H
+; 初始化
+LOOP:
+MOV A, @R0
+ADD A, R3
+MOV R3, A
+JNC SKIP
+INC R2
+SKIP:
+INC R0
+DJNZ R1, LOOP   &quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;gutter&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;3&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;5&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;6&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;7&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;8&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;9&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;11&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;12&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;13&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;14&lt;/span&gt;&lt;/pre&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-avrasm&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R0&lt;/span&gt;, &lt;span class=&quot;hljs-meta&quot;&gt;#30H&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R1&lt;/span&gt;, &lt;span class=&quot;hljs-meta&quot;&gt;#08H&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R2&lt;/span&gt;, &lt;span class=&quot;hljs-meta&quot;&gt;#00H&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R3&lt;/span&gt;, &lt;span class=&quot;hljs-meta&quot;&gt;#00H&lt;/span&gt;
+&lt;span class=&quot;hljs-comment&quot;&gt;; 初始化&lt;/span&gt;
+&lt;span class=&quot;hljs-symbol&quot;&gt;LOOP:&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; A, @&lt;span class=&quot;hljs-built_in&quot;&gt;R0&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;ADD&lt;/span&gt; A, &lt;span class=&quot;hljs-built_in&quot;&gt;R3&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R3&lt;/span&gt;, A
+JNC SKIP
+&lt;span class=&quot;hljs-keyword&quot;&gt;INC&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R2&lt;/span&gt;
+&lt;span class=&quot;hljs-symbol&quot;&gt;SKIP:&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;INC&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R0&lt;/span&gt;
+DJNZ &lt;span class=&quot;hljs-built_in&quot;&gt;R1&lt;/span&gt;, LOOP   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;这样结果被保存到R2、R3中, 然后需要写一个循环右移3位的程序。&lt;/p&gt;
+&lt;figure data-raw=&quot;MOV R4, #03H
+LOOP2:
+CLR C
+RRC R2
+RRC R3
+DJNZ R4, LOOP2
+
+MOV 40H, R3
+; 右移3次后R2肯定为0&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;gutter&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;3&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;5&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;6&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;7&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;8&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;9&lt;/span&gt;&lt;/pre&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-avrasm&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R4&lt;/span&gt;, &lt;span class=&quot;hljs-meta&quot;&gt;#03H&lt;/span&gt;
+&lt;span class=&quot;hljs-symbol&quot;&gt;LOOP2:&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;CLR&lt;/span&gt; C
+RRC &lt;span class=&quot;hljs-built_in&quot;&gt;R2&lt;/span&gt;
+RRC &lt;span class=&quot;hljs-built_in&quot;&gt;R3&lt;/span&gt;
+DJNZ &lt;span class=&quot;hljs-built_in&quot;&gt;R4&lt;/span&gt;, LOOP2
+
+&lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;40&lt;/span&gt;H, &lt;span class=&quot;hljs-built_in&quot;&gt;R3&lt;/span&gt;
+&lt;span class=&quot;hljs-comment&quot;&gt;; 右移3次后R2肯定为0&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;这样求得的是不带四舍五入的结果。&lt;/p&gt;
+&lt;p&gt;如果需要带四舍五入的话只需判断最后一次右移时最低位是否为1( 1 / 2 = 0.5)。&lt;/p&gt;
+&lt;figure data-raw=&quot;MOV R4, #03H
+LOOP2:
+CLR C
+RRC R2
+RRC R3
+
+JNC SKIP2
+INC R3
+SKIP2:
+MOV 40H, R3
+; 右移3次后R2肯定为0&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;gutter&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;3&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;5&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;6&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;7&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;8&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;9&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;11&lt;/span&gt;&lt;/pre&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-avrasm&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R4&lt;/span&gt;, &lt;span class=&quot;hljs-meta&quot;&gt;#03H&lt;/span&gt;
+&lt;span class=&quot;hljs-symbol&quot;&gt;LOOP2:&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;CLR&lt;/span&gt; C
+RRC &lt;span class=&quot;hljs-built_in&quot;&gt;R2&lt;/span&gt;
+RRC &lt;span class=&quot;hljs-built_in&quot;&gt;R3&lt;/span&gt;
+
+JNC SKIP2
+&lt;span class=&quot;hljs-keyword&quot;&gt;INC&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R3&lt;/span&gt;
+&lt;span class=&quot;hljs-symbol&quot;&gt;SKIP2:&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;40&lt;/span&gt;H, &lt;span class=&quot;hljs-built_in&quot;&gt;R3&lt;/span&gt;
+&lt;span class=&quot;hljs-comment&quot;&gt;; 右移3次后R2肯定为0&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;这样是带四舍五入的结果。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h1 id=&quot;中断系统&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn-mcs8051/#%E4%B8%AD%E6%96%AD%E7%B3%BB%E7%BB%9F&quot; title=&quot;中断系统&quot;&gt;&lt;/a&gt;中断系统&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;8051的外部中断有低电平触发和下降沿触发两种触发方式。外部中断1的中断向量地址是&lt;code&gt;0013H&lt;/code&gt;。&lt;/p&gt;
@@ -454,8 +545,8 @@ DATA:&lt;/span&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;p&gt;通常在中断入口地址处放一条无条件转移指令&lt;code&gt;*JMP&lt;/code&gt;。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;执行指令&lt;code&gt;MOV IP, #0BH&lt;/code&gt;（#00001011B）后, 中断优先级最高者为&lt;code&gt;PX0&lt;/code&gt;, 最低为&lt;code&gt;PS&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;IP: 中断优先级寄存器, 其前3为无意义, 后5位（IP.4至IP.0）为：&lt;code&gt;PS&lt;/code&gt;, &lt;code&gt;PT1&lt;/code&gt;, &lt;code&gt;PX1&lt;/code&gt;, &lt;code&gt;PT0&lt;/code&gt;, &lt;code&gt;PX0&lt;/code&gt;, 分别对应串行口、定时器T1、外部中断1、定时器0、外部中断0。&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;执行指令&lt;code&gt;MOV IP, #0BH&lt;/code&gt;( &lt;code&gt;#00001011B&lt;/code&gt;)后, 中断优先级最高者为&lt;code&gt;PX0&lt;/code&gt;, 最低为&lt;code&gt;PS&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;IP: 中断优先级寄存器, 其前3为无意义, 后5位( IP.4至IP.0)为：&lt;code&gt;PS&lt;/code&gt;, &lt;code&gt;PT1&lt;/code&gt;, &lt;code&gt;PX1&lt;/code&gt;, &lt;code&gt;PT0&lt;/code&gt;, &lt;code&gt;PX0&lt;/code&gt;, 分别对应串行口、定时器T1、外部中断1、定时器0、外部中断0。&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -527,9 +618,9 @@ DATA:&lt;/span&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;p&gt;&lt;code&gt;TCON&lt;/code&gt;中&lt;code&gt;TF1&lt;/code&gt;和&lt;code&gt;TF0&lt;/code&gt;为定时器/计数器中断标志位, &lt;code&gt;TR1&lt;/code&gt;和&lt;code&gt;TR0&lt;/code&gt;为定时/计数启动位, &lt;code&gt;IE1&lt;/code&gt;和&lt;code&gt;IE0&lt;/code&gt;为外部中断标志位, &lt;code&gt;IT1&lt;/code&gt;和&lt;code&gt;IT0&lt;/code&gt;为选择外部中断为边沿触发(1)还是电平触发(0)方式。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;SCON&lt;/code&gt;中的&lt;code&gt;TI&lt;/code&gt;和&lt;code&gt;RI&lt;/code&gt;（是大写字母I不是数字1）分别为串行口中断发送中断请求标志位(发送成功后置1)和接受中断请求标志位（接受成功后置1）。串口中断无法硬件清零, 只能软件清零。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;SCON&lt;/code&gt;中的&lt;code&gt;TI&lt;/code&gt;和&lt;code&gt;RI&lt;/code&gt;( 是大写字母I不是数字1)分别为串行口中断发送中断请求标志位(发送成功后置1)和接受中断请求标志位( 接受成功后置1)。串口中断无法硬件清零, 只能软件清零。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;要使8051能够响应定时器T1的中断和串行口中断, 不响应其他中断, 则中断允许寄存器&lt;code&gt;IE&lt;/code&gt;的内容为&lt;code&gt;98H&lt;/code&gt;（&lt;code&gt;10011000B&lt;/code&gt;）。&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;要使8051能够响应定时器T1的中断和串行口中断, 不响应其他中断, 则中断允许寄存器&lt;code&gt;IE&lt;/code&gt;的内容为&lt;code&gt;98H&lt;/code&gt;( &lt;code&gt;10011000B&lt;/code&gt;)。&lt;/p&gt;
 &lt;p&gt;中断允许寄存器IE：&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -565,8 +656,8 @@ DATA:&lt;/span&gt;
 &lt;h1 id=&quot;定时器和计数器&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn-mcs8051/#%E5%AE%9A%E6%97%B6%E5%99%A8%E5%92%8C%E8%AE%A1%E6%95%B0%E5%99%A8&quot; title=&quot;定时器和计数器&quot;&gt;&lt;/a&gt;定时器和计数器&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;使T0工作方式1的溢出周期最长的初值是&lt;code&gt;0000H&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;定时器/计数器工作在方式0为13位计数器, 由TLX的低5位和THX的高8位组成13位计数器, 最大值为2^13-1(&lt;code&gt;8191&lt;/code&gt;), 晶振频率12MHz下计时周期最长为8.192ms。工作在方式1时由均为8位的TLX和THX组成16位计数器, 最大值为&lt;code&gt;65535&lt;/code&gt;, 晶振频率为12M下最长为65.536ms。&lt;/p&gt;
-&lt;p&gt;当定时器/计数器工作在方式2时, 可以循环定时/计数。当计数溢出后, 自动将8位的THX装入8位的TLX中, 可省去重装初值的时间, 最大值为&lt;code&gt;255&lt;/code&gt;, 晶振频率12M下计时周期最长为0.256ms。&lt;/p&gt;
+&lt;p&gt;定时器/计数器工作在方式0为13位计数器, 由&lt;code&gt;TLX&lt;/code&gt;的低5位和&lt;code&gt;THX&lt;/code&gt;的高8位组成13位计数器, 最大值为2^13-1(&lt;code&gt;8191&lt;/code&gt;), 晶振频率12MHz下计时周期最长为8.192ms。工作在方式1时由均为8位的&lt;code&gt;TLX&lt;/code&gt;和&lt;code&gt;THX&lt;/code&gt;组成16位计数器, 最大值为&lt;code&gt;65535&lt;/code&gt;, 晶振频率为12M下最长为65.536ms。&lt;/p&gt;
+&lt;p&gt;当定时器/计数器工作在方式2时, 可以循环定时/计数。当计数溢出后, 自动将8位的&lt;code&gt;THX&lt;/code&gt;装入8位的TLX中, 可省去重装初值的时间, 最大值为&lt;code&gt;255&lt;/code&gt;, 晶振频率12M下计时周期最长为0.256ms。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;code&gt;T1&lt;/code&gt;配置为方式3时, 停止计数, 方式3只适用于定时器0。&lt;/p&gt;
 &lt;p&gt;定时器&lt;code&gt;T0&lt;/code&gt;的方式3将其分为两个8位定时器, 其中&lt;code&gt;TH0&lt;/code&gt;只能做定时器使用。&lt;/p&gt;
@@ -575,17 +666,61 @@ DATA:&lt;/span&gt;
 &lt;p&gt;当定时器用作计数器时, 当检测到引脚上的负跳变时计数器的值增一。检测下降沿需要2个机器周期, 即24个震荡周期, 所以输入信号最高频率为 12M / 24 = 500KHz。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;用定时器方式2扩展一个下降沿触发的外部中断, 计数初值应为&lt;code&gt;FFH&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;此处定时器2以计数器方式运行, 当检测到一个下降沿后, 计数器加一后溢出, 因此会执行定时器中断的中断子程序。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
 &lt;blockquote&gt;
-&lt;p&gt;To be continued...&lt;/p&gt;
+&lt;p&gt;12月3日:
+前两天感冒, 休息了几天( &lt;del&gt;打了两天的游戏&lt;/del&gt;)后继续。&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;h1 id=&quot;串行口&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn-mcs8051/#%E4%B8%B2%E8%A1%8C%E5%8F%A3&quot; title=&quot;串行口&quot;&gt;&lt;/a&gt;串行口&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;串行口TXD为高电平, 表示这是数据位或停止位或空闲状态。&lt;/p&gt;
+&lt;p&gt;串行口工作在方式1时, TXD用来发送数据、RXD用来接受数据。方式1的一帧数据为10位, 起始为为0, 停止位为1, 数据位和空闲状态均可能为0或1。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;串行口工作在方式3时, 发送的第9位数据要事先写入寄存器&lt;code&gt;SCON&lt;/code&gt;的D3位(&lt;code&gt;TB8&lt;/code&gt;), 接收的第9位数据被写入同一寄存器的D2位(&lt;code&gt;RB8&lt;/code&gt;)。&lt;/p&gt;
+&lt;p&gt;串行口控制寄存器SCON：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;D7&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;D6&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;D5&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;D4&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;D3&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;D2&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;D1&lt;/th&gt;
+&lt;th align=&quot;center&quot;&gt;D0&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;SCON&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;SM0&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;SM1&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;SM2&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;REN&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;TB8&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;RB8&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;TI&lt;/td&gt;
+&lt;td align=&quot;center&quot;&gt;RI&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;其中&lt;code&gt;SM0&lt;/code&gt;、&lt;code&gt;SM1&lt;/code&gt;为串口的工作方式选择位, 方式0为同步移位寄存器方式, 方式1为8位异步收发, 方式2和方式3为9位异步收发。&lt;/p&gt;
+&lt;p&gt;方式0的波特率&lt;strong&gt;固定&lt;/strong&gt;为 fosc/12, 方式2的波特率为 fosc/64 或 fosc/32 (由SMOD控制), 方式1的波特率和方式3的波特率可变, 公式为 (2^SMOD / 32) * 定时器T1的溢出率。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;!--
-# 串行口、I/O口
+# I/O口
 
 # 外部存储器拓展
 --&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;To be continued...&lt;/p&gt;
+&lt;/blockquote&gt;
+
     </content>
     
     
@@ -1226,7 +1361,7 @@ reboot&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;OpenWrt默认语言为英文, 可安装&lt;code&gt;luci-i18n-base-zh-cn&lt;/code&gt;,&lt;code&gt;luci-i18n-base-zh-tw&lt;/code&gt;安装简体/繁体中文。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://openwrt-dist.sourceforge.net&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;OpenWrt-disk&lt;/a&gt;可拓展更多功能。&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://openwrt-dist.sourceforge.net&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;OpenWrt-dist&lt;/a&gt;可拓展更多功能。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;为优化软件包安装速度, 可将opkg源改为国内：&lt;/p&gt;
 &lt;p&gt;LuCI -&amp;gt; System -&amp;gt; Software -&amp;gt; Configuration 中将 Distribution feeds 的&lt;code&gt;http://downloads.openwrt.org&lt;/code&gt;替换为&lt;code&gt;http://mirrors.tuna.tsinghua.edu.cn/lede&lt;/code&gt;。&lt;/p&gt;
