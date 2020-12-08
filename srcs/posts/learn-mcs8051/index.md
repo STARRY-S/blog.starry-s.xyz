@@ -418,9 +418,52 @@ mathjax: true
    
    $X$为定时器T1的初值。
 
-   串口工作在方式1，波特率为2400，则每秒钟最大能发送/接收 $2400 / 8 = 300Byte$的数据。
+   串口工作在方式1，波特率为2400，则每秒钟最大能发送/接收 $2400 \div 8 = 300Byte$的数据。
 
-   8051的UART工作在方式3，要求每秒钟能传送不少于900个字节的数据，则波特率应当大于 $900 * 8 = 7200bits/s$。
+   8051的UART工作在方式3，要求每秒钟能传送不少于900个字节的数据，则波特率应当大于 $900 \times 8 = 7200bits/s$。
+
+3. 比特率2400Kbits/s，PC机发送8个字节的数据存到单片机的`30H-37H`中，随后单片机发送2个确认字节`55H`和`AAH`给PC机，使用查询方式。
+
+   ```
+   ORG 0000H
+   MAIN:
+   MOV SCON, #50H
+   ; 串口使用方式1，且允许接收
+   MOV PCON, #00H
+   ; 波特率不加倍
+   MOV TMOD, #20H
+   ; 定时器1使用方式2
+
+   MOV TL1, #0F3H
+   MOV TH1, #0F3H
+   SETB TR1
+
+   LOOP:
+   MOV R0, #30H
+   MOV R1, #08H
+
+   REC:
+   JNB RI, $
+   MOV @R0, SBUF
+   CLR RI ; 软件清零RI
+   INC R0
+   DJNZ R1, REC
+   
+   MOV SBUF, #55H
+   JNB TI, $
+   CLR TI
+
+   MOV SBUF, #0AAH
+   JNB TI, $
+   CLR TI
+   AJMP LOOP
+   
+   END
+   ```
+
+   单片机接收到数据后，RI被置1，代表SBUF中的数据有效，取走SBUF中的数据后需要软件清零RI（串口中断不会自动清零RI）。
+
+   当单片机执行写SBUF操作时，串口发送开始，TI被自动置1，在发送完成后TI被自动清0.
 
 -----
 

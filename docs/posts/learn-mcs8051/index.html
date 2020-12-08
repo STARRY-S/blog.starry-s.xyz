@@ -1037,8 +1037,112 @@ DJNZ <span class="hljs-built_in">R4</span>, LOOP2</code></pre></figure>
 <p>即:</p>
 <p>$$ 波特率 = \frac{(2^{SMOD} \div 32) \times f_{osc}}{12 \times (256 - X)}$$</p>
 <p>$X$为定时器T1的初值。</p>
-<p>串口工作在方式1，波特率为2400，则每秒钟最大能发送/接收 $2400 / 8 = 300Byte$的数据。</p>
-<p>8051的UART工作在方式3，要求每秒钟能传送不少于900个字节的数据，则波特率应当大于 $900 * 8 = 7200bits/s$。</p>
+<p>串口工作在方式1，波特率为2400，则每秒钟最大能发送/接收 $2400 \div 8 = 300Byte$的数据。</p>
+<p>8051的UART工作在方式3，要求每秒钟能传送不少于900个字节的数据，则波特率应当大于 $900 \times 8 = 7200bits/s$。</p>
+</li>
+<li><p>比特率2400Kbits/s，PC机发送8个字节的数据存到单片机的<code>30H-37H</code>中，随后单片机发送2个确认字节<code>55H</code>和<code>AAH</code>给PC机，使用查询方式。</p>
+<figure data-raw="ORG 0000H
+MAIN:
+MOV SCON, #50H
+; 串口使用方式1，且允许接收
+MOV PCON, #00H
+; 波特率不加倍
+MOV TMOD, #20H
+; 定时器1使用方式2
+
+MOV TL1, #0F3H
+MOV TH1, #0F3H
+SETB TR1
+
+LOOP:
+MOV R0, #30H
+MOV R1, #08H
+
+REC:
+JNB RI, $
+MOV @R0, SBUF
+CLR RI ; 软件清零RI
+INC R0
+DJNZ R1, REC
+
+MOV SBUF, #55H
+JNB TI, $
+CLR TI
+
+MOV SBUF, #0AAH
+JNB TI, $
+CLR TI
+AJMP LOOP
+
+END" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+<span class="line-number">30</span>
+<span class="line-number">31</span>
+<span class="line-number">32</span>
+<span class="line-number">33</span>
+<span class="line-number">34</span></pre><pre class="code"><code class="language-avrasm">ORG <span class="hljs-number">0000</span>H
+<span class="hljs-symbol">MAIN:</span>
+<span class="hljs-keyword">MOV</span> SCON, <span class="hljs-meta">#50H</span>
+<span class="hljs-comment">; 串口使用方式1，且允许接收</span>
+<span class="hljs-keyword">MOV</span> PCON, <span class="hljs-meta">#00H</span>
+<span class="hljs-comment">; 波特率不加倍</span>
+<span class="hljs-keyword">MOV</span> TMOD, <span class="hljs-meta">#20H</span>
+<span class="hljs-comment">; 定时器1使用方式2</span>
+
+<span class="hljs-keyword">MOV</span> TL1, <span class="hljs-meta">#0F3H</span>
+<span class="hljs-keyword">MOV</span> TH1, <span class="hljs-meta">#0F3H</span>
+SETB TR1
+
+<span class="hljs-symbol">LOOP:</span>
+<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R0</span>, <span class="hljs-meta">#30H</span>
+<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R1</span>, <span class="hljs-meta">#08H</span>
+
+<span class="hljs-symbol">REC:</span>
+JNB RI, $
+<span class="hljs-keyword">MOV</span> @<span class="hljs-built_in">R0</span>, SBUF
+<span class="hljs-keyword">CLR</span> RI <span class="hljs-comment">; 软件清零RI</span>
+<span class="hljs-keyword">INC</span> <span class="hljs-built_in">R0</span>
+DJNZ <span class="hljs-built_in">R1</span>, REC
+
+<span class="hljs-keyword">MOV</span> SBUF, <span class="hljs-meta">#55H</span>
+JNB TI, $
+<span class="hljs-keyword">CLR</span> TI
+
+<span class="hljs-keyword">MOV</span> SBUF, <span class="hljs-meta">#0AAH</span>
+JNB TI, $
+<span class="hljs-keyword">CLR</span> TI
+AJMP LOOP
+
+END</code></pre></figure>
+<p>单片机接收到数据后，RI被置1，代表SBUF中的数据有效，取走SBUF中的数据后需要软件清零RI（串口中断不会自动清零RI）。</p>
+<p>当单片机执行写SBUF操作时，串口发送开始，TI被自动置1，在发送完成后TI被自动清0.</p>
 </li>
 </ol>
 <hr>
@@ -1394,4 +1498,4 @@ DJNZ <span class="hljs-built_in">R4</span>, LOOP2</code></pre></figure>
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.6.1 at 2020-12-08T01:35:25.205Z. -->
+<!-- Page built by Hikaru v1.6.1 at 2020-12-08T01:56:16.742Z. -->

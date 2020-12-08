@@ -748,8 +748,112 @@ DJNZ &lt;span class=&quot;hljs-built_in&quot;&gt;R4&lt;/span&gt;, LOOP2&lt;/code
 &lt;p&gt;即:&lt;/p&gt;
 &lt;p&gt;$$ 波特率 = \frac{(2^{SMOD} \div 32) \times f_{osc}}{12 \times (256 - X)}$$&lt;/p&gt;
 &lt;p&gt;$X$为定时器T1的初值。&lt;/p&gt;
-&lt;p&gt;串口工作在方式1，波特率为2400，则每秒钟最大能发送/接收 $2400 / 8 = 300Byte$的数据。&lt;/p&gt;
-&lt;p&gt;8051的UART工作在方式3，要求每秒钟能传送不少于900个字节的数据，则波特率应当大于 $900 * 8 = 7200bits/s$。&lt;/p&gt;
+&lt;p&gt;串口工作在方式1，波特率为2400，则每秒钟最大能发送/接收 $2400 \div 8 = 300Byte$的数据。&lt;/p&gt;
+&lt;p&gt;8051的UART工作在方式3，要求每秒钟能传送不少于900个字节的数据，则波特率应当大于 $900 \times 8 = 7200bits/s$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;比特率2400Kbits/s，PC机发送8个字节的数据存到单片机的&lt;code&gt;30H-37H&lt;/code&gt;中，随后单片机发送2个确认字节&lt;code&gt;55H&lt;/code&gt;和&lt;code&gt;AAH&lt;/code&gt;给PC机，使用查询方式。&lt;/p&gt;
+&lt;figure data-raw=&quot;ORG 0000H
+MAIN:
+MOV SCON, #50H
+; 串口使用方式1，且允许接收
+MOV PCON, #00H
+; 波特率不加倍
+MOV TMOD, #20H
+; 定时器1使用方式2
+
+MOV TL1, #0F3H
+MOV TH1, #0F3H
+SETB TR1
+
+LOOP:
+MOV R0, #30H
+MOV R1, #08H
+
+REC:
+JNB RI, $
+MOV @R0, SBUF
+CLR RI ; 软件清零RI
+INC R0
+DJNZ R1, REC
+
+MOV SBUF, #55H
+JNB TI, $
+CLR TI
+
+MOV SBUF, #0AAH
+JNB TI, $
+CLR TI
+AJMP LOOP
+
+END&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;gutter&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;3&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;5&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;6&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;7&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;8&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;9&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;11&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;12&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;13&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;14&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;15&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;16&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;17&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;18&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;19&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;20&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;21&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;22&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;23&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;24&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;25&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;26&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;27&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;28&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;29&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;30&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;31&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;32&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;33&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;34&lt;/span&gt;&lt;/pre&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-avrasm&quot;&gt;ORG &lt;span class=&quot;hljs-number&quot;&gt;0000&lt;/span&gt;H
+&lt;span class=&quot;hljs-symbol&quot;&gt;MAIN:&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; SCON, &lt;span class=&quot;hljs-meta&quot;&gt;#50H&lt;/span&gt;
+&lt;span class=&quot;hljs-comment&quot;&gt;; 串口使用方式1，且允许接收&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; PCON, &lt;span class=&quot;hljs-meta&quot;&gt;#00H&lt;/span&gt;
+&lt;span class=&quot;hljs-comment&quot;&gt;; 波特率不加倍&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; TMOD, &lt;span class=&quot;hljs-meta&quot;&gt;#20H&lt;/span&gt;
+&lt;span class=&quot;hljs-comment&quot;&gt;; 定时器1使用方式2&lt;/span&gt;
+
+&lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; TL1, &lt;span class=&quot;hljs-meta&quot;&gt;#0F3H&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; TH1, &lt;span class=&quot;hljs-meta&quot;&gt;#0F3H&lt;/span&gt;
+SETB TR1
+
+&lt;span class=&quot;hljs-symbol&quot;&gt;LOOP:&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R0&lt;/span&gt;, &lt;span class=&quot;hljs-meta&quot;&gt;#30H&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R1&lt;/span&gt;, &lt;span class=&quot;hljs-meta&quot;&gt;#08H&lt;/span&gt;
+
+&lt;span class=&quot;hljs-symbol&quot;&gt;REC:&lt;/span&gt;
+JNB RI, $
+&lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; @&lt;span class=&quot;hljs-built_in&quot;&gt;R0&lt;/span&gt;, SBUF
+&lt;span class=&quot;hljs-keyword&quot;&gt;CLR&lt;/span&gt; RI &lt;span class=&quot;hljs-comment&quot;&gt;; 软件清零RI&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;INC&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R0&lt;/span&gt;
+DJNZ &lt;span class=&quot;hljs-built_in&quot;&gt;R1&lt;/span&gt;, REC
+
+&lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; SBUF, &lt;span class=&quot;hljs-meta&quot;&gt;#55H&lt;/span&gt;
+JNB TI, $
+&lt;span class=&quot;hljs-keyword&quot;&gt;CLR&lt;/span&gt; TI
+
+&lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; SBUF, &lt;span class=&quot;hljs-meta&quot;&gt;#0AAH&lt;/span&gt;
+JNB TI, $
+&lt;span class=&quot;hljs-keyword&quot;&gt;CLR&lt;/span&gt; TI
+AJMP LOOP
+
+END&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;单片机接收到数据后，RI被置1，代表SBUF中的数据有效，取走SBUF中的数据后需要软件清零RI（串口中断不会自动清零RI）。&lt;/p&gt;
+&lt;p&gt;当单片机执行写SBUF操作时，串口发送开始，TI被自动置1，在发送完成后TI被自动清0.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
