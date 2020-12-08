@@ -23,14 +23,14 @@
   
   
   <entry>
-    <title>8051单片机习题整理</title>
+    <title>51单片机习题整理</title>
     <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/learn-mcs8051/" />
     <id>https://blog.starry-s.me/posts/learn-mcs8051/</id>
     
     <published>2020-11-03T12:19:36.000Z</published>
     
     
-    <updated>2020-11-03T12:19:36.000Z</updated>
+    <updated>2020-12-08T01:33:06.000Z</updated>
     
     
     <summary type="html">
@@ -49,8 +49,8 @@
 
 &lt;hr&gt;
 &lt;div class=&quot;alert-blue&quot;&gt;
-本篇内容为作者整理资料所得, 仅供学习使用。如需转载请务必遵守&lt;a style=&quot;color:#666&quot; href=&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;CC BY-NC-ND 4.0&lt;/a&gt;协议。&lt;br&gt;
-请勿将本篇内容当作权威的教学辅导资料来使用, 因无法保证100%准确, 仅供参考。&lt;br&gt;
+本篇内容为作者整理资料所得, 仅供学习使用。如需转载请务必遵循&lt;a style=&quot;color:#666&quot; href=&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;CC BY-NC-ND 4.0&lt;/a&gt;协议。&lt;br&gt;
+请勿将本篇内容作为权威的教学辅导资料使用, 因无法保证100%准确, 仅供参考。&lt;br&gt;
 如果发现了本篇存在的错误, 欢迎在页面下方提issue指正。&lt;br&gt;
 &lt;/div&gt;
 
@@ -90,7 +90,7 @@ const ap0 = new APlayer ({
 &lt;p&gt;若SP被初始化为&lt;code&gt;39H&lt;/code&gt;, 则堆栈实际上是从&lt;code&gt;3AH&lt;/code&gt;开始的。&lt;/p&gt;
 &lt;p&gt;执行&lt;code&gt;RET&lt;/code&gt;指令后, SP值减2 (因为PC为2字节寄存器), 将调用指令的下一条指令的首地址送入PC中。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;PSW中的RS1 RS0=&lt;code&gt;10B&lt;/code&gt;时, R2的RAM地址为&lt;code&gt;12H&lt;/code&gt;。&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;PSW中的&lt;code&gt;RS1 RS0&lt;/code&gt;=&lt;code&gt;10B&lt;/code&gt;时, R2的RAM地址为&lt;code&gt;12H&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;PSW： 程序状态字寄存器, 从&lt;code&gt;PSW.7&lt;/code&gt;至&lt;code&gt;PSW.0&lt;/code&gt;分别为&lt;code&gt;Cy&lt;/code&gt;(进位标志位), &lt;code&gt;Ac&lt;/code&gt;(辅助进位标志位), &lt;code&gt;F0&lt;/code&gt;(标志位), &lt;code&gt;RS1&lt;/code&gt;和&lt;code&gt;RS0&lt;/code&gt;(寄存器区选择控制位), &lt;code&gt;OV&lt;/code&gt;(溢出位), 保留位, &lt;code&gt;P&lt;/code&gt;(奇偶标志位, 奇数为1, 偶数为0)。&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -118,9 +118,10 @@ const ap0 = new APlayer ({
 &lt;td align=&quot;center&quot;&gt;P&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
-&lt;p&gt;RS1 RS0 = &lt;code&gt;10B&lt;/code&gt;时, 使用第二组工作寄存器区, 第0组工作寄存器区R0-R7的地址为&lt;code&gt;00H-07H&lt;/code&gt;, 第1组为&lt;code&gt;08H-0FH&lt;/code&gt;, 第2组为&lt;code&gt;10H-17H&lt;/code&gt;, 第3组为&lt;code&gt;18H-1FH&lt;/code&gt;(每组长度为8个字节, 每个寄存器占1个字节)。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;RS1 RS0&lt;/code&gt; = &lt;code&gt;10B&lt;/code&gt;时, 使用第二组工作寄存器区, 第0组工作寄存器区R0-R7的地址为&lt;code&gt;00H-07H&lt;/code&gt;, 第1组为&lt;code&gt;08H-0FH&lt;/code&gt;, 第2组为&lt;code&gt;10H-17H&lt;/code&gt;, 第3组为&lt;code&gt;18H-1FH&lt;/code&gt;(每组长度为8个字节, 每个寄存器占1个字节)。&lt;/p&gt;
 &lt;p&gt;因此, 当A为&lt;code&gt;01110010B&lt;/code&gt;时, PSW中P为0(偶数个1)。&lt;/p&gt;
-&lt;p&gt;假设PSW为18H, 即&lt;code&gt;00011000B&lt;/code&gt;, 此时使用第3组工作寄存器, R0地址为18H, R7地址为1FH。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;INC A&lt;/code&gt;指令不改变&lt;code&gt;PSW&lt;/code&gt;中的&lt;code&gt;Cy&lt;/code&gt;，只有可能改变奇偶标志位&lt;code&gt;P&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;假设PSW为&lt;code&gt;18H&lt;/code&gt;, 即&lt;code&gt;00011000B&lt;/code&gt;, 此时使用第3组工作寄存器, R0地址为&lt;code&gt;18H&lt;/code&gt;, R7地址为&lt;code&gt;1FH&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;复位后, 默认选择的寄存器区是0区。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;8051片外数据存储器的寻址空间为&lt;code&gt;0000H~0FFFFH&lt;/code&gt;&lt;/p&gt;
@@ -199,6 +200,7 @@ const ap0 = new APlayer ({
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;p&gt;因此&lt;code&gt;00H~07H&lt;/code&gt;位于字节地址&lt;code&gt;20H&lt;/code&gt;, &lt;code&gt;78H-7FH&lt;/code&gt;位于字节地址&lt;code&gt;2FH&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;除此之外，一些特殊功能寄存器（SFR）可进行位寻址（字节地址能够被8整除），SFR中位地址有83个（共有88个，5个未用），能够位寻址的SFR的字节地址末位均为&lt;code&gt;0H&lt;/code&gt;或&lt;code&gt;8H&lt;/code&gt;。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;访问外部存储器时, P0口用来传输低8位地址和数据, P2口用来传送高8位地址。&lt;/p&gt;
 &lt;/li&gt;
@@ -212,7 +214,7 @@ const ap0 = new APlayer ({
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;只能用直接寻址方式访问特殊功能寄存器。&lt;/p&gt;
 &lt;p&gt;如果为8052单片机, 在访问高128字节的RAM时, 只能用间接寻址方式寻址。&lt;/p&gt;
-&lt;p&gt;访问片外数据存储器64Kbyte时, 使用DPTR做间接寻址寄存器。&lt;/p&gt;
+&lt;p&gt;访问片外数据存储器64Kbyte时, 使用&lt;code&gt;DPTR&lt;/code&gt;做间接寻址寄存器。&lt;/p&gt;
 &lt;p&gt;使用&lt;code&gt;MOVX @DPTR&lt;/code&gt;类指令访问外部扩展存储器时, P2口输出高8位地址, P0口传送低8位地址和数据。&lt;/p&gt;
 &lt;p&gt;8051中, &lt;code&gt;PC&lt;/code&gt;和&lt;code&gt;DPTR&lt;/code&gt;都用于提供地址时, &lt;code&gt;PC&lt;/code&gt;是&lt;strong&gt;用户程序不可访问的&lt;/strong&gt;, &lt;code&gt;DPTR&lt;/code&gt;可以分为两个8位寄存器&lt;code&gt;DPH&lt;/code&gt;和&lt;code&gt;DPL&lt;/code&gt;使用。&lt;/p&gt;
 &lt;/li&gt;
@@ -259,8 +261,8 @@ L1: NOP
     &lt;span class=&quot;hljs-keyword&quot;&gt;RET&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;R7为10, R6为250, 因此两个&lt;code&gt;NOP&lt;/code&gt;加上一个&lt;code&gt;DJNZ&lt;/code&gt;一共循环了250次, 该250次的循环一共执行了10次。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;NOP&lt;/code&gt;为1周期指令, &lt;code&gt;DJNZ&lt;/code&gt;为2周期指令, 两个&lt;code&gt;NOP&lt;/code&gt;加一个&lt;code&gt;DJNZ&lt;/code&gt;共4周期。&lt;/p&gt;
-&lt;p&gt;6MHz下一个机器周期为12 / (6 * 10^6)= 2微秒, 12MHz下一个机器周期为1微秒。&lt;/p&gt;
-&lt;p&gt;故程序该子程序延时了4 * 250 * 10 * 12 / (6 * 10^6) = 20(ms)。&lt;/p&gt;
+&lt;p&gt;6MHz下一个机器周期为 $12 \div (6 \times 10^6)= 2{\mu}s$, 12MHz下一个机器周期为1微秒。&lt;/p&gt;
+&lt;p&gt;故程序该子程序延时了$(4 \times 250 \times 10 \times 12) \div (6 \times 10^6) = 20(ms)$。&lt;/p&gt;
 &lt;p&gt;(实际上有10次&lt;code&gt;MOV R6, #250&lt;/code&gt;和10次&lt;code&gt;DJNZ R7, L0&lt;/code&gt;造成的30个机器周期的约0.6ms的误差)&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -350,7 +352,7 @@ DIV AB
 &lt;span class=&quot;hljs-keyword&quot;&gt;RET&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;&lt;code&gt;DIV AB&lt;/code&gt;和&lt;code&gt;MUL AB&lt;/code&gt;的A和B之间没有逗号。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;内部RAM 30H单元存放两位十进制数( 压缩BCD码), 编写将该十进制数转换为对应ASCII码的子程序, 转换结果存放到内部RAM 40H( 十位数)和41H( 个位数)单元。&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;内部RAM 30H单元存放两位十进制数 (压缩BCD码), 编写将该十进制数转换为对应ASCII码的子程序, 转换结果存放到内部RAM 40H (十位数) 和41H (个位数) 单元。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;ASCII码： &lt;code&gt;30H&lt;/code&gt;为&lt;code&gt;0&lt;/code&gt;, &lt;code&gt;41H&lt;/code&gt;为&lt;code&gt;A&lt;/code&gt;, &lt;code&gt;61H&lt;/code&gt;为&lt;code&gt;a&lt;/code&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -404,9 +406,6 @@ MOVC A, @A+DPTR
 DATA:&lt;/span&gt;
 &lt;span class=&quot;hljs-built_in&quot;&gt;DB&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;30H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;31H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;32H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;33H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;34H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;35H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;36H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;37H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;38H&lt;/span&gt;, &lt;span class=&quot;hljs-number&quot;&gt;39H&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;ol start=&quot;4&quot;&gt;
 &lt;li&gt;&lt;p&gt;8个8位数相加, 求平均值, 入口地址为&lt;code&gt;30H&lt;/code&gt;~&lt;code&gt;37H&lt;/code&gt;, 结果存到&lt;code&gt;40H&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;把8位数相加存在溢出, 所以把相加结果以16进制存到R2、R3中, 再除以8( 右移3次), 即可求得不四舍五入的平均值。&lt;/p&gt;
 &lt;figure data-raw=&quot;MOV R0, #30H
@@ -452,36 +451,34 @@ DJNZ &lt;span class=&quot;hljs-built_in&quot;&gt;R1&lt;/span&gt;, LOOP   &lt;/co
 &lt;p&gt;这样结果被保存到R2、R3中, 然后需要写一个循环右移3位的程序。&lt;/p&gt;
 &lt;figure data-raw=&quot;MOV R4, #03H
 LOOP2:
-CLR C
 RRC R2
 RRC R3
 DJNZ R4, LOOP2
 
 MOV 40H, R3
-; 右移3次后R2肯定为0&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;gutter&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
+; 右移3次后R2的低4位为0&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;gutter&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;2&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;3&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;4&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;5&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;6&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;7&lt;/span&gt;
-&lt;span class=&quot;line-number&quot;&gt;8&lt;/span&gt;
-&lt;span class=&quot;line-number&quot;&gt;9&lt;/span&gt;&lt;/pre&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-avrasm&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R4&lt;/span&gt;, &lt;span class=&quot;hljs-meta&quot;&gt;#03H&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;8&lt;/span&gt;&lt;/pre&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-avrasm&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R4&lt;/span&gt;, &lt;span class=&quot;hljs-meta&quot;&gt;#03H&lt;/span&gt;
 &lt;span class=&quot;hljs-symbol&quot;&gt;LOOP2:&lt;/span&gt;
-&lt;span class=&quot;hljs-keyword&quot;&gt;CLR&lt;/span&gt; C
 RRC &lt;span class=&quot;hljs-built_in&quot;&gt;R2&lt;/span&gt;
 RRC &lt;span class=&quot;hljs-built_in&quot;&gt;R3&lt;/span&gt;
 DJNZ &lt;span class=&quot;hljs-built_in&quot;&gt;R4&lt;/span&gt;, LOOP2
 
 &lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;40&lt;/span&gt;H, &lt;span class=&quot;hljs-built_in&quot;&gt;R3&lt;/span&gt;
-&lt;span class=&quot;hljs-comment&quot;&gt;; 右移3次后R2肯定为0&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;这样求得的是不带四舍五入的结果。&lt;/p&gt;
-&lt;p&gt;如果需要带四舍五入的话只需判断最后一次右移时最低位是否为1( 1 / 2 = 0.5)。&lt;/p&gt;
+&lt;span class=&quot;hljs-comment&quot;&gt;; 右移3次后R2的低4位为0&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;这样R3中求得的是不带四舍五入的结果。&lt;/p&gt;
+&lt;p&gt;如果需要带四舍五入的话第一种方法是判断最后一次右移时最低位是否为$1$， ($1 / 2 = 0.5$)。   &lt;/p&gt;
 &lt;figure data-raw=&quot;MOV R4, #03H
 LOOP2:
 CLR C
 RRC R2
 RRC R3
+DJNZ R4, LOOP2
 
 JNC SKIP2
 INC R3
@@ -497,11 +494,13 @@ MOV 40H, R3
 &lt;span class=&quot;line-number&quot;&gt;8&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;9&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;10&lt;/span&gt;
-&lt;span class=&quot;line-number&quot;&gt;11&lt;/span&gt;&lt;/pre&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-avrasm&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R4&lt;/span&gt;, &lt;span class=&quot;hljs-meta&quot;&gt;#03H&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;11&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;12&lt;/span&gt;&lt;/pre&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-avrasm&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R4&lt;/span&gt;, &lt;span class=&quot;hljs-meta&quot;&gt;#03H&lt;/span&gt;
 &lt;span class=&quot;hljs-symbol&quot;&gt;LOOP2:&lt;/span&gt;
 &lt;span class=&quot;hljs-keyword&quot;&gt;CLR&lt;/span&gt; C
 RRC &lt;span class=&quot;hljs-built_in&quot;&gt;R2&lt;/span&gt;
 RRC &lt;span class=&quot;hljs-built_in&quot;&gt;R3&lt;/span&gt;
+DJNZ &lt;span class=&quot;hljs-built_in&quot;&gt;R4&lt;/span&gt;, LOOP2
 
 JNC SKIP2
 &lt;span class=&quot;hljs-keyword&quot;&gt;INC&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R3&lt;/span&gt;
@@ -509,12 +508,46 @@ JNC SKIP2
 &lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;40&lt;/span&gt;H, &lt;span class=&quot;hljs-built_in&quot;&gt;R3&lt;/span&gt;
 &lt;span class=&quot;hljs-comment&quot;&gt;; 右移3次后R2肯定为0&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;这样是带四舍五入的结果。&lt;/p&gt;
+&lt;p&gt;第二种方法，8个8位数相加求平均值，要求四舍五入的话，只需要在这8个数求和后再加4（&lt;code&gt;0100B&lt;/code&gt;），之后右移3次。&lt;/p&gt;
+&lt;figure data-raw=&quot;ADD A, #04H
+MOV R3, A
+JNC SKIP2
+INC R2
+
+SKIP2:
+MOV R4, #03H
+LOOP2:
+RRC R2
+RRC R3
+DJNZ R4, LOOP2&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;gutter&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;3&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;5&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;6&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;7&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;8&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;9&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;11&lt;/span&gt;&lt;/pre&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-avrasm&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;ADD&lt;/span&gt; A, &lt;span class=&quot;hljs-meta&quot;&gt;#04H&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R3&lt;/span&gt;, A
+JNC SKIP2
+&lt;span class=&quot;hljs-keyword&quot;&gt;INC&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R2&lt;/span&gt;
+
+&lt;span class=&quot;hljs-symbol&quot;&gt;SKIP2:&lt;/span&gt;
+&lt;span class=&quot;hljs-keyword&quot;&gt;MOV&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;R4&lt;/span&gt;, &lt;span class=&quot;hljs-meta&quot;&gt;#03H&lt;/span&gt;
+&lt;span class=&quot;hljs-symbol&quot;&gt;LOOP2:&lt;/span&gt;
+RRC &lt;span class=&quot;hljs-built_in&quot;&gt;R2&lt;/span&gt;
+RRC &lt;span class=&quot;hljs-built_in&quot;&gt;R3&lt;/span&gt;
+DJNZ &lt;span class=&quot;hljs-built_in&quot;&gt;R4&lt;/span&gt;, LOOP2&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;结果保存在R3中。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;hr&gt;
 &lt;h1 id=&quot;中断系统&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn-mcs8051/#%E4%B8%AD%E6%96%AD%E7%B3%BB%E7%BB%9F&quot; title=&quot;中断系统&quot;&gt;&lt;/a&gt;中断系统&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;8051的外部中断有低电平触发和下降沿触发两种触发方式。外部中断1的中断向量地址是&lt;code&gt;0013H&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;在响应中断时, 单片机自动生成一条长调用指令LCALL addr16, 其地址为中断入口地址。&lt;/p&gt;
+&lt;p&gt;在响应中断时, 单片机自动生成一条长调用指令&lt;code&gt;LCALL addr16&lt;/code&gt;, 其地址为中断入口地址。&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -544,6 +577,7 @@ JNC SKIP2
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;p&gt;通常在中断入口地址处放一条无条件转移指令&lt;code&gt;*JMP&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;内部查询顺序同入口地址的顺序，由高到低。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;执行指令&lt;code&gt;MOV IP, #0BH&lt;/code&gt;( &lt;code&gt;#00001011B&lt;/code&gt;)后, 中断优先级最高者为&lt;code&gt;PX0&lt;/code&gt;, 最低为&lt;code&gt;PS&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;IP: 中断优先级寄存器, 其前3为无意义, 后5位( IP.4至IP.0)为：&lt;code&gt;PS&lt;/code&gt;, &lt;code&gt;PT1&lt;/code&gt;, &lt;code&gt;PX1&lt;/code&gt;, &lt;code&gt;PT0&lt;/code&gt;, &lt;code&gt;PX0&lt;/code&gt;, 分别对应串行口、定时器T1、外部中断1、定时器0、外部中断0。&lt;/p&gt;
@@ -656,14 +690,14 @@ JNC SKIP2
 &lt;h1 id=&quot;定时器和计数器&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn-mcs8051/#%E5%AE%9A%E6%97%B6%E5%99%A8%E5%92%8C%E8%AE%A1%E6%95%B0%E5%99%A8&quot; title=&quot;定时器和计数器&quot;&gt;&lt;/a&gt;定时器和计数器&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;使T0工作方式1的溢出周期最长的初值是&lt;code&gt;0000H&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;定时器/计数器工作在方式0为13位计数器, 由&lt;code&gt;TLX&lt;/code&gt;的低5位和&lt;code&gt;THX&lt;/code&gt;的高8位组成13位计数器, 最大值为2^13-1(&lt;code&gt;8191&lt;/code&gt;), 晶振频率12MHz下计时周期最长为8.192ms。工作在方式1时由均为8位的&lt;code&gt;TLX&lt;/code&gt;和&lt;code&gt;THX&lt;/code&gt;组成16位计数器, 最大值为&lt;code&gt;65535&lt;/code&gt;, 晶振频率为12M下最长为65.536ms。&lt;/p&gt;
+&lt;p&gt;定时器/计数器工作在方式0为13位计数器, 由&lt;code&gt;TLX&lt;/code&gt;的低5位和&lt;code&gt;THX&lt;/code&gt;的高8位组成13位计数器, 最大值为$2^{13}-1 = 8191$, 晶振频率12MHz下计时周期最长为8.192ms。工作在方式1时由均为8位的&lt;code&gt;TLX&lt;/code&gt;和&lt;code&gt;THX&lt;/code&gt;组成16位计数器, 最大值为65535, 晶振频率为12M下最长为65.536ms。&lt;/p&gt;
 &lt;p&gt;当定时器/计数器工作在方式2时, 可以循环定时/计数。当计数溢出后, 自动将8位的&lt;code&gt;THX&lt;/code&gt;装入8位的TLX中, 可省去重装初值的时间, 最大值为&lt;code&gt;255&lt;/code&gt;, 晶振频率12M下计时周期最长为0.256ms。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;code&gt;T1&lt;/code&gt;配置为方式3时, 停止计数, 方式3只适用于定时器0。&lt;/p&gt;
 &lt;p&gt;定时器&lt;code&gt;T0&lt;/code&gt;的方式3将其分为两个8位定时器, 其中&lt;code&gt;TH0&lt;/code&gt;只能做定时器使用。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;设8051单片机的晶振频率为12MHz, 定时器作计数器使用时, 其计数输入信号的最高频率为500KHz。&lt;/p&gt;
-&lt;p&gt;当定时器用作计数器时, 当检测到引脚上的负跳变时计数器的值增一。检测下降沿需要2个机器周期, 即24个震荡周期, 所以输入信号最高频率为 12M / 24 = 500KHz。&lt;/p&gt;
+&lt;p&gt;当定时器用作计数器时, 当检测到引脚上的负跳变时计数器的值增一。检测下降沿需要2个机器周期, 即24个震荡周期, 所以输入信号最高频率为 $12M \div 24 = 500KHz$。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;用定时器方式2扩展一个下降沿触发的外部中断, 计数初值应为&lt;code&gt;FFH&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;此处定时器2以计数器方式运行, 当检测到一个下降沿后, 计数器加一后溢出, 因此会执行定时器中断的中断子程序。&lt;/p&gt;
@@ -671,13 +705,13 @@ JNC SKIP2
 &lt;/ol&gt;
 &lt;hr&gt;
 &lt;blockquote&gt;
-&lt;p&gt;12月3日:
-前两天感冒, 休息了几天( &lt;del&gt;打了两天的游戏&lt;/del&gt;)后继续。&lt;/p&gt;
+&lt;p&gt;2020年12月3日：
+前两天感冒, 休息了几天(&lt;del&gt;打了两天的游戏&lt;/del&gt;)后继续。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h1 id=&quot;串行口&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn-mcs8051/#%E4%B8%B2%E8%A1%8C%E5%8F%A3&quot; title=&quot;串行口&quot;&gt;&lt;/a&gt;串行口&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;串行口TXD为高电平, 表示这是数据位或停止位或空闲状态。&lt;/p&gt;
-&lt;p&gt;串行口工作在方式1时, TXD用来发送数据、RXD用来接受数据。方式1的一帧数据为10位, 起始为为0, 停止位为1, 数据位和空闲状态均可能为0或1。&lt;/p&gt;
+&lt;p&gt;串行口工作在方式1时, &lt;code&gt;TXD&lt;/code&gt;用来发送数据、&lt;code&gt;RXD&lt;/code&gt;用来接受数据。方式1的一帧数据为10位, 起始为为0, 停止位为1, 数据位和空闲状态均可能为0或1。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;串行口工作在方式3时, 发送的第9位数据要事先写入寄存器&lt;code&gt;SCON&lt;/code&gt;的D3位(&lt;code&gt;TB8&lt;/code&gt;), 接收的第9位数据被写入同一寄存器的D2位(&lt;code&gt;RB8&lt;/code&gt;)。&lt;/p&gt;
 &lt;p&gt;串行口控制寄存器SCON：&lt;/p&gt;
@@ -708,13 +742,49 @@ JNC SKIP2
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 &lt;p&gt;其中&lt;code&gt;SM0&lt;/code&gt;、&lt;code&gt;SM1&lt;/code&gt;为串口的工作方式选择位, 方式0为同步移位寄存器方式, 方式1为8位异步收发, 方式2和方式3为9位异步收发。&lt;/p&gt;
-&lt;p&gt;方式0的波特率&lt;strong&gt;固定&lt;/strong&gt;为 fosc/12, 方式2的波特率为 fosc/64 或 fosc/32 (由SMOD控制), 方式1的波特率和方式3的波特率可变, 公式为 (2^SMOD / 32) * 定时器T1的溢出率。&lt;/p&gt;
+&lt;p&gt;波特率：串行口每秒钟传送的比特位数，单位bits/s。&lt;/p&gt;
+&lt;p&gt;方式0的波特率&lt;strong&gt;固定&lt;/strong&gt;为 $f_{osc}/12$, 方式2的波特率为 $f_{osc}/64$ 或 $f_{osc}/32$ (由SMOD控制)。&lt;/p&gt;
+&lt;p&gt;方式1的波特率和方式3的波特率可变, 公式为 $(2^{SMOD} / 32) \times 定时器T1的溢出率$。&lt;/p&gt;
+&lt;p&gt;即:&lt;/p&gt;
+&lt;p&gt;$$ 波特率 = \frac{(2^{SMOD} \div 32) \times f_{osc}}{12 \times (256 - X)}$$&lt;/p&gt;
+&lt;p&gt;$X$为定时器T1的初值。&lt;/p&gt;
+&lt;p&gt;串口工作在方式1，波特率为2400，则每秒钟最大能发送/接收 $2400 / 8 = 300Byte$的数据。&lt;/p&gt;
+&lt;p&gt;8051的UART工作在方式3，要求每秒钟能传送不少于900个字节的数据，则波特率应当大于 $900 * 8 = 7200bits/s$。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;2020年12月7日：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;IO口amp;外部存储器拓展&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn-mcs8051/#IO%E5%8F%A3amp;%E5%A4%96%E9%83%A8%E5%AD%98%E5%82%A8%E5%99%A8%E6%8B%93%E5%B1%95&quot; title=&quot;IO口amp;外部存储器拓展&quot;&gt;&lt;/a&gt;I/O口 &amp;amp; 外部存储器拓展&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;8051使用指令&lt;code&gt;MOVX A, @R0&lt;/code&gt;读外部数据存储器时，不起作用的信号是&lt;code&gt;WR&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;8051在读外部数据存储器时，P0和P2先输出外部数据的地址，单片机发出&lt;code&gt;ALE&lt;/code&gt;信号（第电平有效）将P0口输出的地址锁存在74HC573里，之后单片机发出&lt;code&gt;RD&lt;/code&gt;信号（低电平有效），读取外部数据存储器（RAM）的数据到总线再传送到P0口上。最后单片机从P0口读取数据保存到A中。&lt;/p&gt;
+&lt;p&gt;如果是写外部数据存储器时，单片机将不发出&lt;code&gt;RD&lt;/code&gt;信号而是&lt;code&gt;WR&lt;/code&gt;信号，将A中的数据写入外部数据存储器中。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;存储器芯片6264需要13根地址线。&lt;/p&gt;
+&lt;p&gt;62256的容量为 $256Kbit \div 8 = 32KB = 2^{15}$, 需要15根地址线。&lt;/p&gt;
+&lt;p&gt;6264的容量为 $64Kbit \div 8 = 8KB = 2^{13}$，所以需要13根地址线。&lt;/p&gt;
+&lt;p&gt;6116容量为 $16Kbit \div 8 = 2KB = 2^{11}$, 需要11根地址线。&lt;/p&gt;
+&lt;p&gt;计算方法是62$X$的 $容量=X \div 8(K)$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用16位地址模式时，8051的外部数据存储器寻址空间为64KB。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;基于8051的单片机系统能拓展的外部数据存储器容量无限制。&lt;/p&gt;
+&lt;p&gt;有的书上说最大只能拓展64KB，实际是最大寻址空间为64KB，拓展的外部数据存储器容量无限制。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;8051的程序存储器可用来存放用户程序和数据。 例如使用&lt;code&gt;DW&lt;/code&gt;或&lt;code&gt;DB&lt;/code&gt;指令用来定义数据。&lt;/p&gt;
+&lt;p&gt;所以应用程序也可以使用&lt;code&gt;MOVC A, @A+DPTR&lt;/code&gt;访问程序存储器中的数据。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;除此之外LED数码管和外部存储器拓展、外部I/O设备拓展部分有很多需要看线路图才能做的题，因为线路图源自老师提供的PDF，而老师为PDF加了密码，意味着不允许外传，所以我就不放到博客上面了，&lt;del&gt;除非我自己用Porteus画一个类似的&lt;/del&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
 &lt;!--
-# I/O口
+# AD/DA转换
 
-# 外部存储器拓展
+# 打印机
 --&gt;
 
 &lt;blockquote&gt;
