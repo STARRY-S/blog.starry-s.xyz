@@ -311,7 +311,7 @@
         
         
         <div class="post-date meta-block">
-          <i class="far fa-calendar-plus"></i><span><time class="post-full-date" title="post-date" itemprop="dateUpdated" datetime="2020-12-08T01:33:06.000Z">12/8/2020, 9:33:06 AM</time></span>
+          <i class="far fa-calendar-plus"></i><span><time class="post-full-date" title="post-date" itemprop="dateUpdated" datetime="2020-12-09T04:31:15.000Z">12/9/2020, 12:31:15 PM</time></span>
         </div>
         
         
@@ -377,7 +377,11 @@ const ap0 = new APlayer ({
 <p>SP: 堆栈指针, 指示出堆栈顶部在<strong>内部RAM块</strong>中的位置。</p>
 <p>单片机的堆栈设在了内部RAM区, 单片机复位后, SP中的内容为<code>07H</code>(指向第0组工作寄存器的R7), 堆栈实际上从<code>08H</code>开始。</p>
 <p>若SP被初始化为<code>39H</code>, 则堆栈实际上是从<code>3AH</code>开始的。</p>
-<p>执行<code>RET</code>指令后, SP值减2 (因为PC为2字节寄存器), 将调用指令的下一条指令的首地址送入PC中。</p>
+<p>执行<code>LCALL addr16</code>指令时，单片机先将PC的低字节压栈，再将PC的高字节压栈，最后把转移地址送入PC中。</p>
+<p>与之类似的<code>LJMP</code>类无条件转移指令，单片机只修改PC的值，并不堆栈保存跳转前的PC中保存的地址。</p>
+<p>执行<code>RET</code>指令后, SP值减2 (因为PC为2字节寄存器), 进行两次出栈操作，第一次出栈送PC的高位，第二次出栈送PC的低位。</p>
+<p>中断服务程序结束指令<code>RETI</code>不仅将堆栈中保存的2字节地址分别送入PC的高位和低位中，而且复位中断系统。因此<code>RET</code>和<code>RETI</code>不同。</p>
+<p><code>RET</code>和<code>RETI</code>对堆栈的操作是相同的。</p>
 </li>
 <li><p>PSW中的<code>RS1 RS0</code>=<code>10B</code>时, R2的RAM地址为<code>12H</code>。</p>
 <p>PSW： 程序状态字寄存器, 从<code>PSW.7</code>至<code>PSW.0</code>分别为<code>Cy</code>(进位标志位), <code>Ac</code>(辅助进位标志位), <code>F0</code>(标志位), <code>RS1</code>和<code>RS0</code>(寄存器区选择控制位), <code>OV</code>(溢出位), 保留位, <code>P</code>(奇偶标志位, 奇数为1, 偶数为0)。</p>
@@ -468,13 +472,24 @@ const ap0 = new APlayer ({
 <tr>
 <td align="center">...</td>
 <td align="center">...</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
+<td align="center">...</td>
+<td align="center">...</td>
+<td align="center">...</td>
+<td align="center">...</td>
+<td align="center">...</td>
+<td align="center">...</td>
+<td align="center">...</td>
+</tr>
+<tr>
+<td align="center">21H</td>
+<td align="center">0FH</td>
+<td align="center">0EH</td>
+<td align="center">0DH</td>
+<td align="center">0CH</td>
+<td align="center">0BH</td>
+<td align="center">0AH</td>
+<td align="center">09H</td>
+<td align="center">08H</td>
 </tr>
 <tr>
 <td align="center">20H</td>
@@ -520,12 +535,13 @@ const ap0 = new APlayer ({
 </blockquote>
 </li>
 <li><p><code>MOVC</code>访问 <strong>程序(ROM)</strong> 存储器, <code>MOVX</code>指令访问 <strong>外部数据</strong> 存储器。</p>
-<p><code>MOVC</code>为查表指令, 只有<code>MOCV @A+PC</code>和<code>MOVC @A+DPTR</code>这两条, 均为单字节指令。</p>
+<p><code>MOVC</code>为查表指令, 只有<code>MOVC @A+PC</code>和<code>MOVC @A+DPTR</code>这两条, 均为单字节指令。</p>
 <p><code>MOVX</code>用于累加器A与外部数据存储器进行传送。</p>
-<p>可以是<code>MOVX A, @DPTR</code>, <code>MOVX A, @Ri</code>, <code>MOVX @DPTR, A</code>, <code>MOVX @Ri, A</code>。</p>
-<p>当采用Ri作间接寻址时, 只能寻找片外256个单元的数据存储器, 此时8位地址和数据均由P0口传送。</p>
+<p>可以是<code>MOVX A, @DPTR</code>, <code>MOVX A, @Ri</code>, <code>MOVX @DPTR, A</code>, <code>MOVX @Ri, A</code>，其中i为0或1.</p>
+<p>当使用<code>MOVX @Ri</code>类指令时，只有P0口用来传送地址和数据，P2口的状态不会发生改变，因此可使用<code>MOV P2, #12H</code>指令设定高8位的地址。</p>
+<p>当采用Ri作间接寻址时, 只能寻找片外256个单元的数据存储器, 此时8位地址和数据均由P0口传送，P2口的状态不发生改变。</p>
 </li>
-<li><p>假设指令<code>DJNZ R7, rel</code>位于<code>005FH</code>, 如果在执行该指令前寄存器R7值为<code>00H</code>, 偏移量rel为<code>02H</code>, 则该指令执行后下一条要执行的指令所在的地址是<code>0063H</code>。</p>
+<li><p>假设指令<code>DJNZ R7, rel</code>位于<code>005FH</code>, 如果在执行该指令前寄存器R7值为<code>00H</code>, 偏移量rel为<code>02H</code>, 则该指令执行后下一条要执行的指令所在的地址是<code>005FH</code>。</p>
 <p><code>DJNZ R7, rel</code>位于<code>005FH</code>, 该指令长度为<strong>2字节</strong> (书上写的3字节是错的), 所以在执行这条指令开始时PC值在原来的基础上 + 2 变为<code>0061H</code>。又因为rel为<code>02H</code>, 所以执行这条指令后, PC值变为<code>0063H</code>。</p>
 </li>
 <li><p>分析下面子程序的功能, 假设8051单片机的震荡频率为6MHz。</p>
@@ -703,6 +719,7 @@ MOV R2, #00H
 MOV R3, #00H
 ; 初始化
 LOOP:
+CLR C
 MOV A, @R0
 ADD A, R3
 MOV R3, A
@@ -723,12 +740,14 @@ DJNZ R1, LOOP   " class="code-block highlight hljs"><pre class="gutter"><span cl
 <span class="line-number">11</span>
 <span class="line-number">12</span>
 <span class="line-number">13</span>
-<span class="line-number">14</span></pre><pre class="code"><code class="language-avrasm"><span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R0</span>, <span class="hljs-meta">#30H</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span></pre><pre class="code"><code class="language-avrasm"><span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R0</span>, <span class="hljs-meta">#30H</span>
 <span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R1</span>, <span class="hljs-meta">#08H</span>
 <span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R2</span>, <span class="hljs-meta">#00H</span>
 <span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R3</span>, <span class="hljs-meta">#00H</span>
 <span class="hljs-comment">; 初始化</span>
 <span class="hljs-symbol">LOOP:</span>
+<span class="hljs-keyword">CLR</span> C
 <span class="hljs-keyword">MOV</span> A, @<span class="hljs-built_in">R0</span>
 <span class="hljs-keyword">ADD</span> A, <span class="hljs-built_in">R3</span>
 <span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R3</span>, A
@@ -745,7 +764,7 @@ RRC R3
 DJNZ R4, LOOP2
 
 MOV 40H, R3
-; 右移3次后R2的低4位为0" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
+; 右移3次后R2的低4位为0, 结果保存在R3中" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
 <span class="line-number">4</span>
@@ -759,12 +778,11 @@ RRC <span class="hljs-built_in">R3</span>
 DJNZ <span class="hljs-built_in">R4</span>, LOOP2
 
 <span class="hljs-keyword">MOV</span> <span class="hljs-number">40</span>H, <span class="hljs-built_in">R3</span>
-<span class="hljs-comment">; 右移3次后R2的低4位为0</span></code></pre></figure>
+<span class="hljs-comment">; 右移3次后R2的低4位为0, 结果保存在R3中</span></code></pre></figure>
 <p>这样R3中求得的是不带四舍五入的结果。</p>
 <p>如果需要带四舍五入的话第一种方法是判断最后一次右移时最低位是否为$1$， ($1 / 2 = 0.5$)。   </p>
 <figure data-raw="MOV R4, #03H
 LOOP2:
-CLR C
 RRC R2
 RRC R3
 DJNZ R4, LOOP2
@@ -783,10 +801,8 @@ MOV 40H, R3
 <span class="line-number">8</span>
 <span class="line-number">9</span>
 <span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span></pre><pre class="code"><code class="language-avrasm"><span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R4</span>, <span class="hljs-meta">#03H</span>
+<span class="line-number">11</span></pre><pre class="code"><code class="language-avrasm"><span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R4</span>, <span class="hljs-meta">#03H</span>
 <span class="hljs-symbol">LOOP2:</span>
-<span class="hljs-keyword">CLR</span> C
 RRC <span class="hljs-built_in">R2</span>
 RRC <span class="hljs-built_in">R3</span>
 DJNZ <span class="hljs-built_in">R4</span>, LOOP2
@@ -865,7 +881,7 @@ DJNZ <span class="hljs-built_in">R4</span>, LOOP2</code></pre></figure>
 <td align="center">0023H</td>
 </tr>
 </tbody></table>
-<p>通常在中断入口地址处放一条无条件转移指令<code>*JMP</code>。</p>
+<p>通常在中断入口地址处放一条<strong>无条件转移指令</strong><code>*JMP</code>。</p>
 <p>内部查询顺序同入口地址的顺序，由高到低。</p>
 </li>
 <li><p>执行指令<code>MOV IP, #0BH</code>( <code>#00001011B</code>)后, 中断优先级最高者为<code>PX0</code>, 最低为<code>PS</code>。</p>
@@ -900,7 +916,7 @@ DJNZ <span class="hljs-built_in">R4</span>, LOOP2</code></pre></figure>
 <p>在同时收到几个同一优先级的中断请求时, 中断响应取决于内部查询顺序, 其顺序由高到低为：<code>INT0</code>、<code>T0</code>、<code>INT1</code>、<code>T1</code>、<code>串行口</code>。</p>
 <p>当中断源均为同一优先级时, 当它们同时申请中断时CPU首先响应外部中断0</p>
 </li>
-<li><p>8051的晶振频率为12MHz, 则最短的外部中断响应时间为3us, 最长的外部中断响应时间为12us。</p>
+<li><p>8051的晶振频率为12MHz, 则最短的外部中断响应时间为3${\mu}$s, 最长的外部中断响应时间为12${\mu}s$。</p>
 </li>
 <li><p>中断标记位于单片机寄存器的<code>TCON</code>和<code>SCON</code>中。</p>
 <table>
@@ -930,20 +946,21 @@ DJNZ <span class="hljs-built_in">R4</span>, LOOP2</code></pre></figure>
 </tr>
 <tr>
 <td align="center">SCON</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
+<td align="center">SM0</td>
+<td align="center">SM1</td>
+<td align="center">SM2</td>
+<td align="center">REN</td>
+<td align="center">TB8</td>
+<td align="center">RB8</td>
 <td align="center">TI</td>
 <td align="center">RI</td>
 </tr>
 </tbody></table>
 <p><code>TCON</code>中<code>TF1</code>和<code>TF0</code>为定时器/计数器中断标志位, <code>TR1</code>和<code>TR0</code>为定时/计数启动位, <code>IE1</code>和<code>IE0</code>为外部中断标志位, <code>IT1</code>和<code>IT0</code>为选择外部中断为边沿触发(1)还是电平触发(0)方式。</p>
-<p><code>SCON</code>中的<code>TI</code>和<code>RI</code>( 是大写字母I不是数字1)分别为串行口中断发送中断请求标志位(发送成功后置1)和接受中断请求标志位( 接受成功后置1)。串口中断无法硬件清零, 只能软件清零。</p>
+<p><code>SCON</code>中前几位与串行口有关，第1位和第2位的<code>TI</code>和<code>RI</code>(是大写字母I不是数字1)分别为串行口中断发送中断请求标志位(发送成功后置1)和接受中断请求标志位( 接受成功后置1)。串口中断无法硬件清零, 只能软件清零。</p>
+<p>当IE中EA为1、ES为1时，TI或RI为1时，CPU执行无条件转移指令<code>LJMP 0023H</code>, 执行串行口中断服务程序。</p>
 </li>
-<li><p>要使8051能够响应定时器T1的中断和串行口中断, 不响应其他中断, 则中断允许寄存器<code>IE</code>的内容为<code>98H</code>( <code>10011000B</code>)。</p>
+<li><p>要使8051能够响应定时器T1的中断和串行口中断, 不响应其他中断, 则中断允许寄存器<code>IE</code>的内容为<code>98H</code>(<code>10011000B</code>)。</p>
 <p>中断允许寄存器IE：</p>
 <table>
 <thead>
@@ -980,7 +997,7 @@ DJNZ <span class="hljs-built_in">R4</span>, LOOP2</code></pre></figure>
 <ol>
 <li><p>使T0工作方式1的溢出周期最长的初值是<code>0000H</code>。</p>
 <p>定时器/计数器工作在方式0为13位计数器, 由<code>TLX</code>的低5位和<code>THX</code>的高8位组成13位计数器, 最大值为$2^{13}-1 = 8191$, 晶振频率12MHz下计时周期最长为8.192ms。工作在方式1时由均为8位的<code>TLX</code>和<code>THX</code>组成16位计数器, 最大值为65535, 晶振频率为12M下最长为65.536ms。</p>
-<p>当定时器/计数器工作在方式2时, 可以循环定时/计数。当计数溢出后, 自动将8位的<code>THX</code>装入8位的TLX中, 可省去重装初值的时间, 最大值为<code>255</code>, 晶振频率12M下计时周期最长为0.256ms。</p>
+<p>当定时器/计数器工作在方式2时, 可以循环定时/计数。当计数溢出后, 自动将8位的<code>THX</code>装入8位的<code>TLX</code>中, 可省去重装初值的时间, 最大值为<code>255</code>, 晶振频率12M下计时周期最长为0.256ms。</p>
 </li>
 <li><p><code>T1</code>配置为方式3时, 停止计数, 方式3只适用于定时器0。</p>
 <p>定时器<code>T0</code>的方式3将其分为两个8位定时器, 其中<code>TH0</code>只能做定时器使用。</p>
@@ -1002,7 +1019,7 @@ DJNZ <span class="hljs-built_in">R4</span>, LOOP2</code></pre></figure>
 <li><p>串行口TXD为高电平, 表示这是数据位或停止位或空闲状态。</p>
 <p>串行口工作在方式1时, <code>TXD</code>用来发送数据、<code>RXD</code>用来接受数据。方式1的一帧数据为10位, 起始为为0, 停止位为1, 数据位和空闲状态均可能为0或1。</p>
 </li>
-<li><p>串行口工作在方式3时, 发送的第9位数据要事先写入寄存器<code>SCON</code>的D3位(<code>TB8</code>), 接收的第9位数据被写入同一寄存器的D2位(<code>RB8</code>)。</p>
+<li><p>串行口工作在方式3时, 发送的第9位数据要事先写入寄存器<code>SCON</code>的<code>TB8</code>, 接收的第9位数据被写入同一寄存器的<code>RB8</code>。</p>
 <p>串行口控制寄存器SCON：</p>
 <table>
 <thead>
@@ -1034,13 +1051,15 @@ DJNZ <span class="hljs-built_in">R4</span>, LOOP2</code></pre></figure>
 <p>波特率：串行口每秒钟传送的比特位数，单位bits/s。</p>
 <p>方式0的波特率<strong>固定</strong>为 $f_{osc}/12$, 方式2的波特率为 $f_{osc}/64$ 或 $f_{osc}/32$ (由SMOD控制)。</p>
 <p>方式1的波特率和方式3的波特率可变, 公式为 $(2^{SMOD} / 32) \times 定时器T1的溢出率$。</p>
-<p>即:</p>
-<p>$$ 波特率 = \frac{(2^{SMOD} \div 32) \times f_{osc}}{12 \times (256 - X)}$$</p>
+<p>T1的溢出率为定时器T1的周期的倒数，定时器的周期为 </p>
+<p>$$T = \frac{12\times (2^n - X )}{f_{osc}}$$</p>
+<p>当T1工作在方式2时，n为8，波特率为：</p>
+<p>$$波特率=\frac{(2^{SMOD} \div 32) \times f_{osc}}{12 \times (256 - X)}$$</p>
 <p>$X$为定时器T1的初值。</p>
 <p>串口工作在方式1，波特率为2400，则每秒钟最大能发送/接收 $2400 \div 8 = 300Byte$的数据。</p>
 <p>8051的UART工作在方式3，要求每秒钟能传送不少于900个字节的数据，则波特率应当大于 $900 \times 8 = 7200bits/s$。</p>
 </li>
-<li><p>比特率2400Kbits/s，PC机发送8个字节的数据存到单片机的<code>30H-37H</code>中，随后单片机发送2个确认字节<code>55H</code>和<code>AAH</code>给PC机，使用查询方式。</p>
+<li><p>比特率2400Kbits/s，时钟频率12M，PC机发送8个字节的数据存到单片机的<code>30H-37H</code>中，随后单片机发送2个确认字节<code>55H</code>和<code>AAH</code>给PC机，使用查询方式。</p>
 <figure data-raw="ORG 0000H
 MAIN:
 MOV SCON, #50H
@@ -1142,7 +1161,7 @@ AJMP LOOP
 
 END</code></pre></figure>
 <p>单片机接收到数据后，RI被置1，代表SBUF中的数据有效，取走SBUF中的数据后需要软件清零RI（串口中断不会自动清零RI）。</p>
-<p>当单片机执行写SBUF操作时，串口发送开始，TI被自动置1，在发送完成后TI被自动清0.</p>
+<p>当单片机执行写SBUF操作时，串口发送开始，TI被自动置1，在发送完成后TI被自动清0。</p>
 </li>
 </ol>
 <hr>
@@ -1152,7 +1171,7 @@ END</code></pre></figure>
 <h1 id="IO口amp;外部存储器拓展"><a class="header-link" href="/posts/learn-mcs8051/#IO%E5%8F%A3amp;%E5%A4%96%E9%83%A8%E5%AD%98%E5%82%A8%E5%99%A8%E6%8B%93%E5%B1%95" title="IO口amp;外部存储器拓展"></a>I/O口 &amp; 外部存储器拓展</h1>
 <ol>
 <li><p>8051使用指令<code>MOVX A, @R0</code>读外部数据存储器时，不起作用的信号是<code>WR</code>。</p>
-<p>8051在读外部数据存储器时，P0和P2先输出外部数据的地址，单片机发出<code>ALE</code>信号（第电平有效）将P0口输出的地址锁存在74HC573里，之后单片机发出<code>RD</code>信号（低电平有效），读取外部数据存储器（RAM）的数据到总线再传送到P0口上。最后单片机从P0口读取数据保存到A中。</p>
+<p>8051在使用<code>MOVX @DPTR</code>类指令读外部数据存储器时，P0和P2先输出外部数据的地址，单片机发出的<code>ALE</code>信号的负跳沿将P0口输出的地址锁存在地址锁存器(74HC573)里，之后单片机发出<code>RD</code>信号，读取外部数据存储器（RAM）的数据到总线再传送到P0口上。最后单片机从P0口读取数据保存到A中。</p>
 <p>如果是写外部数据存储器时，单片机将不发出<code>RD</code>信号而是<code>WR</code>信号，将A中的数据写入外部数据存储器中。</p>
 </li>
 <li><p>存储器芯片6264需要13根地址线。</p>
@@ -1171,18 +1190,500 @@ END</code></pre></figure>
 </li>
 </ol>
 <blockquote>
-<p>除此之外LED数码管和外部存储器拓展、外部I/O设备拓展部分有很多需要看线路图才能做的题，因为线路图源自老师提供的PDF，而老师为PDF加了密码，意味着不允许外传，所以我就不放到博客上面了，<del>除非我自己用Porteus画一个类似的</del></p>
+<p>除此之外LED数码管和外部存储器拓展、外部I/O设备拓展部分有很多需要根据线路图计算地址和DA转换的题，因为线路图源自老师提供的PDF，而老师为PDF加了密码，意味着不允许外传，所以我就不放到博客上面了，<del>除非我自己用Porteus画一个类似的</del></p>
 </blockquote>
+<ol start="6">
+<li><p>LED段码入口地址8004H，位选入口地址8002H，将30H-32H保存的6个压缩BCD码发送到6位共阴极数码管上显示， 要求编写延时1ms的子程序。</p>
+<figure data-raw="MAIN:
+MOV R0, #30H
+; R2用来计数
+MOV R2, #03H
+; R3用来位选
+MOV R3, #01H
+
+LOOP:
+MOV A, @R0
+SWAP A
+ANL A, #0FH
+MOV DPTR, #TAB
+MOVC A, @A+DPTR
+; 取高4位BCD码对应的段码
+
+MOV DPTR, #8004H
+MOVX A, @A+DPTR
+; 先送段码
+
+MOV A, R3
+MOV DPTR, #8002H
+MOVX @DPTR, A
+RL A
+MOV R3, A
+; 再送位选
+
+LCALL DELAY
+
+MOV A, @R0
+ANL A, #0FH
+MOV DPTR, #TAB
+MOVC A, @A+DPTR
+; 取低4位BCD码对应的段码
+
+MOV DPTR, #8004H
+MOVX A, @A+DPTR
+; 送段码
+
+MOV A, R3
+MOV DPTR, #8002H
+MOVX @DPTR, A
+RL A
+MOV R3, A
+; 送位选
+
+LCALL DELAY
+INC R0
+
+DJNZ R2, LOOP
+
+DELAY:
+MOV R7, #250
+DL:
+NOP
+NOP
+DJNZ R7, DL
+RET
+
+TAB:
+DB 3FH, 06H, 5BH, 4FH, 66H, 6DH, 7DH, 07H, 7FH, 6FH
+
+END" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+<span class="line-number">30</span>
+<span class="line-number">31</span>
+<span class="line-number">32</span>
+<span class="line-number">33</span>
+<span class="line-number">34</span>
+<span class="line-number">35</span>
+<span class="line-number">36</span>
+<span class="line-number">37</span>
+<span class="line-number">38</span>
+<span class="line-number">39</span>
+<span class="line-number">40</span>
+<span class="line-number">41</span>
+<span class="line-number">42</span>
+<span class="line-number">43</span>
+<span class="line-number">44</span>
+<span class="line-number">45</span>
+<span class="line-number">46</span>
+<span class="line-number">47</span>
+<span class="line-number">48</span>
+<span class="line-number">49</span>
+<span class="line-number">50</span>
+<span class="line-number">51</span>
+<span class="line-number">52</span>
+<span class="line-number">53</span>
+<span class="line-number">54</span>
+<span class="line-number">55</span>
+<span class="line-number">56</span>
+<span class="line-number">57</span>
+<span class="line-number">58</span>
+<span class="line-number">59</span>
+<span class="line-number">60</span>
+<span class="line-number">61</span>
+<span class="line-number">62</span></pre><pre class="code"><code class="language-x86asm"><span class="hljs-symbol">MAIN:</span>
+<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R0</span>, #<span class="hljs-number">30H</span>
+<span class="hljs-comment">; R2用来计数</span>
+<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R2</span>, #<span class="hljs-number">03H</span>
+<span class="hljs-comment">; R3用来位选</span>
+<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R3</span>, #<span class="hljs-number">01H</span>
+<span class="hljs-symbol">
+LOOP:</span>
+<span class="hljs-keyword">MOV</span> A, @<span class="hljs-built_in">R0</span>
+SWAP A
+ANL A, #<span class="hljs-number">0FH</span>
+<span class="hljs-keyword">MOV</span> DPTR, #TAB
+MOVC A, @A+DPTR
+<span class="hljs-comment">; 取高4位BCD码对应的段码</span>
+
+<span class="hljs-keyword">MOV</span> DPTR, #<span class="hljs-number">8004H</span>
+MOVX A, @A+DPTR
+<span class="hljs-comment">; 先送段码</span>
+
+<span class="hljs-keyword">MOV</span> A, <span class="hljs-built_in">R3</span>
+<span class="hljs-keyword">MOV</span> DPTR, #<span class="hljs-number">8002H</span>
+MOVX @DPTR, A
+RL A
+<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R3</span>, A
+<span class="hljs-comment">; 再送位选</span>
+
+LCALL DELAY
+
+<span class="hljs-keyword">MOV</span> A, @<span class="hljs-built_in">R0</span>
+ANL A, #<span class="hljs-number">0FH</span>
+<span class="hljs-keyword">MOV</span> DPTR, #TAB
+MOVC A, @A+DPTR
+<span class="hljs-comment">; 取低4位BCD码对应的段码</span>
+
+<span class="hljs-keyword">MOV</span> DPTR, #<span class="hljs-number">8004H</span>
+MOVX A, @A+DPTR
+<span class="hljs-comment">; 送段码</span>
+
+<span class="hljs-keyword">MOV</span> A, <span class="hljs-built_in">R3</span>
+<span class="hljs-keyword">MOV</span> DPTR, #<span class="hljs-number">8002H</span>
+MOVX @DPTR, A
+RL A
+<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R3</span>, A
+<span class="hljs-comment">; 送位选</span>
+
+LCALL DELAY
+<span class="hljs-keyword">INC</span> <span class="hljs-built_in">R0</span>
+
+DJNZ <span class="hljs-built_in">R2</span>, <span class="hljs-keyword">LOOP</span>
+<span class="hljs-symbol">
+DELAY:</span>
+<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R7</span>, #<span class="hljs-number">250</span>
+<span class="hljs-symbol">DL:</span>
+<span class="hljs-keyword">NOP</span>
+<span class="hljs-keyword">NOP</span>
+DJNZ <span class="hljs-built_in">R7</span>, <span class="hljs-built_in">DL</span>
+<span class="hljs-keyword">RET</span>
+<span class="hljs-symbol">
+TAB:</span>
+<span class="hljs-built_in">DB</span> <span class="hljs-number">3FH</span>, <span class="hljs-number">06H</span>, <span class="hljs-number">5BH</span>, <span class="hljs-number">4FH</span>, <span class="hljs-number">66H</span>, <span class="hljs-number">6DH</span>, <span class="hljs-number">7DH</span>, <span class="hljs-number">07H</span>, <span class="hljs-number">7FH</span>, <span class="hljs-number">6FH</span>
+
+END</code></pre></figure>
+</li>
+<li><p>打印机数据输入接口和P1直接相连，STB接口和P3.4相连，BUSY接口和P3.3相连，不使用ACK应答信号，编写将外部存储器<code>1000H-100FH</code>的数据发送到打印机打印的子程序。</p>
+<div style="text-align:center">
+ <img src="/posts/learn-mcs8051/images/1.jpg">
+</div>
+<br>
+
+<figure data-raw="PRINT:
+MOV DPTR, #1000H
+MOV R2, #10H
+
+LOOP:
+JB P3.3, $
+; 确保打印机处于空闲状态
+MOVX A, @DPTR
+MOV P1, A
+CLR P3.4
+SETB P3.4
+INC DPTR
+DJNZ R2, LOOP
+RET" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span></pre><pre class="code"><code class="language-avrasm"><span class="hljs-symbol">PRINT:</span>
+<span class="hljs-keyword">MOV</span> DPTR, <span class="hljs-meta">#1000H</span>
+<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R2</span>, <span class="hljs-meta">#10H</span>
+
+<span class="hljs-symbol">LOOP:</span>
+JB P3<span class="hljs-number">.3</span>, $
+<span class="hljs-comment">; 确保打印机处于空闲状态</span>
+MOVX A, @DPTR
+<span class="hljs-keyword">MOV</span> P1, A
+<span class="hljs-keyword">CLR</span> P3<span class="hljs-number">.4</span>
+SETB P3<span class="hljs-number">.4</span>
+<span class="hljs-keyword">INC</span> DPTR
+DJNZ <span class="hljs-built_in">R2</span>, LOOP
+<span class="hljs-keyword">RET</span></code></pre></figure>
+<p>如果打印机没有和P1直接相连，而是连接到数据锁存器上（74HC374），锁存器的时钟信号的入口地址为<code>A000H</code>。</p>
+<p>使用堆栈保护间接寻址寄存器的值。</p>
+<figure data-raw="PRINT:
+MOV R2, #10H
+MOV DPTR, #1000H
+LOOP:
+JB P3.3, $
+; 确保打印机处于空闲状态
+
+MOVX A, @DPTR
+PUSH DPL
+PUSH DPH
+MOV DPTR, #0A000H
+MOVX @DPTR, A
+POP DPH
+POP DPL
+
+CLR P3.4
+SETB P3.4
+INC DPTR
+DJNZ R2, LOOP
+RET" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span></pre><pre class="code"><code class="language-avrasm"><span class="hljs-symbol">PRINT:</span>
+<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R2</span>, <span class="hljs-meta">#10H</span>
+<span class="hljs-keyword">MOV</span> DPTR, <span class="hljs-meta">#1000H</span>
+<span class="hljs-symbol">LOOP:</span>
+JB P3<span class="hljs-number">.3</span>, $
+<span class="hljs-comment">; 确保打印机处于空闲状态</span>
+
+MOVX A, @DPTR
+<span class="hljs-keyword">PUSH</span> DPL
+<span class="hljs-keyword">PUSH</span> DPH
+<span class="hljs-keyword">MOV</span> DPTR, <span class="hljs-meta">#0A000H</span>
+MOVX @DPTR, A
+<span class="hljs-keyword">POP</span> DPH
+<span class="hljs-keyword">POP</span> DPL
+
+<span class="hljs-keyword">CLR</span> P3<span class="hljs-number">.4</span>
+SETB P3<span class="hljs-number">.4</span>
+<span class="hljs-keyword">INC</span> DPTR
+DJNZ <span class="hljs-built_in">R2</span>, LOOP
+<span class="hljs-keyword">RET</span></code></pre></figure>
+</li>
+</ol>
 <hr>
-<!--
-# AD/DA转换
+<h1 id="SFR列表"><a class="header-link" href="/posts/learn-mcs8051/#SFR%E5%88%97%E8%A1%A8" title="SFR列表"></a>SFR列表</h1>
+<table>
+<thead>
+<tr>
+<th align="center">87H</th>
+<th align="center">D7</th>
+<th align="center">D6</th>
+<th align="center">D5</th>
+<th align="center">D4</th>
+<th align="center">D3</th>
+<th align="center">D2</th>
+<th align="center">D1</th>
+<th align="center">D0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">PCON</td>
+<td align="center">SMOD</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">PD</td>
+<td align="center">IDL</td>
+</tr>
+</tbody></table>
+<br>
 
-# 打印机
--->
+<table>
+<thead>
+<tr>
+<th align="center">88H</th>
+<th align="center">D7</th>
+<th align="center">D6</th>
+<th align="center">D5</th>
+<th align="center">D4</th>
+<th align="center">D3</th>
+<th align="center">D2</th>
+<th align="center">D1</th>
+<th align="center">D0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">TCON</td>
+<td align="center">TF1</td>
+<td align="center">TR1</td>
+<td align="center">TF0</td>
+<td align="center">TR0</td>
+<td align="center">IE1</td>
+<td align="center">IT1</td>
+<td align="center">IE0</td>
+<td align="center">IT0</td>
+</tr>
+</tbody></table>
+<br>
 
-<blockquote>
-<p>To be continued...</p>
-</blockquote>
+<table>
+<thead>
+<tr>
+<th align="center">89H</th>
+<th align="center">D7</th>
+<th align="center">D6</th>
+<th align="center">D5</th>
+<th align="center">D4</th>
+<th align="center">D3</th>
+<th align="center">D2</th>
+<th align="center">D1</th>
+<th align="center">D0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">TMOD</td>
+<td align="center">GATE</td>
+<td align="center">C/T</td>
+<td align="center">M1</td>
+<td align="center">M0</td>
+<td align="center">GATE</td>
+<td align="center">C/T</td>
+<td align="center">M1</td>
+<td align="center">M0</td>
+</tr>
+</tbody></table>
+<br>
+
+<table>
+<thead>
+<tr>
+<th align="center">98H</th>
+<th align="center">D7</th>
+<th align="center">D6</th>
+<th align="center">D5</th>
+<th align="center">D4</th>
+<th align="center">D3</th>
+<th align="center">D2</th>
+<th align="center">D1</th>
+<th align="center">D0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">SCON</td>
+<td align="center">SM0</td>
+<td align="center">SM1</td>
+<td align="center">SM2</td>
+<td align="center">REN</td>
+<td align="center">TB8</td>
+<td align="center">RB8</td>
+<td align="center">TI</td>
+<td align="center">RI</td>
+</tr>
+</tbody></table>
+<br>
+
+<table>
+<thead>
+<tr>
+<th align="center">A8H</th>
+<th align="center">D7</th>
+<th align="center">D6</th>
+<th align="center">D5</th>
+<th align="center">D4</th>
+<th align="center">D3</th>
+<th align="center">D2</th>
+<th align="center">D1</th>
+<th align="center">D0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">IE</td>
+<td align="center">EA</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">ES</td>
+<td align="center">ET1</td>
+<td align="center">EX1</td>
+<td align="center">ET0</td>
+<td align="center">EX0</td>
+</tr>
+</tbody></table>
+<br>
+
+<table>
+<thead>
+<tr>
+<th align="center">B8H</th>
+<th align="center">D7</th>
+<th align="center">D6</th>
+<th align="center">D5</th>
+<th align="center">D4</th>
+<th align="center">D3</th>
+<th align="center">D2</th>
+<th align="center">D1</th>
+<th align="center">D0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">IP</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">PS</td>
+<td align="center">PT1</td>
+<td align="center">PX1</td>
+<td align="center">PT0</td>
+<td align="center">PX0</td>
+</tr>
+</tbody></table>
+<br>
+
+<table>
+<thead>
+<tr>
+<th align="center">D0H</th>
+<th align="center">D7</th>
+<th align="center">D6</th>
+<th align="center">D5</th>
+<th align="center">D4</th>
+<th align="center">D3</th>
+<th align="center">D2</th>
+<th align="center">D1</th>
+<th align="center">D0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">PSW</td>
+<td align="center">Cy</td>
+<td align="center">Ac</td>
+<td align="center">F0</td>
+<td align="center">RS1</td>
+<td align="center">RS0</td>
+<td align="center">OV</td>
+<td align="center">-</td>
+<td align="center">P</td>
+</tr>
+</tbody></table>
+<hr>
 
     </main>
     <footer class="post-footer">
@@ -1419,6 +1920,12 @@ END</code></pre></figure>
           
         </li>
       
+        <li>
+          
+          <a class="list-group-item toc-link" href="#SFR列表">SFR列表</a>
+          
+        </li>
+      
       </ol>
       
     </div>
@@ -1498,4 +2005,4 @@ END</code></pre></figure>
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.6.1 at 2020-12-08T01:56:16.742Z. -->
+<!-- Page built by Hikaru v1.6.1 at 2020-12-09T04:33:54.351Z. -->
