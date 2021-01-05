@@ -98,7 +98,7 @@ mathjax:
 # Note: `fontAwesome.loader` is `fontawesome.min.js`. `busuanzi` is `busuanzi.pure.mini.js`.
 # If you don't know what you are doing, don't change it.
 libCDN:
-  enable: false
+  enable: true
   fontAwesome:
     loader: //cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/js/fontawesome.min.js
     solid: //cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/js/solid.min.js
@@ -119,7 +119,7 @@ social:
   enable: true
   links:
     - name: E-Mail
-      link: mailto:hx916584160@gmail.com
+      link: mailto:hxstarrys@gmail.com
       icon: <i class="fas fa-envelope"></i>
     - name: GitHub
       link: https://github.com/STARRY-S

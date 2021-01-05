@@ -61,11 +61,11 @@
     <script type="text/javascript" src="/js/index.js"></script>
     <script defer type="text/javascript" src="/js/scrollspy.js"></script>
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <script defer type="text/javascript" src="/js/clipboard.min.js"></script>
-    <script defer type="text/javascript" src="/js/fa-solid.min.js"></script>
-    <script defer type="text/javascript" src="/js/fa-brands.min.js"></script>
-    <script defer type="text/javascript" src="/js/fa-regular.min.js"></script>
-    <script defer type="text/javascript" src="/js/fontawesome.min.js"></script>
+    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/js/solid.min.js"></script>
+    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/js/brands.min.js"></script>
+    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/js/regular.min.js"></script>
+    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/js/fontawesome.min.js"></script>
     
     <script defer type="text/javascript" src="/js/busuanzi.pure.mini.js"></script>
     
@@ -93,7 +93,7 @@
     
     
     
-    <script defer type="text/javascript" src="/js/highlight.min.js"></script>
+    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
     <script type="text/javascript">
       documentReady(() => {
         elementsEach(
@@ -341,6 +341,7 @@
 本篇内容为作者整理资料所得, 仅供学习使用。如需转载请务必遵循<a style="color:#666" href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" target="_blank" rel="external nofollow noreferrer noopener">CC BY-NC-ND 4.0</a>协议。<br>
 请勿将本篇内容作为权威的教学辅导资料使用, 因无法保证100%准确, 仅供参考。<br>
 如果发现了本篇存在的错误, 欢迎在页面下方提issue指正。<br>
+本篇文章使用MathJax显示数学公式，在使用RSS阅读器时会出现无法正确显示的情况。<br>
 </div>
 
 
@@ -1056,7 +1057,10 @@ DJNZ <span class="hljs-built_in">R4</span>, LOOP2</code></pre></figure>
 <p>当T1工作在方式2时，n为8，波特率为：</p>
 <p>$$波特率=\frac{(2^{SMOD} \div 32) \times f_{osc}}{12 \times (256 - X)}$$</p>
 <p>$X$为定时器T1的初值。</p>
-<p>串口工作在方式1，波特率为2400，则每秒钟最大能发送/接收 $2400 \div 8 = 300Byte$的数据。</p>
+<p>串口工作在方式1，波特率为2400，则每秒钟最大能发送/接收 $2400 \div 10 = 240Byte$的数据。</p>
+<blockquote>
+<p>单片机工作在方式1时, 1帧数据为1个起始位、8个数据位、1个停止位共10位。</p>
+</blockquote>
 <p>8051的UART工作在方式3，要求每秒钟能传送不少于900个字节的数据，则波特率应当大于 $900 \times 8 = 7200bits/s$。</p>
 </li>
 <li><p>比特率2400Kbits/s，时钟频率12M，PC机发送8个字节的数据存到单片机的<code>30H-37H</code>中，随后单片机发送2个确认字节<code>55H</code>和<code>AAH</code>给PC机，使用查询方式。</p>
@@ -1698,6 +1702,8 @@ DJNZ <span class="hljs-built_in">R2</span>, LOOP
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
+      <a href="/posts/hello-2021/" rel="next" title="Hello 2021"><i class="fas fa-angle-left"></i><span class="nav-title">Hello 2021</span></a>
+      
     </div>
     <div class="page-nav-prev page-nav-item">
       
@@ -1847,7 +1853,7 @@ DJNZ <span class="hljs-built_in">R2</span>, LOOP
       
       <div class="archives-count count-block">
         <div class="site-count-title">归档</div>
-        <div><a href="/archives/">4</a></div>
+        <div><a href="/archives/">5</a></div>
       </div>
       
       
@@ -1861,7 +1867,7 @@ DJNZ <span class="hljs-built_in">R2</span>, LOOP
       
       <div class="tags-count count-block">
         <div class="site-count-title">标签</div>
-        <div><a href="/tags/">8</a></div>
+        <div><a href="/tags/">10</a></div>
       </div>
       
       
@@ -1937,7 +1943,7 @@ DJNZ <span class="hljs-built_in">R2</span>, LOOP
       <div><i class="far fa-address-card"></i>社交链接</div>
       <ul>
         
-        <li><i class="fas fa-envelope"></i><a href="mailto:hx916584160@gmail.com" target="_blank" rel="external nofollow noreferrer noopener">E-Mail</a></li>
+        <li><i class="fas fa-envelope"></i><a href="mailto:hxstarrys@gmail.com" target="_blank" rel="external nofollow noreferrer noopener">E-Mail</a></li>
         
         <li><i class="fab fa-github"></i><a href="https://github.com/STARRY-S" target="_blank" rel="external nofollow noreferrer noopener">GitHub</a></li>
         
@@ -2005,4 +2011,4 @@ DJNZ <span class="hljs-built_in">R2</span>, LOOP
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.6.1 at 2020-12-09T04:33:54.351Z. -->
+<!-- Page built by Hikaru v1.6.1 at 2021-01-05T17:56:13.342Z. -->

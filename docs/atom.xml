@@ -7,7 +7,7 @@
   
   <link rel="alternate" type="text/html" href="https://blog.starry-s.me/" />
   
-  <updated>2020-11-03T12:19:36.000Z</updated>
+  <updated>2021-01-05T16:08:52.000Z</updated>
   
   <id>https://blog.starry-s.me/</id>
   
@@ -19,6 +19,100 @@
   <generator uri="https://github.com/AlynxZhou/hikaru-generator-feed/" version="2.2.7">Hikaru Generator Feed</generator>
   
   
+  
+  
+  
+  <entry>
+    <title>Hello 2021</title>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/hello-2021/" />
+    <id>https://blog.starry-s.me/posts/hello-2021/</id>
+    
+    <published>2021-01-05T16:08:52.000Z</published>
+    
+    
+    <updated>2021-01-05T16:08:52.000Z</updated>
+    
+    
+    <summary type="html">
+      &lt;p&gt;&lt;img src=&quot;/posts/hello-2021/images/1.jpg&quot; alt=&quot;Luna tear&quot; title=&quot;Luna tear&quot;&gt;&lt;/p&gt;
+
+    </summary>
+    
+    
+    <content type="html">
+      &lt;link href=&quot;/css/APlayer.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;script src= &quot;/js/APlayer.min.js&quot;&gt;&lt;/script&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/hello-2021/images/1.jpg&quot; alt=&quot;Luna tear&quot; title=&quot;Luna tear&quot;&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+ &lt;!--APlayer--&gt;
+&lt;div id=&quot;aplayer0&quot; style=&quot;background: var(--color-main-background)&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+const ap0 = new APlayer ({
+    container: document.getElementById(&quot;aplayer0&quot;),
+    theme: &quot;#33363b&quot;,
+    fixed: false,
+    listFolded: false,
+    listMaxHeight: false,
+    lrcType: false,
+    mini: false,
+    volume: 0.7,
+    order: &quot;list&quot;,
+    loop: &quot;all&quot;,
+    autoplay: false,
+    audio: [{
+        name: &quot;遊園施設 (Live)&quot;,
+        artist: &quot;MONACA&quot;,
+        url: &quot;https://music.starry-s.me/music/060b_525f_005b_1a5b676bd9e54f83baec7164e3537f7d.m4a&quot;,
+        cover: &quot;https://music.starry-s.me/music/cover/109951163655505102.jpg&quot;,
+        lrc: &quot;&quot;,
+        theme: &quot;#259936&quot;
+    }]
+});
+&lt;/script&gt;  
+&lt;hr&gt;
+&lt;p&gt;本来我已经戴好耳机准备睡觉了的，突然想起来2020年的年终总结还没有写，恰好脑子里有想写的东西，于是大概构思了一下，便从床上爬起来开灯打开电脑开写年终总结。&lt;/p&gt;
+&lt;p&gt;因为思路不是很稳定，总是写了删删了写，所以隔了这么久才把原本已经放弃了不打算写的年终总结重新写出来。&lt;/p&gt;
+&lt;p&gt;果然还是深夜适合写这些东西。&lt;/p&gt;
+&lt;p&gt;今年原本打算能像去年那样在假期外出旅行的，然而疫情爆发后我就一直窝在家待着哪里都没去，不过在1月17号也就是武汉封城前几天，我自己一个人坐飞机跑去北京玩了一圈，当时还不知道有疫情这么一回事，到北京后就是找个地方住下，简单的去了一些景点，后来因为脚疼，很多路远的人多的地方都没有去成。在北京闲逛3天后就坐大客车回家了（一边坐车一遍骂京哈高铁京承段为什么一点进展都没有）。到家后不几天就听说武汉开始封城，然后北京就开始交通管制，现在想想还挺刺激的。&lt;/p&gt;
+&lt;p&gt;然后暑假本来打算去上海BW2020的，在票都买好了之后，因为外出需要和学校审批，（此处省略数字），最终门票全打水漂，飞机票退票手续费还花了三百多块钱。&lt;/p&gt;
+&lt;p&gt;上半年宅在家里大半年，几乎是什么都没学，什么事情都没干。不过也借此机会每天都能睡个大懒觉，总之就是狠狠的歇了一顿，尝试着把高中时期欠的觉补回来，然而似乎并不管用。&lt;/p&gt;
+&lt;p&gt;然后总感觉自己每天都很累，明明什么都没有干但是身体总是一点力气都没有，总之下半年开学后经历了很长一段时间才重新适应了学校的生活，期间心理变化很复杂。&lt;/p&gt;
+&lt;p&gt;所以大二下学期和大三上学期的期末成绩基本上都是刚好及格。（真的是烤60分比烤80分还高兴）&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;年初看了几集超电磁炮3，看到后来因为它更新太慢了就忘了继续看了。之后还看了格莱普尼尔，看这个番纯粹是因为它的OP是Hikaru唱的，看着看着觉得挺有意思而且官方更新速度很快，于是就把第一季追完了。&lt;/p&gt;
+&lt;p&gt;然后因为Lacrimosa这首歌，我才看的黑执事，不过自己比较懒只看了第一季，第二季一直咕到现在都没有看，听说剧情挺虐的所以我更不敢看了。（明明第二季的ed比第一季的还好听）&lt;/p&gt;
+&lt;p&gt;本来还打算看新世纪福音战士的，也是因为懒，看了一集就不继续看了。&lt;/p&gt;
+&lt;p&gt;除此之外，年末的时候在睡前为了打发时间看了几集非自然死亡。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;这一年又打了一遍尼尔：机械纪元。和第一次玩不太一样，二刷时我尽可能的多做支线任务，不开简单模式和自动芯片。不过通关后我还没有打E结局，总想找个时间把其他支线任务做完。&lt;/p&gt;
+&lt;p&gt;年初在逛淘宝时发现了台版的尼尔小说原著，于是毫不犹豫的把少年寄叶、短话和长话全都买了下来。不过截至目前我只看完了短话。在看完艾米尔的回忆那一章后很感动于是打开游戏找到相对应的支线任务，废了很大力气找到那三朵“Luna Tear”（月之泪）之后，前往种着一大片月之泪的地下室。&lt;/p&gt;
+&lt;p&gt;在网上看攻略找到了艾米尔居住的家，于是又走了很远的路到地下很深的地方，到他家里面拿（偷）走了面具。&lt;/p&gt;
+&lt;p&gt;据说去他家偷完东西后会触发艾米尔的boss支线，不过因为在寝室没太多时间所以我没有继续玩下去。&lt;/p&gt;
+&lt;p&gt;蛮期待2021年4月发行的尼尔续作的，不过有些担心我的笔记本还能不能跑得起来。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;尝试着二刷空境原著，不过没刷完，所以只好等以后有时间再看了。&lt;/p&gt;
+&lt;p&gt;2020年下半年花了很大力气尝试玩懂FGO，不过最终因为太肝、自己太非、没时间而劝退，前几章的主线太枯燥乏味了，而且我貌似只对Fate系列和空境系列的人感兴趣，FGO里面的人物基本和他们不沾边而且我也不认识。&lt;/p&gt;
+&lt;p&gt;很期待月姬重制版。既然月姬重置版只在主机平台上映，尼尔续作也有主机版，那么我是不是应该提前准备一台PS4呢？&lt;/p&gt;
+&lt;p&gt;PS5水货太贵了还是算了，除非等国行，然而等国行又要等到4月份。&lt;/p&gt;
+&lt;p&gt;关键是我连PS4都买不起。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;2020年4月份的时候新开了一个Minecraft单机生存的坑，原本是打算看一下新版本（1.15.2）更新了什么新特性的（蜜蜂），结果玩上生存就停不下来了。先是花了两个星期用纯铁镐手挖两个史莱姆区块，用矿车运村民和僵尸照着B站的视频建了简易的刷铁机，之后又用不到一个月的时间解放末地。总之就是玩上了就停不下来了。然后照着B站各大UP主的视频做了末地刷沙机、然后是混凝土固化机，后来挂三向轰炸机肝了3天清了出生点空置域。用了短短几个月的时间一个人建了很多东西，去地狱打了凋零骷髅头，建海上刷怪塔刷火药和骨粉。后来物资储备足够多了之后就开始挖地铁（旧习难改吧），一年的时间挖了两条地铁线路，盖了十几座车站、一座跨海大桥、一栋摩天大楼。&lt;/p&gt;
+&lt;p&gt;原来单机生存这么有意思，B站上有很多生电大佬，然而红科搬的视频我基本都看不懂。&lt;/p&gt;
+&lt;p&gt;后续可能要再修几条地铁，延长已有的线路，然后再搞一些建筑，炸一个原点空置域修全物品分类机，然后还打算升级1.16.4。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;就回忆到这里吧，2020是个特别的一年。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/hello-2021/images/2.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+    </content>
+    
+    
+    
+    <category term="碎碎念" label="碎碎念" scheme="https://blog.starry-s.me/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" />
+    
+    <category term="日常" label="日常" scheme="https://blog.starry-s.me/tags/%E6%97%A5%E5%B8%B8/" />
+    
+  </entry>
   
   
   
@@ -52,6 +146,7 @@
 本篇内容为作者整理资料所得, 仅供学习使用。如需转载请务必遵循&lt;a style=&quot;color:#666&quot; href=&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;CC BY-NC-ND 4.0&lt;/a&gt;协议。&lt;br&gt;
 请勿将本篇内容作为权威的教学辅导资料使用, 因无法保证100%准确, 仅供参考。&lt;br&gt;
 如果发现了本篇存在的错误, 欢迎在页面下方提issue指正。&lt;br&gt;
+本篇文章使用MathJax显示数学公式，在使用RSS阅读器时会出现无法正确显示的情况。&lt;br&gt;
 &lt;/div&gt;
 
 
@@ -767,7 +862,10 @@ DJNZ &lt;span class=&quot;hljs-built_in&quot;&gt;R4&lt;/span&gt;, LOOP2&lt;/code
 &lt;p&gt;当T1工作在方式2时，n为8，波特率为：&lt;/p&gt;
 &lt;p&gt;$$波特率=\frac{(2^{SMOD} \div 32) \times f_{osc}}{12 \times (256 - X)}$$&lt;/p&gt;
 &lt;p&gt;$X$为定时器T1的初值。&lt;/p&gt;
-&lt;p&gt;串口工作在方式1，波特率为2400，则每秒钟最大能发送/接收 $2400 \div 8 = 300Byte$的数据。&lt;/p&gt;
+&lt;p&gt;串口工作在方式1，波特率为2400，则每秒钟最大能发送/接收 $2400 \div 10 = 240Byte$的数据。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;单片机工作在方式1时, 1帧数据为1个起始位、8个数据位、1个停止位共10位。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;8051的UART工作在方式3，要求每秒钟能传送不少于900个字节的数据，则波特率应当大于 $900 \times 8 = 7200bits/s$。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;比特率2400Kbits/s，时钟频率12M，PC机发送8个字节的数据存到单片机的&lt;code&gt;30H-37H&lt;/code&gt;中，随后单片机发送2个确认字节&lt;code&gt;55H&lt;/code&gt;和&lt;code&gt;AAH&lt;/code&gt;给PC机，使用查询方式。&lt;/p&gt;
