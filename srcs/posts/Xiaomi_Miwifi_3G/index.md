@@ -1,9 +1,9 @@
 ---
 title: 小米路由器3G折腾之刷OpenWrt记录
-createdDate: 2019-02-19 00:49:20
-updatedDate: 2020-08-25 13:25:59
+createdDate: 2019-02-19T00:49:20+08:00
+updatedDate: 2020-08-25T13:25:59+08:00
 layout: post
-comment: true
+# comment: true
 tags:
 - 教程
 - 路由器

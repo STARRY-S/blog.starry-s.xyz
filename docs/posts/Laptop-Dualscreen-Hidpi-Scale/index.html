@@ -11,13 +11,13 @@
     
     <meta name="author" content="STARRY-S">
     
-    <meta name="description" content="Morning.">
+    <meta name="description" content="起因 前天在狗东买了台27寸4K显示器，型号为优派VX2771-4K-HD，分辨率3840x2160，支持HDR 10bit色深（然而电脑没DP接口），因为之前已经配置好了optimus-manager，所以电脑接上显示器就能亮，很幸运没有遇到物理问题。 然后一看4K屏上的字小得瞎眼。 如果设置4K屏的分辨率为1080P，就会变得特别糊，根本没法看，效果还没有1080P显示器好。">
     
     
     <meta name="keywords" content="Life, ARIA, Hikaru, STARRY-S, Arch Linux, Linux, Music">
     
     <meta name="generator" content="Hikaru v1.6.1">
-    <link rel="canonical" href="https://blog.starry-s.me/">
+    <link rel="canonical" href="https://blog.starry-s.me/posts/Laptop-Dualscreen-Hidpi-Scale/">
     
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
     
@@ -73,6 +73,20 @@
     
     
     
+    
+    <script defer type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
+    <script type="text/javascript">
+      documentReady(() => {
+        elementsEach(
+          document.querySelectorAll("figure.code-block pre.code code"),
+          (e, i) => {
+            // We want to use hljs' background and color for the whole block.
+            e.parentNode.parentNode.classList.add("hljs");
+            hljs.highlightBlock(e);
+          }
+        );
+      });
+    </script>
     
     
     <script type="text/javascript">
@@ -206,7 +220,7 @@
 
       gtag('config', 'UA-124615792-3');
     </script>
-    <title>STARRY-S' Blog - Morning.</title>
+    <title>解决笔记本外接HIDPI显示器的缩放问题 - STARRY-S' Blog</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage">
     
@@ -231,7 +245,7 @@
       </button>
       <ul id="menu" role="menubar" aria-hidden="false">
         
-        <li role="menuitem"><a href="/" class="current"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
+        <li role="menuitem"><a href="/"><i class="fas fa-home"></i><span class="menu-text">首页</span></a></li>
         
         <li role="menuitem"><a href="/archives/"><i class="fas fa-archive"></i><span class="menu-text">归档</span></a></li>
         
@@ -255,8 +269,7 @@
         <div class="main-container">
           <div class="content">
             
-<div id="index" class="index page">
-  
+<div id="page" class="page">
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/posts/Laptop-Dualscreen-Hidpi-Scale/">
@@ -270,9 +283,7 @@
       </span>
     </div>
     <header class="post-header">
-      <div class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/posts/Laptop-Dualscreen-Hidpi-Scale/" itemprop="url">解决笔记本外接HIDPI显示器的缩放问题</a>
-      </div>
+      <div class="post-title" itemprop="name headline">解决笔记本外接HIDPI显示器的缩放问题</div>
       <div class="post-meta">
         
         <div class="post-date meta-block">
@@ -296,288 +307,14 @@
       </div>
     </header>
     <main class="post-main" id="scrollspy-container" itemprop="articleBody">
-      
-      <h1 id="起因"><a class="header-link" href="/posts/Laptop-Dualscreen-Hidpi-Scale/#%E8%B5%B7%E5%9B%A0" title="起因"></a>起因</h1>
+      <link href="/css/APlayer.min.css" rel="stylesheet">
+<script src= "/js/APlayer.min.js"></script>
+<h1 id="起因"><a class="header-link" href="/posts/Laptop-Dualscreen-Hidpi-Scale/#%E8%B5%B7%E5%9B%A0" title="起因"></a>起因</h1>
 <p>前天在狗东买了台27寸4K显示器，型号为优派VX2771-4K-HD，分辨率3840x2160，支持HDR 10bit色深（然而电脑没DP接口），因为之前已经<strong>配置好了optimus-manager</strong>，所以电脑接上显示器就能亮，很幸运没有遇到物理问题。</p>
 <p>然后一看4K屏上的字小得瞎眼。</p>
 <p>如果设置4K屏的分辨率为1080P，就会变得特别糊，根本没法看，效果还没有1080P显示器好。</p>
+<a id="more"></a>
 
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        <a class="post-tag button" href="/tags/Arch%20Linux/" rel="tag"><i class="fas fa-tag"></i>Arch Linux</a><a class="post-tag button" href="/tags/HIDPI/" rel="tag"><i class="fas fa-tag"></i>HIDPI</a><a class="post-tag button" href="/tags/Dual%20Moniter/" rel="tag"><i class="fas fa-tag"></i>Dual Moniter</a>
-      </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/posts/hello-2021/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="STARRY-S">
-        <meta itemprop="description" content="Morning.">
-        <meta itemprop="image" content="/images/avatar.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="STARRY-S' Blog">
-      </span>
-    </div>
-    <header class="post-header">
-      <div class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/posts/hello-2021/" itemprop="url">Hello 2021</a>
-      </div>
-      <div class="post-meta">
-        
-        <div class="post-date meta-block">
-          <i class="far fa-calendar-check"></i><span><time class="post-full-date" title="post-date" itemprop="dateCreated datePublished" datetime="2021-01-05T17:57:19.000Z">1/6/2021, 1:57:19 AM</time></span>
-        </div>
-        
-        
-        
-        
-        
-        <div class="post-comment-count meta-block">
-          <i class="far fa-comments"></i><span><a href="/posts/hello-2021/#comment-results" itemprop="discussionUrl"><span class="post-comment-count comment-count" data-comment-identifier="Hello 2021" itemprop="commentCount">阅读评论</span></a></span>
-        </div>
-        
-        
-      </div>
-    </header>
-    <main class="post-main" id="scrollspy-container" itemprop="articleBody">
-      
-      <p><img src="/posts/hello-2021/images/1.jpg" alt="Luna tear" title="Luna tear"></p>
-
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        <a class="post-tag button" href="/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" rel="tag"><i class="fas fa-tag"></i>碎碎念</a><a class="post-tag button" href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag"><i class="fas fa-tag"></i>日常</a>
-      </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/posts/learn-mcs8051/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="STARRY-S">
-        <meta itemprop="description" content="Morning.">
-        <meta itemprop="image" content="/images/avatar.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="STARRY-S' Blog">
-      </span>
-    </div>
-    <header class="post-header">
-      <div class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/posts/learn-mcs8051/" itemprop="url">51单片机习题整理</a>
-      </div>
-      <div class="post-meta">
-        
-        <div class="post-date meta-block">
-          <i class="far fa-calendar-check"></i><span><time class="post-full-date" title="post-date" itemprop="dateCreated datePublished" datetime="2020-11-03T12:19:36.000Z">11/3/2020, 8:19:36 PM</time></span>
-        </div>
-        
-        
-        <div class="post-date meta-block">
-          <i class="far fa-calendar-plus"></i><span><time class="post-full-date" title="post-date" itemprop="dateUpdated" datetime="2020-12-09T04:31:15.000Z">11/3/2020, 8:19:36 PM</time></span>
-        </div>
-        
-        
-        <div class="post-categories meta-block">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">单片机</span></a></span>
-        </div>
-        
-        
-        
-        <div class="post-comment-count meta-block">
-          <i class="far fa-comments"></i><span><a href="/posts/learn-mcs8051/#comment-results" itemprop="discussionUrl"><span class="post-comment-count comment-count" data-comment-identifier="51单片机习题整理" itemprop="commentCount">阅读评论</span></a></span>
-        </div>
-        
-        
-      </div>
-    </header>
-    <main class="post-main" id="scrollspy-container" itemprop="articleBody">
-      
-      <p>赶在<del>期中考试</del>(骑磨烤柿)前把单片机的课后习题整理出来...</p>
-<p>(实在是没什么可拿来更新博客的了, 就干脆写点复习资料吧...)</p>
-
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        <a class="post-tag button" href="/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" rel="tag"><i class="fas fa-tag"></i>单片机</a><a class="post-tag button" href="/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" rel="tag"><i class="fas fa-tag"></i>学习资料</a>
-      </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/posts/archlinux-pavilion-gaming-laptop/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="STARRY-S">
-        <meta itemprop="description" content="Morning.">
-        <meta itemprop="image" content="/images/avatar.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="STARRY-S' Blog">
-      </span>
-    </div>
-    <header class="post-header">
-      <div class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/posts/archlinux-pavilion-gaming-laptop/" itemprop="url">惠普光影精灵4在Arch Linux下使用Optimus Manager配置双显卡</a>
-      </div>
-      <div class="post-meta">
-        
-        <div class="post-date meta-block">
-          <i class="far fa-calendar-check"></i><span><time class="post-full-date" title="post-date" itemprop="dateCreated datePublished" datetime="2020-07-19T07:29:57.000Z">7/19/2020, 3:29:57 PM</time></span>
-        </div>
-        
-        
-        <div class="post-date meta-block">
-          <i class="far fa-calendar-plus"></i><span><time class="post-full-date" title="post-date" itemprop="dateUpdated" datetime="2020-11-03T08:39:34.000Z">7/19/2020, 3:29:57 PM</time></span>
-        </div>
-        
-        
-        <div class="post-categories meta-block">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
-        </div>
-        
-        
-        
-        <div class="post-comment-count meta-block">
-          <i class="far fa-comments"></i><span><a href="/posts/archlinux-pavilion-gaming-laptop/#comment-results" itemprop="discussionUrl"><span class="post-comment-count comment-count" data-comment-identifier="惠普光影精灵4在Arch Linux下使用Optimus Manager配置双显卡" itemprop="commentCount">阅读评论</span></a></span>
-        </div>
-        
-        
-      </div>
-    </header>
-    <main class="post-main" id="scrollspy-container" itemprop="articleBody">
-      
-      <p>自从高中毕业至今这台笔记本用了将近两年, 已经记不清当初为什么买了这台笔记本, 刚买来电脑第一次装Arch Linux时遇到了一些坑, 不过大多数的问题Google折腾一会或随着后续的软件更新基本上就都解决了, 唯独配置双显卡这个问题在用了两年后才算是找到了比较满意的解决方法（大概是）, <del>尽管现在这电脑已经停产了, 就算有人买了这台电脑也不一定会拿他装Arch Linux, 不过我还是打算把这个问题的解决过程记录一下</del>（本篇讲的方法应该是适用于大多数N卡+i卡的笔记本电脑的, 只是有些细节不一样）, 以备我后续重装系统时有个参考。</p>
-
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        <a class="post-tag button" href="/tags/Arch%20Linux/" rel="tag"><i class="fas fa-tag"></i>Arch Linux</a><a class="post-tag button" href="/tags/NVIDIA%20Optimus/" rel="tag"><i class="fas fa-tag"></i>NVIDIA Optimus</a>
-      </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/posts/Xiaomi_Miwifi_3G/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="STARRY-S">
-        <meta itemprop="description" content="Morning.">
-        <meta itemprop="image" content="/images/avatar.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="STARRY-S' Blog">
-      </span>
-    </div>
-    <header class="post-header">
-      <div class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/posts/Xiaomi_Miwifi_3G/" itemprop="url">小米路由器3G折腾之刷OpenWrt记录</a>
-      </div>
-      <div class="post-meta">
-        
-        <div class="post-date meta-block">
-          <i class="far fa-calendar-check"></i><span><time class="post-full-date" title="post-date" itemprop="dateCreated datePublished" datetime="2019-02-18T16:49:20.000Z">2/19/2019, 12:49:20 AM</time></span>
-        </div>
-        
-        
-        <div class="post-date meta-block">
-          <i class="far fa-calendar-plus"></i><span><time class="post-full-date" title="post-date" itemprop="dateUpdated" datetime="2020-08-25T05:25:59.000Z">2/19/2019, 12:49:20 AM</time></span>
-        </div>
-        
-        
-        <div class="post-categories meta-block">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">路由器</span></a></span>
-        </div>
-        
-        
-        
-        <div class="post-comment-count meta-block">
-          <i class="far fa-comments"></i><span><a href="/posts/Xiaomi_Miwifi_3G/#comment-results" itemprop="discussionUrl"><span class="post-comment-count comment-count" data-comment-identifier="小米路由器3G折腾之刷OpenWrt记录" itemprop="commentCount">阅读评论</span></a></span>
-        </div>
-        
-        
-      </div>
-    </header>
-    <main class="post-main" id="scrollspy-container" itemprop="articleBody">
-      
-      <div class="alert-red">本篇恢复自旧博客, 由于创作时间过于久远, 作者已无法保证其准确性, 内容仅供参考。</div>
-
-<p>生命不息, 折腾不止...</p>
-
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        <a class="post-tag button" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"><i class="fas fa-tag"></i>教程</a><a class="post-tag button" href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" rel="tag"><i class="fas fa-tag"></i>路由器</a><a class="post-tag button" href="/tags/OpenWrt/" rel="tag"><i class="fas fa-tag"></i>OpenWrt</a>
-      </div>
-      
-    </footer>
-  </article>
-  
-  <article class="article post card" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/posts/hello-world/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="STARRY-S">
-        <meta itemprop="description" content="Morning.">
-        <meta itemprop="image" content="/images/avatar.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="STARRY-S' Blog">
-      </span>
-    </div>
-    <header class="post-header">
-      <div class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/posts/hello-world/" itemprop="url">Everything is based on “Hello World”.</a>
-      </div>
-      <div class="post-meta">
-        
-        <div class="post-date meta-block">
-          <i class="far fa-calendar-check"></i><span><time class="post-full-date" title="post-date" itemprop="dateCreated datePublished" datetime="2016-08-22T06:22:54.000Z">8/22/2016, 2:22:54 PM</time></span>
-        </div>
-        
-        
-        
-        <div class="post-categories meta-block">
-          
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Hello%20World/" itemprop="url" rel="index"><span itemprop="name">Hello World</span></a></span>
-        </div>
-        
-        
-        
-        <div class="post-comment-count meta-block">
-          <i class="far fa-comments"></i><span><a href="/posts/hello-world/#comment-results" itemprop="discussionUrl"><span class="post-comment-count comment-count" data-comment-identifier="Everything is based on “Hello World”." itemprop="commentCount">阅读评论</span></a></span>
-        </div>
-        
-        
-      </div>
-    </header>
-    <main class="post-main" id="scrollspy-container" itemprop="articleBody">
-      
-      <link href="/css/APlayer.min.css" rel="stylesheet">
-<script src= "/js/APlayer.min.js"></script>
-<p><img src="/posts/hello-world/images/image.jpg" alt="&quot;Hello World&quot;" title="Hello World"></p>
  <!--APlayer-->
 <div id="aplayer0" style="background: var(--color-main-background)"></div>
 <script>
@@ -594,42 +331,105 @@ const ap0 = new APlayer ({
     loop: "all",
     autoplay: false,
     audio: [{
-        name: "遊園施設",
-        artist: "帆足圭吾",
-        url: "https://music.starry-s.me/music/540b_075e_0453_cae9f8037d04c81f84993977b01792ec.m4a",
-        cover: "https://music.starry-s.me/music/cover/18710389371705314.jpg",
+        name: "エンドロール",
+        artist: "KEIKO",
+        url: "https://music.starry-s.me/music/obj_w5rDlsOJwrLDjj7CmsOj_5016145218_8a57_c3ad_6dee_bedcb53124a46de8152d464b7db24470.mov",
+        cover: "https://music.starry-s.me/music/cover/109951165501153240.jpg",
         lrc: "",
-        theme: "#67B577"
+        theme: "#886666"
     }]
 });
-</script> 
+</script>  
 
+<h1 id="解决方法"><a class="header-link" href="/posts/Laptop-Dualscreen-Hidpi-Scale/#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95" title="解决方法"></a>解决方法</h1>
+<p>首先按照<a href="https://wiki.archlinux.org/index.php/HiDPI" target="_blank" rel="external nofollow noreferrer noopener">Wiki</a>设置GNOME的HIDPI:</p>
+<figure data-raw="$ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides &quot;[{'Gdk/WindowScalingFactor', <2>}]&quot;
+$ gsettings set org.gnome.desktop.interface scaling-factor 2" data-info="language-text" data-lang="text" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
+<span class="line-number">2</span></pre><pre class="code"><code class="language-plaintext">$ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "[{'Gdk/WindowScalingFactor', &lt;2&gt;}]"
+$ gsettings set org.gnome.desktop.interface scaling-factor 2</code></pre></figure>
+<p>在显示设置里将缩放调到200%后，界面被放大了2被，在4K屏上的字倒是不瞎眼了。</p>
+<p>但是因为笔记本是15寸1080P，所以笔记本上显示的字大得离谱。</p>
+<p>解决方法是使用xrandr调整笔记本电脑的屏幕缩放，笔记本的分辨率为1920x1080，使用xrandr将画面的分辨率放大2倍，也就是调整为3840x2160，然后显示在分辨率为1920x1080的显示器上。</p>
+<p>首先使用<code>xrandr</code>查看每个显示器所对应的设备名称和分辨率。</p>
+<figure data-raw="$ xrandr | grep &quot;$extern connected&quot; 
 
-      
+  HDMI-0 connected primary 3840x2160+0+0 (normal left inverted right x axis y axis) 597mm x 336mm
+  eDP-1-1 connected 1920x1080+0+2160 (normal left inverted right x axis y axis) 344mm x 193mm" data-info="language-text" data-lang="text" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span></pre><pre class="code"><code class="language-plaintext">$ xrandr | grep "$extern connected" 
+
+  HDMI-0 connected primary 3840x2160+0+0 (normal left inverted right x axis y axis) 597mm x 336mm
+  eDP-1-1 connected 1920x1080+0+2160 (normal left inverted right x axis y axis) 344mm x 193mm</code></pre></figure>
+<p>这里HDMI-0是外接的4K显示器，分辨率为3840x2160，位置为(0, 0)。</p>
+<p>eDP-1-1是笔记本的显示器，分辨率1920x1080，位置为(0, 2160)，在4K显示器的左下方。</p>
+<p>参见<a href="https://wiki.archlinux.org/index.php/HiDPI#Multiple_displays" target="_blank" rel="external nofollow noreferrer noopener">Wiki设置双显示器部分</a>，用xrandr将笔记本的显示器缩放2倍，分辨率变为 [1920 * 2]x[1080 * 2]=3840x2160，位置还是在4K显示器的正下方。</p>
+<figure data-raw="$ xrandr --output eDP-1-1 --scale 2.0x2.0 --panning 3840x2160+0+2160 --output HDMI-0 --auto" data-info="language-text" data-lang="text" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span></pre><pre class="code"><code class="language-plaintext">$ xrandr --output eDP-1-1 --scale 2.0x2.0 --panning 3840x2160+0+2160 --output HDMI-0 --auto</code></pre></figure>
+<p>因为不需要修改4K显示器的分辨率，所以HDMI-0设置为auto。</p>
+<p>这样笔记本上的画面也显示正常了。</p>
+<p>但是用过一阵子会发现笔记本显示器上的字比4K显示器上的字小很多，看起来不方便，所以把缩放倍数改为1.6（我是从1.5-2.0之间一点点试的，才找到最适合自己的缩放倍数），这样解决了字体大小的问题，不过笔记本画面还是会有模糊（能接受）。</p>
+<blockquote>
+<p>[1920 * 1.6]x[1080 * 1.6]=3072x1728</p>
+</blockquote>
+<figure data-raw="$ xrandr --output eDP-1-1 --scale 1.6x1.6 --panning 3072x1728+0+2160 --output HDMI-0 --auto" data-info="language-text" data-lang="text" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span></pre><pre class="code"><code class="language-plaintext">$ xrandr --output eDP-1-1 --scale 1.6x1.6 --panning 3072x1728+0+2160 --output HDMI-0 --auto</code></pre></figure>
+<p>用到现在GNOME的缩放还算是完美，除了玩Minecraft用的HMCL启动器（Java程序）没有被放大之外（貌似缺配置，要是配置好了我再补充），Steam界面缩放正常，饥荒、Dota2也都没问题。</p>
+<h1 id="Others"><a class="header-link" href="/posts/Laptop-Dualscreen-Hidpi-Scale/#Others" title="Others"></a>Others</h1>
+<ul>
+<li><p>仅限GNOME，因为我只用GNOME所以不知道其他DE开HIDPI的效果是什么样。</p>
+</li>
+<li><p>听说Wayland支持不同显示器设置不同的缩放倍数，但是我笔记本的HDMI是独显输出，自带屏幕为集显输出，想启用独显输出画面除了用大黄蜂之外只能Nvidia Optimus，然而Optimus不支持Wayland（F**K NVIDIA），于是我现在都不知道用Wayland上双显示器的效果是什么样子，只好改用xorg和optimus-manager切换显卡，再用xrandr调显示器的缩放倍数。</p>
+</li>
+<li><p>xrandr的指令是我自己试了很多遍试出来的，在我电脑上能用，期间遇到一堆问题，所以不保证在别的电脑上也能正常用。</p>
+</li>
+<li><p>如果你正考虑为你的笔记本购买一台新显示器而且你是Linux用户，你的笔记本又是双显卡，不知道HDMI是独显输出还是集显输出的话，建议你买一台和笔记本电脑的分辨率相同的显示器，这样能省去很多麻烦。</p>
+</li>
+</ul>
+
     </main>
     <footer class="post-footer">
       
       <div class="post-tags">
-        <a class="post-tag button" href="/tags/Hello%20World/" rel="tag"><i class="fas fa-tag"></i>Hello World</a>
+        <a class="post-tag button" href="/tags/Arch%20Linux/" rel="tag"><i class="fas fa-tag"></i>Arch Linux</a><a class="post-tag button" href="/tags/HIDPI/" rel="tag"><i class="fas fa-tag"></i>HIDPI</a><a class="post-tag button" href="/tags/Dual%20Moniter/" rel="tag"><i class="fas fa-tag"></i>Dual Moniter</a>
       </div>
       
     </footer>
   </article>
   
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/posts/hello-2021/" rel="prev" title="Hello 2021"><span class="nav-title">Hello 2021</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
+  
   
 
-<nav class="pagination">
-  
-  
-  <a class="page-number current" href="/">1</a>
-  
-  
-</nav>
-
-
-
-  
-  
+<div class="reward" id="reward">
+  <div class="reward-info" id="reward-info">
+    <span>Support Me!</span>
+  </div>
+  <button id="reward-button" class="button reward-button" disable="enable"><i class="fas fa-donate"></i>打赏</button>
+  <div id="qr" class="qr" style="display: none;" aria-hidden="true">
+    
+    <div id="wechatpay">
+      <img id="wechatpay-qr" src="/images/wechatpay.jpg" alt="微信支付"/>
+      <span>微信支付</span>
+    </div>
+    
+    
+    <div id="alipay">
+      <img id="alipay-qr" src="/images/alipay.jpg" alt="支付宝"/>
+      <span>支付宝</span>
+    </div>
+    
+    
+  </div>
+</div>
 
 
 
@@ -645,6 +445,70 @@ const ap0 = new APlayer ({
         "user": "STARRY-S",
         "repo": "Blog",
         "containerClass": "comment-count"
+      });
+    });
+  </script>
+  
+  <div class="comment-results" id="comment-results">
+    <div class="sk-wave" id="sk-wave">
+      <div class="sk-rect sk-rect1"></div>
+      <div class="sk-rect sk-rect2"></div>
+      <div class="sk-rect sk-rect3"></div>
+      <div class="sk-rect sk-rect4"></div>
+      <div class="sk-rect sk-rect5"></div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    documentReady(() => {
+      loadComment({
+        "user": "STARRY-S",
+        "repo": "Blog",
+        "perPage": "10",
+        "sendButtonText": "去评论",
+        "noCommentText": "这个页面还没有评论，现在就去评论吧！",
+        "failText": "你可能达到了 API 请求频率上限，请等待一段时间再刷新。",
+        "title": "解决笔记本外接HIDPI显示器的缩放问题",
+        "queryString": window.location.search,
+        "basePath": "/posts/Laptop-Dualscreen-Hidpi-Scale/",
+        "containerID": "comment-results"
+      }).then(() => {
+        // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
+        // A modern way to show date in user's format.
+        // But it shows date only by default, no time.
+        const formatter = new Intl.DateTimeFormat("zh-Hans", {
+          "year": "numeric",
+          "month": "2-digit",
+          "day": "2-digit",
+          "weekday": "short",
+          "hour": "2-digit",
+          "minute": "2-digit",
+          "second": "2-digit",
+          "timeZoneName": "short",
+          "hour12": false
+        });
+        elementsEach(
+          document.querySelectorAll("time.comment-full-date"),
+          (e, i) => {
+            const date = new Date(e.getAttribute("datetime"));
+            // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/formatToParts
+            const parts = formatter.formatToParts(date);
+            const obj = {};
+            for (let {type, value} of parts) {
+              obj[type] = value
+            }
+            e.innerHTML = `${obj["year"]}-${obj["month"]}-${obj["day"]} ${obj["weekday"]} ${obj["hour"]}:${obj["minute"]}:${obj["second"]} ${obj["timeZoneName"]}`
+          }
+        );
+        elementsEach(
+          document.querySelectorAll("div.comment-content img"),
+          (e, i) => {
+            // If an image works as link,
+            // stop adding link styles to it.
+            if (e.parentNode.tagName.toLowerCase() === "a") {
+              e.parentNode.classList.add("img-link");
+            }
+          }
+        );
       });
     });
   </script>
@@ -711,6 +575,37 @@ const ap0 = new APlayer ({
     
   </div>
   <div class="sidebar-sticky">
+    
+    
+    <hr>
+    <div class="post-toc sidebar-item">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      
+      
+      <ol class="toc" id="scrollspy-target">
+      
+        <li>
+          
+          <a class="list-group-item toc-link" href="#起因">起因</a>
+          
+        </li>
+      
+        <li>
+          
+          <a class="list-group-item toc-link" href="#解决方法">解决方法</a>
+          
+        </li>
+      
+        <li>
+          
+          <a class="list-group-item toc-link" href="#Others">Others</a>
+          
+        </li>
+      
+      </ol>
+      
+    </div>
+    
     
     
     <hr>
@@ -786,4 +681,4 @@ const ap0 = new APlayer ({
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.6.1 at 2021-01-09T16:59:43.593Z. -->
+<!-- Page built by Hikaru v1.6.1 at 2021-01-09T16:59:43.433Z. -->

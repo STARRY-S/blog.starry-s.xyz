@@ -1,13 +1,12 @@
 ---
 title: Everything is based on “Hello World”.
-createdDate: 2016-08-22 14:22:54
+createdDate: 2016-08-22T14:22:54+08:00
 layout: post
-zone: Asia/Shanghai
 tags:
 - Hello World
 categories:
 - Hello World
-comment: true
+# comment: true
 ---
 !["Hello World"](images/image.jpg "Hello World")
 

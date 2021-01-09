@@ -1,15 +1,14 @@
 ---
 title: 51单片机习题整理
-createdDate: 2020-11-03 20:19:36
-updatedDate: 2020-12-09 12:31:15
+createdDate: 2020-11-03T20:19:36+08:00
+updatedDate: 2020-12-09T12:31:15+08:00
 layout: post
-zone: Asia/Shanghai
 tags:
 - 单片机
 - 学习资料
 categories:
 - 单片机
-comment: true
+# comment: true
 mathjax: true
 ---
 

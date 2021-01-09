@@ -1,14 +1,13 @@
 ---
 title: Hello 2021
-createdDate: 2021-01-06 01:57:19
+createdDate: 2021-01-06T01:57:19+08:00
 layout: post
-zone: Asia:Shanghai
 tags:
 - 碎碎念
 - 日常
 categraies:
 - 日常
-comment: true
+# comment: true
 ---
 
 ![Luna tear](/posts/hello-2021/images/1.jpg "Luna tear")

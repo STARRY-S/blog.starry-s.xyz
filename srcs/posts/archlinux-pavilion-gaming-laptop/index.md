@@ -1,7 +1,7 @@
 ---
 title: 惠普光影精灵4在Arch Linux下使用Optimus Manager配置双显卡
-createdDate: 2020-07-19 15:29:57
-updatedDate: 2020-11-03 16:39:34
+createdDate: 2020-07-19T15:29:57+08:00
+updatedDate: 2020-11-03T16:39:34+08:00
 layout: post
 zone: Asia/Shanghai
 tags:
@@ -9,7 +9,7 @@ tags:
 - NVIDIA Optimus
 categories:
 - Linux
-comment: true
+# comment: true
 ---
 
 自从高中毕业至今这台笔记本用了将近两年, 已经记不清当初为什么买了这台笔记本, 刚买来电脑第一次装Arch Linux时遇到了一些坑, 不过大多数的问题Google折腾一会或随着后续的软件更新基本上就都解决了, 唯独配置双显卡这个问题在用了两年后才算是找到了比较满意的解决方法（大概是）, ~~尽管现在这电脑已经停产了, 就算有人买了这台电脑也不一定会拿他装Arch Linux, 不过我还是打算把这个问题的解决过程记录一下~~（本篇讲的方法应该是适用于大多数N卡+i卡的笔记本电脑的, 只是有些细节不一样）, 以备我后续重装系统时有个参考。

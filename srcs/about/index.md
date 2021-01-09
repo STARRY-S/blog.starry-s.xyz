@@ -1,9 +1,8 @@
 ---
 title: About
-createdDate: 2016-08-22 13:25:30
-updatedDate: 2020-08-24 13:42:28
+created: 2016-08-22T13:25:30+08:00
+updated: 2020-08-24T13:42:28+08:00
 layout: about
-zone: Asia/Shanghai
 tags: about
 comment: true
 ---
