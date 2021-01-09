@@ -61,12 +61,12 @@ const ap0 = new APlayer ({
     loop: &quot;all&quot;,
     autoplay: false,
     audio: [{
-        name: &quot;遊園施設 (Live)&quot;,
-        artist: &quot;MONACA&quot;,
-        url: &quot;https://music.starry-s.me/music/060b_525f_005b_1a5b676bd9e54f83baec7164e3537f7d.m4a&quot;,
-        cover: &quot;https://music.starry-s.me/music/cover/109951163655505102.jpg&quot;,
+        name: &quot;カイネ／救済&quot;,
+        artist: &quot;MONACA / 岡部啓一&quot;,
+        url: &quot;https://music.starry-s.me/music/530b_565e_0358_dacd477cbca4bc1acf8f4293c7685998.m4a&quot;,
+        cover: &quot;https://music.starry-s.me/music/cover/2356253418376742.png&quot;,
         lrc: &quot;&quot;,
-        theme: &quot;#259936&quot;
+        theme: &quot;#666666&quot;
     }]
 });
 &lt;/script&gt;  

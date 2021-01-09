@@ -17,11 +17,11 @@ comment: true
 
 <!--aplayer
 {
-    "name": "遊園施設 (Live)",
-    "artist": "MONACA",
-    "theme": "#259936",
-    "url": "https://music.starry-s.me/music/060b_525f_005b_1a5b676bd9e54f83baec7164e3537f7d.m4a",
-    "cover": "https://music.starry-s.me/music/cover/109951163655505102.jpg"
+    "name": "カイネ／救済",
+    "artist": "MONACA / 岡部啓一",
+    "theme": "#666666",
+    "url": "https://music.starry-s.me/music/530b_565e_0358_dacd477cbca4bc1acf8f4293c7685998.m4a",
+    "cover": "https://music.starry-s.me/music/cover/2356253418376742.png"
 }
 --> 
 ------
