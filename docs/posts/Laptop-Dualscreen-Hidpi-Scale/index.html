@@ -339,7 +339,7 @@ const ap0 = new APlayer ({
         theme: "#886666"
     }]
 });
-</script>  
+</script> 
 
 <h1 id="解决方法"><a class="header-link" href="/posts/Laptop-Dualscreen-Hidpi-Scale/#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95" title="解决方法"></a>解决方法</h1>
 <p>首先按照<a href="https://wiki.archlinux.org/index.php/HiDPI" target="_blank" rel="external nofollow noreferrer noopener">Wiki</a>设置GNOME的HIDPI:</p>
@@ -351,13 +351,13 @@ $ gsettings set org.gnome.desktop.interface scaling-factor 2</code></pre></figur
 <p>但是因为笔记本是15寸1080P，所以笔记本上显示的字大得离谱。</p>
 <p>解决方法是使用xrandr调整笔记本电脑的屏幕缩放，笔记本的分辨率为1920x1080，使用xrandr将画面的分辨率放大2倍，也就是调整为3840x2160，然后显示在分辨率为1920x1080的显示器上。</p>
 <p>首先使用<code>xrandr</code>查看每个显示器所对应的设备名称和分辨率。</p>
-<figure data-raw="$ xrandr | grep &quot;$extern connected&quot; 
+<figure data-raw="$ xrandr | grep &quot;$extern connected&quot;
 
   HDMI-0 connected primary 3840x2160+0+0 (normal left inverted right x axis y axis) 597mm x 336mm
   eDP-1-1 connected 1920x1080+0+2160 (normal left inverted right x axis y axis) 344mm x 193mm" data-info="language-text" data-lang="text" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
-<span class="line-number">4</span></pre><pre class="code"><code class="language-plaintext">$ xrandr | grep "$extern connected" 
+<span class="line-number">4</span></pre><pre class="code"><code class="language-plaintext">$ xrandr | grep "$extern connected"
 
   HDMI-0 connected primary 3840x2160+0+0 (normal left inverted right x axis y axis) 597mm x 336mm
   eDP-1-1 connected 1920x1080+0+2160 (normal left inverted right x axis y axis) 344mm x 193mm</code></pre></figure>
@@ -547,21 +547,21 @@ $ gsettings set org.gnome.desktop.interface scaling-factor 2</code></pre></figur
       
       <div class="archives-count count-block">
         <div class="site-count-title">归档</div>
-        <div><a href="/archives/">6</a></div>
+        <div><a href="/archives/">13</a></div>
       </div>
       
       
       
       <div class="categories-count count-block">
         <div class="site-count-title">分类</div>
-        <div><a href="/categories/">5</a></div>
+        <div><a href="/categories/">8</a></div>
       </div>
       
       
       
       <div class="tags-count count-block">
         <div class="site-count-title">标签</div>
-        <div><a href="/tags/">12</a></div>
+        <div><a href="/tags/">19</a></div>
       </div>
       
       
@@ -681,4 +681,4 @@ $ gsettings set org.gnome.desktop.interface scaling-factor 2</code></pre></figur
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.6.1 at 2021-01-09T16:59:43.433Z. -->
+<!-- Page built by Hikaru v1.6.1 at 2021-01-13T18:05:07.078Z. -->

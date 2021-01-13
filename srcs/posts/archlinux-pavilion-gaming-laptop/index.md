@@ -1,7 +1,7 @@
 ---
 title: 惠普光影精灵4在Arch Linux下使用Optimus Manager配置双显卡
-createdDate: 2020-07-19T15:29:57+08:00
-updatedDate: 2020-11-03T16:39:34+08:00
+created: 2020-07-19T15:29:57+08:00
+updated: 2020-11-03T16:39:34+08:00
 layout: post
 zone: Asia/Shanghai
 tags:
@@ -26,7 +26,7 @@ categories:
     "url": "https://music.starry-s.me/music/560e_0558_060b_adc45c798222ffa86a4d1a0cb6ddf18f.m4a",
     "cover": "https://music.starry-s.me/music/cover/18671906464338403.jpg"
 }
---> 
+-->
 
 # 先描述一下踩坑经过
 
@@ -67,7 +67,7 @@ $ yay -S optimus-manager
 
 ## 修改配置文件
 
-``` 
+```
 $ sudo cp /usr/share/optimus-manager.conf /etc/optimus-manager/optimus-manager.conf
 ```
 

@@ -1,7 +1,7 @@
 ---
 title: 小米路由器3G折腾之刷OpenWrt记录
-createdDate: 2019-02-19T00:49:20+08:00
-updatedDate: 2020-08-25T13:25:59+08:00
+created: 2019-02-19T00:49:20+08:00
+updated: 2020-08-25T13:25:59+08:00
 layout: post
 # comment: true
 tags:
@@ -12,7 +12,7 @@ categories:
 - 教程
 - 路由器
 ---
-<div class="alert-red">本篇恢复自旧博客, 由于创作时间过于久远, 作者已无法保证其准确性, 内容仅供参考。</div>
+<div class="alert-red">本篇由于创作时间过于久远, 作者已无法保证其准确性, 内容仅供参考。</div>
 
 生命不息, 折腾不止...
 
@@ -28,7 +28,7 @@ categories:
     "url": "https://music.starry-s.me/music/969d_ef88_965d_f8693c4f0a65db94a9cc0ebb9be2bd06.mp3",
     "cover": "https://music.starry-s.me/music/cover/781752767371058.jpg"
 }
---> 
+-->
 
 # 准备工作
 

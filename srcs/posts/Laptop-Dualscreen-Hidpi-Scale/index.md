@@ -1,6 +1,6 @@
 ---
 title: 解决笔记本外接HIDPI显示器的缩放问题
-createdDate: 2021-01-09T22:12:54+08:00
+created: 2021-01-09T22:12:54+08:00
 layout: post
 tags:
 - Arch Linux
@@ -29,7 +29,7 @@ categories:
     "url": "https://music.starry-s.me/music/obj_w5rDlsOJwrLDjj7CmsOj_5016145218_8a57_c3ad_6dee_bedcb53124a46de8152d464b7db24470.mov",
     "cover": "https://music.starry-s.me/music/cover/109951165501153240.jpg"
 }
---> 
+-->
 
 # 解决方法
 
@@ -49,7 +49,7 @@ $ gsettings set org.gnome.desktop.interface scaling-factor 2
 首先使用`xrandr`查看每个显示器所对应的设备名称和分辨率。
 
 ``` text
-$ xrandr | grep "$extern connected" 
+$ xrandr | grep "$extern connected"
 
   HDMI-0 connected primary 3840x2160+0+0 (normal left inverted right x axis y axis) 597mm x 336mm
   eDP-1-1 connected 1920x1080+0+2160 (normal left inverted right x axis y axis) 344mm x 193mm

@@ -75,7 +75,7 @@ const ap0 = new APlayer ({
         theme: &quot;#886666&quot;
     }]
 });
-&lt;/script&gt;  
+&lt;/script&gt; 
 
 &lt;h1 id=&quot;解决方法&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/Laptop-Dualscreen-Hidpi-Scale/#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95&quot; title=&quot;解决方法&quot;&gt;&lt;/a&gt;解决方法&lt;/h1&gt;
 &lt;p&gt;首先按照&lt;a href=&quot;https://wiki.archlinux.org/index.php/HiDPI&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;Wiki&lt;/a&gt;设置GNOME的HIDPI:&lt;/p&gt;
@@ -87,13 +87,13 @@ $ gsettings set org.gnome.desktop.interface scaling-factor 2&lt;/code&gt;&lt;/pr
 &lt;p&gt;但是因为笔记本是15寸1080P，所以笔记本上显示的字大得离谱。&lt;/p&gt;
 &lt;p&gt;解决方法是使用xrandr调整笔记本电脑的屏幕缩放，笔记本的分辨率为1920x1080，使用xrandr将画面的分辨率放大2倍，也就是调整为3840x2160，然后显示在分辨率为1920x1080的显示器上。&lt;/p&gt;
 &lt;p&gt;首先使用&lt;code&gt;xrandr&lt;/code&gt;查看每个显示器所对应的设备名称和分辨率。&lt;/p&gt;
-&lt;figure data-raw=&quot;$ xrandr | grep &amp;quot;$extern connected&amp;quot; 
+&lt;figure data-raw=&quot;$ xrandr | grep &amp;quot;$extern connected&amp;quot;
 
   HDMI-0 connected primary 3840x2160+0+0 (normal left inverted right x axis y axis) 597mm x 336mm
   eDP-1-1 connected 1920x1080+0+2160 (normal left inverted right x axis y axis) 344mm x 193mm&quot; data-info=&quot;language-text&quot; data-lang=&quot;text&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;gutter&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;2&lt;/span&gt;
 &lt;span class=&quot;line-number&quot;&gt;3&lt;/span&gt;
-&lt;span class=&quot;line-number&quot;&gt;4&lt;/span&gt;&lt;/pre&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;$ xrandr | grep &quot;$extern connected&quot; 
+&lt;span class=&quot;line-number&quot;&gt;4&lt;/span&gt;&lt;/pre&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-plaintext&quot;&gt;$ xrandr | grep &quot;$extern connected&quot;
 
   HDMI-0 connected primary 3840x2160+0+0 (normal left inverted right x axis y axis) 597mm x 336mm
   eDP-1-1 connected 1920x1080+0+2160 (normal left inverted right x axis y axis) 344mm x 193mm&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -145,7 +145,7 @@ $ gsettings set org.gnome.desktop.interface scaling-factor 2&lt;/code&gt;&lt;/pr
     <published>2021-01-05T17:57:19.000Z</published>
     
     
-    <updated>2021-01-05T17:57:19.000Z</updated>
+    <updated>2021-01-13T17:51:06.000Z</updated>
     
     
     <summary type="html">
@@ -176,15 +176,16 @@ const ap0 = new APlayer ({
     loop: &quot;all&quot;,
     autoplay: false,
     audio: [{
-        name: &quot;カイネ／救済&quot;,
-        artist: &quot;MONACA / 岡部啓一&quot;,
-        url: &quot;https://music.starry-s.me/music/530b_565e_0358_dacd477cbca4bc1acf8f4293c7685998.m4a&quot;,
-        cover: &quot;https://music.starry-s.me/music/cover/2356253418376742.png&quot;,
+        name: &quot;Gloria&quot;,
+        artist: &quot;Kalafina&quot;,
+        url: &quot;https://music.starry-s.me/music/kalafina-gloria.aac&quot;,
+        cover: &quot;https://music.starry-s.me/music/cover/2505786999756176.png&quot;,
         lrc: &quot;&quot;,
-        theme: &quot;#666666&quot;
+        theme: &quot;#cc2222&quot;
     }]
 });
-&lt;/script&gt;  
+&lt;/script&gt; 
+
 &lt;hr&gt;
 &lt;p&gt;本来我已经戴好耳机准备睡觉了的，突然想起来2020年的年终总结还没有写，恰好脑子里有想写的东西，于是大概构思了一下，便从床上爬起来开灯打开电脑开写年终总结。&lt;/p&gt;
 &lt;p&gt;因为思路不是很稳定，总是写了删删了写，所以隔了这么久才把原本已经放弃了不打算写的年终总结重新写出来。&lt;/p&gt;
@@ -217,10 +218,19 @@ const ap0 = new APlayer ({
 &lt;p&gt;后续可能要再修几条地铁，延长已有的线路，然后再搞一些建筑，炸一个原点空置域修全物品分类机，然后还打算升级1.16.4。&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;就回忆到这里吧，2020是个特别的一年。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/posts/hello-2021/images/2.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;div style=&quot;text-align:center&quot;&gt;
+  &lt;img src=&quot;/posts/hello-2021/images/2.jpg&quot;&gt;
+&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;p&gt;犹豫了很久最后还是决定把之前删掉的部分文章恢复回来，不然总给人一种这个博客是在2020年创建的而不是2016年创建的错觉。&lt;/p&gt;
+&lt;p&gt;2020年博客鸽了很长一段时间，当时尽管并没有放弃博客但是我真的什么都写不出来，因为看到自己以前写的水文觉得很恶心而且十分不适，于是就在某个心情不好的时候删掉了。后来换了一个新的域名之后就再也没和任何人提起“我还有一个博客”这件事情，因为把博客的文章全删除后几乎没人访问我的博客，新的访客量到现在为止才800多，其中绝大多数都是我自己调试页面刷新时点出来的。&lt;/p&gt;
+&lt;p&gt;对啊博客就是用来记录生活的，所以就让“因为看不惯以前的自己写的啥也不是的水文最终将其全部删掉”也成为博客记录下的一件事吧。&lt;/p&gt;
 
     </content>
     
+    
+    <category term="日常" label="日常" scheme="https://blog.starry-s.me/categories/%E6%97%A5%E5%B8%B8/" />
     
     
     <category term="碎碎念" label="碎碎念" scheme="https://blog.starry-s.me/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" />
@@ -289,7 +299,7 @@ const ap0 = new APlayer ({
         theme: &quot;#25AFF5&quot;
     }]
 });
-&lt;/script&gt;  
+&lt;/script&gt; 
 
 &lt;h1 id=&quot;硬件结构amp;指令系统&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn-mcs8051/#%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84amp;%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F&quot; title=&quot;硬件结构amp;指令系统&quot;&gt;&lt;/a&gt;硬件结构&amp;amp;指令系统&lt;/h1&gt;
 &lt;ol&gt;
@@ -972,7 +982,7 @@ DJNZ &lt;span class=&quot;hljs-built_in&quot;&gt;R4&lt;/span&gt;, LOOP2&lt;/code
 &lt;p&gt;波特率：串行口每秒钟传送的比特位数，单位bits/s。&lt;/p&gt;
 &lt;p&gt;方式0的波特率&lt;strong&gt;固定&lt;/strong&gt;为 $f_{osc}/12$, 方式2的波特率为 $f_{osc}/64$ 或 $f_{osc}/32$ (由SMOD控制)。&lt;/p&gt;
 &lt;p&gt;方式1的波特率和方式3的波特率可变, 公式为 $(2^{SMOD} / 32) \times 定时器T1的溢出率$。&lt;/p&gt;
-&lt;p&gt;T1的溢出率为定时器T1的周期的倒数，定时器的周期为 &lt;/p&gt;
+&lt;p&gt;T1的溢出率为定时器T1的周期的倒数，定时器的周期为&lt;/p&gt;
 &lt;p&gt;$$T = \frac{12\times (2^n - X )}{f_{osc}}$$&lt;/p&gt;
 &lt;p&gt;当T1工作在方式2时，n为8，波特率为：&lt;/p&gt;
 &lt;p&gt;$$波特率=\frac{(2^{SMOD} \div 32) \times f_{osc}}{12 \times (256 - X)}$$&lt;/p&gt;
@@ -1671,7 +1681,7 @@ const ap0 = new APlayer ({
         theme: &quot;#A26208&quot;
     }]
 });
-&lt;/script&gt;  
+&lt;/script&gt; 
 
 &lt;h1 id=&quot;先描述一下踩坑经过&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/archlinux-pavilion-gaming-laptop/#%E5%85%88%E6%8F%8F%E8%BF%B0%E4%B8%80%E4%B8%8B%E8%B8%A9%E5%9D%91%E7%BB%8F%E8%BF%87&quot; title=&quot;先描述一下踩坑经过&quot;&gt;&lt;/a&gt;先描述一下踩坑经过&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -2067,6 +2077,7 @@ tearfree=
 &lt;div style=&quot;text-align:center&quot;&gt;
     &lt;img src=&quot;/posts/archlinux-pavilion-gaming-laptop/images/1.png&quot;&gt;
 &lt;/div&gt;
+
     </content>
     
     
@@ -2076,6 +2087,310 @@ tearfree=
     <category term="Arch Linux" label="Arch Linux" scheme="https://blog.starry-s.me/tags/Arch%20Linux/" />
     
     <category term="NVIDIA Optimus" label="NVIDIA Optimus" scheme="https://blog.starry-s.me/tags/NVIDIA%20Optimus/" />
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Spring - 3</title>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/Spring-3/" />
+    <id>https://blog.starry-s.me/posts/Spring-3/</id>
+    
+    <published>2019-05-03T15:20:43.000Z</published>
+    
+    
+    <updated>2019-05-03T15:20:43.000Z</updated>
+    
+    
+    <summary type="html">
+      &lt;div class=&quot;alert-blue&quot;&gt;
+多图预警
+&lt;/div&gt;
+
+
+    </summary>
+    
+    
+    <content type="html">
+      &lt;link href=&quot;/css/APlayer.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;script src= &quot;/js/APlayer.min.js&quot;&gt;&lt;/script&gt;
+&lt;div class=&quot;alert-blue&quot;&gt;
+多图预警
+&lt;/div&gt;
+
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+&lt;hr&gt;
+ &lt;!--APlayer--&gt;
+&lt;div id=&quot;aplayer0&quot; style=&quot;background: var(--color-main-background)&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+const ap0 = new APlayer ({
+    container: document.getElementById(&quot;aplayer0&quot;),
+    theme: &quot;#33363b&quot;,
+    fixed: false,
+    listFolded: false,
+    listMaxHeight: false,
+    lrcType: false,
+    mini: false,
+    volume: 0.7,
+    order: &quot;list&quot;,
+    loop: &quot;all&quot;,
+    autoplay: false,
+    audio: [{
+        name: &quot;辉く空の静寂には&quot;,
+        artist: &quot;Kalafina&quot;,
+        url: &quot;https://music.starry-s.me/music/4d6b_af91_c8ab_7e676adf998cd77b5d6b8a8e095d4066.mp3&quot;,
+        cover: &quot;https://music.starry-s.me/music/cover/109951163710392062.jpg&quot;,
+        lrc: &quot;&quot;,
+        theme: &quot;#776666&quot;
+    }]
+});
+&lt;/script&gt; 
+
+&lt;p&gt;&lt;img src=&quot;/posts/Spring-3/images/IMG_4238-1.JPG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Spring-3/images/IMG_4150-1.JPG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Spring-3/images/IMG_4204-1.JPG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Spring-3/images/IMG_4245-1.JPG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Spring-3/images/IMG_4242-1.JPG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Spring-3/images/IMG_4216-1.JPG&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+    </content>
+    
+    
+    <category term="日常" label="日常" scheme="https://blog.starry-s.me/categories/%E6%97%A5%E5%B8%B8/" />
+    
+    <category term="Spring" label="Spring" scheme="https://blog.starry-s.me/categories/%E6%97%A5%E5%B8%B8/Spring/" />
+    
+    
+    <category term="摄影" label="摄影" scheme="https://blog.starry-s.me/tags/%E6%91%84%E5%BD%B1/" />
+    
+    <category term="Spring" label="Spring" scheme="https://blog.starry-s.me/tags/Spring/" />
+    
+    <category term="Flowers" label="Flowers" scheme="https://blog.starry-s.me/tags/Flowers/" />
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>一个人的旅行 —— 上海</title>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/Shanghai/" />
+    <id>https://blog.starry-s.me/posts/Shanghai/</id>
+    
+    <published>2019-04-09T05:24:44.000Z</published>
+    
+    
+    <updated>2019-04-21T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">
+      &lt;div style=&quot;text-align:center&quot;&gt;
+  &lt;img src=&quot;/posts/Shanghai/images/shanghai.jpg&quot;&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;alert-blue&quot;&gt;多图预警&lt;/div&gt;
+
+
+    </summary>
+    
+    
+    <content type="html">
+      &lt;link href=&quot;/css/APlayer.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;script src= &quot;/js/APlayer.min.js&quot;&gt;&lt;/script&gt;
+&lt;div style=&quot;text-align:center&quot;&gt;
+  &lt;img src=&quot;/posts/Shanghai/images/shanghai.jpg&quot;&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;alert-blue&quot;&gt;多图预警&lt;/div&gt;
+
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+&lt;p&gt;不要问我为什么过了这么久才把这篇文章码出来…&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Shanghai/images/IMG_4138-1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+ &lt;!--APlayer--&gt;
+&lt;div id=&quot;aplayer0&quot; style=&quot;background: var(--color-main-background)&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+const ap0 = new APlayer ({
+    container: document.getElementById(&quot;aplayer0&quot;),
+    theme: &quot;#33363b&quot;,
+    fixed: false,
+    listFolded: false,
+    listMaxHeight: false,
+    lrcType: false,
+    mini: false,
+    volume: 0.7,
+    order: &quot;list&quot;,
+    loop: &quot;all&quot;,
+    autoplay: false,
+    audio: [{
+        name: &quot;光の旋律&quot;,
+        artist: &quot;Kalafina&quot;,
+        url: &quot;https://music.starry-s.me/music/Hikari_No_Senritsu.mp3&quot;,
+        cover: &quot;https://music.starry-s.me/music/cover/Kalafina All Time Best 2008-2018 small.jpg&quot;,
+        lrc: &quot;&quot;,
+        theme: &quot;#444&quot;
+    }]
+});
+&lt;/script&gt; 
+
+&lt;p&gt;很久以前就有想去上海的念头了。&lt;/p&gt;
+&lt;p&gt;最开始是打算在下一次BW举办的时候去上海的，不过想了想要是一整个寒假哪里都没去实在是不甘心，遂定机票简单的制定了计划和预算，开始了这趟旅行。&lt;/p&gt;
+&lt;p&gt;准确点说不全是我一个人的旅行，只有去除掉和朋友一同坐了一趟飞机和磁悬浮（火车就不算了）后就剩下的就是一人的旅行了。&lt;/p&gt;
+&lt;p&gt;上飞机前的晚上，我硬是没买卧铺票在火车的硬座上坐着熬了一晚上…全靠看Fate Zero熬过来的…&lt;/p&gt;
+&lt;p&gt;之所以来上海是因为我很想看一下这么一座拥有B站总部和巨多B站大佬的城市是什么样子的，某些东西可能在大多数人眼里很平淡普通吧，但是我觉得很好玩。所以去迪士尼玩、登上海之巅、到野生动物园近距离看大老虎（fǔ）吃肉这些只能被我称作是本次旅行的附赠品，我当然不是只奔着这些去上海的，但别人问你你花了那么多钱出去旅游了一趟什么也没玩的话肯定会骂我的对吧。毕竟门票不贵买了也不吃亏。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Shanghai/images/IMG_3617-1.jpg&quot; alt=&quot;龙阳路&quot; title=&quot;龙阳路&quot;&gt;&lt;/p&gt;
+ &lt;!--APlayer--&gt;
+&lt;div id=&quot;aplayer1&quot; style=&quot;background: var(--color-main-background)&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+const ap1 = new APlayer ({
+    container: document.getElementById(&quot;aplayer1&quot;),
+    theme: &quot;#33363b&quot;,
+    fixed: false,
+    listFolded: false,
+    listMaxHeight: false,
+    lrcType: false,
+    mini: false,
+    volume: 0.7,
+    order: &quot;list&quot;,
+    loop: &quot;all&quot;,
+    autoplay: false,
+    audio: [{
+        name: &quot;aquarium&quot;,
+        artist: &quot;Víctor Vergara&quot;,
+        url: &quot;https://music.starry-s.me/music/4098_d136_0a0a_ea008ceca6a370b79cdc52db597556d0.mp3&quot;,
+        cover: &quot;https://music.starry-s.me/music/cover/1379887099097990.jpg&quot;,
+        lrc: &quot;&quot;,
+        theme: &quot;#3333aa&quot;
+    }]
+});
+&lt;/script&gt; 
+
+&lt;!-- &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=330 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=409931671&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt; --&gt;
+
+&lt;p&gt;没急着用Metro大都会手机刷码捶（雾）地铁是因为我更想试一下Apple Pay是怎么操作的（所以这也是我没有办为游客准备的地铁卡的原因），现在觉得我花了60块钱充Apple Pay真的是交智商税，无数次的被卡在炸鸡口出不去有一次手机出bug双击电源键弹不出钱包界面后面排了很长的队伍是怎样的感受可想而知。&lt;/p&gt;
+&lt;p&gt;在此之前只坐过北京地铁和沈阳地铁，在地铁上站两个小时是什么感受只在上海体验过…&lt;/p&gt;
+&lt;p&gt;墙裂推荐看一下&lt;a href=&quot;https://www.bilibili.com/video/av2625588&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;上海轨交的鬼畜（雾）&lt;/a&gt;，不然第一次坐地铁很容易迷路的（谜一样的逻辑）。&lt;/p&gt;
+&lt;p&gt;第一次自己外出，或多或少会有失误的地方，除了像算错火车票时间退票改票多花点手续费之外，旅店选在了嘉定区着实麻烦了许多…&lt;/p&gt;
+&lt;p&gt;因为当时我只知道市区的旅店贵，又不想住青年旅舍，就选个不在市中心但是离地铁站不太远的地方（事实上需要走三十分钟）…&lt;/p&gt;
+&lt;p&gt;到后来才知道我住的地方离江苏好近啊，要是坐11号线支线就江苏花桥了，简直…&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Shanghai/images/IMG_3259-1.jpg&quot; alt=&quot;猫！猫！猫！快看！！！&quot; title=&quot;cat&quot;&gt;&lt;/p&gt;
+&lt;p&gt;不过旅店的窗子对面有猫！！！每天早晨拉开窗帘看到对面房顶有猫在晒太阳的感觉真的开心死了！&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Shanghai/images/IMG_3266-1.jpg&quot; alt=&quot;嘉定西站&quot; title=&quot;嘉定西站&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Shanghai/images/5.jpg&quot; alt=&quot;迪士尼&quot; title=&quot;迪士尼&quot;&gt;&lt;/p&gt;
+&lt;!-- &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=430 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=468490569&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt; --&gt;
+
+ &lt;!--APlayer--&gt;
+&lt;div id=&quot;aplayer2&quot; style=&quot;background: var(--color-main-background)&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+const ap2 = new APlayer ({
+    container: document.getElementById(&quot;aplayer2&quot;),
+    theme: &quot;#33363b&quot;,
+    fixed: false,
+    listFolded: false,
+    listMaxHeight: false,
+    lrcType: false,
+    mini: false,
+    volume: 0.7,
+    order: &quot;list&quot;,
+    loop: &quot;all&quot;,
+    autoplay: false,
+    audio: [{
+        name: &quot;遊園施設&quot;,
+        artist: &quot;帆足圭吾&quot;,
+        url: &quot;https://music.starry-s.me/music/540b_075e_0453_cae9f8037d04c81f84993977b01792ec.m4a&quot;,
+        cover: &quot;https://music.starry-s.me/music/cover/18710389371705314.jpg&quot;,
+        lrc: &quot;&quot;,
+        theme: &quot;#44aa44&quot;
+    }]
+});
+&lt;/script&gt; 
+
+&lt;p&gt;所以最漫长的就是坐11号线花了很长的时间才能从上海的嘉定到上海浦东的迪士尼…&lt;/p&gt;
+&lt;p&gt;一个人去迪士尼的好处就是排队排到最后遇到需要一人凑数的时候我就能合法插队了啊好高兴啊当时（后来我才知道有些地方我一个人是可以直接走单人通道根本不用排队…）&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Shanghai/images/IMG_3382-1.jpg&quot; alt=&quot;玩具总动员&quot; title=&quot;玩具总动员&quot;&gt;&lt;/p&gt;
+&lt;p&gt;和一个小姐姐一起坐的创极速光轮，小姐姐被吓够呛，我全程没敢睁眼睛死死抓住把手猫在最后一排…&lt;/p&gt;
+&lt;p&gt;在B站上看到有人用MC还原了迪士尼的创极速光轮：&lt;a href=&quot;https://www.bilibili.com/video/av13333369&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;av13333369&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;迪士尼的吃的真的香！就算是80多一根的大鸡腿还是有人排很长的队伍去买，就是真香，花了150买了一些吃的。&lt;/p&gt;
+&lt;p&gt;排的最长的队是七个小矮人矿车，足足站了70分钟。&lt;/p&gt;
+&lt;p&gt;除了泡泡龙冲天赛车我没敢坐，别的知名项目基本上都玩了一遍，但很可惜只玩了一遍。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Shanghai/images/IMG_3536-1.jpg&quot; alt=&quot;迪士尼夜光幻影秀&quot; title=&quot;夜光幻影秀&quot;&gt;&lt;/p&gt;
+&lt;p&gt;知道晚上有烟花的时候就决定了这一天待在迪士尼里不走了。&lt;/p&gt;
+&lt;p&gt;夜光幻影秀真的是那种能看哭的震撼。&lt;/p&gt;
+&lt;p&gt;印象最深的就是20：30幻影秀结束后好多人站在那里不想走，还有好多人在拍照。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Shanghai/images/IMG_3388-1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;机智的我选择站在地铁门口等下一班车在屏蔽门打开后跑进去抢一个座，说着看起来很不要脸的行为，但是我的腿真的站不动了…&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;如果是两个人一起去玩的话会更有意思么？&lt;/del&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Shanghai/images/IMG_3610-1.jpg&quot; alt=&quot;&quot; title=&quot;俯瞰风景&quot;&gt;&lt;/p&gt;
+&lt;p&gt;上海之巅的风景很好，我去的那天不是很晴，远处的建筑看起来有些朦胧，不过不影响观景。&lt;/p&gt;
+&lt;p&gt;VR体验区放着AlanWalker的Routine，听着自己喜欢的歌逛观光厅，很有意思的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Shanghai/images/IMG_3600-1.jpg&quot; alt=&quot;&quot; title=&quot;陆家嘴&quot;&gt;&lt;/p&gt;
+&lt;p&gt;陆家嘴附近的吃的是真贵，饿着肚子跑到别的地方吃的午饭...&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Shanghai/images/IMG_3906-1.jpg&quot; alt=&quot;16号线野生动物园站&quot; title=&quot;野生动物园站&quot;&gt;&lt;/p&gt;
+&lt;p&gt;下午坐地铁去野生动物园。&lt;/p&gt;
+&lt;p&gt;又回到了龙阳路地铁站。&lt;/p&gt;
+&lt;p&gt;16号线分大站车小站车，大站车不停野生动物园站，当时差一点上错车。&lt;/p&gt;
+&lt;p&gt;之前在知乎上见过有人吐槽16号线车厢内座椅设计的，等坐上车后才感受到这是真的挤…&lt;/p&gt;
+&lt;p&gt;在16号线上查了英语四级的成绩，压线过，成绩不高不是很满意，不过想了想考试时自己在生病住院，算作是自己为自己找的一个借口吧。&lt;/p&gt;
+&lt;p&gt;野生动物园站离动物园门口炒鸡远，走着去太耽误时间了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Shanghai/images/IMG_3646-1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;等走到动物园的时候已经下午2点多了，开电瓶车的司机总在提醒他们马上就下班了让我们赶紧逛剩下的景点这个很烦，所以最后我又走着在园区溜达了一遍。&lt;/p&gt;
+&lt;p&gt;基本上把所有的动物都看了一边，表示我已经见过这些动物了，在公园里溜达一大圈。&lt;/p&gt;
+&lt;p&gt;等逛完一大圈之后动物园里已经没几个人了，&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Shanghai/images/IMG_3824-1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;站在桥上看下面的天鹅，附近的音响在放AlanWalker的remix过的Faded，真的我很喜欢这首歌。&lt;/p&gt;
+&lt;p&gt;最后花五块钱买包饲料喂天鹅，又买点玉米喂鸽子…&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Shanghai/images/IMG_3875-1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Shanghai/images/IMG_3987-1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;晚上开始下雨，坐地铁回陆家嘴去了东方明珠，由于下雨玻璃上有很多水珠所以最初隔着窗子拍的照片都有些模糊。&lt;/p&gt;
+&lt;p&gt;东方明珠还没有学生票…&lt;/p&gt;
+&lt;p&gt;最开始觉得好亏，花了好多钱还拍不了照片，直到后来我到了下面的空中走廊...&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;在迪士尼和别人撞衫就算了，第二天在东方明珠又撞衫，还是同一个人，啊世界真小。&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;在东方明珠上待了很久，参观了一些其他项目，坐了一把VR过山车（正好赶上最后一趟），很晚才回到旅店。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Shanghai/images/IMG_4071-1.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;div style=&quot;text-align:center&quot;&gt;
+  &lt;img src=&quot;/posts/Shanghai/images/4.jpg&quot; title=&quot;bilibili&quot; alt=&quot;bilibili&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;第三天是先坐11号线到江苏路换二号线然后换四号线然后换十号线…&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;欢迎您乘坐轨道交通四号线，本线环线本线环线本线环线本线环线哈哈哈哈哈哈哈哈哈哈哈哈……&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;傻乎乎的骑共享单车跑去B站总部逛了一大圈，问了一下前台小姐姐只能参观一楼大厅后去了咖啡厅花了50块钱买一杯小电视咖啡（忘记叫什么名字了）后含泪把它喝掉…&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Shanghai/images/3.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;太好吃了呜呜呜呜呜…&lt;/p&gt;
+&lt;p&gt;还真不是Bilibili会员购骗死肥宅钱…&lt;/p&gt;
+&lt;p&gt;所以我什么都没有买。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Shanghai/images/2.jpg&quot; alt=&quot;&quot; title=&quot;武康大楼&quot;&gt;&lt;/p&gt;
+&lt;p&gt;下午开始下雨，懒得拿相机，也没怎么用手机拍照，就顺着地铁线路依次去了趟同济，交大，顺路去了武康大楼，参观了宋庆龄故居。最后去了师范大，没有去复旦因为时间不够了。&lt;/p&gt;
+&lt;p&gt;逛那些校园的时候只是打着伞进去走了一圈代表哦我已经来过这里了，一张照片都没有拍。&lt;/p&gt;
+&lt;p&gt;去同济时正赶上开学，去看了一眼樱花树还没有开，就匆匆走了。&lt;/p&gt;
+&lt;p&gt;只不过是多抽出一些时间让自己走在街上闲逛罢了…&lt;/p&gt;
+&lt;p&gt;好多时间都是在地铁上度过的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Shanghai/images/IMG_4125-1.jpg&quot; alt=&quot;&quot; title=&quot;城隍庙&quot;&gt;&lt;/p&gt;
+&lt;p&gt;想了想明天就要坐飞机回家了所以内心很是不舍晚上又坐地铁去了城隍庙（豫园），吃了豫园卖的特别难吃的小吃后（终于明白为什么上海本地人几乎不去豫园这个地方了）回旅店早早睡觉为明天早起做准备…&lt;/p&gt;
+&lt;p&gt;因为起床晚了为了赶时间坐的磁悬浮去的普通国际姬场（雾），没有坐二号线广兰路到浦东国际机场的延线有些可惜。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Shanghai/images/6.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;飞机即将降落时在城市上空绕了好几圈，体验了好几次失重的感觉（太好玩了我还要玩 #啪）&lt;/p&gt;
+
+    </content>
+    
+    
+    <category term="日常" label="日常" scheme="https://blog.starry-s.me/categories/%E6%97%A5%E5%B8%B8/" />
+    
+    
+    <category term="旅行" label="旅行" scheme="https://blog.starry-s.me/tags/%E6%97%85%E8%A1%8C/" />
+    
+    <category term="日常" label="日常" scheme="https://blog.starry-s.me/tags/%E6%97%A5%E5%B8%B8/" />
+    
+    <category term="摄影" label="摄影" scheme="https://blog.starry-s.me/tags/%E6%91%84%E5%BD%B1/" />
     
   </entry>
   
@@ -2093,7 +2408,7 @@ tearfree=
     
     
     <summary type="html">
-      &lt;div class=&quot;alert-red&quot;&gt;本篇恢复自旧博客, 由于创作时间过于久远, 作者已无法保证其准确性, 内容仅供参考。&lt;/div&gt;
+      &lt;div class=&quot;alert-red&quot;&gt;本篇由于创作时间过于久远, 作者已无法保证其准确性, 内容仅供参考。&lt;/div&gt;
 
 &lt;p&gt;生命不息, 折腾不止...&lt;/p&gt;
 
@@ -2103,7 +2418,7 @@ tearfree=
     <content type="html">
       &lt;link href=&quot;/css/APlayer.min.css&quot; rel=&quot;stylesheet&quot;&gt;
 &lt;script src= &quot;/js/APlayer.min.js&quot;&gt;&lt;/script&gt;
-&lt;div class=&quot;alert-red&quot;&gt;本篇恢复自旧博客, 由于创作时间过于久远, 作者已无法保证其准确性, 内容仅供参考。&lt;/div&gt;
+&lt;div class=&quot;alert-red&quot;&gt;本篇由于创作时间过于久远, 作者已无法保证其准确性, 内容仅供参考。&lt;/div&gt;
 
 &lt;p&gt;生命不息, 折腾不止...&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
@@ -2133,7 +2448,7 @@ const ap0 = new APlayer ({
         theme: &quot;#EFCE82&quot;
     }]
 });
-&lt;/script&gt;  
+&lt;/script&gt; 
 
 &lt;h1 id=&quot;准备工作&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/Xiaomi_Miwifi_3G/#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h1&gt;
 &lt;p&gt;你至少需要以下工具：&lt;/p&gt;
@@ -2272,6 +2587,396 @@ reboot&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;
     <category term="路由器" label="路由器" scheme="https://blog.starry-s.me/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" />
     
     <category term="OpenWrt" label="OpenWrt" scheme="https://blog.starry-s.me/tags/OpenWrt/" />
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>使用HMCL启动Minecraft</title>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/hmcl-minecraft/" />
+    <id>https://blog.starry-s.me/posts/hmcl-minecraft/</id>
+    
+    <published>2018-07-29T09:26:35.000Z</published>
+    
+    
+    <updated>2018-07-29T09:26:35.000Z</updated>
+    
+    
+    <summary type="html">
+      &lt;div class=&quot;alert-red&quot;&gt;
+本篇由于创作时间过于久远，部分下载链接可能失效，因长期未更新，教程仅供参考。
+&lt;/div&gt;
+
+&lt;p&gt;终于到了暑假可以开一个Minecraft服务器和小伙伴联机的时候了！在发现我对吃鸡那类的游戏除了觉得好玩以外没有任何天赋( &lt;del&gt;没钱买鼠标？&lt;/del&gt; )后打算继续玩我的世界，所以为了方便那些想玩Minecraft（非网易代理版）但是还不知道怎么操作的那些小伙伴们，这篇教程就这么诞生了。&lt;/p&gt;
+
+    </summary>
+    
+    
+    <content type="html">
+      &lt;div class=&quot;alert-red&quot;&gt;
+本篇由于创作时间过于久远，部分下载链接可能失效，因长期未更新，教程仅供参考。
+&lt;/div&gt;
+
+&lt;p&gt;终于到了暑假可以开一个Minecraft服务器和小伙伴联机的时候了！在发现我对吃鸡那类的游戏除了觉得好玩以外没有任何天赋( &lt;del&gt;没钱买鼠标？&lt;/del&gt; )后打算继续玩我的世界，所以为了方便那些想玩Minecraft（非网易代理版）但是还不知道怎么操作的那些小伙伴们，这篇教程就这么诞生了。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;本教程将分为二个部分，第一部分将指导你如何使用HMCL启动器安装并使用Minecraft（非网易代理版），第二部分处理一些常见的问题。
+本教程主要写给Windows用户，我想Linux用户不太需要我的教程了吧。。
+可能有人是刚接触电脑的新人，所以我尽可能的把每一步都写详细清楚，方便大家的理解。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;本教程仅提供所述内容的下载连接，游戏的版权归Mojang所有。&lt;/p&gt;
+&lt;p&gt;顺便说一下网易版并不支持MacOS哈哈哈哈。。。。&lt;/p&gt;
+&lt;h1 id=&quot;第一部分：&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/hmcl-minecraft/#%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%9A&quot; title=&quot;第一部分：&quot;&gt;&lt;/a&gt;第一部分：&lt;/h1&gt;
+&lt;h3 id=&quot;如果你尚未在官网购买正版的Minecraft，你可以使用HMCL（&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/hmcl-minecraft/#%E5%A6%82%E6%9E%9C%E4%BD%A0%E5%B0%9A%E6%9C%AA%E5%9C%A8%E5%AE%98%E7%BD%91%E8%B4%AD%E4%B9%B0%E6%AD%A3%E7%89%88%E7%9A%84Minecraft%EF%BC%8C%E4%BD%A0%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8HMCL%EF%BC%88&quot; title=&quot;如果你尚未在官网购买正版的Minecraft，你可以使用HMCL（&quot;&gt;&lt;/a&gt;如果你尚未在官网购买正版的Minecraft，你可以使用HMCL（&lt;/h3&gt;
+&lt;p&gt;1.
+你需要确保你的电脑已安装java8。下载java：&lt;a href=&quot;http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html&lt;/a&gt;&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;接下来你需要下载HMCL启动器。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;我建议去&lt;a href=&quot;https://ci.huangyuhui.net/job/HMCL/&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;HMCL的官方服务器&lt;/a&gt; 下载所需的&lt;code&gt;exe&lt;/code&gt;文件，最好不要从贴吧/论坛下载来路不明/非最新版本的HMCL启动器。&lt;/p&gt;
+&lt;p&gt;选择最新版本的后缀为&lt;code&gt;.exe&lt;/code&gt;的文件下载即可。或者你可以下载后缀为&lt;code&gt;.jar&lt;/code&gt;的文件（用于Linux，MacOS）&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;新建一个文件夹（放在你喜欢的位置例如桌面），将下载的&lt;code&gt;exe/jar&lt;/code&gt;文件复制到这里。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Windows用户直接双击exe文件运行即可，&lt;/p&gt;
+&lt;p&gt;Linux用户你下载的是jar文件所以如果你想运行你需要新建一个可执行文件：&lt;/p&gt;
+&lt;figure data-raw=&quot;$ cd 你的文件夹名称
+$ echo &amp;quot;java -jar hmcl-对应的版本号.jar&amp;quot; &gt; ./start.sh
+$ chmod 744 ./start.sh&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;gutter&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;3&lt;/span&gt;&lt;/pre&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;&lt;span class=&quot;hljs-meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;cd&lt;/span&gt; 你的文件夹名称&lt;/span&gt;
+&lt;span class=&quot;hljs-meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;hljs-string&quot;&gt;&quot;java -jar hmcl-对应的版本号.jar&quot;&lt;/span&gt; &amp;gt; ./start.sh&lt;/span&gt;
+&lt;span class=&quot;hljs-meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; chmod 744 ./start.sh&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;然后在终端执行&lt;code&gt;./start.sh&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;或者直接在终端执行&lt;code&gt;java -jar hmcl-*.jar&lt;/code&gt;即可。&lt;/p&gt;
+&lt;ol start=&quot;4&quot;&gt;
+&lt;li&gt;设置一个你喜欢的名字并一直使用它，选择离线模式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在HMCL里点击右下角的加号下载游戏文件,建议将游戏下载到你启动器所在的文件夹内。&lt;/p&gt;
+&lt;h3 id=&quot;如果你已购买正版Minecraft，在确保java安装好后直接去官网下载启动器再到启动器中下载游戏即可，可能会因网络原因速度慢，这是正常现象。&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/hmcl-minecraft/#%E5%A6%82%E6%9E%9C%E4%BD%A0%E5%B7%B2%E8%B4%AD%E4%B9%B0%E6%AD%A3%E7%89%88Minecraft%EF%BC%8C%E5%9C%A8%E7%A1%AE%E4%BF%9Djava%E5%AE%89%E8%A3%85%E5%A5%BD%E5%90%8E%E7%9B%B4%E6%8E%A5%E5%8E%BB%E5%AE%98%E7%BD%91%E4%B8%8B%E8%BD%BD%E5%90%AF%E5%8A%A8%E5%99%A8%E5%86%8D%E5%88%B0%E5%90%AF%E5%8A%A8%E5%99%A8%E4%B8%AD%E4%B8%8B%E8%BD%BD%E6%B8%B8%E6%88%8F%E5%8D%B3%E5%8F%AF%EF%BC%8C%E5%8F%AF%E8%83%BD%E4%BC%9A%E5%9B%A0%E7%BD%91%E7%BB%9C%E5%8E%9F%E5%9B%A0%E9%80%9F%E5%BA%A6%E6%85%A2%EF%BC%8C%E8%BF%99%E6%98%AF%E6%AD%A3%E5%B8%B8%E7%8E%B0%E8%B1%A1%E3%80%82&quot; title=&quot;如果你已购买正版Minecraft，在确保java安装好后直接去官网下载启动器再到启动器中下载游戏即可，可能会因网络原因速度慢，这是正常现象。&quot;&gt;&lt;/a&gt;如果你已购买正版Minecraft，在确保java安装好后直接去官网下载启动器再到启动器中下载游戏即可，可能会因网络原因速度慢，这是正常现象。&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;请支持正版，RMB165，可使用支付宝。&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;第二部分：&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/hmcl-minecraft/#%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%9A&quot; title=&quot;第二部分：&quot;&gt;&lt;/a&gt;第二部分：&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;笔记本双显卡用户请确保你正确的安装了显卡驱动（新买的笔记本不知道什么是显卡驱动就默认已经安装好了），NVIDA显卡用户在桌面右键选择NVIDIA控制面板（没有这个选项可能是你的显卡驱动没安装好），选择 &lt;strong&gt;3D设置-&amp;gt;管理3D设置&lt;/strong&gt; ，选择添加，找到你安装的JAVA目录下的java.exe，将其设置为高性能处理器。然后保存设置并退出。（ps现在市面上新出的笔记本用集成显卡玩这个游戏也已经很流畅了）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在游戏中按F3，若右侧有NVIDIA字样就说明你已成功的使用独显运行游戏了，在左侧可以观察帧数。&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;&lt;p&gt;Linux用户如果可以启动HMCL但是无法启动游戏错误报告是有关OpenGL的话在确定显卡驱动配置正常后检查一下是否安装了&lt;code&gt;xorg-xrandr&lt;/code&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;64位系统的用户不要安装32位的java，不仅影响性能而且对可使用的内存大小也有限制。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Linux用户如果想用独显玩Minecraft而日常使用时切换回省电的集显，请参考 &lt;a href=&quot;https://sh.alynx.xyz/posts/2017/02/16/Steam-with-Bumblebee/&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;Linux下使Steam调用Bumblebee使用独显&lt;/a&gt;,当然不同的Linux Distribution方法会有不同，请linux用户自行摸索。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;相关内容：&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/hmcl-minecraft/#%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9%EF%BC%9A&quot; title=&quot;相关内容：&quot;&gt;&lt;/a&gt;相关内容：&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://minecraft-zh.gamepedia.com/index.php?title=%E6%95%99%E7%A8%8B/%E6%88%90%E5%8A%9F%E5%9C%B0%E5%90%AF%E5%8A%A8%E6%B8%B8%E6%88%8F&amp;amp;variant=zh-cn&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;教程/成功地启动游戏-Minecraft Wiki&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://minecraft.net/zh-hans/&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;官方网站|Minecraft&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.starry-s.me/posts/raspberrypi-mc-server/&quot;&gt;树莓派之我的世界服务器&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果你感兴趣想一起联机我的世界的话欢迎联系我，大家一起来Van游戏。&lt;/p&gt;
+
+    </content>
+    
+    
+    <category term="Minecraft" label="Minecraft" scheme="https://blog.starry-s.me/categories/Minecraft/" />
+    
+    
+    <category term="Minecraft" label="Minecraft" scheme="https://blog.starry-s.me/tags/Minecraft/" />
+    
+    <category term="HMCL" label="HMCL" scheme="https://blog.starry-s.me/tags/HMCL/" />
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Spring - 2</title>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/Spring-2/" />
+    <id>https://blog.starry-s.me/posts/Spring-2/</id>
+    
+    <published>2018-04-05T10:05:11.000Z</published>
+    
+    
+    <updated>2018-04-05T10:05:11.000Z</updated>
+    
+    
+    <summary type="html">
+      &lt;p&gt;&lt;img src=&quot;/posts/Spring-2/images/05.jpeg&quot; alt=&quot;Spring&quot; title=&quot;Flowers&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;春天来了。&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/Spring-2/#%E6%98%A5%E5%A4%A9%E6%9D%A5%E4%BA%86%E3%80%82&quot; title=&quot;春天来了。&quot;&gt;&lt;/a&gt;春天来了。&lt;/h1&gt;
+&lt;div class=&quot;alert-blue&quot;&gt;
+多图预警
+&lt;/div&gt;
+
+
+    </summary>
+    
+    
+    <content type="html">
+      &lt;p&gt;&lt;img src=&quot;/posts/Spring-2/images/05.jpeg&quot; alt=&quot;Spring&quot; title=&quot;Flowers&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;春天来了。&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/Spring-2/#%E6%98%A5%E5%A4%A9%E6%9D%A5%E4%BA%86%E3%80%82&quot; title=&quot;春天来了。&quot;&gt;&lt;/a&gt;春天来了。&lt;/h1&gt;
+&lt;div class=&quot;alert-blue&quot;&gt;
+多图预警
+&lt;/div&gt;
+
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+&lt;p&gt;&lt;img src=&quot;/posts/Spring-2/images/01.jpeg&quot; alt=&quot;Spring 1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Spring-2/images/02.jpeg&quot; alt=&quot;Spring 2&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Spring-2/images/03.jpeg&quot; alt=&quot;Spring 3&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Spring-2/images/04.jpeg&quot; alt=&quot;Spring 4&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Spring-2/images/06.jpeg&quot; alt=&quot;Spring 6&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Spring-2/images/07.jpeg&quot; alt=&quot;Spring 7&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Spring-2/images/08.jpeg&quot; alt=&quot;Spring 8&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;Spring-2&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/Spring-2/#Spring-2&quot; title=&quot;Spring-2&quot;&gt;&lt;/a&gt;Spring - 2&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;拍摄自2018-3-28&lt;/p&gt;
+&lt;/blockquote&gt;
+
+    </content>
+    
+    
+    <category term="日常" label="日常" scheme="https://blog.starry-s.me/categories/%E6%97%A5%E5%B8%B8/" />
+    
+    <category term="Spring" label="Spring" scheme="https://blog.starry-s.me/categories/%E6%97%A5%E5%B8%B8/Spring/" />
+    
+    
+    <category term="摄影" label="摄影" scheme="https://blog.starry-s.me/tags/%E6%91%84%E5%BD%B1/" />
+    
+    <category term="Spring" label="Spring" scheme="https://blog.starry-s.me/tags/Spring/" />
+    
+    <category term="Flowers" label="Flowers" scheme="https://blog.starry-s.me/tags/Flowers/" />
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Spring</title>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/Spring/" />
+    <id>https://blog.starry-s.me/posts/Spring/</id>
+    
+    <published>2017-05-05T14:28:00.000Z</published>
+    
+    
+    <updated>2017-05-05T14:28:00.000Z</updated>
+    
+    
+    <summary type="html">
+      &lt;div class=&quot;alert-blue&quot;&gt;
+多图预警
+&lt;/div&gt;
+
+&lt;p&gt;前一阵子拍的一些花，简单地用手机和电脑调了颜色，感觉蛮好看的。感觉有的照片可以当作壁纸了。&lt;/p&gt;
+
+    </summary>
+    
+    
+    <content type="html">
+      &lt;div class=&quot;alert-blue&quot;&gt;
+多图预警
+&lt;/div&gt;
+
+&lt;p&gt;前一阵子拍的一些花，简单地用手机和电脑调了颜色，感觉蛮好看的。感觉有的照片可以当作壁纸了。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+&lt;hr&gt;
+&lt;h2 id=&quot;拍摄自ipodtouch6&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/Spring/#%E6%8B%8D%E6%91%84%E8%87%AAipodtouch6&quot; title=&quot;拍摄自ipodtouch6&quot;&gt;&lt;/a&gt;拍摄自ipod touch6&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Spring/images/1491917117692.jpeg&quot; alt=&quot;Spring_1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Spring/images/1491917129991.jpeg&quot; alt=&quot;Spring_3&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Spring/images/1491917137076.jpeg&quot; alt=&quot;Spring_4&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Spring/images/1491917142441.jpeg&quot; alt=&quot;Spring_5&quot;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;拍摄自佳能powershots100&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/Spring/#%E6%8B%8D%E6%91%84%E8%87%AA%E4%BD%B3%E8%83%BDpowershots100&quot; title=&quot;拍摄自佳能powershots100&quot;&gt;&lt;/a&gt;拍摄自佳能powershot s100&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Spring/images/IMG_0009.jpg&quot; alt=&quot;Spring_6&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Spring/images/IMG_0011.jpg&quot; alt=&quot;Spring_7&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Spring/images/IMG_0012.jpg&quot; alt=&quot;Spring_8&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Spring/images/IMG_0018.jpg&quot; alt=&quot;Spring_9&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/Spring/images/IMG_0025.jpg&quot; alt=&quot;Spring_10&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;——Spring&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/Spring/#%E2%80%94%E2%80%94Spring&quot; title=&quot;——Spring&quot;&gt;&lt;/a&gt;——Spring&lt;/h1&gt;
+
+    </content>
+    
+    
+    <category term="日常" label="日常" scheme="https://blog.starry-s.me/categories/%E6%97%A5%E5%B8%B8/" />
+    
+    <category term="Spring" label="Spring" scheme="https://blog.starry-s.me/categories/%E6%97%A5%E5%B8%B8/Spring/" />
+    
+    
+    <category term="摄影" label="摄影" scheme="https://blog.starry-s.me/tags/%E6%91%84%E5%BD%B1/" />
+    
+    <category term="Spring" label="Spring" scheme="https://blog.starry-s.me/tags/Spring/" />
+    
+    <category term="Flowers" label="Flowers" scheme="https://blog.starry-s.me/tags/Flowers/" />
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Sorry & Thank you.</title>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/sorry-thankyou/" />
+    <id>https://blog.starry-s.me/posts/sorry-thankyou/</id>
+    
+    <published>2016-11-26T07:00:24.000Z</published>
+    
+    
+    <updated>2016-11-26T07:00:24.000Z</updated>
+    
+    
+    <summary type="html">
+      &lt;div style=&quot;text-align:center&quot;&gt;
+  &lt;img src=&quot;/posts/sorry-thankyou/images/snow.jpg&quot; alt=&quot;Snow&quot; title=&quot;Snow&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;想了很久不知道以什么来作为本篇文章的开头，不确定自己真的想说些什么，但是我还是带着确切目的来写这篇文章的。&lt;/p&gt;
+&lt;p&gt;这一个月发生了一些不太愉快的事，可能不算很大吧但是对我来说这个影响真的很大。我不知道应该从何说起，先静下来带上耳机慢慢的想慢慢的写。&lt;/p&gt;
+
+    </summary>
+    
+    
+    <content type="html">
+      &lt;div style=&quot;text-align:center&quot;&gt;
+  &lt;img src=&quot;/posts/sorry-thankyou/images/snow.jpg&quot; alt=&quot;Snow&quot; title=&quot;Snow&quot;&gt;
+&lt;/div&gt;
+
+&lt;p&gt;想了很久不知道以什么来作为本篇文章的开头，不确定自己真的想说些什么，但是我还是带着确切目的来写这篇文章的。&lt;/p&gt;
+&lt;p&gt;这一个月发生了一些不太愉快的事，可能不算很大吧但是对我来说这个影响真的很大。我不知道应该从何说起，先静下来带上耳机慢慢的想慢慢的写。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+&lt;hr&gt;
+&lt;p&gt;一直没想到有些事发生的这么快，短短4个月发生了这么多变化。&lt;/p&gt;
+&lt;p&gt;还记得4个月前还在忙小考试的那阵子，这只猫就这么来到了我的生活中。&lt;/p&gt;
+&lt;p&gt;4个月它变化很大，长大了许多，从一只几斤重的小猫一下子变成一只大猫了。&lt;/p&gt;
+&lt;p&gt;它是一只很通人性的猫，可以用很乖来形容。在家里不打翻任何东西，犯错误会很主动的认错等待受罚。虽然它没有和人沟通的能力但是能看出它一直都想和人说话，一直都在努力的想表达很多事情。甚至它一直都在学人的一举一动。&lt;/p&gt;
+&lt;p&gt;它喜欢外出。和别的猫不一样，它可以被绳子栓着溜。夏天的时候我和家人一起在河边陪它溜达。它也不像别的猫那样到处乱跑。路人很喜欢它刷白刷白的毛，在河边很显眼。&lt;/p&gt;
+&lt;p&gt;它爱吃猫罐头，经常晚上缠在脚边要罐头吃。有时我太懒了就懒得管他，就只给它一碗猫粮。&lt;/p&gt;
+&lt;p&gt;和它相处的这段日子很愉快很美好。&lt;/p&gt;
+&lt;p&gt;每天晚上放学回家都能看到它激动的朝你跑来，晚上睡觉它还会趴在你的床边。&lt;/p&gt;
+&lt;p&gt;养一只猫的生活很别样的丰富多彩。它改变了我许多。后来它也就成了我生命的一部分了。&lt;/p&gt;
+&lt;p&gt;猫的思维也挺特殊的，和人有很大的不同&lt;/p&gt;
+&lt;p&gt;我可以用很规矩来形容一个猫。它在我眼里每天生活得都很规矩，定时定点的干一些事，并且总把它的主人当亲人来对待吧。&lt;/p&gt;
+&lt;p&gt;每天上学后都能听到几声它独自在家中哭嚎一般的叫声，听着挺揪心的，但是也没办法。&lt;/p&gt;
+&lt;p&gt;没想到一切过去得这么快，甚至我现在还难以回忆过去。&lt;/p&gt;
+&lt;p&gt;一周前的早晨，它去世了。&lt;/p&gt;
+&lt;p&gt;一瞬间觉得这和我想的有些不一样。&lt;/p&gt;
+&lt;p&gt;原本普通的一天中午就这样变得不同了。一下午我都神混颠倒的听老师讲课。还是请了一节课的假回家和家人一起把它带到大凌河边埋起来了。&lt;/p&gt;
+&lt;p&gt;我选择了沉默起来，没有和任何人说这件事。尽可能的不被这悲伤困扰着。中午在家带上耳机想让自己静下来，但是眼泪就抑制不住的往外流。心里还是那么的舍不得，没有告别的就这么离去了。&lt;/p&gt;
+&lt;p&gt;我缓了好长好长的时间。在学校里不愿多说一句话，在家里不敢想太多的东西，稍微有些害怕，有一些孤独。之前每天回家都会习惯性的喊几声它的名字，但是现在又要想方设法的控制自己不要这么做。&lt;/p&gt;
+&lt;p&gt;考虑了很久决定写点什么来纪念一下这只陪伴了我几个月的猫咪。的确，我没想到这么快失去它。尽管过去半个月了但我仍能梦到和它一起玩耍时的场景，总觉得它还活着。&lt;/p&gt;
+&lt;p&gt;总觉得没有和它说再见，梦里梦见它还是活蹦乱跳的和我闹。一切就像梦一样，我告诉自己那只是一场梦。在梦里和它说再见吧，这一切只能在梦里完成了，梦是那么的真实，总给我一种错觉。而真正的现实却被我当作梦境去面对了。&lt;/p&gt;
+&lt;p&gt;还有几天又要考试了，而这次我真的觉得累了。看到班级同学都在使劲的在课上学着，而我想歇一歇。先找几本书看一下吧，总感觉2016年的下半年大脑一直处在混沌的状态，丝毫没有清醒过，做事情的动机也没有了，一点都不像年初时的自己了。随着自己最喜欢的那首歌听腻了，就在也没找到更好听的歌来唤醒大脑的深处。而年末又发生了这些事情。我不得不好好的想想，我到底遗忘了什么，身体为什么这么的累，忙活了一切究竟换回来的是什么，尽管没有后悔过但是真的好累好累。这不是我给自己规划的生活。
+带耳机把这些一点点的写出来，也许写出来心里就会好受了吧。&lt;/p&gt;
+&lt;p&gt;有些事没办法按照自己所想的那样去进行，自己所想的和实际发生的之间的差距总是那么大，也许这就是生活吧。&lt;/p&gt;
+&lt;p&gt;这就是缘份吧，我想。&lt;/p&gt;
+&lt;p&gt;感谢它陪伴我的这4个月。心里想着有些对不起它，但是又没办法挽回了。&lt;/p&gt;
+&lt;p&gt;静静的在心里想：谢谢，对不起。&lt;/p&gt;
+&lt;p&gt;一切过去的好快，每天还是要面对着新的一切，还要去上学，还要有理想。重新规划一下未来，把没必要的数据都清理掉，给大脑一周的假期。一切还在继续。&lt;/p&gt;
+&lt;p&gt;看到AlanWalker终于发布新曲了，非常激动的戴耳机去听。看到这样一个有理想，一直努力的人真好。&lt;/p&gt;
+&lt;p&gt;一眨眼2016也就这么过去了。站在2017回首过去一年感觉自己变了好多，经历了好多的事。认识了好多的人，我的生活也就这么一点点的被他们影响着。但是这也没什么不好，虽然累点但是一切还是值得去走的。高中生活过去一半了，真的很快啊，或许到了高三时间会过得更快吧。要学会珍惜，要多和现在还存在的人和事待一会儿。一旦自己发现我已经失去了什么改变不回来时，就都晚了。&lt;/p&gt;
+&lt;p&gt;说实话我觉得我性格很大大咧咧的马马虎虎的，但是在班里却很宅的样子都不是很愿意说话。我找不到别的形容自己的词了，感觉说自己二一点也没什么不妥的。可能是我有时候疏忽大意了吧，忽略掉了身边好多对我好的人，还犯下了好多改不了的错误。有时候感觉自己蛮聪明的然后自己固执到了犯了错误都不愿意找原因的地步，然后自己就陷在这里越来越深了。感觉自己一直都是在拆了东墙补西墙那样的生活着，维护起网站了就开始遗弃用了多年的QQ空间了，一遇到点新鲜事就把脑子里别的东西全忘掉了，然后自己就这么看似完美的一天天的走下去了。  &lt;/p&gt;
+&lt;p&gt;可能还需要经历很久我在能把自己的毛病改过来吧，或许很久以后我也意识不到自己的毛病。&lt;/p&gt;
+&lt;p&gt;两个月过去了，期末过去了，春节即将来临了。有时候我还会不由自主的问自己我养过那只猫吗？它死了吗？发生过了什么吗？······也许一个人真的被什么东西伤到了影响到了他的正常生活后，他的大脑就会控制他自己不顾一切的忘掉这些事情。所以现在我彻底的忘掉了他的样子，盯着窗户上的堵死的猫洞会发呆很久才能想起来这是干什么用的，回看他的照片时会感到很陌生一样问自己，这只猫好可爱啊，为什么我一点和他熟悉的感觉都没有了呢。&lt;/p&gt;
+&lt;p&gt;感谢在生命中遇见了它，一切来的快去的也快。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/sorry-thankyou/images/thankyou.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;SorryThankyou&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/sorry-thankyou/#SorryThankyou&quot; title=&quot;SorryThankyou&quot;&gt;&lt;/a&gt;Sorry,Thankyou.&lt;/h1&gt;
+
+    </content>
+    
+    
+    <category term="日常" label="日常" scheme="https://blog.starry-s.me/categories/%E6%97%A5%E5%B8%B8/" />
+    
+    
+    <category term="日常" label="日常" scheme="https://blog.starry-s.me/tags/%E6%97%A5%E5%B8%B8/" />
+    
+    <category term="碎碎念" label="碎碎念" scheme="https://blog.starry-s.me/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" />
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>树莓派之我的世界服务器</title>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/raspberrypi-mc-server/" />
+    <id>https://blog.starry-s.me/posts/raspberrypi-mc-server/</id>
+    
+    <published>2016-11-25T07:01:28.000Z</published>
+    
+    
+    <updated>2016-11-25T07:01:28.000Z</updated>
+    
+    
+    <summary type="html">
+      &lt;div class=&quot;alert-red&quot;&gt;本篇由于创作时间过于久远, 作者已无法保证其准确性, 内容仅供参考。&lt;/div&gt;
+
+&lt;p&gt;刚买树莓派3B时就想弄一个我的世界服务器，但是那时不懂Linux，服务器也就没建成。这一阵子打算把这个计划再捡起来，和同学一起联机的话树莓派还是能做到的。ARM系列的CPU性能肯定比X86_64电脑的CPU弱许多，外加上树莓派1G的运行内存，让它跑大型服务器肯定是不可能的，所以只能弄一个几个人联机的小服务器了。&lt;/p&gt;
+
+    </summary>
+    
+    
+    <content type="html">
+      &lt;div class=&quot;alert-red&quot;&gt;本篇由于创作时间过于久远, 作者已无法保证其准确性, 内容仅供参考。&lt;/div&gt;
+
+&lt;p&gt;刚买树莓派3B时就想弄一个我的世界服务器，但是那时不懂Linux，服务器也就没建成。这一阵子打算把这个计划再捡起来，和同学一起联机的话树莓派还是能做到的。ARM系列的CPU性能肯定比X86_64电脑的CPU弱许多，外加上树莓派1G的运行内存，让它跑大型服务器肯定是不可能的，所以只能弄一个几个人联机的小服务器了。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;终于可以继续更新博客了！原计划是11月之前更新博客的。不巧电脑出了问题，重装了一遍Arch Linux,后来又发生了一些事一直没能用电脑。由于开学到现在能放假供我写博客的时间少之又少，这篇原本在11月初就能发表的文章就这样被硬生生推迟到了11月末了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;材料以及工具&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/raspberrypi-mc-server/#%E6%9D%90%E6%96%99%E4%BB%A5%E5%8F%8A%E5%B7%A5%E5%85%B7&quot; title=&quot;材料以及工具&quot;&gt;&lt;/a&gt;材料以及工具&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;树莓派一只 （包括所需要的C10的内存卡以及刷好的固件以及5v，2.5A充电器）&lt;/li&gt;
+&lt;li&gt;一个支持DDNS的路由器（非必须）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果不想用树莓派建服务器的话也可以按照本教程在电脑上搭建服务器。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;配置树莓派&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/raspberrypi-mc-server/#%E9%85%8D%E7%BD%AE%E6%A0%91%E8%8E%93%E6%B4%BE&quot; title=&quot;配置树莓派&quot;&gt;&lt;/a&gt;配置树莓派&lt;/h1&gt;
+&lt;h2 id=&quot;调整GPU可使用的内存：&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/raspberrypi-mc-server/#%E8%B0%83%E6%95%B4GPU%E5%8F%AF%E4%BD%BF%E7%94%A8%E7%9A%84%E5%86%85%E5%AD%98%EF%BC%9A&quot; title=&quot;调整GPU可使用的内存：&quot;&gt;&lt;/a&gt;调整GPU可使用的内存：&lt;/h2&gt;
+&lt;p&gt;毕竟用树莓派开服务器不需要占用GPU，直接调低。&lt;/p&gt;
+&lt;p&gt;Raspbian: &lt;code&gt;raspi-config&lt;/code&gt;中将GPU内存分为16M。&lt;/p&gt;
+&lt;p&gt;Arch Linux ARM: &lt;code&gt;/boot/config.txt&lt;/code&gt;中更改GPU显存为16&lt;/p&gt;
+&lt;h1 id=&quot;安装JAVA&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/raspberrypi-mc-server/#%E5%AE%89%E8%A3%85JAVA&quot; title=&quot;安装JAVA&quot;&gt;&lt;/a&gt;安装JAVA&lt;/h1&gt;
+&lt;p&gt;Archlinux ARM:&lt;/p&gt;
+&lt;figure data-raw=&quot;$ sudo pacman -S jre8-openjdk&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;gutter&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;&lt;/pre&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-elixir&quot;&gt;&lt;span class=&quot;hljs-variable&quot;&gt;$ &lt;/span&gt;sudo pacman -S jre8-openjdk&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;通用方法：
+前往 &lt;strong&gt;&lt;a href=&quot;http://www.oracle.com/technetwork/cn/java/javase/downloads/jdk8-downloads-2133151-zhs.html&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;JAVA下载页&lt;/a&gt;&lt;/strong&gt; 下载树莓派（ARM架构，32位系统）所支持的JDK。&lt;/p&gt;
+&lt;figure data-raw=&quot;$ mkdir ./java
+$ tar -zxvf 你所下载的JDK.jar.gz -C ./java/&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;gutter&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;2&lt;/span&gt;&lt;/pre&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-awk&quot;&gt;$ mkdir ./java
+$ tar -zxvf 你所下载的JDK.jar.gz -C .&lt;span class=&quot;hljs-regexp&quot;&gt;/java/&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;在终端输入&lt;code&gt;./java/jdk1.8.0/bin/java -version&lt;/code&gt;显示java的版本号。&lt;/p&gt;
+&lt;h1 id=&quot;部署服务器&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/raspberrypi-mc-server/#%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8&quot; title=&quot;部署服务器&quot;&gt;&lt;/a&gt;部署服务器&lt;/h1&gt;
+&lt;p&gt;本篇使用&lt;a href=&quot;https://github.com/PaperMC/Paper&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;Paper MC&lt;/a&gt;部署服务器。
+除了Paper之外还有Bukkit和Spigot以及原版可选。&lt;/p&gt;
+&lt;p&gt;使用以下命令启动服务器。&lt;/p&gt;
+&lt;figure data-raw=&quot;$ echo eula=True &gt; eula.txt
+$ ./java/jdk*/bin/java -Xms512M -Xmx1024M -jar ./spigot.jar&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;gutter&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;2&lt;/span&gt;&lt;/pre&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-gradle&quot;&gt;$ echo eula=&lt;span class=&quot;hljs-keyword&quot;&gt;True&lt;/span&gt; &amp;gt; eula.txt
+$ .&lt;span class=&quot;hljs-regexp&quot;&gt;/java/&lt;/span&gt;jdk*&lt;span class=&quot;hljs-regexp&quot;&gt;/bin/&lt;/span&gt;java -Xms512M -Xmx1024M -jar ./spigot.jar&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;第一次运行会下载一些文件需要一定的时间。&lt;/p&gt;
+&lt;p&gt;网上有很多服务器插件和Mod什么的。本章中不做过多介绍.&lt;/p&gt;
+&lt;h1 id=&quot;用screen保持服务器一直运行而不被关掉。&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/raspberrypi-mc-server/#%E7%94%A8screen%E4%BF%9D%E6%8C%81%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%80%E7%9B%B4%E8%BF%90%E8%A1%8C%E8%80%8C%E4%B8%8D%E8%A2%AB%E5%85%B3%E6%8E%89%E3%80%82&quot; title=&quot;用screen保持服务器一直运行而不被关掉。&quot;&gt;&lt;/a&gt;用screen 保持服务器一直运行而不被关掉。&lt;/h1&gt;
+&lt;p&gt;首先安装好screen。&lt;/p&gt;
+&lt;figure data-raw=&quot;$ screen
+$ ./java/jdk1.8.0/bin/java -Xms512M -Xmx1024M -jar./paperclip.jar&quot; class=&quot;code-block highlight hljs&quot;&gt;&lt;pre class=&quot;gutter&quot;&gt;&lt;span class=&quot;line-number&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;line-number&quot;&gt;2&lt;/span&gt;&lt;/pre&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-routeros&quot;&gt;$&lt;span class=&quot;hljs-built_in&quot;&gt; screen
+&lt;/span&gt;$ ./java/jdk1.8.0/bin/java -Xms512M -Xmx1024M -jar./paperclip.jar&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;在配置好你的服务器后就可以和小伙伴一起联机了。经过测试几个人简单的联机运行蛮正常的。&lt;/p&gt;
+
+    </content>
+    
+    
+    <category term="Minecraft" label="Minecraft" scheme="https://blog.starry-s.me/categories/Minecraft/" />
+    
+    
+    <category term="Minecraft" label="Minecraft" scheme="https://blog.starry-s.me/tags/Minecraft/" />
+    
+    <category term="树莓派" label="树莓派" scheme="https://blog.starry-s.me/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" />
     
   </entry>
   
