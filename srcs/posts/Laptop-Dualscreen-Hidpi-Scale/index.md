@@ -40,7 +40,7 @@ $ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "[{'Gdk/Wi
 $ gsettings set org.gnome.desktop.interface scaling-factor 2
 ```
 
-在显示设置里将缩放调到200%后，界面被放大了2被，在4K屏上的字倒是不瞎眼了。
+在显示设置里将缩放调到200%后，界面被放大了2倍，在4K屏上的字倒是不瞎眼了。
 
 但是因为笔记本是15寸1080P，所以笔记本上显示的字大得离谱。
 

@@ -347,7 +347,7 @@ const ap0 = new APlayer ({
 $ gsettings set org.gnome.desktop.interface scaling-factor 2" data-info="language-text" data-lang="text" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
 <span class="line-number">2</span></pre><pre class="code"><code class="language-plaintext">$ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "[{'Gdk/WindowScalingFactor', &lt;2&gt;}]"
 $ gsettings set org.gnome.desktop.interface scaling-factor 2</code></pre></figure>
-<p>在显示设置里将缩放调到200%后，界面被放大了2被，在4K屏上的字倒是不瞎眼了。</p>
+<p>在显示设置里将缩放调到200%后，界面被放大了2倍，在4K屏上的字倒是不瞎眼了。</p>
 <p>但是因为笔记本是15寸1080P，所以笔记本上显示的字大得离谱。</p>
 <p>解决方法是使用xrandr调整笔记本电脑的屏幕缩放，笔记本的分辨率为1920x1080，使用xrandr将画面的分辨率放大2倍，也就是调整为3840x2160，然后显示在分辨率为1920x1080的显示器上。</p>
 <p>首先使用<code>xrandr</code>查看每个显示器所对应的设备名称和分辨率。</p>
@@ -681,4 +681,4 @@ $ gsettings set org.gnome.desktop.interface scaling-factor 2</code></pre></figur
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.6.1 at 2021-01-13T18:05:07.078Z. -->
+<!-- Page built by Hikaru v1.6.1 at 2021-01-21T18:48:10.207Z. -->
