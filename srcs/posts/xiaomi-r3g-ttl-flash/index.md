@@ -51,7 +51,7 @@ categories:
 
 找出家里吃灰好几年差点被我扔掉的电烙铁，刮刀头刮了半天电烙铁才上锡，把新买的杜邦线母线焊到主板上，和ttl串口线相连。
 
-(电烙铁太破了根本焊不上锡，焊得很丑，工训老师看了肯定给我不及格，emmm)
+(电烙铁太破了根本焊不上锡，焊得很丑，emmm)
 
 实际上可以买个4PIN单排针焊上去，把串口接到排针上就可以，我直接把电线焊到上面以后用起来会很麻烦。
 
@@ -69,11 +69,11 @@ categories:
 
   tftp的默认目录为`/srv/tftp`。
 
-  这里使用HackPascal制作的breed，[下载链接](https://breed.hackpascal.net/)，把下载好的Breed（第三方Boot Loader）重命名为`breed.bin`，复制到tftp的默认目录。
+  这里使用HackPascal制作的Breed（第三方Boot Loader），[下载链接](https://breed.hackpascal.net/)，把下载好的Breed重命名为`breed.bin`，复制到tftp的默认目录。
 
   ```
   $ cd /srv/tftp
-  $ sudo cp breed-mt7620-xiaomi-r3g.bin breed.bin
+  $ sudo cp ~/Downloads/breed-mt7620-xiaomi-r3g.bin breed.bin
   ```
 
 2. 路由器插网线连电脑，设置静态ip地址192.168.1.3/24，将串口和电脑连接，先不给路由器通电，通常情况下usb串口的设备名称为`/dev/ttyUSB0`，如果不确定的话可以`dmesg`查一下。
