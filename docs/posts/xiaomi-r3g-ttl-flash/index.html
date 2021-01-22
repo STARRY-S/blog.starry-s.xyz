@@ -11,13 +11,13 @@
     
     <meta name="author" content="STARRY-S">
     
-    <meta name="description" content="Morning.">
+    <meta name="description" content="砖了 本来路由器闲置了一年了都没咋用了，前两天想把OpenWrt系统刷回原厂系统。 然鹅刷原厂固件时忘记改环境变量了，因为第三方Boot Loader也被我顺带刷回了原厂的所以现在开机无限重启。 之前买单片机套件时赠了一条usb转ttl线的，但是被我放学校了。只好再从万能的某宝再买一条线，尝试着救砖了。 (在某宝发现了一家店啥元件都有，还特别便宜。于是我还顺带买了很多杜邦线、电阻、LED灯、面包板等小玩意...)">
     
     
     <meta name="keywords" content="Life, ARIA, Hikaru, STARRY-S, Arch Linux, Linux, Music">
     
     <meta name="generator" content="Hikaru v1.6.1">
-    <link rel="canonical" href="https://blog.starry-s.me/about/">
+    <link rel="canonical" href="https://blog.starry-s.me/posts/xiaomi-r3g-ttl-flash/">
     
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
     
@@ -220,7 +220,7 @@
 
       gtag('config', 'UA-124615792-3');
     </script>
-    <title>About - STARRY-S' Blog</title>
+    <title>小米路由器3G之使用TTL串口刷机救砖 - STARRY-S' Blog</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage">
     
@@ -253,7 +253,7 @@
         
         <li role="menuitem"><a href="/tags/"><i class="fas fa-tags"></i><span class="menu-text">标签</span></a></li>
         
-        <li role="menuitem"><a href="/about/" class="current"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
+        <li role="menuitem"><a href="/about/"><i class="fas fa-user-edit"></i><span class="menu-text">关于</span></a></li>
         
       </ul>
       <button class="theme-toggle" id="theme-toggle">
@@ -272,7 +272,7 @@
 <div id="page" class="page">
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/about/">
+      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/posts/xiaomi-r3g-ttl-flash/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="STARRY-S">
         <meta itemprop="description" content="Morning.">
@@ -283,70 +283,39 @@
       </span>
     </div>
     <header class="post-header">
-      <div class="post-title" itemprop="name headline">About</div>
+      <div class="post-title" itemprop="name headline">小米路由器3G之使用TTL串口刷机救砖</div>
       <div class="post-meta">
         
         <div class="post-date meta-block">
-          <i class="far fa-calendar-check"></i><span><time class="post-full-date" title="post-date" itemprop="dateCreated datePublished" datetime="2016-08-22T05:25:30.000Z">8/22/2016, 1:25:30 PM</time></span>
+          <i class="far fa-calendar-check"></i><span><time class="post-full-date" title="post-date" itemprop="dateCreated datePublished" datetime="2021-01-22T14:10:01.000Z">1/22/2021, 10:10:01 PM</time></span>
         </div>
         
         
-        <div class="post-date meta-block">
-          <i class="far fa-calendar-plus"></i><span><time class="post-full-date" title="post-date" itemprop="dateUpdated" datetime="2021-01-21T18:22:38.000Z">1/22/2021, 2:22:38 AM</time></span>
+        
+        <div class="post-categories meta-block">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%95%99%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">教程</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">路由器</span></a></span>
         </div>
         
         
         
         <div class="post-comment-count meta-block">
-          <i class="far fa-comments"></i><span><a href="/about/#comment-results" itemprop="discussionUrl"><span class="post-comment-count comment-count" data-comment-identifier="About" itemprop="commentCount">阅读评论</span></a></span>
+          <i class="far fa-comments"></i><span><a href="/posts/xiaomi-r3g-ttl-flash/#comment-results" itemprop="discussionUrl"><span class="post-comment-count comment-count" data-comment-identifier="小米路由器3G之使用TTL串口刷机救砖" itemprop="commentCount">阅读评论</span></a></span>
         </div>
         
         
       </div>
     </header>
-    <main class="post-main" id="scrollspy-container">
+    <main class="post-main" id="scrollspy-container" itemprop="articleBody">
       <link href="/css/APlayer.min.css" rel="stylesheet">
 <script src= "/js/APlayer.min.js"></script>
-<p><img src="/about/images/westlake.jpg" alt="&quot;West Lake&quot;" title="West Lake"></p>
-<h1 id="AboutMe"><a class="header-link" href="/about/#AboutMe" title="AboutMe"></a>About Me</h1>
-<ul>
-<li><p>学生党, 新鲜韭菜</p>
-</li>
-<li><p>对称呼没啥要求, 不过分叫着顺口就可以啦, 嘻嘻</p>
-</li>
-<li><p>喜欢的游戏: Minecraft Java Edition, NieR:Automata, 守望先锋; 除此之外偶尔会玩PUBG, FGO, 崩坏3等游戏。</p>
-</li>
-<li><p>喜欢的动漫/电影: 空之境界剧场版（<strong>墙裂推荐空境原著</strong>）、FSN &amp; FZ全系列、某科学的超电磁炮、君主·埃尔梅罗二世事件簿 魔眼收集列车 Grace note、声之形、秒速5厘米、还有利兹与青鸟。</p>
-</li>
-<li><p>还看过格莱普尼尔、黑执事、几集新世纪福音战士和宝石之国和魔法禁书目录、我们从未知道那天所见的花的名字等动漫。</p>
-</li>
-<li><p>月厨, 空境剧场版看过无数遍, 原著看过一次后打算有时间再看一遍, 第一次读原著好多东西都没有看懂, FGO玩不懂算是个假月厨吧。</p>
-</li>
-<li><p>听歌种类略杂, 但是几乎不听华语。喜欢的歌以ACG系列为主, 首选Kalafina和梶浦由記的曲子, 尽管不是东方厨但是东方的歌确实好听, 除此之外还听电音和轻音乐。</p>
-</li>
-<li><p>常用Apple Music, 因为Apple Music有Kalafina的版权, 除此之外偶尔会用网易云音乐查找歌曲以及听日推, 拒绝鹅厂。</p>
-</li>
-<li><p>偶尔在B站水视频, 是一名没有几个粉丝、几个月一更新的那种月更UP主, 不追求播放量和粉丝数, 有人喜欢就很开心了。</p>
-</li>
-<li><p>性格这个我也说不清, <del>貌似有些</del>社恐和拖延症, 拥有众多手段自我设障, 不过都太复杂了我也讲不清楚（也不想弄清楚了, 不爱说话是真的</p>
-</li>
-<li><p>菜, 很菜, 非常菜, 还懒, 不想努力, 肥, 宅, 新手, 不萌, 丑, <del>接近于</del>废物一个。</p>
-</li>
-<li><p>睡觉 睡觉 睡觉 睡觉 睡觉 睡觉 ZZZZZZZ~</p>
-</li>
-<li><p><del>可能会随着心情波动而大批量的修改博客上的内容（已经在尽力的控制自己了</del></p>
-</li>
-<li><p>尽量不要和我提“<strong>看了我的博客</strong>”这个话题, 因为我的博客是给自己看的不是给别人看的, 所以我有时会尽可能的结束这个话题, （推荐快捷键<code>Ctrl+W</code>）</p>
-</li>
-</ul>
-<h1 id="STARRY-S039;Blog"><a class="header-link" href="/about/#STARRY-S039;Blog" title="STARRY-S039;Blog"></a>STARRY-S' Blog</h1>
-<p>建于2016年8月21日, 曾用域名<code>starry-s.xyz</code>、<code>starry-s.com</code>和<code>starry-s.cn</code>。</p>
-<p>现用域名为<code>starry-s.me</code>, 以后没问题的话就不打算换域名了因为<code>.me</code>域名好记而且我挺喜欢的, <del>也不是很贵</del>(听说涨价了, 嘤)。</p>
-<p>因为之前更新过太多日常/碎碎念之类的水文, 于是2020年5月某天把旧篇幅全都删掉了, 后来恢复了部分内容。如果实在想看以前的博客的话可以翻GitHub上的comments, 以后尽量以技术类文章为主, 可能会某一阵子突然变得高产或者突然连续好几个月不更新，如果实在写不出来/没什么可写的话我会选择停更一段时间。</p>
-<p>本站由<a href="https://hikaru.alynx.one/" target="_blank" rel="external nofollow noreferrer noopener">Hikaru</a>生成, 主题为<a href="https://github.com/AlynxZhou/hikaru-theme-aria" target="_blank" rel="external nofollow noreferrer noopener">ARIA</a>, 托管于GitHub Pages（见页面右下角）, 很喜欢这个生成器以及ARIA这款主题。</p>
-<p><a href="https://github.com/STARRY-S/hikaru-generator-aplayer" target="_blank" rel="external nofollow noreferrer noopener">音乐播放器</a>是我自己为Hikaru适配的<a href="https://github.com/MoePlayer/APlayer" target="_blank" rel="external nofollow noreferrer noopener">APlayer</a>插件, 原理实现很简单, 欢迎去提issues。</p>
-<p>刚更新了播放器插件, 勉强适配了一下新出的<a href="https://sh.alynx.one/posts/Dark-Mode-in-Theme/" target="_blank" rel="external nofollow noreferrer noopener">暗色模式</a>, 如果只调整播放器背景颜色的话在播放列表模式或者含有歌词显示时会很难看, 一开始想自定义css文件的后来觉得太麻烦得增加很多代码所以目前只是适配了没有播放列表、没有歌词的这种情况, 播放器背景颜色会随着主题颜色改变而改变, 其他情况的解决方法还没想好, 不过说实话<strong>黑色模式还挺好看的</strong>。因为实在没啥技术含量所以就不单独开一篇文章讲这么水的事情了。</p>
-<hr>
+<h1 id="砖了"><a class="header-link" href="/posts/xiaomi-r3g-ttl-flash/#%E7%A0%96%E4%BA%86" title="砖了"></a>砖了</h1>
+<p>本来路由器闲置了一年了都没咋用了，前两天想把OpenWrt系统刷回原厂系统。</p>
+<p>然鹅刷原厂固件时忘记改环境变量了，因为第三方Boot Loader也被我顺带刷回了原厂的所以现在开机无限重启。</p>
+<p>之前买单片机套件时赠了一条usb转ttl线的，但是被我放学校了。只好再从万能的某宝再买一条线，尝试着救砖了。</p>
+<p>(在某宝发现了一家店啥元件都有，还特别便宜。于是我还顺带买了很多杜邦线、电阻、LED灯、面包板等小玩意...)</p>
+<a id="more"></a>
+
  <!--APlayer-->
 <div id="aplayer0" style="background: var(--color-main-background)"></div>
 <script>
@@ -363,23 +332,132 @@ const ap0 = new APlayer ({
     loop: "all",
     autoplay: false,
     audio: [{
-        name: "尼尔机械纪元 Nier Automata - Soundtrack Medley",
-        artist: "Animenz",
-        url: "https://music.starry-s.me/music/0f0e_0758_070b_8de6859a81025aae1e540aed59439f48.m4a",
-        cover: "https://music.starry-s.me/music/cover/109951163092751719.jpg",
+        name: "crescent in the sky",
+        artist: "Stepan Voles",
+        url: "https://music.starry-s.me/music/396e_a80d_10de_076d0b69c03bd2673595bd17ce939f69.mp3",
+        cover: "https://music.starry-s.me/music/cover/1379887099097990.jpg",
         lrc: "",
-        theme: "#F6890E"
+        theme: "#2233ee"
     }]
 });
 </script> 
 
+<hr>
+<h1 id="拆机"><a class="header-link" href="/posts/xiaomi-r3g-ttl-flash/#%E6%8B%86%E6%9C%BA" title="拆机"></a>拆机</h1>
+<p><img src="/posts/xiaomi-r3g-ttl-flash/images/1.jpg" alt="&quot;路由器主板&quot;" title="Are You OK?"></p>
 <blockquote>
-<p>写于2020年8月16日凌晨, 随时更新。</p>
+<p>北方冬季气候干燥，拆机时记得放静电，找根铁丝把自己连地线上 (找个金属外壳是接地的电器和自己连上也行)。</p>
 </blockquote>
+<p>拆开路由器外壳，卸下主板，顺手拆掉了散热片（屏蔽罩）。</p>
+<p>串口在图片上主板的左侧，旁边有标记，从上到下依次是<code>TX</code>、<code>GND</code>、<code>RX</code>、<code>1</code>。需要注意的是主板上的<code>TX</code>要接到usb串口的<code>RX</code>，主板上的<code>RX</code>要接到usb串口的<code>TX</code>，<code>GND</code>连<code>GND</code>，VCC不用连。为了防止接错线，小米还十分贴心的标注了每个接口对应的连接线的颜色。</p>
+<p><img src="/posts/xiaomi-r3g-ttl-flash/images/2.jpg" alt="" title="I'm very OK!"></p>
+<p>找出家里吃灰好几年差点被我扔掉的电烙铁，刮刀头刮了半天电烙铁才上锡，把新买的杜邦线母线焊到主板上，和ttl串口线相连。</p>
+<p>(电烙铁太破了根本焊不上锡，焊得很丑，工训老师看了肯定给我不及格，emmm)</p>
+<p>实际上可以买个4PIN单排针焊上去，把串口接到排针上就可以，我直接把电线焊到上面以后用起来会很麻烦。</p>
+<h1 id="刷机"><a class="header-link" href="/posts/xiaomi-r3g-ttl-flash/#%E5%88%B7%E6%9C%BA" title="刷机"></a>刷机</h1>
+<blockquote>
+<p>以下部分基于Arch Linux，其他系统的操作方式可能不一样（例如Windows可能需要超级终端访问串口，再想办法开一个tftp服务器）
+刷机的原理: 通过ttl串口线连接路由器的主板，让路由器访问电脑上的tftp服务器，刷第三方Boot Loader。</p>
+</blockquote>
+<ol>
+<li><p>首先电脑上装一个tftp服务器。</p>
+<figure data-raw="$ sudo pacman -S tftp-hpa
+$ sudo systemctl start tftpd.service" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
+<span class="line-number">2</span></pre><pre class="code"><code class="language-powershell"><span class="hljs-variable">$</span> sudo pacman <span class="hljs-literal">-S</span> tftp<span class="hljs-literal">-hpa</span>
+<span class="hljs-variable">$</span> sudo systemctl <span class="hljs-built_in">start</span> tftpd.service</code></pre></figure>
+<p>tftp的默认目录为<code>/srv/tftp</code>。</p>
+<p>这里使用HackPascal制作的breed，<a href="https://breed.hackpascal.net/" target="_blank" rel="external nofollow noreferrer noopener">下载链接</a>，把下载好的Breed（第三方Boot Loader）重命名为<code>breed.bin</code>，复制到tftp的默认目录。</p>
+<figure data-raw="$ cd /srv/tftp
+$ sudo cp breed-mt7620-xiaomi-r3g.bin breed.bin" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
+<span class="line-number">2</span></pre><pre class="code"><code class="language-powershell"><span class="hljs-variable">$</span> <span class="hljs-built_in">cd</span> /srv/tftp
+<span class="hljs-variable">$</span> sudo <span class="hljs-built_in">cp</span> breed<span class="hljs-literal">-mt7620</span><span class="hljs-literal">-xiaomi</span><span class="hljs-literal">-r3g</span>.bin breed.bin</code></pre></figure>
+</li>
+<li><p>路由器插网线连电脑，设置静态ip地址192.168.1.3/24，将串口和电脑连接，先不给路由器通电，通常情况下usb串口的设备名称为<code>/dev/ttyUSB0</code>，如果不确定的话可以<code>dmesg</code>查一下。</p>
+</li>
+<li><p>使用<code>screen</code>连接串口，波特率为115200。</p>
+<figure data-raw="$ sudo pacman -S screen
+$ sudo screen /dev/ttyUSB0 115200" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
+<span class="line-number">2</span></pre><pre class="code"><code class="language-routeros">$ sudo pacman -S<span class="hljs-built_in"> screen
+</span>$ sudo<span class="hljs-built_in"> screen </span>/dev/ttyUSB0 115200</code></pre></figure>
+<p>路由器通电，终端上会显示路由器启动的信息，等几秒后在选择启动项的时候按9，通过TFTP加载Boot Loader。</p>
+<blockquote>
+<p>如果串口在连接到电脑的情况下主板通电时没有响应，那就断开usb串口先给主板通电后再连接串口。
+(我语文不好别骂我)
+如果路由器没有变砖可以正常启动（蓝灯长亮），在正常开机过程中不能选择启动项。此时可以尝试在路由器开机后长按reset按钮7s以上直到主板重启，便可以选择启动项。</p>
+</blockquote>
+<figure data-raw="Please choose the operation: 
+1: Load system code to SDRAM via TFTP. 
+2: Load system code then write to Flash via TFTP. 
+3: Boot system code via Flash (default).
+4: Entr boot command line interface.
+7: Load Boot Loader code then write to Flash via Serial. 
+9: Load Boot Loader code then write to Flash via TFTP. 
+
+You choosed 9
+
+9: System Load Boot Loader then write to Flash via TFTP. 
+Warning!! Erase Boot Loader in Flash then burn new one. Are you sure?(Y/N)y" data-info="language-text" data-lang="text" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span></pre><pre class="code"><code class="language-plaintext">Please choose the operation: 
+1: Load system code to SDRAM via TFTP. 
+2: Load system code then write to Flash via TFTP. 
+3: Boot system code via Flash (default).
+4: Entr boot command line interface.
+7: Load Boot Loader code then write to Flash via Serial. 
+9: Load Boot Loader code then write to Flash via TFTP. 
+
+You choosed 9
+
+9: System Load Boot Loader then write to Flash via TFTP. 
+Warning!! Erase Boot Loader in Flash then burn new one. Are you sure?(Y/N)y</code></pre></figure>
+<p>之后设置路由器主机地址（192.168.1.1）和TFTP服务器地址(192.168.1.3)以及文件名称(breed.bin)。</p>
+<figure data-raw="Please Input new ones /or Ctrl-C to discard
+         Input device IP (192.168.31.1) ==:192.168.1.1
+         Input server IP (192.168.31.3) ==:192.168.1.3
+         Input Uboot filename (uboot.bin) ==:breed.bin" data-info="language-text" data-lang="text" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span></pre><pre class="code"><code class="language-plaintext">Please Input new ones /or Ctrl-C to discard
+         Input device IP (192.168.31.1) ==:192.168.1.1
+         Input server IP (192.168.31.3) ==:192.168.1.3
+         Input Uboot filename (uboot.bin) ==:breed.bin</code></pre></figure>
+<p>按回车后开始刷机，过几秒钟后路由器会自动重启，第三方Boot Loader刷写完成。</p>
+<p>路由器断电，长按reset键的同时通电开机，灯闪烁后打开浏览器输入网址<code>http://192.168.1.1</code>便可访问breed后台。</p>
+</li>
+</ol>
+<h1 id="Done"><a class="header-link" href="/posts/xiaomi-r3g-ttl-flash/#Done" title="Done"></a>Done</h1>
+<p>第三方Breed刷完后，先用Breed刷小米官方的开发版固件，开启ssh，之后按照<a href="/posts/Xiaomi_Miwifi_3G/#%E4%BD%BF%E7%94%A8Breed%E7%9A%84%E5%88%B7%E6%9C%BA%E6%96%B9%E6%B3%95">小米路由器3G折腾之刷OpenWrt记录</a>这篇文章刷OpenWrt。</p>
 
     </main>
-    <footer class="post-footer"></footer>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        <a class="post-tag button" href="/tags/%E6%95%99%E7%A8%8B/" rel="tag"><i class="fas fa-tag"></i>教程</a><a class="post-tag button" href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" rel="tag"><i class="fas fa-tag"></i>路由器</a><a class="post-tag button" href="/tags/OpenWrt/" rel="tag"><i class="fas fa-tag"></i>OpenWrt</a>
+      </div>
+      
+    </footer>
   </article>
+  
+  <nav class="page-nav">
+    <div class="page-nav-next page-nav-item">
+      
+    </div>
+    <div class="page-nav-prev page-nav-item">
+      
+      <a href="/posts/Laptop-Dualscreen-Hidpi-Scale/" rel="prev" title="解决笔记本外接HIDPI显示器的缩放问题"><span class="nav-title">解决笔记本外接HIDPI显示器的缩放问题</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </nav>
+  
   
   
 
@@ -441,9 +519,9 @@ const ap0 = new APlayer ({
         "sendButtonText": "去评论",
         "noCommentText": "这个页面还没有评论，现在就去评论吧！",
         "failText": "你可能达到了 API 请求频率上限，请等待一段时间再刷新。",
-        "title": "About",
+        "title": "小米路由器3G之使用TTL串口刷机救砖",
         "queryString": window.location.search,
-        "basePath": "/about/",
+        "basePath": "/posts/xiaomi-r3g-ttl-flash/",
         "containerID": "comment-results"
       }).then(() => {
         // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
@@ -560,13 +638,25 @@ const ap0 = new APlayer ({
       
         <li>
           
-          <a class="list-group-item toc-link" href="#AboutMe">About Me</a>
+          <a class="list-group-item toc-link" href="#砖了">砖了</a>
           
         </li>
       
         <li>
           
-          <a class="list-group-item toc-link" href="#STARRY-S039;Blog">STARRY-S' Blog</a>
+          <a class="list-group-item toc-link" href="#拆机">拆机</a>
+          
+        </li>
+      
+        <li>
+          
+          <a class="list-group-item toc-link" href="#刷机">刷机</a>
+          
+        </li>
+      
+        <li>
+          
+          <a class="list-group-item toc-link" href="#Done">Done</a>
           
         </li>
       
@@ -649,4 +739,4 @@ const ap0 = new APlayer ({
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.6.1 at 2021-01-22T17:31:10.627Z. -->
+<!-- Page built by Hikaru v1.6.1 at 2021-01-22T17:31:10.538Z. -->
