@@ -1,5 +1,5 @@
 ---
-title: Sorry & Thank you.
+title: Sorry, Thank you.
 created: 2016-11-26T15:00:24+08:00
 layout: post
 # comment: true
@@ -92,4 +92,4 @@ categories:
 
 ![](images/thankyou.jpg)
 
-# Sorry,Thankyou.
+# Sorry, Thankyou.
