@@ -1,7 +1,7 @@
 ---
 title: 小米路由器3G折腾之刷OpenWrt记录
 created: 2019-02-19T00:49:20+08:00
-updated: 2020-08-25T13:25:59+08:00
+updated: 2021-01-23T12:36:44+08:00
 layout: post
 # comment: true
 tags:
@@ -12,6 +12,7 @@ categories:
 - 教程
 - 路由器
 ---
+
 <div class="alert-red">本篇由于创作时间过于久远, 作者已无法保证其准确性, 内容仅供参考。</div>
 
 生命不息, 折腾不止...
@@ -63,6 +64,13 @@ SSH到路由器:
 
 * Unix/Linux系统终端执行：`ssh root@191.168.31.1`
 
+  如果在ssh到路由器时遇到no matching key exchange method found错误，编辑`~/.ssh/config`, 加入下面两行：
+
+  ``` 
+  Host *
+      KexAlgorithms +diffie-hellman-group1-sha1
+  ```
+
 # 刷入Bootloader（推荐/可选）
 
 > 该步骤可选是因为Breed不支持直接刷入Openwrt固件, 可参考[这篇帖子](https://www.right.com.cn/forum/forum.php?mod=viewthread&tid=267455), 不过为了防止变砖, 还是推荐刷Breed。
@@ -101,7 +109,7 @@ mtd -r write /tmp/sdcard/breed.bin Bootloader
 
 > 如果kernel0存在kernel1不存在, 那么启动kernel0
 > 如果kernel1存在kernel0不存在, 那么启动kernel1
-> 如果kernel0和kernel1都存在, 那么检查环境变量 xiaomi.r3g.bootfw 的值, 如果存在且值为 2, 那么启动kernel1, 否则启动kernel0
+> 如果kernel0和kernel1都存在, 那么检查环境变量 `xiaomi.r3g.bootfw` 的值, 如果存在且值为 2, 那么启动kernel1, 否则启动kernel0
 
 简单来说就是：路由器有两个内核, 需要在Breed里设置环境变量让路由器启动kernel1。
 

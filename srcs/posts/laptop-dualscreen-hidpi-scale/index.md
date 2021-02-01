@@ -1,6 +1,7 @@
 ---
 title: 解决笔记本外接HIDPI显示器的缩放问题
 created: 2021-01-09T22:12:54+08:00
+updated: 2021-02-01T15:33:52+08:00
 layout: post
 tags:
 - Arch Linux
@@ -17,7 +18,7 @@ categories:
 
 然后一看4K屏上的字小得瞎眼。
 
-如果设置4K屏的分辨率为1080P，就会变得特别糊，根本没法看，效果还没有1080P显示器好。
+如果设置分辨率为1080P，显示文字时会特别糊，根本没法看，效果还没有1080P显示器好。
 
 <!--more-->
 
@@ -77,14 +78,21 @@ $ xrandr --output eDP-1-1 --scale 2.0x2.0 --panning 3840x2160+0+2160 --output HD
 $ xrandr --output eDP-1-1 --scale 1.6x1.6 --panning 3072x1728+0+2160 --output HDMI-0 --auto
 ```
 
-用到现在GNOME的缩放还算是完美，除了玩Minecraft用的HMCL启动器（Java程序）没有被放大之外（貌似缺配置，要是配置好了我再补充），Steam界面缩放正常，饥荒、Dota2也都没问题。
+用到现在GNOME的缩放还算是完美，除了玩Minecraft用的HMCL启动器（Java程序）没有被放大之外~~（貌似缺配置，要是配置好了我再补充）~~，Steam界面缩放正常，饥荒、Dota2也都没问题。
+
+> Java8不支持Hidpi缩放，如果想让HMCL支持缩放需要需要安装Java9以上的版本，所以还是算了，又不是不能用。
+> 网易云音乐缩放方法参考[这篇博客](https://ntzyz.io/post/fix-cloud-music-linux-client-hidpi-issue)。
+> qt5设置环境变量`QT_SCREEN_SCALE_FACTORS=2`。
 
 # Others
 
  * 仅限GNOME，因为我只用GNOME所以不知道其他DE开HIDPI的效果是什么样。
 
- * 听说Wayland支持不同显示器设置不同的缩放倍数，但是我笔记本的HDMI是独显输出，自带屏幕为集显输出，想启用独显输出画面除了用大黄蜂之外只能Nvidia Optimus，然而Optimus不支持Wayland（F**K NVIDIA），于是我现在都不知道用Wayland上双显示器的效果是什么样子，只好改用xorg和optimus-manager切换显卡，再用xrandr调显示器的缩放倍数。
+ * 听说Wayland支持不同显示器设置不同的缩放倍数，但是我笔记本的HDMI是独显输出，自带屏幕为集显输出，想启用独显输出画面除了用大黄蜂之外只能Nvidia Optimus，然而Optimus不支持Wayland（F**K NVIDIA），
+   于是我现在都不知道用Wayland上双显示器的效果是什么样子，只好改用xorg和optimus-manager切换显卡，再用xrandr调显示器的缩放倍数。
 
- * xrandr的指令是我自己试了很多遍试出来的，在我电脑上能用，期间遇到一堆问题，所以不保证在别的电脑上也能正常用。
+   <!-- 或者买一根type-c转DP的转接线连显示器，尽管不是雷电3接口达不到4K10bit，但是走的是集成显卡。-->
 
- * 如果你正考虑为你的笔记本购买一台新显示器而且你是Linux用户，你的笔记本又是双显卡，不知道HDMI是独显输出还是集显输出的话，建议你买一台和笔记本电脑的分辨率相同的显示器，这样能省去很多麻烦。
+ * xrandr的指令是我自己试了很多遍试出来的，在我电脑上能用，期间遇到一堆问题(BadMatch)，没想好什么解决方法，所以在别的电脑上可能需要一些修改。
+
+ * 如果你正考虑为你的笔记本购买一台新显示器而且你是Linux用户，你的笔记本又是双显卡，不知道HDMI是独显输出还是集显输出的话，建议你买一台和笔记本电脑的分辨率相同的显示器(或者2K)，这样能省去很多麻烦。

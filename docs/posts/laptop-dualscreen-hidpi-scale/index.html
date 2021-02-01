@@ -11,13 +11,13 @@
     
     <meta name="author" content="STARRY-S">
     
-    <meta name="description" content="多图预警">
+    <meta name="description" content="起因 前天在狗东买了台27寸4K显示器，型号为优派VX2771-4K-HD，分辨率3840x2160，支持HDR 10bit色深（然而电脑没DP接口），因为之前已经配置好了optimus-manager，所以电脑接上显示器就能亮，很幸运没有遇到物理问题。 然后一看4K屏上的字小得瞎眼。 如果设置分辨率为1080P，显示文字时会特别糊，根本没法看，效果还没有1080P显示器好。">
     
     
     <meta name="keywords" content="Life, ARIA, Hikaru, STARRY-S, Arch Linux, Linux, Music">
     
     <meta name="generator" content="Hikaru v1.6.1">
-    <link rel="canonical" href="https://blog.starry-s.me/posts/Spring-3/">
+    <link rel="canonical" href="https://blog.starry-s.me/posts/laptop-dualscreen-hidpi-scale/">
     
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
     
@@ -220,7 +220,7 @@
 
       gtag('config', 'UA-124615792-3');
     </script>
-    <title>Spring - 3 - STARRY-S' Blog</title>
+    <title>解决笔记本外接HIDPI显示器的缩放问题 - STARRY-S' Blog</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage">
     
@@ -272,7 +272,7 @@
 <div id="page" class="page">
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/posts/Spring-3/">
+      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/posts/laptop-dualscreen-hidpi-scale/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="STARRY-S">
         <meta itemprop="description" content="Morning.">
@@ -283,24 +283,28 @@
       </span>
     </div>
     <header class="post-header">
-      <div class="post-title" itemprop="name headline">Spring - 3</div>
+      <div class="post-title" itemprop="name headline">解决笔记本外接HIDPI显示器的缩放问题</div>
       <div class="post-meta">
         
         <div class="post-date meta-block">
-          <i class="far fa-calendar-check"></i><span><time class="post-full-date" title="post-date" itemprop="dateCreated datePublished" datetime="2019-05-03T15:20:43.000Z">5/3/2019, 11:20:43 PM</time></span>
+          <i class="far fa-calendar-check"></i><span><time class="post-full-date" title="post-date" itemprop="dateCreated datePublished" datetime="2021-01-09T14:12:54.000Z">1/9/2021, 10:12:54 PM</time></span>
         </div>
         
+        
+        <div class="post-date meta-block">
+          <i class="far fa-calendar-plus"></i><span><time class="post-full-date" title="post-date" itemprop="dateUpdated" datetime="2021-02-01T07:33:52.000Z">2/1/2021, 3:33:52 PM</time></span>
+        </div>
         
         
         <div class="post-categories meta-block">
           
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%97%A5%E5%B8%B8/" itemprop="url" rel="index"><span itemprop="name">日常</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%97%A5%E5%B8%B8/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a></span>
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
         </div>
         
         
         
         <div class="post-comment-count meta-block">
-          <i class="far fa-comments"></i><span><a href="/posts/Spring-3/#comment-results" itemprop="discussionUrl"><span class="post-comment-count comment-count" data-comment-identifier="Spring - 3" itemprop="commentCount">阅读评论</span></a></span>
+          <i class="far fa-comments"></i><span><a href="/posts/laptop-dualscreen-hidpi-scale/#comment-results" itemprop="discussionUrl"><span class="post-comment-count comment-count" data-comment-identifier="解决笔记本外接HIDPI显示器的缩放问题" itemprop="commentCount">阅读评论</span></a></span>
         </div>
         
         
@@ -309,13 +313,12 @@
     <main class="post-main" id="scrollspy-container" itemprop="articleBody">
       <link href="/css/APlayer.min.css" rel="stylesheet">
 <script src= "/js/APlayer.min.js"></script>
-<div class="alert-blue">
-多图预警
-</div>
-
+<h1 id="起因"><a class="header-link" href="/posts/laptop-dualscreen-hidpi-scale/#%E8%B5%B7%E5%9B%A0" title="起因"></a>起因</h1>
+<p>前天在狗东买了台27寸4K显示器，型号为优派VX2771-4K-HD，分辨率3840x2160，支持HDR 10bit色深（然而电脑没DP接口），因为之前已经<strong>配置好了optimus-manager</strong>，所以电脑接上显示器就能亮，很幸运没有遇到物理问题。</p>
+<p>然后一看4K屏上的字小得瞎眼。</p>
+<p>如果设置分辨率为1080P，显示文字时会特别糊，根本没法看，效果还没有1080P显示器好。</p>
 <a id="more"></a>
 
-<hr>
  <!--APlayer-->
 <div id="aplayer0" style="background: var(--color-main-background)"></div>
 <script>
@@ -332,28 +335,72 @@ const ap0 = new APlayer ({
     loop: "all",
     autoplay: false,
     audio: [{
-        name: "辉く空の静寂には",
-        artist: "Kalafina",
-        url: "https://music.starry-s.me/music/4d6b_af91_c8ab_7e676adf998cd77b5d6b8a8e095d4066.mp3",
-        cover: "https://music.starry-s.me/music/cover/109951163710392062.jpg",
+        name: "エンドロール",
+        artist: "KEIKO",
+        url: "https://music.starry-s.me/music/obj_w5rDlsOJwrLDjj7CmsOj_5016145218_8a57_c3ad_6dee_bedcb53124a46de8152d464b7db24470.mov",
+        cover: "https://music.starry-s.me/music/cover/109951165501153240.jpg",
         lrc: "",
-        theme: "#776666"
+        theme: "#886666"
     }]
 });
 </script> 
 
-<p><img src="/posts/Spring-3/images/IMG_4238-1.JPG" alt=""></p>
-<p><img src="/posts/Spring-3/images/IMG_4150-1.JPG" alt=""></p>
-<p><img src="/posts/Spring-3/images/IMG_4204-1.JPG" alt=""></p>
-<p><img src="/posts/Spring-3/images/IMG_4245-1.JPG" alt=""></p>
-<p><img src="/posts/Spring-3/images/IMG_4242-1.JPG" alt=""></p>
-<p><img src="/posts/Spring-3/images/IMG_4216-1.JPG" alt=""></p>
+<h1 id="解决方法"><a class="header-link" href="/posts/laptop-dualscreen-hidpi-scale/#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95" title="解决方法"></a>解决方法</h1>
+<p>首先按照<a href="https://wiki.archlinux.org/index.php/HiDPI" target="_blank" rel="external nofollow noreferrer noopener">Wiki</a>设置GNOME的HIDPI:</p>
+<figure data-raw="$ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides &quot;[{'Gdk/WindowScalingFactor', <2>}]&quot;
+$ gsettings set org.gnome.desktop.interface scaling-factor 2" data-info="language-text" data-lang="text" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
+<span class="line-number">2</span></pre><pre class="code"><code class="language-plaintext">$ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "[{'Gdk/WindowScalingFactor', &lt;2&gt;}]"
+$ gsettings set org.gnome.desktop.interface scaling-factor 2</code></pre></figure>
+<p>在显示设置里将缩放调到200%后，界面被放大了2倍，在4K屏上的字倒是不瞎眼了。</p>
+<p>但是因为笔记本是15寸1080P，所以笔记本上显示的字大得离谱。</p>
+<p>解决方法是使用xrandr调整笔记本电脑的屏幕缩放，笔记本的分辨率为1920x1080，使用xrandr将画面的分辨率放大2倍，也就是调整为3840x2160，然后显示在分辨率为1920x1080的显示器上。</p>
+<p>首先使用<code>xrandr</code>查看每个显示器所对应的设备名称和分辨率。</p>
+<figure data-raw="$ xrandr | grep &quot;$extern connected&quot;
+
+  HDMI-0 connected primary 3840x2160+0+0 (normal left inverted right x axis y axis) 597mm x 336mm
+  eDP-1-1 connected 1920x1080+0+2160 (normal left inverted right x axis y axis) 344mm x 193mm" data-info="language-text" data-lang="text" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span></pre><pre class="code"><code class="language-plaintext">$ xrandr | grep "$extern connected"
+
+  HDMI-0 connected primary 3840x2160+0+0 (normal left inverted right x axis y axis) 597mm x 336mm
+  eDP-1-1 connected 1920x1080+0+2160 (normal left inverted right x axis y axis) 344mm x 193mm</code></pre></figure>
+<p>这里HDMI-0是外接的4K显示器，分辨率为3840x2160，位置为(0, 0)。</p>
+<p>eDP-1-1是笔记本的显示器，分辨率1920x1080，位置为(0, 2160)，在4K显示器的左下方。</p>
+<p>参见<a href="https://wiki.archlinux.org/index.php/HiDPI#Multiple_displays" target="_blank" rel="external nofollow noreferrer noopener">Wiki设置双显示器部分</a>，用xrandr将笔记本的显示器缩放2倍，分辨率变为 [1920 * 2]x[1080 * 2]=3840x2160，位置还是在4K显示器的正下方。</p>
+<figure data-raw="$ xrandr --output eDP-1-1 --scale 2.0x2.0 --panning 3840x2160+0+2160 --output HDMI-0 --auto" data-info="language-text" data-lang="text" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span></pre><pre class="code"><code class="language-plaintext">$ xrandr --output eDP-1-1 --scale 2.0x2.0 --panning 3840x2160+0+2160 --output HDMI-0 --auto</code></pre></figure>
+<p>因为不需要修改4K显示器的分辨率，所以HDMI-0设置为auto。</p>
+<p>这样笔记本上的画面也显示正常了。</p>
+<p>但是用过一阵子会发现笔记本显示器上的字比4K显示器上的字小很多，看起来不方便，所以把缩放倍数改为1.6（我是从1.5-2.0之间一点点试的，才找到最适合自己的缩放倍数），这样解决了字体大小的问题，不过笔记本画面还是会有模糊（能接受）。</p>
+<blockquote>
+<p>[1920 * 1.6]x[1080 * 1.6]=3072x1728</p>
+</blockquote>
+<figure data-raw="$ xrandr --output eDP-1-1 --scale 1.6x1.6 --panning 3072x1728+0+2160 --output HDMI-0 --auto" data-info="language-text" data-lang="text" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span></pre><pre class="code"><code class="language-plaintext">$ xrandr --output eDP-1-1 --scale 1.6x1.6 --panning 3072x1728+0+2160 --output HDMI-0 --auto</code></pre></figure>
+<p>用到现在GNOME的缩放还算是完美，除了玩Minecraft用的HMCL启动器（Java程序）没有被放大之外<del>（貌似缺配置，要是配置好了我再补充）</del>，Steam界面缩放正常，饥荒、Dota2也都没问题。</p>
+<blockquote>
+<p>Java8不支持Hidpi缩放，如果想让HMCL支持缩放需要需要安装Java9以上的版本，所以还是算了，又不是不能用。
+网易云音乐缩放方法参考<a href="https://ntzyz.io/post/fix-cloud-music-linux-client-hidpi-issue" target="_blank" rel="external nofollow noreferrer noopener">这篇博客</a>。
+qt5设置环境变量<code>QT_SCREEN_SCALE_FACTORS=2</code>。</p>
+</blockquote>
+<h1 id="Others"><a class="header-link" href="/posts/laptop-dualscreen-hidpi-scale/#Others" title="Others"></a>Others</h1>
+<ul>
+<li><p>仅限GNOME，因为我只用GNOME所以不知道其他DE开HIDPI的效果是什么样。</p>
+</li>
+<li><p>听说Wayland支持不同显示器设置不同的缩放倍数，但是我笔记本的HDMI是独显输出，自带屏幕为集显输出，想启用独显输出画面除了用大黄蜂之外只能Nvidia Optimus，然而Optimus不支持Wayland（F**K NVIDIA），
+于是我现在都不知道用Wayland上双显示器的效果是什么样子，只好改用xorg和optimus-manager切换显卡，再用xrandr调显示器的缩放倍数。</p>
+<!-- 或者买一根type-c转DP的转接线连显示器，尽管不是雷电3接口达不到4K10bit，但是走的是集成显卡。-->
+</li>
+<li><p>xrandr的指令是我自己试了很多遍试出来的，在我电脑上能用，期间遇到一堆问题(BadMatch)，没想好什么解决方法，所以在别的电脑上可能需要一些修改。</p>
+</li>
+<li><p>如果你正考虑为你的笔记本购买一台新显示器而且你是Linux用户，你的笔记本又是双显卡，不知道HDMI是独显输出还是集显输出的话，建议你买一台和笔记本电脑的分辨率相同的显示器(或者2K)，这样能省去很多麻烦。</p>
+</li>
+</ul>
 
     </main>
     <footer class="post-footer">
       
       <div class="post-tags">
-        <a class="post-tag button" href="/tags/%E6%91%84%E5%BD%B1/" rel="tag"><i class="fas fa-tag"></i>摄影</a><a class="post-tag button" href="/tags/Spring/" rel="tag"><i class="fas fa-tag"></i>Spring</a><a class="post-tag button" href="/tags/Flowers/" rel="tag"><i class="fas fa-tag"></i>Flowers</a>
+        <a class="post-tag button" href="/tags/Arch%20Linux/" rel="tag"><i class="fas fa-tag"></i>Arch Linux</a><a class="post-tag button" href="/tags/HIDPI/" rel="tag"><i class="fas fa-tag"></i>HIDPI</a><a class="post-tag button" href="/tags/Dual%20Moniter/" rel="tag"><i class="fas fa-tag"></i>Dual Moniter</a>
       </div>
       
     </footer>
@@ -362,12 +409,12 @@ const ap0 = new APlayer ({
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
       
-      <a href="/posts/archlinux-pavilion-gaming-laptop/" rel="next" title="惠普光影精灵4在Arch Linux下使用Optimus Manager配置双显卡"><i class="fas fa-angle-left"></i><span class="nav-title">惠普光影精灵4在Arch Linux下使用Optimus Manager配置双显卡</span></a>
+      <a href="/posts/xiaomi-r3g-ttl-flash/" rel="next" title="小米路由器3G之使用TTL串口刷机救砖"><i class="fas fa-angle-left"></i><span class="nav-title">小米路由器3G之使用TTL串口刷机救砖</span></a>
       
     </div>
     <div class="page-nav-prev page-nav-item">
       
-      <a href="/posts/Shanghai/" rel="prev" title="一个人的旅行 —— 上海"><span class="nav-title">一个人的旅行 —— 上海</span><i class="fas fa-angle-right"></i></a>
+      <a href="/posts/hello-2021/" rel="prev" title="Hello 2021"><span class="nav-title">Hello 2021</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </nav>
@@ -433,9 +480,9 @@ const ap0 = new APlayer ({
         "sendButtonText": "去评论",
         "noCommentText": "这个页面还没有评论，现在就去评论吧！",
         "failText": "你可能达到了 API 请求频率上限，请等待一段时间再刷新。",
-        "title": "Spring - 3",
+        "title": "解决笔记本外接HIDPI显示器的缩放问题",
         "queryString": window.location.search,
-        "basePath": "/posts/Spring-3/",
+        "basePath": "/posts/laptop-dualscreen-hidpi-scale/",
         "containerID": "comment-results"
       }).then(() => {
         // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
@@ -543,6 +590,35 @@ const ap0 = new APlayer ({
   <div class="sidebar-sticky">
     
     
+    <hr>
+    <div class="post-toc sidebar-item">
+      <div><i class="fas fa-list-ol"></i>文章目录</div>
+      
+      
+      <ol class="toc" id="scrollspy-target">
+      
+        <li>
+          
+          <a class="list-group-item toc-link" href="#起因">起因</a>
+          
+        </li>
+      
+        <li>
+          
+          <a class="list-group-item toc-link" href="#解决方法">解决方法</a>
+          
+        </li>
+      
+        <li>
+          
+          <a class="list-group-item toc-link" href="#Others">Others</a>
+          
+        </li>
+      
+      </ol>
+      
+    </div>
+    
     
     
     <hr>
@@ -618,4 +694,4 @@ const ap0 = new APlayer ({
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.6.1 at 2021-01-22T18:01:33.852Z. -->
+<!-- Page built by Hikaru v1.6.1 at 2021-02-01T14:37:55.250Z. -->
