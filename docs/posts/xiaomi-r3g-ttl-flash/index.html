@@ -90,6 +90,30 @@
     
     
     <script type="text/javascript">
+      documentReady(() => {
+        elementsEach(
+          document.querySelectorAll("figure.code-block pre.code"),
+          (e, i) => {
+            const code = e.parentNode.getAttribute("data-raw");
+            const gutter = [];
+            gutter.push("<pre class=\"gutter\">");
+            // Highlight should not change lines.
+            // But may replace `\n` with `<br>`, so use original code here.
+            const linesLength = code.split(/\r?\n/g).length;
+            for (let i = 0; i < linesLength; ++i) {
+              gutter.push(`<span class="line-number">${i + 1}</span>`);
+              if (i !== linesLength - 1) {
+                gutter.push("\n");
+              }
+            }
+            gutter.push("</pre>");
+            elementBefore(e, createElementFromString(gutter.join("")));
+          }
+        );
+      });
+    </script>
+    
+    <script type="text/javascript">
       // Set theme before page rendering.
       // Check user's choice from localStorage.
       let theme = localStorage.getItem("theme");
@@ -362,23 +386,20 @@ const ap0 = new APlayer ({
 <ol>
 <li><p>首先电脑上装一个tftp服务器。</p>
 <figure data-raw="$ sudo pacman -S tftp-hpa
-$ sudo systemctl start tftpd.service" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
-<span class="line-number">2</span></pre><pre class="code"><code class="language-powershell"><span class="hljs-variable">$</span> sudo pacman <span class="hljs-literal">-S</span> tftp<span class="hljs-literal">-hpa</span>
-<span class="hljs-variable">$</span> sudo systemctl <span class="hljs-built_in">start</span> tftpd.service</code></pre></figure>
+$ sudo systemctl start tftpd.service" class="code-block"><pre class="code"><code>$ sudo pacman -S tftp-hpa
+$ sudo systemctl start tftpd.service</code></pre></figure>
 <p>tftp的默认目录为<code>/srv/tftp</code>。</p>
 <p>这里使用HackPascal制作的Breed（第三方Boot Loader），<a href="https://breed.hackpascal.net/" target="_blank" rel="external nofollow noreferrer noopener">下载链接</a>，把下载好的Breed重命名为<code>breed.bin</code>，复制到tftp的默认目录。</p>
 <figure data-raw="$ cd /srv/tftp
-$ sudo cp ~/Downloads/breed-mt7620-xiaomi-r3g.bin breed.bin" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
-<span class="line-number">2</span></pre><pre class="code"><code class="language-awk">$ cd <span class="hljs-regexp">/srv/</span>tftp
-$ sudo cp ~<span class="hljs-regexp">/Downloads/</span>breed-mt7620-xiaomi-r3g.bin breed.bin</code></pre></figure>
+$ sudo cp ~/Downloads/breed-mt7620-xiaomi-r3g.bin breed.bin" class="code-block"><pre class="code"><code>$ cd /srv/tftp
+$ sudo cp ~/Downloads/breed-mt7620-xiaomi-r3g.bin breed.bin</code></pre></figure>
 </li>
 <li><p>路由器插网线连电脑，设置静态ip地址192.168.1.3/24，将串口和电脑连接，先不给路由器通电，通常情况下usb串口的设备名称为<code>/dev/ttyUSB0</code>，如果不确定的话可以<code>dmesg</code>查一下。</p>
 </li>
 <li><p>使用<code>screen</code>连接串口，波特率为115200。</p>
 <figure data-raw="$ sudo pacman -S screen
-$ sudo screen /dev/ttyUSB0 115200" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
-<span class="line-number">2</span></pre><pre class="code"><code class="language-routeros">$ sudo pacman -S<span class="hljs-built_in"> screen
-</span>$ sudo<span class="hljs-built_in"> screen </span>/dev/ttyUSB0 115200</code></pre></figure>
+$ sudo screen /dev/ttyUSB0 115200" class="code-block"><pre class="code"><code>$ sudo pacman -S screen
+$ sudo screen /dev/ttyUSB0 115200</code></pre></figure>
 <p>路由器通电，终端上会显示路由器启动的信息，等几秒后在选择启动项的时候按9，通过TFTP加载Boot Loader。</p>
 <blockquote>
 <p>如果串口在连接到电脑的情况下主板通电时没有响应，那就断开usb串口先给主板通电后再连接串口。
@@ -396,18 +417,7 @@ $ sudo screen /dev/ttyUSB0 115200" class="code-block highlight hljs"><pre class=
 You choosed 9
 
 9: System Load Boot Loader then write to Flash via TFTP. 
-Warning!! Erase Boot Loader in Flash then burn new one. Are you sure?(Y/N)y" data-info="language-text" data-lang="text" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span></pre><pre class="code"><code class="language-plaintext">Please choose the operation: 
+Warning!! Erase Boot Loader in Flash then burn new one. Are you sure?(Y/N)y" data-info="language-text" data-lang="text" class="code-block"><pre class="code"><code class="language-text">Please choose the operation: 
 1: Load system code to SDRAM via TFTP. 
 2: Load system code then write to Flash via TFTP. 
 3: Boot system code via Flash (default).
@@ -423,10 +433,7 @@ Warning!! Erase Boot Loader in Flash then burn new one. Are you sure?(Y/N)y</cod
 <figure data-raw="Please Input new ones /or Ctrl-C to discard
          Input device IP (192.168.31.1) ==:192.168.1.1
          Input server IP (192.168.31.3) ==:192.168.1.3
-         Input Uboot filename (uboot.bin) ==:breed.bin" data-info="language-text" data-lang="text" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span></pre><pre class="code"><code class="language-plaintext">Please Input new ones /or Ctrl-C to discard
+         Input Uboot filename (uboot.bin) ==:breed.bin" data-info="language-text" data-lang="text" class="code-block"><pre class="code"><code class="language-text">Please Input new ones /or Ctrl-C to discard
          Input device IP (192.168.31.1) ==:192.168.1.1
          Input server IP (192.168.31.3) ==:192.168.1.3
          Input Uboot filename (uboot.bin) ==:breed.bin</code></pre></figure>
@@ -453,24 +460,7 @@ Enter 'help' for a list of built-in commands.
 
 
 root@XiaoQiang:~# 
-" data-info="language-text" data-lang="text" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-<span class="line-number">17</span>
-<span class="line-number">18</span></pre><pre class="code"><code class="language-plaintext">BusyBox v1.19.4 (2018-10-29 07:52:03 UTC) built-in shell (ash)
+" data-info="language-text" data-lang="text" class="code-block"><pre class="code"><code class="language-text">BusyBox v1.19.4 (2018-10-29 07:52:03 UTC) built-in shell (ash)
 Enter 'help' for a list of built-in commands.
 
  -----------------------------------------------------
@@ -791,4 +781,4 @@ root@XiaoQiang:~#
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.6.1 at 2021-02-01T14:37:55.157Z. -->
+<!-- Page built by Hikaru v1.6.1 at 2021-02-23T11:40:33.497Z. -->

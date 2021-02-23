@@ -1,7 +1,7 @@
 ---
 title: 惠普光影精灵4在Arch Linux下使用Optimus Manager配置双显卡
 created: 2020-07-19T15:29:57+08:00
-updated: 2020-11-03T16:39:34+08:00
+updated: 2021-02-23T18:58:33+08:00
 layout: post
 zone: Asia/Shanghai
 tags:
@@ -32,19 +32,21 @@ categories:
 
 > 本段略微有些废话, 可以跳过
 
-记得在刚买来这台笔记本（2018年夏）, Linux内核还没升到5.0的时候, 使用live CD装系统时会遇到`lspci`卡死, 关机的时候会卡死的问题, 查系统日记都是一堆ACPI的报错。当时网上查了一下大概是内核和驱动一些bug, 没找到解决办法（补充：是nouveau的问题, 内核参数添加`modprobe.blacklist=nouveau`禁用可以暂时解决问题）, Google到论坛的帖子说是在关机/重启发生卡死时直接长按电源关机就好了, 对电脑没有影响（找不到搜的回答了）
+记得在刚买来这台笔记本（2018年夏）, Linux内核还没升到5.0的时候, 使用live CD装系统时会遇到`lspci`卡死, 关机的时候会卡死的问题, 查系统日记都是一堆ACPI的报错。当时网上查了一下大概是内核和驱动一些bug, 没找到解决办法, Google到论坛的帖子说是在关机/重启发生卡死时只能直接长按电源关机就（找不到搜的回答了）
 
-装完系统后安装显卡驱动时想通过Bumblebee + bbswitch切换双显卡, 于是装了Gnome然后照着wiki配置完Bumblebee后重启电脑直接死机（补充：应该是bbswitch导致的ACPI锁死）。
+装完系统后安装显卡驱动时想通过Bumblebee + bbswitch切换双显卡, 于是装了Gnome然后照着wiki配置完Bumblebee和bbswitch后重启电脑直接死机。
 
 经过多次重装系统的折磨后, 发现只装Bumblebee不装bbswitch不`systemctl enable bumblebeed.service`时, 能正常开机, 然后之前遇到的两个问题也莫名其妙就好了, 即系统重启关机不会卡死, `lspci`也正常了（迷）
 
-之后, 在不装bbswitch的情况下, `systemctl enable bumblebeed`再用`optirun`和`primusrun`这种方式用独显运行程序都没有问题。
+之后, 在不装bbswitch的情况下, 启动`bumblebeed.service`再用`optirun`和`primusrun`这种方式用独显运行程序都没有问题。
 
-当时以为电脑不装bumblebee的话就没法正常关机, 于是就一直用着bumblebee切换双显卡, 玩游戏性能比Windows下差一点（貌似是显卡驱动的锅？）, 别的都没啥问题。
+当时因为电脑不装Bumblebee的话就没法正常关机, 于是就一直用着Bumblebee切换双显卡, 玩游戏性能比Windows下差一点, 别的都没啥问题。
 
-今年年初买了一块拓展屏想搞双显示器, 本来显示器应该插上HDMI直接就能用的, 但是因为这电脑的HDMI走的独显输出, Bumblebee不能直接用, wiki上教的创建个intel的虚拟输出啥的方法有试过但是没成功过（不知道是配置文件写错了还是啥问题）, 于是又Google了一下后disable并卸了Bumblebee改用[NVIDIA Optimus 只使用独显](https://wiki.archlinux.org/index.php/NVIDIA_Optimus#Use_NVIDIA_graphics_only)的方式, 这样双显示器倒是能用了, 但是如果笔记本只用电池没连着拓展屏的时候还跑着独显这也太费电了。
+今年年初买了一块拓展屏想搞双显示器, 本来显示器应该插上HDMI直接就能用的, 但是因为这电脑的HDMI走的独显输出, Bumblebee不能直接用, wiki上教的创建个intel的虚拟输出啥的方法有试过但是没成功, 于是又Google了一下后卸了Bumblebee改用[NVIDIA Optimus 只使用独显](https://wiki.archlinux.org/index.php/NVIDIA_Optimus#Use_NVIDIA_graphics_only)的方式, 这样双显示器倒是能用了, 但是如果笔记本只用电池没连着拓展屏的时候还跑着独显这也太费电了。
 
 所以最后找到了能切换显卡的[Optimus Manager](https://github.com/Askannz/optimus-manager)。
+
+> 查了一下这款电脑的type-c接口支持DP1.2视频输出，和HDMI 2.0一样支持4K 60fps，走的是intel集成显卡，可以在独显不通电的时候输出画面到第三方显示器。所以买一根type-c转DP线就可以点亮第三方显示器（前提是你的显示器有DP接口），但是切换显卡还是得依靠Bunblebee或Optimus Manager这类的软件。
 
 # 安装过程
 
@@ -54,7 +56,7 @@ categories:
 
 使用Arch Linux CN源或者通过AUR Helper安装`optimus-manager`。
 
-```
+``` text
 # Arch Linux CN
 $ sudo pacman -S optimus-manager
 # AUR
@@ -219,9 +221,11 @@ options=overclocking
 
  - 如果用不了`lspci`, 电脑没法正常关机的话, 是nouveau的问题, 可添加内核参数`modprobe.blacklist=nouveau`禁用。
 
- - 因为前几天改配置文件时又踩了一遍锁死的坑, 于是拿着相机内存卡（我U盘放学校寝室里拿不出来了）做了最新的(2020.07.01)live CD救砖时, 惊喜的发现在live环境下`lspci`和关机都不会卡死了, ~~貌似是新版内核驱动修复了nouveau的问题~~ 应该是我在几个月前升级了电脑的Bios解决的这个问题, 因为我又新下了一个旧的live CD, 关机和lspci也都正常了（算了不管到底是怎么回事了, 能用就行
+ - 因为前几天改配置文件时又踩了一遍锁死的坑, 于是用最新的(2020.07.01)live CD救砖时, 惊喜的发现在live环境下`lspci`和关机都不会卡死了, 貌似是新版内核修复了这个bug
 
- - 在切换显卡自动注销后, gdm界面不会自动加载出来而是一直黑屏, 这时需要手动切换到tty2再切回tty1才能加载出来, 貌似是gdm-prime的问题。
+ - 在切换显卡自动注销后, gdm界面有时不会自动加载出来而是一直黑屏, 这时需要手动切换到tty2再切回tty1才能加载出来。
+
+ - 如果显示器支持[DDC/DI](https://en.wikipedia.org/wiki/Display_Data_Channel#DDC.2FCI)，可以参考[Wiki](https://wiki.archlinux.org/index.php/Backlight#External_monitors)使用命令调节显示器亮度。
 
  - (本条与配置显卡无关) 因为电脑用的intel网卡, 如果遇到蓝牙耳机无法连接的情况, 安装`pulseaudio`和`pulseaudio-modues-bt`等耳机需要的蓝牙组件, 照着Wiki上的[禁用Bluetooth coexistence](https://wiki.archlinux.org/index.php/Wireless_network_configuration#Bluetooth_coexistence)解决此问题。
 

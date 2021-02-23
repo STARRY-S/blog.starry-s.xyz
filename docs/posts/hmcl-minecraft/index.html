@@ -90,6 +90,30 @@
     
     
     <script type="text/javascript">
+      documentReady(() => {
+        elementsEach(
+          document.querySelectorAll("figure.code-block pre.code"),
+          (e, i) => {
+            const code = e.parentNode.getAttribute("data-raw");
+            const gutter = [];
+            gutter.push("<pre class=\"gutter\">");
+            // Highlight should not change lines.
+            // But may replace `\n` with `<br>`, so use original code here.
+            const linesLength = code.split(/\r?\n/g).length;
+            for (let i = 0; i < linesLength; ++i) {
+              gutter.push(`<span class="line-number">${i + 1}</span>`);
+              if (i !== linesLength - 1) {
+                gutter.push("\n");
+              }
+            }
+            gutter.push("</pre>");
+            elementBefore(e, createElementFromString(gutter.join("")));
+          }
+        );
+      });
+    </script>
+    
+    <script type="text/javascript">
       // Set theme before page rendering.
       // Check user's choice from localStorage.
       let theme = localStorage.getItem("theme");
@@ -337,11 +361,9 @@
 <p>Linux用户你下载的是jar文件所以如果你想运行你需要新建一个可执行文件：</p>
 <figure data-raw="$ cd 你的文件夹名称
 $ echo &quot;java -jar hmcl-对应的版本号.jar&quot; > ./start.sh
-$ chmod 744 ./start.sh" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span></pre><pre class="code"><code class="language-shell"><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> 你的文件夹名称</span>
-<span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">echo</span> <span class="hljs-string">"java -jar hmcl-对应的版本号.jar"</span> &gt; ./start.sh</span>
-<span class="hljs-meta">$</span><span class="bash"> chmod 744 ./start.sh</span></code></pre></figure>
+$ chmod 744 ./start.sh" class="code-block"><pre class="code"><code>$ cd 你的文件夹名称
+$ echo "java -jar hmcl-对应的版本号.jar" &gt; ./start.sh
+$ chmod 744 ./start.sh</code></pre></figure>
 <p>然后在终端执行<code>./start.sh</code>。</p>
 <p>或者直接在终端执行<code>java -jar hmcl-*.jar</code>即可。</p>
 <ol start="4">
@@ -687,4 +709,4 @@ $ chmod 744 ./start.sh" class="code-block highlight hljs"><pre class="gutter"><s
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.6.1 at 2021-02-01T14:37:55.259Z. -->
+<!-- Page built by Hikaru v1.6.1 at 2021-02-23T11:40:33.566Z. -->

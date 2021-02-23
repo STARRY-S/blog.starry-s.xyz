@@ -90,6 +90,30 @@
     
     
     <script type="text/javascript">
+      documentReady(() => {
+        elementsEach(
+          document.querySelectorAll("figure.code-block pre.code"),
+          (e, i) => {
+            const code = e.parentNode.getAttribute("data-raw");
+            const gutter = [];
+            gutter.push("<pre class=\"gutter\">");
+            // Highlight should not change lines.
+            // But may replace `\n` with `<br>`, so use original code here.
+            const linesLength = code.split(/\r?\n/g).length;
+            for (let i = 0; i < linesLength; ++i) {
+              gutter.push(`<span class="line-number">${i + 1}</span>`);
+              if (i !== linesLength - 1) {
+                gutter.push("\n");
+              }
+            }
+            gutter.push("</pre>");
+            elementBefore(e, createElementFromString(gutter.join("")));
+          }
+        );
+      });
+    </script>
+    
+    <script type="text/javascript">
       // Set theme before page rendering.
       // Check user's choice from localStorage.
       let theme = localStorage.getItem("theme");
@@ -620,4 +644,4 @@
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.6.1 at 2021-02-01T14:37:55.263Z. -->
+<!-- Page built by Hikaru v1.6.1 at 2021-02-23T11:40:33.567Z. -->

@@ -12,11 +12,11 @@ categories:
 
 <!--aplayer
 {
-    "name": "遊園施設",
-    "artist": "帆足圭吾",
-    "theme": "#67B577",
-    "url": "https://music.starry-s.me/music/540b_075e_0453_cae9f8037d04c81f84993977b01792ec.m4a",
-    "cover": "https://music.starry-s.me/music/cover/18710389371705314.jpg"
+    "name": "時雨",
+    "artist": "川嶋あい",
+    "theme": "#aabbaa",
+    "url": "https://music.starry-s.me/music/obj_w5rDlsOJwrLDjj7CmsOj_4642548938_80e9_cee0_eb38_c8adceebab40a36bfc2685fdad037b14.mov",
+    "cover": "https://music.starry-s.me/music/cover/109951165427223375.jpg"
 }
 -->
 
@@ -31,7 +31,6 @@ int main(int argc, char *argv[])
     printf("Hello World!\n");
     return 0;
 }
-
 ```
 
 ## STARRY-S' Blog

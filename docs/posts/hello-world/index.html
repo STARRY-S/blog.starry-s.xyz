@@ -11,7 +11,7 @@
     
     <meta name="author" content="STARRY-S">
     
-    <meta name="description" content="const ap0 = new APlayer ({ container: document.getElementById("aplayer0"), theme: "#33363b", fixed: false, listFolded: false, listMaxHeight: false, lrcType: false, mini: false, volume: 0.7, order: "list", loop: "all", autoplay: false, audio: [{ name: "遊園施設", artist: "帆足圭吾", url: "https://music.starry-s.me/music/540b_075e_0453_cae9f8037d04c81f84993977b01792ec.m4a", cover: "https://music.starry-s.me/music/cover/18710389371705314.jpg", lrc: "", theme: "#67B577" }] });">
+    <meta name="description" content="const ap0 = new APlayer ({ container: document.getElementById("aplayer0"), theme: "#33363b", fixed: false, listFolded: false, listMaxHeight: false, lrcType: false, mini: false, volume: 0.7, order: "list", loop: "all", autoplay: false, audio: [{ name: "時雨", artist: "川嶋あい", url: "https://music.starry-s.me/music/obj_w5rDlsOJwrLDjj7CmsOj_4642548938_80e9_cee0_eb38_c8adceebab40a36bfc2685fdad037b14.mov", cover: "https://music.starry-s.me/music/cover/109951165427223375.jpg", lrc: "", theme: "#aabbaa" }] });">
     
     
     <meta name="keywords" content="Life, ARIA, Hikaru, STARRY-S, Arch Linux, Linux, Music">
@@ -88,6 +88,30 @@
       });
     </script>
     
+    
+    <script type="text/javascript">
+      documentReady(() => {
+        elementsEach(
+          document.querySelectorAll("figure.code-block pre.code"),
+          (e, i) => {
+            const code = e.parentNode.getAttribute("data-raw");
+            const gutter = [];
+            gutter.push("<pre class=\"gutter\">");
+            // Highlight should not change lines.
+            // But may replace `\n` with `<br>`, so use original code here.
+            const linesLength = code.split(/\r?\n/g).length;
+            for (let i = 0; i < linesLength; ++i) {
+              gutter.push(`<span class="line-number">${i + 1}</span>`);
+              if (i !== linesLength - 1) {
+                gutter.push("\n");
+              }
+            }
+            gutter.push("</pre>");
+            elementBefore(e, createElementFromString(gutter.join("")));
+          }
+        );
+      });
+    </script>
     
     <script type="text/javascript">
       // Set theme before page rendering.
@@ -326,12 +350,12 @@ const ap0 = new APlayer ({
     loop: "all",
     autoplay: false,
     audio: [{
-        name: "遊園施設",
-        artist: "帆足圭吾",
-        url: "https://music.starry-s.me/music/540b_075e_0453_cae9f8037d04c81f84993977b01792ec.m4a",
-        cover: "https://music.starry-s.me/music/cover/18710389371705314.jpg",
+        name: "時雨",
+        artist: "川嶋あい",
+        url: "https://music.starry-s.me/music/obj_w5rDlsOJwrLDjj7CmsOj_4642548938_80e9_cee0_eb38_c8adceebab40a36bfc2685fdad037b14.mov",
+        cover: "https://music.starry-s.me/music/cover/109951165427223375.jpg",
         lrc: "",
-        theme: "#67B577"
+        theme: "#aabbaa"
     }]
 });
 </script> 
@@ -344,20 +368,12 @@ int main(int argc, char *argv[])
 {
     printf(&quot;Hello World!\n&quot;);
     return 0;
-}
-" data-info="language-C" data-lang="C" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span></pre><pre class="code"><code class="language-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> *argv[])</span>
-</span>{
-    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Hello World!\n"</span>);
-    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
-}
-</code></pre></figure>
+}" data-info="language-C" data-lang="C" class="code-block"><pre class="code"><code class="language-C">#include &lt;stdio.h&gt;
+int main(int argc, char *argv[])
+{
+    printf("Hello World!\n");
+    return 0;
+}</code></pre></figure>
 <h2 id="STARRY-S039;Blog"><a class="header-link" href="/posts/hello-world/#STARRY-S039;Blog" title="STARRY-S039;Blog"></a>STARRY-S' Blog</h2>
 
     </main>
@@ -644,4 +660,4 @@ int main(int argc, char *argv[])
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.6.1 at 2021-02-01T14:37:55.279Z. -->
+<!-- Page built by Hikaru v1.6.1 at 2021-02-23T11:40:33.570Z. -->

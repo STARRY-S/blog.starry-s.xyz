@@ -109,6 +109,30 @@
     
     
     <script type="text/javascript">
+      documentReady(() => {
+        elementsEach(
+          document.querySelectorAll("figure.code-block pre.code"),
+          (e, i) => {
+            const code = e.parentNode.getAttribute("data-raw");
+            const gutter = [];
+            gutter.push("<pre class=\"gutter\">");
+            // Highlight should not change lines.
+            // But may replace `\n` with `<br>`, so use original code here.
+            const linesLength = code.split(/\r?\n/g).length;
+            for (let i = 0; i < linesLength; ++i) {
+              gutter.push(`<span class="line-number">${i + 1}</span>`);
+              if (i !== linesLength - 1) {
+                gutter.push("\n");
+              }
+            }
+            gutter.push("</pre>");
+            elementBefore(e, createElementFromString(gutter.join("")));
+          }
+        );
+      });
+    </script>
+    
+    <script type="text/javascript">
       // Set theme before page rendering.
       // Check user's choice from localStorage.
       let theme = localStorage.getItem("theme");
@@ -552,19 +576,13 @@ L1: NOP
     NOP
     DJNZ R6, L1
     DJNZ R7, L0
-    RET" data-info="language-asm" data-lang="asm" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span></pre><pre class="code"><code class="language-avrasm"><span class="hljs-symbol">DL:</span> <span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R7</span>, <span class="hljs-meta">#0AH</span>
-<span class="hljs-symbol">L0:</span> <span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R6</span>, <span class="hljs-meta">#250</span>
-<span class="hljs-symbol">L1:</span> <span class="hljs-keyword">NOP</span>
-    <span class="hljs-keyword">NOP</span>
-    DJNZ <span class="hljs-built_in">R6</span>, L1
-    DJNZ <span class="hljs-built_in">R7</span>, L0
-    <span class="hljs-keyword">RET</span></code></pre></figure>
+    RET" data-info="language-asm" data-lang="asm" class="code-block"><pre class="code"><code class="language-asm">DL: MOV R7, #0AH
+L0: MOV R6, #250
+L1: NOP
+    NOP
+    DJNZ R6, L1
+    DJNZ R7, L0
+    RET</code></pre></figure>
 <p>R7为10, R6为250, 因此两个<code>NOP</code>加上一个<code>DJNZ</code>一共循环了250次, 该250次的循环一共执行了10次。</p>
 <p><code>NOP</code>为1周期指令, <code>DJNZ</code>为2周期指令, 两个<code>NOP</code>加一个<code>DJNZ</code>共4周期。</p>
 <p>6MHz下一个机器周期为 $12 \div (6 \times 10^6)= 2{\mu}s$, 12MHz下一个机器周期为1微秒。</p>
@@ -589,27 +607,17 @@ LOOP:
       INC R0
       INC R1
       DJNZ R2, LOOP
-      RET" data-info="language-ASM" data-lang="ASM" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span></pre><pre class="code"><code class="language-avrasm"><span class="hljs-symbol">COPY:</span> <span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R0</span>, <span class="hljs-meta">#40H</span>
-      <span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R1</span>, <span class="hljs-meta">#50H</span>
-      <span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R2</span>, <span class="hljs-meta">#10H</span>
-      <span class="hljs-comment">; 40H~4FH一共复制了16次</span>
-<span class="hljs-symbol">LOOP:</span>
-      <span class="hljs-keyword">MOV</span> A, @<span class="hljs-built_in">R0</span>
-      <span class="hljs-keyword">MOV</span> @<span class="hljs-built_in">R1</span>, A
-      <span class="hljs-keyword">INC</span> <span class="hljs-built_in">R0</span>
-      <span class="hljs-keyword">INC</span> <span class="hljs-built_in">R1</span>
-      DJNZ <span class="hljs-built_in">R2</span>, LOOP
-      <span class="hljs-keyword">RET</span></code></pre></figure>
+      RET" data-info="language-ASM" data-lang="ASM" class="code-block"><pre class="code"><code class="language-ASM">COPY: MOV R0, #40H
+      MOV R1, #50H
+      MOV R2, #10H
+      ; 40H~4FH一共复制了16次
+LOOP:
+      MOV A, @R0
+      MOV @R1, A
+      INC R0
+      INC R1
+      DJNZ R2, LOOP
+      RET</code></pre></figure>
 <p>因为没有<code>MOV @RX, @RX</code>这条指令, 所以用A做数据的中转站。</p>
 </li>
 <li><p>将任何无符号8位二进制数转换为BCD码的子程序, 入口参数为内部RAM单元20H, 出口参数为内部RAM单元30H和31H, 30H存放百位数, 31H存放十位数和个位数。</p>
@@ -627,35 +635,21 @@ DIV AB
 SWAP A
 ADD A, B; 也可以用ORL
 MOV 31H, A
-RET" data-info="language-ASM" data-lang="ASM" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span></pre><pre class="code"><code class="language-avrasm"><span class="hljs-symbol">CV:</span>
-<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R0</span>, <span class="hljs-meta">#20H</span>
-<span class="hljs-keyword">MOV</span> A, @<span class="hljs-built_in">R0</span>
-<span class="hljs-keyword">MOV</span> B, <span class="hljs-meta">#100</span>
-DIV AB<span class="hljs-comment">; A除以100, 得到的百位数存在A中</span>
-<span class="hljs-keyword">MOV</span> <span class="hljs-number">30</span>H, A
-<span class="hljs-keyword">MOV</span> A, B
+RET" data-info="language-ASM" data-lang="ASM" class="code-block"><pre class="code"><code class="language-ASM">CV:
+MOV R0, #20H
+MOV A, @R0
+MOV B, #100
+DIV AB; A除以100, 得到的百位数存在A中
+MOV 30H, A
+MOV A, B
 
-<span class="hljs-keyword">MOV</span> B, <span class="hljs-meta">#10</span>
+MOV B, #10
 DIV AB
 
-<span class="hljs-keyword">SWAP</span> A
-<span class="hljs-keyword">ADD</span> A, B<span class="hljs-comment">; 也可以用ORL</span>
-<span class="hljs-keyword">MOV</span> <span class="hljs-number">31</span>H, A
-<span class="hljs-keyword">RET</span></code></pre></figure>
+SWAP A
+ADD A, B; 也可以用ORL
+MOV 31H, A
+RET</code></pre></figure>
 <p><code>DIV AB</code>和<code>MUL AB</code>的A和B之间没有逗号。</p>
 </li>
 <li><p>内部RAM 30H单元存放两位十进制数 (压缩BCD码), 编写将该十进制数转换为对应ASCII码的子程序, 转换结果存放到内部RAM 40H (十位数) 和41H (个位数) 单元。</p>
@@ -678,39 +672,23 @@ MOV 40H, A
 RET
 
 DATA:
-DB 30H, 31H, 32H, 33H, 34H, 35H, 36H, 37H, 38H, 39H" data-info="language-ASM" data-lang="ASM" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-<span class="line-number">17</span></pre><pre class="code"><code class="language-x86asm"><span class="hljs-symbol">CV:</span>
-<span class="hljs-keyword">MOV</span> A, <span class="hljs-number">30H</span>
-ANL A, #<span class="hljs-number">0FH</span>
-<span class="hljs-keyword">MOV</span> DPTR, #DATA<span class="hljs-comment">; 或者直接用ADD A, #30H即可</span>
+DB 30H, 31H, 32H, 33H, 34H, 35H, 36H, 37H, 38H, 39H" data-info="language-ASM" data-lang="ASM" class="code-block"><pre class="code"><code class="language-ASM">CV:
+MOV A, 30H
+ANL A, #0FH
+MOV DPTR, #DATA; 或者直接用ADD A, #30H即可
 MOVC A, @A+DPTR
-<span class="hljs-keyword">MOV</span> <span class="hljs-number">41H</span>, A
+MOV 41H, A
 
-<span class="hljs-keyword">MOV</span> A, <span class="hljs-number">30H</span>
+MOV A, 30H
 SWAP A
-ANL A, #<span class="hljs-number">0FH</span>
+ANL A, #0FH
 MOVC A, @A+DPTR
-<span class="hljs-keyword">MOV</span> <span class="hljs-number">40H</span>, A
+MOV 40H, A
 
-<span class="hljs-keyword">RET</span>
-<span class="hljs-symbol">
-DATA:</span>
-<span class="hljs-built_in">DB</span> <span class="hljs-number">30H</span>, <span class="hljs-number">31H</span>, <span class="hljs-number">32H</span>, <span class="hljs-number">33H</span>, <span class="hljs-number">34H</span>, <span class="hljs-number">35H</span>, <span class="hljs-number">36H</span>, <span class="hljs-number">37H</span>, <span class="hljs-number">38H</span>, <span class="hljs-number">39H</span></code></pre></figure>
+RET
+
+DATA:
+DB 30H, 31H, 32H, 33H, 34H, 35H, 36H, 37H, 38H, 39H</code></pre></figure>
 </li>
 <li><p>8个8位数相加, 求平均值, 入口地址为<code>30H</code>~<code>37H</code>, 结果存到<code>40H</code>。</p>
 <p>把8位数相加存在溢出, 所以把相加结果以16进制存到R2、R3中, 再除以8( 右移3次), 即可求得不四舍五入的平均值。</p>
@@ -728,35 +706,21 @@ JNC SKIP
 INC R2
 SKIP:
 INC R0
-DJNZ R1, LOOP   " class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span></pre><pre class="code"><code class="language-avrasm"><span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R0</span>, <span class="hljs-meta">#30H</span>
-<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R1</span>, <span class="hljs-meta">#08H</span>
-<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R2</span>, <span class="hljs-meta">#00H</span>
-<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R3</span>, <span class="hljs-meta">#00H</span>
-<span class="hljs-comment">; 初始化</span>
-<span class="hljs-symbol">LOOP:</span>
-<span class="hljs-keyword">CLR</span> C
-<span class="hljs-keyword">MOV</span> A, @<span class="hljs-built_in">R0</span>
-<span class="hljs-keyword">ADD</span> A, <span class="hljs-built_in">R3</span>
-<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R3</span>, A
+DJNZ R1, LOOP   " class="code-block"><pre class="code"><code>MOV R0, #30H
+MOV R1, #08H
+MOV R2, #00H
+MOV R3, #00H
+; 初始化
+LOOP:
+CLR C
+MOV A, @R0
+ADD A, R3
+MOV R3, A
 JNC SKIP
-<span class="hljs-keyword">INC</span> <span class="hljs-built_in">R2</span>
-<span class="hljs-symbol">SKIP:</span>
-<span class="hljs-keyword">INC</span> <span class="hljs-built_in">R0</span>
-DJNZ <span class="hljs-built_in">R1</span>, LOOP   </code></pre></figure>
+INC R2
+SKIP:
+INC R0
+DJNZ R1, LOOP   </code></pre></figure>
 <p>这样结果被保存到R2、R3中, 然后需要写一个循环右移3位的程序。</p>
 <figure data-raw="MOV R4, #03H
 LOOP2:
@@ -765,21 +729,14 @@ RRC R3
 DJNZ R4, LOOP2
 
 MOV 40H, R3
-; 右移3次后R2的低4位为0, 结果保存在R3中" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span></pre><pre class="code"><code class="language-avrasm"><span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R4</span>, <span class="hljs-meta">#03H</span>
-<span class="hljs-symbol">LOOP2:</span>
-RRC <span class="hljs-built_in">R2</span>
-RRC <span class="hljs-built_in">R3</span>
-DJNZ <span class="hljs-built_in">R4</span>, LOOP2
+; 右移3次后R2的低4位为0, 结果保存在R3中" class="code-block"><pre class="code"><code>MOV R4, #03H
+LOOP2:
+RRC R2
+RRC R3
+DJNZ R4, LOOP2
 
-<span class="hljs-keyword">MOV</span> <span class="hljs-number">40</span>H, <span class="hljs-built_in">R3</span>
-<span class="hljs-comment">; 右移3次后R2的低4位为0, 结果保存在R3中</span></code></pre></figure>
+MOV 40H, R3
+; 右移3次后R2的低4位为0, 结果保存在R3中</code></pre></figure>
 <p>这样R3中求得的是不带四舍五入的结果。</p>
 <p>如果需要带四舍五入的话第一种方法是判断最后一次右移时最低位是否为$1$， ($1 / 2 = 0.5$)。   </p>
 <figure data-raw="MOV R4, #03H
@@ -792,27 +749,17 @@ JNC SKIP2
 INC R3
 SKIP2:
 MOV 40H, R3
-; 右移3次后R2肯定为0" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span></pre><pre class="code"><code class="language-avrasm"><span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R4</span>, <span class="hljs-meta">#03H</span>
-<span class="hljs-symbol">LOOP2:</span>
-RRC <span class="hljs-built_in">R2</span>
-RRC <span class="hljs-built_in">R3</span>
-DJNZ <span class="hljs-built_in">R4</span>, LOOP2
+; 右移3次后R2肯定为0" class="code-block"><pre class="code"><code>MOV R4, #03H
+LOOP2:
+RRC R2
+RRC R3
+DJNZ R4, LOOP2
 
 JNC SKIP2
-<span class="hljs-keyword">INC</span> <span class="hljs-built_in">R3</span>
-<span class="hljs-symbol">SKIP2:</span>
-<span class="hljs-keyword">MOV</span> <span class="hljs-number">40</span>H, <span class="hljs-built_in">R3</span>
-<span class="hljs-comment">; 右移3次后R2肯定为0</span></code></pre></figure>
+INC R3
+SKIP2:
+MOV 40H, R3
+; 右移3次后R2肯定为0</code></pre></figure>
 <p>这样是带四舍五入的结果。</p>
 <p>第二种方法，8个8位数相加求平均值，要求四舍五入的话，只需要在这8个数求和后再加4（<code>0100B</code>），之后右移3次。</p>
 <figure data-raw="ADD A, #04H
@@ -825,27 +772,17 @@ MOV R4, #03H
 LOOP2:
 RRC R2
 RRC R3
-DJNZ R4, LOOP2" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span></pre><pre class="code"><code class="language-avrasm"><span class="hljs-keyword">ADD</span> A, <span class="hljs-meta">#04H</span>
-<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R3</span>, A
+DJNZ R4, LOOP2" class="code-block"><pre class="code"><code>ADD A, #04H
+MOV R3, A
 JNC SKIP2
-<span class="hljs-keyword">INC</span> <span class="hljs-built_in">R2</span>
+INC R2
 
-<span class="hljs-symbol">SKIP2:</span>
-<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R4</span>, <span class="hljs-meta">#03H</span>
-<span class="hljs-symbol">LOOP2:</span>
-RRC <span class="hljs-built_in">R2</span>
-RRC <span class="hljs-built_in">R3</span>
-DJNZ <span class="hljs-built_in">R4</span>, LOOP2</code></pre></figure>
+SKIP2:
+MOV R4, #03H
+LOOP2:
+RRC R2
+RRC R3
+DJNZ R4, LOOP2</code></pre></figure>
 <p>结果保存在R3中。</p>
 </li>
 </ol>
@@ -1097,70 +1034,37 @@ JNB TI, $
 CLR TI
 AJMP LOOP
 
-END" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-<span class="line-number">17</span>
-<span class="line-number">18</span>
-<span class="line-number">19</span>
-<span class="line-number">20</span>
-<span class="line-number">21</span>
-<span class="line-number">22</span>
-<span class="line-number">23</span>
-<span class="line-number">24</span>
-<span class="line-number">25</span>
-<span class="line-number">26</span>
-<span class="line-number">27</span>
-<span class="line-number">28</span>
-<span class="line-number">29</span>
-<span class="line-number">30</span>
-<span class="line-number">31</span>
-<span class="line-number">32</span>
-<span class="line-number">33</span>
-<span class="line-number">34</span></pre><pre class="code"><code class="language-avrasm">ORG <span class="hljs-number">0000</span>H
-<span class="hljs-symbol">MAIN:</span>
-<span class="hljs-keyword">MOV</span> SCON, <span class="hljs-meta">#50H</span>
-<span class="hljs-comment">; 串口使用方式1，且允许接收</span>
-<span class="hljs-keyword">MOV</span> PCON, <span class="hljs-meta">#00H</span>
-<span class="hljs-comment">; 波特率不加倍</span>
-<span class="hljs-keyword">MOV</span> TMOD, <span class="hljs-meta">#20H</span>
-<span class="hljs-comment">; 定时器1使用方式2</span>
+END" class="code-block"><pre class="code"><code>ORG 0000H
+MAIN:
+MOV SCON, #50H
+; 串口使用方式1，且允许接收
+MOV PCON, #00H
+; 波特率不加倍
+MOV TMOD, #20H
+; 定时器1使用方式2
 
-<span class="hljs-keyword">MOV</span> TL1, <span class="hljs-meta">#0F3H</span>
-<span class="hljs-keyword">MOV</span> TH1, <span class="hljs-meta">#0F3H</span>
+MOV TL1, #0F3H
+MOV TH1, #0F3H
 SETB TR1
 
-<span class="hljs-symbol">LOOP:</span>
-<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R0</span>, <span class="hljs-meta">#30H</span>
-<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R1</span>, <span class="hljs-meta">#08H</span>
+LOOP:
+MOV R0, #30H
+MOV R1, #08H
 
-<span class="hljs-symbol">REC:</span>
+REC:
 JNB RI, $
-<span class="hljs-keyword">MOV</span> @<span class="hljs-built_in">R0</span>, SBUF
-<span class="hljs-keyword">CLR</span> RI <span class="hljs-comment">; 软件清零RI</span>
-<span class="hljs-keyword">INC</span> <span class="hljs-built_in">R0</span>
-DJNZ <span class="hljs-built_in">R1</span>, REC
+MOV @R0, SBUF
+CLR RI ; 软件清零RI
+INC R0
+DJNZ R1, REC
 
-<span class="hljs-keyword">MOV</span> SBUF, <span class="hljs-meta">#55H</span>
+MOV SBUF, #55H
 JNB TI, $
-<span class="hljs-keyword">CLR</span> TI
+CLR TI
 
-<span class="hljs-keyword">MOV</span> SBUF, <span class="hljs-meta">#0AAH</span>
+MOV SBUF, #0AAH
 JNB TI, $
-<span class="hljs-keyword">CLR</span> TI
+CLR TI
 AJMP LOOP
 
 END</code></pre></figure>
@@ -1259,127 +1163,66 @@ RET
 TAB:
 DB 3FH, 06H, 5BH, 4FH, 66H, 6DH, 7DH, 07H, 7FH, 6FH
 
-END" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-<span class="line-number">17</span>
-<span class="line-number">18</span>
-<span class="line-number">19</span>
-<span class="line-number">20</span>
-<span class="line-number">21</span>
-<span class="line-number">22</span>
-<span class="line-number">23</span>
-<span class="line-number">24</span>
-<span class="line-number">25</span>
-<span class="line-number">26</span>
-<span class="line-number">27</span>
-<span class="line-number">28</span>
-<span class="line-number">29</span>
-<span class="line-number">30</span>
-<span class="line-number">31</span>
-<span class="line-number">32</span>
-<span class="line-number">33</span>
-<span class="line-number">34</span>
-<span class="line-number">35</span>
-<span class="line-number">36</span>
-<span class="line-number">37</span>
-<span class="line-number">38</span>
-<span class="line-number">39</span>
-<span class="line-number">40</span>
-<span class="line-number">41</span>
-<span class="line-number">42</span>
-<span class="line-number">43</span>
-<span class="line-number">44</span>
-<span class="line-number">45</span>
-<span class="line-number">46</span>
-<span class="line-number">47</span>
-<span class="line-number">48</span>
-<span class="line-number">49</span>
-<span class="line-number">50</span>
-<span class="line-number">51</span>
-<span class="line-number">52</span>
-<span class="line-number">53</span>
-<span class="line-number">54</span>
-<span class="line-number">55</span>
-<span class="line-number">56</span>
-<span class="line-number">57</span>
-<span class="line-number">58</span>
-<span class="line-number">59</span>
-<span class="line-number">60</span>
-<span class="line-number">61</span>
-<span class="line-number">62</span></pre><pre class="code"><code class="language-x86asm"><span class="hljs-symbol">MAIN:</span>
-<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R0</span>, #<span class="hljs-number">30H</span>
-<span class="hljs-comment">; R2用来计数</span>
-<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R2</span>, #<span class="hljs-number">03H</span>
-<span class="hljs-comment">; R3用来位选</span>
-<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R3</span>, #<span class="hljs-number">01H</span>
-<span class="hljs-symbol">
-LOOP:</span>
-<span class="hljs-keyword">MOV</span> A, @<span class="hljs-built_in">R0</span>
+END" class="code-block"><pre class="code"><code>MAIN:
+MOV R0, #30H
+; R2用来计数
+MOV R2, #03H
+; R3用来位选
+MOV R3, #01H
+
+LOOP:
+MOV A, @R0
 SWAP A
-ANL A, #<span class="hljs-number">0FH</span>
-<span class="hljs-keyword">MOV</span> DPTR, #TAB
+ANL A, #0FH
+MOV DPTR, #TAB
 MOVC A, @A+DPTR
-<span class="hljs-comment">; 取高4位BCD码对应的段码</span>
+; 取高4位BCD码对应的段码
 
-<span class="hljs-keyword">MOV</span> DPTR, #<span class="hljs-number">8004H</span>
+MOV DPTR, #8004H
 MOVX A, @A+DPTR
-<span class="hljs-comment">; 先送段码</span>
+; 先送段码
 
-<span class="hljs-keyword">MOV</span> A, <span class="hljs-built_in">R3</span>
-<span class="hljs-keyword">MOV</span> DPTR, #<span class="hljs-number">8002H</span>
+MOV A, R3
+MOV DPTR, #8002H
 MOVX @DPTR, A
 RL A
-<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R3</span>, A
-<span class="hljs-comment">; 再送位选</span>
+MOV R3, A
+; 再送位选
 
 LCALL DELAY
 
-<span class="hljs-keyword">MOV</span> A, @<span class="hljs-built_in">R0</span>
-ANL A, #<span class="hljs-number">0FH</span>
-<span class="hljs-keyword">MOV</span> DPTR, #TAB
+MOV A, @R0
+ANL A, #0FH
+MOV DPTR, #TAB
 MOVC A, @A+DPTR
-<span class="hljs-comment">; 取低4位BCD码对应的段码</span>
+; 取低4位BCD码对应的段码
 
-<span class="hljs-keyword">MOV</span> DPTR, #<span class="hljs-number">8004H</span>
+MOV DPTR, #8004H
 MOVX A, @A+DPTR
-<span class="hljs-comment">; 送段码</span>
+; 送段码
 
-<span class="hljs-keyword">MOV</span> A, <span class="hljs-built_in">R3</span>
-<span class="hljs-keyword">MOV</span> DPTR, #<span class="hljs-number">8002H</span>
+MOV A, R3
+MOV DPTR, #8002H
 MOVX @DPTR, A
 RL A
-<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R3</span>, A
-<span class="hljs-comment">; 送位选</span>
+MOV R3, A
+; 送位选
 
 LCALL DELAY
-<span class="hljs-keyword">INC</span> <span class="hljs-built_in">R0</span>
+INC R0
 
-DJNZ <span class="hljs-built_in">R2</span>, <span class="hljs-keyword">LOOP</span>
-<span class="hljs-symbol">
-DELAY:</span>
-<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R7</span>, #<span class="hljs-number">250</span>
-<span class="hljs-symbol">DL:</span>
-<span class="hljs-keyword">NOP</span>
-<span class="hljs-keyword">NOP</span>
-DJNZ <span class="hljs-built_in">R7</span>, <span class="hljs-built_in">DL</span>
-<span class="hljs-keyword">RET</span>
-<span class="hljs-symbol">
-TAB:</span>
-<span class="hljs-built_in">DB</span> <span class="hljs-number">3FH</span>, <span class="hljs-number">06H</span>, <span class="hljs-number">5BH</span>, <span class="hljs-number">4FH</span>, <span class="hljs-number">66H</span>, <span class="hljs-number">6DH</span>, <span class="hljs-number">7DH</span>, <span class="hljs-number">07H</span>, <span class="hljs-number">7FH</span>, <span class="hljs-number">6FH</span>
+DJNZ R2, LOOP
+
+DELAY:
+MOV R7, #250
+DL:
+NOP
+NOP
+DJNZ R7, DL
+RET
+
+TAB:
+DB 3FH, 06H, 5BH, 4FH, 66H, 6DH, 7DH, 07H, 7FH, 6FH
 
 END</code></pre></figure>
 </li>
@@ -1402,33 +1245,20 @@ CLR P3.4
 SETB P3.4
 INC DPTR
 DJNZ R2, LOOP
-RET" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span></pre><pre class="code"><code class="language-avrasm"><span class="hljs-symbol">PRINT:</span>
-<span class="hljs-keyword">MOV</span> DPTR, <span class="hljs-meta">#1000H</span>
-<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R2</span>, <span class="hljs-meta">#10H</span>
+RET" class="code-block"><pre class="code"><code>PRINT:
+MOV DPTR, #1000H
+MOV R2, #10H
 
-<span class="hljs-symbol">LOOP:</span>
-JB P3<span class="hljs-number">.3</span>, $
-<span class="hljs-comment">; 确保打印机处于空闲状态</span>
+LOOP:
+JB P3.3, $
+; 确保打印机处于空闲状态
 MOVX A, @DPTR
-<span class="hljs-keyword">MOV</span> P1, A
-<span class="hljs-keyword">CLR</span> P3<span class="hljs-number">.4</span>
-SETB P3<span class="hljs-number">.4</span>
-<span class="hljs-keyword">INC</span> DPTR
-DJNZ <span class="hljs-built_in">R2</span>, LOOP
-<span class="hljs-keyword">RET</span></code></pre></figure>
+MOV P1, A
+CLR P3.4
+SETB P3.4
+INC DPTR
+DJNZ R2, LOOP
+RET</code></pre></figure>
 <p>如果打印机没有和P1直接相连，而是连接到数据锁存器上（74HC374），锁存器的时钟信号的入口地址为<code>A000H</code>。</p>
 <p>使用堆栈保护间接寻址寄存器的值。</p>
 <figure data-raw="PRINT:
@@ -1450,45 +1280,26 @@ CLR P3.4
 SETB P3.4
 INC DPTR
 DJNZ R2, LOOP
-RET" class="code-block highlight hljs"><pre class="gutter"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-<span class="line-number">15</span>
-<span class="line-number">16</span>
-<span class="line-number">17</span>
-<span class="line-number">18</span>
-<span class="line-number">19</span>
-<span class="line-number">20</span></pre><pre class="code"><code class="language-avrasm"><span class="hljs-symbol">PRINT:</span>
-<span class="hljs-keyword">MOV</span> <span class="hljs-built_in">R2</span>, <span class="hljs-meta">#10H</span>
-<span class="hljs-keyword">MOV</span> DPTR, <span class="hljs-meta">#1000H</span>
-<span class="hljs-symbol">LOOP:</span>
-JB P3<span class="hljs-number">.3</span>, $
-<span class="hljs-comment">; 确保打印机处于空闲状态</span>
+RET" class="code-block"><pre class="code"><code>PRINT:
+MOV R2, #10H
+MOV DPTR, #1000H
+LOOP:
+JB P3.3, $
+; 确保打印机处于空闲状态
 
 MOVX A, @DPTR
-<span class="hljs-keyword">PUSH</span> DPL
-<span class="hljs-keyword">PUSH</span> DPH
-<span class="hljs-keyword">MOV</span> DPTR, <span class="hljs-meta">#0A000H</span>
+PUSH DPL
+PUSH DPH
+MOV DPTR, #0A000H
 MOVX @DPTR, A
-<span class="hljs-keyword">POP</span> DPH
-<span class="hljs-keyword">POP</span> DPL
+POP DPH
+POP DPL
 
-<span class="hljs-keyword">CLR</span> P3<span class="hljs-number">.4</span>
-SETB P3<span class="hljs-number">.4</span>
-<span class="hljs-keyword">INC</span> DPTR
-DJNZ <span class="hljs-built_in">R2</span>, LOOP
-<span class="hljs-keyword">RET</span></code></pre></figure>
+CLR P3.4
+SETB P3.4
+INC DPTR
+DJNZ R2, LOOP
+RET</code></pre></figure>
 </li>
 </ol>
 <hr>
@@ -2011,4 +1822,4 @@ DJNZ <span class="hljs-built_in">R2</span>, LOOP
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.6.1 at 2021-02-01T14:37:55.252Z. -->
+<!-- Page built by Hikaru v1.6.1 at 2021-02-23T11:40:33.562Z. -->

@@ -45,9 +45,9 @@ stylus:
     basePath: .
 
 highlight:
-  enable: true
-  gutter: true
-  hljs: false
+  enable: false
+  gutter: false
+  hljs: true
 
 search:
   enable: true
