@@ -101,3 +101,5 @@ MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
 然后就是电脑没有雷电3接口，只是一个支持USB3.0的type c接口支持DP1.2视频输出，电脑用到现在没有遇到啥AMD CPU引起的兼容性问题。
 
 > 先写到这里，不定期更新
+
+![](images/1.jpg)
