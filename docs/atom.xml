@@ -7,7 +7,7 @@
   
   <link rel="alternate" type="text/html" href="https://blog.starry-s.me/" />
   
-  <updated>2021-01-22T14:10:01.000Z</updated>
+  <updated>2021-03-22T11:51:32.000Z</updated>
   
   <id>https://blog.starry-s.me/</id>
   
@@ -16,9 +16,103 @@
     <email>hxstarrys@gmail.com</email>
   </author>
   
-  <generator uri="https://github.com/AlynxZhou/hikaru-generator-feed/" version="v2.3.2">Hikaru Generator Feed</generator>
+  <generator uri="https://github.com/AlynxZhou/hikaru-generator-feed/" version="v2.3.4">Hikaru Generator Feed</generator>
   
   
+  
+  
+  
+  <entry>
+    <title>联想R7000P上手体验</title>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/lenovo-r7000p/" />
+    <id>https://blog.starry-s.me/posts/lenovo-r7000p/</id>
+    
+    <author>
+      <name>STARRY-S</name>
+      <email>hxstarrys@gmail.com</email>
+    </author>
+    
+    
+    <published>2021-03-22T11:51:32.000Z</published>
+    
+    
+    <updated>2021-03-22T11:51:32.000Z</updated>
+    
+    
+    <summary type="html">
+      &lt;p&gt;旧电脑坏掉了，因为坏的有些复杂而且不忍心拿到学校的修理店去修于是打算等到暑假有时间自己买零部件修。（就不吐槽惠普的产品设计问题了...&lt;/p&gt;
+&lt;p&gt;于是在网上逛了一会下决心再也不碰惠普了之后买了联想R7000P 2020，满血RTX 2060 + R7 4800H还是很香的，打守望终于能稳定200fps+了。&lt;/p&gt;
+&lt;p&gt;所以隔了这么久我终于更新博客了。&lt;/p&gt;
+
+    </summary>
+    
+    
+    <content type="html">
+      &lt;p&gt;旧电脑坏掉了，因为坏的有些复杂而且不忍心拿到学校的修理店去修于是打算等到暑假有时间自己买零部件修。（就不吐槽惠普的产品设计问题了...&lt;/p&gt;
+&lt;p&gt;于是在网上逛了一会下决心再也不碰惠普了之后买了联想R7000P 2020，满血RTX 2060 + R7 4800H还是很香的，打守望终于能稳定200fps+了。&lt;/p&gt;
+&lt;p&gt;所以隔了这么久我终于更新博客了。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+&lt;hr&gt;
+&lt;h1 id=&quot;安装ArchLinux&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/lenovo-r7000p/#%E5%AE%89%E8%A3%85ArchLinux&quot; title=&quot;安装ArchLinux&quot;&gt;&lt;/a&gt;安装Arch Linux&lt;/h1&gt;
+&lt;p&gt;到手后就把之前买的西数SN750 1T固态装到了新电脑上，顺便格式化重装了个系统。&lt;/p&gt;
+&lt;p&gt;双M2插槽配上1T + 500G NVME，美汁汁。&lt;/p&gt;
+&lt;p&gt;于是直接给Linux分了150G root，16G SWAP，500G HOME（有点奢侈）， 然后还分了100G用来存steam游戏，剩下的全扔给Windows。&lt;/p&gt;
+&lt;p&gt;装Linux过程中只遇到了终端的警报声有些大而且关不掉这个问题（插耳机也不好使），别的问题都没遇到。&lt;/p&gt;
+&lt;p&gt;之前的电脑总是遇到奇葩问题，用旧版本Linux内核关机或者&lt;code&gt;lspci&lt;/code&gt;时会卡死，显卡驱动装不好会导致开机死机，声卡驱动一直有问题听歌时音量大一点就爆音，HDMI接口直连NVIDIA显卡的所以显卡驱动没配置好独显不工作时没办法外接显示器(后来才知道type c接口有DP视频输出)。&lt;/p&gt;
+&lt;p&gt;新电脑买来装完系统后就遇到了一点小问题网上搜一下就解决了。&lt;/p&gt;
+&lt;h2 id=&quot;屏幕亮度不能调节&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/lenovo-r7000p/#%E5%B1%8F%E5%B9%95%E4%BA%AE%E5%BA%A6%E4%B8%8D%E8%83%BD%E8%B0%83%E8%8A%82&quot; title=&quot;屏幕亮度不能调节&quot;&gt;&lt;/a&gt;屏幕亮度不能调节&lt;/h2&gt;
+&lt;p&gt;&lt;del&gt;开个浏览器能把眼睛晃瞎&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;首先在Bios里设置为独显直连模式。因为AMD核显一般时候用不到而且打游戏时会影响性能（不过我Minecraft核显跑的比独显流畅就很迷）。&lt;/p&gt;
+&lt;p&gt;装好&lt;code&gt;nvidia&lt;/code&gt;驱动后复制&lt;code&gt;/usr/share/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf&lt;/code&gt;到&lt;code&gt;/etc/X11/xorg.conf.d/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;并添加一行参数：&lt;/p&gt;
+&lt;figure data-raw=&quot;Option &amp;quot;RegistryDwords&amp;quot; &amp;quot;EnableBrightnessControl=1&amp;quot;
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;Option &quot;RegistryDwords&quot; &quot;EnableBrightnessControl=1&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;之后编辑&lt;code&gt;/etc/modprobe.d/blacklist.conf&lt;/code&gt;禁用闭源驱动&lt;code&gt;nouveau&lt;/code&gt;和&lt;code&gt;ideapad_laptop&lt;/code&gt;让nvidia调节亮度。&lt;/p&gt;
+&lt;figure data-raw=&quot;blacklist nouveau
+blacklist ideapad_laptop
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;blacklist nouveau
+blacklist ideapad_laptop
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;然后添编辑&lt;code&gt;systemd-boot&lt;/code&gt;的内核参数&lt;code&gt;acpi_backlight=vendor&lt;/code&gt;，更新一下启动项。&lt;/p&gt;
+&lt;p&gt;最后重启电脑就能调亮度了。&lt;/p&gt;
+&lt;h2 id=&quot;GDM不自启动&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/lenovo-r7000p/#GDM%E4%B8%8D%E8%87%AA%E5%90%AF%E5%8A%A8&quot; title=&quot;GDM不自启动&quot;&gt;&lt;/a&gt;GDM不自启动&lt;/h2&gt;
+&lt;p&gt;开机时GDM不会自动显示出来而是得手动切TTY2再切回TTY1才能显示。&lt;/p&gt;
+&lt;p&gt;查Wiki得知是因为GDM在显卡驱动被加载之前就启动了。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://wiki.archlinux.org/index.php/GDM#Black_screen_on_AMD_or_Intel_GPUs_when_an_NVidia_(e)GPU_is_present&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;参照Wiki&lt;/a&gt;，先关掉Wayland，之后设置&lt;a href=&quot;https://wiki.archlinux.org/index.php/Kernel_mode_setting#Early_KMS_start&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;KMS早启动&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;编辑&lt;code&gt;/etc/mkinitcpio.conf&lt;/code&gt;&lt;/p&gt;
+&lt;figure data-raw=&quot;MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;然后重新生成内核镜像，之后重启即可。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;除此之外还遇到了按Fn+Esc键时FnLock的灯没有亮这个问题，不过不影响FnLock的正常使用，所以就忽视了。&lt;/p&gt;
+&lt;p&gt;因为在Bios里设置了显卡独连，就没有配置&lt;code&gt;optimus-manager&lt;/code&gt;不然显卡独连时开机会因为找不到AMD显卡而进不去图形。&lt;/p&gt;
+&lt;h1 id=&quot;Windows&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/lenovo-r7000p/#Windows&quot; title=&quot;Windows&quot;&gt;&lt;/a&gt;Windows&lt;/h1&gt;
+&lt;p&gt;在Windows系统下显卡独连时字体渲染有些蹦，设置了ClearType之后还是没啥改善。&lt;/p&gt;
+&lt;p&gt;主要是Visual Studio 2019的字体渲染真的瞎眼，最后装了Text Sharp插件换了Jet Brains字体才看起来正常了一些。&lt;/p&gt;
+&lt;p&gt;最后在NVIDIA控制面板全局设置里把平滑处理全关了，字体的锯齿才消失。&lt;/p&gt;
+&lt;p&gt;貌似是因为nvidia把文本编辑器当游戏渲染了。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;目前来看觉得这电脑还是蛮香的，AMD的CPU性能很强而且比intel版的Y7000P便宜一千块钱。尽管现在已经有二线厂商做5800系的笔记本了但是4800H的性能依旧够用，3060显卡就当它是空气吧就算发售也是残血抢不到。&lt;/p&gt;
+&lt;p&gt;除了电源适配器有点大背起来不方便，而且不支持PD充电，要是想用诱骗线的话还必须得买230W的诱骗线再用100W以上的PD充电器才能勉强带动。所以想想还是算了，沉就沉吧而且电脑80WH的电池待机时间也不短，只看看网页写点代码的话待机4-5个小时没问题的。&lt;/p&gt;
+&lt;p&gt;然后就是电脑没有雷电3接口，只是一个支持USB3.0的type c接口支持DP1.2视频输出，电脑用到现在没有遇到啥AMD CPU引起的兼容性问题。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;先写到这里，不定期更新&lt;/p&gt;
+&lt;/blockquote&gt;
+
+    </content>
+    
+    
+    <category term="Linux" label="Linux" scheme="https://blog.starry-s.me/categories/Linux/" />
+    
+    
+    <category term="Arch Linux" label="Arch Linux" scheme="https://blog.starry-s.me/tags/Arch%20Linux/" />
+    
+    <category term="Lenovo R7000P" label="Lenovo R7000P" scheme="https://blog.starry-s.me/tags/Lenovo%20R7000P/" />
+    
+  </entry>
   
   
   
@@ -103,63 +197,74 @@ const ap0 = new APlayer ({
 刷机的原理: 通过ttl串口线连接路由器的主板，让路由器访问电脑上的tftp服务器，刷第三方Boot Loader。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;首先电脑上装一个tftp服务器。&lt;/p&gt;
+&lt;li&gt;首先电脑上装一个tftp服务器。&lt;/li&gt;
+&lt;/ol&gt;
 &lt;figure data-raw=&quot;$ sudo pacman -S tftp-hpa
-$ sudo systemctl start tftpd.service&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;$ sudo pacman -S tftp-hpa
-$ sudo systemctl start tftpd.service&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;tftp的默认目录为&lt;code&gt;/srv/tftp&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;这里使用HackPascal制作的Breed（第三方Boot Loader），&lt;a href=&quot;https://breed.hackpascal.net/&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;下载链接&lt;/a&gt;，把下载好的Breed重命名为&lt;code&gt;breed.bin&lt;/code&gt;，复制到tftp的默认目录。&lt;/p&gt;
+$ sudo systemctl start tftpd.service
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;$ sudo pacman -S tftp-hpa
+$ sudo systemctl start tftpd.service
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;  tftp的默认目录为&lt;code&gt;/srv/tftp&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;  这里使用HackPascal制作的Breed（第三方Boot Loader），&lt;a href=&quot;https://breed.hackpascal.net/&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;下载链接&lt;/a&gt;，把下载好的Breed重命名为&lt;code&gt;breed.bin&lt;/code&gt;，复制到tftp的默认目录。&lt;/p&gt;
 &lt;figure data-raw=&quot;$ cd /srv/tftp
-$ sudo cp ~/Downloads/breed-mt7620-xiaomi-r3g.bin breed.bin&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;$ cd /srv/tftp
-$ sudo cp ~/Downloads/breed-mt7620-xiaomi-r3g.bin breed.bin&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;/li&gt;
+$ sudo cp ~/Downloads/breed-mt7620-xiaomi-r3g.bin breed.bin
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;$ cd /srv/tftp
+$ sudo cp ~/Downloads/breed-mt7620-xiaomi-r3g.bin breed.bin
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;ol start=&quot;2&quot;&gt;
 &lt;li&gt;&lt;p&gt;路由器插网线连电脑，设置静态ip地址192.168.1.3/24，将串口和电脑连接，先不给路由器通电，通常情况下usb串口的设备名称为&lt;code&gt;/dev/ttyUSB0&lt;/code&gt;，如果不确定的话可以&lt;code&gt;dmesg&lt;/code&gt;查一下。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;使用&lt;code&gt;screen&lt;/code&gt;连接串口，波特率为115200。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;figure data-raw=&quot;$ sudo pacman -S screen
-$ sudo screen /dev/ttyUSB0 115200&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;$ sudo pacman -S screen
-$ sudo screen /dev/ttyUSB0 115200&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;路由器通电，终端上会显示路由器启动的信息，等几秒后在选择启动项的时候按9，通过TFTP加载Boot Loader。&lt;/p&gt;
+$ sudo screen /dev/ttyUSB0 115200
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;$ sudo pacman -S screen
+$ sudo screen /dev/ttyUSB0 115200
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;  路由器通电，终端上会显示路由器启动的信息，等几秒后在选择启动项的时候按9，通过TFTP加载Boot Loader。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;如果串口在连接到电脑的情况下主板通电时没有响应，那就断开usb串口先给主板通电后再连接串口。
 (我语文不好别骂我)
 如果路由器没有变砖可以正常启动（蓝灯长亮），在正常开机过程中不能选择启动项。此时可以尝试在路由器开机后长按reset按钮7s以上直到主板重启，便可以选择启动项。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;figure data-raw=&quot;Please choose the operation: 
-1: Load system code to SDRAM via TFTP. 
-2: Load system code then write to Flash via TFTP. 
-3: Boot system code via Flash (default).
-4: Entr boot command line interface.
-7: Load Boot Loader code then write to Flash via Serial. 
-9: Load Boot Loader code then write to Flash via TFTP. 
+ 1: Load system code to SDRAM via TFTP. 
+ 2: Load system code then write to Flash via TFTP. 
+ 3: Boot system code via Flash (default).
+ 4: Entr boot command line interface.
+ 7: Load Boot Loader code then write to Flash via Serial. 
+ 9: Load Boot Loader code then write to Flash via TFTP. 
 
 You choosed 9
-
+ 
 9: System Load Boot Loader then write to Flash via TFTP. 
-Warning!! Erase Boot Loader in Flash then burn new one. Are you sure?(Y/N)y&quot; data-info=&quot;language-text&quot; data-lang=&quot;text&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Please choose the operation: 
-1: Load system code to SDRAM via TFTP. 
-2: Load system code then write to Flash via TFTP. 
-3: Boot system code via Flash (default).
-4: Entr boot command line interface.
-7: Load Boot Loader code then write to Flash via Serial. 
-9: Load Boot Loader code then write to Flash via TFTP. 
+Warning!! Erase Boot Loader in Flash then burn new one. Are you sure?(Y/N)y
+&quot; data-info=&quot;language-text&quot; data-lang=&quot;text&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Please choose the operation: 
+ 1: Load system code to SDRAM via TFTP. 
+ 2: Load system code then write to Flash via TFTP. 
+ 3: Boot system code via Flash (default).
+ 4: Entr boot command line interface.
+ 7: Load Boot Loader code then write to Flash via Serial. 
+ 9: Load Boot Loader code then write to Flash via TFTP. 
 
 You choosed 9
-
+ 
 9: System Load Boot Loader then write to Flash via TFTP. 
-Warning!! Erase Boot Loader in Flash then burn new one. Are you sure?(Y/N)y&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;之后设置路由器主机地址（192.168.1.1）和TFTP服务器地址(192.168.1.3)以及文件名称(breed.bin)。&lt;/p&gt;
+Warning!! Erase Boot Loader in Flash then burn new one. Are you sure?(Y/N)y
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;  之后设置路由器主机地址（192.168.1.1）和TFTP服务器地址(192.168.1.3)以及文件名称(breed.bin)。&lt;/p&gt;
 &lt;figure data-raw=&quot;Please Input new ones /or Ctrl-C to discard
-         Input device IP (192.168.31.1) ==:192.168.1.1
-         Input server IP (192.168.31.3) ==:192.168.1.3
-         Input Uboot filename (uboot.bin) ==:breed.bin&quot; data-info=&quot;language-text&quot; data-lang=&quot;text&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Please Input new ones /or Ctrl-C to discard
-         Input device IP (192.168.31.1) ==:192.168.1.1
-         Input server IP (192.168.31.3) ==:192.168.1.3
-         Input Uboot filename (uboot.bin) ==:breed.bin&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;按回车后开始刷机，过几秒钟后路由器会自动重启，第三方Boot Loader刷写完成。&lt;/p&gt;
-&lt;p&gt;路由器断电，长按reset键的同时通电开机，灯闪烁后打开浏览器输入网址&lt;code&gt;http://192.168.1.1&lt;/code&gt;便可访问breed后台。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
+          Input device IP (192.168.31.1) ==:192.168.1.1
+          Input server IP (192.168.31.3) ==:192.168.1.3
+          Input Uboot filename (uboot.bin) ==:breed.bin
+&quot; data-info=&quot;language-text&quot; data-lang=&quot;text&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Please Input new ones /or Ctrl-C to discard
+          Input device IP (192.168.31.1) ==:192.168.1.1
+          Input server IP (192.168.31.3) ==:192.168.1.3
+          Input Uboot filename (uboot.bin) ==:breed.bin
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;  按回车后开始刷机，过几秒钟后路由器会自动重启，第三方Boot Loader刷写完成。&lt;/p&gt;
+&lt;p&gt;  路由器断电，长按reset键的同时通电开机，灯闪烁后打开浏览器输入网址&lt;code&gt;http://192.168.1.1&lt;/code&gt;便可访问breed后台。&lt;/p&gt;
 &lt;h1 id=&quot;Done&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/xiaomi-r3g-ttl-flash/#Done&quot; title=&quot;Done&quot;&gt;&lt;/a&gt;Done&lt;/h1&gt;
 &lt;p&gt;第三方Breed刷完后，先用Breed刷小米官方的开发版固件，开启ssh，之后按照&lt;a href=&quot;/posts/Xiaomi_Miwifi_3G/#%E4%BD%BF%E7%94%A8Breed%E7%9A%84%E5%88%B7%E6%9C%BA%E6%96%B9%E6%B3%95&quot;&gt;小米路由器3G折腾之刷OpenWrt记录&lt;/a&gt;这篇文章刷OpenWrt。&lt;/p&gt;
 &lt;figure data-raw=&quot;BusyBox v1.19.4 (2018-10-29 07:52:03 UTC) built-in shell (ash)
@@ -280,8 +385,10 @@ const ap0 = new APlayer ({
 &lt;h1 id=&quot;解决方法&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/laptop-dualscreen-hidpi-scale/#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95&quot; title=&quot;解决方法&quot;&gt;&lt;/a&gt;解决方法&lt;/h1&gt;
 &lt;p&gt;首先按照&lt;a href=&quot;https://wiki.archlinux.org/index.php/HiDPI&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;Wiki&lt;/a&gt;设置GNOME的HIDPI:&lt;/p&gt;
 &lt;figure data-raw=&quot;$ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides &amp;quot;[{&#039;Gdk/WindowScalingFactor&#039;, &lt;2&gt;}]&amp;quot;
-$ gsettings set org.gnome.desktop.interface scaling-factor 2&quot; data-info=&quot;language-text&quot; data-lang=&quot;text&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides &quot;[{&#039;Gdk/WindowScalingFactor&#039;, &amp;lt;2&amp;gt;}]&quot;
-$ gsettings set org.gnome.desktop.interface scaling-factor 2&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+$ gsettings set org.gnome.desktop.interface scaling-factor 2
+&quot; data-info=&quot;language-text&quot; data-lang=&quot;text&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides &quot;[{&#039;Gdk/WindowScalingFactor&#039;, &amp;lt;2&amp;gt;}]&quot;
+$ gsettings set org.gnome.desktop.interface scaling-factor 2
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;在显示设置里将缩放调到200%后，界面被放大了2倍，在4K屏上的字倒是不瞎眼了。&lt;/p&gt;
 &lt;p&gt;但是因为笔记本是15寸1080P，所以笔记本上显示的字大得离谱。&lt;/p&gt;
 &lt;p&gt;解决方法是使用xrandr调整笔记本电脑的屏幕缩放，笔记本的分辨率为1920x1080，使用xrandr将画面的分辨率放大2倍，也就是调整为3840x2160，然后显示在分辨率为1920x1080的显示器上。&lt;/p&gt;
@@ -289,21 +396,27 @@ $ gsettings set org.gnome.desktop.interface scaling-factor 2&lt;/code&gt;&lt;/pr
 &lt;figure data-raw=&quot;$ xrandr | grep &amp;quot;$extern connected&amp;quot;
 
   HDMI-0 connected primary 3840x2160+0+0 (normal left inverted right x axis y axis) 597mm x 336mm
-  eDP-1-1 connected 1920x1080+0+2160 (normal left inverted right x axis y axis) 344mm x 193mm&quot; data-info=&quot;language-text&quot; data-lang=&quot;text&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ xrandr | grep &quot;$extern connected&quot;
+  eDP-1-1 connected 1920x1080+0+2160 (normal left inverted right x axis y axis) 344mm x 193mm
+&quot; data-info=&quot;language-text&quot; data-lang=&quot;text&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ xrandr | grep &quot;$extern connected&quot;
 
   HDMI-0 connected primary 3840x2160+0+0 (normal left inverted right x axis y axis) 597mm x 336mm
-  eDP-1-1 connected 1920x1080+0+2160 (normal left inverted right x axis y axis) 344mm x 193mm&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  eDP-1-1 connected 1920x1080+0+2160 (normal left inverted right x axis y axis) 344mm x 193mm
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;这里HDMI-0是外接的4K显示器，分辨率为3840x2160，位置为(0, 0)。&lt;/p&gt;
 &lt;p&gt;eDP-1-1是笔记本的显示器，分辨率1920x1080，位置为(0, 2160)，在4K显示器的左下方。&lt;/p&gt;
 &lt;p&gt;参见&lt;a href=&quot;https://wiki.archlinux.org/index.php/HiDPI#Multiple_displays&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;Wiki设置双显示器部分&lt;/a&gt;，用xrandr将笔记本的显示器缩放2倍，分辨率变为 [1920 * 2]x[1080 * 2]=3840x2160，位置还是在4K显示器的正下方。&lt;/p&gt;
-&lt;figure data-raw=&quot;$ xrandr --output eDP-1-1 --scale 2.0x2.0 --panning 3840x2160+0+2160 --output HDMI-0 --auto&quot; data-info=&quot;language-text&quot; data-lang=&quot;text&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ xrandr --output eDP-1-1 --scale 2.0x2.0 --panning 3840x2160+0+2160 --output HDMI-0 --auto&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure data-raw=&quot;$ xrandr --output eDP-1-1 --scale 2.0x2.0 --panning 3840x2160+0+2160 --output HDMI-0 --auto
+&quot; data-info=&quot;language-text&quot; data-lang=&quot;text&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ xrandr --output eDP-1-1 --scale 2.0x2.0 --panning 3840x2160+0+2160 --output HDMI-0 --auto
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;因为不需要修改4K显示器的分辨率，所以HDMI-0设置为auto。&lt;/p&gt;
 &lt;p&gt;这样笔记本上的画面也显示正常了。&lt;/p&gt;
 &lt;p&gt;但是用过一阵子会发现笔记本显示器上的字比4K显示器上的字小很多，看起来不方便，所以把缩放倍数改为1.6（我是从1.5-2.0之间一点点试的，才找到最适合自己的缩放倍数），这样解决了字体大小的问题，不过笔记本画面还是会有模糊（能接受）。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;[1920 * 1.6]x[1080 * 1.6]=3072x1728&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;figure data-raw=&quot;$ xrandr --output eDP-1-1 --scale 1.6x1.6 --panning 3072x1728+0+2160 --output HDMI-0 --auto&quot; data-info=&quot;language-text&quot; data-lang=&quot;text&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ xrandr --output eDP-1-1 --scale 1.6x1.6 --panning 3072x1728+0+2160 --output HDMI-0 --auto&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure data-raw=&quot;$ xrandr --output eDP-1-1 --scale 1.6x1.6 --panning 3072x1728+0+2160 --output HDMI-0 --auto
+&quot; data-info=&quot;language-text&quot; data-lang=&quot;text&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;$ xrandr --output eDP-1-1 --scale 1.6x1.6 --panning 3072x1728+0+2160 --output HDMI-0 --auto
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;用到现在GNOME的缩放还算是完美，除了玩Minecraft用的HMCL启动器（Java程序）没有被放大之外&lt;del&gt;（貌似缺配置，要是配置好了我再补充）&lt;/del&gt;，Steam界面缩放正常，饥荒、Dota2也都没问题。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Java8不支持Hidpi缩放，如果想让HMCL支持缩放需要需要安装Java9以上的版本，所以还是算了，又不是不能用。
@@ -676,48 +789,54 @@ const ap0 = new APlayer ({
 &lt;p&gt;8051中, &lt;code&gt;PC&lt;/code&gt;和&lt;code&gt;DPTR&lt;/code&gt;都用于提供地址时, &lt;code&gt;PC&lt;/code&gt;是&lt;strong&gt;用户程序不可访问的&lt;/strong&gt;, &lt;code&gt;DPTR&lt;/code&gt;可以分为两个8位寄存器&lt;code&gt;DPH&lt;/code&gt;和&lt;code&gt;DPL&lt;/code&gt;使用。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;累加器A的值为&lt;code&gt;30H&lt;/code&gt;, 指令&lt;code&gt;MOVC A, @A+PC&lt;/code&gt;位于地址&lt;code&gt;3000H&lt;/code&gt;。执行该指令时, 程序存储器地址&lt;code&gt;3031H&lt;/code&gt;的内容被传送至累加器A。&lt;/p&gt;
-&lt;p&gt;指令&lt;code&gt;MOVC A, @A+PC&lt;/code&gt;长度为1字节, 位于地址&lt;code&gt;3000H&lt;/code&gt;, 因此PC值为&lt;code&gt;3001H&lt;/code&gt;, 故&lt;code&gt;A+PC&lt;/code&gt;为&lt;code&gt;3031H&lt;/code&gt;。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;设SP的值为&lt;code&gt;5FH&lt;/code&gt;, 指令&lt;code&gt;LCALL DELAY&lt;/code&gt;所在地址为&lt;code&gt;2030H&lt;/code&gt;, 子程序DELAY所在地址为&lt;code&gt;20A0H&lt;/code&gt;, 则该指令完成的操作是将地址&lt;code&gt;2033H&lt;/code&gt;压入堆栈保存, 将地址&lt;code&gt;20A0H&lt;/code&gt;送入PC, SP的值应在该指令执行结束后变成&lt;code&gt;61H&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;单片机执行子程序或中断服务程序时, 需要保护现场, 即将PC当前的值压栈保存, 当子程序或中断服务程序运行结束后再进行出栈。(所以如果子程序修改了栈的内容, 在子程序运行结束后程序有可能会运行错误)。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;PC是16字节寄存器&lt;/strong&gt;, 所以SP需要加2, 以此分别保存PC的高、低8位的数据。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;LCALL addr16&lt;/code&gt;这条指令占3字节, 其中addr16占两字节, 因此程序可跳转64KB范围内的地址。&lt;/p&gt;
-&lt;p&gt;(&lt;code&gt;ACALL&lt;/code&gt;指令只能跳转当前所在的&lt;strong&gt;2K范围内&lt;/strong&gt;的地址, 如果不涉及到片外数据存储器的话, 通常只用&lt;code&gt;SJMP&lt;/code&gt;和&lt;code&gt;AJMP&lt;/code&gt;)&lt;/p&gt;
+&lt;/ol&gt;
+&lt;p&gt;   指令&lt;code&gt;MOVC A, @A+PC&lt;/code&gt;长度为1字节, 位于地址&lt;code&gt;3000H&lt;/code&gt;, 因此PC值为&lt;code&gt;3001H&lt;/code&gt;, 故&lt;code&gt;A+PC&lt;/code&gt;为&lt;code&gt;3031H&lt;/code&gt;。&lt;/p&gt;
+&lt;ol start=&quot;11&quot;&gt;
+&lt;li&gt;设SP的值为&lt;code&gt;5FH&lt;/code&gt;, 指令&lt;code&gt;LCALL DELAY&lt;/code&gt;所在地址为&lt;code&gt;2030H&lt;/code&gt;, 子程序DELAY所在地址为&lt;code&gt;20A0H&lt;/code&gt;, 则该指令完成的操作是将地址&lt;code&gt;2033H&lt;/code&gt;压入堆栈保存, 将地址&lt;code&gt;20A0H&lt;/code&gt;送入PC, SP的值应在该指令执行结束后变成&lt;code&gt;61H&lt;/code&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;   单片机执行子程序或中断服务程序时, 需要保护现场, 即将PC当前的值压栈保存, 当子程序或中断服务程序运行结束后再进行出栈。(所以如果子程序修改了栈的内容, 在子程序运行结束后程序有可能会运行错误)。&lt;/p&gt;
+&lt;p&gt;   &lt;strong&gt;PC是16字节寄存器&lt;/strong&gt;, 所以SP需要加2, 以此分别保存PC的高、低8位的数据。&lt;/p&gt;
+&lt;p&gt;   &lt;code&gt;LCALL addr16&lt;/code&gt;这条指令占3字节, 其中addr16占两字节, 因此程序可跳转64KB范围内的地址。&lt;/p&gt;
+&lt;p&gt;   (&lt;code&gt;ACALL&lt;/code&gt;指令只能跳转当前所在的&lt;strong&gt;2K范围内&lt;/strong&gt;的地址, 如果不涉及到片外数据存储器的话, 通常只用&lt;code&gt;SJMP&lt;/code&gt;和&lt;code&gt;AJMP&lt;/code&gt;)&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;在网上搜到的答案「将&lt;code&gt;3500H&lt;/code&gt;送入PC」是错误的, 实际是将&lt;code&gt;20A0H&lt;/code&gt;送入PC, 因为DELAY所在的地址为&lt;code&gt;20A0H&lt;/code&gt;, 和&lt;code&gt;3500H&lt;/code&gt;一点关系都没有。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;MOVC&lt;/code&gt;访问 &lt;strong&gt;程序(ROM)&lt;/strong&gt; 存储器, &lt;code&gt;MOVX&lt;/code&gt;指令访问 &lt;strong&gt;外部数据&lt;/strong&gt; 存储器。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;MOVC&lt;/code&gt;为查表指令, 只有&lt;code&gt;MOVC @A+PC&lt;/code&gt;和&lt;code&gt;MOVC @A+DPTR&lt;/code&gt;这两条, 均为单字节指令。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;MOVX&lt;/code&gt;用于累加器A与外部数据存储器进行传送。&lt;/p&gt;
-&lt;p&gt;可以是&lt;code&gt;MOVX A, @DPTR&lt;/code&gt;, &lt;code&gt;MOVX A, @Ri&lt;/code&gt;, &lt;code&gt;MOVX @DPTR, A&lt;/code&gt;, &lt;code&gt;MOVX @Ri, A&lt;/code&gt;，其中i为0或1.&lt;/p&gt;
-&lt;p&gt;当使用&lt;code&gt;MOVX @Ri&lt;/code&gt;类指令时，只有P0口用来传送地址和数据，P2口的状态不会发生改变，因此可使用&lt;code&gt;MOV P2, #12H&lt;/code&gt;指令设定高8位的地址。&lt;/p&gt;
-&lt;p&gt;当采用Ri作间接寻址时, 只能寻找片外256个单元的数据存储器, 此时8位地址和数据均由P0口传送，P2口的状态不发生改变。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;假设指令&lt;code&gt;DJNZ R7, rel&lt;/code&gt;位于&lt;code&gt;005FH&lt;/code&gt;, 如果在执行该指令前寄存器R7值为&lt;code&gt;00H&lt;/code&gt;, 偏移量rel为&lt;code&gt;02H&lt;/code&gt;, 则该指令执行后下一条要执行的指令所在的地址是&lt;code&gt;005FH&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;DJNZ R7, rel&lt;/code&gt;位于&lt;code&gt;005FH&lt;/code&gt;, 该指令长度为&lt;strong&gt;2字节&lt;/strong&gt; (书上写的3字节是错的), 所以在执行这条指令开始时PC值在原来的基础上 + 2 变为&lt;code&gt;0061H&lt;/code&gt;。又因为rel为&lt;code&gt;02H&lt;/code&gt;, 所以执行这条指令后, PC值变为&lt;code&gt;0063H&lt;/code&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;分析下面子程序的功能, 假设8051单片机的震荡频率为6MHz。&lt;/p&gt;
-&lt;figure data-raw=&quot;DL: MOV R7, #0AH
-L0: MOV R6, #250
-L1: NOP
-    NOP
-    DJNZ R6, L1
-    DJNZ R7, L0
-    RET&quot; data-info=&quot;language-asm&quot; data-lang=&quot;asm&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-asm&quot;&gt;DL: MOV R7, #0AH
-L0: MOV R6, #250
-L1: NOP
-    NOP
-    DJNZ R6, L1
-    DJNZ R7, L0
-    RET&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;R7为10, R6为250, 因此两个&lt;code&gt;NOP&lt;/code&gt;加上一个&lt;code&gt;DJNZ&lt;/code&gt;一共循环了250次, 该250次的循环一共执行了10次。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;NOP&lt;/code&gt;为1周期指令, &lt;code&gt;DJNZ&lt;/code&gt;为2周期指令, 两个&lt;code&gt;NOP&lt;/code&gt;加一个&lt;code&gt;DJNZ&lt;/code&gt;共4周期。&lt;/p&gt;
-&lt;p&gt;6MHz下一个机器周期为 $12 \div (6 \times 10^6)= 2{\mu}s$, 12MHz下一个机器周期为1微秒。&lt;/p&gt;
-&lt;p&gt;故程序该子程序延时了$(4 \times 250 \times 10 \times 12) \div (6 \times 10^6) = 20(ms)$。&lt;/p&gt;
-&lt;p&gt;(实际上有10次&lt;code&gt;MOV R6, #250&lt;/code&gt;和10次&lt;code&gt;DJNZ R7, L0&lt;/code&gt;造成的30个机器周期的约0.6ms的误差)&lt;/p&gt;
-&lt;/li&gt;
+&lt;ol start=&quot;12&quot;&gt;
+&lt;li&gt;&lt;code&gt;MOVC&lt;/code&gt;访问 &lt;strong&gt;程序(ROM)&lt;/strong&gt; 存储器, &lt;code&gt;MOVX&lt;/code&gt;指令访问 &lt;strong&gt;外部数据&lt;/strong&gt; 存储器。&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;   &lt;code&gt;MOVC&lt;/code&gt;为查表指令, 只有&lt;code&gt;MOVC @A+PC&lt;/code&gt;和&lt;code&gt;MOVC @A+DPTR&lt;/code&gt;这两条, 均为单字节指令。&lt;/p&gt;
+&lt;p&gt;   &lt;code&gt;MOVX&lt;/code&gt;用于累加器A与外部数据存储器进行传送。&lt;/p&gt;
+&lt;p&gt;   可以是&lt;code&gt;MOVX A, @DPTR&lt;/code&gt;, &lt;code&gt;MOVX A, @Ri&lt;/code&gt;, &lt;code&gt;MOVX @DPTR, A&lt;/code&gt;, &lt;code&gt;MOVX @Ri, A&lt;/code&gt;，其中i为0或1.&lt;/p&gt;
+&lt;p&gt;   当使用&lt;code&gt;MOVX @Ri&lt;/code&gt;类指令时，只有P0口用来传送地址和数据，P2口的状态不会发生改变，因此可使用&lt;code&gt;MOV P2, #12H&lt;/code&gt;指令设定高8位的地址。&lt;/p&gt;
+&lt;p&gt;   当采用Ri作间接寻址时, 只能寻找片外256个单元的数据存储器, 此时8位地址和数据均由P0口传送，P2口的状态不发生改变。&lt;/p&gt;
+&lt;ol start=&quot;13&quot;&gt;
+&lt;li&gt;假设指令&lt;code&gt;DJNZ R7, rel&lt;/code&gt;位于&lt;code&gt;005FH&lt;/code&gt;, 如果在执行该指令前寄存器R7值为&lt;code&gt;00H&lt;/code&gt;, 偏移量rel为&lt;code&gt;02H&lt;/code&gt;, 则该指令执行后下一条要执行的指令所在的地址是&lt;code&gt;005FH&lt;/code&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;   &lt;code&gt;DJNZ R7, rel&lt;/code&gt;位于&lt;code&gt;005FH&lt;/code&gt;, 该指令长度为&lt;strong&gt;2字节&lt;/strong&gt; (书上写的3字节是错的), 所以在执行这条指令开始时PC值在原来的基础上 + 2 变为&lt;code&gt;0061H&lt;/code&gt;。又因为rel为&lt;code&gt;02H&lt;/code&gt;, 所以执行这条指令后, PC值变为&lt;code&gt;0063H&lt;/code&gt;。&lt;/p&gt;
+&lt;ol start=&quot;14&quot;&gt;
+&lt;li&gt;分析下面子程序的功能, 假设8051单片机的震荡频率为6MHz。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure data-raw=&quot;  DL: MOV R7, #0AH
+  L0: MOV R6, #250
+  L1: NOP
+     NOP
+     DJNZ R6, L1
+     DJNZ R7, L0
+     RET
+&quot; data-info=&quot;language-asm&quot; data-lang=&quot;asm&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-asm&quot;&gt;  DL: MOV R7, #0AH
+  L0: MOV R6, #250
+  L1: NOP
+     NOP
+     DJNZ R6, L1
+     DJNZ R7, L0
+     RET
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;  R7为10, R6为250, 因此两个&lt;code&gt;NOP&lt;/code&gt;加上一个&lt;code&gt;DJNZ&lt;/code&gt;一共循环了250次, 该250次的循环一共执行了10次。&lt;/p&gt;
+&lt;p&gt;  &lt;code&gt;NOP&lt;/code&gt;为1周期指令, &lt;code&gt;DJNZ&lt;/code&gt;为2周期指令, 两个&lt;code&gt;NOP&lt;/code&gt;加一个&lt;code&gt;DJNZ&lt;/code&gt;共4周期。&lt;/p&gt;
+&lt;p&gt;  6MHz下一个机器周期为 $12 \div (6 \times 10^6)= 2{\mu}s$, 12MHz下一个机器周期为1微秒。&lt;/p&gt;
+&lt;p&gt;  故程序该子程序延时了$(4 \times 250 \times 10 \times 12) \div (6 \times 10^6) = 20(ms)$。&lt;/p&gt;
+&lt;p&gt;  (实际上有10次&lt;code&gt;MOV R6, #250&lt;/code&gt;和10次&lt;code&gt;DJNZ R7, L0&lt;/code&gt;造成的30个机器周期的约0.6ms的误差)&lt;/p&gt;
 &lt;hr&gt;
 &lt;blockquote&gt;
 &lt;p&gt;以下部分写于2020年11月25日&lt;/p&gt;
@@ -735,7 +854,8 @@ LOOP:
       INC R0
       INC R1
       DJNZ R2, LOOP
-      RET&quot; data-info=&quot;language-ASM&quot; data-lang=&quot;ASM&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-ASM&quot;&gt;COPY: MOV R0, #40H
+      RET
+&quot; data-info=&quot;language-ASM&quot; data-lang=&quot;ASM&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-ASM&quot;&gt;COPY: MOV R0, #40H
       MOV R1, #50H
       MOV R2, #10H
       ; 40H~4FH一共复制了16次
@@ -745,7 +865,8 @@ LOOP:
       INC R0
       INC R1
       DJNZ R2, LOOP
-      RET&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+      RET
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;因为没有&lt;code&gt;MOV @RX, @RX&lt;/code&gt;这条指令, 所以用A做数据的中转站。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;将任何无符号8位二进制数转换为BCD码的子程序, 入口参数为内部RAM单元20H, 出口参数为内部RAM单元30H和31H, 30H存放百位数, 31H存放十位数和个位数。&lt;/p&gt;
@@ -763,7 +884,8 @@ DIV AB
 SWAP A
 ADD A, B; 也可以用ORL
 MOV 31H, A
-RET&quot; data-info=&quot;language-ASM&quot; data-lang=&quot;ASM&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-ASM&quot;&gt;CV:
+RET
+&quot; data-info=&quot;language-ASM&quot; data-lang=&quot;ASM&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-ASM&quot;&gt;CV:
 MOV R0, #20H
 MOV A, @R0
 MOV B, #100
@@ -777,7 +899,8 @@ DIV AB
 SWAP A
 ADD A, B; 也可以用ORL
 MOV 31H, A
-RET&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+RET
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;&lt;code&gt;DIV AB&lt;/code&gt;和&lt;code&gt;MUL AB&lt;/code&gt;的A和B之间没有逗号。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;内部RAM 30H单元存放两位十进制数 (压缩BCD码), 编写将该十进制数转换为对应ASCII码的子程序, 转换结果存放到内部RAM 40H (十位数) 和41H (个位数) 单元。&lt;/p&gt;
@@ -800,7 +923,8 @@ MOV 40H, A
 RET
 
 DATA:
-DB 30H, 31H, 32H, 33H, 34H, 35H, 36H, 37H, 38H, 39H&quot; data-info=&quot;language-ASM&quot; data-lang=&quot;ASM&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-ASM&quot;&gt;CV:
+DB 30H, 31H, 32H, 33H, 34H, 35H, 36H, 37H, 38H, 39H
+&quot; data-info=&quot;language-ASM&quot; data-lang=&quot;ASM&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-ASM&quot;&gt;CV:
 MOV A, 30H
 ANL A, #0FH
 MOV DPTR, #DATA; 或者直接用ADD A, #30H即可
@@ -816,9 +940,10 @@ MOV 40H, A
 RET
 
 DATA:
-DB 30H, 31H, 32H, 33H, 34H, 35H, 36H, 37H, 38H, 39H&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+DB 30H, 31H, 32H, 33H, 34H, 35H, 36H, 37H, 38H, 39H
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;8个8位数相加, 求平均值, 入口地址为&lt;code&gt;30H&lt;/code&gt;~&lt;code&gt;37H&lt;/code&gt;, 结果存到&lt;code&gt;40H&lt;/code&gt;。&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;8个8位数相加, 求平均值, 入口地址为&lt;code&gt;30H&lt;/code&gt;~`37H&lt;code&gt;, 结果存到&lt;/code&gt;40H`。&lt;/p&gt;
 &lt;p&gt;把8位数相加存在溢出, 所以把相加结果以16进制存到R2、R3中, 再除以8( 右移3次), 即可求得不四舍五入的平均值。&lt;/p&gt;
 &lt;figure data-raw=&quot;MOV R0, #30H
 MOV R1, #08H
@@ -834,7 +959,8 @@ JNC SKIP
 INC R2
 SKIP:
 INC R0
-DJNZ R1, LOOP   &quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;MOV R0, #30H
+DJNZ R1, LOOP   
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;MOV R0, #30H
 MOV R1, #08H
 MOV R2, #00H
 MOV R3, #00H
@@ -848,7 +974,8 @@ JNC SKIP
 INC R2
 SKIP:
 INC R0
-DJNZ R1, LOOP   &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+DJNZ R1, LOOP   
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;这样结果被保存到R2、R3中, 然后需要写一个循环右移3位的程序。&lt;/p&gt;
 &lt;figure data-raw=&quot;MOV R4, #03H
 LOOP2:
@@ -857,14 +984,16 @@ RRC R3
 DJNZ R4, LOOP2
 
 MOV 40H, R3
-; 右移3次后R2的低4位为0, 结果保存在R3中&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;MOV R4, #03H
+; 右移3次后R2的低4位为0, 结果保存在R3中
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;MOV R4, #03H
 LOOP2:
 RRC R2
 RRC R3
 DJNZ R4, LOOP2
 
 MOV 40H, R3
-; 右移3次后R2的低4位为0, 结果保存在R3中&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+; 右移3次后R2的低4位为0, 结果保存在R3中
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;这样R3中求得的是不带四舍五入的结果。&lt;/p&gt;
 &lt;p&gt;如果需要带四舍五入的话第一种方法是判断最后一次右移时最低位是否为$1$， ($1 / 2 = 0.5$)。   &lt;/p&gt;
 &lt;figure data-raw=&quot;MOV R4, #03H
@@ -877,7 +1006,8 @@ JNC SKIP2
 INC R3
 SKIP2:
 MOV 40H, R3
-; 右移3次后R2肯定为0&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;MOV R4, #03H
+; 右移3次后R2肯定为0
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;MOV R4, #03H
 LOOP2:
 RRC R2
 RRC R3
@@ -887,7 +1017,8 @@ JNC SKIP2
 INC R3
 SKIP2:
 MOV 40H, R3
-; 右移3次后R2肯定为0&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+; 右移3次后R2肯定为0
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;这样是带四舍五入的结果。&lt;/p&gt;
 &lt;p&gt;第二种方法，8个8位数相加求平均值，要求四舍五入的话，只需要在这8个数求和后再加4（&lt;code&gt;0100B&lt;/code&gt;），之后右移3次。&lt;/p&gt;
 &lt;figure data-raw=&quot;ADD A, #04H
@@ -900,7 +1031,8 @@ MOV R4, #03H
 LOOP2:
 RRC R2
 RRC R3
-DJNZ R4, LOOP2&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;ADD A, #04H
+DJNZ R4, LOOP2
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;ADD A, #04H
 MOV R3, A
 JNC SKIP2
 INC R2
@@ -910,7 +1042,8 @@ MOV R4, #03H
 LOOP2:
 RRC R2
 RRC R3
-DJNZ R4, LOOP2&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+DJNZ R4, LOOP2
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;结果保存在R3中。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -1162,7 +1295,8 @@ JNB TI, $
 CLR TI
 AJMP LOOP
 
-END&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;ORG 0000H
+END
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;ORG 0000H
 MAIN:
 MOV SCON, #50H
 ; 串口使用方式1，且允许接收
@@ -1195,7 +1329,8 @@ JNB TI, $
 CLR TI
 AJMP LOOP
 
-END&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+END
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;单片机接收到数据后，RI被置1，代表SBUF中的数据有效，取走SBUF中的数据后需要软件清零RI（串口中断不会自动清零RI）。&lt;/p&gt;
 &lt;p&gt;当单片机执行写SBUF操作时，串口发送开始，TI被自动置1，在发送完成后TI被自动清0。&lt;/p&gt;
 &lt;/li&gt;
@@ -1291,7 +1426,8 @@ RET
 TAB:
 DB 3FH, 06H, 5BH, 4FH, 66H, 6DH, 7DH, 07H, 7FH, 6FH
 
-END&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;MAIN:
+END
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;MAIN:
 MOV R0, #30H
 ; R2用来计数
 MOV R2, #03H
@@ -1352,7 +1488,8 @@ RET
 TAB:
 DB 3FH, 06H, 5BH, 4FH, 66H, 6DH, 7DH, 07H, 7FH, 6FH
 
-END&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+END
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;打印机数据输入接口和P1直接相连，STB接口和P3.4相连，BUSY接口和P3.3相连，不使用ACK应答信号，编写将外部存储器&lt;code&gt;1000H-100FH&lt;/code&gt;的数据发送到打印机打印的子程序。&lt;/p&gt;
 &lt;div style=&quot;text-align:center&quot;&gt;
@@ -1373,7 +1510,8 @@ CLR P3.4
 SETB P3.4
 INC DPTR
 DJNZ R2, LOOP
-RET&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;PRINT:
+RET
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;PRINT:
 MOV DPTR, #1000H
 MOV R2, #10H
 
@@ -1386,7 +1524,8 @@ CLR P3.4
 SETB P3.4
 INC DPTR
 DJNZ R2, LOOP
-RET&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+RET
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;如果打印机没有和P1直接相连，而是连接到数据锁存器上（74HC374），锁存器的时钟信号的入口地址为&lt;code&gt;A000H&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;使用堆栈保护间接寻址寄存器的值。&lt;/p&gt;
 &lt;figure data-raw=&quot;PRINT:
@@ -1408,7 +1547,8 @@ CLR P3.4
 SETB P3.4
 INC DPTR
 DJNZ R2, LOOP
-RET&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;PRINT:
+RET
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;PRINT:
 MOV R2, #10H
 MOV DPTR, #1000H
 LOOP:
@@ -1427,7 +1567,8 @@ CLR P3.4
 SETB P3.4
 INC DPTR
 DJNZ R2, LOOP
-RET&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+RET
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
@@ -1719,21 +1860,27 @@ const ap0 = new APlayer ({
 &lt;figure data-raw=&quot;# Arch Linux CN
 $ sudo pacman -S optimus-manager
 # AUR
-$ yay -S optimus-manager&quot; data-info=&quot;language-text&quot; data-lang=&quot;text&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;# Arch Linux CN
+$ yay -S optimus-manager
+&quot; data-info=&quot;language-text&quot; data-lang=&quot;text&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;# Arch Linux CN
 $ sudo pacman -S optimus-manager
 # AUR
-$ yay -S optimus-manager&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+$ yay -S optimus-manager
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;因为我用的Gnome, 参照&lt;a href=&quot;https://github.com/Askannz/optimus-manager#important--gnome-and-gdm-users&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;README中说的&lt;/a&gt;卸载掉&lt;code&gt;gdm&lt;/code&gt;并安装&lt;code&gt;gdm-prime&lt;/code&gt;&lt;sup&gt;AUR&lt;/sup&gt;。（国内下载源代码的速度极慢建议挂梯子, 或者挂梯子克隆&lt;a href=&quot;https://gitlab.gnome.org/GNOME/gdm&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;GDM的代码&lt;/a&gt;到&lt;code&gt;~/.cache/yay/gdm-prime/gdm&lt;/code&gt;下。）&lt;/p&gt;
 &lt;p&gt;修改&lt;code&gt;/etc/gdm/custom.conf&lt;/code&gt;, 移除&lt;code&gt;WaylandEnable=false&lt;/code&gt;一行前面的&lt;code&gt;#&lt;/code&gt;禁用Wayland而使用X。&lt;/p&gt;
 &lt;h2 id=&quot;修改配置文件&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/archlinux-pavilion-gaming-laptop/#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6&quot; title=&quot;修改配置文件&quot;&gt;&lt;/a&gt;修改配置文件&lt;/h2&gt;
-&lt;figure data-raw=&quot;$ sudo cp /usr/share/optimus-manager.conf /etc/optimus-manager/optimus-manager.conf&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;$ sudo cp /usr/share/optimus-manager.conf /etc/optimus-manager/optimus-manager.conf&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure data-raw=&quot;$ sudo cp /usr/share/optimus-manager.conf /etc/optimus-manager/optimus-manager.conf
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;$ sudo cp /usr/share/optimus-manager.conf /etc/optimus-manager/optimus-manager.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;不要编辑&lt;code&gt;/usr/share/&lt;/code&gt;下的文件, 编辑&lt;code&gt;/etc/optimus-manager/optimus-manager.conf&lt;/code&gt;, 将切换方式设为&lt;code&gt;switching=none&lt;/code&gt;, 不推荐使用bbswitch（见&lt;a href=&quot;/posts/archlinux-pavilion-gaming-laptop/#Others&quot;&gt;后续第一条&lt;/a&gt;）, 设置&lt;code&gt;pci_power_control=yes&lt;/code&gt;让PCI Power Management切换显卡。&lt;/p&gt;
 &lt;p&gt;之后根据需求来修改开机自动选择显卡：&lt;/p&gt;
 &lt;figure data-raw=&quot;startup_mode=auto
 startup_auto_battery_mode=intel
-startup_auto_extpower_mode=nvidia&quot; data-info=&quot;language-conf&quot; data-lang=&quot;conf&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-conf&quot;&gt;startup_mode=auto
+startup_auto_extpower_mode=nvidia
+&quot; data-info=&quot;language-conf&quot; data-lang=&quot;conf&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-conf&quot;&gt;startup_mode=auto
 startup_auto_battery_mode=intel
-startup_auto_extpower_mode=nvidia&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+startup_auto_extpower_mode=nvidia
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;这里我设置的是用电池时使用集成显卡, 用电源时使用独显。&lt;/p&gt;
 &lt;p&gt;最后贴一下全部的配置文件, 除了上述的几处修改以外其他均为默认值, 仅供参考。&lt;/p&gt;
 &lt;figure data-raw=&quot;[optimus]
@@ -2409,8 +2556,10 @@ const ap0 = new APlayer ({
 &lt;li&gt;&lt;p&gt;Unix/Linux系统终端执行：&lt;code&gt;ssh root@191.168.31.1&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;如果在ssh到路由器时遇到no matching key exchange method found错误，编辑&lt;code&gt;~/.ssh/config&lt;/code&gt;, 加入下面两行：&lt;/p&gt;
 &lt;figure data-raw=&quot;Host *
-    KexAlgorithms +diffie-hellman-group1-sha1&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;Host *
-    KexAlgorithms +diffie-hellman-group1-sha1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    KexAlgorithms +diffie-hellman-group1-sha1
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;Host *
+    KexAlgorithms +diffie-hellman-group1-sha1
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&quot;刷入Bootloader（推荐可选）&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/xiaomi_r3g_openwrt/#%E5%88%B7%E5%85%A5Bootloader%EF%BC%88%E6%8E%A8%E8%8D%90%E5%8F%AF%E9%80%89%EF%BC%89&quot; title=&quot;刷入Bootloader（推荐可选）&quot;&gt;&lt;/a&gt;刷入Bootloader（推荐/可选）&lt;/h1&gt;
@@ -2421,15 +2570,19 @@ const ap0 = new APlayer ({
 &lt;p&gt;第一种方法是ssh到路由器后通过&lt;code&gt;wget&lt;/code&gt;下载breed文件再刷入（需要确保路由器联网）, 下载地址为https所以需要加上&lt;code&gt;--no-check-certificate&lt;/code&gt;参数。&lt;/p&gt;
 &lt;figure data-raw=&quot;cd /tmp
 wget --no-check-certificate https://breed.hackpascal.net/breed-mt7621-xiaomi-r3g.bin -O breed.bin
-mtd -r write breed.bin Bootloader&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;cd /tmp
+mtd -r write breed.bin Bootloader
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;cd /tmp
 wget --no-check-certificate https://breed.hackpascal.net/breed-mt7621-xiaomi-r3g.bin -O breed.bin
-mtd -r write breed.bin Bootloader&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+mtd -r write breed.bin Bootloader
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;另一种方法是将breed通过U盘拷贝到路由器再刷入。&lt;/p&gt;
 &lt;figure data-raw=&quot;mkdir /tmp/sdcard
 mount /dev/sda1 /tmp/sdcard
-mtd -r write /tmp/sdcard/breed.bin Bootloader&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;mkdir /tmp/sdcard
+mtd -r write /tmp/sdcard/breed.bin Bootloader
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;mkdir /tmp/sdcard
 mount /dev/sda1 /tmp/sdcard
-mtd -r write /tmp/sdcard/breed.bin Bootloader&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+mtd -r write /tmp/sdcard/breed.bin Bootloader
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;路由器刷写完毕后会自动重启, &lt;strong&gt;在写入Breed的过程中不要动路由器&lt;/strong&gt;。&lt;/p&gt;
 &lt;h1 id=&quot;刷机&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/xiaomi_r3g_openwrt/#%E5%88%B7%E6%9C%BA&quot; title=&quot;刷机&quot;&gt;&lt;/a&gt;刷机&lt;/h1&gt;
 &lt;p&gt;下载所需固件：&lt;/p&gt;
@@ -2450,8 +2603,10 @@ mtd -r write /tmp/sdcard/breed.bin Bootloader&lt;/code&gt;&lt;/pre&gt;&lt;/figur
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;刷入Openwrt固件到Kernel1&lt;/p&gt;
 &lt;figure data-raw=&quot;mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-kernel1.bin kernel1
-mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-rootfs0.bin rootfs0&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-kernel1.bin kernel1
-mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-rootfs0.bin rootfs0&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-rootfs0.bin rootfs0
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-kernel1.bin kernel1
+mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-rootfs0.bin rootfs0
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;路由器断电, 捅住reset按钮后通电, 待指示灯变为蓝色闪烁后用网线连接路由器到电脑, 浏览器打开网址&lt;code&gt;192.168.1.1&lt;/code&gt;, 进入Breed界面。&lt;/p&gt;
 &lt;/li&gt;
@@ -2468,12 +2623,14 @@ mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-rootfs0.bin rootfs0
 nvram set flag_try_sys1_failed=1
 nvram commit
 
-reboot&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-kernel1.bin kernel1
+reboot
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-kernel1.bin kernel1
 mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-rootfs0.bin rootfs0
 nvram set flag_try_sys1_failed=1
 nvram commit
 
-reboot&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+reboot
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;Others&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/xiaomi_r3g_openwrt/#Others&quot; title=&quot;Others&quot;&gt;&lt;/a&gt;Others&lt;/h1&gt;
 &lt;ol&gt;
@@ -2486,12 +2643,13 @@ reboot&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://openwrt-dist.sourceforge.net&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;OpenWrt-dist&lt;/a&gt;可拓展更多功能。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;为优化软件包安装速度, 可将opkg源改为国内：&lt;/p&gt;
-&lt;p&gt;LuCI -&amp;gt; System -&amp;gt; Software -&amp;gt; Configuration 中将 Distribution feeds 的&lt;code&gt;http://downloads.openwrt.org&lt;/code&gt;替换为&lt;code&gt;http://mirrors.tuna.tsinghua.edu.cn/lede&lt;/code&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;OpenWrt可安装软件包&lt;code&gt;libustream-openssl&lt;/code&gt; &lt;code&gt;libustream-mbedtls&lt;/code&gt;解决&lt;code&gt;wget&lt;/code&gt;无法访问https服务器问题。&lt;/p&gt;
-&lt;p&gt;然后建议把opkg源能改为https的都改为https。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;  LuCI -&amp;gt; System -&amp;gt; Software -&amp;gt; Configuration 中将 Distribution feeds 的&lt;code&gt;http://downloads.openwrt.org&lt;/code&gt;替换为&lt;code&gt;http://mirrors.tuna.tsinghua.edu.cn/lede&lt;/code&gt;。&lt;/p&gt;
+&lt;ol start=&quot;6&quot;&gt;
+&lt;li&gt;OpenWrt可安装软件包&lt;code&gt;libustream-openssl&lt;/code&gt; &lt;code&gt;libustream-mbedtls&lt;/code&gt;解决&lt;code&gt;wget&lt;/code&gt;无法访问https服务器问题。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;  然后建议把opkg源能改为https的都改为https。&lt;/p&gt;
 
     </content>
     
@@ -2569,9 +2727,11 @@ reboot&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Linux用户你下载的是jar文件所以如果你想运行你需要新建一个可执行文件：&lt;/p&gt;
 &lt;figure data-raw=&quot;$ cd 你的文件夹名称
 $ echo &amp;quot;java -jar hmcl-对应的版本号.jar&amp;quot; &gt; ./start.sh
-$ chmod 744 ./start.sh&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;$ cd 你的文件夹名称
+$ chmod 744 ./start.sh
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;$ cd 你的文件夹名称
 $ echo &quot;java -jar hmcl-对应的版本号.jar&quot; &amp;gt; ./start.sh
-$ chmod 744 ./start.sh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+$ chmod 744 ./start.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;然后在终端执行&lt;code&gt;./start.sh&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;或者直接在终端执行&lt;code&gt;java -jar hmcl-*.jar&lt;/code&gt;即可。&lt;/p&gt;
 &lt;ol start=&quot;4&quot;&gt;
@@ -2889,27 +3049,35 @@ $ chmod 744 ./start.sh&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Arch Linux ARM: &lt;code&gt;/boot/config.txt&lt;/code&gt;中更改GPU显存为16&lt;/p&gt;
 &lt;h1 id=&quot;安装JAVA&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/raspberrypi-mc-server/#%E5%AE%89%E8%A3%85JAVA&quot; title=&quot;安装JAVA&quot;&gt;&lt;/a&gt;安装JAVA&lt;/h1&gt;
 &lt;p&gt;Archlinux ARM:&lt;/p&gt;
-&lt;figure data-raw=&quot;$ sudo pacman -S jre8-openjdk&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;$ sudo pacman -S jre8-openjdk&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure data-raw=&quot;$ sudo pacman -S jre8-openjdk
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;$ sudo pacman -S jre8-openjdk
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;通用方法：
 前往 &lt;strong&gt;&lt;a href=&quot;http://www.oracle.com/technetwork/cn/java/javase/downloads/jdk8-downloads-2133151-zhs.html&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;JAVA下载页&lt;/a&gt;&lt;/strong&gt; 下载树莓派（ARM架构，32位系统）所支持的JDK。&lt;/p&gt;
 &lt;figure data-raw=&quot;$ mkdir ./java
-$ tar -zxvf 你所下载的JDK.jar.gz -C ./java/&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;$ mkdir ./java
-$ tar -zxvf 你所下载的JDK.jar.gz -C ./java/&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+$ tar -zxvf 你所下载的JDK.jar.gz -C ./java/
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;$ mkdir ./java
+$ tar -zxvf 你所下载的JDK.jar.gz -C ./java/
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;在终端输入&lt;code&gt;./java/jdk1.8.0/bin/java -version&lt;/code&gt;显示java的版本号。&lt;/p&gt;
 &lt;h1 id=&quot;部署服务器&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/raspberrypi-mc-server/#%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8&quot; title=&quot;部署服务器&quot;&gt;&lt;/a&gt;部署服务器&lt;/h1&gt;
 &lt;p&gt;本篇使用&lt;a href=&quot;https://github.com/PaperMC/Paper&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;Paper MC&lt;/a&gt;部署服务器。
 除了Paper之外还有Bukkit和Spigot以及原版可选。&lt;/p&gt;
 &lt;p&gt;使用以下命令启动服务器。&lt;/p&gt;
 &lt;figure data-raw=&quot;$ echo eula=True &gt; eula.txt
-$ ./java/jdk*/bin/java -Xms512M -Xmx1024M -jar ./spigot.jar&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;$ echo eula=True &amp;gt; eula.txt
-$ ./java/jdk*/bin/java -Xms512M -Xmx1024M -jar ./spigot.jar&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+$ ./java/jdk*/bin/java -Xms512M -Xmx1024M -jar ./spigot.jar
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;$ echo eula=True &amp;gt; eula.txt
+$ ./java/jdk*/bin/java -Xms512M -Xmx1024M -jar ./spigot.jar
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;第一次运行会下载一些文件需要一定的时间。&lt;/p&gt;
 &lt;p&gt;网上有很多服务器插件和Mod什么的。本章中不做过多介绍.&lt;/p&gt;
 &lt;h1 id=&quot;用screen保持服务器一直运行而不被关掉。&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/raspberrypi-mc-server/#%E7%94%A8screen%E4%BF%9D%E6%8C%81%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%80%E7%9B%B4%E8%BF%90%E8%A1%8C%E8%80%8C%E4%B8%8D%E8%A2%AB%E5%85%B3%E6%8E%89%E3%80%82&quot; title=&quot;用screen保持服务器一直运行而不被关掉。&quot;&gt;&lt;/a&gt;用screen 保持服务器一直运行而不被关掉。&lt;/h1&gt;
 &lt;p&gt;首先安装好screen。&lt;/p&gt;
 &lt;figure data-raw=&quot;$ screen
-$ ./java/jdk1.8.0/bin/java -Xms512M -Xmx1024M -jar./paperclip.jar&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;$ screen
-$ ./java/jdk1.8.0/bin/java -Xms512M -Xmx1024M -jar./paperclip.jar&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+$ ./java/jdk1.8.0/bin/java -Xms512M -Xmx1024M -jar./paperclip.jar
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;$ screen
+$ ./java/jdk1.8.0/bin/java -Xms512M -Xmx1024M -jar./paperclip.jar
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;在配置好你的服务器后就可以和小伙伴一起联机了。经过测试几个人简单的联机运行蛮正常的。&lt;/p&gt;
 
     </content>
@@ -3015,12 +3183,14 @@ int main(int argc, char *argv[])
 {
     printf(&amp;quot;Hello World!\n&amp;quot;);
     return 0;
-}&quot; data-info=&quot;language-C&quot; data-lang=&quot;C&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-C&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
+}
+&quot; data-info=&quot;language-C&quot; data-lang=&quot;C&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-C&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
 int main(int argc, char *argv[])
 {
     printf(&quot;Hello World!\n&quot;);
     return 0;
-}&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;h2 id=&quot;STARRY-S039;Blog&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/hello-world/#STARRY-S039;Blog&quot; title=&quot;STARRY-S039;Blog&quot;&gt;&lt;/a&gt;STARRY-S&#039; Blog&lt;/h2&gt;
 
     </content>

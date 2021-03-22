@@ -16,7 +16,7 @@
     
     <meta name="keywords" content="Life, ARIA, Hikaru, STARRY-S, Arch Linux, Linux, Music">
     
-    <meta name="generator" content="Hikaru v1.6.1">
+    <meta name="generator" content="Hikaru v1.7.3">
     <link rel="canonical" href="https://blog.starry-s.me/posts/raspberrypi-mc-server/">
     
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
@@ -99,10 +99,17 @@
             gutter.push("<pre class=\"gutter\">");
             // Highlight should not change lines.
             // But may replace `\n` with `<br>`, so use original code here.
-            const linesLength = code.split(/\r?\n/g).length;
-            for (let i = 0; i < linesLength; ++i) {
+            const codeLines = code.split(/\r?\n/g);
+            // It seems marked.js starts to keep the last `\n`,
+            // which will leave an empty line after splitting,
+            // and we should not add gutter for the last empty line.
+            // Don't do trim here! We only skip empty line.
+            if (codeLines[codeLines.length - 1].length === 0) {
+              codeLines.pop();
+            }
+            for (let i = 0; i < codeLines.length; ++i) {
               gutter.push(`<span class="line-number">${i + 1}</span>`);
-              if (i !== linesLength - 1) {
+              if (i !== codeLines.length - 1) {
                 gutter.push("\n");
               }
             }
@@ -235,15 +242,6 @@
       });
     </script>
     
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124615792-3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-124615792-3');
-    </script>
     <title>树莓派之我的世界服务器 - STARRY-S' Blog</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage">
@@ -298,9 +296,11 @@
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/posts/raspberrypi-mc-server/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        
         <meta itemprop="name" content="STARRY-S">
         <meta itemprop="description" content="Morning.">
         <meta itemprop="image" content="/images/avatar.jpg">
+        
       </span>
       <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
         <meta itemprop="name" content="STARRY-S' Blog">
@@ -313,6 +313,7 @@
         <div class="post-date meta-block">
           <i class="far fa-calendar-check"></i><span><time class="post-full-date" title="post-date" itemprop="dateCreated datePublished" datetime="2016-11-25T07:01:28.000Z">11/25/2016, 3:01:28 PM</time></span>
         </div>
+        
         
         
         
@@ -354,27 +355,35 @@
 <p>Arch Linux ARM: <code>/boot/config.txt</code>中更改GPU显存为16</p>
 <h1 id="安装JAVA"><a class="header-link" href="/posts/raspberrypi-mc-server/#%E5%AE%89%E8%A3%85JAVA" title="安装JAVA"></a>安装JAVA</h1>
 <p>Archlinux ARM:</p>
-<figure data-raw="$ sudo pacman -S jre8-openjdk" class="code-block"><pre class="code"><code>$ sudo pacman -S jre8-openjdk</code></pre></figure>
+<figure data-raw="$ sudo pacman -S jre8-openjdk
+" class="code-block"><pre class="code"><code>$ sudo pacman -S jre8-openjdk
+</code></pre></figure>
 <p>通用方法：
 前往 <strong><a href="http://www.oracle.com/technetwork/cn/java/javase/downloads/jdk8-downloads-2133151-zhs.html" target="_blank" rel="external nofollow noreferrer noopener">JAVA下载页</a></strong> 下载树莓派（ARM架构，32位系统）所支持的JDK。</p>
 <figure data-raw="$ mkdir ./java
-$ tar -zxvf 你所下载的JDK.jar.gz -C ./java/" class="code-block"><pre class="code"><code>$ mkdir ./java
-$ tar -zxvf 你所下载的JDK.jar.gz -C ./java/</code></pre></figure>
+$ tar -zxvf 你所下载的JDK.jar.gz -C ./java/
+" class="code-block"><pre class="code"><code>$ mkdir ./java
+$ tar -zxvf 你所下载的JDK.jar.gz -C ./java/
+</code></pre></figure>
 <p>在终端输入<code>./java/jdk1.8.0/bin/java -version</code>显示java的版本号。</p>
 <h1 id="部署服务器"><a class="header-link" href="/posts/raspberrypi-mc-server/#%E9%83%A8%E7%BD%B2%E6%9C%8D%E5%8A%A1%E5%99%A8" title="部署服务器"></a>部署服务器</h1>
 <p>本篇使用<a href="https://github.com/PaperMC/Paper" target="_blank" rel="external nofollow noreferrer noopener">Paper MC</a>部署服务器。
 除了Paper之外还有Bukkit和Spigot以及原版可选。</p>
 <p>使用以下命令启动服务器。</p>
 <figure data-raw="$ echo eula=True > eula.txt
-$ ./java/jdk*/bin/java -Xms512M -Xmx1024M -jar ./spigot.jar" class="code-block"><pre class="code"><code>$ echo eula=True &gt; eula.txt
-$ ./java/jdk*/bin/java -Xms512M -Xmx1024M -jar ./spigot.jar</code></pre></figure>
+$ ./java/jdk*/bin/java -Xms512M -Xmx1024M -jar ./spigot.jar
+" class="code-block"><pre class="code"><code>$ echo eula=True &gt; eula.txt
+$ ./java/jdk*/bin/java -Xms512M -Xmx1024M -jar ./spigot.jar
+</code></pre></figure>
 <p>第一次运行会下载一些文件需要一定的时间。</p>
 <p>网上有很多服务器插件和Mod什么的。本章中不做过多介绍.</p>
 <h1 id="用screen保持服务器一直运行而不被关掉。"><a class="header-link" href="/posts/raspberrypi-mc-server/#%E7%94%A8screen%E4%BF%9D%E6%8C%81%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%80%E7%9B%B4%E8%BF%90%E8%A1%8C%E8%80%8C%E4%B8%8D%E8%A2%AB%E5%85%B3%E6%8E%89%E3%80%82" title="用screen保持服务器一直运行而不被关掉。"></a>用screen 保持服务器一直运行而不被关掉。</h1>
 <p>首先安装好screen。</p>
 <figure data-raw="$ screen
-$ ./java/jdk1.8.0/bin/java -Xms512M -Xmx1024M -jar./paperclip.jar" class="code-block"><pre class="code"><code>$ screen
-$ ./java/jdk1.8.0/bin/java -Xms512M -Xmx1024M -jar./paperclip.jar</code></pre></figure>
+$ ./java/jdk1.8.0/bin/java -Xms512M -Xmx1024M -jar./paperclip.jar
+" class="code-block"><pre class="code"><code>$ screen
+$ ./java/jdk1.8.0/bin/java -Xms512M -Xmx1024M -jar./paperclip.jar
+</code></pre></figure>
 <p>在配置好你的服务器后就可以和小伙伴一起联机了。经过测试几个人简单的联机运行蛮正常的。</p>
 
     </main>
@@ -541,7 +550,7 @@ $ ./java/jdk1.8.0/bin/java -Xms512M -Xmx1024M -jar./paperclip.jar</code></pre></
       
       <div class="archives-count count-block">
         <div class="site-count-title">归档</div>
-        <div><a href="/archives/">14</a></div>
+        <div><a href="/archives/">15</a></div>
       </div>
       
       
@@ -555,7 +564,7 @@ $ ./java/jdk1.8.0/bin/java -Xms512M -Xmx1024M -jar./paperclip.jar</code></pre></
       
       <div class="tags-count count-block">
         <div class="site-count-title">标签</div>
-        <div><a href="/tags/">19</a></div>
+        <div><a href="/tags/">20</a></div>
       </div>
       
       
@@ -699,4 +708,4 @@ $ ./java/jdk1.8.0/bin/java -Xms512M -Xmx1024M -jar./paperclip.jar</code></pre></
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.6.1 at 2021-02-23T11:40:33.569Z. -->
+<!-- Page built by Hikaru v1.7.3 at 2021-03-22T13:22:03.848Z. -->

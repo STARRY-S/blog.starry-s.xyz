@@ -16,7 +16,7 @@
     
     <meta name="keywords" content="Life, ARIA, Hikaru, STARRY-S, Arch Linux, Linux, Music">
     
-    <meta name="generator" content="Hikaru v1.6.1">
+    <meta name="generator" content="Hikaru v1.7.3">
     <link rel="canonical" href="https://blog.starry-s.me/posts/laptop-dualscreen-hidpi-scale/">
     
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
@@ -99,10 +99,17 @@
             gutter.push("<pre class=\"gutter\">");
             // Highlight should not change lines.
             // But may replace `\n` with `<br>`, so use original code here.
-            const linesLength = code.split(/\r?\n/g).length;
-            for (let i = 0; i < linesLength; ++i) {
+            const codeLines = code.split(/\r?\n/g);
+            // It seems marked.js starts to keep the last `\n`,
+            // which will leave an empty line after splitting,
+            // and we should not add gutter for the last empty line.
+            // Don't do trim here! We only skip empty line.
+            if (codeLines[codeLines.length - 1].length === 0) {
+              codeLines.pop();
+            }
+            for (let i = 0; i < codeLines.length; ++i) {
               gutter.push(`<span class="line-number">${i + 1}</span>`);
-              if (i !== linesLength - 1) {
+              if (i !== codeLines.length - 1) {
                 gutter.push("\n");
               }
             }
@@ -235,15 +242,6 @@
       });
     </script>
     
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124615792-3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-124615792-3');
-    </script>
     <title>解决笔记本外接HIDPI显示器的缩放问题 - STARRY-S' Blog</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage">
@@ -298,9 +296,11 @@
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/posts/laptop-dualscreen-hidpi-scale/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        
         <meta itemprop="name" content="STARRY-S">
         <meta itemprop="description" content="Morning.">
         <meta itemprop="image" content="/images/avatar.jpg">
+        
       </span>
       <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
         <meta itemprop="name" content="STARRY-S' Blog">
@@ -318,6 +318,7 @@
         <div class="post-date meta-block">
           <i class="far fa-calendar-plus"></i><span><time class="post-full-date" title="post-date" itemprop="dateUpdated" datetime="2021-02-23T11:27:32.000Z">2/23/2021, 7:27:32 PM</time></span>
         </div>
+        
         
         
         <div class="post-categories meta-block">
@@ -372,8 +373,10 @@ const ap0 = new APlayer ({
 <h1 id="解决方法"><a class="header-link" href="/posts/laptop-dualscreen-hidpi-scale/#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95" title="解决方法"></a>解决方法</h1>
 <p>首先按照<a href="https://wiki.archlinux.org/index.php/HiDPI" target="_blank" rel="external nofollow noreferrer noopener">Wiki</a>设置GNOME的HIDPI:</p>
 <figure data-raw="$ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides &quot;[{'Gdk/WindowScalingFactor', <2>}]&quot;
-$ gsettings set org.gnome.desktop.interface scaling-factor 2" data-info="language-text" data-lang="text" class="code-block"><pre class="code"><code class="language-text">$ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "[{'Gdk/WindowScalingFactor', &lt;2&gt;}]"
-$ gsettings set org.gnome.desktop.interface scaling-factor 2</code></pre></figure>
+$ gsettings set org.gnome.desktop.interface scaling-factor 2
+" data-info="language-text" data-lang="text" class="code-block"><pre class="code"><code class="language-text">$ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "[{'Gdk/WindowScalingFactor', &lt;2&gt;}]"
+$ gsettings set org.gnome.desktop.interface scaling-factor 2
+</code></pre></figure>
 <p>在显示设置里将缩放调到200%后，界面被放大了2倍，在4K屏上的字倒是不瞎眼了。</p>
 <p>但是因为笔记本是15寸1080P，所以笔记本上显示的字大得离谱。</p>
 <p>解决方法是使用xrandr调整笔记本电脑的屏幕缩放，笔记本的分辨率为1920x1080，使用xrandr将画面的分辨率放大2倍，也就是调整为3840x2160，然后显示在分辨率为1920x1080的显示器上。</p>
@@ -381,21 +384,27 @@ $ gsettings set org.gnome.desktop.interface scaling-factor 2</code></pre></figur
 <figure data-raw="$ xrandr | grep &quot;$extern connected&quot;
 
   HDMI-0 connected primary 3840x2160+0+0 (normal left inverted right x axis y axis) 597mm x 336mm
-  eDP-1-1 connected 1920x1080+0+2160 (normal left inverted right x axis y axis) 344mm x 193mm" data-info="language-text" data-lang="text" class="code-block"><pre class="code"><code class="language-text">$ xrandr | grep "$extern connected"
+  eDP-1-1 connected 1920x1080+0+2160 (normal left inverted right x axis y axis) 344mm x 193mm
+" data-info="language-text" data-lang="text" class="code-block"><pre class="code"><code class="language-text">$ xrandr | grep "$extern connected"
 
   HDMI-0 connected primary 3840x2160+0+0 (normal left inverted right x axis y axis) 597mm x 336mm
-  eDP-1-1 connected 1920x1080+0+2160 (normal left inverted right x axis y axis) 344mm x 193mm</code></pre></figure>
+  eDP-1-1 connected 1920x1080+0+2160 (normal left inverted right x axis y axis) 344mm x 193mm
+</code></pre></figure>
 <p>这里HDMI-0是外接的4K显示器，分辨率为3840x2160，位置为(0, 0)。</p>
 <p>eDP-1-1是笔记本的显示器，分辨率1920x1080，位置为(0, 2160)，在4K显示器的左下方。</p>
 <p>参见<a href="https://wiki.archlinux.org/index.php/HiDPI#Multiple_displays" target="_blank" rel="external nofollow noreferrer noopener">Wiki设置双显示器部分</a>，用xrandr将笔记本的显示器缩放2倍，分辨率变为 [1920 * 2]x[1080 * 2]=3840x2160，位置还是在4K显示器的正下方。</p>
-<figure data-raw="$ xrandr --output eDP-1-1 --scale 2.0x2.0 --panning 3840x2160+0+2160 --output HDMI-0 --auto" data-info="language-text" data-lang="text" class="code-block"><pre class="code"><code class="language-text">$ xrandr --output eDP-1-1 --scale 2.0x2.0 --panning 3840x2160+0+2160 --output HDMI-0 --auto</code></pre></figure>
+<figure data-raw="$ xrandr --output eDP-1-1 --scale 2.0x2.0 --panning 3840x2160+0+2160 --output HDMI-0 --auto
+" data-info="language-text" data-lang="text" class="code-block"><pre class="code"><code class="language-text">$ xrandr --output eDP-1-1 --scale 2.0x2.0 --panning 3840x2160+0+2160 --output HDMI-0 --auto
+</code></pre></figure>
 <p>因为不需要修改4K显示器的分辨率，所以HDMI-0设置为auto。</p>
 <p>这样笔记本上的画面也显示正常了。</p>
 <p>但是用过一阵子会发现笔记本显示器上的字比4K显示器上的字小很多，看起来不方便，所以把缩放倍数改为1.6（我是从1.5-2.0之间一点点试的，才找到最适合自己的缩放倍数），这样解决了字体大小的问题，不过笔记本画面还是会有模糊（能接受）。</p>
 <blockquote>
 <p>[1920 * 1.6]x[1080 * 1.6]=3072x1728</p>
 </blockquote>
-<figure data-raw="$ xrandr --output eDP-1-1 --scale 1.6x1.6 --panning 3072x1728+0+2160 --output HDMI-0 --auto" data-info="language-text" data-lang="text" class="code-block"><pre class="code"><code class="language-text">$ xrandr --output eDP-1-1 --scale 1.6x1.6 --panning 3072x1728+0+2160 --output HDMI-0 --auto</code></pre></figure>
+<figure data-raw="$ xrandr --output eDP-1-1 --scale 1.6x1.6 --panning 3072x1728+0+2160 --output HDMI-0 --auto
+" data-info="language-text" data-lang="text" class="code-block"><pre class="code"><code class="language-text">$ xrandr --output eDP-1-1 --scale 1.6x1.6 --panning 3072x1728+0+2160 --output HDMI-0 --auto
+</code></pre></figure>
 <p>用到现在GNOME的缩放还算是完美，除了玩Minecraft用的HMCL启动器（Java程序）没有被放大之外<del>（貌似缺配置，要是配置好了我再补充）</del>，Steam界面缩放正常，饥荒、Dota2也都没问题。</p>
 <blockquote>
 <p>Java8不支持Hidpi缩放，如果想让HMCL支持缩放需要需要安装Java9以上的版本，所以还是算了，又不是不能用。
@@ -582,7 +591,7 @@ qt5设置环境变量<code>QT_SCREEN_SCALE_FACTORS=2</code>。</p>
       
       <div class="archives-count count-block">
         <div class="site-count-title">归档</div>
-        <div><a href="/archives/">14</a></div>
+        <div><a href="/archives/">15</a></div>
       </div>
       
       
@@ -596,7 +605,7 @@ qt5设置环境变量<code>QT_SCREEN_SCALE_FACTORS=2</code>。</p>
       
       <div class="tags-count count-block">
         <div class="site-count-title">标签</div>
-        <div><a href="/tags/">19</a></div>
+        <div><a href="/tags/">20</a></div>
       </div>
       
       
@@ -716,4 +725,4 @@ qt5设置环境变量<code>QT_SCREEN_SCALE_FACTORS=2</code>。</p>
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.6.1 at 2021-02-23T11:40:33.560Z. -->
+<!-- Page built by Hikaru v1.7.3 at 2021-03-22T13:22:03.838Z. -->

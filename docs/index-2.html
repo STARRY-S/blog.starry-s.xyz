@@ -16,7 +16,7 @@
     
     <meta name="keywords" content="Life, ARIA, Hikaru, STARRY-S, Arch Linux, Linux, Music">
     
-    <meta name="generator" content="Hikaru v1.6.1">
+    <meta name="generator" content="Hikaru v1.7.3">
     <link rel="canonical" href="https://blog.starry-s.me/index-2.html">
     
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
@@ -99,10 +99,17 @@
             gutter.push("<pre class=\"gutter\">");
             // Highlight should not change lines.
             // But may replace `\n` with `<br>`, so use original code here.
-            const linesLength = code.split(/\r?\n/g).length;
-            for (let i = 0; i < linesLength; ++i) {
+            const codeLines = code.split(/\r?\n/g);
+            // It seems marked.js starts to keep the last `\n`,
+            // which will leave an empty line after splitting,
+            // and we should not add gutter for the last empty line.
+            // Don't do trim here! We only skip empty line.
+            if (codeLines[codeLines.length - 1].length === 0) {
+              codeLines.pop();
+            }
+            for (let i = 0; i < codeLines.length; ++i) {
               gutter.push(`<span class="line-number">${i + 1}</span>`);
-              if (i !== linesLength - 1) {
+              if (i !== codeLines.length - 1) {
                 gutter.push("\n");
               }
             }
@@ -235,15 +242,6 @@
       });
     </script>
     
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124615792-3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-124615792-3');
-    </script>
     <title>STARRY-S' Blog - Morning.</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage">
@@ -297,11 +295,74 @@
   
   <article class="article post card" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/posts/spring/">
+      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/posts/spring-2/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        
         <meta itemprop="name" content="STARRY-S">
         <meta itemprop="description" content="Morning.">
         <meta itemprop="image" content="/images/avatar.jpg">
+        
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="STARRY-S' Blog">
+      </span>
+    </div>
+    <header class="post-header">
+      <div class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/posts/spring-2/" itemprop="url">Spring - 2</a>
+      </div>
+      <div class="post-meta">
+        
+        <div class="post-date meta-block">
+          <i class="far fa-calendar-check"></i><span><time class="post-full-date" title="post-date" itemprop="dateCreated datePublished" datetime="2018-04-05T10:05:11.000Z">4/5/2018, 6:05:11 PM</time></span>
+        </div>
+        
+        
+        
+        
+        <div class="post-categories meta-block">
+          
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%97%A5%E5%B8%B8/" itemprop="url" rel="index"><span itemprop="name">日常</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E6%97%A5%E5%B8%B8/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a></span>
+        </div>
+        
+        
+        
+        <div class="post-comment-count meta-block">
+          <i class="far fa-comments"></i><span><a href="/posts/spring-2/#comment-results" itemprop="discussionUrl"><span class="post-comment-count comment-count" data-comment-identifier="Spring - 2" itemprop="commentCount">阅读评论</span></a></span>
+        </div>
+        
+        
+      </div>
+    </header>
+    <main class="post-main" id="scrollspy-container" itemprop="articleBody">
+      
+      <p><img src="/posts/spring-2/images/05.jpeg" alt="Spring" title="Flowers"></p>
+<h1 id="春天来了。"><a class="header-link" href="/posts/spring-2/#%E6%98%A5%E5%A4%A9%E6%9D%A5%E4%BA%86%E3%80%82" title="春天来了。"></a>春天来了。</h1>
+<div class="alert-blue">
+多图预警
+</div>
+
+
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        <a class="post-tag button" href="/tags/%E6%91%84%E5%BD%B1/" rel="tag"><i class="fas fa-tag"></i>摄影</a><a class="post-tag button" href="/tags/Spring/" rel="tag"><i class="fas fa-tag"></i>Spring</a><a class="post-tag button" href="/tags/Flowers/" rel="tag"><i class="fas fa-tag"></i>Flowers</a>
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="article post card" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/posts/spring/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        
+        <meta itemprop="name" content="STARRY-S">
+        <meta itemprop="description" content="Morning.">
+        <meta itemprop="image" content="/images/avatar.jpg">
+        
       </span>
       <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
         <meta itemprop="name" content="STARRY-S' Blog">
@@ -316,6 +377,7 @@
         <div class="post-date meta-block">
           <i class="far fa-calendar-check"></i><span><time class="post-full-date" title="post-date" itemprop="dateCreated datePublished" datetime="2017-05-05T14:28:00.000Z">5/5/2017, 10:28:00 PM</time></span>
         </div>
+        
         
         
         
@@ -356,9 +418,11 @@
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/posts/sorry-thankyou/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        
         <meta itemprop="name" content="STARRY-S">
         <meta itemprop="description" content="Morning.">
         <meta itemprop="image" content="/images/avatar.jpg">
+        
       </span>
       <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
         <meta itemprop="name" content="STARRY-S' Blog">
@@ -373,6 +437,7 @@
         <div class="post-date meta-block">
           <i class="far fa-calendar-check"></i><span><time class="post-full-date" title="post-date" itemprop="dateCreated datePublished" datetime="2016-11-26T07:00:24.000Z">11/26/2016, 3:00:24 PM</time></span>
         </div>
+        
         
         
         
@@ -414,9 +479,11 @@
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/posts/raspberrypi-mc-server/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        
         <meta itemprop="name" content="STARRY-S">
         <meta itemprop="description" content="Morning.">
         <meta itemprop="image" content="/images/avatar.jpg">
+        
       </span>
       <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
         <meta itemprop="name" content="STARRY-S' Blog">
@@ -431,6 +498,7 @@
         <div class="post-date meta-block">
           <i class="far fa-calendar-check"></i><span><time class="post-full-date" title="post-date" itemprop="dateCreated datePublished" datetime="2016-11-25T07:01:28.000Z">11/25/2016, 3:01:28 PM</time></span>
         </div>
+        
         
         
         
@@ -469,9 +537,11 @@
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/posts/hello-world/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        
         <meta itemprop="name" content="STARRY-S">
         <meta itemprop="description" content="Morning.">
         <meta itemprop="image" content="/images/avatar.jpg">
+        
       </span>
       <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
         <meta itemprop="name" content="STARRY-S' Blog">
@@ -486,6 +556,7 @@
         <div class="post-date meta-block">
           <i class="far fa-calendar-check"></i><span><time class="post-full-date" title="post-date" itemprop="dateCreated datePublished" datetime="2016-08-22T06:22:54.000Z">8/22/2016, 2:22:54 PM</time></span>
         </div>
+        
         
         
         
@@ -617,7 +688,7 @@ const ap0 = new APlayer ({
       
       <div class="archives-count count-block">
         <div class="site-count-title">归档</div>
-        <div><a href="/archives/">14</a></div>
+        <div><a href="/archives/">15</a></div>
       </div>
       
       
@@ -631,7 +702,7 @@ const ap0 = new APlayer ({
       
       <div class="tags-count count-block">
         <div class="site-count-title">标签</div>
-        <div><a href="/tags/">19</a></div>
+        <div><a href="/tags/">20</a></div>
       </div>
       
       
@@ -720,4 +791,4 @@ const ap0 = new APlayer ({
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.6.1 at 2021-02-23T11:40:33.706Z. -->
+<!-- Page built by Hikaru v1.7.3 at 2021-03-22T13:22:03.967Z. -->

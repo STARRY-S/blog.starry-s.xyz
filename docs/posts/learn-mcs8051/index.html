@@ -16,7 +16,7 @@
     
     <meta name="keywords" content="Life, ARIA, Hikaru, STARRY-S, Arch Linux, Linux, Music">
     
-    <meta name="generator" content="Hikaru v1.6.1">
+    <meta name="generator" content="Hikaru v1.7.3">
     <link rel="canonical" href="https://blog.starry-s.me/posts/learn-mcs8051/">
     
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
@@ -118,10 +118,17 @@
             gutter.push("<pre class=\"gutter\">");
             // Highlight should not change lines.
             // But may replace `\n` with `<br>`, so use original code here.
-            const linesLength = code.split(/\r?\n/g).length;
-            for (let i = 0; i < linesLength; ++i) {
+            const codeLines = code.split(/\r?\n/g);
+            // It seems marked.js starts to keep the last `\n`,
+            // which will leave an empty line after splitting,
+            // and we should not add gutter for the last empty line.
+            // Don't do trim here! We only skip empty line.
+            if (codeLines[codeLines.length - 1].length === 0) {
+              codeLines.pop();
+            }
+            for (let i = 0; i < codeLines.length; ++i) {
               gutter.push(`<span class="line-number">${i + 1}</span>`);
-              if (i !== linesLength - 1) {
+              if (i !== codeLines.length - 1) {
                 gutter.push("\n");
               }
             }
@@ -254,15 +261,6 @@
       });
     </script>
     
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124615792-3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-124615792-3');
-    </script>
     <title>51单片机习题整理 - STARRY-S' Blog</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage">
@@ -317,9 +315,11 @@
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/posts/learn-mcs8051/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        
         <meta itemprop="name" content="STARRY-S">
         <meta itemprop="description" content="Morning.">
         <meta itemprop="image" content="/images/avatar.jpg">
+        
       </span>
       <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
         <meta itemprop="name" content="STARRY-S' Blog">
@@ -337,6 +337,7 @@
         <div class="post-date meta-block">
           <i class="far fa-calendar-plus"></i><span><time class="post-full-date" title="post-date" itemprop="dateUpdated" datetime="2020-12-09T04:31:15.000Z">12/9/2020, 12:31:15 PM</time></span>
         </div>
+        
         
         
         <div class="post-categories meta-block">
@@ -548,48 +549,54 @@ const ap0 = new APlayer ({
 <p>8051中, <code>PC</code>和<code>DPTR</code>都用于提供地址时, <code>PC</code>是<strong>用户程序不可访问的</strong>, <code>DPTR</code>可以分为两个8位寄存器<code>DPH</code>和<code>DPL</code>使用。</p>
 </li>
 <li><p>累加器A的值为<code>30H</code>, 指令<code>MOVC A, @A+PC</code>位于地址<code>3000H</code>。执行该指令时, 程序存储器地址<code>3031H</code>的内容被传送至累加器A。</p>
-<p>指令<code>MOVC A, @A+PC</code>长度为1字节, 位于地址<code>3000H</code>, 因此PC值为<code>3001H</code>, 故<code>A+PC</code>为<code>3031H</code>。</p>
 </li>
-<li><p>设SP的值为<code>5FH</code>, 指令<code>LCALL DELAY</code>所在地址为<code>2030H</code>, 子程序DELAY所在地址为<code>20A0H</code>, 则该指令完成的操作是将地址<code>2033H</code>压入堆栈保存, 将地址<code>20A0H</code>送入PC, SP的值应在该指令执行结束后变成<code>61H</code>。</p>
-<p>单片机执行子程序或中断服务程序时, 需要保护现场, 即将PC当前的值压栈保存, 当子程序或中断服务程序运行结束后再进行出栈。(所以如果子程序修改了栈的内容, 在子程序运行结束后程序有可能会运行错误)。</p>
-<p><strong>PC是16字节寄存器</strong>, 所以SP需要加2, 以此分别保存PC的高、低8位的数据。</p>
-<p><code>LCALL addr16</code>这条指令占3字节, 其中addr16占两字节, 因此程序可跳转64KB范围内的地址。</p>
-<p>(<code>ACALL</code>指令只能跳转当前所在的<strong>2K范围内</strong>的地址, 如果不涉及到片外数据存储器的话, 通常只用<code>SJMP</code>和<code>AJMP</code>)</p>
+</ol>
+<p>   指令<code>MOVC A, @A+PC</code>长度为1字节, 位于地址<code>3000H</code>, 因此PC值为<code>3001H</code>, 故<code>A+PC</code>为<code>3031H</code>。</p>
+<ol start="11">
+<li>设SP的值为<code>5FH</code>, 指令<code>LCALL DELAY</code>所在地址为<code>2030H</code>, 子程序DELAY所在地址为<code>20A0H</code>, 则该指令完成的操作是将地址<code>2033H</code>压入堆栈保存, 将地址<code>20A0H</code>送入PC, SP的值应在该指令执行结束后变成<code>61H</code>。</li>
+</ol>
+<p>   单片机执行子程序或中断服务程序时, 需要保护现场, 即将PC当前的值压栈保存, 当子程序或中断服务程序运行结束后再进行出栈。(所以如果子程序修改了栈的内容, 在子程序运行结束后程序有可能会运行错误)。</p>
+<p>   <strong>PC是16字节寄存器</strong>, 所以SP需要加2, 以此分别保存PC的高、低8位的数据。</p>
+<p>   <code>LCALL addr16</code>这条指令占3字节, 其中addr16占两字节, 因此程序可跳转64KB范围内的地址。</p>
+<p>   (<code>ACALL</code>指令只能跳转当前所在的<strong>2K范围内</strong>的地址, 如果不涉及到片外数据存储器的话, 通常只用<code>SJMP</code>和<code>AJMP</code>)</p>
 <blockquote>
 <p>在网上搜到的答案「将<code>3500H</code>送入PC」是错误的, 实际是将<code>20A0H</code>送入PC, 因为DELAY所在的地址为<code>20A0H</code>, 和<code>3500H</code>一点关系都没有。</p>
 </blockquote>
-</li>
-<li><p><code>MOVC</code>访问 <strong>程序(ROM)</strong> 存储器, <code>MOVX</code>指令访问 <strong>外部数据</strong> 存储器。</p>
-<p><code>MOVC</code>为查表指令, 只有<code>MOVC @A+PC</code>和<code>MOVC @A+DPTR</code>这两条, 均为单字节指令。</p>
-<p><code>MOVX</code>用于累加器A与外部数据存储器进行传送。</p>
-<p>可以是<code>MOVX A, @DPTR</code>, <code>MOVX A, @Ri</code>, <code>MOVX @DPTR, A</code>, <code>MOVX @Ri, A</code>，其中i为0或1.</p>
-<p>当使用<code>MOVX @Ri</code>类指令时，只有P0口用来传送地址和数据，P2口的状态不会发生改变，因此可使用<code>MOV P2, #12H</code>指令设定高8位的地址。</p>
-<p>当采用Ri作间接寻址时, 只能寻找片外256个单元的数据存储器, 此时8位地址和数据均由P0口传送，P2口的状态不发生改变。</p>
-</li>
-<li><p>假设指令<code>DJNZ R7, rel</code>位于<code>005FH</code>, 如果在执行该指令前寄存器R7值为<code>00H</code>, 偏移量rel为<code>02H</code>, 则该指令执行后下一条要执行的指令所在的地址是<code>005FH</code>。</p>
-<p><code>DJNZ R7, rel</code>位于<code>005FH</code>, 该指令长度为<strong>2字节</strong> (书上写的3字节是错的), 所以在执行这条指令开始时PC值在原来的基础上 + 2 变为<code>0061H</code>。又因为rel为<code>02H</code>, 所以执行这条指令后, PC值变为<code>0063H</code>。</p>
-</li>
-<li><p>分析下面子程序的功能, 假设8051单片机的震荡频率为6MHz。</p>
-<figure data-raw="DL: MOV R7, #0AH
-L0: MOV R6, #250
-L1: NOP
-    NOP
-    DJNZ R6, L1
-    DJNZ R7, L0
-    RET" data-info="language-asm" data-lang="asm" class="code-block"><pre class="code"><code class="language-asm">DL: MOV R7, #0AH
-L0: MOV R6, #250
-L1: NOP
-    NOP
-    DJNZ R6, L1
-    DJNZ R7, L0
-    RET</code></pre></figure>
-<p>R7为10, R6为250, 因此两个<code>NOP</code>加上一个<code>DJNZ</code>一共循环了250次, 该250次的循环一共执行了10次。</p>
-<p><code>NOP</code>为1周期指令, <code>DJNZ</code>为2周期指令, 两个<code>NOP</code>加一个<code>DJNZ</code>共4周期。</p>
-<p>6MHz下一个机器周期为 $12 \div (6 \times 10^6)= 2{\mu}s$, 12MHz下一个机器周期为1微秒。</p>
-<p>故程序该子程序延时了$(4 \times 250 \times 10 \times 12) \div (6 \times 10^6) = 20(ms)$。</p>
-<p>(实际上有10次<code>MOV R6, #250</code>和10次<code>DJNZ R7, L0</code>造成的30个机器周期的约0.6ms的误差)</p>
-</li>
+<ol start="12">
+<li><code>MOVC</code>访问 <strong>程序(ROM)</strong> 存储器, <code>MOVX</code>指令访问 <strong>外部数据</strong> 存储器。</li>
 </ol>
+<p>   <code>MOVC</code>为查表指令, 只有<code>MOVC @A+PC</code>和<code>MOVC @A+DPTR</code>这两条, 均为单字节指令。</p>
+<p>   <code>MOVX</code>用于累加器A与外部数据存储器进行传送。</p>
+<p>   可以是<code>MOVX A, @DPTR</code>, <code>MOVX A, @Ri</code>, <code>MOVX @DPTR, A</code>, <code>MOVX @Ri, A</code>，其中i为0或1.</p>
+<p>   当使用<code>MOVX @Ri</code>类指令时，只有P0口用来传送地址和数据，P2口的状态不会发生改变，因此可使用<code>MOV P2, #12H</code>指令设定高8位的地址。</p>
+<p>   当采用Ri作间接寻址时, 只能寻找片外256个单元的数据存储器, 此时8位地址和数据均由P0口传送，P2口的状态不发生改变。</p>
+<ol start="13">
+<li>假设指令<code>DJNZ R7, rel</code>位于<code>005FH</code>, 如果在执行该指令前寄存器R7值为<code>00H</code>, 偏移量rel为<code>02H</code>, 则该指令执行后下一条要执行的指令所在的地址是<code>005FH</code>。</li>
+</ol>
+<p>   <code>DJNZ R7, rel</code>位于<code>005FH</code>, 该指令长度为<strong>2字节</strong> (书上写的3字节是错的), 所以在执行这条指令开始时PC值在原来的基础上 + 2 变为<code>0061H</code>。又因为rel为<code>02H</code>, 所以执行这条指令后, PC值变为<code>0063H</code>。</p>
+<ol start="14">
+<li>分析下面子程序的功能, 假设8051单片机的震荡频率为6MHz。</li>
+</ol>
+<figure data-raw="  DL: MOV R7, #0AH
+  L0: MOV R6, #250
+  L1: NOP
+     NOP
+     DJNZ R6, L1
+     DJNZ R7, L0
+     RET
+" data-info="language-asm" data-lang="asm" class="code-block"><pre class="code"><code class="language-asm">  DL: MOV R7, #0AH
+  L0: MOV R6, #250
+  L1: NOP
+     NOP
+     DJNZ R6, L1
+     DJNZ R7, L0
+     RET
+</code></pre></figure>
+<p>  R7为10, R6为250, 因此两个<code>NOP</code>加上一个<code>DJNZ</code>一共循环了250次, 该250次的循环一共执行了10次。</p>
+<p>  <code>NOP</code>为1周期指令, <code>DJNZ</code>为2周期指令, 两个<code>NOP</code>加一个<code>DJNZ</code>共4周期。</p>
+<p>  6MHz下一个机器周期为 $12 \div (6 \times 10^6)= 2{\mu}s$, 12MHz下一个机器周期为1微秒。</p>
+<p>  故程序该子程序延时了$(4 \times 250 \times 10 \times 12) \div (6 \times 10^6) = 20(ms)$。</p>
+<p>  (实际上有10次<code>MOV R6, #250</code>和10次<code>DJNZ R7, L0</code>造成的30个机器周期的约0.6ms的误差)</p>
 <hr>
 <blockquote>
 <p>以下部分写于2020年11月25日</p>
@@ -607,7 +614,8 @@ LOOP:
       INC R0
       INC R1
       DJNZ R2, LOOP
-      RET" data-info="language-ASM" data-lang="ASM" class="code-block"><pre class="code"><code class="language-ASM">COPY: MOV R0, #40H
+      RET
+" data-info="language-ASM" data-lang="ASM" class="code-block"><pre class="code"><code class="language-ASM">COPY: MOV R0, #40H
       MOV R1, #50H
       MOV R2, #10H
       ; 40H~4FH一共复制了16次
@@ -617,7 +625,8 @@ LOOP:
       INC R0
       INC R1
       DJNZ R2, LOOP
-      RET</code></pre></figure>
+      RET
+</code></pre></figure>
 <p>因为没有<code>MOV @RX, @RX</code>这条指令, 所以用A做数据的中转站。</p>
 </li>
 <li><p>将任何无符号8位二进制数转换为BCD码的子程序, 入口参数为内部RAM单元20H, 出口参数为内部RAM单元30H和31H, 30H存放百位数, 31H存放十位数和个位数。</p>
@@ -635,7 +644,8 @@ DIV AB
 SWAP A
 ADD A, B; 也可以用ORL
 MOV 31H, A
-RET" data-info="language-ASM" data-lang="ASM" class="code-block"><pre class="code"><code class="language-ASM">CV:
+RET
+" data-info="language-ASM" data-lang="ASM" class="code-block"><pre class="code"><code class="language-ASM">CV:
 MOV R0, #20H
 MOV A, @R0
 MOV B, #100
@@ -649,7 +659,8 @@ DIV AB
 SWAP A
 ADD A, B; 也可以用ORL
 MOV 31H, A
-RET</code></pre></figure>
+RET
+</code></pre></figure>
 <p><code>DIV AB</code>和<code>MUL AB</code>的A和B之间没有逗号。</p>
 </li>
 <li><p>内部RAM 30H单元存放两位十进制数 (压缩BCD码), 编写将该十进制数转换为对应ASCII码的子程序, 转换结果存放到内部RAM 40H (十位数) 和41H (个位数) 单元。</p>
@@ -672,7 +683,8 @@ MOV 40H, A
 RET
 
 DATA:
-DB 30H, 31H, 32H, 33H, 34H, 35H, 36H, 37H, 38H, 39H" data-info="language-ASM" data-lang="ASM" class="code-block"><pre class="code"><code class="language-ASM">CV:
+DB 30H, 31H, 32H, 33H, 34H, 35H, 36H, 37H, 38H, 39H
+" data-info="language-ASM" data-lang="ASM" class="code-block"><pre class="code"><code class="language-ASM">CV:
 MOV A, 30H
 ANL A, #0FH
 MOV DPTR, #DATA; 或者直接用ADD A, #30H即可
@@ -688,9 +700,10 @@ MOV 40H, A
 RET
 
 DATA:
-DB 30H, 31H, 32H, 33H, 34H, 35H, 36H, 37H, 38H, 39H</code></pre></figure>
+DB 30H, 31H, 32H, 33H, 34H, 35H, 36H, 37H, 38H, 39H
+</code></pre></figure>
 </li>
-<li><p>8个8位数相加, 求平均值, 入口地址为<code>30H</code>~<code>37H</code>, 结果存到<code>40H</code>。</p>
+<li><p>8个8位数相加, 求平均值, 入口地址为<code>30H</code>~`37H<code>, 结果存到</code>40H`。</p>
 <p>把8位数相加存在溢出, 所以把相加结果以16进制存到R2、R3中, 再除以8( 右移3次), 即可求得不四舍五入的平均值。</p>
 <figure data-raw="MOV R0, #30H
 MOV R1, #08H
@@ -706,7 +719,8 @@ JNC SKIP
 INC R2
 SKIP:
 INC R0
-DJNZ R1, LOOP   " class="code-block"><pre class="code"><code>MOV R0, #30H
+DJNZ R1, LOOP   
+" class="code-block"><pre class="code"><code>MOV R0, #30H
 MOV R1, #08H
 MOV R2, #00H
 MOV R3, #00H
@@ -720,7 +734,8 @@ JNC SKIP
 INC R2
 SKIP:
 INC R0
-DJNZ R1, LOOP   </code></pre></figure>
+DJNZ R1, LOOP   
+</code></pre></figure>
 <p>这样结果被保存到R2、R3中, 然后需要写一个循环右移3位的程序。</p>
 <figure data-raw="MOV R4, #03H
 LOOP2:
@@ -729,14 +744,16 @@ RRC R3
 DJNZ R4, LOOP2
 
 MOV 40H, R3
-; 右移3次后R2的低4位为0, 结果保存在R3中" class="code-block"><pre class="code"><code>MOV R4, #03H
+; 右移3次后R2的低4位为0, 结果保存在R3中
+" class="code-block"><pre class="code"><code>MOV R4, #03H
 LOOP2:
 RRC R2
 RRC R3
 DJNZ R4, LOOP2
 
 MOV 40H, R3
-; 右移3次后R2的低4位为0, 结果保存在R3中</code></pre></figure>
+; 右移3次后R2的低4位为0, 结果保存在R3中
+</code></pre></figure>
 <p>这样R3中求得的是不带四舍五入的结果。</p>
 <p>如果需要带四舍五入的话第一种方法是判断最后一次右移时最低位是否为$1$， ($1 / 2 = 0.5$)。   </p>
 <figure data-raw="MOV R4, #03H
@@ -749,7 +766,8 @@ JNC SKIP2
 INC R3
 SKIP2:
 MOV 40H, R3
-; 右移3次后R2肯定为0" class="code-block"><pre class="code"><code>MOV R4, #03H
+; 右移3次后R2肯定为0
+" class="code-block"><pre class="code"><code>MOV R4, #03H
 LOOP2:
 RRC R2
 RRC R3
@@ -759,7 +777,8 @@ JNC SKIP2
 INC R3
 SKIP2:
 MOV 40H, R3
-; 右移3次后R2肯定为0</code></pre></figure>
+; 右移3次后R2肯定为0
+</code></pre></figure>
 <p>这样是带四舍五入的结果。</p>
 <p>第二种方法，8个8位数相加求平均值，要求四舍五入的话，只需要在这8个数求和后再加4（<code>0100B</code>），之后右移3次。</p>
 <figure data-raw="ADD A, #04H
@@ -772,7 +791,8 @@ MOV R4, #03H
 LOOP2:
 RRC R2
 RRC R3
-DJNZ R4, LOOP2" class="code-block"><pre class="code"><code>ADD A, #04H
+DJNZ R4, LOOP2
+" class="code-block"><pre class="code"><code>ADD A, #04H
 MOV R3, A
 JNC SKIP2
 INC R2
@@ -782,7 +802,8 @@ MOV R4, #03H
 LOOP2:
 RRC R2
 RRC R3
-DJNZ R4, LOOP2</code></pre></figure>
+DJNZ R4, LOOP2
+</code></pre></figure>
 <p>结果保存在R3中。</p>
 </li>
 </ol>
@@ -1034,7 +1055,8 @@ JNB TI, $
 CLR TI
 AJMP LOOP
 
-END" class="code-block"><pre class="code"><code>ORG 0000H
+END
+" class="code-block"><pre class="code"><code>ORG 0000H
 MAIN:
 MOV SCON, #50H
 ; 串口使用方式1，且允许接收
@@ -1067,7 +1089,8 @@ JNB TI, $
 CLR TI
 AJMP LOOP
 
-END</code></pre></figure>
+END
+</code></pre></figure>
 <p>单片机接收到数据后，RI被置1，代表SBUF中的数据有效，取走SBUF中的数据后需要软件清零RI（串口中断不会自动清零RI）。</p>
 <p>当单片机执行写SBUF操作时，串口发送开始，TI被自动置1，在发送完成后TI被自动清0。</p>
 </li>
@@ -1163,7 +1186,8 @@ RET
 TAB:
 DB 3FH, 06H, 5BH, 4FH, 66H, 6DH, 7DH, 07H, 7FH, 6FH
 
-END" class="code-block"><pre class="code"><code>MAIN:
+END
+" class="code-block"><pre class="code"><code>MAIN:
 MOV R0, #30H
 ; R2用来计数
 MOV R2, #03H
@@ -1224,7 +1248,8 @@ RET
 TAB:
 DB 3FH, 06H, 5BH, 4FH, 66H, 6DH, 7DH, 07H, 7FH, 6FH
 
-END</code></pre></figure>
+END
+</code></pre></figure>
 </li>
 <li><p>打印机数据输入接口和P1直接相连，STB接口和P3.4相连，BUSY接口和P3.3相连，不使用ACK应答信号，编写将外部存储器<code>1000H-100FH</code>的数据发送到打印机打印的子程序。</p>
 <div style="text-align:center">
@@ -1245,7 +1270,8 @@ CLR P3.4
 SETB P3.4
 INC DPTR
 DJNZ R2, LOOP
-RET" class="code-block"><pre class="code"><code>PRINT:
+RET
+" class="code-block"><pre class="code"><code>PRINT:
 MOV DPTR, #1000H
 MOV R2, #10H
 
@@ -1258,7 +1284,8 @@ CLR P3.4
 SETB P3.4
 INC DPTR
 DJNZ R2, LOOP
-RET</code></pre></figure>
+RET
+</code></pre></figure>
 <p>如果打印机没有和P1直接相连，而是连接到数据锁存器上（74HC374），锁存器的时钟信号的入口地址为<code>A000H</code>。</p>
 <p>使用堆栈保护间接寻址寄存器的值。</p>
 <figure data-raw="PRINT:
@@ -1280,7 +1307,8 @@ CLR P3.4
 SETB P3.4
 INC DPTR
 DJNZ R2, LOOP
-RET" class="code-block"><pre class="code"><code>PRINT:
+RET
+" class="code-block"><pre class="code"><code>PRINT:
 MOV R2, #10H
 MOV DPTR, #1000H
 LOOP:
@@ -1299,7 +1327,8 @@ CLR P3.4
 SETB P3.4
 INC DPTR
 DJNZ R2, LOOP
-RET</code></pre></figure>
+RET
+</code></pre></figure>
 </li>
 </ol>
 <hr>
@@ -1664,7 +1693,7 @@ RET</code></pre></figure>
       
       <div class="archives-count count-block">
         <div class="site-count-title">归档</div>
-        <div><a href="/archives/">14</a></div>
+        <div><a href="/archives/">15</a></div>
       </div>
       
       
@@ -1678,7 +1707,7 @@ RET</code></pre></figure>
       
       <div class="tags-count count-block">
         <div class="site-count-title">标签</div>
-        <div><a href="/tags/">19</a></div>
+        <div><a href="/tags/">20</a></div>
       </div>
       
       
@@ -1822,4 +1851,4 @@ RET</code></pre></figure>
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.6.1 at 2021-02-23T11:40:33.562Z. -->
+<!-- Page built by Hikaru v1.7.3 at 2021-03-22T13:22:03.840Z. -->

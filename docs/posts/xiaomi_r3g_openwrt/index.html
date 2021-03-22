@@ -16,7 +16,7 @@
     
     <meta name="keywords" content="Life, ARIA, Hikaru, STARRY-S, Arch Linux, Linux, Music">
     
-    <meta name="generator" content="Hikaru v1.6.1">
+    <meta name="generator" content="Hikaru v1.7.3">
     <link rel="canonical" href="https://blog.starry-s.me/posts/xiaomi_r3g_openwrt/">
     
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
@@ -99,10 +99,17 @@
             gutter.push("<pre class=\"gutter\">");
             // Highlight should not change lines.
             // But may replace `\n` with `<br>`, so use original code here.
-            const linesLength = code.split(/\r?\n/g).length;
-            for (let i = 0; i < linesLength; ++i) {
+            const codeLines = code.split(/\r?\n/g);
+            // It seems marked.js starts to keep the last `\n`,
+            // which will leave an empty line after splitting,
+            // and we should not add gutter for the last empty line.
+            // Don't do trim here! We only skip empty line.
+            if (codeLines[codeLines.length - 1].length === 0) {
+              codeLines.pop();
+            }
+            for (let i = 0; i < codeLines.length; ++i) {
               gutter.push(`<span class="line-number">${i + 1}</span>`);
-              if (i !== linesLength - 1) {
+              if (i !== codeLines.length - 1) {
                 gutter.push("\n");
               }
             }
@@ -235,15 +242,6 @@
       });
     </script>
     
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124615792-3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-124615792-3');
-    </script>
     <title>小米路由器3G折腾之刷OpenWrt记录 - STARRY-S' Blog</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage">
@@ -298,9 +296,11 @@
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/posts/xiaomi_r3g_openwrt/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        
         <meta itemprop="name" content="STARRY-S">
         <meta itemprop="description" content="Morning.">
         <meta itemprop="image" content="/images/avatar.jpg">
+        
       </span>
       <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
         <meta itemprop="name" content="STARRY-S' Blog">
@@ -318,6 +318,7 @@
         <div class="post-date meta-block">
           <i class="far fa-calendar-plus"></i><span><time class="post-full-date" title="post-date" itemprop="dateUpdated" datetime="2021-01-23T04:36:44.000Z">1/23/2021, 12:36:44 PM</time></span>
         </div>
+        
         
         
         <div class="post-categories meta-block">
@@ -403,8 +404,10 @@ const ap0 = new APlayer ({
 <li><p>Unix/Linux系统终端执行：<code>ssh root@191.168.31.1</code></p>
 <p>如果在ssh到路由器时遇到no matching key exchange method found错误，编辑<code>~/.ssh/config</code>, 加入下面两行：</p>
 <figure data-raw="Host *
-    KexAlgorithms +diffie-hellman-group1-sha1" class="code-block"><pre class="code"><code>Host *
-    KexAlgorithms +diffie-hellman-group1-sha1</code></pre></figure>
+    KexAlgorithms +diffie-hellman-group1-sha1
+" class="code-block"><pre class="code"><code>Host *
+    KexAlgorithms +diffie-hellman-group1-sha1
+</code></pre></figure>
 </li>
 </ul>
 <h1 id="刷入Bootloader（推荐可选）"><a class="header-link" href="/posts/xiaomi_r3g_openwrt/#%E5%88%B7%E5%85%A5Bootloader%EF%BC%88%E6%8E%A8%E8%8D%90%E5%8F%AF%E9%80%89%EF%BC%89" title="刷入Bootloader（推荐可选）"></a>刷入Bootloader（推荐/可选）</h1>
@@ -415,15 +418,19 @@ const ap0 = new APlayer ({
 <p>第一种方法是ssh到路由器后通过<code>wget</code>下载breed文件再刷入（需要确保路由器联网）, 下载地址为https所以需要加上<code>--no-check-certificate</code>参数。</p>
 <figure data-raw="cd /tmp
 wget --no-check-certificate https://breed.hackpascal.net/breed-mt7621-xiaomi-r3g.bin -O breed.bin
-mtd -r write breed.bin Bootloader" class="code-block"><pre class="code"><code>cd /tmp
+mtd -r write breed.bin Bootloader
+" class="code-block"><pre class="code"><code>cd /tmp
 wget --no-check-certificate https://breed.hackpascal.net/breed-mt7621-xiaomi-r3g.bin -O breed.bin
-mtd -r write breed.bin Bootloader</code></pre></figure>
+mtd -r write breed.bin Bootloader
+</code></pre></figure>
 <p>另一种方法是将breed通过U盘拷贝到路由器再刷入。</p>
 <figure data-raw="mkdir /tmp/sdcard
 mount /dev/sda1 /tmp/sdcard
-mtd -r write /tmp/sdcard/breed.bin Bootloader" class="code-block"><pre class="code"><code>mkdir /tmp/sdcard
+mtd -r write /tmp/sdcard/breed.bin Bootloader
+" class="code-block"><pre class="code"><code>mkdir /tmp/sdcard
 mount /dev/sda1 /tmp/sdcard
-mtd -r write /tmp/sdcard/breed.bin Bootloader</code></pre></figure>
+mtd -r write /tmp/sdcard/breed.bin Bootloader
+</code></pre></figure>
 <p>路由器刷写完毕后会自动重启, <strong>在写入Breed的过程中不要动路由器</strong>。</p>
 <h1 id="刷机"><a class="header-link" href="/posts/xiaomi_r3g_openwrt/#%E5%88%B7%E6%9C%BA" title="刷机"></a>刷机</h1>
 <p>下载所需固件：</p>
@@ -444,8 +451,10 @@ mtd -r write /tmp/sdcard/breed.bin Bootloader</code></pre></figure>
 <ol>
 <li><p>刷入Openwrt固件到Kernel1</p>
 <figure data-raw="mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-kernel1.bin kernel1
-mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-rootfs0.bin rootfs0" class="code-block"><pre class="code"><code>mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-kernel1.bin kernel1
-mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-rootfs0.bin rootfs0</code></pre></figure>
+mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-rootfs0.bin rootfs0
+" class="code-block"><pre class="code"><code>mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-kernel1.bin kernel1
+mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-rootfs0.bin rootfs0
+</code></pre></figure>
 </li>
 <li><p>路由器断电, 捅住reset按钮后通电, 待指示灯变为蓝色闪烁后用网线连接路由器到电脑, 浏览器打开网址<code>192.168.1.1</code>, 进入Breed界面。</p>
 </li>
@@ -462,12 +471,14 @@ mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-rootfs0.bin rootfs0
 nvram set flag_try_sys1_failed=1
 nvram commit
 
-reboot" class="code-block"><pre class="code"><code>mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-kernel1.bin kernel1
+reboot
+" class="code-block"><pre class="code"><code>mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-kernel1.bin kernel1
 mtd write openwrt-18.06.2-ramips-mt7621-mir3g-squashfs-rootfs0.bin rootfs0
 nvram set flag_try_sys1_failed=1
 nvram commit
 
-reboot</code></pre></figure>
+reboot
+</code></pre></figure>
 <hr>
 <h1 id="Others"><a class="header-link" href="/posts/xiaomi_r3g_openwrt/#Others" title="Others"></a>Others</h1>
 <ol>
@@ -480,12 +491,13 @@ reboot</code></pre></figure>
 <li><p><a href="http://openwrt-dist.sourceforge.net" target="_blank" rel="external nofollow noreferrer noopener">OpenWrt-dist</a>可拓展更多功能。</p>
 </li>
 <li><p>为优化软件包安装速度, 可将opkg源改为国内：</p>
-<p>LuCI -&gt; System -&gt; Software -&gt; Configuration 中将 Distribution feeds 的<code>http://downloads.openwrt.org</code>替换为<code>http://mirrors.tuna.tsinghua.edu.cn/lede</code>。</p>
-</li>
-<li><p>OpenWrt可安装软件包<code>libustream-openssl</code> <code>libustream-mbedtls</code>解决<code>wget</code>无法访问https服务器问题。</p>
-<p>然后建议把opkg源能改为https的都改为https。</p>
 </li>
 </ol>
+<p>  LuCI -&gt; System -&gt; Software -&gt; Configuration 中将 Distribution feeds 的<code>http://downloads.openwrt.org</code>替换为<code>http://mirrors.tuna.tsinghua.edu.cn/lede</code>。</p>
+<ol start="6">
+<li>OpenWrt可安装软件包<code>libustream-openssl</code> <code>libustream-mbedtls</code>解决<code>wget</code>无法访问https服务器问题。</li>
+</ol>
+<p>  然后建议把opkg源能改为https的都改为https。</p>
 
     </main>
     <footer class="post-footer">
@@ -651,7 +663,7 @@ reboot</code></pre></figure>
       
       <div class="archives-count count-block">
         <div class="site-count-title">归档</div>
-        <div><a href="/archives/">14</a></div>
+        <div><a href="/archives/">15</a></div>
       </div>
       
       
@@ -665,7 +677,7 @@ reboot</code></pre></figure>
       
       <div class="tags-count count-block">
         <div class="site-count-title">标签</div>
-        <div><a href="/tags/">19</a></div>
+        <div><a href="/tags/">20</a></div>
       </div>
       
       
@@ -815,4 +827,4 @@ reboot</code></pre></figure>
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.6.1 at 2021-02-23T11:40:33.565Z. -->
+<!-- Page built by Hikaru v1.7.3 at 2021-03-22T13:22:03.844Z. -->

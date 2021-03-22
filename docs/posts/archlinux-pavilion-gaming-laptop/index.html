@@ -16,7 +16,7 @@
     
     <meta name="keywords" content="Life, ARIA, Hikaru, STARRY-S, Arch Linux, Linux, Music">
     
-    <meta name="generator" content="Hikaru v1.6.1">
+    <meta name="generator" content="Hikaru v1.7.3">
     <link rel="canonical" href="https://blog.starry-s.me/posts/archlinux-pavilion-gaming-laptop/">
     
     <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
@@ -99,10 +99,17 @@
             gutter.push("<pre class=\"gutter\">");
             // Highlight should not change lines.
             // But may replace `\n` with `<br>`, so use original code here.
-            const linesLength = code.split(/\r?\n/g).length;
-            for (let i = 0; i < linesLength; ++i) {
+            const codeLines = code.split(/\r?\n/g);
+            // It seems marked.js starts to keep the last `\n`,
+            // which will leave an empty line after splitting,
+            // and we should not add gutter for the last empty line.
+            // Don't do trim here! We only skip empty line.
+            if (codeLines[codeLines.length - 1].length === 0) {
+              codeLines.pop();
+            }
+            for (let i = 0; i < codeLines.length; ++i) {
               gutter.push(`<span class="line-number">${i + 1}</span>`);
-              if (i !== linesLength - 1) {
+              if (i !== codeLines.length - 1) {
                 gutter.push("\n");
               }
             }
@@ -235,15 +242,6 @@
       });
     </script>
     
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124615792-3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-124615792-3');
-    </script>
     <title>惠普光影精灵4在Arch Linux下使用Optimus Manager配置双显卡 - STARRY-S' Blog</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage">
@@ -298,9 +296,11 @@
     <div class="post-block">
       <link itemprop="mainEntityOfPage" href="https://blog.starry-s.me/posts/archlinux-pavilion-gaming-laptop/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        
         <meta itemprop="name" content="STARRY-S">
         <meta itemprop="description" content="Morning.">
         <meta itemprop="image" content="/images/avatar.jpg">
+        
       </span>
       <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
         <meta itemprop="name" content="STARRY-S' Blog">
@@ -318,6 +318,7 @@
         <div class="post-date meta-block">
           <i class="far fa-calendar-plus"></i><span><time class="post-full-date" title="post-date" itemprop="dateUpdated" datetime="2021-02-23T10:58:33.000Z">2/23/2021, 6:58:33 PM</time></span>
         </div>
+        
         
         
         <div class="post-categories meta-block">
@@ -388,21 +389,27 @@ const ap0 = new APlayer ({
 <figure data-raw="# Arch Linux CN
 $ sudo pacman -S optimus-manager
 # AUR
-$ yay -S optimus-manager" data-info="language-text" data-lang="text" class="code-block"><pre class="code"><code class="language-text"># Arch Linux CN
+$ yay -S optimus-manager
+" data-info="language-text" data-lang="text" class="code-block"><pre class="code"><code class="language-text"># Arch Linux CN
 $ sudo pacman -S optimus-manager
 # AUR
-$ yay -S optimus-manager</code></pre></figure>
+$ yay -S optimus-manager
+</code></pre></figure>
 <p>因为我用的Gnome, 参照<a href="https://github.com/Askannz/optimus-manager#important--gnome-and-gdm-users" target="_blank" rel="external nofollow noreferrer noopener">README中说的</a>卸载掉<code>gdm</code>并安装<code>gdm-prime</code><sup>AUR</sup>。（国内下载源代码的速度极慢建议挂梯子, 或者挂梯子克隆<a href="https://gitlab.gnome.org/GNOME/gdm" target="_blank" rel="external nofollow noreferrer noopener">GDM的代码</a>到<code>~/.cache/yay/gdm-prime/gdm</code>下。）</p>
 <p>修改<code>/etc/gdm/custom.conf</code>, 移除<code>WaylandEnable=false</code>一行前面的<code>#</code>禁用Wayland而使用X。</p>
 <h2 id="修改配置文件"><a class="header-link" href="/posts/archlinux-pavilion-gaming-laptop/#%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6" title="修改配置文件"></a>修改配置文件</h2>
-<figure data-raw="$ sudo cp /usr/share/optimus-manager.conf /etc/optimus-manager/optimus-manager.conf" class="code-block"><pre class="code"><code>$ sudo cp /usr/share/optimus-manager.conf /etc/optimus-manager/optimus-manager.conf</code></pre></figure>
+<figure data-raw="$ sudo cp /usr/share/optimus-manager.conf /etc/optimus-manager/optimus-manager.conf
+" class="code-block"><pre class="code"><code>$ sudo cp /usr/share/optimus-manager.conf /etc/optimus-manager/optimus-manager.conf
+</code></pre></figure>
 <p>不要编辑<code>/usr/share/</code>下的文件, 编辑<code>/etc/optimus-manager/optimus-manager.conf</code>, 将切换方式设为<code>switching=none</code>, 不推荐使用bbswitch（见<a href="/posts/archlinux-pavilion-gaming-laptop/#Others">后续第一条</a>）, 设置<code>pci_power_control=yes</code>让PCI Power Management切换显卡。</p>
 <p>之后根据需求来修改开机自动选择显卡：</p>
 <figure data-raw="startup_mode=auto
 startup_auto_battery_mode=intel
-startup_auto_extpower_mode=nvidia" data-info="language-conf" data-lang="conf" class="code-block"><pre class="code"><code class="language-conf">startup_mode=auto
+startup_auto_extpower_mode=nvidia
+" data-info="language-conf" data-lang="conf" class="code-block"><pre class="code"><code class="language-conf">startup_mode=auto
 startup_auto_battery_mode=intel
-startup_auto_extpower_mode=nvidia</code></pre></figure>
+startup_auto_extpower_mode=nvidia
+</code></pre></figure>
 <p>这里我设置的是用电池时使用集成显卡, 用电源时使用独显。</p>
 <p>最后贴一下全部的配置文件, 除了上述的几处修改以外其他均为默认值, 仅供参考。</p>
 <figure data-raw="[optimus]
@@ -818,7 +825,7 @@ options=overclocking
       
       <div class="archives-count count-block">
         <div class="site-count-title">归档</div>
-        <div><a href="/archives/">14</a></div>
+        <div><a href="/archives/">15</a></div>
       </div>
       
       
@@ -832,7 +839,7 @@ options=overclocking
       
       <div class="tags-count count-block">
         <div class="site-count-title">标签</div>
-        <div><a href="/tags/">19</a></div>
+        <div><a href="/tags/">20</a></div>
       </div>
       
       
@@ -970,4 +977,4 @@ options=overclocking
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.6.1 at 2021-02-23T11:40:33.563Z. -->
+<!-- Page built by Hikaru v1.7.3 at 2021-03-22T13:22:03.841Z. -->
