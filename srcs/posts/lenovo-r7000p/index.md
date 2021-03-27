@@ -66,7 +66,7 @@ blacklist ideapad_laptop
 
 查Wiki得知是因为GDM在显卡驱动被加载之前就启动了。
 
-[参照Wiki](https://wiki.archlinux.org/index.php/GDM#Black_screen_on_AMD_or_Intel_GPUs_when_an_NVidia_(e)GPU_is_present)，先关掉Wayland，之后设置[KMS早启动](https://wiki.archlinux.org/index.php/Kernel_mode_setting#Early_KMS_start)。
+[参照Wiki](https://wiki.archlinux.org/index.php/GDM#Black_screen_on_AMD_or_Intel_GPUs_when_an_NVidia_(e)GPU_is_present)，设置[KMS早启动](https://wiki.archlinux.org/index.php/Kernel_mode_setting#Early_KMS_start)。
 
 编辑`/etc/mkinitcpio.conf`
 
@@ -75,6 +75,8 @@ MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
 ```
 
 然后重新生成内核镜像，之后重启即可。
+
+这么做会使Wayland在开机时被禁用，Wiki提供了解决方法不过我暂时不用Wayland所以没有尝试，有需要的可以自己去配置。
 
 ------
 
@@ -94,12 +96,12 @@ MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
 
 -----
 
-目前来看觉得这电脑还是蛮香的，AMD的CPU性能很强而且比intel版的Y7000P便宜一千块钱。尽管现在已经有二线厂商做5800系的笔记本了但是4800H的性能依旧够用，3060显卡就当它是空气吧就算发售也是残血抢不到。
+目前来看觉得这电脑还是蛮香的，AMD的CPU性能很强而且比intel版的Y7000P便宜一千块钱。尽管现在已经有二线厂商做AMD 5800系的笔记本了但是4800H的性能依旧够用，RTX3060显卡就当它是空气吧就算发售也是残血而且抢不到。
 
-除了电源适配器有点大背起来不方便，而且不支持PD充电，要是想用诱骗线的话还必须得买230W的诱骗线再用100W以上的PD充电器才能勉强带动。所以想想还是算了，沉就沉吧而且电脑80WH的电池待机时间也不短，只看看网页写点代码的话待机4-5个小时没问题的。
+除了电源适配器有点大背起来不方便，而且不支持PD充电，要是想用诱骗线的话还必须得买230W的诱骗线再用100W的PD充电器才能勉强带动，65W的充电器只能关机充电。所以想想还是算了，沉就沉吧而且电脑80WH的电池待机时间也不短，只看看网页写点代码的话待机4个小时没问题的。
 
-然后就是电脑没有雷电3接口，只是一个支持USB3.0的type c接口支持DP1.2视频输出，电脑用到现在没有遇到啥AMD CPU引起的兼容性问题。
+然后就是电脑没有雷电3接口，只有一个支持USB3.2 Gen1的type c接口且支持DP1.2视频输出，不过USB接口倒是挺多的，电脑用到现在没有遇到啥AMD CPU引起的兼容性问题。
 
-> 先写到这里，不定期更新
+<!-- > 先写到这里，不定期更新 -->
 
 ![](images/1.jpg)
