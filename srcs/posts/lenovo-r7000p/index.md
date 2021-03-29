@@ -1,7 +1,7 @@
 ---
 title: 联想R7000P上手体验
 created: 2021-03-22T19:51:32+08:00
-# updated: 2021-03-23T18:58:33+08:00
+updated: 2021-03-29T17:30:36+08:00
 layout: post
 zone: Asia/Shanghai
 tags:
@@ -13,7 +13,7 @@ categories:
 
 旧电脑坏掉了，因为坏的有些复杂而且不忍心拿到学校的修理店去修于是打算等到暑假有时间自己买零部件修。（就不吐槽惠普的产品设计问题了...
 
-于是在网上逛了一会下决心再也不碰惠普了之后买了联想R7000P 2020，满血RTX 2060 + R7 4800H还是很香的，打守望终于能稳定200fps+了。
+于是在网上逛了一会下决心再也不碰惠普了之后买了联想R7000P 2020，满血RTX 2060(这里指的是最大功耗为115W的笔记本显卡) + R7 4800H还是很香的，打守望屁股终于能稳定200+fps了。
 
 所以隔了这么久我终于更新博客了。
 
@@ -23,7 +23,7 @@ categories:
 
 # 安装Arch Linux
 
-到手后就把之前买的西数SN750 1T固态装到了新电脑上，顺便格式化重装了个系统。
+到手后就把之前买的西数SN750 1T固态换到了新电脑上，顺便格式化重装了个系统。
 
 双M2插槽配上1T + 500G NVME，美汁汁。
 
@@ -39,24 +39,43 @@ categories:
 
 ~~开个浏览器能把眼睛晃瞎~~
 
-首先在Bios里设置为独显直连模式。因为AMD核显一般时候用不到而且打游戏时会影响性能（不过我Minecraft核显跑的比独显流畅就很迷）。
+网上查了一下只有在bios设置为独显直连时解决亮度不能调节的方法，在混合显卡模式下，存在[AMD显卡亮度用16位值表示而不是8位值表示](https://bugzilla.opensuse.org/show_bug.cgi?id=1180749)的这个BUG (Feature?)所以没办法调节亮度。
 
-装好`nvidia`驱动后复制`/usr/share/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf`到`/etc/X11/xorg.conf.d/`
+所以`cat /sys/class/backlight/amdgpu_bl1/brightness`得到的是一个大于255的数。
 
-并添加一行参数：
+确保内核和显卡驱动都是最新的情况下，编辑内核参数`amdgpu.backlight=0`，可以解决混合模式下AMD显卡不能调节亮度这个问题。
+
+如果你经常切换混合模式和显卡直连模式的话：
+
+安装显卡驱动`xf86-video-amdgpu`和`nvidia`。
+
+复制`/usr/share/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf`到`/etc/X11/xorg.conf.d/`
+
+编辑`/etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf`在`EndSection`前添加一行参数允许nvidia驱动调节亮度。
 
 ```
 Option "RegistryDwords" "EnableBrightnessControl=1"
 ```
 
-之后编辑`/etc/modprobe.d/blacklist.conf`禁用闭源驱动`nouveau`和`ideapad_laptop`让nvidia调节亮度。
+之后编辑`/etc/modprobe.d/blacklist.conf`禁用闭源驱动`nouveau`和`ideapad_laptop`，让显卡驱动调节亮度。
 
 ```
+# /etc/modprobe.d/blacklist.conf
+
 blacklist nouveau
 blacklist ideapad_laptop
 ```
 
-然后添编辑`systemd-boot`的内核参数`acpi_backlight=vendor`，更新一下启动项。
+编辑内核参数添加`acpi_backlight=vendor`和`amdgpu.backlight=0`。
+
+以systemd-boot为例:
+
+```
+# /boot/loader/entries/arch.conf
+
+options acpi_backlight=vendor
+options amdgpu.backlight=0
+```
 
 最后重启电脑就能调亮度了。
 
@@ -71,18 +90,29 @@ blacklist ideapad_laptop
 编辑`/etc/mkinitcpio.conf`
 
 ```
+# /etc/mkinitcpio.conf
+
 MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
 ```
+如果你使用混合显卡模式还要加上`amdgpu`。
 
-然后重新生成内核镜像，之后重启即可。
+然后`sudo mkinitcpio -P linux`重新生成内核镜像，重启即可。
 
-这么做会使Wayland在开机时被禁用，Wiki提供了解决方法不过我暂时不用Wayland所以没有尝试，有需要的可以自己去配置。
+这么做会使Wayland在开机时被禁用，所以在混合显卡模式下开机依旧无法自动加载GDM，[参见Wiki](https://wiki.archlinux.org/index.php/GDM#Black_screen_on_AMD_or_Intel_GPUs_when_an_NVidia_(e)GPU_is_present)。
+
+将`/usr/lib/udev/rules.d/61-gdm.rules`复制到`/etc/udev/rules.d/`，并编辑`61-gdm.rules`将下面这一行注释掉：
+
+```
+# DRIVER=="nvidia", RUN+="/usr/lib/gdm-disable-wayland"
+```
+
+之后重启电脑即可。
 
 ------
 
 除此之外还遇到了按Fn+Esc键时FnLock的灯没有亮这个问题，不过不影响FnLock的正常使用，所以就忽视了。
 
-因为在Bios里设置了显卡独连，就没有配置`optimus-manager`不然显卡独连时开机会因为找不到AMD显卡而进不去图形。
+因为可以在Bios设置独显直连和混合模式，所以暂时没有配置`optimus-manager`不然显卡独连时开机有时会因为找不到AMD显卡而进不去图形。
 
 # Windows
 
@@ -98,7 +128,7 @@ MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
 
 目前来看觉得这电脑还是蛮香的，AMD的CPU性能很强而且比intel版的Y7000P便宜一千块钱。尽管现在已经有二线厂商做AMD 5800系的笔记本了但是4800H的性能依旧够用，RTX3060显卡就当它是空气吧就算发售也是残血而且抢不到。
 
-除了电源适配器有点大背起来不方便，而且不支持PD充电，要是想用诱骗线的话还必须得买230W的诱骗线再用100W的PD充电器才能勉强带动，65W的充电器只能关机充电。所以想想还是算了，沉就沉吧而且电脑80WH的电池待机时间也不短，只看看网页写点代码的话待机4个小时没问题的。
+除了电源适配器有点大背起来不方便，而且不支持PD充电，要是想用诱骗线的话还必须得买230W的诱骗线再用100W的PD充电器才能勉强带动，65W的充电器只能关机充电。所以想想还是算了，沉就沉吧而且电脑80WH的电池待机时间也不短，混合模式下用集成显卡只看看网页写点代码的话待机4个多小时没问题的。
 
 然后就是电脑没有雷电3接口，只有一个支持USB3.2 Gen1的type c接口且支持DP1.2视频输出，不过USB接口倒是挺多的，电脑用到现在没有遇到啥AMD CPU引起的兼容性问题。
 

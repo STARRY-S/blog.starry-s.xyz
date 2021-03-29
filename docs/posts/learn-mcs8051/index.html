@@ -353,7 +353,7 @@
         
         <div class="post-categories meta-block">
           
-          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%8D%95%E7%89%87%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">单片机</span></a></span>
+          <i class="far fa-folder-open"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" itemprop="url" rel="index"><span itemprop="name">学习资料</span></a></span><i class="fas fa-angle-right"></i><span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/%E5%8D%95%E7%89%87%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">单片机</span></a></span>
         </div>
         
         
@@ -730,7 +730,7 @@ JNC SKIP
 INC R2
 SKIP:
 INC R0
-DJNZ R1, LOOP   
+DJNZ R1, LOOP
 " class="code-block"><pre class="code"><code>MOV R0, #30H
 MOV R1, #08H
 MOV R2, #00H
@@ -745,7 +745,7 @@ JNC SKIP
 INC R2
 SKIP:
 INC R0
-DJNZ R1, LOOP   
+DJNZ R1, LOOP
 </code></pre></figure>
 <p>这样结果被保存到R2、R3中, 然后需要写一个循环右移3位的程序。</p>
 <figure data-raw="MOV R4, #03H
@@ -766,7 +766,7 @@ MOV 40H, R3
 ; 右移3次后R2的低4位为0, 结果保存在R3中
 </code></pre></figure>
 <p>这样R3中求得的是不带四舍五入的结果。</p>
-<p>如果需要带四舍五入的话第一种方法是判断最后一次右移时最低位是否为$1$， ($1 / 2 = 0.5$)。   </p>
+<p>如果需要带四舍五入的话第一种方法是判断最后一次右移时最低位是否为$1$， ($1 / 2 = 0.5$)。</p>
 <figure data-raw="MOV R4, #03H
 LOOP2:
 RRC R2
@@ -1711,7 +1711,7 @@ RET
       
       <div class="categories-count count-block">
         <div class="site-count-title">分类</div>
-        <div><a href="/categories/">8</a></div>
+        <div><a href="/categories/">9</a></div>
       </div>
       
       
@@ -1862,4 +1862,4 @@ RET
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.7.3 at 2021-03-27T11:40:07.385Z. -->
+<!-- Page built by Hikaru v1.7.3 at 2021-03-29T12:03:46.886Z. -->

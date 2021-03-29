@@ -23,6 +23,7 @@ tagDir: tags
 # Those paths are under `srcDir`.
 skipRender:
   - README.md
+  - CNAME
 
 perPage:
   index: 10
