@@ -347,10 +347,38 @@
       </div>
     </header>
     <main class="post-main" id="scrollspy-container" itemprop="articleBody">
-      <p>旧电脑坏掉了，因为坏的有些复杂而且不忍心拿到学校的修理店去修于是打算等到暑假有时间自己买零部件修。（就不吐槽惠普的产品设计问题了...</p>
+      <link href="/css/APlayer.min.css" rel="stylesheet">
+<script src= "/js/APlayer.min.js"></script>
+<p>旧电脑坏掉了，因为坏的有些复杂而且不忍心拿到学校的修理店去修于是打算等到暑假有时间自己买零部件修。（就不吐槽惠普的产品设计问题了...</p>
 <p>于是在网上逛了一会下决心再也不碰惠普了之后买了联想R7000P 2020，满血RTX 2060(这里指的是最大功耗为115W的笔记本显卡) + R7 4800H还是很香的，打守望屁股终于能稳定200+fps了。</p>
 <p>所以隔了这么久我终于更新博客了。</p>
 <a id="more"></a>
+
+ <!--APlayer-->
+<div id="aplayer0" style="background: var(--color-main-background)"></div>
+<script>
+const ap0 = new APlayer ({
+    container: document.getElementById("aplayer0"),
+    theme: "#33363b",
+    fixed: false,
+    listFolded: false,
+    listMaxHeight: false,
+    lrcType: false,
+    mini: false,
+    volume: 0.7,
+    order: "list",
+    loop: "all",
+    autoplay: false,
+    audio: [{
+        name: "Underground",
+        artist: "Lindsey Stirling",
+        url: "https://music.starry-s.me/music/obj_wonDkMOGw6XDiTHCmMOi_2660462601_5de2_ff1b_7e9f_3314960c90b9d68875a3d640df5d283a.mp4",
+        cover: "https://music.starry-s.me/music/cover/109951164174520818.jpg",
+        lrc: "",
+        theme: "#CC8888"
+    }]
+});
+</script> 
 
 <hr>
 <h1 id="安装ArchLinux"><a class="header-link" href="/posts/lenovo-r7000p/#%E5%AE%89%E8%A3%85ArchLinux" title="安装ArchLinux"></a>安装Arch Linux</h1>
@@ -738,4 +766,4 @@ MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.7.3 at 2021-03-29T12:03:46.824Z. -->
+<!-- Page built by Hikaru v1.7.3 at 2021-03-29T12:24:37.977Z. -->

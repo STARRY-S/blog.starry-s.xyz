@@ -48,10 +48,38 @@
     
     
     <content type="html">
-      &lt;p&gt;旧电脑坏掉了，因为坏的有些复杂而且不忍心拿到学校的修理店去修于是打算等到暑假有时间自己买零部件修。（就不吐槽惠普的产品设计问题了...&lt;/p&gt;
+      &lt;link href=&quot;/css/APlayer.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;script src= &quot;/js/APlayer.min.js&quot;&gt;&lt;/script&gt;
+&lt;p&gt;旧电脑坏掉了，因为坏的有些复杂而且不忍心拿到学校的修理店去修于是打算等到暑假有时间自己买零部件修。（就不吐槽惠普的产品设计问题了...&lt;/p&gt;
 &lt;p&gt;于是在网上逛了一会下决心再也不碰惠普了之后买了联想R7000P 2020，满血RTX 2060(这里指的是最大功耗为115W的笔记本显卡) + R7 4800H还是很香的，打守望屁股终于能稳定200+fps了。&lt;/p&gt;
 &lt;p&gt;所以隔了这么久我终于更新博客了。&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+ &lt;!--APlayer--&gt;
+&lt;div id=&quot;aplayer0&quot; style=&quot;background: var(--color-main-background)&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+const ap0 = new APlayer ({
+    container: document.getElementById(&quot;aplayer0&quot;),
+    theme: &quot;#33363b&quot;,
+    fixed: false,
+    listFolded: false,
+    listMaxHeight: false,
+    lrcType: false,
+    mini: false,
+    volume: 0.7,
+    order: &quot;list&quot;,
+    loop: &quot;all&quot;,
+    autoplay: false,
+    audio: [{
+        name: &quot;Underground&quot;,
+        artist: &quot;Lindsey Stirling&quot;,
+        url: &quot;https://music.starry-s.me/music/obj_wonDkMOGw6XDiTHCmMOi_2660462601_5de2_ff1b_7e9f_3314960c90b9d68875a3d640df5d283a.mp4&quot;,
+        cover: &quot;https://music.starry-s.me/music/cover/109951164174520818.jpg&quot;,
+        lrc: &quot;&quot;,
+        theme: &quot;#CC8888&quot;
+    }]
+});
+&lt;/script&gt; 
 
 &lt;hr&gt;
 &lt;h1 id=&quot;安装ArchLinux&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/lenovo-r7000p/#%E5%AE%89%E8%A3%85ArchLinux&quot; title=&quot;安装ArchLinux&quot;&gt;&lt;/a&gt;安装Arch Linux&lt;/h1&gt;

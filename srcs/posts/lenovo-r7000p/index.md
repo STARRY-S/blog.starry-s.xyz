@@ -19,6 +19,16 @@ categories:
 
 <!--more-->
 
+<!--aplayer
+{
+    "name": "Underground",
+    "artist": "Lindsey Stirling",
+    "theme": "#CC8888",
+    "url": "https://music.starry-s.me/music/obj_wonDkMOGw6XDiTHCmMOi_2660462601_5de2_ff1b_7e9f_3314960c90b9d68875a3d640df5d283a.mp4",
+    "cover": "https://music.starry-s.me/music/cover/109951164174520818.jpg"
+}
+-->
+
 -------
 
 # 安装Arch Linux
