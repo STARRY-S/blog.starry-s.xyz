@@ -1,7 +1,7 @@
 ---
 title: 联想R7000P上手体验
 created: 2021-03-22T19:51:32+08:00
-updated: 2021-03-29T17:30:36+08:00
+updated: 2021-03-30T19:02:05+08:00
 layout: post
 zone: Asia/Shanghai
 tags:
@@ -39,7 +39,7 @@ categories:
 
 于是直接给Linux分了150G root，16G SWAP，500G HOME（有点奢侈）， 然后还分了100G用来存steam游戏，剩下的全扔给Windows。
 
-装Linux过程中只遇到了终端的警报声有些大而且关不掉这个问题（插耳机也不好使），别的问题都没遇到。
+装Linux过程中只遇到了终端的警报声有些大而这个问题（插耳机时声音依旧从扬声器输出），别的问题都没遇到。
 
 之前的电脑总是遇到奇葩问题，用旧版本Linux内核关机或者`lspci`时会卡死，显卡驱动装不好会导致开机死机，声卡驱动一直有问题听歌时音量大一点就爆音，HDMI接口直连NVIDIA显卡的所以显卡驱动没配置好独显不工作时没办法外接显示器(后来才知道type c接口有DP视频输出)。
 
@@ -51,13 +51,13 @@ categories:
 
 网上查了一下只有在bios设置为独显直连时解决亮度不能调节的方法，在混合显卡模式下，存在[AMD显卡亮度用16位值表示而不是8位值表示](https://bugzilla.opensuse.org/show_bug.cgi?id=1180749)的这个BUG (Feature?)所以没办法调节亮度。
 
-所以`cat /sys/class/backlight/amdgpu_bl1/brightness`得到的是一个大于255的数。
+所以`cat /sys/class/backlight/amdgpu_bl0/actual_brightness`得到的是一个大于255的数。
 
-确保内核和显卡驱动都是最新的情况下，编辑内核参数`amdgpu.backlight=0`，可以解决混合模式下AMD显卡不能调节亮度这个问题。
+确保内核和显卡驱动都是最新的情况下，编辑内核参数`amdgpu.backlight=0`和`acpi_backlight=vendor`，可以解决混合模式下AMD显卡不能调节亮度这个问题。
 
 如果你经常切换混合模式和显卡直连模式的话：
 
-安装显卡驱动`xf86-video-amdgpu`和`nvidia`。
+安装显卡驱动`xf86-video-amdgpu`和`nvidia`以及按需要安装nvidia的其他组件。
 
 复制`/usr/share/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf`到`/etc/X11/xorg.conf.d/`
 
@@ -102,13 +102,13 @@ options amdgpu.backlight=0
 ```
 # /etc/mkinitcpio.conf
 
-MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
+MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm amdgpu radeon)
 ```
-如果你使用混合显卡模式还要加上`amdgpu`。
+如果你不使用独显直连模式的话可以去掉`amdgpu`和`radeon`。
 
-然后`sudo mkinitcpio -P linux`重新生成内核镜像，重启即可。
+然后`sudo mkinitcpio -P linux`重新生成内核镜像，之后重启。
 
-这么做会使Wayland在开机时被禁用，所以在混合显卡模式下开机依旧无法自动加载GDM，[参见Wiki](https://wiki.archlinux.org/index.php/GDM#Black_screen_on_AMD_or_Intel_GPUs_when_an_NVidia_(e)GPU_is_present)。
+这么做会使Wayland在开机时被禁用，所以在混合模式使用AMD显卡开机时无法使用Wayland，[参见Wiki](https://wiki.archlinux.org/index.php/GDM#GDM_ignores_Wayland_and_uses_X.Org_by_default)。
 
 将`/usr/lib/udev/rules.d/61-gdm.rules`复制到`/etc/udev/rules.d/`，并编辑`61-gdm.rules`将下面这一行注释掉：
 
@@ -116,7 +116,7 @@ MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
 # DRIVER=="nvidia", RUN+="/usr/lib/gdm-disable-wayland"
 ```
 
-之后重启电脑即可。
+之后重启电脑再开机`echo $XDG_SESSION_TYPE`就可以检查现在使用的是`wayland`了。
 
 ------
 

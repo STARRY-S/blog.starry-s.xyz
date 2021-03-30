@@ -286,6 +286,8 @@ button.back-to-top:hover {
   --color-main-background: #eee;
   --color-reward-font: #666;
   --color-sidebar-background: #ddd;
+  --color-code-font: #fc6423;
+  --color-code-background: #f8f8f8;
   --url-sidebar-background: url("/images/background.webp");
 }
 :root[data-theme="dark"] {
@@ -315,6 +317,8 @@ button.back-to-top:hover {
   --color-main-background: #26272b;
   --color-reward-font: #ddd;
   --color-sidebar-background: #252525;
+  --color-code-font: #ff9466;
+  --color-code-background: #33363b;
   --url-sidebar-background: url("/images/background-dark.webp");
 }
 html {
@@ -495,8 +499,8 @@ article table tbody tr:nth-child(2n) td:nth-child(2n) {
 }
 code {
   padding: 0 0.25em;
-  color: #fc6423;
-  background: #f8f8f8;
+  color: var(--color-code-font);
+  background: var(--color-code-background);
   word-wrap: break-word;
   border-radius: 0.3em;
   font-family: Monaco, Menlo, "Roboto Mono", Consolas, monospace, Roboto, "Noto Sans", "Noto Sans CJK", Helvetica, Arial, sans-serif;

@@ -327,7 +327,7 @@
         
         
         <div class="post-date meta-block">
-          <i class="far fa-calendar-plus"></i><span><time class="post-full-date" title="post-date" itemprop="dateUpdated" datetime="2021-03-29T09:30:36.000Z">3/29/2021, 5:30:36 PM</time></span>
+          <i class="far fa-calendar-plus"></i><span><time class="post-full-date" title="post-date" itemprop="dateUpdated" datetime="2021-03-30T11:02:05.000Z">3/30/2021, 7:02:05 PM</time></span>
         </div>
         
         
@@ -385,16 +385,16 @@ const ap0 = new APlayer ({
 <p>到手后就把之前买的西数SN750 1T固态换到了新电脑上，顺便格式化重装了个系统。</p>
 <p>双M2插槽配上1T + 500G NVME，美汁汁。</p>
 <p>于是直接给Linux分了150G root，16G SWAP，500G HOME（有点奢侈）， 然后还分了100G用来存steam游戏，剩下的全扔给Windows。</p>
-<p>装Linux过程中只遇到了终端的警报声有些大而且关不掉这个问题（插耳机也不好使），别的问题都没遇到。</p>
+<p>装Linux过程中只遇到了终端的警报声有些大而这个问题（插耳机时声音依旧从扬声器输出），别的问题都没遇到。</p>
 <p>之前的电脑总是遇到奇葩问题，用旧版本Linux内核关机或者<code>lspci</code>时会卡死，显卡驱动装不好会导致开机死机，声卡驱动一直有问题听歌时音量大一点就爆音，HDMI接口直连NVIDIA显卡的所以显卡驱动没配置好独显不工作时没办法外接显示器(后来才知道type c接口有DP视频输出)。</p>
 <p>新电脑买来装完系统后就遇到了一点小问题网上搜一下就解决了。</p>
 <h2 id="屏幕亮度不能调节"><a class="header-link" href="/posts/lenovo-r7000p/#%E5%B1%8F%E5%B9%95%E4%BA%AE%E5%BA%A6%E4%B8%8D%E8%83%BD%E8%B0%83%E8%8A%82" title="屏幕亮度不能调节"></a>屏幕亮度不能调节</h2>
 <p><del>开个浏览器能把眼睛晃瞎</del></p>
 <p>网上查了一下只有在bios设置为独显直连时解决亮度不能调节的方法，在混合显卡模式下，存在<a href="https://bugzilla.opensuse.org/show_bug.cgi?id=1180749" target="_blank" rel="external nofollow noreferrer noopener">AMD显卡亮度用16位值表示而不是8位值表示</a>的这个BUG (Feature?)所以没办法调节亮度。</p>
-<p>所以<code>cat /sys/class/backlight/amdgpu_bl1/brightness</code>得到的是一个大于255的数。</p>
-<p>确保内核和显卡驱动都是最新的情况下，编辑内核参数<code>amdgpu.backlight=0</code>，可以解决混合模式下AMD显卡不能调节亮度这个问题。</p>
+<p>所以<code>cat /sys/class/backlight/amdgpu_bl0/actual_brightness</code>得到的是一个大于255的数。</p>
+<p>确保内核和显卡驱动都是最新的情况下，编辑内核参数<code>amdgpu.backlight=0</code>和<code>acpi_backlight=vendor</code>，可以解决混合模式下AMD显卡不能调节亮度这个问题。</p>
 <p>如果你经常切换混合模式和显卡直连模式的话：</p>
-<p>安装显卡驱动<code>xf86-video-amdgpu</code>和<code>nvidia</code>。</p>
+<p>安装显卡驱动<code>xf86-video-amdgpu</code>和<code>nvidia</code>以及按需要安装nvidia的其他组件。</p>
 <p>复制<code>/usr/share/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf</code>到<code>/etc/X11/xorg.conf.d/</code></p>
 <p>编辑<code>/etc/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf</code>在<code>EndSection</code>前添加一行参数允许nvidia驱动调节亮度。</p>
 <figure data-raw="Option &quot;RegistryDwords&quot; &quot;EnableBrightnessControl=1&quot;
@@ -429,19 +429,19 @@ options amdgpu.backlight=0
 <p>编辑<code>/etc/mkinitcpio.conf</code></p>
 <figure data-raw="# /etc/mkinitcpio.conf
 
-MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
+MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm amdgpu radeon)
 " class="code-block"><pre class="code"><code># /etc/mkinitcpio.conf
 
-MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
+MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm amdgpu radeon)
 </code></pre></figure>
-<p>如果你使用混合显卡模式还要加上<code>amdgpu</code>。</p>
-<p>然后<code>sudo mkinitcpio -P linux</code>重新生成内核镜像，重启即可。</p>
-<p>这么做会使Wayland在开机时被禁用，所以在混合显卡模式下开机依旧无法自动加载GDM，<a href="https://wiki.archlinux.org/index.php/GDM#Black_screen_on_AMD_or_Intel_GPUs_when_an_NVidia_(e)GPU_is_present" target="_blank" rel="external nofollow noreferrer noopener">参见Wiki</a>。</p>
+<p>如果你不使用独显直连模式的话可以去掉<code>amdgpu</code>和<code>radeon</code>。</p>
+<p>然后<code>sudo mkinitcpio -P linux</code>重新生成内核镜像，之后重启。</p>
+<p>这么做会使Wayland在开机时被禁用，所以在混合模式使用AMD显卡开机时无法使用Wayland，<a href="https://wiki.archlinux.org/index.php/GDM#GDM_ignores_Wayland_and_uses_X.Org_by_default" target="_blank" rel="external nofollow noreferrer noopener">参见Wiki</a>。</p>
 <p>将<code>/usr/lib/udev/rules.d/61-gdm.rules</code>复制到<code>/etc/udev/rules.d/</code>，并编辑<code>61-gdm.rules</code>将下面这一行注释掉：</p>
 <figure data-raw="# DRIVER==&quot;nvidia&quot;, RUN+=&quot;/usr/lib/gdm-disable-wayland&quot;
 " class="code-block"><pre class="code"><code># DRIVER=="nvidia", RUN+="/usr/lib/gdm-disable-wayland"
 </code></pre></figure>
-<p>之后重启电脑即可。</p>
+<p>之后重启电脑再开机<code>echo $XDG_SESSION_TYPE</code>就可以检查现在使用的是<code>wayland</code>了。</p>
 <hr>
 <p>除此之外还遇到了按Fn+Esc键时FnLock的灯没有亮这个问题，不过不影响FnLock的正常使用，所以就忽视了。</p>
 <p>因为可以在Bios设置独显直连和混合模式，所以暂时没有配置<code>optimus-manager</code>不然显卡独连时开机有时会因为找不到AMD显卡而进不去图形。</p>
@@ -766,4 +766,4 @@ MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.7.3 at 2021-03-29T12:24:37.977Z. -->
+<!-- Page built by Hikaru v1.7.3 at 2021-03-30T12:09:22.726Z. -->
