@@ -24,6 +24,7 @@ tagDir: tags
 skipRender:
   - README.md
   - CNAME
+  - BingSiteAuth.xml
 
 perPage:
   index: 10
