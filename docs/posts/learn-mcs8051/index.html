@@ -595,7 +595,7 @@ const ap0 = new APlayer ({
      DJNZ R6, L1
      DJNZ R7, L0
      RET
-" data-info="language-asm" data-lang="asm" class="code-block"><pre class="code"><code class="language-asm">  DL: MOV R7, #0AH
+" class="code-block"><pre class="code"><code>  DL: MOV R7, #0AH
   L0: MOV R6, #250
   L1: NOP
      NOP
@@ -626,7 +626,7 @@ LOOP:
       INC R1
       DJNZ R2, LOOP
       RET
-" data-info="language-ASM" data-lang="ASM" class="code-block"><pre class="code"><code class="language-ASM">COPY: MOV R0, #40H
+" class="code-block"><pre class="code"><code>COPY: MOV R0, #40H
       MOV R1, #50H
       MOV R2, #10H
       ; 40H~4FH一共复制了16次
@@ -656,7 +656,7 @@ SWAP A
 ADD A, B; 也可以用ORL
 MOV 31H, A
 RET
-" data-info="language-ASM" data-lang="ASM" class="code-block"><pre class="code"><code class="language-ASM">CV:
+" class="code-block"><pre class="code"><code>CV:
 MOV R0, #20H
 MOV A, @R0
 MOV B, #100
@@ -695,7 +695,7 @@ RET
 
 DATA:
 DB 30H, 31H, 32H, 33H, 34H, 35H, 36H, 37H, 38H, 39H
-" data-info="language-ASM" data-lang="ASM" class="code-block"><pre class="code"><code class="language-ASM">CV:
+" class="code-block"><pre class="code"><code>CV:
 MOV A, 30H
 ANL A, #0FH
 MOV DPTR, #DATA; 或者直接用ADD A, #30H即可
@@ -1862,4 +1862,4 @@ RET
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.7.3 at 2021-03-30T12:09:22.822Z. -->
+<!-- Page built by Hikaru v1.7.3 at 2021-04-11T05:57:50.096Z. -->

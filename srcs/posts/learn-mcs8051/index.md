@@ -156,7 +156,7 @@ mathjax: true
 
 14. 分析下面子程序的功能, 假设8051单片机的震荡频率为6MHz。
 
-   ``` asm
+   ```
   DL: MOV R7, #0AH
   L0: MOV R6, #250
   L1: NOP
@@ -184,7 +184,7 @@ mathjax: true
 
 1. 编写一个子程序, 将内部RAM 40H\~4FH的内容复制到50H\~5FH。
 
-   ``` ASM
+   ```
    COPY: MOV R0, #40H
          MOV R1, #50H
          MOV R2, #10H
@@ -202,7 +202,7 @@ mathjax: true
 
 2. 将任何无符号8位二进制数转换为BCD码的子程序, 入口参数为内部RAM单元20H, 出口参数为内部RAM单元30H和31H, 30H存放百位数, 31H存放十位数和个位数。
 
-   ``` ASM
+   ```
    CV:
    MOV R0, #20H
    MOV A, @R0
@@ -225,7 +225,7 @@ mathjax: true
 3. 内部RAM 30H单元存放两位十进制数 (压缩BCD码), 编写将该十进制数转换为对应ASCII码的子程序, 转换结果存放到内部RAM 40H (十位数) 和41H (个位数) 单元。
    > ASCII码： `30H`为`0`, `41H`为`A`, `61H`为`a`
 
-   ``` ASM
+   ``` 
    CV:
    MOV A, 30H
    ANL A, #0FH

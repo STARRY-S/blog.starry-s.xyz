@@ -1,7 +1,7 @@
 ---
-title: 联想R7000P上手体验
+title: 联想R7000P安装Arch Linux的常见问题
 created: 2021-03-22T19:51:32+08:00
-updated: 2021-03-30T19:02:05+08:00
+updated: 2021-04-11T13:50:48+08:00
 layout: post
 zone: Asia/Shanghai
 tags:
@@ -10,6 +10,8 @@ tags:
 categories:
 - Linux
 ---
+
+> 本篇原标题为「联想R7000P上手体验」，因为内容大多在讲安装Linux时遇到的问题及解决方法，所以把标题更改为「联想R7000P安装Arch Linux的常见问题」。
 
 旧电脑坏掉了，因为坏的有些复杂而且不忍心拿到学校的修理店去修于是打算等到暑假有时间自己买零部件修。（就不吐槽惠普的产品设计问题了...
 
@@ -113,16 +115,43 @@ MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm amdgpu radeon)
 将`/usr/lib/udev/rules.d/61-gdm.rules`复制到`/etc/udev/rules.d/`，并编辑`61-gdm.rules`将下面这一行注释掉：
 
 ```
-# DRIVER=="nvidia", RUN+="/usr/lib/gdm-disable-wayland"
+DRIVER=="nvidia", RUN+="/usr/lib/gdm-disable-wayland"
 ```
 
 之后重启电脑再开机`echo $XDG_SESSION_TYPE`就可以检查现在使用的是`wayland`了。
 
-------
+## Optimus Manager
 
-除此之外还遇到了按Fn+Esc键时FnLock的灯没有亮这个问题，不过不影响FnLock的正常使用，所以就忽视了。
+因为独显功耗太高了，使用独显直连模式在浏览网页写文档这类的轻度工作时电池待机只能2小时，用混合模式的话能待机4.5小时，外加上我也不打那些对性能要求很高的游戏，
+所以日常使用时就在Bios里设置显卡为混合模式。
 
-因为可以在Bios设置独显直连和混合模式，所以暂时没有配置`optimus-manager`不然显卡独连时开机有时会因为找不到AMD显卡而进不去图形。
+然后在Linux系统里安装`optimus-manager`，修改配置为：使用电池开机时关掉NVIDIA显卡，只让AMD集显工作；有外接电源时则使用“hybrid”混合模式，如果需要玩游戏的话用[nvidia-prime](https://wiki.archlinux.org/index.php/PRIME#PRIME_render_offload)让独显运行游戏。
+
+Optimus Manager的配置方法和之前我[之前配置旧电脑时](/posts/archlinux-pavilion-gaming-laptop/)讲的基本一样，唯一区别就是这电脑是AMD，旧电脑是Intel。
+
+所以编辑配置文件修改了这些地方：
+
+```
+# /etc/optimus-manager/optimus-manager.conf
+
+# 设置开机自动切换显卡模式
+startup_mode=auto
+
+# 使用电池时关掉独立显卡降低功耗
+startup_auto_battery_mode=integrated
+
+# 使用外接电源时为混合模式
+startup_auto_extpower_mode=hybrid
+
+[amd]
+# 因为安装的xf86-video-amdgpu, 所以修改驱动改为amdgpu
+driver=amdgpu
+
+```
+
+安装好`nvidia-prime`后在混合显卡模式（hybrid）下，使用`prime-run`让独显运行游戏。
+
+如果想让Steam以独显运行游戏，修改启动参数为`prime-run %command%`。
 
 # Windows
 
@@ -132,16 +161,22 @@ MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm amdgpu radeon)
 
 最后在NVIDIA控制面板全局设置里把平滑处理全关了，字体的锯齿才消失。
 
-貌似是因为nvidia把文本编辑器当游戏渲染了。
+貌似是因为NVIDIA把文本编辑器当游戏渲染了。
 
 -----
 
-目前来看觉得这电脑还是蛮香的，AMD的CPU性能很强而且比intel版的Y7000P便宜一千块钱。尽管现在已经有二线厂商做AMD 5800系的笔记本了但是4800H的性能依旧够用，RTX3060显卡就当它是空气吧就算发售也是残血而且抢不到。
+# Others
 
-除了电源适配器有点大背起来不方便，而且不支持PD充电，要是想用诱骗线的话还必须得买230W的诱骗线再用100W的PD充电器才能勉强带动，65W的充电器只能关机充电。所以想想还是算了，沉就沉吧而且电脑80WH的电池待机时间也不短，混合模式下用集成显卡只看看网页写点代码的话待机4个多小时没问题的。
+ * 在Linux系统里会遇到按Fn+Esc键时FnLock的灯没有亮这个问题，不过不影响FnLock的正常使用，所以就忽视了。
 
-然后就是电脑没有雷电3接口，只有一个支持USB3.2 Gen1的type c接口且支持DP1.2视频输出，不过USB接口倒是挺多的，电脑用到现在没有遇到啥AMD CPU引起的兼容性问题。
+ * 如果要用诱骗线充电的话，用optimus-manager把耗电大户独显关掉，然后装一个CPU功率调节的软件，例如`cpupower-gui`<sup>AUR</sup>，手动降频限制一下CPU功耗，只浏览个网页写点代码的话还是够用的。
 
-<!-- > 先写到这里，不定期更新 -->
+ * 因为之前趁着狗东打折加上买显示器送的100E卡，只花了两百多买了一个紫米20移动电源（~~板砖~~），25000毫安且支持100WPD充电。按照上面讲的方法在电池满电的情况下给电脑充电，充电宝待机能用挺长时间。（实在是因为原装充电器它太沉了）
 
-![](images/1.jpg)
+ * 目前来看觉得这电脑还是蛮香的，AMD的CPU性能很强而且比intel版的Y7000P便宜一千块钱。尽管现在已经有二线厂商做AMD 5800系的笔记本了但是4800H的性能依旧够用，RTX3060显卡就当它是空气吧就算发售也是残血而且抢不到。
+
+ * 然后就是电脑没有雷电3接口，只有一个支持USB3.2 Gen1的type c接口且支持DP1.2视频输出，不过USB接口倒是挺多的，电脑用到现在没有遇到啥AMD CPU引起的兼容性问题。
+
+------
+
+![GNOME 40](images/1.jpg "GNOME 40")
