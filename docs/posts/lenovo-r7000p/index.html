@@ -389,7 +389,7 @@ const ap0 = new APlayer ({
 <p>双M2插槽配上1T + 500G NVME，美汁汁。</p>
 <p>于是直接给Linux分了150G root，16G SWAP，500G HOME（有点奢侈）， 然后还分了100G用来存steam游戏，剩下的全扔给Windows。</p>
 <p>装Linux过程中只遇到了终端的警报声有些大而这个问题（插耳机时声音依旧从扬声器输出），别的问题都没遇到。</p>
-<p>之前的电脑总是遇到奇葩问题，用旧版本Linux内核关机或者<code>lspci</code>时会卡死，显卡驱动装不好会导致开机死机，声卡驱动一直有问题听歌时音量大一点就爆音，HDMI接口直连NVIDIA显卡的所以显卡驱动没配置好独显不工作时没办法外接显示器(后来才知道type c接口有DP视频输出)。</p>
+<p>之前的电脑总是遇到奇葩问题，用旧版本Linux内核关机或者<code>lspci</code>时会卡死，显卡驱动装不好会导致开机死机，声卡驱动一直有问题听歌时音量大一点就爆音，HDMI接口直连的NVIDIA显卡所以显卡驱动没配置好独显不工作时没办法外接显示器(后来才知道type c接口有DP视频输出)。</p>
 <p>新电脑买来装完系统后就遇到了一点小问题网上搜一下就解决了。</p>
 <h2 id="屏幕亮度不能调节"><a class="header-link" href="/posts/lenovo-r7000p/#%E5%B1%8F%E5%B9%95%E4%BA%AE%E5%BA%A6%E4%B8%8D%E8%83%BD%E8%B0%83%E8%8A%82" title="屏幕亮度不能调节"></a>屏幕亮度不能调节</h2>
 <p><del>开个浏览器能把眼睛晃瞎</del></p>
@@ -437,7 +437,7 @@ MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm amdgpu radeon)
 
 MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm amdgpu radeon)
 </code></pre></figure>
-<p>如果你不使用独显直连模式的话可以去掉<code>amdgpu</code>和<code>radeon</code>。</p>
+<p>如果你只使用独显直连模式的话可以去掉<code>amdgpu</code>和<code>radeon</code>。</p>
 <p>然后<code>sudo mkinitcpio -P linux</code>重新生成内核镜像，之后重启。</p>
 <p>这么做会使Wayland在开机时被禁用，所以在混合模式使用AMD显卡开机时无法使用Wayland，<a href="https://wiki.archlinux.org/index.php/GDM#GDM_ignores_Wayland_and_uses_X.Org_by_default" target="_blank" rel="external nofollow noreferrer noopener">参见Wiki</a>。</p>
 <p>将<code>/usr/lib/udev/rules.d/61-gdm.rules</code>复制到<code>/etc/udev/rules.d/</code>，并编辑<code>61-gdm.rules</code>将下面这一行注释掉：</p>
@@ -492,9 +492,9 @@ driver=amdgpu
 <ul>
 <li><p>在Linux系统里会遇到按Fn+Esc键时FnLock的灯没有亮这个问题，不过不影响FnLock的正常使用，所以就忽视了。</p>
 </li>
-<li><p>如果要用诱骗线充电的话，用optimus-manager把独显关掉（独显在不使用的情况下仍有5W的功耗），然后装一个CPU功率调节的软件，例如<code>cpupower-gui</code><sup>AUR</sup>，设置为节电模式，实测用小米65W GaN充电器给电脑充电，轻度使用没有卡顿掉电的情况。</p>
+<li><p>如果要用诱骗线充电的话，用optimus-manager把独显关掉（用<code>nvidia-smi</code>得知独显在不使用的情况下仍有5W的功耗），然后装一个CPU功率调节的软件，例如<code>cpupower-gui</code><sup>AUR</sup>，设置为节电模式，实测用小米65W GaN充电器给电脑充电，轻度使用没有卡顿掉电的情况。</p>
 </li>
-<li><p>因为之前趁着狗东打折加上买显示器送的100E卡，只花了两百多买了一个紫米20移动电源（<del>板砖</del>），25000毫安且支持100WPD充电。按照上面讲的方法在电池满电的情况下给电脑充电，能用4小时左右。（实在是因为原装充电器它太沉了）</p>
+<li><p>因为之前趁着狗东打折加上买显示器送的100E卡，只花了两百多买了一个紫米20移动电源（<del>板砖</del>），25000毫安且支持100WPD充电。按照上面讲的方法在电池满电的情况下一边轻度使用电脑一边充电，充电宝能用4小时左右，然后笔记本的电池还能续航4至5小时。（实在是因为原装充电器它太沉了）</p>
 </li>
 <li><p>目前来看觉得这电脑还是蛮香的，AMD的CPU性能很强而且比intel版的Y7000P便宜一千块钱。尽管现在已经有二线厂商做AMD 5800系的笔记本了但是4800H的性能依旧够用，RTX3060显卡就当它是空气吧就算发售也是残血而且抢不到。</p>
 </li>
@@ -516,6 +516,8 @@ driver=amdgpu
   
   <nav class="page-nav">
     <div class="page-nav-next page-nav-item">
+      
+      <a href="/posts/spring-4/" rel="next" title="Spring - 4"><i class="fas fa-angle-left"></i><span class="nav-title">Spring - 4</span></a>
       
     </div>
     <div class="page-nav-prev page-nav-item">
@@ -666,7 +668,7 @@ driver=amdgpu
       
       <div class="archives-count count-block">
         <div class="site-count-title">归档</div>
-        <div><a href="/archives/">15</a></div>
+        <div><a href="/archives/">16</a></div>
       </div>
       
       
@@ -824,4 +826,4 @@ driver=amdgpu
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.7.3 at 2021-04-20T13:39:50.261Z. -->
+<!-- Page built by Hikaru v1.7.3 at 2021-05-02T18:37:12.303Z. -->

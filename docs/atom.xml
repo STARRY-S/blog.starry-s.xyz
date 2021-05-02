@@ -7,7 +7,7 @@
   
   <link rel="alternate" type="text/html" href="https://blog.starry-s.me/" />
   
-  <updated>2021-03-22T11:51:32.000Z</updated>
+  <updated>2021-05-02T17:44:57.000Z</updated>
   
   <id>https://blog.starry-s.me/</id>
   
@@ -19,6 +19,88 @@
   <generator uri="https://github.com/AlynxZhou/hikaru-generator-feed/" version="v2.3.4">Hikaru Generator Feed</generator>
   
   
+  
+  
+  
+  <entry>
+    <title>Spring - 4</title>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/spring-4/" />
+    <id>https://blog.starry-s.me/posts/spring-4/</id>
+    
+    <author>
+      <name>STARRY-S</name>
+      <email>hxstarrys@gmail.com</email>
+    </author>
+    
+    
+    <published>2021-05-02T17:44:57.000Z</published>
+    
+    
+    <updated>2021-05-02T17:44:57.000Z</updated>
+    
+    
+    <summary type="html">
+      &lt;p&gt;&lt;img src=&quot;/posts/spring-4/images/IMG_6611.jpg&quot; alt=&quot;&quot; title=&quot;ISO 100, 焦距50mm, 快门1/1000s, 光圈f2.8&quot;&gt;&lt;/p&gt;
+&lt;p&gt;我已经两年没有更新这个系列了...&lt;/p&gt;
+
+    </summary>
+    
+    
+    <content type="html">
+      &lt;link href=&quot;/css/APlayer.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;script src= &quot;/js/APlayer.min.js&quot;&gt;&lt;/script&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/spring-4/images/IMG_6611.jpg&quot; alt=&quot;&quot; title=&quot;ISO 100, 焦距50mm, 快门1/1000s, 光圈f2.8&quot;&gt;&lt;/p&gt;
+&lt;p&gt;我已经两年没有更新这个系列了...&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+&lt;hr&gt;
+ &lt;!--APlayer--&gt;
+&lt;div id=&quot;aplayer0&quot; style=&quot;background: var(--color-main-background)&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+const ap0 = new APlayer ({
+    container: document.getElementById(&quot;aplayer0&quot;),
+    theme: &quot;#33363b&quot;,
+    fixed: false,
+    listFolded: false,
+    listMaxHeight: false,
+    lrcType: false,
+    mini: false,
+    volume: 0.7,
+    order: &quot;list&quot;,
+    loop: &quot;all&quot;,
+    autoplay: false,
+    audio: [{
+        name: &quot;辉く空の静寂には&quot;,
+        artist: &quot;Kalafina&quot;,
+        url: &quot;https://music.starry-s.me/music/4d6b_af91_c8ab_7e676adf998cd77b5d6b8a8e095d4066.mp3&quot;,
+        cover: &quot;https://music.starry-s.me/music/cover/109951163710392062.jpg&quot;,
+        lrc: &quot;&quot;,
+        theme: &quot;#776666&quot;
+    }]
+});
+&lt;/script&gt; 
+
+&lt;p&gt;前一阵子买了二手的适马17-50 f2.8镜头，在网上看这镜头很适合新手学摄影，而且这个焦段+大光圈适用的范围也很广。遂把在家吃灰了一年的相机带回学校，打算找时间拍点风景照片。&lt;/p&gt;
+&lt;p&gt;实际上买完新镜头后我就拿它拍了几张花的照片后也没怎么出过门，因为照片拍得比较少，所以只好先挑几张好看的微距照片贴到博客上面，以后有机会拍到更好的照片后再更新。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/spring-4/images/IMG_6616.jpg&quot; alt=&quot;&quot; title=&quot;ISO 100, 焦距33mm, 快门1/1000s, 光圈f2.8&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/spring-4/images/IMG_6618.jpg&quot; alt=&quot;&quot; title=&quot;ISO 100, 焦距50mm, 快门1/1000s, 光圈f2.8&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/spring-4/images/IMG_6623.jpg&quot; alt=&quot;&quot; title=&quot;ISO 100, 焦距35mm, 快门1/1250s, 光圈f2.8&quot;&gt;&lt;/p&gt;
+
+    </content>
+    
+    
+    <category term="日常" label="日常" scheme="https://blog.starry-s.me/categories/%E6%97%A5%E5%B8%B8/" />
+    
+    <category term="Spring" label="Spring" scheme="https://blog.starry-s.me/categories/%E6%97%A5%E5%B8%B8/Spring/" />
+    
+    
+    <category term="摄影" label="摄影" scheme="https://blog.starry-s.me/tags/%E6%91%84%E5%BD%B1/" />
+    
+    <category term="Spring" label="Spring" scheme="https://blog.starry-s.me/tags/Spring/" />
+    
+    <category term="Flowers" label="Flowers" scheme="https://blog.starry-s.me/tags/Flowers/" />
+    
+  </entry>
   
   
   
@@ -93,7 +175,7 @@ const ap0 = new APlayer ({
 &lt;p&gt;双M2插槽配上1T + 500G NVME，美汁汁。&lt;/p&gt;
 &lt;p&gt;于是直接给Linux分了150G root，16G SWAP，500G HOME（有点奢侈）， 然后还分了100G用来存steam游戏，剩下的全扔给Windows。&lt;/p&gt;
 &lt;p&gt;装Linux过程中只遇到了终端的警报声有些大而这个问题（插耳机时声音依旧从扬声器输出），别的问题都没遇到。&lt;/p&gt;
-&lt;p&gt;之前的电脑总是遇到奇葩问题，用旧版本Linux内核关机或者&lt;code&gt;lspci&lt;/code&gt;时会卡死，显卡驱动装不好会导致开机死机，声卡驱动一直有问题听歌时音量大一点就爆音，HDMI接口直连NVIDIA显卡的所以显卡驱动没配置好独显不工作时没办法外接显示器(后来才知道type c接口有DP视频输出)。&lt;/p&gt;
+&lt;p&gt;之前的电脑总是遇到奇葩问题，用旧版本Linux内核关机或者&lt;code&gt;lspci&lt;/code&gt;时会卡死，显卡驱动装不好会导致开机死机，声卡驱动一直有问题听歌时音量大一点就爆音，HDMI接口直连的NVIDIA显卡所以显卡驱动没配置好独显不工作时没办法外接显示器(后来才知道type c接口有DP视频输出)。&lt;/p&gt;
 &lt;p&gt;新电脑买来装完系统后就遇到了一点小问题网上搜一下就解决了。&lt;/p&gt;
 &lt;h2 id=&quot;屏幕亮度不能调节&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/lenovo-r7000p/#%E5%B1%8F%E5%B9%95%E4%BA%AE%E5%BA%A6%E4%B8%8D%E8%83%BD%E8%B0%83%E8%8A%82&quot; title=&quot;屏幕亮度不能调节&quot;&gt;&lt;/a&gt;屏幕亮度不能调节&lt;/h2&gt;
 &lt;p&gt;&lt;del&gt;开个浏览器能把眼睛晃瞎&lt;/del&gt;&lt;/p&gt;
@@ -141,7 +223,7 @@ MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm amdgpu radeon)
 
 MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm amdgpu radeon)
 &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;如果你不使用独显直连模式的话可以去掉&lt;code&gt;amdgpu&lt;/code&gt;和&lt;code&gt;radeon&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;如果你只使用独显直连模式的话可以去掉&lt;code&gt;amdgpu&lt;/code&gt;和&lt;code&gt;radeon&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;然后&lt;code&gt;sudo mkinitcpio -P linux&lt;/code&gt;重新生成内核镜像，之后重启。&lt;/p&gt;
 &lt;p&gt;这么做会使Wayland在开机时被禁用，所以在混合模式使用AMD显卡开机时无法使用Wayland，&lt;a href=&quot;https://wiki.archlinux.org/index.php/GDM#GDM_ignores_Wayland_and_uses_X.Org_by_default&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;参见Wiki&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;将&lt;code&gt;/usr/lib/udev/rules.d/61-gdm.rules&lt;/code&gt;复制到&lt;code&gt;/etc/udev/rules.d/&lt;/code&gt;，并编辑&lt;code&gt;61-gdm.rules&lt;/code&gt;将下面这一行注释掉：&lt;/p&gt;
@@ -196,9 +278,9 @@ driver=amdgpu
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;在Linux系统里会遇到按Fn+Esc键时FnLock的灯没有亮这个问题，不过不影响FnLock的正常使用，所以就忽视了。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;如果要用诱骗线充电的话，用optimus-manager把独显关掉（独显在不使用的情况下仍有5W的功耗），然后装一个CPU功率调节的软件，例如&lt;code&gt;cpupower-gui&lt;/code&gt;&lt;sup&gt;AUR&lt;/sup&gt;，设置为节电模式，实测用小米65W GaN充电器给电脑充电，轻度使用没有卡顿掉电的情况。&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;如果要用诱骗线充电的话，用optimus-manager把独显关掉（用&lt;code&gt;nvidia-smi&lt;/code&gt;得知独显在不使用的情况下仍有5W的功耗），然后装一个CPU功率调节的软件，例如&lt;code&gt;cpupower-gui&lt;/code&gt;&lt;sup&gt;AUR&lt;/sup&gt;，设置为节电模式，实测用小米65W GaN充电器给电脑充电，轻度使用没有卡顿掉电的情况。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;因为之前趁着狗东打折加上买显示器送的100E卡，只花了两百多买了一个紫米20移动电源（&lt;del&gt;板砖&lt;/del&gt;），25000毫安且支持100WPD充电。按照上面讲的方法在电池满电的情况下给电脑充电，能用4小时左右。（实在是因为原装充电器它太沉了）&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;因为之前趁着狗东打折加上买显示器送的100E卡，只花了两百多买了一个紫米20移动电源（&lt;del&gt;板砖&lt;/del&gt;），25000毫安且支持100WPD充电。按照上面讲的方法在电池满电的情况下一边轻度使用电脑一边充电，充电宝能用4小时左右，然后笔记本的电池还能续航4至5小时。（实在是因为原装充电器它太沉了）&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p&gt;目前来看觉得这电脑还是蛮香的，AMD的CPU性能很强而且比intel版的Y7000P便宜一千块钱。尽管现在已经有二线厂商做AMD 5800系的笔记本了但是4800H的性能依旧够用，RTX3060显卡就当它是空气吧就算发售也是残血而且抢不到。&lt;/p&gt;
 &lt;/li&gt;
