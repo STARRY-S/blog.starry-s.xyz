@@ -157,16 +157,16 @@
   
   
   <url>
-    <loc>https://blog.starry-s.me/about/</loc>
-    
-    <lastmod>2021-01-21T18:22:38.000Z</lastmod>
+    <loc>https://blog.starry-s.me/archives/</loc>
     
   </url>
   
   
   
   <url>
-    <loc>https://blog.starry-s.me/archives/</loc>
+    <loc>https://blog.starry-s.me/about/</loc>
+    
+    <lastmod>2021-01-21T18:22:38.000Z</lastmod>
     
   </url>
   
@@ -468,14 +468,14 @@
   
   
   <url>
-    <loc>https://blog.starry-s.me/atom.xml</loc>
+    <loc>https://blog.starry-s.me/sitemap.xml</loc>
     
   </url>
   
   
   
   <url>
-    <loc>https://blog.starry-s.me/sitemap.xml</loc>
+    <loc>https://blog.starry-s.me/atom.xml</loc>
     
   </url>
   

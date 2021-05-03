@@ -11,7 +11,7 @@ categories:
 - Spring
 ---
 
-![](images/IMG_6611.jpg "ISO 100, 焦距50mm, 快门1/1000s, 光圈f2.8")
+![](images/IMG_6611.jpg "iso100, 50mm, 1/1000s, f2.8")
 
 我去年忘了更新这个系列...
 
@@ -35,11 +35,11 @@ categories:
 
 > 仅使用Raw Therapee对照片进行了裁剪并调整颜色
 
-![](images/IMG_6616.jpg "ISO 100, 焦距33mm, 快门1/1000s, 光圈f2.8")
+![](images/IMG_6616.jpg "iso100, 33mm, 1/1000s, f2.8")
 
-![](images/IMG_6618.jpg "ISO 100, 焦距50mm, 快门1/1000s, 光圈f2.8")
+![](images/IMG_6618.jpg "iso100, 50mm, 1/1000s, f2.8")
 
-![](images/IMG_6623.jpg "ISO 100, 焦距35mm, 快门1/1250s, 光圈f2.8")
+![](images/IMG_6623.jpg "iso100, 35mm, 1/1250s, f2.8")
 
 
 ------
