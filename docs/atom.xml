@@ -7,7 +7,7 @@
   
   <link rel="alternate" type="text/html" href="https://blog.starry-s.me/" />
   
-  <updated>2021-05-02T17:44:57.000Z</updated>
+  <updated>2021-05-10T13:33:10.000Z</updated>
   
   <id>https://blog.starry-s.me/</id>
   
@@ -19,6 +19,357 @@
   <generator uri="https://github.com/AlynxZhou/hikaru-generator-feed/" version="v2.3.4">Hikaru Generator Feed</generator>
   
   
+  
+  
+  
+  <entry>
+    <title>Learn OpenGL</title>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/learn_opengl/" />
+    <id>https://blog.starry-s.me/posts/learn_opengl/</id>
+    
+    <author>
+      <name>STARRY-S</name>
+      <email>hxstarrys@gmail.com</email>
+    </author>
+    
+    
+    <published>2021-05-10T13:33:10.000Z</published>
+    
+    
+    <updated>2021-05-10T13:33:10.000Z</updated>
+    
+    
+    <summary type="html">
+      &lt;p&gt;其实咱很久很久以前就开始看&lt;a href=&quot;https://learnopengl-cn.github.io/&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;LearnOpenGL CN&lt;/a&gt;
+这个网站了......&lt;/p&gt;
+
+    </summary>
+    
+    
+    <content type="html">
+      &lt;p&gt;其实咱很久很久以前就开始看&lt;a href=&quot;https://learnopengl-cn.github.io/&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;LearnOpenGL CN&lt;/a&gt;
+这个网站了......&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+&lt;div class=&quot;alert-blue&quot;&gt;
+本篇仍在编写中...
+&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h1 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn_opengl/#%E5%89%8D%E8%A8%80&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;
+&lt;p&gt;咱是从高中就开始看LearnOpenGL CN这网站了，但是那个时候咱只学了一点C，所以当时咱遇到了C++的
+命名空间&lt;code&gt;std::&lt;/code&gt;时就一头雾水，更别说啥渲染图形了。&lt;/p&gt;
+&lt;p&gt;然后大一时也尝试过学OpenGL这玩意，当时不懂啥叫状态机啥叫顶点/片段着色器，被glsl绕得蒙头转向，
+心想着OpenGL怎么这么复杂，照别人写好的代码抄一遍确实能画个五颜六色的三角形出来，但是当时不懂
+为什么这样子向顶点着色器传顶点坐标，到底啥叫着色器，它究竟干了什么， GLSL的变量到底是怎么用的。&lt;/p&gt;
+&lt;!-- 所以终于上了图形学的课后这些东西才一点点弄明白，然而图形学老师用的是旧版GLUT的立即渲染模式，
+还说写OpenGL很简单一点也不难，实际上老师的课件也只教了我们怎么用OpenGL画点/线/三角形。
+用GLUT在教学上确实够用了而且我上的不是OpenGL课程，但是....
+
+“只要告诉两点坐标就能画个很丑的线出来了，这一点也不难”  :(
+
+所以咱啃了好多遍这个教程才算是一点点理解了OpenGL是如何绘图这个过程的吧
+
+&gt; ~~老师：“不要因为上过我的这门课就和别和别人说你们学过计算机图形学”~~ --&gt;
+
+&lt;hr&gt;
+&lt;p&gt;首先需要明白什么是核心渲染模式，什么是立即渲染模式，立即渲染模式的代码中都包含&lt;code&gt;glBegin()&lt;/code&gt;
+和&lt;code&gt;glEnd()&lt;/code&gt;，绘图的部分都是在这两个函数之间，比如画一个点就是&lt;code&gt;glVertex2f(x, y)&lt;/code&gt;，这种方式
+画图确实很简单，和canvas，java的swing一样，用户只要提供坐标和颜色就好了，
+不用知道GPU干了什么，而缺点是性能低，有很多限制，所以新版本的OpenGL为了给开发者提供更多的
+可操作空间而废弃立即渲染改用核心模式。&lt;/p&gt;
+&lt;p&gt;核心模式提供了很多强大的功能，可以管线编程，代码量增加了很多，所以对初学者不太友好。&lt;/p&gt;
+&lt;p&gt;LearnOpenGL CN上面的代码基于C++，而OpenGL是用C编写的，教程上的代码除了矩阵运算部分可以
+使用C++的运算符重载而使代码编写起来变得更简单一些外，其他部分基本没啥区别，而且教程为了便于教学
+使用的也是面向过程式编程，没有将各个功能封装到一个类里面，所以咱这篇教程用C编写。&lt;/p&gt;
+&lt;p&gt;要记住C就是C，C++就是C++，C不是C++的子集，只能说C++兼容部分C的代码，不要把C和C++混用，
+不要因为C++支持面向对象使得一些功能看起来简单很易于使用就轻易迈入C++的坑，毕竟还有那么多支持
+面向对象的语言可以选。&lt;/p&gt;
+&lt;h1 id=&quot;准备工作&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn_opengl/#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h1&gt;
+&lt;p&gt;有关OpenGL的介绍以及安装GLFW、GLAD以及编译所需的CMake的部分可以直接看
+&lt;a href=&quot;https://learnopengl-cn.github.io/01%20Getting%20started/02%20Creating%20a%20window/&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;教程&lt;/a&gt;，
+咱尽可能把教程上没有提到的或者是刚开始学OpenGL很难理解的部分记录下来。&lt;/p&gt;
+&lt;p&gt;大体上就是安装&lt;code&gt;glfw&lt;/code&gt;，Arch Linux使用包管理器&lt;code&gt;sudo pacman -S glfw-x11&lt;/code&gt;
+(如果你使用的是wayland，那么安装&lt;code&gt;glfw-wayland&lt;/code&gt;)，然后把下载的&lt;code&gt;glad/glad.h&lt;/code&gt;复制到
+&lt;code&gt;/usr/include&lt;/code&gt;下，把&lt;code&gt;glad.c&lt;/code&gt;复制到工程文件夹的代码目录下。&lt;/p&gt;
+&lt;p&gt;为使用CMake生成Makefile，编写&lt;code&gt;CMakeLists.txt&lt;/code&gt;:&lt;/p&gt;
+&lt;figure data-raw=&quot;cmake_minimum_required(VERSION 3.0)
+
+project(
+    &amp;quot;Learn OpenGL&amp;quot;
+    LANGUAGES C
+    VERSION 0.1.0
+)
+
+set(C_FLAGS &amp;quot;-Wall -lm -ldl -std=c11&amp;quot;)
+set(CMAKE_C_FLAGS ${C_FLAGS})
+set(OpenGL_GL_PREFERENCE LEGACY)
+
+find_package(glfw3 REQUIRED)
+find_package(OpenGL REQUIRED)
+
+include_directories(${OPENGL_INCLUDE_DIR} src)
+
+aux_source_directory(&amp;quot;src&amp;quot; GLSRC)
+add_executable(main ${GLSRC})
+target_link_libraries(main ${OPENGL_gl_LIBRARY} glfw)
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;cmake_minimum_required(VERSION 3.0)
+
+project(
+    &quot;Learn OpenGL&quot;
+    LANGUAGES C
+    VERSION 0.1.0
+)
+
+set(C_FLAGS &quot;-Wall -lm -ldl -std=c11&quot;)
+set(CMAKE_C_FLAGS ${C_FLAGS})
+set(OpenGL_GL_PREFERENCE LEGACY)
+
+find_package(glfw3 REQUIRED)
+find_package(OpenGL REQUIRED)
+
+include_directories(${OPENGL_INCLUDE_DIR} src)
+
+aux_source_directory(&quot;src&quot; GLSRC)
+add_executable(main ${GLSRC})
+target_link_libraries(main ${OPENGL_gl_LIBRARY} glfw)
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;完成上述步骤后，确保工程文件夹的结构大体如下：&lt;/p&gt;
+&lt;figure data-raw=&quot;├── build/
+├── CMakeLists.txt
+└── src/
+    ├── glad.c
+    └── main.c
+&quot; data-info=&quot;language-text&quot; data-lang=&quot;text&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;├── build/
+├── CMakeLists.txt
+└── src/
+    ├── glad.c
+    └── main.c
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;创建窗口&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn_opengl/#%E5%88%9B%E5%BB%BA%E7%AA%97%E5%8F%A3&quot; title=&quot;创建窗口&quot;&gt;&lt;/a&gt;创建窗口&lt;/h1&gt;
+&lt;p&gt;编辑&lt;code&gt;main.c&lt;/code&gt;，加入所需的头文件&lt;/p&gt;
+&lt;figure data-raw=&quot;// glad.h要加在glfw3.h之前
+
+#include &lt;glad/glad.h&gt;
+#include &lt;GLFW/glfw3.h&gt;
+#include &lt;stdio.h&gt;
+&quot; data-info=&quot;language-C&quot; data-lang=&quot;C&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-C&quot;&gt;// glad.h要加在glfw3.h之前
+
+#include &amp;lt;glad/glad.h&amp;gt;
+#include &amp;lt;GLFW/glfw3.h&amp;gt;
+#include &amp;lt;stdio.h&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;在main函数中初始化OpenGL并创建窗口&lt;/p&gt;
+&lt;figure data-raw=&quot;int main(int argc, char **argv)
+{
+        glfwInit();
+        /* 使用OpenGL版本为3.3 */
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+        /* 使用核心模式 */
+        glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
+#ifdef __APPLE__
+        glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+#endif
+
+        /* 创建窗口 */
+        GLFWwindow *window =
+                    glfwCreateWindow(800, 600, &amp;quot;Hello World&amp;quot;, NULL, NULL);
+        if (window == NULL) {
+                fprintf(stderr, &amp;quot;Failed to create window.\n&amp;quot;);
+                glfwTerminate();
+                return -1;
+        }
+        glfwMakeContextCurrent(window);
+
+        /* 初始化glad */
+        if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress))
+        {
+                fprintf(stderr, &amp;quot;Failed to initialize GLAD\n&amp;quot;);
+                glfwTerminate();
+                return -1;
+        }
+
+        /* prepare render */
+
+        /* main loop */
+
+        glfwTerminate();
+        return 0;
+}
+&quot; data-info=&quot;language-C&quot; data-lang=&quot;C&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-C&quot;&gt;int main(int argc, char **argv)
+{
+        glfwInit();
+        /* 使用OpenGL版本为3.3 */
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+        /* 使用核心模式 */
+        glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
+#ifdef __APPLE__
+        glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+#endif
+
+        /* 创建窗口 */
+        GLFWwindow *window =
+                    glfwCreateWindow(800, 600, &quot;Hello World&quot;, NULL, NULL);
+        if (window == NULL) {
+                fprintf(stderr, &quot;Failed to create window.\n&quot;);
+                glfwTerminate();
+                return -1;
+        }
+        glfwMakeContextCurrent(window);
+
+        /* 初始化glad */
+        if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress))
+        {
+                fprintf(stderr, &quot;Failed to initialize GLAD\n&quot;);
+                glfwTerminate();
+                return -1;
+        }
+
+        /* prepare render */
+
+        /* main loop */
+
+        glfwTerminate();
+        return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;创建窗口的代码比较容易理解，到这里可以尝试编译一下代码检查有没有遇到什么问题，如果编译失败了
+可以尝试检查OpenGL是否安装正确，代码哪里出现了什么问题。&lt;/p&gt;
+&lt;p&gt;编译代码并运行生成的程序：&lt;/p&gt;
+&lt;figure data-raw=&quot;cd build
+cmake .. &amp;amp;&amp;amp; make -j8
+./main
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;cd build
+cmake .. &amp;amp;&amp;amp; make -j8
+./main
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;如果一切正常的话，可以看到窗口一闪而过就消失了，因为到目前为止我们只创建了一个窗口，创建完成后
+就结束了程序，所以窗口会瞬间消失。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;准备绘图&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn_opengl/#%E5%87%86%E5%A4%87%E7%BB%98%E5%9B%BE&quot; title=&quot;准备绘图&quot;&gt;&lt;/a&gt;准备绘图&lt;/h1&gt;
+&lt;p&gt;在绘制形状之前，我们需要一些准备工作比如设定视口、回调函数，创建顶点缓冲区等操作，
+然后在大循环中进行渲染绘制。&lt;/p&gt;
+&lt;h2 id=&quot;视口&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn_opengl/#%E8%A7%86%E5%8F%A3&quot; title=&quot;视口&quot;&gt;&lt;/a&gt;视口&lt;/h2&gt;
+&lt;p&gt;首先要告诉OpenGL咱的窗口尺寸是多少，以便OpenGL根据窗口大小显示数据和坐标。&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;/* prepare render */&lt;/code&gt;处添加代码：&lt;/p&gt;
+&lt;figure data-raw=&quot;glViewport(0, 0, 800, 600);
+&quot; data-info=&quot;language-C&quot; data-lang=&quot;C&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-C&quot;&gt;glViewport(0, 0, 800, 600);
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;首先需要知道你传给OpenGL的坐标都是&lt;code&gt;-1.0&lt;/code&gt;到&lt;code&gt;1.0&lt;/code&gt;之间的数，OpenGL再将其转换成屏幕上的像素点
+坐标，这个过程由GPU运算所得，所以你得告诉OpenGL你的屏幕尺寸，&lt;code&gt;glViewport&lt;/code&gt;的前两个参数为
+&lt;code&gt;0, 0&lt;/code&gt;指的是窗口左下角的位置，这个值咱目前不需要修改。&lt;/p&gt;
+&lt;h2 id=&quot;回调函数&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn_opengl/#%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0&quot; title=&quot;回调函数&quot;&gt;&lt;/a&gt;回调函数&lt;/h2&gt;
+&lt;p&gt;我们需要一个窗口被更改的回调函数，这样当窗口尺寸发生变化时，程序可以调用这个函数调整视口。&lt;/p&gt;
+&lt;p&gt;编写函数&lt;code&gt;framebuffer_size_callback&lt;/code&gt;用来处理窗口尺寸更改:&lt;/p&gt;
+&lt;figure data-raw=&quot;void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+        glViewport(0, 0, width, height);
+}
+&quot; data-info=&quot;language-C&quot; data-lang=&quot;C&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-C&quot;&gt;void framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+        glViewport(0, 0, width, height);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;这样当你拖拽窗口进行缩放时，窗口里的图像也会跟着窗口尺寸改变而进行缩放。&lt;/p&gt;
+&lt;p&gt;然后我们需要注册这个回调函数，在&lt;code&gt;/* prepare render */&lt;/code&gt;处添加下面的代码:&lt;/p&gt;
+&lt;figure data-raw=&quot;glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+&quot; data-info=&quot;language-C&quot; data-lang=&quot;C&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-C&quot;&gt;glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;处理按键操作&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn_opengl/#%E5%A4%84%E7%90%86%E6%8C%89%E9%94%AE%E6%93%8D%E4%BD%9C&quot; title=&quot;处理按键操作&quot;&gt;&lt;/a&gt;处理按键操作&lt;/h2&gt;
+&lt;p&gt;编写&lt;code&gt;processInput&lt;/code&gt;函数处理用户按键操作：&lt;/p&gt;
+&lt;figure data-raw=&quot;void processInput(GLFWwindow *window)
+{
+        if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS){
+                glfwSetWindowShouldClose(window, GL_TRUE);
+        }
+
+        if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS) {
+            glfwSetWindowShouldClose(window, GL_TRUE);
+        }
+}
+&quot; data-info=&quot;language-C&quot; data-lang=&quot;C&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-C&quot;&gt;void processInput(GLFWwindow *window)
+{
+        if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS){
+                glfwSetWindowShouldClose(window, GL_TRUE);
+        }
+
+        if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS) {
+            glfwSetWindowShouldClose(window, GL_TRUE);
+        }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;当用户按下&lt;code&gt;ESC&lt;/code&gt;或&lt;code&gt;Q&lt;/code&gt;键时，可以结束OpenGL窗口的运行。&lt;/p&gt;
+&lt;h2 id=&quot;大循环&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn_opengl/#%E5%A4%A7%E5%BE%AA%E7%8E%AF&quot; title=&quot;大循环&quot;&gt;&lt;/a&gt;大循环&lt;/h2&gt;
+&lt;p&gt;在大循环中我们进行游戏的每一帧的绘制，利用双缓冲将绘制的图形放到缓存中，然后将缓存中的图形刷新到
+显示器上，(因为OpenGL绘图操作是逐行绘制的，如果不先将图形存到显存中而直接显示在显示器上的话，
+在画面变动时你很可能会看到撕裂，闪烁，垂直不同步这类的问题)。&lt;/p&gt;
+&lt;p&gt;在大循环中我们要处理按键操作(例如游戏中的&lt;code&gt;W S A D&lt;/code&gt;代表前后左右移动)，然后在大循环中绘制图形，
+大循环部分的代码长这个样子:&lt;/p&gt;
+&lt;figure data-raw=&quot;while(!glfwWindowShouldClose(window))
+{
+        /* process input */
+        processInput(window);
+
+        /* draw something */
+
+        /* swap buffer */
+        glfwSwapBuffers(window);
+        /* poll events */
+        glfwPollEvents();
+}
+&quot; data-info=&quot;language-C&quot; data-lang=&quot;C&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-C&quot;&gt;while(!glfwWindowShouldClose(window))
+{
+        /* process input */
+        processInput(window);
+
+        /* draw something */
+
+        /* swap buffer */
+        glfwSwapBuffers(window);
+        /* poll events */
+        glfwPollEvents();
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;大循环每循环一次，OpenGL就渲染了一帧画面并显示在显示器上，所以你可以计算一秒钟循环的次数而求得
+游戏的帧率。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;因为我们使用了双缓冲，所以这时游戏的帧数被限制为等于显示的刷新帧数，
+比如显示器刷新率为144帧，游戏的帧率就被锁为144，如果想解除这个限制需要改为单缓冲。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;到此为止，我们已经创建了一个游戏引擎，但是这个引擎还什么都没有做。&lt;/p&gt;
+&lt;p&gt;尝试编译代码，可以看到一个黑色的窗口，按&lt;code&gt;ESC&lt;/code&gt;或&lt;code&gt;Q&lt;/code&gt;即可结束运行。&lt;/p&gt;
+&lt;!-- ![Window](images/create_window.png &quot;创建窗口&quot;) --&gt;
+&lt;div style=&quot;text-align:center&quot;&gt;
+    &lt;img src=&quot;/posts/learn_opengl/images/create_window.png&quot; alt=&quot;Window&quot; title=&quot;创建窗口&quot;&gt;
+&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h1 id=&quot;画三角形&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn_opengl/#%E7%94%BB%E4%B8%89%E8%A7%92%E5%BD%A2&quot; title=&quot;画三角形&quot;&gt;&lt;/a&gt;画三角形&lt;/h1&gt;
+&lt;p&gt;首先我们需要创建一个顶点缓冲对象，用来存我们的顶点信息，这个对象叫“Vertex Buffer Object”
+（VBO），之后创建一个顶点数组对象“Vertex Array Object”（VAO），用来存我们创建的VBO。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;尚未完工，不定期更新
+2021.05.10 21:33:02&lt;/p&gt;
+&lt;/blockquote&gt;
+
+    </content>
+    
+    
+    <category term="学习资料" label="学习资料" scheme="https://blog.starry-s.me/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" />
+    
+    <category term="OpenGL" label="OpenGL" scheme="https://blog.starry-s.me/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/OpenGL/" />
+    
+    
+    <category term="学习资料" label="学习资料" scheme="https://blog.starry-s.me/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" />
+    
+    <category term="OpenGL" label="OpenGL" scheme="https://blog.starry-s.me/tags/OpenGL/" />
+    
+  </entry>
   
   
   
