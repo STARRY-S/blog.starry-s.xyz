@@ -80,8 +80,10 @@ const ap0 = new APlayer ({
 &lt;/script&gt; 
 
 &lt;hr&gt;
-&lt;p&gt;前一阵子买了二手的适马17-50 f2.8镜头，在网上看这镜头很适合新手学摄影，而且这个焦段+大光圈适用的范围也很广。遂把在家吃灰了一年的相机带回学校，打算找时间拍点风景照片。&lt;/p&gt;
-&lt;p&gt;实际上买完新镜头后我就拿它拍了几张花的照片后也没怎么出过门，因为照片拍得比较少，所以只好先挑几张好看的微距照片贴到博客上面，以后有机会拍到更好的照片后再更新。&lt;/p&gt;
+&lt;p&gt;前一阵子买了二手的适马17-50 f2.8镜头，在网上看这镜头很适合新手学摄影，而且这个焦段+大光圈
+适用的范围也很广。遂把在家吃灰了一年的相机带回学校，打算找时间拍点风景照片。&lt;/p&gt;
+&lt;p&gt;实际上买完新镜头后我就拿它拍了几张花的照片后也没怎么出过门，因为照片拍得比较少，所以只好先挑
+几张好看的微距照片贴到博客上面，以后有机会拍到更好的照片后再更新。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;仅使用Raw Therapee对照片进行了裁剪并调整颜色&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -666,7 +668,7 @@ qt5设置环境变量&lt;code&gt;QT_SCREEN_SCALE_FACTORS=2&lt;/code&gt;。&lt;/p
     
     
     <summary type="html">
-      &lt;p&gt;&lt;img src=&quot;/posts/hello-2021/images/1.jpg&quot; alt=&quot;Luna tear&quot; title=&quot;Luna tear&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;/posts/hello-2021/images/1.jpg&quot; alt=&quot;Lunar tear&quot; title=&quot;Lunar tear&quot;&gt;&lt;/p&gt;
 
     </summary>
     
@@ -674,7 +676,7 @@ qt5设置环境变量&lt;code&gt;QT_SCREEN_SCALE_FACTORS=2&lt;/code&gt;。&lt;/p
     <content type="html">
       &lt;link href=&quot;/css/APlayer.min.css&quot; rel=&quot;stylesheet&quot;&gt;
 &lt;script src= &quot;/js/APlayer.min.js&quot;&gt;&lt;/script&gt;
-&lt;p&gt;&lt;img src=&quot;/posts/hello-2021/images/1.jpg&quot; alt=&quot;Luna tear&quot; title=&quot;Luna tear&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/hello-2021/images/1.jpg&quot; alt=&quot;Lunar tear&quot; title=&quot;Lunar tear&quot;&gt;&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 
  &lt;!--APlayer--&gt;
@@ -719,7 +721,7 @@ const ap0 = new APlayer ({
 &lt;p&gt;除此之外，年末的时候在睡前为了打发时间看了几集非自然死亡。&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;这一年又打了一遍尼尔：机械纪元。和第一次玩不太一样，二刷时我尽可能的多做支线任务，不开简单模式和自动芯片。不过通关后我还没有打E结局，总想找个时间把其他支线任务做完。&lt;/p&gt;
-&lt;p&gt;年初在逛淘宝时发现了台版的尼尔原著小说，于是毫不犹豫的把少年寄叶、短话和长话全都买了下来。不过截至目前我只看完了短话。在看完艾米尔的回忆那一章后很感动于是打开游戏找到相对应的支线任务，废了很大力气找到那三朵“Luna Tear”（月之泪）之后，前往种着一大片月之泪的地下室。&lt;/p&gt;
+&lt;p&gt;年初在逛淘宝时发现了台版的尼尔原著小说，于是毫不犹豫的把少年寄叶、短话和长话全都买了下来。不过截至目前我只看完了短话。在看完艾米尔的回忆那一章后很感动于是打开游戏找到相对应的支线任务，废了很大力气找到那三朵“Lunar Tear”（月之泪）之后，前往种着一大片月之泪的地下室。&lt;/p&gt;
 &lt;p&gt;在网上看攻略找到了艾米尔居住的家，于是又走了很远的路到地下很深的地方，到他家里面拿（偷）走了面具。&lt;/p&gt;
 &lt;p&gt;据说去他家偷完东西后会触发艾米尔的boss支线，不过因为在寝室没太多时间所以我没有继续玩下去。&lt;/p&gt;
 &lt;p&gt;蛮期待2021年4月发行的尼尔续作的，不过有些担心我的笔记本还能不能跑得起来。&lt;/p&gt;
@@ -2675,9 +2677,7 @@ const ap2 = new APlayer ({
     
     
     <summary type="html">
-      &lt;div class=&quot;alert-red&quot;&gt;本篇由于创作时间过于久远, 作者已无法保证其准确性, 内容仅供参考。&lt;/div&gt;
-
-&lt;p&gt;生命不息, 折腾不止...&lt;/p&gt;
+      &lt;p&gt;生命不息, 折腾不止...&lt;/p&gt;
 
     </summary>
     
@@ -2685,12 +2685,12 @@ const ap2 = new APlayer ({
     <content type="html">
       &lt;link href=&quot;/css/APlayer.min.css&quot; rel=&quot;stylesheet&quot;&gt;
 &lt;script src= &quot;/js/APlayer.min.js&quot;&gt;&lt;/script&gt;
-&lt;div class=&quot;alert-red&quot;&gt;本篇由于创作时间过于久远, 作者已无法保证其准确性, 内容仅供参考。&lt;/div&gt;
-
 &lt;p&gt;生命不息, 折腾不止...&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 
 &lt;hr&gt;
+&lt;div class=&quot;alert-red&quot;&gt;本篇由于创作时间过于久远, 作者已无法保证其准确性, 内容仅供参考。&lt;/div&gt;
+
  &lt;!--APlayer--&gt;
 &lt;div id=&quot;aplayer0&quot; style=&quot;background: var(--color-main-background)&quot;&gt;&lt;/div&gt;
 &lt;script&gt;
@@ -2882,22 +2882,18 @@ reboot
     
     
     <summary type="html">
-      &lt;div class=&quot;alert-red&quot;&gt;
-本篇由于创作时间过于久远，部分下载链接可能失效，因长期未更新，教程仅供参考。
-&lt;/div&gt;
-
-&lt;p&gt;终于到了暑假可以开一个Minecraft服务器和小伙伴联机的时候了！在发现我对吃鸡那类的游戏除了觉得好玩以外没有任何天赋( &lt;del&gt;没钱买鼠标？&lt;/del&gt; )后打算继续玩我的世界，所以为了方便那些想玩Minecraft（非网易代理版）但是还不知道怎么操作的那些小伙伴们，这篇教程就这么诞生了。&lt;/p&gt;
+      &lt;p&gt;终于到了暑假可以开一个Minecraft服务器和小伙伴联机的时候了！在发现我对吃鸡那类的游戏除了觉得好玩以外没有任何天赋( &lt;del&gt;没钱买鼠标？&lt;/del&gt; )后打算继续玩我的世界，所以为了方便那些想玩Minecraft（非网易代理版）但是还不知道怎么操作的那些小伙伴们，这篇教程就这么诞生了。&lt;/p&gt;
 
     </summary>
     
     
     <content type="html">
-      &lt;div class=&quot;alert-red&quot;&gt;
+      &lt;p&gt;终于到了暑假可以开一个Minecraft服务器和小伙伴联机的时候了！在发现我对吃鸡那类的游戏除了觉得好玩以外没有任何天赋( &lt;del&gt;没钱买鼠标？&lt;/del&gt; )后打算继续玩我的世界，所以为了方便那些想玩Minecraft（非网易代理版）但是还不知道怎么操作的那些小伙伴们，这篇教程就这么诞生了。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+&lt;div class=&quot;alert-red&quot;&gt;
 本篇由于创作时间过于久远，部分下载链接可能失效，因长期未更新，教程仅供参考。
 &lt;/div&gt;
-
-&lt;p&gt;终于到了暑假可以开一个Minecraft服务器和小伙伴联机的时候了！在发现我对吃鸡那类的游戏除了觉得好玩以外没有任何天赋( &lt;del&gt;没钱买鼠标？&lt;/del&gt; )后打算继续玩我的世界，所以为了方便那些想玩Minecraft（非网易代理版）但是还不知道怎么操作的那些小伙伴们，这篇教程就这么诞生了。&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;本教程将分为二个部分，第一部分将指导你如何使用HMCL启动器安装并使用Minecraft（非网易代理版），第二部分处理一些常见的问题。

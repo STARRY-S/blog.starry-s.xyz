@@ -13,13 +13,13 @@ categories:
 - 路由器
 ---
 
-<div class="alert-red">本篇由于创作时间过于久远, 作者已无法保证其准确性, 内容仅供参考。</div>
-
 生命不息, 折腾不止...
 
 <!--more-->
 
 ------
+
+<div class="alert-red">本篇由于创作时间过于久远, 作者已无法保证其准确性, 内容仅供参考。</div>
 
 <!--aplayer
 {
@@ -66,7 +66,7 @@ SSH到路由器:
 
   如果在ssh到路由器时遇到no matching key exchange method found错误，编辑`~/.ssh/config`, 加入下面两行：
 
-  ``` 
+  ```
   Host *
       KexAlgorithms +diffie-hellman-group1-sha1
   ```
