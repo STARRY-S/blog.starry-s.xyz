@@ -89,7 +89,7 @@ int main(int argc, char **argv)
                 /* draw something */
                 glUseProgram(shaderProgram);
                 glBindVertexArray(VAO);
-                // glDrawArrays(GL_TRIANGLES, 0, 3);
+                glDrawArrays(GL_TRIANGLES, 0, 3);
                 glBindVertexArray(0);
 
                 /* swap buffer */
