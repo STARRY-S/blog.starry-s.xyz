@@ -46,10 +46,40 @@
     
     
     <content type="html">
-      &lt;p&gt;其实咱很久很久以前就开始看&lt;a href=&quot;https://learnopengl-cn.github.io/&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;LearnOpenGL CN&lt;/a&gt;这个网站了......&lt;/p&gt;
+      &lt;link href=&quot;/css/APlayer.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;script src= &quot;/js/APlayer.min.js&quot;&gt;&lt;/script&gt;
+&lt;p&gt;其实咱很久很久以前就开始看&lt;a href=&quot;https://learnopengl-cn.github.io/&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;LearnOpenGL CN&lt;/a&gt;这个网站了......&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 
 &lt;hr&gt;
+&lt;!-- obj_w5rDlsOJwrLDjj7CmsOj_8776656540_d358_942f_cb9c_b29cfa734f2c6c5f95938d794ce3d90e.mov --&gt;
+
+ &lt;!--APlayer--&gt;
+&lt;div id=&quot;aplayer0&quot; style=&quot;background: var(--color-main-background)&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+const ap0 = new APlayer ({
+    container: document.getElementById(&quot;aplayer0&quot;),
+    theme: &quot;#33363b&quot;,
+    fixed: false,
+    listFolded: false,
+    listMaxHeight: false,
+    lrcType: false,
+    mini: false,
+    volume: 0.7,
+    order: &quot;list&quot;,
+    loop: &quot;all&quot;,
+    autoplay: false,
+    audio: [{
+        name: &quot;One Light&quot;,
+        artist: &quot;Kalafina&quot;,
+        url: &quot;https://music.starry-s.me/music/obj_w5rDlsOJwrLDjj7CmsOj_8776656540_d358_942f_cb9c_b29cfa734f2c6c5f95938d794ce3d90e.mov&quot;,
+        cover: &quot;https://music.starry-s.me/music/cover/Kalafina All Time Best 2008-2018 small.jpg&quot;,
+        lrc: &quot;&quot;,
+        theme: &quot;#484444&quot;
+    }]
+});
+&lt;/script&gt; 
+
 &lt;h1 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn_opengl/#%E5%89%8D%E8%A8%80&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;
 &lt;p&gt;首先需要明白什么是核心模式，什么是立即渲染模式，立即渲染模式的代码中都包含&lt;code&gt;glBegin()&lt;/code&gt;和&lt;code&gt;glEnd()&lt;/code&gt;，绘图的部分都是在这两个函数之间，比如画一个点就是&lt;code&gt;glVertex2f(x, y)&lt;/code&gt;，这种方式画图确实很简单，用户只要提供坐标和颜色就好了，不用知道GPU干了什么，而缺点是性能低，有很多限制，所以新版本的OpenGL为了给开发者提供更多的可操作空间而逐渐废弃了立即渲染改用核心模式。&lt;/p&gt;
 &lt;p&gt;核心模式提供了很多强大的功能，可以管线编程，代码量增加了很多，所以对初学者不太友好。&lt;/p&gt;
@@ -533,6 +563,12 @@ configure_file(src/fragment.glsl fragment.glsl COPYONLY)
 &quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;configure_file(src/vertex.glsl vertex.glsl COPYONLY)
 configure_file(src/fragment.glsl fragment.glsl COPYONLY)
 &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;编译后运行程序，可以看到一个五颜六色的三角形，它的左下角为红色，右下角为绿色，顶点为蓝色。&lt;/p&gt;
+&lt;div style=&quot;text-align:center&quot;&gt;
+    &lt;img src=&quot;/posts/learn_opengl/images/draw_triangle.png&quot; alt=&quot;三角形&quot; title=&quot;三角形&quot;&gt;
+&lt;/div&gt;
+
+
 &lt;p&gt;如果你遇到了问题，或者哪里不太明白，可以看咱写好的代码：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;a href=&quot;/posts/learn_opengl/learn-code-2/main.c&quot;&gt;main.c&lt;/a&gt;&lt;/p&gt;
@@ -548,10 +584,7 @@ configure_file(src/fragment.glsl fragment.glsl COPYONLY)
 &lt;li&gt;&lt;p&gt;&lt;a href=&quot;/posts/learn_opengl/learn-code-2/CMakeLists.txt&quot;&gt;CMakeLists.txt&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;编译后运行程序，可以看到一个五颜六色的三角形，它的左下角为红色，右下角为绿色，顶点为蓝色。&lt;/p&gt;
-&lt;div style=&quot;text-align:center&quot;&gt;
-    &lt;img src=&quot;/posts/learn_opengl/images/draw_triangle.png&quot; alt=&quot;三角形&quot; title=&quot;三角形&quot;&gt;
-&lt;/div&gt;
+&lt;hr&gt;
 
     </content>
     

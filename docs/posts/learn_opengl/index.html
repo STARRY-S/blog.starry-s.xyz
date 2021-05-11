@@ -347,10 +347,40 @@
       </div>
     </header>
     <main class="post-main" id="scrollspy-container" itemprop="articleBody">
-      <p>其实咱很久很久以前就开始看<a href="https://learnopengl-cn.github.io/" target="_blank" rel="external nofollow noreferrer noopener">LearnOpenGL CN</a>这个网站了......</p>
+      <link href="/css/APlayer.min.css" rel="stylesheet">
+<script src= "/js/APlayer.min.js"></script>
+<p>其实咱很久很久以前就开始看<a href="https://learnopengl-cn.github.io/" target="_blank" rel="external nofollow noreferrer noopener">LearnOpenGL CN</a>这个网站了......</p>
 <a id="more"></a>
 
 <hr>
+<!-- obj_w5rDlsOJwrLDjj7CmsOj_8776656540_d358_942f_cb9c_b29cfa734f2c6c5f95938d794ce3d90e.mov -->
+
+ <!--APlayer-->
+<div id="aplayer0" style="background: var(--color-main-background)"></div>
+<script>
+const ap0 = new APlayer ({
+    container: document.getElementById("aplayer0"),
+    theme: "#33363b",
+    fixed: false,
+    listFolded: false,
+    listMaxHeight: false,
+    lrcType: false,
+    mini: false,
+    volume: 0.7,
+    order: "list",
+    loop: "all",
+    autoplay: false,
+    audio: [{
+        name: "One Light",
+        artist: "Kalafina",
+        url: "https://music.starry-s.me/music/obj_w5rDlsOJwrLDjj7CmsOj_8776656540_d358_942f_cb9c_b29cfa734f2c6c5f95938d794ce3d90e.mov",
+        cover: "https://music.starry-s.me/music/cover/Kalafina All Time Best 2008-2018 small.jpg",
+        lrc: "",
+        theme: "#484444"
+    }]
+});
+</script> 
+
 <h1 id="前言"><a class="header-link" href="/posts/learn_opengl/#%E5%89%8D%E8%A8%80" title="前言"></a>前言</h1>
 <p>首先需要明白什么是核心模式，什么是立即渲染模式，立即渲染模式的代码中都包含<code>glBegin()</code>和<code>glEnd()</code>，绘图的部分都是在这两个函数之间，比如画一个点就是<code>glVertex2f(x, y)</code>，这种方式画图确实很简单，用户只要提供坐标和颜色就好了，不用知道GPU干了什么，而缺点是性能低，有很多限制，所以新版本的OpenGL为了给开发者提供更多的可操作空间而逐渐废弃了立即渲染改用核心模式。</p>
 <p>核心模式提供了很多强大的功能，可以管线编程，代码量增加了很多，所以对初学者不太友好。</p>
@@ -834,6 +864,12 @@ configure_file(src/fragment.glsl fragment.glsl COPYONLY)
 " class="code-block"><pre class="code"><code>configure_file(src/vertex.glsl vertex.glsl COPYONLY)
 configure_file(src/fragment.glsl fragment.glsl COPYONLY)
 </code></pre></figure>
+<p>编译后运行程序，可以看到一个五颜六色的三角形，它的左下角为红色，右下角为绿色，顶点为蓝色。</p>
+<div style="text-align:center">
+    <img src="/posts/learn_opengl/images/draw_triangle.png" alt="三角形" title="三角形">
+</div>
+
+
 <p>如果你遇到了问题，或者哪里不太明白，可以看咱写好的代码：</p>
 <ul>
 <li><p><a href="/posts/learn_opengl/learn-code-2/main.c">main.c</a></p>
@@ -849,10 +885,7 @@ configure_file(src/fragment.glsl fragment.glsl COPYONLY)
 <li><p><a href="/posts/learn_opengl/learn-code-2/CMakeLists.txt">CMakeLists.txt</a></p>
 </li>
 </ul>
-<p>编译后运行程序，可以看到一个五颜六色的三角形，它的左下角为红色，右下角为绿色，顶点为蓝色。</p>
-<div style="text-align:center">
-    <img src="/posts/learn_opengl/images/draw_triangle.png" alt="三角形" title="三角形">
-</div>
+<hr>
 
     </main>
     <footer class="post-footer">
@@ -1240,4 +1273,4 @@ configure_file(src/fragment.glsl fragment.glsl COPYONLY)
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.7.3 at 2021-05-11T10:18:21.500Z. -->
+<!-- Page built by Hikaru v1.7.3 at 2021-05-11T11:00:41.201Z. -->

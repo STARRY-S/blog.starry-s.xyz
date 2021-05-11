@@ -17,6 +17,18 @@ categories:
 
 -----
 
+<!-- obj_w5rDlsOJwrLDjj7CmsOj_8776656540_d358_942f_cb9c_b29cfa734f2c6c5f95938d794ce3d90e.mov -->
+
+<!--aplayer
+{
+    "name": "One Light",
+    "artist": "Kalafina",
+    "theme": "#484444",
+    "url": "https://music.starry-s.me/music/obj_w5rDlsOJwrLDjj7CmsOj_8776656540_d358_942f_cb9c_b29cfa734f2c6c5f95938d794ce3d90e.mov",
+    "cover": "https://music.starry-s.me/music/cover/Kalafina All Time Best 2008-2018 small.jpg"
+}
+-->
+
 # 前言
 
 首先需要明白什么是核心模式，什么是立即渲染模式，立即渲染模式的代码中都包含`glBegin()`和`glEnd()`，绘图的部分都是在这两个函数之间，比如画一个点就是`glVertex2f(x, y)`，这种方式画图确实很简单，用户只要提供坐标和颜色就好了，不用知道GPU干了什么，而缺点是性能低，有很多限制，所以新版本的OpenGL为了给开发者提供更多的可操作空间而逐渐废弃了立即渲染改用核心模式。
@@ -469,6 +481,13 @@ configure_file(src/vertex.glsl vertex.glsl COPYONLY)
 configure_file(src/fragment.glsl fragment.glsl COPYONLY)
 ```
 
+编译后运行程序，可以看到一个五颜六色的三角形，它的左下角为红色，右下角为绿色，顶点为蓝色。
+
+<div style="text-align:center">
+    <img src="images/draw_triangle.png" alt="三角形" title="三角形">
+</div>
+
+
 如果你遇到了问题，或者哪里不太明白，可以看咱写好的代码：
 
  - [main.c](learn-code-2/main.c)
@@ -483,8 +502,5 @@ configure_file(src/fragment.glsl fragment.glsl COPYONLY)
 
  - [CMakeLists.txt](learn-code-2/CMakeLists.txt)
 
-编译后运行程序，可以看到一个五颜六色的三角形，它的左下角为红色，右下角为绿色，顶点为蓝色。
 
-<div style="text-align:center">
-    <img src="images/draw_triangle.png" alt="三角形" title="三角形">
-</div>
+-----
