@@ -36,62 +36,28 @@
     <published>2021-05-10T13:33:10.000Z</published>
     
     
-    <updated>2021-05-10T13:33:10.000Z</updated>
+    <updated>2021-05-11T10:03:39.000Z</updated>
     
     
     <summary type="html">
-      &lt;p&gt;其实咱很久很久以前就开始看&lt;a href=&quot;https://learnopengl-cn.github.io/&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;LearnOpenGL CN&lt;/a&gt;
-这个网站了......&lt;/p&gt;
+      &lt;p&gt;其实咱很久很久以前就开始看&lt;a href=&quot;https://learnopengl-cn.github.io/&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;LearnOpenGL CN&lt;/a&gt;这个网站了......&lt;/p&gt;
 
     </summary>
     
     
     <content type="html">
-      &lt;p&gt;其实咱很久很久以前就开始看&lt;a href=&quot;https://learnopengl-cn.github.io/&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;LearnOpenGL CN&lt;/a&gt;
-这个网站了......&lt;/p&gt;
+      &lt;p&gt;其实咱很久很久以前就开始看&lt;a href=&quot;https://learnopengl-cn.github.io/&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;LearnOpenGL CN&lt;/a&gt;这个网站了......&lt;/p&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-
-&lt;div class=&quot;alert-blue&quot;&gt;
-本篇仍在编写中...
-&lt;/div&gt;
 
 &lt;hr&gt;
 &lt;h1 id=&quot;前言&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn_opengl/#%E5%89%8D%E8%A8%80&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;
-&lt;p&gt;咱是从高中就开始看LearnOpenGL CN这网站了，但是那个时候咱只学了一点C，所以当时咱遇到了C++的
-命名空间&lt;code&gt;std::&lt;/code&gt;时就一头雾水，更别说啥渲染图形了。&lt;/p&gt;
-&lt;p&gt;然后大一时也尝试过学OpenGL这玩意，当时不懂啥叫状态机啥叫顶点/片段着色器，被glsl绕得蒙头转向，
-心想着OpenGL怎么这么复杂，照别人写好的代码抄一遍确实能画个五颜六色的三角形出来，但是当时不懂
-为什么这样子向顶点着色器传顶点坐标，到底啥叫着色器，它究竟干了什么， GLSL的变量到底是怎么用的。&lt;/p&gt;
-&lt;!-- 所以终于上了图形学的课后这些东西才一点点弄明白，然而图形学老师用的是旧版GLUT的立即渲染模式，
-还说写OpenGL很简单一点也不难，实际上老师的课件也只教了我们怎么用OpenGL画点/线/三角形。
-用GLUT在教学上确实够用了而且我上的不是OpenGL课程，但是....
-
-“只要告诉两点坐标就能画个很丑的线出来了，这一点也不难”  :(
-
-所以咱啃了好多遍这个教程才算是一点点理解了OpenGL是如何绘图这个过程的吧
-
-&gt; ~~老师：“不要因为上过我的这门课就和别和别人说你们学过计算机图形学”~~ --&gt;
-
-&lt;hr&gt;
-&lt;p&gt;首先需要明白什么是核心渲染模式，什么是立即渲染模式，立即渲染模式的代码中都包含&lt;code&gt;glBegin()&lt;/code&gt;
-和&lt;code&gt;glEnd()&lt;/code&gt;，绘图的部分都是在这两个函数之间，比如画一个点就是&lt;code&gt;glVertex2f(x, y)&lt;/code&gt;，这种方式
-画图确实很简单，和canvas，java的swing一样，用户只要提供坐标和颜色就好了，
-不用知道GPU干了什么，而缺点是性能低，有很多限制，所以新版本的OpenGL为了给开发者提供更多的
-可操作空间而废弃立即渲染改用核心模式。&lt;/p&gt;
+&lt;p&gt;首先需要明白什么是核心模式，什么是立即渲染模式，立即渲染模式的代码中都包含&lt;code&gt;glBegin()&lt;/code&gt;和&lt;code&gt;glEnd()&lt;/code&gt;，绘图的部分都是在这两个函数之间，比如画一个点就是&lt;code&gt;glVertex2f(x, y)&lt;/code&gt;，这种方式画图确实很简单，用户只要提供坐标和颜色就好了，不用知道GPU干了什么，而缺点是性能低，有很多限制，所以新版本的OpenGL为了给开发者提供更多的可操作空间而逐渐废弃了立即渲染改用核心模式。&lt;/p&gt;
 &lt;p&gt;核心模式提供了很多强大的功能，可以管线编程，代码量增加了很多，所以对初学者不太友好。&lt;/p&gt;
-&lt;p&gt;LearnOpenGL CN上面的代码基于C++，而OpenGL是用C编写的，教程上的代码除了矩阵运算部分可以
-使用C++的运算符重载而使代码编写起来变得更简单一些外，其他部分基本没啥区别，而且教程为了便于教学
-使用的也是面向过程式编程，没有将各个功能封装到一个类里面，所以咱这篇教程用C编写。&lt;/p&gt;
-&lt;p&gt;要记住C就是C，C++就是C++，C不是C++的子集，只能说C++兼容部分C的代码，不要把C和C++混用，
-不要因为C++支持面向对象使得一些功能看起来简单很易于使用就轻易迈入C++的坑，毕竟还有那么多支持
-面向对象的语言可以选。&lt;/p&gt;
+&lt;p&gt;LearnOpenGL CN上面的代码基于C++，而OpenGL是用C编写的，教程上的代码除了矩阵运算部分可以使用C++的运算符重载而使代码编写起来变得更简单一些外，其他部分基本没啥区别，而且教程为了便于教学使用的也是面向过程式编程，没有将各个功能封装到一个类里面，所以咱这篇教程用C编写。&lt;/p&gt;
+&lt;p&gt;要记住C就是C，C++就是C++，C不是C++的子集，只能说C++兼容部分C的代码，不要把C和C++混用，不要因为C++支持面向对象使得一些功能看起来简单很易于使用就轻易迈入C++的坑。&lt;/p&gt;
 &lt;h1 id=&quot;准备工作&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn_opengl/#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h1&gt;
-&lt;p&gt;有关OpenGL的介绍以及安装GLFW、GLAD以及编译所需的CMake的部分可以直接看
-&lt;a href=&quot;https://learnopengl-cn.github.io/01%20Getting%20started/02%20Creating%20a%20window/&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;教程&lt;/a&gt;，
-咱尽可能把教程上没有提到的或者是刚开始学OpenGL很难理解的部分记录下来。&lt;/p&gt;
-&lt;p&gt;大体上就是安装&lt;code&gt;glfw&lt;/code&gt;，Arch Linux使用包管理器&lt;code&gt;sudo pacman -S glfw-x11&lt;/code&gt;
-(如果你使用的是wayland，那么安装&lt;code&gt;glfw-wayland&lt;/code&gt;)，然后把下载的&lt;code&gt;glad/glad.h&lt;/code&gt;复制到
-&lt;code&gt;/usr/include&lt;/code&gt;下，把&lt;code&gt;glad.c&lt;/code&gt;复制到工程文件夹的代码目录下。&lt;/p&gt;
+&lt;p&gt;有关OpenGL的介绍以及安装GLFW、GLAD以及编译所需的CMake的部分可以直接看&lt;a href=&quot;https://learnopengl-cn.github.io/01%20Getting%20started/02%20Creating%20a%20window/&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;教程&lt;/a&gt;，咱尽可能把教程上没有提到的或者是刚开始学OpenGL很难理解的部分记录下来。&lt;/p&gt;
+&lt;p&gt;大体上就是安装&lt;code&gt;glfw&lt;/code&gt;，Arch Linux使用包管理器&lt;code&gt;sudo pacman -S glfw-x11&lt;/code&gt; (如果你使用的是wayland，那么安装&lt;code&gt;glfw-wayland&lt;/code&gt;)，然后把下载的&lt;code&gt;glad/glad.h&lt;/code&gt;复制到&lt;code&gt;/usr/include&lt;/code&gt;下，把&lt;code&gt;glad.c&lt;/code&gt;复制到工程文件夹的代码目录下。&lt;/p&gt;
 &lt;p&gt;为使用CMake生成Makefile，编写&lt;code&gt;CMakeLists.txt&lt;/code&gt;:&lt;/p&gt;
 &lt;figure data-raw=&quot;cmake_minimum_required(VERSION 3.0)
 
@@ -134,7 +100,7 @@ aux_source_directory(&quot;src&quot; GLSRC)
 add_executable(main ${GLSRC})
 target_link_libraries(main ${OPENGL_gl_LIBRARY} glfw)
 &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;完成上述步骤后，确保工程文件夹的结构大体如下：&lt;/p&gt;
+&lt;p&gt;完成上述步骤后，确保工程文件夹的结构如下：&lt;/p&gt;
 &lt;figure data-raw=&quot;├── build/
 ├── CMakeLists.txt
 └── src/
@@ -237,8 +203,7 @@ target_link_libraries(main ${OPENGL_gl_LIBRARY} glfw)
         return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;创建窗口的代码比较容易理解，到这里可以尝试编译一下代码检查有没有遇到什么问题，如果编译失败了
-可以尝试检查OpenGL是否安装正确，代码哪里出现了什么问题。&lt;/p&gt;
+&lt;p&gt;创建窗口的代码比较容易理解，到这里可以尝试编译一下代码检查有没有遇到什么问题，如果编译失败了可以尝试检查GLFW是否安装正确，代码哪里出现了什么问题。&lt;/p&gt;
 &lt;p&gt;编译代码并运行生成的程序：&lt;/p&gt;
 &lt;figure data-raw=&quot;cd build
 cmake .. &amp;amp;&amp;amp; make -j8
@@ -247,23 +212,20 @@ cmake .. &amp;amp;&amp;amp; make -j8
 cmake .. &amp;amp;&amp;amp; make -j8
 ./main
 &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;如果一切正常的话，可以看到窗口一闪而过就消失了，因为到目前为止我们只创建了一个窗口，创建完成后
-就结束了程序，所以窗口会瞬间消失。&lt;/p&gt;
+&lt;p&gt;如果一切正常的话，可以看到窗口一闪而过就消失了，因为到目前为止我们只创建了一个窗口，创建完成后就结束了程序，所以窗口会瞬间消失。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h1 id=&quot;准备绘图&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn_opengl/#%E5%87%86%E5%A4%87%E7%BB%98%E5%9B%BE&quot; title=&quot;准备绘图&quot;&gt;&lt;/a&gt;准备绘图&lt;/h1&gt;
-&lt;p&gt;在绘制形状之前，我们需要一些准备工作比如设定视口、回调函数，创建顶点缓冲区等操作，
-然后在大循环中进行渲染绘制。&lt;/p&gt;
+&lt;p&gt;在绘制形状之前，我们需要一些准备工作比如设定视口、回调函数，创建顶点缓冲区等操作，然后在大循环中进行渲染绘制。&lt;/p&gt;
 &lt;h2 id=&quot;视口&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn_opengl/#%E8%A7%86%E5%8F%A3&quot; title=&quot;视口&quot;&gt;&lt;/a&gt;视口&lt;/h2&gt;
 &lt;p&gt;首先要告诉OpenGL咱的窗口尺寸是多少，以便OpenGL根据窗口大小显示数据和坐标。&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;/* prepare render */&lt;/code&gt;处添加代码：&lt;/p&gt;
 &lt;figure data-raw=&quot;glViewport(0, 0, 800, 600);
 &quot; data-info=&quot;language-C&quot; data-lang=&quot;C&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-C&quot;&gt;glViewport(0, 0, 800, 600);
 &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;首先需要知道你传给OpenGL的坐标都是&lt;code&gt;-1.0&lt;/code&gt;到&lt;code&gt;1.0&lt;/code&gt;之间的数，OpenGL再将其转换成屏幕上的像素点
-坐标，这个过程由GPU运算所得，所以你得告诉OpenGL你的屏幕尺寸，&lt;code&gt;glViewport&lt;/code&gt;的前两个参数为
-&lt;code&gt;0, 0&lt;/code&gt;指的是窗口左下角的位置，这个值咱目前不需要修改。&lt;/p&gt;
+&lt;p&gt;首先需要知道你传给OpenGL的坐标都是&lt;code&gt;-1.0&lt;/code&gt;到&lt;code&gt;1.0&lt;/code&gt;之间的数，OpenGL再将其转换成屏幕上的像素点坐标，这个过程由GPU运算所得，所以你得告诉OpenGL你的屏幕尺寸，&lt;code&gt;glViewport&lt;/code&gt;的前两个参数为&lt;code&gt;0, 0&lt;/code&gt;指的是窗口左下角的位置，这个值咱目前不需要修改。&lt;/p&gt;
 &lt;h2 id=&quot;回调函数&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn_opengl/#%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0&quot; title=&quot;回调函数&quot;&gt;&lt;/a&gt;回调函数&lt;/h2&gt;
 &lt;p&gt;我们需要一个窗口被更改的回调函数，这样当窗口尺寸发生变化时，程序可以调用这个函数调整视口。&lt;/p&gt;
+&lt;p&gt;我们还需要一个&lt;a href=&quot;https://www.glfw.org/docs/3.3/input_guide.html#input_key&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;按键回调函数&lt;/a&gt;，当用户按下键盘上的某个按键后会调用这个回调函数处理按键操作。&lt;/p&gt;
 &lt;p&gt;编写函数&lt;code&gt;framebuffer_size_callback&lt;/code&gt;用来处理窗口尺寸更改:&lt;/p&gt;
 &lt;figure data-raw=&quot;void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
@@ -275,87 +237,321 @@ cmake .. &amp;amp;&amp;amp; make -j8
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;这样当你拖拽窗口进行缩放时，窗口里的图像也会跟着窗口尺寸改变而进行缩放。&lt;/p&gt;
-&lt;p&gt;然后我们需要注册这个回调函数，在&lt;code&gt;/* prepare render */&lt;/code&gt;处添加下面的代码:&lt;/p&gt;
-&lt;figure data-raw=&quot;glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-&quot; data-info=&quot;language-C&quot; data-lang=&quot;C&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-C&quot;&gt;glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;处理按键操作&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn_opengl/#%E5%A4%84%E7%90%86%E6%8C%89%E9%94%AE%E6%93%8D%E4%BD%9C&quot; title=&quot;处理按键操作&quot;&gt;&lt;/a&gt;处理按键操作&lt;/h2&gt;
-&lt;p&gt;编写&lt;code&gt;processInput&lt;/code&gt;函数处理用户按键操作：&lt;/p&gt;
-&lt;figure data-raw=&quot;void processInput(GLFWwindow *window)
+&lt;p&gt;编写&lt;code&gt;key_callback&lt;/code&gt;函数处理用户按键操作：&lt;/p&gt;
+&lt;figure data-raw=&quot;void key_callback(GLFWwindow *window, int key, int s, int action, int m)
 {
-        if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS){
+        if (key == GLFW_KEY_ESCAPE &amp;amp;&amp;amp; action == GLFW_PRESS) {
                 glfwSetWindowShouldClose(window, GL_TRUE);
         }
 
-        if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS) {
-            glfwSetWindowShouldClose(window, GL_TRUE);
+        if (key == GLFW_KEY_Q &amp;amp;&amp;amp; action == GLFW_PRESS) {
+                glfwSetWindowShouldClose(window, GL_TRUE);
         }
 }
-&quot; data-info=&quot;language-C&quot; data-lang=&quot;C&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-C&quot;&gt;void processInput(GLFWwindow *window)
+&quot; data-info=&quot;language-C&quot; data-lang=&quot;C&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-C&quot;&gt;void key_callback(GLFWwindow *window, int key, int s, int action, int m)
 {
-        if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS){
+        if (key == GLFW_KEY_ESCAPE &amp;amp;&amp;amp; action == GLFW_PRESS) {
                 glfwSetWindowShouldClose(window, GL_TRUE);
         }
 
-        if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS) {
-            glfwSetWindowShouldClose(window, GL_TRUE);
+        if (key == GLFW_KEY_Q &amp;amp;&amp;amp; action == GLFW_PRESS) {
+                glfwSetWindowShouldClose(window, GL_TRUE);
         }
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;当用户按下&lt;code&gt;ESC&lt;/code&gt;或&lt;code&gt;Q&lt;/code&gt;键时，可以结束OpenGL窗口的运行。&lt;/p&gt;
+&lt;p&gt;然后我们需要注册这两个回调函数，在&lt;code&gt;/* prepare render */&lt;/code&gt;处添加下面的代码:&lt;/p&gt;
+&lt;figure data-raw=&quot;glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+glfwSetKeyCallback(window, key_callback);
+&quot; data-info=&quot;language-C&quot; data-lang=&quot;C&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-C&quot;&gt;glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+glfwSetKeyCallback(window, key_callback);
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;h2 id=&quot;大循环&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn_opengl/#%E5%A4%A7%E5%BE%AA%E7%8E%AF&quot; title=&quot;大循环&quot;&gt;&lt;/a&gt;大循环&lt;/h2&gt;
-&lt;p&gt;在大循环中我们进行游戏的每一帧的绘制，利用双缓冲将绘制的图形放到缓存中，然后将缓存中的图形刷新到
-显示器上，(因为OpenGL绘图操作是逐行绘制的，如果不先将图形存到显存中而直接显示在显示器上的话，
-在画面变动时你很可能会看到撕裂，闪烁，垂直不同步这类的问题)。&lt;/p&gt;
-&lt;p&gt;在大循环中我们要处理按键操作(例如游戏中的&lt;code&gt;W S A D&lt;/code&gt;代表前后左右移动)，然后在大循环中绘制图形，
-大循环部分的代码长这个样子:&lt;/p&gt;
+&lt;p&gt;在大循环中，每循环一次代表绘制一帧画面。这里利用了双缓冲将绘制的图形放到缓存中，然后将缓存中的图形刷新到显示器上。(因为OpenGL绘图操作是逐行绘制的，如果不先将图形存到缓存中而直接显示在显示器上的话，在画面快速变动时你很可能会遇到画面撕裂，垂直不同步)&lt;/p&gt;
+&lt;p&gt;大循环部分的代码长这个样子:&lt;/p&gt;
 &lt;figure data-raw=&quot;while(!glfwWindowShouldClose(window))
 {
-        /* process input */
-        processInput(window);
+        /* 清空背景色为深灰色 */
+        glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
 
         /* draw something */
 
         /* swap buffer */
         glfwSwapBuffers(window);
-        /* poll events */
         glfwPollEvents();
 }
 &quot; data-info=&quot;language-C&quot; data-lang=&quot;C&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-C&quot;&gt;while(!glfwWindowShouldClose(window))
 {
-        /* process input */
-        processInput(window);
+        /* 清空背景色为深灰色 */
+        glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT);
 
         /* draw something */
 
         /* swap buffer */
         glfwSwapBuffers(window);
-        /* poll events */
         glfwPollEvents();
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;大循环每循环一次，OpenGL就渲染了一帧画面并显示在显示器上，所以你可以计算一秒钟循环的次数而求得
-游戏的帧率。&lt;/p&gt;
+&lt;p&gt;每次循环的开始需要使用&lt;code&gt;glClear&lt;/code&gt;清空屏幕，这样就不会看到上一次渲染的结果。&lt;/p&gt;
+&lt;p&gt;这里我们使用&lt;code&gt;glClearColor&lt;/code&gt;设定清空屏幕的颜色为接近纯黑色的灰色。&lt;/p&gt;
+&lt;p&gt;大循环每循环一次，OpenGL就渲染了一帧画面并显示在显示器上，所以你可以计算一秒钟循环的次数而估算游戏的帧率。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;因为我们使用了双缓冲，所以这时游戏的帧数被限制为等于显示的刷新帧数，
 比如显示器刷新率为144帧，游戏的帧率就被锁为144，如果想解除这个限制需要改为单缓冲。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
 &lt;p&gt;到此为止，我们已经创建了一个游戏引擎，但是这个引擎还什么都没有做。&lt;/p&gt;
-&lt;p&gt;尝试编译代码，可以看到一个黑色的窗口，按&lt;code&gt;ESC&lt;/code&gt;或&lt;code&gt;Q&lt;/code&gt;即可结束运行。&lt;/p&gt;
+&lt;p&gt;尝试编译代码，可以看到一个黑色（深灰）的窗口，按&lt;code&gt;ESC&lt;/code&gt;或&lt;code&gt;Q&lt;/code&gt;即可结束运行。&lt;/p&gt;
 &lt;!-- ![Window](images/create_window.png &quot;创建窗口&quot;) --&gt;
 &lt;div style=&quot;text-align:center&quot;&gt;
     &lt;img src=&quot;/posts/learn_opengl/images/create_window.png&quot; alt=&quot;Window&quot; title=&quot;创建窗口&quot;&gt;
 &lt;/div&gt;
 
+&lt;p&gt;如果你遇到什么问题，可以&lt;a href=&quot;/posts/learn_opengl/learn-code-1/main.c&quot;&gt;对照一下代码&lt;/a&gt;是否有问题。&lt;/p&gt;
 &lt;hr&gt;
-&lt;h1 id=&quot;画三角形&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn_opengl/#%E7%94%BB%E4%B8%89%E8%A7%92%E5%BD%A2&quot; title=&quot;画三角形&quot;&gt;&lt;/a&gt;画三角形&lt;/h1&gt;
-&lt;p&gt;首先我们需要创建一个顶点缓冲对象，用来存我们的顶点信息，这个对象叫“Vertex Buffer Object”
-（VBO），之后创建一个顶点数组对象“Vertex Array Object”（VAO），用来存我们创建的VBO。&lt;/p&gt;
+&lt;h1 id=&quot;三角形&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn_opengl/#%E4%B8%89%E8%A7%92%E5%BD%A2&quot; title=&quot;三角形&quot;&gt;&lt;/a&gt;三角形&lt;/h1&gt;
+&lt;p&gt;画三角形的过程很简单，首先要确定三角形的三个顶点坐标，然后告诉GPU这三个点坐标就可以了 :)&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;尚未完工，不定期更新
-2021.05.10 21:33:02&lt;/p&gt;
+&lt;p&gt;如果你看不懂顶点着色器、几何着色器、片段着色器、光栅化这些难懂的知识点，那么你不必急于弄懂这个过程，等把图形绘制出来后再回来看这部分的内容。&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;h2 id=&quot;标准化设备坐标&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn_opengl/#%E6%A0%87%E5%87%86%E5%8C%96%E8%AE%BE%E5%A4%87%E5%9D%90%E6%A0%87&quot; title=&quot;标准化设备坐标&quot;&gt;&lt;/a&gt;标准化设备坐标&lt;/h2&gt;
+&lt;p&gt;因为OpoenGL的坐标为都是-1.0f到1.0f之间的数（我们先不考虑视口变换这些复杂的情形）&lt;/p&gt;
+&lt;p&gt;x, y, z的坐标为-1.0f到1.0f的坐标称作标准化设备坐标，坐标原点在窗口的正中央且在窗口的表面上，往右为x正方向，往上为y正方向，往屏幕里面为z正方向（这里是左手系）。&lt;/p&gt;
+&lt;p&gt;有关标准化设备坐标的介绍请看&lt;a href=&quot;https://learnopengl-cn.github.io/01%20Getting%20started/04%20Hello%20Triangle/#_2&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;所以我们先声明三角形的顶点和颜色值到一个一维数组里面（用一维数组是因为顶点坐标值在内存的分布都是连续的，这样方便给GPU传坐标）。&lt;/p&gt;
+&lt;figure data-raw=&quot;float vertices[] = {
+    -0.5f, -0.5f, 0.0f,     // 左下角
+     1.0f,  0.0f, 0.0f,     // red
+     0.5f, -0.5f, 0.0f,     // 右下角
+     0.0f,  1.0f, 0.0f,     // green
+     0.0f,  0.5f, 0.0f,     // y轴正上方
+     0.0f,  0.0f, 1.0f      // blue
+};
+&quot; data-info=&quot;language-C&quot; data-lang=&quot;C&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-C&quot;&gt;float vertices[] = {
+    -0.5f, -0.5f, 0.0f,     // 左下角
+     1.0f,  0.0f, 0.0f,     // red
+     0.5f, -0.5f, 0.0f,     // 右下角
+     0.0f,  1.0f, 0.0f,     // green
+     0.0f,  0.5f, 0.0f,     // y轴正上方
+     0.0f,  0.0f, 1.0f      // blue
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;顶点缓冲&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn_opengl/#%E9%A1%B6%E7%82%B9%E7%BC%93%E5%86%B2&quot; title=&quot;顶点缓冲&quot;&gt;&lt;/a&gt;顶点缓冲&lt;/h2&gt;
+&lt;p&gt;首先我们需要创建一个顶点缓冲对象，用来存我们的顶点信息，这个对象叫“Vertex Buffer Object”（VBO），之后创建一个顶点数组对象“Vertex Array Object”（VAO），用来存我们创建的VBO。&lt;/p&gt;
+&lt;p&gt;为便于理解，你可以把VBO当作为开辟了一块GPU上的显存(Buffer)，用来存顶点和颜色信息，然后VAO是一个包含多个VBO的数组(Array)。&lt;/p&gt;
+&lt;p&gt;绘图时可以把VBO中存的大量顶点信息发送给GPU，因为用CPU给显卡发顶点坐标的速度慢而且没办法一次发送大量的顶点坐标，所以我们把顶点坐标存到显存中，绘图时直接访问显存即可。&lt;/p&gt;
+&lt;p&gt;生成一个VBO和一个VAO的代码为：&lt;/p&gt;
+&lt;figure data-raw=&quot;// VAO和VBO的ID都是非负整型
+GLuint VBO, VAO;
+
+// 生成一个VAO和一个VBO
+glGenVertexArrays(1, &amp;amp;VAO);
+glGenBuffers(1, &amp;amp;VBO);
+&quot; data-info=&quot;language-C&quot; data-lang=&quot;C&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-C&quot;&gt;// VAO和VBO的ID都是非负整型
+GLuint VBO, VAO;
+
+// 生成一个VAO和一个VBO
+glGenVertexArrays(1, &amp;amp;VAO);
+glGenBuffers(1, &amp;amp;VBO);
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;我们刚刚创建好了一个缓存对象，我们现在需要告诉这个缓存的数据空间大小以及数据（顶点坐标）。&lt;/p&gt;
+&lt;p&gt;首先我们绑定刚创建的VAO，然后绑定VBO&lt;/p&gt;
+&lt;figure data-raw=&quot;glBindVertexArray(VAO);
+glBindBuffer(GL_ARRAY_BUFFER, VBO);
+&quot; data-info=&quot;language-C&quot; data-lang=&quot;C&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-C&quot;&gt;glBindVertexArray(VAO);
+glBindBuffer(GL_ARRAY_BUFFER, VBO);
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;之后给VBO传递数组信息&lt;/p&gt;
+&lt;figure data-raw=&quot;glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+&quot; data-info=&quot;language-C&quot; data-lang=&quot;C&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-C&quot;&gt;glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;第一个参数是目标缓冲的类型，我们刚刚把VBO绑定到&lt;code&gt;GL_ARRAY_BUFFER&lt;/code&gt;上了&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;第二个参数是顶点信息所占的空间大小，单位是字节。咱们这个三角形一共3个顶点，每个顶点有3个float值，&lt;/p&gt;
+&lt;p&gt;所以大小是&lt;code&gt;3 * 3 * sizeof(float)&lt;/code&gt;，不过我们可以直接用&lt;code&gt;sizeof(vertices)&lt;/code&gt;知道整个数组的大小。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;第三个参数是数组的地址&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;第四个参数告诉GL我们的顶点数据几乎不会改变，所以是&lt;code&gt;GL_STATIC_DRAW&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;如果数据会被改变很多次，则为&lt;code&gt;GL_DYNAMIC_DRAW&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;如果数据每次绘制都会更改，则改为&lt;code&gt;GL_STREAM_DRAW&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;然后我们告诉CPU我们给VBO传递的数组都是什么：&lt;/p&gt;
+&lt;figure data-raw=&quot;glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*) 0);
+glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*) (3 * sizeof(float)));
+glEnableVertexAttribArray(0);
+glEnableVertexAttribArray(1);
+&quot; data-info=&quot;language-C&quot; data-lang=&quot;C&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-C&quot;&gt;glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*) 0);
+glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*) (3 * sizeof(float)));
+glEnableVertexAttribArray(0);
+glEnableVertexAttribArray(1);
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;第一个参数为位置，告诉这个数据传递到顶点着色器的哪个位置上&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;第二个参数为大小，我们定义的那个数组一个顶点有3个坐标，所以是3&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;第三个参数为数据类型，这里是float。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;第四个参数为false，暂时不用管他&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;第五个参数为步长，一个顶点有三个坐标和三个颜色值，所以每传一个顶点，就走&lt;code&gt;6 * sizeof(float)&lt;/code&gt;的长度。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;第六个参数为偏移量，因为我们定义的数组中前三个数字代表顶点坐标，后三个数字代表颜色，所以传递顶点坐标时，偏移量为0，传递颜色时偏移量为&lt;code&gt;3 * sizeof(float)&lt;/code&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://learnopengl-cn.github.io/img/01/05/vertex_attribute_pointer_interleaved.png&quot; alt=&quot;VBO中内存数据&quot;&gt;&lt;/p&gt;
+&lt;p&gt;之后使用&lt;code&gt;glEnableVertexAttribArray&lt;/code&gt;告诉OpenGL启用顶点着色器上这个位置的数据。&lt;/p&gt;
+&lt;p&gt;最后使用完VBO后要记得将其解绑：&lt;/p&gt;
+&lt;figure data-raw=&quot;glBindVertexArray(0);
+&quot; data-info=&quot;language-C&quot; data-lang=&quot;C&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-C&quot;&gt;glBindVertexArray(0);
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;着色器&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn_opengl/#%E7%9D%80%E8%89%B2%E5%99%A8&quot; title=&quot;着色器&quot;&gt;&lt;/a&gt;着色器&lt;/h2&gt;
+&lt;p&gt;我们需要写两个着色器程序，分别为顶点着色器和片段着色器。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;开头说的核心模式可编程管线就是指我们可以写着色器程序，手动指定管线都进行什么操作。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;顶点着色器&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn_opengl/#%E9%A1%B6%E7%82%B9%E7%9D%80%E8%89%B2%E5%99%A8&quot; title=&quot;顶点着色器&quot;&gt;&lt;/a&gt;顶点着色器&lt;/h3&gt;
+&lt;p&gt;因为OpenGL使用的是标准化设备坐标而不是屏幕上的像素点为坐标，所以GPU需要把标准化设备坐标转换为屏幕上的像素点，这个过程由顶点着色器实现。&lt;/p&gt;
+&lt;p&gt;而顶点着色器不知道咱们三角形的每个顶点的坐标是多少，所以咱们得往着色器中传我们刚才创建的VBO里面存储的坐标。&lt;/p&gt;
+&lt;p&gt;着色器程序使用GLSL编写，其代码和C很像&lt;/p&gt;
+&lt;p&gt;在代码文件夹中新建一个&lt;code&gt;vertex.glsl&lt;/code&gt;，编写以下代码：&lt;/p&gt;
+&lt;figure data-raw=&quot;#version 330 core
+layout (location = 0) in vec3 aPos;     // 传入坐标
+layout (location = 1) in vec3 aColor;   // 传入颜色
+out vec3 color;     // 向片段着色器发送颜色
+
+void main()
+{
+    gl_Position = vec4(aPos, 1.0);
+    color = aColor;
+}
+&quot; data-info=&quot;language-glsl&quot; data-lang=&quot;glsl&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-glsl&quot;&gt;#version 330 core
+layout (location = 0) in vec3 aPos;     // 传入坐标
+layout (location = 1) in vec3 aColor;   // 传入颜色
+out vec3 color;     // 向片段着色器发送颜色
+
+void main()
+{
+    gl_Position = vec4(aPos, 1.0);
+    color = aColor;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;第一行代表我们使用OpenGL 3.3 核心模式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;第二行声明了一个类型为&lt;code&gt;vec3&lt;/code&gt;（三维坐标）的变量，该变量的位置为&lt;code&gt;0&lt;/code&gt;，需要人为的通过这个位置给他传值，这个变量代表顶点的坐标&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;第三行声明的&lt;code&gt;aColor&lt;/code&gt;用来代表颜色，顶点着色器不需要处理颜色，所以我们接收到颜色值后不需要处理，直接传出去即可。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;main函数中&lt;code&gt;gl_Position&lt;/code&gt;代表这个顶点的位置坐标，我们把CPU传给顶点着色器的&lt;code&gt;vec3&lt;/code&gt;转换为&lt;code&gt;vec4&lt;/code&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;片段着色器&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn_opengl/#%E7%89%87%E6%AE%B5%E7%9D%80%E8%89%B2%E5%99%A8&quot; title=&quot;片段着色器&quot;&gt;&lt;/a&gt;片段着色器&lt;/h3&gt;
+&lt;p&gt;顶点着色器处理完顶点后，由片段着色器计算每个像素点的颜色，所以如果我们想给三角形上色的话，也是在这个环节进行。&lt;/p&gt;
+&lt;p&gt;在代码文件夹中新建一个&lt;code&gt;fragment.glsl&lt;/code&gt;&lt;/p&gt;
+&lt;figure data-raw=&quot;#version 330 core
+in vec3 color;    // 接收顶点着色器发送的颜色
+out vec4 FragColor;
+
+void main()
+{
+    FragColor = vec4(color, 1.0f);
+}
+&quot; data-info=&quot;language-glsl&quot; data-lang=&quot;glsl&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-glsl&quot;&gt;#version 330 core
+in vec3 color;    // 接收顶点着色器发送的颜色
+out vec4 FragColor;
+
+void main()
+{
+    FragColor = vec4(color, 1.0f);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;第一行同顶点着色器，代表OpenGL版本为3.3 核心模式&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;第二行表示接收顶点着色器发送的颜色数据到变量&lt;code&gt;color&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;第三行声明了一个类型为&lt;code&gt;vec4&lt;/code&gt;(4维坐标)的变量，表示向外传递变量&lt;code&gt;FragColor&lt;/code&gt;（该像素点的颜色值）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;main函数中设定变量&lt;code&gt;FragColor&lt;/code&gt;的值等于&lt;code&gt;color&lt;/code&gt;，用来指颜色。&lt;/p&gt;
+&lt;p&gt;最后一个值恒为1.0f，我们暂时不需要修改它。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;编译着色器&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn_opengl/#%E7%BC%96%E8%AF%91%E7%9D%80%E8%89%B2%E5%99%A8&quot; title=&quot;编译着色器&quot;&gt;&lt;/a&gt;编译着色器&lt;/h2&gt;
+&lt;p&gt;因为我们只是写了着色器程序的代码，需要让GPU将其编译。&lt;/p&gt;
+&lt;p&gt;编译着色器的部分对应的LearnOpenGL CN教程&lt;a href=&quot;https://learnopengl-cn.github.io/01%20Getting%20started/04%20Hello%20Triangle/#_4&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;在这里&lt;/a&gt;，本篇不打算重复讲编译着色器部分的代码。&lt;/p&gt;
+&lt;p&gt;我们可以把编译着色器的代码封装到几个函数里面，这样可以减少main函数中重复代码的数量。&lt;/p&gt;
+&lt;p&gt;有关这部分的代码我推荐使用&lt;a href=&quot;https://sh.alynx.one/posts/Learn-OpenGL-1/#%E7%9D%80%E8%89%B2%E5%99%A8%EF%BC%88Shader%EF%BC%89&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;这篇文章&lt;/a&gt;中讲述的方式从文件中读取glsl代码并将其编译。&lt;/p&gt;
+&lt;p&gt;最后在main函数的准备阶段处的最下面，插入以下代码，编译你的着色器程序：&lt;/p&gt;
+&lt;figure data-raw=&quot;GLuint shaderProgram = load_program(&amp;quot;vertex.glsl&amp;quot;, &amp;quot;fragment.glsl&amp;quot;);
+&quot; data-info=&quot;language-C&quot; data-lang=&quot;C&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-C&quot;&gt;GLuint shaderProgram = load_program(&quot;vertex.glsl&quot;, &quot;fragment.glsl&quot;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;我们期待的三角形&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/learn_opengl/#%E6%88%91%E4%BB%AC%E6%9C%9F%E5%BE%85%E7%9A%84%E4%B8%89%E8%A7%92%E5%BD%A2&quot; title=&quot;我们期待的三角形&quot;&gt;&lt;/a&gt;我们期待的三角形&lt;/h2&gt;
+&lt;p&gt;经过了前面的一番准备，我们创建了缓冲对象存顶点的坐标和颜色信息，之后编写了着色器程序处理顶点坐标和颜色。&lt;/p&gt;
+&lt;p&gt;现在我们终于可以在大循环中画三角形了。&lt;/p&gt;
+&lt;p&gt;在大循环的&lt;code&gt;/* draw something */&lt;/code&gt;下面添加如下代码：&lt;/p&gt;
+&lt;figure data-raw=&quot;glUseProgram(shaderProgram);
+glBindVertexArray(VAO);
+glDrawArrays(GL_TRIANGLES, 0, 3);
+glBindVertexArray(0);
+&quot; data-info=&quot;language-C&quot; data-lang=&quot;C&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-C&quot;&gt;glUseProgram(shaderProgram);
+glBindVertexArray(VAO);
+glDrawArrays(GL_TRIANGLES, 0, 3);
+glBindVertexArray(0);
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;这串代码表示我们首先使用刚编译好的着色器程序，之后绑定VAO，绘制一个三角形，最后解绑。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;至此我们的工程文件夹结构修改如下：&lt;/p&gt;
+&lt;figure data-raw=&quot;├── build/
+├── CMakeLists.txt
+└── src/
+    ├── fragment.glsl
+    ├── glad.c
+    ├── main.c
+    ├── shader.c
+    ├── shader.h
+    └── vertex.glsl
+&quot; data-info=&quot;language-text&quot; data-lang=&quot;text&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;├── build/
+├── CMakeLists.txt
+└── src/
+    ├── fragment.glsl
+    ├── glad.c
+    ├── main.c
+    ├── shader.c
+    ├── shader.h
+    └── vertex.glsl
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;因为我们编写了&lt;code&gt;vertex.glsl&lt;/code&gt;和&lt;code&gt;fragment.glsl&lt;/code&gt;，需要修改&lt;code&gt;CMakeLists.txt&lt;/code&gt;，使得编译时将代码文件夹下的着色器文件复制到&lt;code&gt;build&lt;/code&gt;文件夹下。&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;CMakeLists.txt&lt;/code&gt;的&lt;code&gt;find_package&lt;/code&gt;下面添加如下代码：&lt;/p&gt;
+&lt;figure data-raw=&quot;configure_file(src/vertex.glsl vertex.glsl COPYONLY)
+configure_file(src/fragment.glsl fragment.glsl COPYONLY)
+&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;configure_file(src/vertex.glsl vertex.glsl COPYONLY)
+configure_file(src/fragment.glsl fragment.glsl COPYONLY)
+&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;如果你遇到了问题，或者哪里不太明白，可以看咱写好的代码：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;/posts/learn_opengl/learn-code-2/main.c&quot;&gt;main.c&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;/posts/learn_opengl/learn-code-2/shader.h&quot;&gt;shader.h&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;/posts/learn_opengl/learn-code-2/shader.c&quot;&gt;shader.c&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;/posts/learn_opengl/learn-code-2/vertex.glsl&quot;&gt;vertex.glsl&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;/posts/learn_opengl/learn-code-2/fragment.glsl&quot;&gt;fragment.glsl&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;/posts/learn_opengl/learn-code-2/CMakeLists.txt&quot;&gt;CMakeLists.txt&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;编译后运行程序，可以看到一个五颜六色的三角形，它的左下角为红色，右下角为绿色，顶点为蓝色。&lt;/p&gt;
+&lt;div style=&quot;text-align:center&quot;&gt;
+    &lt;img src=&quot;/posts/learn_opengl/images/draw_triangle.png&quot; alt=&quot;三角形&quot; title=&quot;三角形&quot;&gt;
+&lt;/div&gt;
 
     </content>
     
@@ -431,10 +627,8 @@ const ap0 = new APlayer ({
 &lt;/script&gt; 
 
 &lt;hr&gt;
-&lt;p&gt;前一阵子买了二手的适马17-50 f2.8镜头，在网上看这镜头很适合新手学摄影，而且这个焦段+大光圈
-适用的范围也很广。遂把在家吃灰了一年的相机带回学校，打算找时间拍点风景照片。&lt;/p&gt;
-&lt;p&gt;实际上买完新镜头后我就拿它拍了几张花的照片后也没怎么出过门，因为照片拍得比较少，所以只好先挑
-几张好看的微距照片贴到博客上面，以后有机会拍到更好的照片后再更新。&lt;/p&gt;
+&lt;p&gt;前一阵子买了二手的适马17-50 f2.8镜头，在网上看这镜头很适合新手学摄影，而且这个焦段+大光圈适用的范围也很广。遂把在家吃灰了一年的相机带回学校，打算找时间拍点风景照片。&lt;/p&gt;
+&lt;p&gt;实际上买完新镜头后我就拿它拍了几张花的照片后也没怎么出过门，因为照片拍得比较少，所以只好先挑几张好看的微距照片贴到博客上面，以后有机会拍到更好的照片后再更新。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;仅使用Raw Therapee对照片进行了裁剪并调整颜色&lt;/p&gt;
 &lt;/blockquote&gt;
