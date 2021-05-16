@@ -137,7 +137,7 @@ social:
       icon: <i class="fab fa-weibo"></i>
 
 blogroll:
-  enable: true
+  enable: false
   links:
     - name: 喵's Homepage
       link: https://alynx.one/
@@ -156,7 +156,7 @@ comment:
   disqusShortName: blog-starry-s
 
 reward:
-  enable: true
+  enable: false
   message: Support Me!
   weChatPayQRCode: images/wechatpay.jpg
   aliPayQRCode: images/alipay.jpg
