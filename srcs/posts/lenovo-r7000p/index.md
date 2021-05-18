@@ -108,7 +108,7 @@ MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm amdgpu radeon)
 ```
 如果你只使用独显直连模式的话可以去掉`amdgpu`和`radeon`。
 
-然后`sudo mkinitcpio -P linux`重新生成内核镜像，之后重启。
+然后`sudo mkinitcpio -p linux`重新生成内核镜像，之后重启。
 
 这么做会使Wayland在开机时被禁用，所以在混合模式使用AMD显卡开机时无法使用Wayland，[参见Wiki](https://wiki.archlinux.org/index.php/GDM#GDM_ignores_Wayland_and_uses_X.Org_by_default)。
 
