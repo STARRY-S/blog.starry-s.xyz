@@ -661,14 +661,23 @@ const ap0 = new APlayer ({
 
 &lt;hr&gt;
 &lt;p&gt;前一阵子买了二手的适马17-50 f2.8镜头，在网上看这镜头很适合新手学摄影，而且这个焦段+大光圈适用的范围也很广。遂把在家吃灰了一年的相机带回学校，打算找时间拍点风景照片。&lt;/p&gt;
-&lt;p&gt;实际上买完新镜头后我就拿它拍了几张花的照片后也没怎么出过门，因为照片拍得比较少，所以只好先挑几张好看的微距照片贴到博客上面，以后有机会拍到更好的照片后再更新。&lt;/p&gt;
+&lt;p&gt;实际上买完新镜头后我就拿它拍了几张花的照片后也没怎么出过门，本来打算5月初份去长白岛拍樱花的然而经过了五一小长假的调休，上周末的体侧，这周辽宁省又开始闹疫情，所以只好先拍点校内的风景啦。&lt;/p&gt;
+&lt;p&gt;如果你想看长白岛的樱花，不妨看一下&lt;a href=&quot;/posts/spring-3/&quot;&gt;Spring - 3&lt;/a&gt;这篇文章。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;仅使用Raw Therapee对照片进行了裁剪并调整颜色&lt;/p&gt;
+&lt;p&gt;仅使用Raw Therapee和Adobe Lightroom对照片进行了裁剪并调整颜色，并由GIMP压缩&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;/posts/spring-4/images/IMG_6616.jpg&quot; alt=&quot;&quot; title=&quot;iso100, 33mm, 1/1000s, f2.8&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/posts/spring-4/images/IMG_6618.jpg&quot; alt=&quot;&quot; title=&quot;iso100, 50mm, 1/1000s, f2.8&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/posts/spring-4/images/IMG_6623.jpg&quot; alt=&quot;&quot; title=&quot;iso100, 35mm, 1/1250s, f2.8&quot;&gt;&lt;/p&gt;
 &lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;拍摄自：2021-05-18&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在大风天拍蒲公英确实是个不明智的选择。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/spring-4/images/IMG_6723.jpg&quot; alt=&quot;&quot; title=&quot;iso100, 50mm, 1/100s, f2.8&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/spring-4/images/IMG_6726.jpg&quot; alt=&quot;&quot; title=&quot;iso100, 50mm, 1/250s, f2.8&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/spring-4/images/IMG_6728.jpg&quot; alt=&quot;&quot; title=&quot;iso100, 50mm, 1/320s, f2.8&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/posts/spring-4/images/IMG_6697.jpg&quot; alt=&quot;&quot; title=&quot;iso100, 50mm, 1/320s, f2.8&quot;&gt;&lt;/p&gt;
 &lt;h1 id=&quot;Spring-4&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/spring-4/#Spring-4&quot; title=&quot;Spring-4&quot;&gt;&lt;/a&gt;Spring - 4&lt;/h1&gt;
 
     </content>
@@ -809,7 +818,7 @@ MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm amdgpu radeon)
 MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm amdgpu radeon)
 &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;如果你只使用独显直连模式的话可以去掉&lt;code&gt;amdgpu&lt;/code&gt;和&lt;code&gt;radeon&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;然后&lt;code&gt;sudo mkinitcpio -P linux&lt;/code&gt;重新生成内核镜像，之后重启。&lt;/p&gt;
+&lt;p&gt;然后&lt;code&gt;sudo mkinitcpio -p linux&lt;/code&gt;重新生成内核镜像，之后重启。&lt;/p&gt;
 &lt;p&gt;这么做会使Wayland在开机时被禁用，所以在混合模式使用AMD显卡开机时无法使用Wayland，&lt;a href=&quot;https://wiki.archlinux.org/index.php/GDM#GDM_ignores_Wayland_and_uses_X.Org_by_default&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;参见Wiki&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;将&lt;code&gt;/usr/lib/udev/rules.d/61-gdm.rules&lt;/code&gt;复制到&lt;code&gt;/etc/udev/rules.d/&lt;/code&gt;，并编辑&lt;code&gt;61-gdm.rules&lt;/code&gt;将下面这一行注释掉：&lt;/p&gt;
 &lt;figure data-raw=&quot;DRIVER==&amp;quot;nvidia&amp;quot;, RUN+=&amp;quot;/usr/lib/gdm-disable-wayland&amp;quot;

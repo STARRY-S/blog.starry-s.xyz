@@ -438,7 +438,7 @@ MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm amdgpu radeon)
 MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm amdgpu radeon)
 </code></pre></figure>
 <p>如果你只使用独显直连模式的话可以去掉<code>amdgpu</code>和<code>radeon</code>。</p>
-<p>然后<code>sudo mkinitcpio -P linux</code>重新生成内核镜像，之后重启。</p>
+<p>然后<code>sudo mkinitcpio -p linux</code>重新生成内核镜像，之后重启。</p>
 <p>这么做会使Wayland在开机时被禁用，所以在混合模式使用AMD显卡开机时无法使用Wayland，<a href="https://wiki.archlinux.org/index.php/GDM#GDM_ignores_Wayland_and_uses_X.Org_by_default" target="_blank" rel="external nofollow noreferrer noopener">参见Wiki</a>。</p>
 <p>将<code>/usr/lib/udev/rules.d/61-gdm.rules</code>复制到<code>/etc/udev/rules.d/</code>，并编辑<code>61-gdm.rules</code>将下面这一行注释掉：</p>
 <figure data-raw="DRIVER==&quot;nvidia&quot;, RUN+=&quot;/usr/lib/gdm-disable-wayland&quot;
@@ -787,4 +787,4 @@ driver=amdgpu
 
   </body>
 </html>
-<!-- Page built by Hikaru v1.7.3 at 2021-05-16T04:33:23.661Z. -->
+<!-- Page built by Hikaru v1.7.3 at 2021-05-18T13:27:56.745Z. -->
