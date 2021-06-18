@@ -352,7 +352,7 @@ glEnableVertexAttribArray(1);
 
 之后使用`glEnableVertexAttribArray`告诉OpenGL启用顶点着色器上这个位置的数据。
 
-最后使用完VBO后要记得将其解绑：
+最后使用完VAO后要记得将其解绑：
 
 ``` C
 glBindVertexArray(0);
