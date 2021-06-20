@@ -13,6 +13,9 @@ menu:
   - name: tags
     link: tags/
     icon: <i class="fas fa-tags"></i>
+  # - name: blogrool
+  #   link: blogrool/
+  #   icon: <i class="fas fa-link"></i>
   - name: about
     link: about/
     icon: <i class="fas fa-user-edit"></i>
@@ -129,21 +132,22 @@ social:
       icon: <i class="fab fa-telegram-plane"></i>
     - name: Bilibili
       link: https://space.bilibili.com/19189337
-      # icon: <i class="fas fa-tv"></i>
-      # icon: <i class="fas fa-globe"></i>
       icon: <i class="fas fa-film"></i>
     - name: Weibo
       link: https://weibo.com/u/6990977018
       icon: <i class="fab fa-weibo"></i>
 
 blogroll:
-  enable: false
+  enable: true
   links:
     - name: 喵's Homepage
       link: https://alynx.one/
       icon: <i class="fas fa-link"></i>
     - name: LGiki's Blog
       link: https://lgiki.net/
+      icon: <i class="fas fa-link"></i>
+    - name: BladeHiker
+      link: https://blog.bladehiker.com
       icon: <i class="fas fa-link"></i>
 
 comment:
