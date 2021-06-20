@@ -436,7 +436,7 @@ glEnableVertexAttribArray(1);
 &lt;/ul&gt;
 &lt;p&gt;&lt;img src=&quot;https://learnopengl-cn.github.io/img/01/05/vertex_attribute_pointer_interleaved.png&quot; alt=&quot;VBO中内存数据&quot;&gt;&lt;/p&gt;
 &lt;p&gt;之后使用&lt;code&gt;glEnableVertexAttribArray&lt;/code&gt;告诉OpenGL启用顶点着色器上这个位置的数据。&lt;/p&gt;
-&lt;p&gt;最后使用完VBO后要记得将其解绑：&lt;/p&gt;
+&lt;p&gt;最后使用完VAO后要记得将其解绑：&lt;/p&gt;
 &lt;figure data-raw=&quot;glBindVertexArray(0);
 &quot; data-info=&quot;language-C&quot; data-lang=&quot;C&quot; class=&quot;code-block&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code class=&quot;language-C&quot;&gt;glBindVertexArray(0);
 &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
