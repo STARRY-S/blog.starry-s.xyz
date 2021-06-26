@@ -13,9 +13,6 @@ menu:
   - name: tags
     link: tags/
     icon: <i class="fas fa-tags"></i>
-  # - name: blogrool
-  #   link: blogrool/
-  #   icon: <i class="fas fa-link"></i>
   - name: about
     link: about/
     icon: <i class="fas fa-user-edit"></i>
