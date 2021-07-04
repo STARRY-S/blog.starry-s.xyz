@@ -5,7 +5,7 @@
   <url>
     <loc>https://blog.starry-s.me/posts/karanokyokai/</loc>
     
-    <lastmod>2021-07-04T06:17:25.000Z</lastmod>
+    <lastmod>2021-07-17T09:59:54.000Z</lastmod>
     
   </url>
   
@@ -175,16 +175,16 @@
   
   
   <url>
-    <loc>https://blog.starry-s.me/archives/</loc>
+    <loc>https://blog.starry-s.me/about/</loc>
+    
+    <lastmod>2021-05-06T09:48:30.000Z</lastmod>
     
   </url>
   
   
   
   <url>
-    <loc>https://blog.starry-s.me/about/</loc>
-    
-    <lastmod>2021-05-06T09:48:30.000Z</lastmod>
+    <loc>https://blog.starry-s.me/archives/</loc>
     
   </url>
   
@@ -521,14 +521,14 @@
   
   
   <url>
-    <loc>https://blog.starry-s.me/sitemap.xml</loc>
+    <loc>https://blog.starry-s.me/atom.xml</loc>
     
   </url>
   
   
   
   <url>
-    <loc>https://blog.starry-s.me/atom.xml</loc>
+    <loc>https://blog.starry-s.me/sitemap.xml</loc>
     
   </url>
   
