@@ -161,4 +161,15 @@ categories:
 * 公式的数值会不断变动，不用说是求出答案，人们连要求出什么都不知道。然而——一旦这个数值确定下来，答案便再也不会改变。
 
 ----
+
+<!--aplayer
+{
+    "name": "夏の林檎",
+    "artist": "Kalafina",
+    "theme": "#ba3518",
+    "url": "https://music.starry-s.me/music/obj_w5rDlsOJwrLDjj7CmsOj_8775744964_827c_ee68_1df4_4ed8ec40e158126c0b4a90092c69ab4f.m4a",
+    "cover": "https://music.starry-s.me/music/cover/2505786999756176.png"
+}
+-->
+
 > 不定期更新
