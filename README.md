@@ -1,3 +1,3 @@
 # STARRY-S' Blog
 
-[blog.starry-s.me](https://blog.starry-s.me)
+[blog.starry-s.moe](https://blog.starry-s.moe)
