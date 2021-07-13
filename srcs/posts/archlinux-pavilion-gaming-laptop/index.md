@@ -231,5 +231,5 @@ options=overclocking
 
 -----
 <div style="text-align:center">
-    <image src="images/1.png"/>
+    <image src="images/1.png"/ alt="neofetch">
 </div>
