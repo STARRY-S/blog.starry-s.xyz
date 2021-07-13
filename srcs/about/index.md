@@ -41,9 +41,9 @@ tags: about
 
 # STARRY-S' Blog
 
-建于2016年8月21日, 曾用域名`starry-s.xyz`、`starry-s.com`和`starry-s.cn`。
+建于2016年8月21日, 曾用域名`starry-s.me`、`starry-s.xyz`、`starry-s.com`和`starry-s.cn`。
 
-现用域名为`starry-s.me`, 以后没问题的话就不打算换域名了因为`.me`域名好记而且我挺喜欢的。
+现用域名为`starry-s.moe`, 前两天给域名续费时因为误操作，导致我的`.me`域名被删掉了，因此我不得不再注册了一个`moe`域名。
 
 本站由[Hikaru](https://hikaru.alynx.one/)生成, 主题为[ARIA](https://github.com/AlynxZhou/hikaru-theme-aria), 托管于GitHub Pages（见页面右下角）, 很喜欢这个生成器以及ARIA这款主题。
 
@@ -54,8 +54,8 @@ tags: about
     "name": "尼尔机械纪元 Nier Automata - Soundtrack Medley",
     "artist": "Animenz",
     "theme": "#F6890E",
-    "url": "https://music.starry-s.me/music/0f0e_0758_070b_8de6859a81025aae1e540aed59439f48.m4a",
-    "cover": "https://music.starry-s.me/music/cover/109951163092751719.jpg"
+    "url": "https://music.starry-s.moe/music/0f0e_0758_070b_8de6859a81025aae1e540aed59439f48.m4a",
+    "cover": "https://music.starry-s.moe/music/cover/109951163092751719.jpg"
 }
 -->
 
