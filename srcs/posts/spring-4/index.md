@@ -22,8 +22,8 @@ categories:
     "name": "愚カシイ机械",
     "artist": "岡部啓一 / 石濱翔 / 帆足圭吾 / 高田龍一",
     "theme": "#aa6666",
-    "url": "https://music.starry-s.me/music/f47cbf8a517c72c16b5eff614cd78ace.m4a",
-    "cover": "https://music.starry-s.me/music/cover/2522279674184572.png"
+    "url": "https://music.starry-s.moe/music/f47cbf8a517c72c16b5eff614cd78ace.m4a",
+    "cover": "https://music.starry-s.moe/music/cover/2522279674184572.png"
 }
 -->
 

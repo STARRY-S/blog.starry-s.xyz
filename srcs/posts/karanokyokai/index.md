@@ -167,8 +167,8 @@ categories:
     "name": "夏の林檎",
     "artist": "Kalafina",
     "theme": "#ba3518",
-    "url": "https://music.starry-s.me/music/obj_w5rDlsOJwrLDjj7CmsOj_8775744964_827c_ee68_1df4_4ed8ec40e158126c0b4a90092c69ab4f.m4a",
-    "cover": "https://music.starry-s.me/music/cover/2505786999756176.png"
+    "url": "https://music.starry-s.moe/music/obj_w5rDlsOJwrLDjj7CmsOj_8775744964_827c_ee68_1df4_4ed8ec40e158126c0b4a90092c69ab4f.m4a",
+    "cover": "https://music.starry-s.moe/music/cover/2505786999756176.png"
 }
 -->
 
