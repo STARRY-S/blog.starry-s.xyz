@@ -17,16 +17,16 @@ categories:
 
 > 终于可以继续更新博客了！原计划是11月之前更新博客的。不巧电脑出了问题，重装了一遍Arch Linux,后来又发生了一些事一直没能用电脑。由于开学到现在能放假供我写博客的时间少之又少，这篇原本在11月初就能发表的文章就这样被硬生生推迟到了11月末了。
 
-# 材料以及工具
+## 材料以及工具
 
 * 树莓派一只 （包括所需要的C10的内存卡以及刷好的固件以及5v，2.5A充电器）
 * 一个支持DDNS的路由器（非必须）
 
 > 如果不想用树莓派建服务器的话也可以按照本教程在电脑上搭建服务器。
 
-# 配置树莓派
+## 配置树莓派
 
-## 调整GPU可使用的内存：
+### 调整GPU可使用的内存：
 
 毕竟用树莓派开服务器不需要占用GPU，直接调低。
 
@@ -34,7 +34,7 @@ Raspbian: `raspi-config`中将GPU内存分为16M。
 
 Arch Linux ARM: `/boot/config.txt`中更改GPU显存为16
 
-# 安装JAVA
+## 安装JAVA
 
 Archlinux ARM:
 ```
@@ -50,7 +50,7 @@ $ tar -zxvf 你所下载的JDK.jar.gz -C ./java/
 ```
 在终端输入`./java/jdk1.8.0/bin/java -version`显示java的版本号。
 
-# 部署服务器
+## 部署服务器
 
 本篇使用[Paper MC](https://github.com/PaperMC/Paper)部署服务器。
 除了Paper之外还有Bukkit和Spigot以及原版可选。
@@ -65,7 +65,7 @@ $ ./java/jdk*/bin/java -Xms512M -Xmx1024M -jar ./spigot.jar
 
 网上有很多服务器插件和Mod什么的。本章中不做过多介绍.
 
-# 用screen 保持服务器一直运行而不被关掉。
+## 用screen 保持服务器一直运行而不被关掉。
 
 首先安装好screen。
 ```

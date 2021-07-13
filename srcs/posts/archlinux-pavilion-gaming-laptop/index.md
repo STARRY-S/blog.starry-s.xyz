@@ -28,7 +28,7 @@ categories:
 }
 -->
 
-# 先描述一下踩坑经过
+## 先描述一下踩坑经过
 
 > 本段略微有些废话, 可以跳过
 
@@ -48,7 +48,7 @@ categories:
 
 > 查了一下这款电脑的type-c接口支持DP1.2视频输出，和HDMI 2.0一样支持4K 60fps，走的是intel集成显卡，可以在独显不通电的时候输出画面到第三方显示器。所以买一根type-c转DP线就可以点亮第三方显示器（前提是你的显示器有DP接口），但是切换显卡还是得依靠Bunblebee或Optimus Manager这类的软件。
 
-# 安装过程
+## 安装过程
 
 照着[Wiki](https://wiki.archlinux.org/index.php/NVIDIA_Optimus)和Optimus Manager的[README](https://github.com/Askannz/optimus-manager#optimus-manager)。首先安装好显卡驱动相关的软件, 如果有Bumblebee的话使用`systemctl disable bumblebeed`停用。
 
@@ -67,7 +67,7 @@ $ yay -S optimus-manager
 
 修改`/etc/gdm/custom.conf`, 移除`WaylandEnable=false`一行前面的`#`禁用Wayland而使用X。
 
-## 修改配置文件
+### 修改配置文件
 
 ```
 $ sudo cp /usr/share/optimus-manager.conf /etc/optimus-manager/optimus-manager.conf
@@ -199,7 +199,7 @@ options=overclocking
 
 ```
 
-# 食用方法
+## 食用方法
 
 `optimus-manager --switch nvidia`切换到独显（nvidia）
 
@@ -215,7 +215,7 @@ options=overclocking
 
  - 你可以在配置文件中修改`auto_logout=false`禁止自动注销以手动注销切换显卡。
 
-# Others
+## Others
 
  - 之所以不推荐使用`bbswitch`是因为容易遇到**ACPI锁死**的问题, [参考Wiki](https://wiki.archlinux.org/index.php/NVIDIA_Optimus#Lockup_issue_(lspci_hangs)), 需要添加[内核参数](https://wiki.archlinux.org/index.php/Kernel_parameters)`acpi_osi=! acpi_osi="Windows 2009"`或`acpi_osi="!Windows 2015"`启动, 如果你遇到了锁死可以通过开机时在[启动加载器界面](https://wiki.archlinux.org/index.php/Arch_boot_process#Boot_loader)编辑添加内核参数来正常进入系统, 如果你用的是efistub或者没办法编辑内核参数的话就只能用live CD救你的电脑了。
 

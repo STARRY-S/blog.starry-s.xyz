@@ -12,7 +12,7 @@ categories:
 # comment: true
 ---
 
-# 起因
+## 起因
 
 前天在狗东买了台27寸4K显示器，型号为优派VX2771-4K-HD，分辨率3840x2160，支持HDR 10bit色深（然而电脑只支持DP1.2），因为之前已经[配置好了optimus-manager](/posts/archlinux-pavilion-gaming-laptop/)，所以电脑接上显示器就能亮，很幸运没有遇到物理问题。
 
@@ -32,7 +32,7 @@ categories:
 }
 -->
 
-# 解决方法
+## 解决方法
 
 首先按照[Wiki](https://wiki.archlinux.org/index.php/HiDPI)设置GNOME的HIDPI:
 
@@ -84,7 +84,7 @@ $ xrandr --output eDP-1-1 --scale 1.6x1.6 --panning 3072x1728+0+2160 --output HD
 > 网易云音乐缩放方法参考[这篇博客](https://ntzyz.io/post/fix-cloud-music-linux-client-hidpi-issue)。
 > qt5设置环境变量`QT_SCREEN_SCALE_FACTORS=2`。
 
-# Others
+## Others
 
  * 仅限GNOME，因为我只用GNOME所以不知道其他DE开HIDPI的效果是什么样。
 

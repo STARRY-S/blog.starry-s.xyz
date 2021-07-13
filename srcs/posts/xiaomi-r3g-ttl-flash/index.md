@@ -13,7 +13,7 @@ categories:
 - 路由器
 ---
 
-# 砖了
+## 砖了
 
 本来路由器闲置了一年了都没咋用了，前两天想把OpenWrt系统刷回原厂系统。
 
@@ -37,7 +37,7 @@ categories:
 
 --------
 
-# 拆机
+## 拆机
 
 !["路由器主板"](images/1.jpg "Are You OK?")
 
@@ -55,7 +55,7 @@ categories:
 
 实际上可以买个4PIN单排针焊上去，把串口接到排针上就可以，我直接把电线焊到上面以后用起来会很麻烦。
 
-# 刷机
+## 刷机
 
 > 以下部分基于Arch Linux，其他系统的操作方式可能不一样（例如Windows可能需要超级终端访问串口，再想办法开一个tftp服务器）
 > 刷机的原理: 通过ttl串口线连接路由器的主板，让路由器访问电脑上的tftp服务器，刷第三方Boot Loader。
@@ -84,7 +84,7 @@ categories:
   $ sudo pacman -S screen
   $ sudo screen /dev/ttyUSB0 115200
   ```
-  
+
   路由器通电，终端上会显示路由器启动的信息，等几秒后在选择启动项的时候按9，通过TFTP加载Boot Loader。
 
   > 如果串口在连接到电脑的情况下主板通电时没有响应，那就断开usb串口先给主板通电后再连接串口。
@@ -92,17 +92,17 @@ categories:
   > 如果路由器没有变砖可以正常启动（蓝灯长亮），在正常开机过程中不能选择启动项。此时可以尝试在路由器开机后长按reset按钮7s以上直到主板重启，便可以选择启动项。
 
   ``` text
-  Please choose the operation: 
-   1: Load system code to SDRAM via TFTP. 
-   2: Load system code then write to Flash via TFTP. 
+  Please choose the operation:
+   1: Load system code to SDRAM via TFTP.
+   2: Load system code then write to Flash via TFTP.
    3: Boot system code via Flash (default).
    4: Entr boot command line interface.
-   7: Load Boot Loader code then write to Flash via Serial. 
-   9: Load Boot Loader code then write to Flash via TFTP. 
+   7: Load Boot Loader code then write to Flash via Serial.
+   9: Load Boot Loader code then write to Flash via TFTP.
 
   You choosed 9
-   
-  9: System Load Boot Loader then write to Flash via TFTP. 
+
+  9: System Load Boot Loader then write to Flash via TFTP.
   Warning!! Erase Boot Loader in Flash then burn new one. Are you sure?(Y/N)y
   ```
 
@@ -114,12 +114,12 @@ categories:
             Input server IP (192.168.31.3) ==:192.168.1.3
             Input Uboot filename (uboot.bin) ==:breed.bin
   ```
-  
+
   按回车后开始刷机，过几秒钟后路由器会自动重启，第三方Boot Loader刷写完成。
 
   路由器断电，长按reset键的同时通电开机，灯闪烁后打开浏览器输入网址`http://192.168.1.1`便可访问breed后台。
 
-# Done
+## Done
 
 第三方Breed刷完后，先用Breed刷小米官方的开发版固件，开启ssh，之后按照[小米路由器3G折腾之刷OpenWrt记录](/posts/Xiaomi_Miwifi_3G/#使用Breed的刷机方法)这篇文章刷OpenWrt。
 
@@ -140,6 +140,6 @@ Enter 'help' for a list of built-in commands.
  \__|  \__|\__|  \__|\________|      \_________/        \______/ \__|  \__|
 
 
-root@XiaoQiang:~# 
+root@XiaoQiang:~#
 
 ```

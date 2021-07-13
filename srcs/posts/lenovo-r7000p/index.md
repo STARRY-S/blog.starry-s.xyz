@@ -33,7 +33,7 @@ categories:
 
 -------
 
-# 安装Arch Linux
+## 安装Arch Linux
 
 到手后就把之前买的西数SN750 1T固态换到了新电脑上，顺便格式化重装了个系统。
 
@@ -47,7 +47,7 @@ categories:
 
 新电脑买来装完系统后就遇到了一点小问题网上搜一下就解决了。
 
-## 屏幕亮度不能调节
+### 屏幕亮度不能调节
 
 ~~开个浏览器能把眼睛晃瞎~~
 
@@ -91,7 +91,7 @@ options amdgpu.backlight=0
 
 最后重启电脑就能调亮度了。
 
-## GDM不自启动
+### GDM不自启动
 
 开机时GDM不会自动显示出来而是得手动切TTY2再切回TTY1才能显示。
 
@@ -120,7 +120,7 @@ DRIVER=="nvidia", RUN+="/usr/lib/gdm-disable-wayland"
 
 之后重启电脑再开机`echo $XDG_SESSION_TYPE`就可以检查现在使用的是`wayland`了。
 
-## Optimus Manager
+### Optimus Manager
 
 因为独显功耗太高了，使用独显直连模式在浏览网页写文档这类的轻度工作时电池待机只能2小时，用混合模式的话能待机4.5小时，外加上我也不打那些对性能要求很高的游戏，
 所以日常使用时就在Bios里设置显卡为混合模式。
@@ -153,7 +153,7 @@ driver=amdgpu
 
 如果想让Steam以独显运行游戏，修改启动参数为`prime-run %command%`。
 
-# Windows
+## Windows
 
 在Windows系统下显卡独连时字体渲染有些蹦，设置了ClearType之后还是没啥改善。
 
@@ -165,7 +165,7 @@ driver=amdgpu
 
 -----
 
-# Others
+## Others
 
  * 在Linux系统里会遇到按Fn+Esc键时FnLock的灯没有亮这个问题，不过不影响FnLock的正常使用，所以就忽视了。
 

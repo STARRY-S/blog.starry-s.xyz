@@ -45,5 +45,3 @@ categories:
 ![Spring_9](images/IMG_0018.jpg)
 
 ![Spring_10](images/IMG_0025.jpg)
-
-# ——Spring

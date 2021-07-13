@@ -31,7 +31,7 @@ categories:
 }
 -->
 
-# 准备工作
+## 准备工作
 
 你至少需要以下工具：
 
@@ -42,7 +42,7 @@ categories:
 * Windows用户需要一个SSH软件（例如：[putty](https://putty.org)）
 * [小米路由器客户端](http://www1.miwifi.com/miwifi_download.html), 用来绑定你的小米账号
 
-# SSH到路由器
+## SSH到路由器
 
 > 路由器重启后指示灯会变为蓝色, 若变为红色则为刷机失败。
 
@@ -71,7 +71,7 @@ SSH到路由器:
       KexAlgorithms +diffie-hellman-group1-sha1
   ```
 
-# 刷入Bootloader（推荐/可选）
+## 刷入Bootloader（推荐/可选）
 
 > 该步骤可选是因为Breed不支持直接刷入Openwrt固件, 可参考[这篇帖子](https://www.right.com.cn/forum/forum.php?mod=viewthread&tid=267455), 不过为了防止变砖, 还是推荐刷Breed。
 
@@ -95,7 +95,7 @@ mtd -r write /tmp/sdcard/breed.bin Bootloader
 
 路由器刷写完毕后会自动重启, **在写入Breed的过程中不要动路由器**。
 
-# 刷机
+## 刷机
 
 下载所需固件：
 
@@ -103,7 +103,7 @@ mtd -r write /tmp/sdcard/breed.bin Bootloader
 
 * 官方下载地址: [https://downloads.openwrt.org/releases/](https://downloads.openwrt.org/releases/)
 
-## 使用Breed的刷机方法
+### 使用Breed的刷机方法
 
 按照hackpascal的说法是：
 
@@ -123,7 +123,7 @@ mtd -r write /tmp/sdcard/breed.bin Bootloader
 
 3. 在环境变量编辑里添加`xiaomi.r3g.bootfw`字段, 值为`2`,保存后重启即可进入Openwrt。
 
-## 没有刷入Breed的刷机方法
+### 没有刷入Breed的刷机方法
 
 > [OpenWrt官网提供的教程](https://openwrt.org/toh/xiaomi/mir3g)是在没有刷入Breed的情况下刷入OpenWrt固件的。
 
@@ -140,7 +140,7 @@ reboot
 
 ------
 
-# Others
+## Others
 
 1. 如果刷了Breed + Pandavan/PandoraBox后想换回OpenWrt的话, 首先在Breed中刷回小米路由器开发版的官方固件, 然后SSH到路由器按照上述的使用Breed的刷机方法再刷机。
 

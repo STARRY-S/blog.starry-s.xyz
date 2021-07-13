@@ -25,8 +25,10 @@ categories:
 
 顺便说一下网易版并不支持MacOS哈哈哈哈。。。。
 
-# 第一部分：
-### 如果你尚未在官网购买正版的Minecraft，你可以使用HMCL（[Hello Minecraft Launcher](https://github.com/huanghongxun/HMCL) )启动器下载并运行MC。
+## 第一部分：
+
+**如果你尚未在官网购买正版的Minecraft，你可以使用HMCL（[Hello Minecraft Launcher](https://github.com/huanghongxun/HMCL) )启动器下载并运行MC。**
+
 1.
 你需要确保你的电脑已安装java8。下载java：http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 
@@ -56,11 +58,11 @@ $ chmod 744 ./start.sh
 
 在HMCL里点击右下角的加号下载游戏文件,建议将游戏下载到你启动器所在的文件夹内。
 
-### 如果你已购买正版Minecraft，在确保java安装好后直接去官网下载启动器再到启动器中下载游戏即可，可能会因网络原因速度慢，这是正常现象。
+**如果你已购买正版Minecraft，在确保java安装好后直接去官网下载启动器再到启动器中下载游戏即可，可能会因网络原因速度慢，这是正常现象。**
 
 **请支持正版，RMB165，可使用支付宝。**
 
-# 第二部分：
+## 第二部分：
 1. 笔记本双显卡用户请确保你正确的安装了显卡驱动（新买的笔记本不知道什么是显卡驱动就默认已经安装好了），NVIDA显卡用户在桌面右键选择NVIDIA控制面板（没有这个选项可能是你的显卡驱动没安装好），选择 **3D设置->管理3D设置** ，选择添加，找到你安装的JAVA目录下的java.exe，将其设置为高性能处理器。然后保存设置并退出。（ps现在市面上新出的笔记本用集成显卡玩这个游戏也已经很流畅了）
 
 在游戏中按F3，若右侧有NVIDIA字样就说明你已成功的使用独显运行游戏了，在左侧可以观察帧数。
@@ -71,7 +73,7 @@ $ chmod 744 ./start.sh
 
 4. Linux用户如果想用独显玩Minecraft而日常使用时切换回省电的集显，请参考 [Linux下使Steam调用Bumblebee使用独显](https://sh.alynx.xyz/posts/2017/02/16/Steam-with-Bumblebee/),当然不同的Linux Distribution方法会有不同，请linux用户自行摸索。
 
-# 相关内容：
+## 相关内容：
 
 * [教程/成功地启动游戏-Minecraft Wiki](https://minecraft-zh.gamepedia.com/index.php?title=%E6%95%99%E7%A8%8B/%E6%88%90%E5%8A%9F%E5%9C%B0%E5%90%AF%E5%8A%A8%E6%B8%B8%E6%88%8F&variant=zh-cn)
 * [官方网站|Minecraft](https://minecraft.net/zh-hans/)
