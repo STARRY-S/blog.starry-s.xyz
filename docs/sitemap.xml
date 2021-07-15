@@ -3,9 +3,18 @@
   
   
   <url>
+    <loc>https://blog.starry-s.me/daily-2021-07-15/</loc>
+    
+    <lastmod>2021-07-15T06:27:07.000Z</lastmod>
+    
+  </url>
+  
+  
+  
+  <url>
     <loc>https://blog.starry-s.me/posts/karanokyokai/</loc>
     
-    <lastmod>2021-07-04T09:59:54.000Z</lastmod>
+    <lastmod>2021-07-15T06:25:29.000Z</lastmod>
     
   </url>
   
@@ -166,18 +175,18 @@
   
   
   <url>
-    <loc>https://blog.starry-s.me/about/</loc>
+    <loc>https://blog.starry-s.me/404.html</loc>
     
-    <lastmod>2021-05-06T09:48:30.000Z</lastmod>
+    <lastmod>2016-08-22T16:00:00.000Z</lastmod>
     
   </url>
   
   
   
   <url>
-    <loc>https://blog.starry-s.me/404.html</loc>
+    <loc>https://blog.starry-s.me/about/</loc>
     
-    <lastmod>2016-08-22T16:00:00.000Z</lastmod>
+    <lastmod>2021-05-06T09:48:30.000Z</lastmod>
     
   </url>
   
@@ -521,14 +530,14 @@
   
   
   <url>
-    <loc>https://blog.starry-s.me/sitemap.xml</loc>
+    <loc>https://blog.starry-s.me/atom.xml</loc>
     
   </url>
   
   
   
   <url>
-    <loc>https://blog.starry-s.me/atom.xml</loc>
+    <loc>https://blog.starry-s.me/sitemap.xml</loc>
     
   </url>
   
