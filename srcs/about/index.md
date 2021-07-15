@@ -2,9 +2,9 @@
 title: About
 created: 2016-08-22T13:25:30+08:00
 updated: 2021-05-06T17:48:30+08:00
+zone: Asia/Shanghai
 layout: about
 tags: about
-# comment: true
 ---
 
 !["West Lake"](images/westlake.jpg "West Lake")
@@ -43,7 +43,7 @@ tags: about
 
 建于2016年8月21日, 曾用域名`starry-s.me`、`starry-s.xyz`、`starry-s.com`和`starry-s.cn`。
 
-现用域名为`starry-s.moe`, 前两天给域名续费时因为误操作，导致我的`.me`域名被删掉了，因此我不得不再注册了一个`moe`域名。
+现用域名为`starry-s.moe`, 至于更换至`moe`域名的原因请看[这篇博客](/daily-2021-07-15/)。
 
 本站由[Hikaru](https://hikaru.alynx.one/)生成, 主题为[ARIA](https://github.com/AlynxZhou/hikaru-theme-aria), 托管于GitHub Pages（见页面右下角）, 很喜欢这个生成器以及ARIA这款主题。
 
