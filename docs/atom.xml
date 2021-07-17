@@ -24,8 +24,8 @@
   
   <entry>
     <title>聊聊近期本站发生的事情</title>
-    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/daily-2021-07-15/" />
-    <id>https://blog.starry-s.me/daily-2021-07-15/</id>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/daily-2021-07-15/" />
+    <id>https://blog.starry-s.me/posts/daily-2021-07-15/</id>
     
     <author>
       <name>STARRY-S</name>
@@ -50,7 +50,7 @@
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 
 &lt;hr&gt;
-&lt;h2 id=&quot;起因&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/daily-2021-07-15/#%E8%B5%B7%E5%9B%A0&quot; title=&quot;起因&quot;&gt;&lt;/a&gt;起因&lt;/h2&gt;
+&lt;h2 id=&quot;起因&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/daily-2021-07-15/#%E8%B5%B7%E5%9B%A0&quot; title=&quot;起因&quot;&gt;&lt;/a&gt;起因&lt;/h2&gt;
 &lt;p&gt;在收到提醒我续费域名的邮件之后，我在7月3号登录 NameSilo 交了16.99美元给我的&lt;code&gt;.me&lt;/code&gt;域名续费。在缴费成功且收到付款的 invoice 邮件后，我就以为域名续费成功了然后就干别的事情去了。&lt;/p&gt;
 &lt;p&gt;因为月初到9号一直有工训（工程训练），每天都要穿大一时留下的军训服到学校的工训楼那边学一些机床、电钻、机械这类的东西&lt;/p&gt;
 &lt;p&gt;（容我短暂吐槽一下，真搞不懂计算机专业的为啥还要搞这个又累又耽误时间，而且有的机器岁数看着都比我还大，搞不好还会把人弄伤，尤其是运气贼好在工训的最后一天排到了普车的某老师，态度差就不说了，还让我们把苦累活全干完了）&lt;/p&gt;
@@ -61,7 +61,7 @@
 &lt;p&gt;然而几天前充的16.99美元因为超过了3天的退款时间，所以我联系了客服，确定了我的域名被续到了2022年之后，把我刚刚缴的16.99美元申请退款。&lt;/p&gt;
 &lt;p&gt;因为NameSilo有规定是在续费订单申请退款之后，域名也将被删除，所以一通操作之下我第一次缴费的16.99美元没退回来，域名也没了，还收了我第二次续费退款的几块钱手续费。&lt;/p&gt;
 &lt;p&gt;（怪我英语不好没读懂退款的注意事项......）&lt;/p&gt;
-&lt;h2 id=&quot;结果&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/daily-2021-07-15/#%E7%BB%93%E6%9E%9C&quot; title=&quot;结果&quot;&gt;&lt;/a&gt;结果&lt;/h2&gt;
+&lt;h2 id=&quot;结果&quot;&gt;&lt;a class=&quot;header-link&quot; href=&quot;/posts/daily-2021-07-15/#%E7%BB%93%E6%9E%9C&quot; title=&quot;结果&quot;&gt;&lt;/a&gt;结果&lt;/h2&gt;
 &lt;p&gt;我知道上面的内容读起来很乱，但是这件事情还是有必要讲出来，还是解释清楚较好，不然会引起一些不必要的麻烦。&lt;/p&gt;
 &lt;p&gt;所以我又不得不买了个&lt;code&gt;.moe&lt;/code&gt;域名，把我的网站全迁到新域名上。新域名就多了一个字母‘o’，意思同日语的‘萌’。&lt;/p&gt;
 &lt;p&gt;因为在家那几天没有电脑，我总不能现借电脑给TF卡烧镜像然后拿树莓派更新我的博客吧，所以本站的主页在12号那天有几个小时无法访问。&lt;/p&gt;
