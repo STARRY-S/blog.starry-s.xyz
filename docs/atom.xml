@@ -2,14 +2,14 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>STARRY-S' Blog</title>
   <subtitle>Morning.</subtitle>
-  <icon>https://blog.starry-s.me/images/avatar.jpg</icon>
-  <link rel="self" type="application/atom+xml" href="https://blog.starry-s.me/atom.xml" />
+  <icon>https://blog.starry-s.moe/images/avatar.jpg</icon>
+  <link rel="self" type="application/atom+xml" href="https://blog.starry-s.moe/atom.xml" />
   
-  <link rel="alternate" type="text/html" href="https://blog.starry-s.me/" />
+  <link rel="alternate" type="text/html" href="https://blog.starry-s.moe/" />
   
   <updated>2021-07-15T06:27:07.000Z</updated>
   
-  <id>https://blog.starry-s.me/</id>
+  <id>https://blog.starry-s.moe/</id>
   
   <author>
     <name>STARRY-S</name>
@@ -24,8 +24,8 @@
   
   <entry>
     <title>聊聊近期本站发生的事情</title>
-    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/daily-2021-07-15/" />
-    <id>https://blog.starry-s.me/posts/daily-2021-07-15/</id>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.moe/posts/daily-2021-07-15/" />
+    <id>https://blog.starry-s.moe/posts/daily-2021-07-15/</id>
     
     <author>
       <name>STARRY-S</name>
@@ -75,10 +75,10 @@
     </content>
     
     
-    <category term="日常" label="日常" scheme="https://blog.starry-s.me/categories/%E6%97%A5%E5%B8%B8/" />
+    <category term="日常" label="日常" scheme="https://blog.starry-s.moe/categories/%E6%97%A5%E5%B8%B8/" />
     
     
-    <category term="日常" label="日常" scheme="https://blog.starry-s.me/tags/%E6%97%A5%E5%B8%B8/" />
+    <category term="日常" label="日常" scheme="https://blog.starry-s.moe/tags/%E6%97%A5%E5%B8%B8/" />
     
   </entry>
   
@@ -86,8 +86,8 @@
   
   <entry>
     <title>《空之境界》摘抄</title>
-    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/karanokyokai/" />
-    <id>https://blog.starry-s.me/posts/karanokyokai/</id>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.moe/posts/karanokyokai/" />
+    <id>https://blog.starry-s.moe/posts/karanokyokai/</id>
     
     <author>
       <name>STARRY-S</name>
@@ -337,16 +337,16 @@ const ap0 = new APlayer ({
     </content>
     
     
-    <category term="日常" label="日常" scheme="https://blog.starry-s.me/categories/%E6%97%A5%E5%B8%B8/" />
+    <category term="日常" label="日常" scheme="https://blog.starry-s.moe/categories/%E6%97%A5%E5%B8%B8/" />
     
-    <category term="阅读" label="阅读" scheme="https://blog.starry-s.me/categories/%E6%97%A5%E5%B8%B8/%E9%98%85%E8%AF%BB/" />
+    <category term="阅读" label="阅读" scheme="https://blog.starry-s.moe/categories/%E6%97%A5%E5%B8%B8/%E9%98%85%E8%AF%BB/" />
     
     
-    <category term="日常" label="日常" scheme="https://blog.starry-s.me/tags/%E6%97%A5%E5%B8%B8/" />
+    <category term="日常" label="日常" scheme="https://blog.starry-s.moe/tags/%E6%97%A5%E5%B8%B8/" />
     
-    <category term="空之境界" label="空之境界" scheme="https://blog.starry-s.me/tags/%E7%A9%BA%E4%B9%8B%E5%A2%83%E7%95%8C/" />
+    <category term="空之境界" label="空之境界" scheme="https://blog.starry-s.moe/tags/%E7%A9%BA%E4%B9%8B%E5%A2%83%E7%95%8C/" />
     
-    <category term="摘抄" label="摘抄" scheme="https://blog.starry-s.me/tags/%E6%91%98%E6%8A%84/" />
+    <category term="摘抄" label="摘抄" scheme="https://blog.starry-s.moe/tags/%E6%91%98%E6%8A%84/" />
     
   </entry>
   
@@ -354,8 +354,8 @@ const ap0 = new APlayer ({
   
   <entry>
     <title>Learn OpenGL</title>
-    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/learn_opengl/" />
-    <id>https://blog.starry-s.me/posts/learn_opengl/</id>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.moe/posts/learn_opengl/" />
+    <id>https://blog.starry-s.moe/posts/learn_opengl/</id>
     
     <author>
       <name>STARRY-S</name>
@@ -919,14 +919,14 @@ configure_file(src/fragment.glsl fragment.glsl COPYONLY)
     </content>
     
     
-    <category term="学习资料" label="学习资料" scheme="https://blog.starry-s.me/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" />
+    <category term="学习资料" label="学习资料" scheme="https://blog.starry-s.moe/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" />
     
-    <category term="OpenGL" label="OpenGL" scheme="https://blog.starry-s.me/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/OpenGL/" />
+    <category term="OpenGL" label="OpenGL" scheme="https://blog.starry-s.moe/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/OpenGL/" />
     
     
-    <category term="学习资料" label="学习资料" scheme="https://blog.starry-s.me/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" />
+    <category term="学习资料" label="学习资料" scheme="https://blog.starry-s.moe/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" />
     
-    <category term="OpenGL" label="OpenGL" scheme="https://blog.starry-s.me/tags/OpenGL/" />
+    <category term="OpenGL" label="OpenGL" scheme="https://blog.starry-s.moe/tags/OpenGL/" />
     
   </entry>
   
@@ -934,8 +934,8 @@ configure_file(src/fragment.glsl fragment.glsl COPYONLY)
   
   <entry>
     <title>Spring - 4</title>
-    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/spring-4/" />
-    <id>https://blog.starry-s.me/posts/spring-4/</id>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.moe/posts/spring-4/" />
+    <id>https://blog.starry-s.moe/posts/spring-4/</id>
     
     <author>
       <name>STARRY-S</name>
@@ -1013,16 +1013,16 @@ const ap0 = new APlayer ({
     </content>
     
     
-    <category term="日常" label="日常" scheme="https://blog.starry-s.me/categories/%E6%97%A5%E5%B8%B8/" />
+    <category term="日常" label="日常" scheme="https://blog.starry-s.moe/categories/%E6%97%A5%E5%B8%B8/" />
     
-    <category term="Spring" label="Spring" scheme="https://blog.starry-s.me/categories/%E6%97%A5%E5%B8%B8/Spring/" />
+    <category term="Spring" label="Spring" scheme="https://blog.starry-s.moe/categories/%E6%97%A5%E5%B8%B8/Spring/" />
     
     
-    <category term="摄影" label="摄影" scheme="https://blog.starry-s.me/tags/%E6%91%84%E5%BD%B1/" />
+    <category term="摄影" label="摄影" scheme="https://blog.starry-s.moe/tags/%E6%91%84%E5%BD%B1/" />
     
-    <category term="Spring" label="Spring" scheme="https://blog.starry-s.me/tags/Spring/" />
+    <category term="Spring" label="Spring" scheme="https://blog.starry-s.moe/tags/Spring/" />
     
-    <category term="Flowers" label="Flowers" scheme="https://blog.starry-s.me/tags/Flowers/" />
+    <category term="Flowers" label="Flowers" scheme="https://blog.starry-s.moe/tags/Flowers/" />
     
   </entry>
   
@@ -1030,8 +1030,8 @@ const ap0 = new APlayer ({
   
   <entry>
     <title>联想R7000P安装Arch Linux的常见问题</title>
-    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/lenovo-r7000p/" />
-    <id>https://blog.starry-s.me/posts/lenovo-r7000p/</id>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.moe/posts/lenovo-r7000p/" />
+    <id>https://blog.starry-s.moe/posts/lenovo-r7000p/</id>
     
     <author>
       <name>STARRY-S</name>
@@ -1217,12 +1217,12 @@ driver=amdgpu
     </content>
     
     
-    <category term="Linux" label="Linux" scheme="https://blog.starry-s.me/categories/Linux/" />
+    <category term="Linux" label="Linux" scheme="https://blog.starry-s.moe/categories/Linux/" />
     
     
-    <category term="Arch Linux" label="Arch Linux" scheme="https://blog.starry-s.me/tags/Arch%20Linux/" />
+    <category term="Arch Linux" label="Arch Linux" scheme="https://blog.starry-s.moe/tags/Arch%20Linux/" />
     
-    <category term="Lenovo R7000P" label="Lenovo R7000P" scheme="https://blog.starry-s.me/tags/Lenovo%20R7000P/" />
+    <category term="Lenovo R7000P" label="Lenovo R7000P" scheme="https://blog.starry-s.moe/tags/Lenovo%20R7000P/" />
     
   </entry>
   
@@ -1230,8 +1230,8 @@ driver=amdgpu
   
   <entry>
     <title>小米路由器3G之使用TTL串口刷机救砖</title>
-    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/xiaomi-r3g-ttl-flash/" />
-    <id>https://blog.starry-s.me/posts/xiaomi-r3g-ttl-flash/</id>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.moe/posts/xiaomi-r3g-ttl-flash/" />
+    <id>https://blog.starry-s.moe/posts/xiaomi-r3g-ttl-flash/</id>
     
     <author>
       <name>STARRY-S</name>
@@ -1418,16 +1418,16 @@ root@XiaoQiang:~#
     </content>
     
     
-    <category term="教程" label="教程" scheme="https://blog.starry-s.me/categories/%E6%95%99%E7%A8%8B/" />
+    <category term="教程" label="教程" scheme="https://blog.starry-s.moe/categories/%E6%95%99%E7%A8%8B/" />
     
-    <category term="路由器" label="路由器" scheme="https://blog.starry-s.me/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/" />
+    <category term="路由器" label="路由器" scheme="https://blog.starry-s.moe/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/" />
     
     
-    <category term="教程" label="教程" scheme="https://blog.starry-s.me/tags/%E6%95%99%E7%A8%8B/" />
+    <category term="教程" label="教程" scheme="https://blog.starry-s.moe/tags/%E6%95%99%E7%A8%8B/" />
     
-    <category term="路由器" label="路由器" scheme="https://blog.starry-s.me/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" />
+    <category term="路由器" label="路由器" scheme="https://blog.starry-s.moe/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" />
     
-    <category term="OpenWrt" label="OpenWrt" scheme="https://blog.starry-s.me/tags/OpenWrt/" />
+    <category term="OpenWrt" label="OpenWrt" scheme="https://blog.starry-s.moe/tags/OpenWrt/" />
     
   </entry>
   
@@ -1435,8 +1435,8 @@ root@XiaoQiang:~#
   
   <entry>
     <title>解决笔记本外接HIDPI显示器的缩放问题</title>
-    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/laptop-dualscreen-hidpi-scale/" />
-    <id>https://blog.starry-s.me/posts/laptop-dualscreen-hidpi-scale/</id>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.moe/posts/laptop-dualscreen-hidpi-scale/" />
+    <id>https://blog.starry-s.moe/posts/laptop-dualscreen-hidpi-scale/</id>
     
     <author>
       <name>STARRY-S</name>
@@ -1554,14 +1554,14 @@ qt5设置环境变量&lt;code&gt;QT_SCREEN_SCALE_FACTORS=2&lt;/code&gt;。&lt;/p
     </content>
     
     
-    <category term="Linux" label="Linux" scheme="https://blog.starry-s.me/categories/Linux/" />
+    <category term="Linux" label="Linux" scheme="https://blog.starry-s.moe/categories/Linux/" />
     
     
-    <category term="Arch Linux" label="Arch Linux" scheme="https://blog.starry-s.me/tags/Arch%20Linux/" />
+    <category term="Arch Linux" label="Arch Linux" scheme="https://blog.starry-s.moe/tags/Arch%20Linux/" />
     
-    <category term="HIDPI" label="HIDPI" scheme="https://blog.starry-s.me/tags/HIDPI/" />
+    <category term="HIDPI" label="HIDPI" scheme="https://blog.starry-s.moe/tags/HIDPI/" />
     
-    <category term="Dual Moniter" label="Dual Moniter" scheme="https://blog.starry-s.me/tags/Dual%20Moniter/" />
+    <category term="Dual Moniter" label="Dual Moniter" scheme="https://blog.starry-s.moe/tags/Dual%20Moniter/" />
     
   </entry>
   
@@ -1569,8 +1569,8 @@ qt5设置环境变量&lt;code&gt;QT_SCREEN_SCALE_FACTORS=2&lt;/code&gt;。&lt;/p
   
   <entry>
     <title>Hello 2021</title>
-    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/hello-2021/" />
-    <id>https://blog.starry-s.me/posts/hello-2021/</id>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.moe/posts/hello-2021/" />
+    <id>https://blog.starry-s.moe/posts/hello-2021/</id>
     
     <author>
       <name>STARRY-S</name>
@@ -1671,12 +1671,12 @@ const ap0 = new APlayer ({
     </content>
     
     
-    <category term="日常" label="日常" scheme="https://blog.starry-s.me/categories/%E6%97%A5%E5%B8%B8/" />
+    <category term="日常" label="日常" scheme="https://blog.starry-s.moe/categories/%E6%97%A5%E5%B8%B8/" />
     
     
-    <category term="碎碎念" label="碎碎念" scheme="https://blog.starry-s.me/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" />
+    <category term="碎碎念" label="碎碎念" scheme="https://blog.starry-s.moe/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" />
     
-    <category term="日常" label="日常" scheme="https://blog.starry-s.me/tags/%E6%97%A5%E5%B8%B8/" />
+    <category term="日常" label="日常" scheme="https://blog.starry-s.moe/tags/%E6%97%A5%E5%B8%B8/" />
     
   </entry>
   
@@ -1684,8 +1684,8 @@ const ap0 = new APlayer ({
   
   <entry>
     <title>51单片机习题整理</title>
-    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/learn-mcs8051/" />
-    <id>https://blog.starry-s.me/posts/learn-mcs8051/</id>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.moe/posts/learn-mcs8051/" />
+    <id>https://blog.starry-s.moe/posts/learn-mcs8051/</id>
     
     <author>
       <name>STARRY-S</name>
@@ -2884,14 +2884,14 @@ RET
     </content>
     
     
-    <category term="学习资料" label="学习资料" scheme="https://blog.starry-s.me/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" />
+    <category term="学习资料" label="学习资料" scheme="https://blog.starry-s.moe/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" />
     
-    <category term="单片机" label="单片机" scheme="https://blog.starry-s.me/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/%E5%8D%95%E7%89%87%E6%9C%BA/" />
+    <category term="单片机" label="单片机" scheme="https://blog.starry-s.moe/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/%E5%8D%95%E7%89%87%E6%9C%BA/" />
     
     
-    <category term="单片机" label="单片机" scheme="https://blog.starry-s.me/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" />
+    <category term="单片机" label="单片机" scheme="https://blog.starry-s.moe/tags/%E5%8D%95%E7%89%87%E6%9C%BA/" />
     
-    <category term="学习资料" label="学习资料" scheme="https://blog.starry-s.me/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" />
+    <category term="学习资料" label="学习资料" scheme="https://blog.starry-s.moe/tags/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" />
     
   </entry>
   
@@ -2899,8 +2899,8 @@ RET
   
   <entry>
     <title>惠普光影精灵4在Arch Linux下使用Optimus Manager配置双显卡</title>
-    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/archlinux-pavilion-gaming-laptop/" />
-    <id>https://blog.starry-s.me/posts/archlinux-pavilion-gaming-laptop/</id>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.moe/posts/archlinux-pavilion-gaming-laptop/" />
+    <id>https://blog.starry-s.moe/posts/archlinux-pavilion-gaming-laptop/</id>
     
     <author>
       <name>STARRY-S</name>
@@ -3249,12 +3249,12 @@ options=overclocking
     </content>
     
     
-    <category term="Linux" label="Linux" scheme="https://blog.starry-s.me/categories/Linux/" />
+    <category term="Linux" label="Linux" scheme="https://blog.starry-s.moe/categories/Linux/" />
     
     
-    <category term="Arch Linux" label="Arch Linux" scheme="https://blog.starry-s.me/tags/Arch%20Linux/" />
+    <category term="Arch Linux" label="Arch Linux" scheme="https://blog.starry-s.moe/tags/Arch%20Linux/" />
     
-    <category term="NVIDIA Optimus" label="NVIDIA Optimus" scheme="https://blog.starry-s.me/tags/NVIDIA%20Optimus/" />
+    <category term="NVIDIA Optimus" label="NVIDIA Optimus" scheme="https://blog.starry-s.moe/tags/NVIDIA%20Optimus/" />
     
   </entry>
   
@@ -3262,8 +3262,8 @@ options=overclocking
   
   <entry>
     <title>Spring - 3</title>
-    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/spring-3/" />
-    <id>https://blog.starry-s.me/posts/spring-3/</id>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.moe/posts/spring-3/" />
+    <id>https://blog.starry-s.moe/posts/spring-3/</id>
     
     <author>
       <name>STARRY-S</name>
@@ -3332,16 +3332,16 @@ const ap0 = new APlayer ({
     </content>
     
     
-    <category term="日常" label="日常" scheme="https://blog.starry-s.me/categories/%E6%97%A5%E5%B8%B8/" />
+    <category term="日常" label="日常" scheme="https://blog.starry-s.moe/categories/%E6%97%A5%E5%B8%B8/" />
     
-    <category term="Spring" label="Spring" scheme="https://blog.starry-s.me/categories/%E6%97%A5%E5%B8%B8/Spring/" />
+    <category term="Spring" label="Spring" scheme="https://blog.starry-s.moe/categories/%E6%97%A5%E5%B8%B8/Spring/" />
     
     
-    <category term="摄影" label="摄影" scheme="https://blog.starry-s.me/tags/%E6%91%84%E5%BD%B1/" />
+    <category term="摄影" label="摄影" scheme="https://blog.starry-s.moe/tags/%E6%91%84%E5%BD%B1/" />
     
-    <category term="Spring" label="Spring" scheme="https://blog.starry-s.me/tags/Spring/" />
+    <category term="Spring" label="Spring" scheme="https://blog.starry-s.moe/tags/Spring/" />
     
-    <category term="Flowers" label="Flowers" scheme="https://blog.starry-s.me/tags/Flowers/" />
+    <category term="Flowers" label="Flowers" scheme="https://blog.starry-s.moe/tags/Flowers/" />
     
   </entry>
   
@@ -3349,8 +3349,8 @@ const ap0 = new APlayer ({
   
   <entry>
     <title>一个人的旅行 —— 上海</title>
-    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/shanghai/" />
-    <id>https://blog.starry-s.me/posts/shanghai/</id>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.moe/posts/shanghai/" />
+    <id>https://blog.starry-s.moe/posts/shanghai/</id>
     
     <author>
       <name>STARRY-S</name>
@@ -3563,14 +3563,14 @@ const ap2 = new APlayer ({
     </content>
     
     
-    <category term="日常" label="日常" scheme="https://blog.starry-s.me/categories/%E6%97%A5%E5%B8%B8/" />
+    <category term="日常" label="日常" scheme="https://blog.starry-s.moe/categories/%E6%97%A5%E5%B8%B8/" />
     
     
-    <category term="旅行" label="旅行" scheme="https://blog.starry-s.me/tags/%E6%97%85%E8%A1%8C/" />
+    <category term="旅行" label="旅行" scheme="https://blog.starry-s.moe/tags/%E6%97%85%E8%A1%8C/" />
     
-    <category term="日常" label="日常" scheme="https://blog.starry-s.me/tags/%E6%97%A5%E5%B8%B8/" />
+    <category term="日常" label="日常" scheme="https://blog.starry-s.moe/tags/%E6%97%A5%E5%B8%B8/" />
     
-    <category term="摄影" label="摄影" scheme="https://blog.starry-s.me/tags/%E6%91%84%E5%BD%B1/" />
+    <category term="摄影" label="摄影" scheme="https://blog.starry-s.moe/tags/%E6%91%84%E5%BD%B1/" />
     
   </entry>
   
@@ -3578,8 +3578,8 @@ const ap2 = new APlayer ({
   
   <entry>
     <title>小米路由器3G折腾之刷OpenWrt记录</title>
-    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/xiaomi_r3g_openwrt/" />
-    <id>https://blog.starry-s.me/posts/xiaomi_r3g_openwrt/</id>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.moe/posts/xiaomi_r3g_openwrt/" />
+    <id>https://blog.starry-s.moe/posts/xiaomi_r3g_openwrt/</id>
     
     <author>
       <name>STARRY-S</name>
@@ -3766,16 +3766,16 @@ reboot
     </content>
     
     
-    <category term="教程" label="教程" scheme="https://blog.starry-s.me/categories/%E6%95%99%E7%A8%8B/" />
+    <category term="教程" label="教程" scheme="https://blog.starry-s.moe/categories/%E6%95%99%E7%A8%8B/" />
     
-    <category term="路由器" label="路由器" scheme="https://blog.starry-s.me/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/" />
+    <category term="路由器" label="路由器" scheme="https://blog.starry-s.moe/categories/%E6%95%99%E7%A8%8B/%E8%B7%AF%E7%94%B1%E5%99%A8/" />
     
     
-    <category term="教程" label="教程" scheme="https://blog.starry-s.me/tags/%E6%95%99%E7%A8%8B/" />
+    <category term="教程" label="教程" scheme="https://blog.starry-s.moe/tags/%E6%95%99%E7%A8%8B/" />
     
-    <category term="路由器" label="路由器" scheme="https://blog.starry-s.me/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" />
+    <category term="路由器" label="路由器" scheme="https://blog.starry-s.moe/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" />
     
-    <category term="OpenWrt" label="OpenWrt" scheme="https://blog.starry-s.me/tags/OpenWrt/" />
+    <category term="OpenWrt" label="OpenWrt" scheme="https://blog.starry-s.moe/tags/OpenWrt/" />
     
   </entry>
   
@@ -3783,8 +3783,8 @@ reboot
   
   <entry>
     <title>使用HMCL启动Minecraft</title>
-    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/hmcl-minecraft/" />
-    <id>https://blog.starry-s.me/posts/hmcl-minecraft/</id>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.moe/posts/hmcl-minecraft/" />
+    <id>https://blog.starry-s.moe/posts/hmcl-minecraft/</id>
     
     <author>
       <name>STARRY-S</name>
@@ -3865,19 +3865,19 @@ $ chmod 744 ./start.sh
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://minecraft-zh.gamepedia.com/index.php?title=%E6%95%99%E7%A8%8B/%E6%88%90%E5%8A%9F%E5%9C%B0%E5%90%AF%E5%8A%A8%E6%B8%B8%E6%88%8F&amp;amp;variant=zh-cn&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;教程/成功地启动游戏-Minecraft Wiki&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://minecraft.net/zh-hans/&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;官方网站|Minecraft&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://blog.starry-s.me/posts/raspberrypi-mc-server/&quot;&gt;树莓派之我的世界服务器&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.starry-s.me/posts/raspberrypi-mc-server/&quot; target=&quot;_blank&quot; rel=&quot;external nofollow noreferrer noopener&quot;&gt;树莓派之我的世界服务器&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;如果你感兴趣想一起联机我的世界的话欢迎联系我，大家一起来Van游戏。&lt;/p&gt;
 
     </content>
     
     
-    <category term="Minecraft" label="Minecraft" scheme="https://blog.starry-s.me/categories/Minecraft/" />
+    <category term="Minecraft" label="Minecraft" scheme="https://blog.starry-s.moe/categories/Minecraft/" />
     
     
-    <category term="Minecraft" label="Minecraft" scheme="https://blog.starry-s.me/tags/Minecraft/" />
+    <category term="Minecraft" label="Minecraft" scheme="https://blog.starry-s.moe/tags/Minecraft/" />
     
-    <category term="HMCL" label="HMCL" scheme="https://blog.starry-s.me/tags/HMCL/" />
+    <category term="HMCL" label="HMCL" scheme="https://blog.starry-s.moe/tags/HMCL/" />
     
   </entry>
   
@@ -3885,8 +3885,8 @@ $ chmod 744 ./start.sh
   
   <entry>
     <title>Spring - 2</title>
-    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/spring-2/" />
-    <id>https://blog.starry-s.me/posts/spring-2/</id>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.moe/posts/spring-2/" />
+    <id>https://blog.starry-s.moe/posts/spring-2/</id>
     
     <author>
       <name>STARRY-S</name>
@@ -3936,16 +3936,16 @@ $ chmod 744 ./start.sh
     </content>
     
     
-    <category term="日常" label="日常" scheme="https://blog.starry-s.me/categories/%E6%97%A5%E5%B8%B8/" />
+    <category term="日常" label="日常" scheme="https://blog.starry-s.moe/categories/%E6%97%A5%E5%B8%B8/" />
     
-    <category term="Spring" label="Spring" scheme="https://blog.starry-s.me/categories/%E6%97%A5%E5%B8%B8/Spring/" />
+    <category term="Spring" label="Spring" scheme="https://blog.starry-s.moe/categories/%E6%97%A5%E5%B8%B8/Spring/" />
     
     
-    <category term="摄影" label="摄影" scheme="https://blog.starry-s.me/tags/%E6%91%84%E5%BD%B1/" />
+    <category term="摄影" label="摄影" scheme="https://blog.starry-s.moe/tags/%E6%91%84%E5%BD%B1/" />
     
-    <category term="Spring" label="Spring" scheme="https://blog.starry-s.me/tags/Spring/" />
+    <category term="Spring" label="Spring" scheme="https://blog.starry-s.moe/tags/Spring/" />
     
-    <category term="Flowers" label="Flowers" scheme="https://blog.starry-s.me/tags/Flowers/" />
+    <category term="Flowers" label="Flowers" scheme="https://blog.starry-s.moe/tags/Flowers/" />
     
   </entry>
   
@@ -3953,8 +3953,8 @@ $ chmod 744 ./start.sh
   
   <entry>
     <title>Spring</title>
-    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/spring/" />
-    <id>https://blog.starry-s.me/posts/spring/</id>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.moe/posts/spring/" />
+    <id>https://blog.starry-s.moe/posts/spring/</id>
     
     <author>
       <name>STARRY-S</name>
@@ -4003,16 +4003,16 @@ $ chmod 744 ./start.sh
     </content>
     
     
-    <category term="日常" label="日常" scheme="https://blog.starry-s.me/categories/%E6%97%A5%E5%B8%B8/" />
+    <category term="日常" label="日常" scheme="https://blog.starry-s.moe/categories/%E6%97%A5%E5%B8%B8/" />
     
-    <category term="Spring" label="Spring" scheme="https://blog.starry-s.me/categories/%E6%97%A5%E5%B8%B8/Spring/" />
+    <category term="Spring" label="Spring" scheme="https://blog.starry-s.moe/categories/%E6%97%A5%E5%B8%B8/Spring/" />
     
     
-    <category term="摄影" label="摄影" scheme="https://blog.starry-s.me/tags/%E6%91%84%E5%BD%B1/" />
+    <category term="摄影" label="摄影" scheme="https://blog.starry-s.moe/tags/%E6%91%84%E5%BD%B1/" />
     
-    <category term="Spring" label="Spring" scheme="https://blog.starry-s.me/tags/Spring/" />
+    <category term="Spring" label="Spring" scheme="https://blog.starry-s.moe/tags/Spring/" />
     
-    <category term="Flowers" label="Flowers" scheme="https://blog.starry-s.me/tags/Flowers/" />
+    <category term="Flowers" label="Flowers" scheme="https://blog.starry-s.moe/tags/Flowers/" />
     
   </entry>
   
@@ -4020,8 +4020,8 @@ $ chmod 744 ./start.sh
   
   <entry>
     <title>Sorry, Thank you.</title>
-    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/sorry-thankyou/" />
-    <id>https://blog.starry-s.me/posts/sorry-thankyou/</id>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.moe/posts/sorry-thankyou/" />
+    <id>https://blog.starry-s.moe/posts/sorry-thankyou/</id>
     
     <author>
       <name>STARRY-S</name>
@@ -4096,12 +4096,12 @@ $ chmod 744 ./start.sh
     </content>
     
     
-    <category term="日常" label="日常" scheme="https://blog.starry-s.me/categories/%E6%97%A5%E5%B8%B8/" />
+    <category term="日常" label="日常" scheme="https://blog.starry-s.moe/categories/%E6%97%A5%E5%B8%B8/" />
     
     
-    <category term="日常" label="日常" scheme="https://blog.starry-s.me/tags/%E6%97%A5%E5%B8%B8/" />
+    <category term="日常" label="日常" scheme="https://blog.starry-s.moe/tags/%E6%97%A5%E5%B8%B8/" />
     
-    <category term="碎碎念" label="碎碎念" scheme="https://blog.starry-s.me/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" />
+    <category term="碎碎念" label="碎碎念" scheme="https://blog.starry-s.moe/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" />
     
   </entry>
   
@@ -4109,8 +4109,8 @@ $ chmod 744 ./start.sh
   
   <entry>
     <title>树莓派之我的世界服务器</title>
-    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/raspberrypi-mc-server/" />
-    <id>https://blog.starry-s.me/posts/raspberrypi-mc-server/</id>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.moe/posts/raspberrypi-mc-server/" />
+    <id>https://blog.starry-s.moe/posts/raspberrypi-mc-server/</id>
     
     <author>
       <name>STARRY-S</name>
@@ -4190,12 +4190,12 @@ $ ./java/jdk1.8.0/bin/java -Xms512M -Xmx1024M -jar./paperclip.jar
     </content>
     
     
-    <category term="Minecraft" label="Minecraft" scheme="https://blog.starry-s.me/categories/Minecraft/" />
+    <category term="Minecraft" label="Minecraft" scheme="https://blog.starry-s.moe/categories/Minecraft/" />
     
     
-    <category term="Minecraft" label="Minecraft" scheme="https://blog.starry-s.me/tags/Minecraft/" />
+    <category term="Minecraft" label="Minecraft" scheme="https://blog.starry-s.moe/tags/Minecraft/" />
     
-    <category term="树莓派" label="树莓派" scheme="https://blog.starry-s.me/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" />
+    <category term="树莓派" label="树莓派" scheme="https://blog.starry-s.moe/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" />
     
   </entry>
   
@@ -4203,8 +4203,8 @@ $ ./java/jdk1.8.0/bin/java -Xms512M -Xmx1024M -jar./paperclip.jar
   
   <entry>
     <title>Everything is based on “Hello World”.</title>
-    <link rel="alternate" type="text/html" href="https://blog.starry-s.me/posts/hello-world/" />
-    <id>https://blog.starry-s.me/posts/hello-world/</id>
+    <link rel="alternate" type="text/html" href="https://blog.starry-s.moe/posts/hello-world/" />
+    <id>https://blog.starry-s.moe/posts/hello-world/</id>
     
     <author>
       <name>STARRY-S</name>
@@ -4305,10 +4305,10 @@ int main(int argc, char *argv[])
     </content>
     
     
-    <category term="Hello World" label="Hello World" scheme="https://blog.starry-s.me/categories/Hello%20World/" />
+    <category term="Hello World" label="Hello World" scheme="https://blog.starry-s.moe/categories/Hello%20World/" />
     
     
-    <category term="Hello World" label="Hello World" scheme="https://blog.starry-s.me/tags/Hello%20World/" />
+    <category term="Hello World" label="Hello World" scheme="https://blog.starry-s.moe/tags/Hello%20World/" />
     
   </entry>
   
